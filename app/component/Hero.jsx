@@ -1,0 +1,48 @@
+import React from "react";
+import FeatureScroll from "./FeatureScroll";
+import HeroBadge from "./HeroBadge";
+import { HeroButton } from "./Button";
+import { HomeHeroHeading } from "./HeroHead";
+
+const Hero = () => {
+  return (
+    <div className="relative w-full h-screen overflow-hidden">
+      {/* Background Video */}
+      <video
+        src="https://framerusercontent.com/assets/lr4LSmXa1klevAvb0jf1i2zsDE.mp4"
+        type="video/mp4"
+        className="absolute top-0 left-0 w-full h-full object-cover z-0"
+        autoPlay
+        muted
+        loop
+        playsInline
+      ></video>
+
+      {/* Content Wrapper */}
+      <div className="relative z-10 flex flex-col items-center sm:items-start px-9 sm:px-6 lg:px-52 h-full justify-center text-center sm:text-left">
+        {/* Badge */}
+        <HomeHeroHeading
+          HomeHeroBadge="Gloitel"
+          HomeSubHeroBadge="Technology made with Trust"
+          HomeHeroHeading="Next-Gen AI. Save Time."
+          HomeHeroSubHeading="Skyrocket Impact."
+          HomeHeroDescription="Leverage the power of AI to streamline tasks, reduce manual effort, and maximize productivity."
+        />
+
+        {/* Buttons */}
+        <HeroButton
+          FirstHeroButtonText="Connect With Us"
+          FirstHeroButtonLink="/contact"
+          SecondHeroButtonText="What is Gloitel?"
+          SecondHeroButtonLink="/about"
+        />
+        {/* Feature Scroll */}
+        <div className="mt-8 relative">
+          <FeatureScroll />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Hero;

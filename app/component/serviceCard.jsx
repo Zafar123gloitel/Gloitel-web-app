@@ -1,0 +1,62 @@
+// components/ServiceCard.js
+import Image from "next/image";
+import Link from "next/link";
+
+export default function ServiceCard({
+  image,
+  title,
+  description,
+  buttons = [],
+  badge,
+}) {
+  return (
+    <div className="bg-gradient-to-tr from-blue-900/40 via-indigo-800/20 to-transparent rounded-3xl p-6 shadow-[0_0_40px_rgba(0,0,0,0.6)] flex flex-col justify-between transition hover:scale-[1.02] hover:shadow-[0_0_50px_rgba(37,99,235,0.4)] duration-300">
+      {/* Image */}
+      <div className="relative w-full h-72 rounded-2xl overflow-hidden">
+        <img
+          src={image}
+          alt={title}
+          className="object-cover w-full h-full"
+          // sizes="(max-width: 768px) 100vw,
+          //        (max-width: 1200px) 50vw,
+          //        33vw"
+        />
+      </div>
+
+      {/* Content */}
+      <div className="mt-6 flex-1">
+        <div className="flex items-center gap-2">
+          <h3 className="text-white text-xl font-semibold">{title}</h3>
+          {badge && (
+            <span className="text-xs bg-blue-600 text-white px-2 py-0.5 rounded-full">
+              {badge}
+            </span>
+          )}
+          ``
+        </div>
+        <p className="text-gray-400 text-sm mt-3 leading-relaxed">
+          {description}
+        </p>
+      </div>
+
+      {/* Buttons */}
+      {buttons.length > 0 && (
+        <div className="flex gap-3 mt-6 flex-wrap">
+          {buttons.map((btn, i) => (
+            <Link
+              key={i}
+              href={btn.href}
+              className={`px-5 py-2 rounded-md text-sm font-medium transition ${
+                btn.primary
+                  ? "text-white bg-gradient-to-r from-blue-500 to-blue-700 shadow-lg shadow-blue-500/30 hover:from-blue-600 hover:to-blue-800"
+                  : "text-gray-200 bg-[#1e293b] hover:bg-[#334155]"
+              }`}
+            >
+              {btn.label}
+            </Link>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}

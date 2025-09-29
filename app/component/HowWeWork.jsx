@@ -1,0 +1,158 @@
+"use client";
+import React, { useEffect, useRef } from "react";
+import { motion, useInView, useAnimation } from "framer-motion";
+import { LeftBadge } from "./Badge";
+import { LeftSectionHeads, MiddleSectionHeads } from "./SectionHeads";
+import { ImageCard } from "../uiComponents/ImageCard";
+import { GlowButton } from "./Button";
+
+const stages = [
+  {
+    id: 1,
+    title: "Kickoff",
+    stage: "Stage 1",
+    description:
+      "Every project begins with a strong foundation. We align with you to understand your goals, vision, and expectations through in-depth discussions and research, ensuring a clear roadmap for success.",
+    points: ["Comprehensive Consultation", "Project Roadmap"],
+  },
+  {
+    id: 2,
+    title: "Design",
+    stage: "Stage 2",
+    description:
+      "Crafting engaging and user-friendly interfaces that align with your brand identity while ensuring accessibility and responsiveness across devices.",
+    points: ["UI/UX Design", "Brand Consistency"],
+  },
+  {
+    id: 3,
+    title: "Development",
+    stage: "Stage 3",
+    description:
+      "Building robust and scalable applications using modern technologies, focusing on performance, security, and maintainability.",
+    points: ["Clean Code", "Scalable Architecture"],
+    ButtonText: "Book An Appoitnment",
+    ButtonTextLink: "/contact",
+  },
+];
+
+const AnimatedCard = ({ children }) => {
+  const ref = useRef(null);
+  const controls = useAnimation();
+  const isInView = useInView(ref, { margin: "-100px" }); // no `once: true`
+
+  useEffect(() => {
+    if (isInView) {
+      controls.start({
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        transition: { duration: 0.6, ease: "easeOut" },
+      });
+    } else {
+      // Reset animation when leaving viewport
+      controls.start({
+        opacity: 0,
+        y: 50,
+        scale: 0.95,
+        transition: { duration: 0.6, ease: "easeOut" },
+      });
+    }
+  }, [isInView, controls]);
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50, scale: 0.95 }}
+      animate={controls}
+      className="w-full"
+    >
+      {children}
+    </motion.div>
+  );
+};
+
+const HowWeWork = () => {
+  return (
+    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+        {/* LEFT */}
+        <div className="flex flex-col">
+          <LeftBadge WorkBadge="How We Work" />
+          <LeftSectionHeads
+            SectionHead="From Intelligent Design"
+            SectionSubHead="to AI-Powered Launch"
+            SectionDescription="We make it easy to bring your ideas to life, guiding you from concept to a fully launched product."
+          />
+
+          <div className="mt-2 sm:mt-4 grid gap-4 sm:gap-6">
+            {stages.map((item) => (
+              <AnimatedCard key={item.id}>
+                <div className="relative p-5 sm:p-10 rounded-2xl bg-black/40 backdrop-blur-md shadow-lg overflow-hidden border border-white/10">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-900/40 via-indigo-800/20 to-transparent opacity-50 rounded-2xl pointer-events-none"></div>
+
+                  <div className="flex items-center justify-between relative z-10">
+                    <div className="flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-white/5 text-blue-400 shadow-[0_0_25px_rgba(59,130,246,0.3)]">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={1.5}
+                        stroke="currentColor"
+                        className="w-5 h-5 sm:w-6 sm:h-6"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M9.813 15.904L9 21l3-3 3 3-.813-5.096m-.464-3.833a6.75 6.75 0 11-8.01-8.01 11.25 11.25 0 018.01 8.01z"
+                        />
+                      </svg>
+                    </div>
+                    <span className="px-3 py-1 text-xs sm:text-sm rounded-md bg-white/5 text-gray-300 shadow-[0_0_25px_rgba(59,130,246,0.3)]">
+                      {item.stage}
+                    </span>
+                  </div>
+
+                  <h3 className="mt-3 sm:mt-4 text-lg sm:text-xl font-semibold text-white relative z-10">
+                    {item.title}
+                  </h3>
+
+                  <div className="w-full h-px bg-gradient-to-r from-white/10 to-transparent my-2 sm:my-3 relative z-10"></div>
+
+                  <p className="text-gray-400 text-xs sm:text-sm md:text-base leading-relaxed relative z-10">
+                    {item.description}
+                  </p>
+
+                  <div className="mt-3 sm:mt-4 flex flex-wrap gap-2 sm:gap-3 relative z-10">
+                    {item.points.map((point, idx) => (
+                      <span
+                        key={idx}
+                        className="px-3 py-2 rounded-md bg-white/10 text-xs sm:text-sm text-gray-300"
+                      >
+                        {point}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Conditionally render button only for the third card */}
+                  {item.ButtonText && item.ButtonTextLink && (
+                    <div className="flex justify-start mt-4">
+                      <GlowButton
+                        ButtonText={item.ButtonText}
+                        ButtonLink={item.ButtonTextLink}
+                      />
+                    </div>
+                  )}
+                </div>
+              </AnimatedCard>
+            ))}
+          </div>
+        </div>
+
+        {/* RIGHT */}
+        <ImageCard HowWeWorkImg="https://framerusercontent.com/images/oUAzCBZlCCsvzmsAiYQ3RDbhyg.jpeg?scale-down-to-1024" />
+      </div>
+    </section>
+  );
+};
+
+export default HowWeWork;
