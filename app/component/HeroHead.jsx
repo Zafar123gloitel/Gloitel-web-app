@@ -1,5 +1,5 @@
 import React from "react";
-import HeroBadge from "./HeroBadge";
+import { HeroBadge } from "./HeroBadge";
 
 export const HeroVideoBg = () => {
   return (
