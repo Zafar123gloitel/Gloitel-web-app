@@ -13,6 +13,8 @@ import { FAQPage } from "../component/Faq";
 import JoinUsNow from "../component/JoinUsNow";
 import { BgSquare2, BgSquare3 } from "../component/BgSquare";
 import { GlowButton } from "../component/Button";
+import { IntroHead } from "../uiComponents/Heading";
+import HeroBadge from "../component/HeroBadge";
 
 const AboutPage = () => {
   const [showVideo, setShowVideo] = useState(false);
@@ -64,7 +66,8 @@ const AboutPage = () => {
 
   return (
     <>
-      <section className="relative isolate sm:px-6 lg:px-8 py-16 lg:py-30 w-full h-full overflow-hidden">
+      {/* Hero Section with Video */}
+      <section className="relative isolate px-4 sm:px-6 lg:px-8 py-16 lg:py-24 w-full h-full  overflow-hidden">
         {/* Background Video */}
         <video
           src="https://framerusercontent.com/assets/lr4LSmXa1klevAvb0jf1i2zsDE.mp4"
@@ -76,49 +79,35 @@ const AboutPage = () => {
           playsInline
         ></video>
 
-        <div className="flex flex-col items-center justify-center mx-auto min-h-[60vh] relative z-10">
+        <div className="flex flex-col items-center justify-center mx-auto min-h-[60vh] relative z-10 text-center pt-15 sm:pt-20 md:pt-20 lg:pt-20">
           {/* Intro */}
-          <div className="flex flex-col w-full text-center">
-            <div className="flex justify-center mb-6">
-              <div className="backdrop-blur-md bg-white/5 rounded-lg px-1.5 py-1.5 text-sm text-gray-300 ring-1 ring-white/10">
-                <div className="inline-block rounded-lg bg-blue-600 px-3 py-1 mr-3 font-medium text-white shadow">
-                  2025
-                </div>
-                Dig Deep About Us
-              </div>
-            </div>
-
-            <h3 className="text-4xl sm:text-5xl lg:text-[5rem] text-white">
-              Learn More About Gloitel
-              <br /> Let’s Deep Dive!
-            </h3>
-
-            <div className="lg:w-1/3 mx-auto">
-              <p className="mt-4 sm:mt-6 text-base text-gray-400">
-                We are a healthtech AI company. The dedicated team of tech-savvy
-                enthusiasts and developers who bring to the table the best IT
-                solutions.
-              </p>
-            </div>
-          </div>
+          <IntroHead
+            HomeHeroBadge="2025"
+            HomeSubHeroBadge="Frequently Asked Questions"
+            main="Any Questions Rising?"
+            sub="We are All Here."
+            description="Whether you have a question, need assistance,
+            or want to start a new project, our team is here to help."
+          />
 
           {/* Buttons */}
-          <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-4 items-center">
+          <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 items-center">
             <Link
-              href="#"
-              className="rounded-md bg-white px-5 py-2.5 text-md text-black shadow-lg hover:bg-indigo-500 hover:text-white transition"
+              href="/contact"
+              className="w-full sm:w-auto text-center rounded-md bg-white px-5 py-2.5 text-md text-black shadow-lg hover:bg-indigo-500 hover:text-white transition"
             >
               Connect With Us
             </Link>
-            <div className="backdrop-blur-md bg-white/10 px-5 py-2.5 rounded-md shadow-lg">
-              <Link href="#" className="text-md text-white">
-                What is Gloitel?
-              </Link>
-            </div>
+            <Link
+              href="/about"
+              className="w-full sm:w-auto text-center backdrop-blur-md bg-white/10 px-5 py-2.5 rounded-md shadow-lg text-md text-white"
+            >
+              What is Gloitel?
+            </Link>
           </div>
 
           {/* Thumbnail with Play Button */}
-          <div className="mt-12 w-full h-full px-40">
+          <div className="mt-10 w-full sm:w-3/4 lg:w-2/3">
             <div
               className="relative bg-gradient-to-r from-gray-950/90 to-black/80 p-2 sm:p-3 rounded-3xl shadow-lg overflow-hidden border border-white/10 cursor-pointer"
               onClick={() => setShowVideo(true)}
@@ -130,12 +119,12 @@ const AboutPage = () => {
                   className="absolute top-0 left-0 w-full h-full object-cover rounded-2xl"
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-20 h-20 flex items-center justify-center bg-blue-600/90 rounded-full shadow-lg">
+                  <div className="w-16 sm:w-20 h-16 sm:h-20 flex items-center justify-center bg-blue-600/90 rounded-full shadow-lg">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="white"
                       viewBox="0 0 24 24"
-                      className="w-10 h-10"
+                      className="w-8 sm:w-10 h-8 sm:h-10"
                     >
                       <path d="M8 5v14l11-7z" />
                     </svg>
@@ -148,14 +137,14 @@ const AboutPage = () => {
           {/* Modal Video */}
           {showVideo && (
             <div
-              className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
+              className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
               onClick={() => setShowVideo(false)}
             >
-              <div className="relative w-11/12 md:w-5/6 lg:w-3/4 xl:w-2/3">
+              <div className="relative w-full max-w-4xl">
                 <iframe
                   src="https://www.youtube.com/embed/AMzVBmvh1Z0?autoplay=1"
                   title="YouTube video player"
-                  className="w-full h-[80vh] rounded-2xl"
+                  className="w-full h-[60vh] sm:h-[70vh] rounded-2xl"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 />
@@ -164,18 +153,16 @@ const AboutPage = () => {
           )}
         </div>
       </section>
-      {/* About Sections */}
-      <section className="relative isolate px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
-        <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-8 items-center">
-          {/* Left: Image */}
-          <AboutAboutImg1 ImgLink="https://framerusercontent.com/images/mwSqQ9UKMvUvejak30qlmlWS8.jpeg?scale-down-to=1024" />
-          {/* Right: Content */}
 
+      {/* About Section 1 */}
+      <section className="relative isolate px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
+        <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+          <AboutAboutImg1 ImgLink="https://framerusercontent.com/images/mwSqQ9UKMvUvejak30qlmlWS8.jpeg?scale-down-to=1024" />
           <AboutAboutContent
             AboutBadge="Gloitel Vision"
             AboutHeading="Empowering Businesses"
-            AboutSubHeading="with  Innovation"
-            AboutContents={[
+            AboutSubHeading="with Innovation"
+            AboutContents1={[
               {
                 title: "Your Vision, Our Expertise",
                 text: "We craft digital experiences that drive success, delivering seamless IT solutions in HealthTech, AI, Cloud, and more.",
@@ -185,20 +172,20 @@ const AboutPage = () => {
                 text: "From data intelligence to business automation, we deliver modern, scalable, and future-ready technologies that elevate your operations.",
               },
             ]}
-            AboutButton1="Book an Appointment"
-            HomeAboutTexts1="200+ Agencies Rated"
+            ButtonText="Book an Appointment"
+            Buttonlink="/contact"
+            HomeAboutTexts="200+ Agencies Rated"
           />
         </div>
       </section>
-      {/* About Sections */}
-      <section className="relative isolate px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
-        <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-8 items-center">
-          {/* Right: Content */}
 
+      {/* About Section 2 */}
+      <section className="relative isolate px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
+        <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <AboutAboutContent
-            AboutBadge2="Gloitel Mission"
-            AboutHeading2="Smarter Solutions with"
-            AboutSubHeading2="AI-Powered Precision"
+            AboutBadge="Gloitel Mission"
+            AboutHeading="Smarter Solutions with"
+            AboutSubHeading="AI-Powered Precision"
             AboutContents2={[
               {
                 title: "AI-Driven Innovation, Every Step of the Way",
@@ -209,40 +196,34 @@ const AboutPage = () => {
                 text: "Our commitment doesn’t end at launch. With AI-powered monitoring, automated updates, and real-time optimizations, we ensure your systems evolve with your needs.",
               },
             ]}
-            AboutButton2="Book an Appointment"
-            HomeAboutTexts2="900+ People Rated"
+            ButtonText="Book an Appointment"
+            Buttonlink="/contact"
+            HomeAboutTexts="900+ People Rated"
           />
-          {/* Left: Image */}
           <AboutAboutImg2 ImgLink="https://framerusercontent.com/images/hZgGlHpPFf0bbzHL7dI9MolatA.jpeg?scale-down-to=1024" />
         </div>
       </section>
+
       {/* Testimonial Section */}
       <section className="relative isolate px-4 sm:px-6 lg:px-8 py-12 lg:py-20 overflow-hidden">
         <div className="flex flex-col items-center justify-center max-w-7xl mx-auto relative z-10">
           <BgSquare2 />
           <div className="flex flex-col w-full sm:w-3/4 lg:w-1/2 text-center">
-            <div className="mx-auto backdrop-blur-md bg-gray-900/50 px-4 py-2 rounded-md shadow-lg mb-4">
-              <h2 className="text-sm text-white tracking-wide">
-                <span className="bg-white w-2 h-2 rounded-full inline-block mr-2"></span>
-                Testimonial
-              </h2>
-            </div>
+            <CenterBadge TestimonialBadge="Testimonial" />
 
             <h3 className="text-2xl sm:text-3xl lg:text-5xl font-semibold text-white">
               Customer Reviews About
             </h3>
-            <h3 className="text-xl sm:text-2xl lg:text-4xl font-medium text-gray-400 mt-2">
+            <h3 className="text-lg sm:text-2xl lg:text-4xl font-medium text-gray-400 mt-2">
               Work, Usability and Design.
             </h3>
 
-            <div className="w-lg mx-auto">
-              <p className="my-7 sm:mt-6 sm:text-sm lg:text-md text-gray-400">
-                Hear from our happy clients! See how we’ve helped them achieve
-                their goals and create lasting impact.
-              </p>
-            </div>
+            <p className="my-6 sm:text-sm lg:text-base text-gray-400">
+              Hear from our happy clients! See how we’ve helped them achieve
+              their goals and create lasting impact.
+            </p>
           </div>
-          <GlowButton BookA15MinCall="Book a 15 Min Call" hrefLink="/contact" />
+          <GlowButton ButtonText="Book a 15 Min Call" Buttonlink="/contact" />
 
           {/* Team Grid */}
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
@@ -254,56 +235,53 @@ const AboutPage = () => {
                 <img
                   src={item.image}
                   alt={item.name}
-                  className="w-full h-[400px] object-cover rounded-2xl"
+                  className="w-full h-60 sm:h-72 lg:h-[400px] object-cover rounded-2xl"
                 />
-                <div className="absolute flex justify-between items-center inset-x-0 bottom-0 m-5 rounded-xl bg-gradient-to-r from-blue-950/60 to-black/80 p-4 backdrop-blur-md">
+                <div className="absolute inset-x-0 bottom-0 m-3 sm:m-5 rounded-xl bg-gradient-to-r from-blue-950/60 to-black/80 p-3 sm:p-4 backdrop-blur-md flex justify-between items-center">
                   <div>
-                    <h3 className="text-md font-semibold text-white mb-1">
+                    <h3 className="text-sm sm:text-md font-semibold text-white mb-1">
                       {item.name}
                     </h3>
-                    <p className="text-sm text-gray-300">{item.role}</p>
+                    <p className="text-xs sm:text-sm text-gray-300">
+                      {item.role}
+                    </p>
                   </div>
-                  <img src={item.image} alt="" className="w-9 h-9 rounded-xl" />
+                  <img
+                    src={item.image}
+                    alt=""
+                    className="w-7 sm:w-9 h-7 sm:h-9 rounded-xl"
+                  />
                 </div>
               </div>
             ))}
           </div>
         </div>
       </section>
-      {/* Culture */}
 
-      <div className="relative flex flex-col items-center">
+      {/* Culture Section */}
+      <div className="relative flex flex-col items-center px-4 sm:px-6 lg:px-8 py-12 lg:py-20 overflow-hidden">
         <BgSquare3 />
-        <div className=" flex flex-col justify-center w-full sm:w-1/2 lg:w-1/2 text-center">
+        <div className="flex flex-col justify-center w-full sm:w-3/4 lg:w-1/2 text-center">
           <CenterBadge AboutOurCulture="Our Culture" />
-          <h3 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white">
+          <h3 className="text-2xl sm:text-3xl lg:text-5xl font-semibold text-white">
             Work, Celebrate &
           </h3>
-          <h3 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-gray-400 mt-2">
+          <h3 className="text-xl sm:text-3xl lg:text-5xl font-medium text-gray-400 mt-2">
             Grow Together
           </h3>
-
-          <div className="w-lg mx-auto">
-            <p className="my-7 sm:mt-6 sm:text-sm lg:text-md text-gray-400">
-              Snapshot of our lively workplace—office life, celebrations, team
-              outings, and bonding events.
-            </p>
-          </div>
-          <div className="mt-6">
-            <Link
-              href="#"
-              className="relative rounded-md bg-blue-700 px-5 py-2.5 text-md text-white shadow-[0_0_25px_rgba(59,130,246,0.7)] hover:bg-blue-600 transition"
-            >
-              View About Gloitel
-              <span className="absolute top-0 left-0 w-full h-1 bg-blue-400 blur-xl opacity-70 animate-pulse"></span>
-            </Link>
-          </div>
+          <p className="my-6 sm:text-sm lg:text-base text-gray-400">
+            Snapshot of our lively workplace—office life, celebrations, team
+            outings, and bonding events.
+          </p>
+          <GlowButton ButtonText="View About GLoitel" Buttonlink="/about" />
         </div>
 
         <div className="overflow-x-auto scrollbar-hide mt-12 w-full">
           <TechScroll />
         </div>
       </div>
+
+      {/* FAQ + CTA */}
       <FAQPage />
       <JoinUsNow />
     </>

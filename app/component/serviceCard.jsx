@@ -32,7 +32,6 @@ export default function ServiceCard({
               {badge}
             </span>
           )}
-          ``
         </div>
         <p className="text-gray-400 text-sm mt-3 leading-relaxed">
           {description}

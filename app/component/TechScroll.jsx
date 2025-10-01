@@ -1,15 +1,12 @@
-// components/AutoScrollCarousel.jsx
 import React from "react";
 
 const sites1 = [
   {
     img: "https://framerusercontent.com/images/1pPSjGU4S4FI7ghr7qYd1SZwjo.webp",
   },
-
   {
     img: "https://framerusercontent.com/images/SZfiBqTdlaKhnFFYnHIufjnvcEI.png",
   },
-
   {
     img: "https://framerusercontent.com/images/LII4rONieY4ivMPyQrwL8AEaK3g.jpg",
   },
@@ -23,15 +20,14 @@ const sites1 = [
     img: "https://framerusercontent.com/images/1YCmmthfQqX5jHF3bHBQEi44YhE.webp",
   },
 ];
+
 const sites2 = [
   {
     img: "https://framerusercontent.com/images/Ec08xgiQaFXy7irJTBteA9eFCRM.webp",
   },
-
   {
     img: "https://framerusercontent.com/images/3HU1wPFPmG5B27scfFZWhwIpPU.webp",
   },
-
   {
     img: "https://framerusercontent.com/images/5qvqE8wkAaGTRuhz1Ijav6mJrg.png",
   },
@@ -41,9 +37,7 @@ const sites2 = [
   {
     img: "https://framerusercontent.com/images/IxFV6qzk9YxT8sr9XVqGJ1P1SuY.png",
   },
-  {
-    img: "https://framerusercontent.com/images/Q75jFbpr6aUT83QVHuut6NzSQ.jpg",
-  },
+  { img: "https://framerusercontent.com/images/Q75jFbpr6aUT83QVHuut6NzSQ.jpg" },
   {
     img: "https://framerusercontent.com/images/gLSdJmYYVAc1De8bHWeCrIa7S28.png",
   },
@@ -51,38 +45,35 @@ const sites2 = [
 
 const TechScroll = () => {
   return (
-    <div className="relative overflow-hidden w-full">
-      <div className="flex animate-scroll whitespace-nowrap">
-        {sites1.map((feature, i) => (
+    <div className="relative overflow-hidden w-full py-6 sm:py-10">
+      {/* First Row */}
+      <div className="flex animate-scroll whitespace-nowrap gap-4 sm:gap-6 px-4">
+        {sites1.map((site, i) => (
           <div
             key={i}
-            className="flex justify-center h-80 lg:justify-start sm:m-5 rounded-3xl p-2 bg-gray-800/30"
+            className="flex justify-center items-center min-w-[230px] sm:min-w-[250px] md:min-w-[380px] h-40 sm:h-52 md:h-64 rounded-2xl overflow-hidden bg-gray-800/30 shadow-lg shadow-black/40"
           >
-            <div className="relative w-md h-full rounded-3xl overflow-hidden  shadow-lg shadow-black/40 bg-black/50">
-              {/* Image */}
-              <img
-                src={feature.img}
-                alt="Project"
-                className="w-full h-full object-cover"
-              />
-            </div>
+            <img
+              src={site.img}
+              alt={`Project ${i}`}
+              className="w-full h-full object-cover rounded-2xl"
+            />
           </div>
         ))}
       </div>
-      <div className="flex animate-scroll-right whitespace-nowrap">
-        {sites2.map((feature, i) => (
+
+      {/* Second Row */}
+      <div className="flex animate-scroll-right whitespace-nowrap gap-4 sm:gap-6 px-4 mt-6 sm:mt-8">
+        {sites2.map((site, i) => (
           <div
             key={i}
-            className="flex justify-center h-80 lg:justify-start sm:m-5 rounded-3xl p-2 bg-gray-800/30"
+            className="flex justify-center items-center min-w-[280px] sm:min-w-[250px] md:min-w-[380px] h-40 sm:h-52 md:h-64 rounded-2xl overflow-hidden bg-gray-800/30 shadow-lg shadow-black/40"
           >
-            <div className="relative w-md h-full rounded-3xl overflow-hidden  shadow-lg shadow-black/40 bg-black/50">
-              {/* Image */}
-              <img
-                src={feature.img}
-                alt="Project"
-                className="w-full h-full object-cover"
-              />
-            </div>
+            <img
+              src={site.img}
+              alt={`Project ${i}`}
+              className="w-full h-full object-cover rounded-2xl"
+            />
           </div>
         ))}
       </div>

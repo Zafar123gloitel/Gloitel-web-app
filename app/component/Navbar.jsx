@@ -25,15 +25,15 @@ const Navbar = () => {
 
   return (
     <header className="fixed z-50 w-full backdrop-blur-md bg-black/50">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between p-6 lg:px-8 relative">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between p-6 relative">
         {/* Logo */}
         <div className="flex items-center justify-between w-full lg:w-auto">
           <Link href="#" className="p-1.5 mr-10">
             <span className="sr-only">Your Company</span>
             <img
-              src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
+              src="https://framerusercontent.com/images/jQ28grv4AImGE9bV0hXi4CS7AR8.svg"
               alt="Logo"
-              className="h-8 w-auto"
+              className="h-10 w-auto"
             />
           </Link>
 

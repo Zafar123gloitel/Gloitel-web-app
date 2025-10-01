@@ -6,46 +6,50 @@ export const MiddleSectionHeads = ({
   SectionDescription,
 }) => {
   return (
-    <div>
-      <center>
-        <h3 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white">
-          {SectionHead}
-        </h3>
-        <h3 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-gray-400 mt-2">
-          {SectionSubHead}
-        </h3>
+    <div className="flex flex-col items-center text-center px-4 sm:px-6 lg:px-0 max-w-4xl mx-auto mb-5">
+      {/* Section Head */}
+      <h3 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white">
+        {SectionHead}
+      </h3>
 
-        <div className="w-lg">
-          <p className="my-7 sm:mt-6 sm:text-sm lg:text-md text-gray-400">
-            {SectionDescription}
-          </p>
-        </div>
-      </center>
+      {/* Section Sub Head */}
+      <h4 className="text-xl sm:text-2xl lg:text-3xl font-medium text-gray-400 mt-2">
+        {SectionSubHead}
+      </h4>
+
+      {/* Description */}
+      <p className="mt-4 sm:mt-6 text-sm sm:text-base lg:text-lg text-gray-400 leading-relaxed">
+        {SectionDescription}
+      </p>
     </div>
   );
 };
+
 export const LeftSectionHeads = ({
   SectionHead,
   SectionSubHead,
   SectionDescription,
 }) => {
   return (
-    <div>
+    <div className="flex flex-col items-start text-left px-2 sm:px-2 lg:px-0 max-w-4xl">
+      {/* Section Head */}
       <h3 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white">
         {SectionHead}
       </h3>
-      <h3 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-gray-400 mt-2">
-        {SectionSubHead}
-      </h3>
 
-      <div className="w-lg">
-        <p className="my-7 sm:mt-6 sm:text-sm lg:text-md text-gray-400">
-          {SectionDescription}
-        </p>
-      </div>
+      {/* Section Sub Head */}
+      <h4 className="text-xl sm:text-2xl lg:text-3xl font-medium text-gray-400 mt-2">
+        {SectionSubHead}
+      </h4>
+
+      {/* Description */}
+      <p className="mt-4 sm:mt-6 text-sm sm:text-base lg:text-lg text-gray-400 leading-relaxed">
+        {SectionDescription}
+      </p>
     </div>
   );
 };
+
 export const LeftSectionHead2 = ({
   SectionHead,
   SectionSubHead,

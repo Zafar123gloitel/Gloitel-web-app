@@ -3,7 +3,6 @@ import React from "react";
 export const LeftBadge = ({
   HomeAboutBadge,
   AboutBadge,
-  AboutBadge2,
   WorkBadge,
   TestimonialBadge,
   JoinUsNowBadge,
@@ -15,7 +14,6 @@ export const LeftBadge = ({
         <span className="bg-white w-2 h-2 rounded-full inline-block mr-2"></span>
         {HomeAboutBadge}
         {AboutBadge}
-        {AboutBadge2}
         {WorkBadge}
         {TestimonialBadge}
         {JoinUsNowBadge}

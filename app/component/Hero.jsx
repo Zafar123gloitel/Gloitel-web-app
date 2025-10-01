@@ -16,11 +16,14 @@ const Hero = () => {
         muted
         loop
         playsInline
-      ></video>
+      />
+
+      {/* Overlay for better text readability */}
+      <div className="absolute top-0 left-0 w-full h-full bg-black/40 z-5" />
 
       {/* Content Wrapper */}
-      <div className="relative z-10 flex flex-col items-center sm:items-start px-9 sm:px-6 lg:px-52 h-full justify-center text-center sm:text-left">
-        {/* Badge */}
+      <div className="relative z-10 flex flex-col items-center sm:items-start px-4 sm:px-6 lg:px-52 h-full justify-center text-center sm:text-left space-y-6 sm:space-y-8 lg:pt-20">
+        {/* Hero Heading */}
         <HomeHeroHeading
           HomeHeroBadge="Gloitel"
           HomeSubHeroBadge="Technology made with Trust"
@@ -30,14 +33,17 @@ const Hero = () => {
         />
 
         {/* Buttons */}
-        <HeroButton
-          FirstHeroButtonText="Connect With Us"
-          FirstHeroButtonLink="/contact"
-          SecondHeroButtonText="What is Gloitel?"
-          SecondHeroButtonLink="/about"
-        />
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-4 sm:mt-6 w-full sm:w-auto justify-center sm:justify-start">
+          <HeroButton
+            FirstHeroButtonText="Connect With Us"
+            FirstHeroButtonLink="/contact"
+            SecondHeroButtonText="What is Gloitel?"
+            SecondHeroButtonLink="/about"
+          />
+        </div>
+
         {/* Feature Scroll */}
-        <div className="mt-8 relative">
+        <div className="mt-8 w-full sm:w-auto">
           <FeatureScroll />
         </div>
       </div>

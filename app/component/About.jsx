@@ -127,16 +127,12 @@ export const AboutAboutContent = ({
   AboutBadge,
   AboutHeading,
   AboutSubHeading,
-  AboutContents = [], // array of { title, text }
-  AboutButton1,
-  HomeAboutTexts1,
-  // ABOUT SECOND HEADING AND SUB HEADING
-  AboutBadge2,
-  AboutHeading2,
-  AboutSubHeading2,
+  AboutContents1 = [], // array of { title, text }
   AboutContents2 = [], // array of { title, text }
-  AboutButton2,
-  HomeAboutTexts2,
+  ButtonText,
+  Buttonlink,
+  HomeAboutTexts,
+  // ABOUT SECOND HEADING AND SUB HEADING
 }) => {
   return (
     <div className="flex flex-col">
@@ -146,12 +142,10 @@ export const AboutAboutContent = ({
         AboutHeading={AboutHeading}
         AboutSubHeading={AboutSubHeading}
         // ABOUT SECOND HEADING AND SUB HEADING
-        AboutBadge2={AboutBadge2}
-        AboutHeading2={AboutHeading2}
-        AboutSubHeading2={AboutSubHeading2}
+        HomeAboutTexts={HomeAboutTexts}
       />
       {/* Dynamic Content Blocks */}
-      {AboutContents.map((content, i) => (
+      {AboutContents1.map((content, i) => (
         <div key={i} className="mt-4 sm:mt-6">
           {content.title && (
             <p className="text-sm sm:text-base font-semibold lg:text-lg text-white leading-relaxed">
@@ -182,7 +176,7 @@ export const AboutAboutContent = ({
 
       {/* Buttons & Badge */}
       <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-        <GlowButton AboutButton1={AboutButton1} AboutButton2={AboutButton2} />
+        <GlowButton ButtonText={ButtonText} Buttonlink={Buttonlink} />
         <VerticalDivider />
         <div className="ml-5 gap-1">
           <div className="flex flex-row gap-1">
@@ -202,10 +196,7 @@ export const AboutAboutContent = ({
             ))}
           </div>
 
-          <span className="text-gray-400 text-xs sm:text-sm">
-            {HomeAboutTexts1}
-            {HomeAboutTexts2}
-          </span>
+          <span className="text-gray-400 text-xs sm:text-sm">{ButtonText}</span>
         </div>
       </div>
     </div>
@@ -216,22 +207,17 @@ export const AboutAboutContentHead = ({
   AboutBadge,
   AboutHeading,
   AboutSubHeading,
-  AboutBadge2,
-  AboutHeading2,
-  AboutSubHeading2,
 }) => {
   return (
     <div className="flex flex-col">
       {/* Badge */}
-      <LeftBadge AboutBadge2={AboutBadge2} AboutBadge={AboutBadge} />
+      <LeftBadge AboutBadge={AboutBadge} />
       {/* Headings */}
       <h3 className="text-2xl sm:text-3xl lg:text-5xl font-semibold text-white">
         {AboutHeading}
-        {AboutHeading2}
       </h3>
       <h3 className="text-2xl sm:text-3xl lg:text-5xl font-medium text-gray-400 mt-2">
         {AboutSubHeading}
-        {AboutSubHeading2}
       </h3>
     </div>
   );
