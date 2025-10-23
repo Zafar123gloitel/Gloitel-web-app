@@ -1,5 +1,5 @@
 import React from "react";
-import HeroBadge, { HeroBadge2 } from "../component/HeroBadge";
+import { HeroBadge, HeroBadge2 } from "../component/HeroBadge";
 
 export const IntroHead = ({
   HomeHeroBadge,

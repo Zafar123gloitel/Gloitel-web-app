@@ -1,5 +1,4 @@
 import React from "react";
-
 export const HeroBadge = ({ HomeHeroBadge, HomeSubHeroBadge }) => {
   return (
     <div className="mb-6 mx-auto">

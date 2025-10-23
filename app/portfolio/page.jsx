@@ -5,6 +5,7 @@ import { FAQPage } from "../component/Faq";
 import JoinUsNow from "../component/JoinUsNow";
 import Link from "next/link";
 import ProjectShowcase from "../component/ProjectShowcase";
+import { IntroHead2 } from "../uiComponents/Heading";
 
 const AboutPage = () => {
   const [activeCard, setActiveCard] = useState(null);

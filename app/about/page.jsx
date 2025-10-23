@@ -25,42 +25,42 @@ const AboutPage = () => {
       name: "Mr.Durgesh Sahu",
       role: "Director",
       image:
-        "https://framerusercontent.com/images/CVxyC6O4rNzCTwwFaxPLfKZvbI.png",
+        "images/durgesh.avif",
     },
     {
       id: 2,
       name: "Dr(Major) Rakesh Sharma",
       role: "Sr.Medical Auditor",
       image:
-        "https://framerusercontent.com/images/CVxyC6O4rNzCTwwFaxPLfKZvbI.png",
+        "images/2nd.avif",
     },
     {
       id: 3,
       name: "Mr. Janak Sahu",
       role: "Admin & MIS Head",
       image:
-        "https://framerusercontent.com/images/CVxyC6O4rNzCTwwFaxPLfKZvbI.png",
+        "images/3rd.avif",
     },
     {
       id: 4,
       name: "Mr. Shippu Sharma",
       role: "Senior Software Engineer",
       image:
-        "https://framerusercontent.com/images/CVxyC6O4rNzCTwwFaxPLfKZvbI.png",
+        "images/4th.avif",
     },
     {
       id: 5,
       name: "Er. Zafaryab Khan",
       role: "Project Lead",
       image:
-        "https://framerusercontent.com/images/CVxyC6O4rNzCTwwFaxPLfKZvbI.png",
+        "images/5th.avif",
     },
     {
       id: 6,
       name: "Mr. Sandeep",
       role: "Project Manager",
       image:
-        "https://framerusercontent.com/images/CVxyC6O4rNzCTwwFaxPLfKZvbI.png",
+        "images/3rd.avif",
     },
   ];
 
@@ -160,7 +160,7 @@ const AboutPage = () => {
           <AboutAboutImg1 ImgLink="https://framerusercontent.com/images/mwSqQ9UKMvUvejak30qlmlWS8.jpeg?scale-down-to=1024" />
           <AboutAboutContent
             AboutBadge="Gloitel Vision"
-            AboutHeading="Empowering Businesses"
+            AboutHeading="Building Stronger Brands"
             AboutSubHeading="with Innovation"
             AboutContents1={[
               {
