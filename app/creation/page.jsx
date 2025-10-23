@@ -14,7 +14,7 @@ const stages = [
     date: 2018,
     tag: "Web & App Development",
     image:
-      "https://framerusercontent.com/images/mwSqQ9UKMvUvejak30qlmlWS8.jpeg?scale-down-to=1024",
+      "https://framerusercontent.com/images/xpGwa96hllxRWE5U9jMJospzp6U.svg",
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ const stages = [
     date: 2024,
     tag: "Business",
     image:
-      "https://framerusercontent.com/images/mwSqQ9UKMvUvejak30qlmlWS8.jpeg?scale-down-to=1024",
+      "https://framerusercontent.com/images/WfXfrFIeWPtyBBmXf14nAzqCE.png?scale-down-to=1024",
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ const stages = [
     date: 2024,
     tag: "Website",
     image:
-      "https://framerusercontent.com/images/mwSqQ9UKMvUvejak30qlmlWS8.jpeg?scale-down-to=1024",
+      "https://framerusercontent.com/images/fhFIzqKcEbZrZEuZTInMKwucsFc.svg",
   },
   {
     id: 4,
@@ -38,15 +38,14 @@ const stages = [
     date: 2023,
     tag: "Website",
     image:
-      "https://framerusercontent.com/images/mwSqQ9UKMvUvejak30qlmlWS8.jpeg?scale-down-to=1024",
+      "https://framerusercontent.com/images/C5BtcnDdyt5U227QLVwbdEVdM.png?scale-down-to=1024",
   },
   {
     id: 5,
     name: "Godhaar",
     date: 2025,
     tag: "Website & Mobile App",
-    image:
-      "https://framerusercontent.com/images/mwSqQ9UKMvUvejak30qlmlWS8.jpeg?scale-down-to=1024",
+    image: "https://framerusercontent.com/images/UNOYejz09VOe19GlGZe2MTL3o.jpg",
   },
   {
     id: 6,
@@ -54,7 +53,7 @@ const stages = [
     date: 2025,
     tag: "Mobile App & Website",
     image:
-      "https://framerusercontent.com/images/mwSqQ9UKMvUvejak30qlmlWS8.jpeg?scale-down-to=1024",
+      "https://framerusercontent.com/images/XwhaCXBj4aGEbb9myT3ElIE5g8.jpg?scale-down-to=1024",
   },
   {
     id: 7,
@@ -62,7 +61,7 @@ const stages = [
     date: 2024,
     tag: "HMS",
     image:
-      "https://framerusercontent.com/images/mwSqQ9UKMvUvejak30qlmlWS8.jpeg?scale-down-to=1024",
+      "https://framerusercontent.com/images/YGKXMWSnAKUEMWVlTKsVPgZI.jpg?scale-down-to=1024",
   },
   {
     id: 8,
@@ -70,7 +69,7 @@ const stages = [
     date: 2024,
     tag: "CRM",
     image:
-      "https://framerusercontent.com/images/mwSqQ9UKMvUvejak30qlmlWS8.jpeg?scale-down-to=1024",
+      "https://framerusercontent.com/images/ALlFj508wPfIsL4uR1HqpQ5OQ8w.jpg?scale-down-to=1024",
   },
 ];
 const CreationPage = () => {
