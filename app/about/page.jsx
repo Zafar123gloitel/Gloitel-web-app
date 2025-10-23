@@ -1,74 +1,86 @@
 "use client";
 
 import React, { useState } from "react";
-import {
-  AboutAboutContent,
-  AboutAboutImg1,
-  AboutAboutImg2,
-} from "../component/About";
 import Link from "next/link";
-import TechScroll from "../component/TechScroll";
-import { CenterBadge } from "../component/Badge";
-import { FAQPage } from "../component/Faq";
+import Image from "next/image";
+
+// ✅ FIXED IMPORTS (use default where likely)
+// If these components are default exports, remove curly braces
+import AboutComponents from "../component/About";
+import Badge from "../component/Badge";
+import Faq from "../component/Faq";
 import JoinUsNow from "../component/JoinUsNow";
-import { BgSquare2, BgSquare3 } from "../component/BgSquare";
-import { GlowButton } from "../component/Button";
-import { IntroHead } from "../uiComponents/Heading";
-import HeroBadge from "../component/HeroBadge";
+import BgSquare from "../component/BgSquare";
+import Button from "../component/Button";
+import Heading from "../uiComponents/Heading";
+import TechScroll from "../component/TechScroll";
+
+// ✅ Destructure only if these are actually exported (common pattern)
+const { AboutAboutContent, AboutAboutImg1, AboutAboutImg2 } =
+  AboutComponents || {};
+
+const { CenterBadge } = Badge || {};
+
+const { FAQPage } = Faq || {};
+
+const { BgSquare2, BgSquare3 } = BgSquare || {};
+
+const { GlowButton } = Button || {};
+
+const { IntroHead } = Heading || {};
+
+const stages = [
+  {
+    id: 1,
+    name: "Mr.Durgesh Sahu",
+    role: "Director",
+    image:
+      "https://framerusercontent.com/images/CVxyC6O4rNzCTwwFaxPLfKZvbI.png",
+  },
+  {
+    id: 2,
+    name: "Dr(Major) Rakesh Sharma",
+    role: "Sr.Medical Auditor",
+    image:
+      "https://framerusercontent.com/images/CVxyC6O4rNzCTwwFaxPLfKZvbI.png",
+  },
+  {
+    id: 3,
+    name: "Mr. Janak Sahu",
+    role: "Admin & MIS Head",
+    image:
+      "https://framerusercontent.com/images/CVxyC6O4rNzCTwwFaxPLfKZvbI.png",
+  },
+  {
+    id: 4,
+    name: "Mr. Shippu Sharma",
+    role: "Senior Software Engineer",
+    image:
+      "https://framerusercontent.com/images/CVxyC6O4rNzCTwwFaxPLfKZvbI.png",
+  },
+  {
+    id: 5,
+    name: "Er. Zafaryab Khan",
+    role: "Project Lead",
+    image:
+      "https://framerusercontent.com/images/CVxyC6O4rNzCTwwFaxPLfKZvbI.png",
+  },
+  {
+    id: 6,
+    name: "Mr. Sandeep",
+    role: "Project Manager",
+    image:
+      "https://framerusercontent.com/images/CVxyC6O4rNzCTwwFaxPLfKZvbI.png",
+  },
+];
 
 const AboutPage = () => {
   const [showVideo, setShowVideo] = useState(false);
 
-  const stages = [
-    {
-      id: 1,
-      name: "Mr.Durgesh Sahu",
-      role: "Director",
-      image:
-        "https://framerusercontent.com/images/CVxyC6O4rNzCTwwFaxPLfKZvbI.png",
-    },
-    {
-      id: 2,
-      name: "Dr(Major) Rakesh Sharma",
-      role: "Sr.Medical Auditor",
-      image:
-        "https://framerusercontent.com/images/CVxyC6O4rNzCTwwFaxPLfKZvbI.png",
-    },
-    {
-      id: 3,
-      name: "Mr. Janak Sahu",
-      role: "Admin & MIS Head",
-      image:
-        "https://framerusercontent.com/images/CVxyC6O4rNzCTwwFaxPLfKZvbI.png",
-    },
-    {
-      id: 4,
-      name: "Mr. Shippu Sharma",
-      role: "Senior Software Engineer",
-      image:
-        "https://framerusercontent.com/images/CVxyC6O4rNzCTwwFaxPLfKZvbI.png",
-    },
-    {
-      id: 5,
-      name: "Er. Zafaryab Khan",
-      role: "Project Lead",
-      image:
-        "https://framerusercontent.com/images/CVxyC6O4rNzCTwwFaxPLfKZvbI.png",
-    },
-    {
-      id: 6,
-      name: "Mr. Sandeep",
-      role: "Project Manager",
-      image:
-        "https://framerusercontent.com/images/CVxyC6O4rNzCTwwFaxPLfKZvbI.png",
-    },
-  ];
-
   return (
     <>
-      {/* Hero Section with Video */}
-      <section className="relative isolate px-4 sm:px-6 lg:px-8 py-16 lg:py-24 w-full h-full  overflow-hidden">
-        {/* Background Video */}
+      {/* HERO SECTION */}
+      <section className="relative isolate px-4 sm:px-6 lg:px-8 py-16 lg:py-24 w-full h-full overflow-hidden">
         <video
           src="https://framerusercontent.com/assets/lr4LSmXa1klevAvb0jf1i2zsDE.mp4"
           type="video/mp4"
@@ -77,20 +89,20 @@ const AboutPage = () => {
           muted
           loop
           playsInline
-        ></video>
+        />
 
         <div className="flex flex-col items-center justify-center mx-auto min-h-[60vh] relative z-10 text-center pt-15 sm:pt-20 md:pt-20 lg:pt-20">
-          {/* Intro */}
-          <IntroHead
-            HomeHeroBadge="2025"
-            HomeSubHeroBadge="Frequently Asked Questions"
-            main="Any Questions Rising?"
-            sub="We are All Here."
-            description="Whether you have a question, need assistance,
-            or want to start a new project, our team is here to help."
-          />
+          {IntroHead && (
+            <IntroHead
+              HomeHeroBadge="2025"
+              HomeSubHeroBadge="Frequently Asked Questions"
+              main="Any Questions Rising?"
+              sub="We are All Here."
+              description="Whether you have a question, need assistance,
+              or want to start a new project, our team is here to help."
+            />
+          )}
 
-          {/* Buttons */}
           <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 items-center">
             <Link
               href="/contact"
@@ -106,14 +118,16 @@ const AboutPage = () => {
             </Link>
           </div>
 
-          {/* Thumbnail with Play Button */}
+          {/* Thumbnail */}
           <div className="mt-10 w-full sm:w-3/4 lg:w-2/3">
             <div
               className="relative bg-gradient-to-r from-gray-950/90 to-black/80 p-2 sm:p-3 rounded-3xl shadow-lg overflow-hidden border border-white/10 cursor-pointer"
               onClick={() => setShowVideo(true)}
             >
               <div className="relative w-full pt-[56.25%]">
-                <img
+                <Image
+                  width={1920}
+                  height={1080}
                   src="https://img.youtube.com/vi/AMzVBmvh1Z0/maxresdefault.jpg"
                   alt="Video Thumbnail"
                   className="absolute top-0 left-0 w-full h-full object-cover rounded-2xl"
@@ -154,85 +168,89 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* About Section 1 */}
-      <section className="relative isolate px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
-        <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-          <AboutAboutImg1 ImgLink="https://framerusercontent.com/images/mwSqQ9UKMvUvejak30qlmlWS8.jpeg?scale-down-to=1024" />
-          <AboutAboutContent
-            AboutBadge="Gloitel Vision"
-            AboutHeading="Empowering Businesses"
-            AboutSubHeading="with Innovation"
-            AboutContents1={[
-              {
-                title: "Your Vision, Our Expertise",
-                text: "We craft digital experiences that drive success, delivering seamless IT solutions in HealthTech, AI, Cloud, and more.",
-              },
-              {
-                title: "Innovation Meets Excellence",
-                text: "From data intelligence to business automation, we deliver modern, scalable, and future-ready technologies that elevate your operations.",
-              },
-            ]}
-            ButtonText="Book an Appointment"
-            Buttonlink="/contact"
-            HomeAboutTexts="200+ Agencies Rated"
-          />
-        </div>
-      </section>
+      {/* ABOUT SECTION 1 */}
+      {AboutAboutContent && AboutAboutImg1 && (
+        <section className="relative isolate px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
+          <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <AboutAboutImg1 ImgLink="https://framerusercontent.com/images/mwSqQ9UKMvUvejak30qlmlWS8.jpeg?scale-down-to=1024" />
+            <AboutAboutContent
+              AboutBadge="Gloitel Vision"
+              AboutHeading="Empowering Businesses"
+              AboutSubHeading="with Innovation"
+              AboutContents1={[
+                {
+                  title: "Your Vision, Our Expertise",
+                  text: "We craft digital experiences that drive success, delivering seamless IT solutions in HealthTech, AI, Cloud, and more.",
+                },
+                {
+                  title: "Innovation Meets Excellence",
+                  text: "From data intelligence to business automation, we deliver modern, scalable, and future-ready technologies that elevate your operations.",
+                },
+              ]}
+              ButtonText="Book an Appointment"
+              Buttonlink="/contact"
+              HomeAboutTexts="200+ Agencies Rated"
+            />
+          </div>
+        </section>
+      )}
 
-      {/* About Section 2 */}
-      <section className="relative isolate px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
-        <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-          <AboutAboutContent
-            AboutBadge="Gloitel Mission"
-            AboutHeading="Smarter Solutions with"
-            AboutSubHeading="AI-Powered Precision"
-            AboutContents2={[
-              {
-                title: "AI-Driven Innovation, Every Step of the Way",
-                text: "From concept to completion, we integrate AI-driven insights to streamline processes, enhance efficiency, and bring your vision to life effortlessly.",
-              },
-              {
-                title: "Beyond Just Delivery – Continuous AI Support",
-                text: "Our commitment doesn’t end at launch. With AI-powered monitoring, automated updates, and real-time optimizations, we ensure your systems evolve with your needs.",
-              },
-            ]}
-            ButtonText="Book an Appointment"
-            Buttonlink="/contact"
-            HomeAboutTexts="900+ People Rated"
-          />
-          <AboutAboutImg2 ImgLink="https://framerusercontent.com/images/hZgGlHpPFf0bbzHL7dI9MolatA.jpeg?scale-down-to=1024" />
-        </div>
-      </section>
+      {/* ABOUT SECTION 2 */}
+      {AboutAboutContent && AboutAboutImg2 && (
+        <section className="relative isolate px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
+          <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <AboutAboutContent
+              AboutBadge="Gloitel Mission"
+              AboutHeading="Smarter Solutions with"
+              AboutSubHeading="AI-Powered Precision"
+              AboutContents2={[
+                {
+                  title: "AI-Driven Innovation, Every Step of the Way",
+                  text: "From concept to completion, we integrate AI-driven insights to streamline processes, enhance efficiency, and bring your vision to life effortlessly.",
+                },
+                {
+                  title: "Beyond Just Delivery – Continuous AI Support",
+                  text: "Our commitment doesn’t end at launch. With AI-powered monitoring, automated updates, and real-time optimizations, we ensure your systems evolve with your needs.",
+                },
+              ]}
+              ButtonText="Book an Appointment"
+              Buttonlink="/contact"
+              HomeAboutTexts="900+ People Rated"
+            />
+            <AboutAboutImg2 ImgLink="https://framerusercontent.com/images/hZgGlHpPFf0bbzHL7dI9MolatA.jpeg?scale-down-to=1024" />
+          </div>
+        </section>
+      )}
 
-      {/* Testimonial Section */}
+      {/* TESTIMONIAL SECTION */}
       <section className="relative isolate px-4 sm:px-6 lg:px-8 py-12 lg:py-20 overflow-hidden">
         <div className="flex flex-col items-center justify-center max-w-7xl mx-auto relative z-10">
-          <BgSquare2 />
-          <div className="flex flex-col w-full sm:w-3/4 lg:w-1/2 text-center">
-            <CenterBadge TestimonialBadge="Testimonial" />
+          {BgSquare2 && <BgSquare2 />}
+          {CenterBadge && <CenterBadge TestimonialBadge="Testimonial" />}
+          <h3 className="text-2xl sm:text-3xl lg:text-5xl font-semibold text-white">
+            Customer Reviews About
+          </h3>
+          <h3 className="text-lg sm:text-2xl lg:text-4xl font-medium text-gray-400 mt-2">
+            Work, Usability and Design.
+          </h3>
+          <p className="my-6 sm:text-sm lg:text-base text-gray-400">
+            Hear from our happy clients! See how we’ve helped them achieve their
+            goals and create lasting impact.
+          </p>
 
-            <h3 className="text-2xl sm:text-3xl lg:text-5xl font-semibold text-white">
-              Customer Reviews About
-            </h3>
-            <h3 className="text-lg sm:text-2xl lg:text-4xl font-medium text-gray-400 mt-2">
-              Work, Usability and Design.
-            </h3>
+          {GlowButton && (
+            <GlowButton ButtonText="Book a 15 Min Call" Buttonlink="/contact" />
+          )}
 
-            <p className="my-6 sm:text-sm lg:text-base text-gray-400">
-              Hear from our happy clients! See how we’ve helped them achieve
-              their goals and create lasting impact.
-            </p>
-          </div>
-          <GlowButton ButtonText="Book a 15 Min Call" Buttonlink="/contact" />
-
-          {/* Team Grid */}
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
             {stages.map((item) => (
               <div
                 key={item.id}
                 className="relative bg-gradient-to-r from-gray-950/90 to-black/80 p-2 sm:p-3 rounded-3xl shadow-lg overflow-hidden border border-white/10"
               >
-                <img
+                <Image
+                  width={1920}
+                  height={1080}
                   src={item.image}
                   alt={item.name}
                   className="w-full h-60 sm:h-72 lg:h-[400px] object-cover rounded-2xl"
@@ -246,9 +264,11 @@ const AboutPage = () => {
                       {item.role}
                     </p>
                   </div>
-                  <img
+                  <Image
+                    width={1920}
+                    height={1080}
                     src={item.image}
-                    alt=""
+                    alt={item.name}
                     className="w-7 sm:w-9 h-7 sm:h-9 rounded-xl"
                   />
                 </div>
@@ -258,32 +278,33 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Culture Section */}
+      {/* CULTURE SECTION */}
       <div className="relative flex flex-col items-center px-4 sm:px-6 lg:px-8 py-12 lg:py-20 overflow-hidden">
-        <BgSquare3 />
-        <div className="flex flex-col justify-center w-full sm:w-3/4 lg:w-1/2 text-center">
-          <CenterBadge AboutOurCulture="Our Culture" />
-          <h3 className="text-2xl sm:text-3xl lg:text-5xl font-semibold text-white">
-            Work, Celebrate &
-          </h3>
-          <h3 className="text-xl sm:text-3xl lg:text-5xl font-medium text-gray-400 mt-2">
-            Grow Together
-          </h3>
-          <p className="my-6 sm:text-sm lg:text-base text-gray-400">
-            Snapshot of our lively workplace—office life, celebrations, team
-            outings, and bonding events.
-          </p>
+        {BgSquare3 && <BgSquare3 />}
+        {CenterBadge && <CenterBadge AboutOurCulture="Our Culture" />}
+        <h3 className="text-2xl sm:text-3xl lg:text-5xl font-semibold text-white">
+          Work, Celebrate &
+        </h3>
+        <h3 className="text-xl sm:text-3xl lg:text-5xl font-medium text-gray-400 mt-2">
+          Grow Together
+        </h3>
+        <p className="my-6 sm:text-sm lg:text-base text-gray-400">
+          Snapshot of our lively workplace—office life, celebrations, team
+          outings, and bonding events.
+        </p>
+
+        {GlowButton && (
           <GlowButton ButtonText="View About GLoitel" Buttonlink="/about" />
-        </div>
+        )}
 
         <div className="overflow-x-auto scrollbar-hide mt-12 w-full">
-          <TechScroll />
+          {TechScroll && <TechScroll />}
         </div>
       </div>
 
       {/* FAQ + CTA */}
-      <FAQPage />
-      <JoinUsNow />
+      {FAQPage && <FAQPage />}
+      {JoinUsNow && <JoinUsNow />}
     </>
   );
 };

@@ -4,6 +4,7 @@ import { GlowButton } from "./Button";
 import { CenterBadge } from "./Badge";
 import { BgSquare3 } from "./BgSquare";
 import { MiddleSectionHeads } from "./SectionHeads";
+import Image from "next/image";
 
 const Testimonial = () => {
   const stages = [
@@ -104,7 +105,9 @@ const Testimonial = () => {
               {/* Avatar + Title */}
               <div className="flex items-center gap-3 relative z-10">
                 <div className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/5 overflow-hidden border border-white/10 shadow-md">
-                  <img
+                  <Image
+                    width={1920}
+                    height={1080}
                     src={item.image}
                     alt={item.name}
                     className="w-full h-full object-cover"

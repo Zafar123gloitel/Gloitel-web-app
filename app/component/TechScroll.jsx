@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const sites1 = [
@@ -53,7 +54,9 @@ const TechScroll = () => {
             key={i}
             className="flex justify-center items-center min-w-[230px] sm:min-w-[250px] md:min-w-[380px] h-40 sm:h-52 md:h-64 rounded-2xl overflow-hidden bg-gray-800/30 shadow-lg shadow-black/40"
           >
-            <img
+            <Image
+              width={1920}
+              height={1080}
               src={site.img}
               alt={`Project ${i}`}
               className="w-full h-full object-cover rounded-2xl"
@@ -69,7 +72,9 @@ const TechScroll = () => {
             key={i}
             className="flex justify-center items-center min-w-[280px] sm:min-w-[250px] md:min-w-[380px] h-40 sm:h-52 md:h-64 rounded-2xl overflow-hidden bg-gray-800/30 shadow-lg shadow-black/40"
           >
-            <img
+            <Image
+              width={1920}
+              height={1080}
               src={site.img}
               alt={`Project ${i}`}
               className="w-full h-full object-cover rounded-2xl"

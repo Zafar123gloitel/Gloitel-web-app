@@ -1,15 +1,15 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 
 import { FAQPage } from "../component/Faq";
 import JoinUsNow from "../component/JoinUsNow";
-import { GlowButton } from "../component/Button";
+
 import ContactForm from "../component/ContactForm";
 import { HeroVideoBg } from "../component/HeroHead";
 import { IntroHead } from "../uiComponents/Heading";
 
-const AboutPage = () => {
+const ContactPage = () => {
   return (
     <>
       <section className="relative isolate sm:px-6 lg:px-8 py-16 lg:py-30 w-full h-full overflow-hidden">
@@ -37,4 +37,4 @@ const AboutPage = () => {
   );
 };
 
-export default AboutPage;
+export default ContactPage;

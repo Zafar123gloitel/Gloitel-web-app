@@ -1,80 +1,80 @@
 "use client";
 
 import React, { useState } from "react";
+import { IntroHead } from "../uiComponents/Heading";
+import { GlowButton } from "../component/Button";
+import Image from "next/image";
 import { FAQPage } from "../component/Faq";
 import JoinUsNow from "../component/JoinUsNow";
-import { GlowButton } from "../component/Button";
-import { IntroHead } from "../uiComponents/Heading";
 
-const AboutPage = () => {
+const stages = [
+  {
+    id: 1,
+    name: "CGMMSSY",
+    date: 2018,
+    tag: "Web & App Development",
+    image:
+      "https://framerusercontent.com/images/mwSqQ9UKMvUvejak30qlmlWS8.jpeg?scale-down-to=1024",
+  },
+  {
+    id: 2,
+    name: "PATH IAS ACADEMY",
+    date: 2024,
+    tag: "Business",
+    image:
+      "https://framerusercontent.com/images/mwSqQ9UKMvUvejak30qlmlWS8.jpeg?scale-down-to=1024",
+  },
+  {
+    id: 3,
+    name: "HRM TECHNOLOGY",
+    date: 2024,
+    tag: "Website",
+    image:
+      "https://framerusercontent.com/images/mwSqQ9UKMvUvejak30qlmlWS8.jpeg?scale-down-to=1024",
+  },
+  {
+    id: 4,
+    name: "Experteeth",
+    date: 2023,
+    tag: "Website",
+    image:
+      "https://framerusercontent.com/images/mwSqQ9UKMvUvejak30qlmlWS8.jpeg?scale-down-to=1024",
+  },
+  {
+    id: 5,
+    name: "Godhaar",
+    date: 2025,
+    tag: "Website & Mobile App",
+    image:
+      "https://framerusercontent.com/images/mwSqQ9UKMvUvejak30qlmlWS8.jpeg?scale-down-to=1024",
+  },
+  {
+    id: 6,
+    name: "Fitbattle",
+    date: 2025,
+    tag: "Mobile App & Website",
+    image:
+      "https://framerusercontent.com/images/mwSqQ9UKMvUvejak30qlmlWS8.jpeg?scale-down-to=1024",
+  },
+  {
+    id: 7,
+    name: "VIADYAM (HMS)",
+    date: 2024,
+    tag: "HMS",
+    image:
+      "https://framerusercontent.com/images/mwSqQ9UKMvUvejak30qlmlWS8.jpeg?scale-down-to=1024",
+  },
+  {
+    id: 8,
+    name: "STAFFEASE (CRM)",
+    date: 2024,
+    tag: "CRM",
+    image:
+      "https://framerusercontent.com/images/mwSqQ9UKMvUvejak30qlmlWS8.jpeg?scale-down-to=1024",
+  },
+];
+const CreationPage = () => {
   const [activeCard, setActiveCard] = useState(null);
-
-  const stages = [
-    {
-      id: 1,
-      name: "CGMMSSY",
-      date: 2018,
-      tag: "Web & App Development",
-      image:
-        "https://framerusercontent.com/images/mwSqQ9UKMvUvejak30qlmlWS8.jpeg?scale-down-to=1024",
-    },
-    {
-      id: 2,
-      name: "PATH IAS ACADEMY",
-      date: 2024,
-      tag: "Business",
-      image:
-        "https://framerusercontent.com/images/mwSqQ9UKMvUvejak30qlmlWS8.jpeg?scale-down-to=1024",
-    },
-    {
-      id: 3,
-      name: "HRM TECHNOLOGY",
-      date: 2024,
-      tag: "Website",
-      image:
-        "https://framerusercontent.com/images/mwSqQ9UKMvUvejak30qlmlWS8.jpeg?scale-down-to=1024",
-    },
-    {
-      id: 4,
-      name: "Experteeth",
-      date: 2023,
-      tag: "Website",
-      image:
-        "https://framerusercontent.com/images/mwSqQ9UKMvUvejak30qlmlWS8.jpeg?scale-down-to=1024",
-    },
-    {
-      id: 5,
-      name: "Godhaar",
-      date: 2025,
-      tag: "Website & Mobile App",
-      image:
-        "https://framerusercontent.com/images/mwSqQ9UKMvUvejak30qlmlWS8.jpeg?scale-down-to=1024",
-    },
-    {
-      id: 6,
-      name: "Fitbattle",
-      date: 2025,
-      tag: "Mobile App & Website",
-      image:
-        "https://framerusercontent.com/images/mwSqQ9UKMvUvejak30qlmlWS8.jpeg?scale-down-to=1024",
-    },
-    {
-      id: 7,
-      name: "VIADYAM (HMS)",
-      date: 2024,
-      tag: "HMS",
-      image:
-        "https://framerusercontent.com/images/mwSqQ9UKMvUvejak30qlmlWS8.jpeg?scale-down-to=1024",
-    },
-    {
-      id: 8,
-      name: "STAFFEASE (CRM)",
-      date: 2024,
-      tag: "CRM",
-      image:
-        "https://framerusercontent.com/images/mwSqQ9UKMvUvejak30qlmlWS8.jpeg?scale-down-to=1024",
-    },
-  ];
 
   return (
     <>
@@ -93,14 +93,14 @@ const AboutPage = () => {
         <div className="flex flex-col items-center justify-center mx-auto min-h-[60vh] relative z-10 pt-15 sm:pt-20 md:pt-20 lg:pt-20">
           {/* Intro */}
           <div className="flex flex-col w-full text-center">
-            <IntroHead
+            {/* <IntroHead
               HomeHeroBadge="Explore"
               HomeSubHeroBadge="Our Homegrown Products"
               main="Check Out Some"
               sub="Extra-Ordinary Work."
               description="From startups to established brands, we create 
               tailored solutions that drive success and make a real impact."
-            />
+            /> */}
           </div>
 
           {/* Buttons */}
@@ -122,7 +122,9 @@ const AboutPage = () => {
                 }
               >
                 {/* Image */}
-                <img
+                <Image
+                  width={1920}
+                  height={1080}
                   src={item.image}
                   alt={item.name}
                   className="w-full h-60 sm:h-72 md:h-80 lg:h-96 object-cover rounded-xl sm:rounded-2xl 
@@ -153,11 +155,7 @@ const AboutPage = () => {
                 <div
                   className={`
                     absolute top-0 right-0 m-2 sm:m-4 transition-all duration-500 ease-out
-                    ${
-                      activeCard === item.id
-                        ? "translate-y-0 opacity-100"
-                        : "-translate-y-full opacity-0"
-                    }
+                    ${activeCard === item.id ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"}
                     group-hover:translate-y-0 group-hover:opacity-100
                   `}
                 >
@@ -180,4 +178,4 @@ const AboutPage = () => {
   );
 };
 
-export default AboutPage;
+export default CreationPage;

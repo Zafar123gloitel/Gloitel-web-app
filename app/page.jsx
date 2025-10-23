@@ -18,6 +18,7 @@ import { CenterBadge, LeftBadge } from "./component/Badge";
 import { GlowButton, WhiteButton } from "./component/Button";
 import { BgSquare2 } from "./component/BgSquare";
 import ServiceCard from "./component/serviceCard";
+import Image from "next/image";
 
 const HomePage = () => {
   const benefitsBadge = [
@@ -180,7 +181,9 @@ const HomePage = () => {
           <div className="mt-10 sm:mt-12 w-full px-4 sm:px-8 md:px-16">
             <div className="relative bg-gradient-to-r from-gray-950/90 to-black/80 p-2 sm:p-3 rounded-3xl shadow-lg overflow-hidden border border-white/10 cursor-pointer">
               <div className="relative w-full pt-[56.25%]">
-                <img
+                <Image
+                  width={1920}
+                  height={1080}
                   src="https://framerusercontent.com/images/yV5q5tRVYanZRx5SyKhVIHDbi0.jpg?scale-down-to-1024"
                   alt="Video Thumbnail"
                   className="absolute top-0 left-0 w-full h-full object-cover rounded-2xl"
