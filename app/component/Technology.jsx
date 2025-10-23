@@ -4,6 +4,7 @@ import { CenterBadge } from "./Badge";
 import { BgSquare2 } from "./BgSquare";
 import { MiddleSectionHeads } from "./SectionHeads";
 import { GlowButton } from "./Button";
+import Image from "next/image";
 
 const Technology = () => {
   const stages = [
@@ -88,7 +89,13 @@ const Technology = () => {
               {/* Stage header */}
               <div className="flex items-center justify-between relative z-10">
                 <div className="flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-white/5 text-blue-400 shadow-[0_0_25px_rgba(59,130,246,0.3)]">
-                  <img src={item.img} alt="" className="rounded-full" />
+                  <Image
+                    width={1920}
+                    height={1080}
+                    src={item.img}
+                    alt=""
+                    className="rounded-full"
+                  />
                 </div>
                 <span className="px-3 py-1 text-xs sm:text-sm rounded-md bg-white/5 text-gray-300 shadow-inner">
                   {item.stage}

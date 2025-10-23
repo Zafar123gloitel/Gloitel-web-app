@@ -14,7 +14,6 @@ import JoinUsNow from "../component/JoinUsNow";
 import { BgSquare2, BgSquare3 } from "../component/BgSquare";
 import { GlowButton } from "../component/Button";
 import { IntroHead } from "../uiComponents/Heading";
-import HeroBadge from "../component/HeroBadge";
 
 const AboutPage = () => {
   const [showVideo, setShowVideo] = useState(false);
@@ -24,44 +23,38 @@ const AboutPage = () => {
       id: 1,
       name: "Mr.Durgesh Sahu",
       role: "Director",
-      image:
-        "images/durgesh.avif",
+      image: "images/durgesh.avif",
     },
     {
       id: 2,
       name: "Dr(Major) Rakesh Sharma",
       role: "Sr.Medical Auditor",
-      image:
-        "images/2nd.avif",
+      image: "images/2nd.avif",
     },
     {
       id: 3,
       name: "Mr. Janak Sahu",
       role: "Admin & MIS Head",
-      image:
-        "images/3rd.avif",
+      image: "images/3rd.avif",
     },
     {
       id: 4,
       name: "Mr. Shippu Sharma",
       role: "Senior Software Engineer",
-      image:
-        "images/4th.avif",
+      image: "images/4th.avif",
     },
     {
       id: 5,
       name: "Er. Zafaryab Khan",
       role: "Project Lead",
-      image:
-        "images/5th.avif",
+      image: "images/5th.avif",
     },
-    {
-      id: 6,
-      name: "Mr. Sandeep",
-      role: "Project Manager",
-      image:
-        "images/3rd.avif",
-    },
+    // {
+    //   id: 6,
+    //   name: "Mr. Sandeep",
+    //   role: "Project Manager",
+    //   image: "images/3rd.avif",
+    // },
   ];
 
   return (
@@ -226,7 +219,8 @@ const AboutPage = () => {
           <GlowButton ButtonText="Book a 15 Min Call" Buttonlink="/contact" />
 
           {/* Team Grid */}
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+          {/* grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 */}
+          <div className="mt-12 flex flex-wrap justify-center gap-6 w-full">
             {stages.map((item) => (
               <div
                 key={item.id}

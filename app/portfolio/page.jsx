@@ -6,6 +6,7 @@ import JoinUsNow from "../component/JoinUsNow";
 import Link from "next/link";
 import ProjectShowcase from "../component/ProjectShowcase";
 import { IntroHead2 } from "../uiComponents/Heading";
+import Image from "next/image";
 
 const AboutPage = () => {
   const [activeCard, setActiveCard] = useState(null);
@@ -133,7 +134,7 @@ const AboutPage = () => {
 
                 {/* View Live Website Button */}
                 <Link
-                  href=""
+                  href="https://www.cgmmssy.in/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200"
@@ -151,7 +152,9 @@ const AboutPage = () => {
               onClick={() => setShowVideo(true)}
             >
               <div className="relative w-full pt-[56.25%]">
-                <img
+                <Image
+                  width={1920}
+                  height={1080}
                   src="https://framerusercontent.com/images/xpGwa96hllxRWE5U9jMJospzp6U.svg"
                   alt="Video Thumbnail"
                   className="absolute top-0 left-0 w-full h-full object-cover rounded-2xl"

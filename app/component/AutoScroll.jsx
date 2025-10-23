@@ -1,4 +1,5 @@
 // components/AutoScrollCarousel.jsx
+import Image from "next/image";
 import React from "react";
 
 const features = [
@@ -45,7 +46,9 @@ const AutoScroll = () => {
             {/* Card */}
             <div className="relative w-72 sm:w-80 md:w-120 h-full rounded-3xl overflow-hidden shadow-lg shadow-black/40 bg-white/50">
               {/* Image */}
-              <img
+              <Image
+                width={1920}
+                height={1080}
                 src={feature.img}
                 alt="Project"
                 className="w-full h-[470px] object-cover"

@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import { usePathname } from "next/navigation";
 import { VerticalDivider } from "./SectionDivider";
 import { HeaderButton } from "./Button";
+import Image from "next/image";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -31,7 +32,9 @@ const Navbar = () => {
         <div className="flex items-center justify-between w-full lg:w-auto">
           <Link href="#" className="p-1.5 mr-10">
             <span className="sr-only">Your Company</span>
-            <img
+            <Image
+              width={1920}
+              height={1080}
               src="https://framerusercontent.com/images/jQ28grv4AImGE9bV0hXi4CS7AR8.svg"
               alt="Logo"
               className="h-10 w-auto"

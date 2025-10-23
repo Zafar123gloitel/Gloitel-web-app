@@ -1,4 +1,5 @@
 // components/AutoScrollCarousel.jsx
+import Image from "next/image";
 import React from "react";
 
 const logo = [
@@ -24,7 +25,13 @@ const FeatureScroll = () => {
         <div className="flex animate-scroll w-5xl whitespace-nowrap">
           {logo.map((img, i) => (
             <div key={i} className="w-6xl relative overflow-hidden m-2 ">
-              <img src={img.link} alt="Project" className="w-80 object-cover" />
+              <Image
+                width={1920}
+                height={1080}
+                src={img.link}
+                alt="Project"
+                className="w-80 object-cover"
+              />
             </div>
           ))}
         </div>

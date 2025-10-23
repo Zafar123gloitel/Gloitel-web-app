@@ -43,7 +43,7 @@ const JoinUsNow = () => {
             {/* CTA Button */}
             <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
-                href="#"
+                href="/about"
                 className="relative rounded-md bg-blue-700 px-5 py-2.5 text-sm sm:text-base lg:text-lg text-white 
                  transition duration-300 ease-in-out
                  focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 
