@@ -1,6 +1,7 @@
+import Image from "next/image";
 import React from "react";
 
-const sites1 = [
+const GalleryOne = [
   {
     img: "https://framerusercontent.com/images/1pPSjGU4S4FI7ghr7qYd1SZwjo.webp",
   },
@@ -21,7 +22,7 @@ const sites1 = [
   },
 ];
 
-const sites2 = [
+const GalleryTwo = [
   {
     img: "https://framerusercontent.com/images/Ec08xgiQaFXy7irJTBteA9eFCRM.webp",
   },
@@ -45,35 +46,43 @@ const sites2 = [
 
 const TechScroll = () => {
   return (
-    <div className="relative overflow-hidden w-full py-6 sm:py-10">
+    <div className="relative overflow-hidden w-full py-6 sm:py-8">
       {/* First Row */}
-      <div className="flex animate-scroll whitespace-nowrap gap-4 sm:gap-6 px-4">
-        {sites1.map((site, i) => (
+      <div className="flex animate-scroll whitespace-nowrap gap-4 sm:gap-4 px-4">
+        {GalleryOne.map((site, i) => (
           <div
             key={i}
-            className="flex justify-center items-center min-w-[230px] sm:min-w-[250px] md:min-w-[380px] h-40 sm:h-52 md:h-64 rounded-2xl overflow-hidden bg-gray-800/30 shadow-lg shadow-black/40"
+            className="flex justify-center items-center min-w-[230px] sm:min-w-[250px] md:min-w-[400px] h-40 sm:h-52 md:h-80 
+             rounded-4xl overflow-hidden bg-black/20 shadow-lg shadow-black/40 
+             border-2 border-white/5 p-2 sm:p-3 md:p-2"
           >
-            <img
-              src={site.img}
-              alt={`Project ${i}`}
-              className="w-full h-full object-cover rounded-2xl"
-            />
+            <div className="relative w-full h-full rounded-3xl overflow-hidden border border-white/5 bg-gray-800/50">
+              <img
+                src={site.img}
+                alt={`Project ${i}`}
+                className="w-full h-full object-cover rounded-xl"
+              />
+            </div>
           </div>
         ))}
       </div>
 
       {/* Second Row */}
       <div className="flex animate-scroll-right whitespace-nowrap gap-4 sm:gap-6 px-4 mt-6 sm:mt-8">
-        {sites2.map((site, i) => (
+        {GalleryTwo.map((site, i) => (
           <div
             key={i}
-            className="flex justify-center items-center min-w-[280px] sm:min-w-[250px] md:min-w-[380px] h-40 sm:h-52 md:h-64 rounded-2xl overflow-hidden bg-gray-800/30 shadow-lg shadow-black/40"
+            className="flex justify-center items-center min-w-[230px] sm:min-w-[250px] md:min-w-[400px] h-40 sm:h-52 md:h-80 
+             rounded-4xl overflow-hidden bg-black/20 shadow-lg shadow-black/40 
+             border-2 border-white/5 p-2 sm:p-3 md:p-2"
           >
-            <img
-              src={site.img}
-              alt={`Project ${i}`}
-              className="w-full h-full object-cover rounded-2xl"
-            />
+            <div className="relative w-full h-full rounded-3xl overflow-hidden border border-white/5 bg-gray-800/50">
+              <img
+                src={site.img}
+                alt={`Project ${i}`}
+                className="w-full h-full object-cover rounded-2xl"
+              />
+            </div>
           </div>
         ))}
       </div>

@@ -4,6 +4,7 @@ import { CenterBadge } from "./Badge";
 import { BgSquare2 } from "./BgSquare";
 import { MiddleSectionHeads } from "./SectionHeads";
 import { GlowButton } from "./Button";
+import { ArrowUpRight, MoveUpRight } from "lucide-react";
 
 const Technology = () => {
   const stages = [
@@ -78,9 +79,10 @@ const Technology = () => {
         {/* GRID */}
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
           {stages.map((item) => (
-            <div
+            <Link
               key={item.id}
-              className="relative p-6 sm:p-8 rounded-2xl bg-black/40 backdrop-blur-md shadow-lg overflow-hidden border border-white/10"
+              href={"/contact"} // make sure each item has an href property
+              className="group relative p-6 sm:p-8 rounded-2xl bg-black/40 backdrop-blur-md shadow-lg overflow-hidden border border-white/10 transition-transform"
             >
               {/* Gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-br from-blue-900/40 via-indigo-800/20 to-transparent opacity-50 rounded-2xl pointer-events-none"></div>
@@ -90,23 +92,23 @@ const Technology = () => {
                 <div className="flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-white/5 text-blue-400 shadow-[0_0_25px_rgba(59,130,246,0.3)]">
                   <img src={item.img} alt="" className="rounded-full" />
                 </div>
-                <span className="px-3 py-1 text-xs sm:text-sm rounded-md bg-white/5 text-gray-300 shadow-inner">
-                  {item.stage}
-                </span>
+
+                {/* Arrow Icon with hover color change */}
+                <ArrowUpRight className="w-6 h-6 text-white/30 transition-colors duration-300 group-hover:text-white/60" />
               </div>
 
               {/* Title */}
-              <h3 className="my-4 sm:my-6 text-lg sm:text-xl font-semibold text-white relative z-10">
+              <h3 className="my-4 sm:my-6 text-md sm:text-lg font-semibold text-white relative z-10">
                 {item.title}
               </h3>
 
               <div className="w-full h-px bg-gradient-to-r from-white/10 to-transparent my-3 relative z-10"></div>
 
               {/* Description */}
-              <p className="text-gray-300 text-sm sm:text-base leading-relaxed relative z-10">
+              <p className="text-gray-400 text-sm sm:text-base leading-relaxed relative z-10">
                 {item.description}
               </p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

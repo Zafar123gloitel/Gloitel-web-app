@@ -7,7 +7,7 @@ export const GlowButton = ({ ButtonText, Buttonlink }) => {
     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
       <Link
         href={Buttonlink || "#"}
-        className="relative rounded-md bg-blue-700 px-3 py-2 text-md sm:text-lg text-white 
+        className="border-3 border-white/10 relative rounded-lg bg-blue-700 px-3 py-2 text-md sm:text-md text-white 
                  shadow-[0_0_25px_rgba(59,130,246,0.7)]
                  transition duration-300 ease-in-out
                  focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"

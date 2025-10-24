@@ -10,17 +10,10 @@ export default function ServiceCard({
   badge,
 }) {
   return (
-    <div className="bg-gradient-to-tr from-blue-900/40 via-indigo-800/20 to-transparent rounded-3xl p-6 shadow-[0_0_40px_rgba(0,0,0,0.6)] flex flex-col justify-between transition hover:scale-[1.02] hover:shadow-[0_0_50px_rgba(37,99,235,0.4)] duration-300">
+    <div className="bg-gradient-to-tr from-blue-900/40 via-indigo-800/20 to-transparent rounded-3xl p-6 shadow-[0_0_40px_rgba(0,0,0,0.6)] flex flex-col justify-between transition">
       {/* Image */}
       <div className="relative w-full h-72 rounded-2xl overflow-hidden">
-        <img
-          src={image}
-          alt={title}
-          className="object-cover w-full h-full"
-          // sizes="(max-width: 768px) 100vw,
-          //        (max-width: 1200px) 50vw,
-          //        33vw"
-        />
+        <img src={image} alt={title} className="object-cover w-full h-full" />
       </div>
 
       {/* Content */}

@@ -1,12 +1,11 @@
 import React from "react";
 import FeatureScroll from "./FeatureScroll";
-import HeroBadge from "./HeroBadge";
 import { HeroButton } from "./Button";
 import { HomeHeroHeading } from "./HeroHead";
 
 const Hero = () => {
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <div className="relative w-full max-h-screen overflow-hidden">
       {/* Background Video */}
       <video
         src="https://framerusercontent.com/assets/lr4LSmXa1klevAvb0jf1i2zsDE.mp4"

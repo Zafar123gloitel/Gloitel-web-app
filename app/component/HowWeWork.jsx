@@ -17,19 +17,19 @@ const stages = [
   },
   {
     id: 2,
-    title: "Design",
+    title: "Execution",
     stage: "Stage 2",
     description:
-      "Crafting engaging and user-friendly interfaces that align with your brand identity while ensuring accessibility and responsiveness across devices.",
-    points: ["UI/UX Design", "Brand Consistency"],
+      "With a well-defined strategy, our expert team efficiently brings ideas to life, leveraging cutting-edge technologies and collaboration to deliver seamless implementation.",
+    points: ["Seamless Integration", "Real Time Collaboration"],
   },
   {
     id: 3,
-    title: "Development",
+    title: "Development & Deliver",
     stage: "Stage 3",
     description:
-      "Building robust and scalable applications using modern technologies, focusing on performance, security, and maintainability.",
-    points: ["Clean Code", "Scalable Architecture"],
+      "We follow a structured approach to develop, test, and optimize your IT solution, ensuring quality, security, and performance. Most importantly, we deliver on time—exactly as committed! 🚀 plus post-development support.",
+    points: ["Ongoing Support", "Documentation"],
     ButtonText: "Book An Appoitnment",
     ButtonTextLink: "/contact",
   },

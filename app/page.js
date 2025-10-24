@@ -83,13 +83,13 @@ const HomePage = () => {
       <section className="relative isolate px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
         <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Image */}
-          <HomeAboutImg ImgLink="https://framerusercontent.com/images/mwSqQ9UKMvUvejak30qlmlWS8.jpeg?scale-down-to-1024" />
+          <HomeAboutImg ImgLink="https://framerusercontent.com/images/Qnjbg5sx80zqC8P7TMF9g3DgCA.jpeg?scale-down-to=1024" />
 
           {/* Content */}
           <HomeAboutContent
-            HomeAboutBadge="Gloitel Vision"
-            homeAboutHeading="Empowering Businesses"
-            HomeAboutSubHeading="with Innovation"
+            HomeAboutBadge="About Gloitel"
+            homeAboutHeading="Building Stronger Brands"
+            HomeAboutSubHeading="Creating Impressions"
             HomeAboutDescription="Gloitel is a leading IT company offering website development, mobile apps, and AI solutions. We create innovative, scalable, and smart digital experiences for businesses."
             HomeAboutFeatures={[
               { title: "Web & App Development" },

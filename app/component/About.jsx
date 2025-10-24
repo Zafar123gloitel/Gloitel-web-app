@@ -92,7 +92,7 @@ export const HomeAboutContentHead = ({
       {/* Badge */}
       <LeftBadge HomeAboutBadge={HomeAboutBadge} />
       {/* Headings */}
-      <h3 className="text-2xl sm:text-3xl lg:text-5xl font-semibold text-white">
+      <h3 className="text-2xl sm:text-3xl lg:text-5xl font-medium text-white">
         {homeAboutHeading}
       </h3>
       <h3 className="text-2xl sm:text-3xl lg:text-5xl font-medium text-gray-400 mt-2">

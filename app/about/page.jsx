@@ -83,9 +83,9 @@ const AboutPage = () => {
           {/* Intro */}
           <IntroHead
             HomeHeroBadge="2025"
-            HomeSubHeroBadge="Frequently Asked Questions"
-            main="Any Questions Rising?"
-            sub="We are All Here."
+            HomeSubHeroBadge="Dig Deep About Us"
+            main="Learn More About Gloitel"
+            sub="Let's Deep Dive!"
             description="Whether you have a question, need assistance,
             or want to start a new project, our team is here to help."
           />

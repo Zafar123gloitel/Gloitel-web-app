@@ -25,7 +25,7 @@ const Navbar = () => {
       : "text-white/60 hover:text-white transition";
 
   return (
-    <header className="fixed z-50 w-full backdrop-blur-md bg-black/50">
+    <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-black/50">
       <nav className="mx-auto flex max-w-6xl items-center justify-between p-6 relative">
         {/* Logo */}
         <div className="flex items-center justify-between w-full lg:w-auto">
