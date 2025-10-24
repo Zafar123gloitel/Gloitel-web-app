@@ -40,36 +40,36 @@ const AutoScroll = () => {
         {features.map((feature, i) => (
           <div
             key={i}
-            className="flex justify-center lg:justify-start px-3 sm:px-5"
+            className="flex justify-center lg:justify-start px-3 sm:px-5 bg-black"
           >
             {/* Card */}
-            <div className="relative w-72 sm:w-80 md:w-120 h-full rounded-3xl overflow-hidden shadow-lg shadow-black/40 bg-white/50">
+            <div className="relative w-72 sm:w-80 md:w-120 h-full rounded-4xl overflow-hidden p-3 bg-neutral-950 border border-white/5 ">
               {/* Image */}
               <img
                 src={feature.img}
                 alt="Project"
-                className="w-full h-[470px] object-cover"
+                className="w-full h-[470px] object-cover rounded-3xl"
               />
 
               {/* Overlay */}
-              <div className="absolute inset-x-0 bottom-0 m-3 rounded-xl bg-black p-4">
+              <div className="absolute inset-x-0 bottom-0 m-5 bg-neutral-950 p-4 bg rounded-xl">
                 {/* Title */}
-                <h3 className="text-base sm:text-lg md:text-xl font-semibold text-white uppercase mb-2">
+                <h3 className="text-base sm:text-md md:text-lg font-medium text-white uppercase mb-2">
                   {feature.title}
                 </h3>
                 <hr className="border-white/10 mb-2" />
 
                 {/* Subtitle */}
-                <p className="text-xs sm:text-sm md:text-base text-gray-300">
+                <p className="text-xs sm:text-sm md:text-base text-gray-400">
                   {feature.subTitle}
                 </p>
 
                 {/* Stats */}
                 <div className="flex flex-wrap gap-2 mt-3">
-                  <span className="px-3 py-1 text-xs sm:text-sm font-medium rounded-md bg-white/10 text-gray-300 border border-white/5">
+                  <span className="px-3 py-1 text-xs sm:text-sm font-medium rounded-md bg-white/5 text-gray-400 border border-white/5">
                     {feature.feature1}
                   </span>
-                  <span className="px-3 py-1 text-xs sm:text-sm font-medium rounded-md bg-white/10 text-gray-300 border border-white/5">
+                  <span className="px-3 py-1 text-xs sm:text-sm font-medium rounded-md bg-white/5 text-gray-400 border border-white/5">
                     {feature.feature2}
                   </span>
                 </div>

@@ -141,14 +141,12 @@ export const AboutAboutContent = ({
         AboutBadge={AboutBadge}
         AboutHeading={AboutHeading}
         AboutSubHeading={AboutSubHeading}
-        // ABOUT SECOND HEADING AND SUB HEADING
-        HomeAboutTexts={HomeAboutTexts}
       />
       {/* Dynamic Content Blocks */}
       {AboutContents1.map((content, i) => (
         <div key={i} className="mt-4 sm:mt-6">
           {content.title && (
-            <p className="text-sm sm:text-base font-semibold lg:text-lg text-white leading-relaxed">
+            <p className="text-sm sm:text-base font-medium lg:text-lg text-white leading-relaxed">
               {content.title}
             </p>
           )}
@@ -162,7 +160,7 @@ export const AboutAboutContent = ({
       {AboutContents2.map((content, i) => (
         <div key={i} className="mt-4 sm:mt-6">
           {content.title && (
-            <p className="text-sm sm:text-base font-semibold lg:text-lg text-white leading-relaxed">
+            <p className="text-sm sm:text-base font-medium lg:text-lg text-white leading-relaxed">
               {content.title}
             </p>
           )}
@@ -196,7 +194,9 @@ export const AboutAboutContent = ({
             ))}
           </div>
 
-          <span className="text-gray-400 text-xs sm:text-sm">{ButtonText}</span>
+          <span className="text-gray-400 text-xs sm:text-sm">
+            {HomeAboutTexts}
+          </span>
         </div>
       </div>
     </div>
@@ -213,7 +213,7 @@ export const AboutAboutContentHead = ({
       {/* Badge */}
       <LeftBadge AboutBadge={AboutBadge} />
       {/* Headings */}
-      <h3 className="text-2xl sm:text-3xl lg:text-5xl font-semibold text-white">
+      <h3 className="text-2xl sm:text-3xl lg:text-5xl font-medium text-white">
         {AboutHeading}
       </h3>
       <h3 className="text-2xl sm:text-3xl lg:text-5xl font-medium text-gray-400 mt-2">

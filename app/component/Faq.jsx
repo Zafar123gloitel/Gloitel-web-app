@@ -55,7 +55,7 @@ export const FAQPage = () => {
 
   return (
     <section className="py-16 px-6 sm:px-12 lg:px-24 min-h-screen flex items-center ">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 w-6xl">
         {/* Left Side - Heading */}
         <div className="lg:col-span-5 flex flex-col ">
           {/* Badge */}
@@ -64,7 +64,7 @@ export const FAQPage = () => {
             <LeftBadge FaqBadge="FAQ" />
 
             {/* Headings */}
-            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white">
+            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-white">
               Frequently
             </h3>
             <h3 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-gray-400 mt-2">
@@ -72,10 +72,12 @@ export const FAQPage = () => {
             </h3>
 
             {/* Description */}
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-gray-400 max-w-2xl">
-              WHave questions? Our FAQ section has you covered with quick
-              answers to the most common inquiries.
-            </p>
+            <div>
+              <p className="mt-4 sm:mt-6 text-base sm:text-lg text-gray-400 max-w-2xl">
+                Have questions? Our FAQ section has you covered with quick
+                answers to the most common inquiries.
+              </p>
+            </div>
           </div>
         </div>
 

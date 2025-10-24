@@ -1,13 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { VerticalDivider } from "./SectionDivider";
 import { HeaderButton } from "./Button";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isHidden, setIsHidden] = useState(false); // new state for scroll
   const pathname = usePathname();
 
   const links = [
@@ -16,16 +17,43 @@ const Navbar = () => {
     { href: "/creation", label: "Our Creations" },
     { href: "/contact", label: "Contact" },
     { href: "/faq", label: "FAQ" },
-    { href: "/portfolio", label: "Portfolio" },
+    // { href: "/portfolio", label: "Portfolio" },
   ];
 
   const getLinkClasses = (href) =>
     pathname === href
-      ? "text-white "
+      ? "text-white"
       : "text-white/60 hover:text-white transition";
 
+  // Track scroll direction
+  useEffect(() => {
+    let lastScroll = 0;
+
+    const handleScroll = () => {
+      const currentScroll = window.scrollY;
+
+      if (currentScroll > lastScroll && currentScroll > 50) {
+        // Scrolling down
+        setIsHidden(true);
+      } else {
+        // Scrolling up
+        setIsHidden(false);
+      }
+
+      lastScroll = currentScroll;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-black/50">
+    <header
+      className={`fixed top-0 w-full z-50 backdrop-blur-md bg-black/50 transition-transform duration-300 ${
+        isHidden ? "-translate-y-full" : "translate-y-0"
+      }`}
+    >
       <nav className="mx-auto flex max-w-6xl items-center justify-between p-6 relative">
         {/* Logo */}
         <div className="flex items-center justify-between w-full lg:w-auto">

@@ -5,7 +5,7 @@ import { CenterBadge } from "./Badge";
 const JoinUsNow = () => {
   return (
     <section className="relative isolate px-4 sm:px-6 lg:px-8 py-12 lg:py-20 overflow-hidden">
-      <div className="flex flex-col items-center justify-center max-w-7xl mx-auto relative z-10">
+      <div className="flex flex-col items-center justify-center max-w-6xl mx-auto relative z-10">
         {/* Video Container */}
         <div className="relative w-full h-[320px] sm:h-[400px] lg:h-[450px] rounded-2xl overflow-hidden shadow-lg">
           {/* Background video */}

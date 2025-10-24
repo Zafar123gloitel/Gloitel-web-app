@@ -5,6 +5,14 @@ import { CenterBadge } from "./Badge";
 import { BgSquare3 } from "./BgSquare";
 import { MiddleSectionHeads } from "./SectionHeads";
 import Link from "next/link";
+import {
+  Instagram,
+  Linkedin,
+  LinkedinIcon,
+  Rocket,
+  Spline,
+  WandSparkles,
+} from "lucide-react";
 
 const Testimonial = () => {
   const stages = [
@@ -18,6 +26,7 @@ const Testimonial = () => {
       image:
         "https://framerusercontent.com/images/CVxyC6O4rNzCTwwFaxPLfKZvbI.png",
       link: "https://bni-raipur.in/en-IN/memberdetails?encryptedMemberId=cAXuT0G5qYZ5FBgbFbtsgQ%3D%3D&name=Satish+Kumar+Kashyap",
+      icon: <Spline />,
     },
     {
       id: 2,
@@ -29,6 +38,7 @@ const Testimonial = () => {
       image:
         "https://framerusercontent.com/images/4I620ynK1R7TN6BYh1FPWmvkGY.jpg",
       link: "https://www.linkedin.com/in/dr-hamid-khan-59923a14a/?originalSubdomain=in&original_referer=https%3A%2F%2Fgloitel.framer.website%2F",
+      icon: <Linkedin />,
     },
     {
       id: 3,
@@ -40,6 +50,7 @@ const Testimonial = () => {
       image:
         "https://framerusercontent.com/images/hrEHI2jQbr3u9bx4ki6wQ9uN8fU.jpg",
       link: "https://rocketreach.co/rajeshwar-agarwal-email_60747941",
+      icon: <Rocket />,
     },
     {
       id: 4,
@@ -51,6 +62,7 @@ const Testimonial = () => {
       image:
         "https://framerusercontent.com/images/Tj9MWSq6ff0loshbSVdXIPByocY.png",
       link: "https://www.instagram.com/experteeth_official/",
+      icon: <Instagram />,
     },
     {
       id: 5,
@@ -62,6 +74,7 @@ const Testimonial = () => {
       image:
         "https://framerusercontent.com/images/rfyfcmfoze8CPRpWcfNvBpzBCM.png",
       link: "https://www.indiamart.com/samridhi-agro-industries/enquiry.html",
+      icon: <WandSparkles />,
     },
     {
       id: 6,
@@ -73,6 +86,7 @@ const Testimonial = () => {
       image:
         "https://framerusercontent.com/images/rrBUbgduu8o8FWY2EbuqokKd7yI.png",
       link: "https://www.linkedin.com/in/dr-sowmya-raghubir-5447a231/?originalSubdomain=in",
+      icon: <Linkedin />,
     },
   ];
 
@@ -145,7 +159,7 @@ const Testimonial = () => {
 
                   {/* Arrow/Icon */}
                   <div className="w-6 h-6 text-white/30 transition-colors duration-300 group-hover:text-white/60">
-                    icon
+                    {item.icon}
                   </div>
                 </div>
 

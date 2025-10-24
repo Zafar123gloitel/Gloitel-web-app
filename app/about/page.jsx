@@ -25,42 +25,42 @@ const AboutPage = () => {
       name: "Mr.Durgesh Sahu",
       role: "Director",
       image:
-        "https://framerusercontent.com/images/CVxyC6O4rNzCTwwFaxPLfKZvbI.png",
+        "https://framerusercontent.com/images/86zjC3AZjMO25136WBnoj4NSw.png",
     },
     {
       id: 2,
       name: "Dr(Major) Rakesh Sharma",
       role: "Sr.Medical Auditor",
       image:
-        "https://framerusercontent.com/images/CVxyC6O4rNzCTwwFaxPLfKZvbI.png",
+        "https://framerusercontent.com/images/c37CsLJq5puVBVV9ab81x0uOYvY.png",
     },
     {
       id: 3,
       name: "Mr. Janak Sahu",
       role: "Admin & MIS Head",
       image:
-        "https://framerusercontent.com/images/CVxyC6O4rNzCTwwFaxPLfKZvbI.png",
+        "https://framerusercontent.com/images/7PbwkBDOFNjpcQW4NVC8yaOs2Q.png",
     },
     {
       id: 4,
       name: "Mr. Shippu Sharma",
       role: "Senior Software Engineer",
       image:
-        "https://framerusercontent.com/images/CVxyC6O4rNzCTwwFaxPLfKZvbI.png",
+        "https://framerusercontent.com/images/oXV1kZ93Y1zt6TfuCnXqGesx8GY.png",
     },
     {
       id: 5,
       name: "Er. Zafaryab Khan",
       role: "Project Lead",
       image:
-        "https://framerusercontent.com/images/CVxyC6O4rNzCTwwFaxPLfKZvbI.png",
+        "https://framerusercontent.com/images/RHg9CxdyfeG0bHjLZ31ePCYiPc.png",
     },
     {
       id: 6,
       name: "Mr. Sandeep",
       role: "Project Manager",
       image:
-        "https://framerusercontent.com/images/CVxyC6O4rNzCTwwFaxPLfKZvbI.png",
+        "https://framerusercontent.com/images/j4ey8rdpoCN2Gz87iieMonQ1IM.png",
     },
   ];
 

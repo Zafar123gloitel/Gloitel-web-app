@@ -5,7 +5,7 @@ import { HomeHeroHeading } from "./HeroHead";
 
 const Hero = () => {
   return (
-    <div className="relative w-full max-h-screen overflow-hidden">
+    <div className="relative w-full max-h-full overflow-hidden py-32 sm:py-32 md:pt-10 lg:py-15">
       {/* Background Video */}
       <video
         src="https://framerusercontent.com/assets/lr4LSmXa1klevAvb0jf1i2zsDE.mp4"
