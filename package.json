@@ -6,7 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "prepare": "husky",
+    "lint:fix": "eslint . --fix",
+    "format-check": "prettier --check \"./src/**/*.{js,jsx,ts,tsx,mjs,cjs,css,scss,sass,md,html,json}\"",
+    "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,mjs,cjs,css,scss,sass,md,html,json}\"",
+    "lint-staged": "lint-staged --concurrent false",
+    "pretty-quick": "pnpx pretty-quick --staged"
   },
   "dependencies": {
     "framer-motion": "^12.23.22",
@@ -16,6 +22,9 @@
     "react-dom": "19.1.0",
     "swiper": "^12.0.2"
   },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
@@ -23,6 +32,9 @@
     "@types/react": "19.1.16",
     "eslint": "^9",
     "eslint-config-next": "15.5.4",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.6",
+    "prettier": "3.6.2",
     "tailwindcss": "^4"
   }
 }

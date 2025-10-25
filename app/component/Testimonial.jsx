@@ -13,6 +13,7 @@ import {
   Spline,
   WandSparkles,
 } from "lucide-react";
+import Image from "next/image";
 
 const Testimonial = () => {
   const stages = [
@@ -134,11 +135,13 @@ const Testimonial = () => {
                   <div className="flex flex-col gap-3">
                     {/* Avatar */}
                     <div className="flex items-center justify-center w-10 h-10 sm:w-14 sm:h-14 rounded-full bg-white/5 overflow-hidden border border-white/10 shadow-md">
-                      <img
-                        src={item.image}
-                        alt={item.name}
-                        className="w-full h-full object-cover"
-                      />
+                     <Image
+                    width={1920}
+                    height={1080}
+                    src={item.image}
+                    alt={item.name}
+                    className="w-full h-full object-cover"
+                  />
                     </div>
 
                     {/* Stars */}
@@ -161,7 +164,6 @@ const Testimonial = () => {
                   <div className="w-6 h-6 text-white/30 transition-colors duration-300 group-hover:text-white/60">
                     {item.icon}
                   </div>
-                </div>
 
                 {/* Middle Section (Review) */}
                 <p className="text-gray-400 mt-4 text-sm sm:text-base leading-relaxed relative z-10 flex-grow">
@@ -186,6 +188,7 @@ const Testimonial = () => {
                     {item.title}
                   </h4>
                 </div>
+              </div>
               </div>
             </Link>
           ))}

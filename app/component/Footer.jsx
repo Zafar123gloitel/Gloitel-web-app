@@ -5,7 +5,7 @@ export default function Footer() {
   const menu = [
     { name: "Home", link: "/" },
     { name: "About", link: "/about" },
-    { name: "Our Creation", link: "/our-creation" },
+    { name: "Our Creation", link: "/creation" },
     { name: "Contact", link: "/contact" },
     { name: "FAQ", link: "/faq" },
   ];

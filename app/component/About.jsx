@@ -2,6 +2,7 @@ import React from "react";
 import { LeftBadge } from "./Badge";
 import { GlowButton } from "./Button";
 import { VerticalDivider } from "./SectionDivider";
+import Image from "next/image";
 
 // FOR HOME PAGE
 export const HomeAboutContent = ({
@@ -110,7 +111,9 @@ export const HomeAboutImg = ({ ImgLink }) => {
     <>
       <div className="flex justify-center lg:justify-start">
         <div className="p-3 backdrop-blur-md w-full sm:w-4/5 lg:w-lg rounded-3xl bg-gray-950/70 from-gray-950/90 to-black/80 ring-1 ring-white/5">
-          <img
+          <Image
+            width={1920}
+            height={1080}
             src={ImgLink}
             alt="About section"
             className="w-full h-auto rounded-3xl shadow-2xl ring-1 ring-white/5"
@@ -228,7 +231,9 @@ export const AboutAboutImg1 = ({ ImgLink }) => {
     <>
       <div className="flex justify-center lg:justify-start">
         <div className="p-3 backdrop-blur-md w-full sm:w-4/5 lg:w-lg rounded-3xl bg-gray-950/70 from-gray-950/90 to-black/80 ring-1 ring-white/5">
-          <img
+          <Image
+            width={1920}
+            height={1080}
             src={ImgLink}
             alt="About section"
             className="w-full h-auto rounded-3xl shadow-2xl ring-1 ring-white/5"
@@ -243,7 +248,9 @@ export const AboutAboutImg2 = ({ ImgLink }) => {
     <>
       <div className="flex justify-center lg:justify-start">
         <div className="p-3 backdrop-blur-md w-full sm:w-4/5 lg:w-lg rounded-3xl bg-gray-950/70 from-gray-950/90 to-black/80 ring-1 ring-white/5">
-          <img
+          <Image
+            width={1920}
+            height={1080}
             src={ImgLink}
             alt="About section"
             className="w-full h-auto rounded-3xl shadow-2xl ring-1 ring-white/5"

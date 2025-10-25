@@ -1,5 +1,6 @@
 import React from "react";
 import { HorizontalDivider } from "./SectionDivider";
+import Link from "next/link";
 
 const ContactForm = () => {
   return (
@@ -102,9 +103,12 @@ const ContactForm = () => {
                 </span>
               </p>
               <HorizontalDivider />
-              <p className="mt-2 text-gray-400 text-sm">
+              <Link
+                className="mt-2 text-gray-400 text-sm"
+                href={"mailto:gloitel-it@gloitel.in"}
+              >
                 gloitel-it@gloitel.in
-              </p>
+              </Link>
             </div>
           </div>
 
@@ -114,7 +118,12 @@ const ContactForm = () => {
                 📞 Phone
               </p>
               <HorizontalDivider />
-              <p className="mt-2 text-gray-400 text-sm">(+91) 9711203424</p>
+              <Link
+                className="mt-2 text-gray-400 text-sm"
+                href={"tel:+919711203424"}
+              >
+                (+91) 9711203424
+              </Link>
             </div>
           </div>
 
@@ -127,10 +136,14 @@ const ContactForm = () => {
                 </span>
               </p>
               <HorizontalDivider />
-              <p className="mt-2 text-gray-400 text-sm leading-relaxed">
+              <Link
+                target="_blank"
+                href="https://maps.app.goo.gl/uNbYXqo81S7Wfuj37"
+                className="mt-2 text-gray-400 text-sm leading-relaxed"
+              >
                 477/4, Muskan Residency road, Lalpur, Pachpedi Naka, <br />
                 Raipur, Chhattisgarh 492001
-              </p>
+              </Link>
             </div>
           </div>
         </div>
