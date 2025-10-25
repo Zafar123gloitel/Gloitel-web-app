@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { VerticalDivider } from "./SectionDivider";
 import { HeaderButton } from "./Button";
@@ -9,6 +9,7 @@ import Image from "next/image";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isHidden, setIsHidden] = useState(false); // new state for scroll
   const pathname = usePathname();
 
   const links = [
@@ -17,16 +18,43 @@ const Navbar = () => {
     { href: "/creation", label: "Our Creations" },
     { href: "/contact", label: "Contact" },
     { href: "/faq", label: "FAQ" },
-    { href: "/portfolio", label: "Portfolio" },
+    // { href: "/portfolio", label: "Portfolio" },
   ];
 
   const getLinkClasses = (href) =>
     pathname === href
-      ? "text-white "
+      ? "text-white"
       : "text-white/60 hover:text-white transition";
 
+  // Track scroll direction
+  useEffect(() => {
+    let lastScroll = 0;
+
+    const handleScroll = () => {
+      const currentScroll = window.scrollY;
+
+      if (currentScroll > lastScroll && currentScroll > 50) {
+        // Scrolling down
+        setIsHidden(true);
+      } else {
+        // Scrolling up
+        setIsHidden(false);
+      }
+
+      lastScroll = currentScroll;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="fixed z-50 w-full backdrop-blur-md bg-black/50">
+    <header
+      className={`fixed top-0 w-full z-50 backdrop-blur-md bg-black/50 transition-transform duration-300 ${
+        isHidden ? "-translate-y-full" : "translate-y-0"
+      }`}
+    >
       <nav className="mx-auto flex max-w-6xl items-center justify-between p-6 relative">
         {/* Logo */}
         <div className="flex items-center justify-between w-full lg:w-auto">
@@ -101,7 +129,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`lg:hidden absolute top-full left-0 w-full bg-black/80 backdrop-blur-md overflow-hidden transition-all duration-300 ${
+        className={`lg:hidden w-full backdrop-blur-sm bg-black/5 overflow-hidden transition-all duration-300 ${
           isMobileMenuOpen
             ? "max-h-screen opacity-100 py-4"
             : "max-h-0 opacity-0 py-0"
@@ -119,12 +147,12 @@ const Navbar = () => {
             </Link>
           ))}
 
-          <a
+          <Link
             href="#"
-            className="mt-2 inline-block rounded-md bg-blue-700 px-5 py-2.5 text-sm font-semibold text-white shadow-lg hover:bg-indigo-400 transition"
+            className="mt-2 text-center inline-block rounded-md bg-blue-700/80 px-5 py-3 text-sm font-semibold text-white shadow-lg hover:bg-indigo-400/80 transition backdrop-blur-md"
           >
             Get In Touch
-          </a>
+          </Link>
         </div>
       </div>
     </header>

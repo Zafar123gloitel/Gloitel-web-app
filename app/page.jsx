@@ -82,25 +82,29 @@ const HomePage = () => {
 
       {/* About Section */}
       <section className="relative isolate px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
-        <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-          {/* Image */}
-          <HomeAboutImg ImgLink="https://framerusercontent.com/images/mwSqQ9UKMvUvejak30qlmlWS8.jpeg?scale-down-to-1024" />
-
+        <div className="mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Content */}
-          <HomeAboutContent
-            HomeAboutBadge="Gloitel Vision"
-            homeAboutHeading="Empowering Businesses"
-            HomeAboutSubHeading="with Innovation"
-            HomeAboutDescription="Gloitel is a leading IT company offering website development, mobile apps, and AI solutions. We create innovative, scalable, and smart digital experiences for businesses."
-            HomeAboutFeatures={[
-              { title: "Web & App Development" },
-              { title: "AI-Powered Solutions" },
-              { title: "Custom IT Services" },
-            ]}
-            ButtonText="View About Gloitel"
-            Buttonlink="/about"
-            HomeAboutTexts="Trusted by 50 agencies for excellence."
-          />
+          <div className="order-1 md:order-2">
+            <HomeAboutContent
+              HomeAboutBadge="About Gloitel"
+              homeAboutHeading="Building Stronger Brands"
+              HomeAboutSubHeading="Creating Impressions"
+              HomeAboutDescription="Gloitel is a leading IT company offering website development, mobile apps, and AI solutions. We create innovative, scalable, and smart digital experiences for businesses."
+              HomeAboutFeatures={[
+                { title: "Web & App Development" },
+                { title: "AI-Powered Solutions" },
+                { title: "Custom IT Services" },
+              ]}
+              ButtonText="View About Gloitel"
+              Buttonlink="/about"
+              HomeAboutTexts="Trusted by 50 agencies for excellence."
+            />
+          </div>
+
+          {/* Image */}
+          <div className="order-2 md:order-1">
+            <HomeAboutImg ImgLink="https://framerusercontent.com/images/Qnjbg5sx80zqC8P7TMF9g3DgCA.jpeg?scale-down-to=1024" />
+          </div>
         </div>
       </section>
 

@@ -76,9 +76,9 @@ const AboutPage = () => {
           {/* Intro */}
           <IntroHead
             HomeHeroBadge="2025"
-            HomeSubHeroBadge="Frequently Asked Questions"
-            main="Any Questions Rising?"
-            sub="We are All Here."
+            HomeSubHeroBadge="Dig Deep About Us"
+            main="Learn More About Gloitel"
+            sub="Let's Deep Dive!"
             description="Whether you have a question, need assistance,
             or want to start a new project, our team is here to help."
           />
@@ -150,25 +150,29 @@ const AboutPage = () => {
       {/* About Section 1 */}
       <section className="relative isolate px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
         <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-          <AboutAboutImg1 ImgLink="https://framerusercontent.com/images/mwSqQ9UKMvUvejak30qlmlWS8.jpeg?scale-down-to=1024" />
-          <AboutAboutContent
-            AboutBadge="Gloitel Vision"
-            AboutHeading="Building Stronger Brands"
-            AboutSubHeading="with Innovation"
-            AboutContents1={[
-              {
-                title: "Your Vision, Our Expertise",
-                text: "We craft digital experiences that drive success, delivering seamless IT solutions in HealthTech, AI, Cloud, and more.",
-              },
-              {
-                title: "Innovation Meets Excellence",
-                text: "From data intelligence to business automation, we deliver modern, scalable, and future-ready technologies that elevate your operations.",
-              },
-            ]}
-            ButtonText="Book an Appointment"
-            Buttonlink="/contact"
-            HomeAboutTexts="200+ Agencies Rated"
-          />
+          <div className="order-1 md:order-2">
+            <AboutAboutContent
+              AboutBadge="Gloitel Vision"
+              AboutHeading="Empowering Businesses"
+              AboutSubHeading="with Innovation"
+              AboutContents1={[
+                {
+                  title: "Your Vision, Our Expertise",
+                  text: "We craft digital experiences that drive success, delivering seamless IT solutions in HealthTech, AI, Cloud, and more.",
+                },
+                {
+                  title: "Innovation Meets Excellence",
+                  text: "From data intelligence to business automation, we deliver modern, scalable, and future-ready technologies that elevate your operations.",
+                },
+              ]}
+              ButtonText="Book an Appointment"
+              Buttonlink="/contact"
+              HomeAboutTexts="200+ Agencies Rated"
+            />
+          </div>
+          <div className="order-2 md:order-1">
+            <AboutAboutImg1 ImgLink="https://framerusercontent.com/images/mwSqQ9UKMvUvejak30qlmlWS8.jpeg?scale-down-to=1024" />
+          </div>
         </div>
       </section>
 

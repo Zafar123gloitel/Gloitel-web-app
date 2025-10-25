@@ -6,6 +6,7 @@ import { GlowButton } from "../component/Button";
 import Image from "next/image";
 import { FAQPage } from "../component/Faq";
 import JoinUsNow from "../component/JoinUsNow";
+import Link from "next/link";
 
 const stages = [
   {
@@ -92,14 +93,14 @@ const CreationPage = () => {
         <div className="flex flex-col items-center justify-center mx-auto min-h-[60vh] relative z-10 pt-15 sm:pt-20 md:pt-20 lg:pt-20">
           {/* Intro */}
           <div className="flex flex-col w-full text-center">
-            {/* <IntroHead
+            <IntroHead
               HomeHeroBadge="Explore"
               HomeSubHeroBadge="Our Homegrown Products"
               main="Check Out Some"
               sub="Extra-Ordinary Work."
               description="From startups to established brands, we create 
               tailored solutions that drive success and make a real impact."
-            /> */}
+            />
           </div>
 
           {/* Buttons */}
@@ -110,15 +111,12 @@ const CreationPage = () => {
           {/* Grid */}
           <div className="w-2/3 sm:w-full lg:w-6xl mt-12 lg:px-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
             {stages.map((item) => (
-              <div
+              <Link
                 key={item.id}
+                href={`/portfolio/${item.id}`} // dynamic route
                 className="relative group bg-gradient-to-r from-gray-950/90 to-black/80 
-                           p-2 sm:p-3 rounded-2xl sm:rounded-3xl shadow-lg overflow-hidden 
-                           border border-white/10 cursor-pointer"
-                // Mobile: toggle reveal on click
-                onClick={() =>
-                  setActiveCard(activeCard === item.id ? null : item.id)
-                }
+                 p-2 sm:p-3 rounded-2xl sm:rounded-3xl shadow-lg overflow-hidden 
+                 border border-white/10 cursor-pointer"
               >
                 {/* Image */}
                 <Image
@@ -127,14 +125,14 @@ const CreationPage = () => {
                   src={item.image}
                   alt={item.name}
                   className="w-full h-60 sm:h-72 md:h-80 lg:h-96 object-cover rounded-xl sm:rounded-2xl 
-                             transition-transform duration-500 ease-in-out group-hover:scale-105"
+                   transition-transform duration-500 ease-in-out group-hover:scale-105"
                 />
 
                 {/* Bottom overlay */}
                 <div
                   className="absolute flex justify-between items-center inset-x-0 bottom-0 
-                                m-3 sm:m-5 rounded-lg sm:rounded-xl 
-                                bg-gradient-to-r from-blue-950 to-black p-2 sm:p-4"
+                      m-3 sm:m-5 rounded-lg sm:rounded-xl 
+                      bg-gradient-to-r from-blue-950 to-black p-2 sm:p-4"
                 >
                   <div>
                     <h3 className="text-sm sm:text-md font-semibold text-white mb-0.5 sm:mb-1">
@@ -143,8 +141,8 @@ const CreationPage = () => {
                   </div>
                   <p
                     className="text-xs sm:text-sm text-gray-300 
-                                bg-gradient-to-r from-blue-950/60 to-black/80 
-                                px-2 sm:px-3 py-0.5 sm:py-1 rounded-md"
+                      bg-gradient-to-r from-blue-950/60 to-black/80 
+                      px-2 sm:px-3 py-0.5 sm:py-1 rounded-md"
                   >
                     {item.date}
                   </p>
@@ -153,20 +151,19 @@ const CreationPage = () => {
                 {/* Reveal div (hover for desktop, click for mobile) */}
                 <div
                   className={`
-                    absolute top-0 right-0 m-2 sm:m-4 transition-all duration-500 ease-out
-                    ${activeCard === item.id ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"}
-                    group-hover:translate-y-0 group-hover:opacity-100
-                  `}
+          absolute top-0 right-0 m-2 sm:m-4 transition-all duration-500 ease-out
+          group-hover:translate-y-0 group-hover:opacity-100
+        `}
                 >
                   <div
                     className="bg-[radial-gradient(circle_at_center,_rgba(0,0,80,0.9),_rgba(0,0,0,1))] 
-                                  text-white text-xs sm:text-sm font-medium 
-                                  px-2 sm:px-4 py-1 sm:py-2 rounded-md sm:rounded-lg shadow-lg"
+                        text-white text-xs sm:text-sm font-medium 
+                        px-2 sm:px-4 py-1 sm:py-2 rounded-md sm:rounded-lg shadow-lg"
                   >
                     {item.tag}
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

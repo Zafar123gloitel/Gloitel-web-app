@@ -1,7 +1,7 @@
 import React from "react";
 import { LeftBadge } from "./Badge";
 import { GlowButton } from "./Button";
-import { VerticalDivider } from "./SectionDivider";
+import { HorizontalDivider, VerticalDivider } from "./SectionDivider";
 import Image from "next/image";
 
 // FOR HOME PAGE
@@ -32,7 +32,7 @@ export const HomeAboutContent = ({
         <dl className="mt-6 sm:mt-8 space-y-5 text-gray-400">
           {HomeAboutFeatures.map((feature, i) => (
             <div key={i} className="relative">
-              <dt className="flex items-center  gap-4 text-sm sm:text-base lg:text-md">
+              <dt className="flex items-center gap-4 text-sm sm:text-base lg:text-md">
                 <span className="left-1 w-5 h-5 text-indigo-400">
                   <svg
                     className="w-6 h-6 "
@@ -53,10 +53,10 @@ export const HomeAboutContent = ({
         </dl>
       )}
       {/* Buttons & Badge */}
-      <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+      <div className="mt-6 sm:mt-8 flex flex-col-reverse sm:flex-row-reverse md:flex-row items-start sm:items-center gap-4">
         <GlowButton ButtonText={ButtonText} Buttonlink={Buttonlink} />
         <VerticalDivider />
-        <div className="ml-5 gap-1">
+        <div className="ml-0 sm:ml-0 md:ml-5 gap-1">
           <div className="flex flex-row gap-1">
             {[1, 2, 3, 4, 5].map((i) => (
               <svg
@@ -93,10 +93,10 @@ export const HomeAboutContentHead = ({
       {/* Badge */}
       <LeftBadge HomeAboutBadge={HomeAboutBadge} />
       {/* Headings */}
-      <h3 className="text-2xl sm:text-3xl lg:text-5xl font-semibold text-white">
+      <h3 className="text-3xl sm:text-3xl lg:text-5xl font-medium text-white">
         {homeAboutHeading}
       </h3>
-      <h3 className="text-2xl sm:text-3xl lg:text-5xl font-medium text-gray-400 mt-2">
+      <h3 className="text-3xl sm:text-3xl lg:text-5xl font-medium text-gray-400 mt-2">
         {HomeAboutSubHeading}
       </h3>
       <p className="text-base sm:text-sm lg:text-base font-medium text-gray-400 mt-2">
@@ -144,19 +144,18 @@ export const AboutAboutContent = ({
         AboutBadge={AboutBadge}
         AboutHeading={AboutHeading}
         AboutSubHeading={AboutSubHeading}
-        // ABOUT SECOND HEADING AND SUB HEADING
-        HomeAboutTexts={HomeAboutTexts}
       />
+      <HorizontalDivider />
       {/* Dynamic Content Blocks */}
       {AboutContents1.map((content, i) => (
         <div key={i} className="mt-4 sm:mt-6">
           {content.title && (
-            <p className="text-sm sm:text-base font-semibold lg:text-lg text-white leading-relaxed">
+            <p className="text-sm sm:text-base font-medium lg:text-lg text-white leading-relaxed">
               {content.title}
             </p>
           )}
           {content.text && (
-            <p className="text-sm sm:text-base lg:text-lg text-gray-400 leading-relaxed">
+            <p className="text-sm sm:text-sm lg:text-lg text-gray-400 leading-relaxed">
               {content.text}
             </p>
           )}
@@ -165,7 +164,7 @@ export const AboutAboutContent = ({
       {AboutContents2.map((content, i) => (
         <div key={i} className="mt-4 sm:mt-6">
           {content.title && (
-            <p className="text-sm sm:text-base font-semibold lg:text-lg text-white leading-relaxed">
+            <p className="text-sm sm:text-base font-medium lg:text-lg text-white leading-relaxed">
               {content.title}
             </p>
           )}
@@ -199,7 +198,9 @@ export const AboutAboutContent = ({
             ))}
           </div>
 
-          <span className="text-gray-400 text-xs sm:text-sm">{ButtonText}</span>
+          <span className="text-gray-400 text-xs sm:text-sm">
+            {HomeAboutTexts}
+          </span>
         </div>
       </div>
     </div>
@@ -216,7 +217,7 @@ export const AboutAboutContentHead = ({
       {/* Badge */}
       <LeftBadge AboutBadge={AboutBadge} />
       {/* Headings */}
-      <h3 className="text-2xl sm:text-3xl lg:text-5xl font-semibold text-white">
+      <h3 className="text-2xl sm:text-3xl lg:text-5xl font-medium text-white">
         {AboutHeading}
       </h3>
       <h3 className="text-2xl sm:text-3xl lg:text-5xl font-medium text-gray-400 mt-2">

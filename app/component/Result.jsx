@@ -23,7 +23,7 @@ const Result = () => {
         </div>
 
         {/* AutoScroll */}
-        <div className="overflow-x-auto scrollbar-hide mt-12 w-full">
+        <div className="mt-12 w-full">
           <AutoScroll />
         </div>
       </div>

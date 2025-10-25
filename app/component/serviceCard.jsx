@@ -1,6 +1,7 @@
 // components/ServiceCard.js
 import Image from "next/image";
 import Link from "next/link";
+import { HorizontalDivider } from "./SectionDivider";
 
 export default function ServiceCard({
   image,
@@ -10,7 +11,7 @@ export default function ServiceCard({
   badge,
 }) {
   return (
-    <div className="bg-gradient-to-tr from-blue-900/40 via-indigo-800/20 to-transparent rounded-3xl p-6 shadow-[0_0_40px_rgba(0,0,0,0.6)] flex flex-col justify-between transition hover:scale-[1.02] hover:shadow-[0_0_50px_rgba(37,99,235,0.4)] duration-300">
+    <div className="bg-gradient-to-tr from-blue-900/20 via-indigo-800/20 to-transparent rounded-3xl p-6 shadow-[0_0_40px_rgba(0,0,0,0.6)] flex flex-col justify-between transition pb-10">
       {/* Image */}
       <div className="relative w-full h-72 rounded-2xl overflow-hidden">
         <Image
@@ -19,14 +20,11 @@ export default function ServiceCard({
           src={image}
           alt={title}
           className="object-cover w-full h-full"
-          // sizes="(max-width: 768px) 100vw,
-          //        (max-width: 1200px) 50vw,
-          //        33vw"
         />
       </div>
 
       {/* Content */}
-      <div className="mt-6 flex-1">
+      <div className="mt-5 flex-1">
         <div className="flex items-center gap-2">
           <h3 className="text-white text-xl font-semibold">{title}</h3>
           {badge && (
@@ -35,7 +33,8 @@ export default function ServiceCard({
             </span>
           )}
         </div>
-        <p className="text-gray-400 text-sm mt-3 leading-relaxed">
+        <HorizontalDivider />
+        <p className="text-gray-400 text-md sm:text-md md:text-md mt-3 leading-relaxed">
           {description}
         </p>
       </div>

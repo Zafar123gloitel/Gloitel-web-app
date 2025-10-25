@@ -5,6 +5,7 @@ import { LeftBadge } from "./Badge";
 import { LeftSectionHeads, MiddleSectionHeads } from "./SectionHeads";
 import { ImageCard } from "../uiComponents/ImageCard";
 import { GlowButton } from "./Button";
+import { Blend, Crosshair, Rocket } from "lucide-react";
 
 const stages = [
   {
@@ -14,24 +15,27 @@ const stages = [
     description:
       "Every project begins with a strong foundation. We align with you to understand your goals, vision, and expectations through in-depth discussions and research, ensuring a clear roadmap for success.",
     points: ["Comprehensive Consultation", "Project Roadmap"],
+    icon: <Rocket />,
   },
   {
     id: 2,
-    title: "Design",
+    title: "Execution",
     stage: "Stage 2",
     description:
-      "Crafting engaging and user-friendly interfaces that align with your brand identity while ensuring accessibility and responsiveness across devices.",
-    points: ["UI/UX Design", "Brand Consistency"],
+      "With a well-defined strategy, our expert team efficiently brings ideas to life, leveraging cutting-edge technologies and collaboration to deliver seamless implementation.",
+    points: ["Seamless Integration", "Real Time Collaboration"],
+    icon: <Crosshair />,
   },
   {
     id: 3,
-    title: "Development",
+    title: "Development & Deliver",
     stage: "Stage 3",
     description:
-      "Building robust and scalable applications using modern technologies, focusing on performance, security, and maintainability.",
-    points: ["Clean Code", "Scalable Architecture"],
+      "We follow a structured approach to develop, test, and optimize your IT solution, ensuring quality, security, and performance. Most importantly, we deliver on time—exactly as committed! 🚀 plus post-development support.",
+    points: ["Ongoing Support", "Documentation"],
     ButtonText: "Book An Appoitnment",
     ButtonTextLink: "/contact",
+    icon: <Blend />,
   },
 ];
 
@@ -91,23 +95,10 @@ const HowWeWork = () => {
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-900/40 via-indigo-800/20 to-transparent opacity-50 rounded-2xl pointer-events-none"></div>
 
                   <div className="flex items-center justify-between relative z-10">
-                    <div className="flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-white/5 text-blue-400 shadow-[0_0_25px_rgba(59,130,246,0.3)]">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={1.5}
-                        stroke="currentColor"
-                        className="w-5 h-5 sm:w-6 sm:h-6"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M9.813 15.904L9 21l3-3 3 3-.813-5.096m-.464-3.833a6.75 6.75 0 11-8.01-8.01 11.25 11.25 0 018.01 8.01z"
-                        />
-                      </svg>
+                    <div className="flex items-center justify-center px-3 py-3 rounded-lg bg-white/5 text-white shadow-[0_0_25px_rgba(59,130,246,0.3)]">
+                      {item.icon}
                     </div>
-                    <span className="px-3 py-1 text-xs sm:text-sm rounded-md bg-white/5 text-gray-300 shadow-[0_0_25px_rgba(59,130,246,0.3)]">
+                    <span className="px-4 py-2 text-xs sm:text-sm rounded-xl bg-blue-600/20 text-gray-300 shadow-[0_0_25px_rgba(59,130,246,0.3)]">
                       {item.stage}
                     </span>
                   </div>
@@ -118,7 +109,7 @@ const HowWeWork = () => {
 
                   <div className="w-full h-px bg-gradient-to-r from-white/10 to-transparent my-2 sm:my-3 relative z-10"></div>
 
-                  <p className="text-gray-400 text-xs sm:text-sm md:text-base leading-relaxed relative z-10">
+                  <p className="text-gray-400 text-md sm:text-md md:text-base leading-relaxed relative z-10">
                     {item.description}
                   </p>
 

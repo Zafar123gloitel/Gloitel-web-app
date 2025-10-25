@@ -9,13 +9,14 @@
     "lint": "eslint",
     "prepare": "husky",
     "lint:fix": "eslint . --fix",
-    "format-check": "prettier --check \"./src/**/*.{js,jsx,ts,tsx,mjs,cjs,css,scss,sass,md,html,json}\"",
-    "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,mjs,cjs,css,scss,sass,md,html,json}\"",
+    "format": "prettier --write \"./**/*.{js,jsx,ts,tsx,mjs,cjs,css,scss,sass,md,html,json}\"",
+    "format-check": "prettier --check \"./**/*.{js,jsx,ts,tsx,mjs,cjs,css,scss,sass,md,html,json}\"",
     "lint-staged": "lint-staged --concurrent false",
     "pretty-quick": "pnpx pretty-quick --staged"
   },
   "dependencies": {
     "framer-motion": "^12.23.22",
+    "lucide-react": "^0.547.0",
     "next": "15.5.4",
     "react": "19.1.0",
     "react-dom": "19.1.0",

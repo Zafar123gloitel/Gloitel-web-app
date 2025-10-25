@@ -50,11 +50,13 @@ export const HomeHeroHeading = ({
   HomeHeroDescription,
 }) => {
   return (
-    <div className="flex flex-col w-full">
-      <HeroBadge
-        HomeHeroBadge={HomeHeroBadge}
-        HomeSubHeroBadge={HomeSubHeroBadge}
-      />
+    <div className="w-full">
+      <div className="flex ">
+        <HeroBadge
+          HomeHeroBadge={HomeHeroBadge}
+          HomeSubHeroBadge={HomeSubHeroBadge}
+        />
+      </div>
 
       <h3 className="text-3xl sm:text-3xl lg:text-[3.5rem] text-white">
         {HomeHeroHeading}

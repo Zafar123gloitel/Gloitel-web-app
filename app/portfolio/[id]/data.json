@@ -1,0 +1,331 @@
+[
+  {
+    "id": 1,
+    "name": "CGMMSSY",
+    "date": 2018,
+    "description": "Mukhyamantri Slum Swasthya Yojna (MMSSY) is a healthcare initiative by Municipal Corporation Durg to provide free medical services to urban slum dwellers through Mobile Medical Units (MMUs).",
+    "tag": ["Website", "Mobile App"],
+    "projectType": "Web & Mobile App Development",
+    "industry": "Healthcare (CG Govt.)",
+    "techStack": "Java, HTML, CSS",
+    "liveUrl": "https://www.cgmmssy.in",
+    "imageFir": "https://framerusercontent.com/images/xpGwa96hllxRWE5U9jMJospzp6U.svg",
+    "imageSec": "https://framerusercontent.com/images/PBFR3AnKSTaLjEZoP3CuAEpph1g.png",
+    "imageThir": "https://framerusercontent.com/images/4F6n2bDTtxUoNPTIdxrJhP3bqM.png",
+    "imageFor": "https://framerusercontent.com/images/ZZOZ3KDxOl3sidEAmpyUkPOnx6E.png",
+    "BusinessRequirements": [
+      "Develop a user-friendly website to disseminate information about MMSSY.",
+      "Integrate a Management Information System (MIS) for real-time data management and reporting.",
+      "Ensure accessibility for stakeholders, including patients, healthcare providers, and administrators."
+    ],
+    "Challenges": [
+      "Implementing real-time data tracking for 120 MMUs operating across the state.",
+      "Ensuring data accuracy and compliance with healthcare regulations.",
+      "Facilitating user engagement across diverse demographics."
+    ],
+    "OurApproach": [
+      "Conducted comprehensive research on MMSSY's objectives and target audience.",
+      "Collaborated with healthcare professionals to understand workflow and data requirements.",
+      "Designed a scalable architecture to accommodate future expansions."
+    ],
+    "DesignProcess": [
+      "Understanding & Analysis: Engaged with stakeholders to gather insights and identify user needs.",
+      "Methodology: Employed an iterative design process, incorporating feedback loops.",
+      "Wireframes & Prototypes: Developed interactive prototypes to visualize user interactions.",
+      "Responsive Design: Ensured compatibility across devices for broader accessibility."
+    ],
+    "PlanningDevelopment": [
+      "Integrated MIS features such as helpdesk support, field audits, prescription audits, and real-time attendance tracking. ",
+      "Implemented GPS-based live tracking for MMUs to monitor their locations and movements.",
+      "Developed modules for audit planning, quality inspections, reporting, compliance, and AI-based medical audits."
+    ],
+    "ProjectDeliveryResults": [
+      "We successfully launched the CGMMSSY website with integrated MIS features, significantly enhancing operational efficiency. The platform has improved data accuracy, streamlined reporting processes, and made information more accessible. Stakeholders have responded positively, noting increased user engagement and overall usability."
+    ]
+  },
+
+  {
+    "id": 2,
+    "name": "PATH IAS ACADEMY",
+    "date": 2018,
+    "description": "Path IAS Academy is a premier coaching institute that provides training for UPSC, CGPSC, and other competitive exams. Offers offline and online courses, test series, and study materials",
+    "tag": ["Website", "Mobile App"],
+    "projectType": "Website Development",
+    "industry": "Education & Competitive Exam Coaching",
+    "techStack": "React, Redux, Next.js, HTML, SCSS, Tailwind CSS, Swiper, Node.js, Express.js, AWS Cloud, MongoDB",
+    "liveUrl": "https://www.cgmmssy.in",
+    "imageFir": "https://framerusercontent.com/images/WfXfrFIeWPtyBBmXf14nAzqCE.png",
+    "imageSec": "https://framerusercontent.com/images/3FhkEo6q8sYIjDuBKFV2BeKId4.png",
+    "imageThir": "https://framerusercontent.com/images/pjpipjWzoNFkBISr1g7nOLzqbHs.png",
+    "imageFor": "https://framerusercontent.com/images/XG005jq61AVCdSM6oWIe0jVwmaY.png",
+    "BusinessRequirements": [
+      "A well-structured, easy-to-navigate website to showcase courses and resources. ",
+      "Online enrollment system for students.",
+      "Integration of test series and exam notifications.",
+      "Mobile responsiveness for better accessibility."
+    ],
+    "Challenges": [
+      "Need for an intuitive UI to cater to diverse student backgrounds.",
+      "Optimizing website speed and performance.",
+      "Ensuring seamless course registration and payment gateway integration.",
+      "Managing a large database of students and course materials."
+    ],
+    "OurApproach": [
+      "Conducted user research to understand student requirements.",
+      "Designed an SEO-friendly and performance-optimized website.",
+      "Integrated a CMS for easy content updates by the academy team.",
+      "Implemented a structured information architecture for better navigation."
+    ],
+    "DesignProcess": [
+      "Understanding & Analysis: Identified pain points in the existing website.",
+      "Methodology: Followed a student-first approach for a seamless browsing experience.",
+      "Wireframes & Prototypes: Created high-fidelity wireframes for efficient user flow.",
+      "Responsive Design: Ensured accessibility across all devices."
+    ],
+    "PlanningDevelopment": [
+      "Developed a dynamic website with an integrated course catalog.",
+      "Implemented secure login and student dashboard features.",
+      "Integrated an online test series module.",
+      "Added features for exam notifications, study materials, and live classes."
+    ],
+    "ProjectDeliveryResults": [
+      "Successfully launched the website with enhanced usability and advanced features tailored for students and faculty. The structured course pages and integrated test series have significantly improved student engagement. Registration and payment processes have been simplified, making it easier for students to enroll. The platform has received positive feedback from both students and faculty, contributing to a noticeable increase in enrollments."
+    ]
+  },
+  {
+    "id": 3,
+    "name": "HRM",
+    "date": 2018,
+    "description": "PHRM Techno is a Managed Service Provider (MSP) specializing in cybersecurity, professional email solutions, data protection, IT services, and cloud solutions. Aims to provide secure, scalable, and efficient IT infrastructure for businesses.",
+    "tag": ["Website", "UI/UX Design"],
+    "projectType": "Website Development",
+    "industry": "IT Services, MSP",
+    "techStack": "React, Next.js, HTML, SCSS, Tailwind CSS, Swiper",
+    "liveUrl": "https://hrmtechno.com/",
+    "imageFir": "https://framerusercontent.com/images/q8jHrvx0oidXgaNSW7faid2r7MA.png",
+    "imageSec": "https://framerusercontent.com/images/z6P2IS14sLGzaJER79oWJWm68.png",
+    "imageThir": "https://framerusercontent.com/images/8EE3m5KabPkocJjvt3bQezUKc.jpg",
+    "imageFor": "https://framerusercontent.com/images/ntXIj4crG4a4x3yrT1oekUas.png",
+    "BusinessRequirements": [
+      "A professional and modern website to showcase HRM's services.",
+      "Clear communication of service offerings such as cybersecurity, cloud solutions, and data protection.",
+      "Integration of contact forms and inquiry management system.",
+      "SEO-optimized content for better online visibility."
+    ],
+    "Challenges": [
+      "Complex service offerings that required structured presentation.",
+      "Need for a fast, secure, and scalable website.",
+      "Ensuring a seamless user experience across devices.",
+      "Integrating an inquiry management system for lead generation"
+    ],
+    "OurApproach": [
+      "Conducted research on IT MSP market trends.",
+      "Designed a clean and structured website with a clear navigation system.",
+      "Focused on SEO optimization and performance enhancements.",
+      "Integrated a secure contact form with automated lead tracking."
+    ],
+    "DesignProcess": [
+      "Understanding & Analysis: Identified user needs and industry best practices.",
+      "Understanding & Analysis: Identified user needs and industry best practices.",
+      "WirWireframes & Prototypes: Created high-fidelity wireframes to ensure usability.",
+      "Responsive Design: Optimized the website for desktop, tablet, and mobile devices."
+    ],
+    "PlanningDevelopment": [
+      "Developed an easy-to-manage CMS-based website.",
+      "Integrated security measures to protect user data.",
+      "Optimized page speed and performance for better loading times.",
+      "Ensured a user-friendly admin panel for content updates."
+    ],
+    "ProjectDeliveryResults": [
+      "Successfully launched the website with a professional and intuitive interface that reflects the brand's identity. The new design has improved brand credibility, increased user engagement, and provided a seamless browsing experience. Optimized inquiry forms have enhanced lead generation, while improved SEO practices have boosted search rankings and overall online visibility."
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Experteeth Dental Clinic ",
+    "date": 2018,
+    "description": "Experteeth Dental Clinic, led by Dr. Manish Agrawal in Raipur, offers expert dental care with 15+ years of experience.",
+    "tag": ["Dental Care", "Landing Page"],
+    "projectType": "Website Development & UI/UX Design",
+    "industry": "Healthcare (Dental Services)",
+    "techStack": "React, Redux, Next.js, HTML, SCSS, Tailwind CSS, Swiper, Node.js, Express.js, AWS Cloud, MongoDB",
+    "liveUrl": "https://experteeth.in/",
+    "imageFir": "https://framerusercontent.com/images/C5BtcnDdyt5U227QLVwbdEVdM.png",
+    "imageSec": "https://framerusercontent.com/images/6C48vzunBttrN9XFB2bib3cxXeE.png",
+    "imageThir": "https://framerusercontent.com/images/bGbm86XJYI0Wcb9PzRFcj8oqF4A.jpg",
+    "imageFor": "https://framerusercontent.com/images/O90MtNUZ5NE2LTAUYpFusA.png",
+    "BusinessRequirements": [
+      "Website: Build a professional online presence.",
+      "Services: Showcase dental treatments clearly.",
+      "Booking: Enable easy online appointment scheduling.",
+      "Education: Offer informative dental health content.",
+      "Mobile-Friendly: Ensure seamless access on all devices."
+    ],
+    "Challenges": [
+      "Branding: Set Experteeth apart from competitors.",
+      "Engagement: Create an interactive, user-friendly interface.",
+      "SEO: Optimize for better search rankings and local reach.",
+      "Content: Allow easy updates for services, testimonials, and promotions."
+    ],
+    "OurApproach": [
+      "Market Research: Analyzed local dental trends and competitors.",
+      "Collaboration: Aligned design with Dr. Agrawal’s vision and audience.",
+      "Design: Created a clean, professional, and welcoming interface",
+      "Development: Built on WordPress for flexibility and easy management."
+    ],
+    "DesignProcess": [
+      "Insights: Analyzed patient demographics and preferences.",
+      "Approach: Focused on a patient-centric, user-friendly design.",
+      "Prototyping: Created wireframes to refine the user journey.",
+      "Responsive: Optimized for seamless use across all devices."
+    ],
+    "PlanningDevelopment": [
+      "Structure: Organized key services, testimonials, and contact information.",
+      "Features: Added booking, service details, blog, and contact form.",
+      "SEO: Optimized with keywords, meta tags, and local SEO."
+    ],
+    "ProjectDeliveryResults": [
+      "Successfully launched the Experteeth Dental Clinic website, offering an informative and user-friendly platform for current and prospective patients. The enhanced design and SEO improvements have boosted online visibility, leading to increased traffic and patient inquiries. Positive feedback highlights the ease of navigation and convenience of online appointment booking. Additionally, staff were trained for content management, with ongoing technical support provided as needed."
+    ]
+  },
+  {
+    "id": 5,
+    "title": "GODHAAR",
+    "name": "GODHAAR",
+    "date": 2018,
+    "description": "Revolutionizing Cattle Management. Effortless, secure, and smart livestock tracking for farmers—powered by AI.",
+    "tag": ["Mobile App", "Web Software"],
+    "projectType": "Web & Mobile App Development",
+    "industry": "Governments",
+    "techStack": "Advanced AI & Machine Learning",
+    "liveUrl": "https://www.godhaar.com/",
+    "imageFir": "https://framerusercontent.com/images/MjOYAWkWlOzqF5UbhoVn8abeM.jpg",
+    "imageSec": "https://framerusercontent.com/images/ApzbN3EGofC1zTAjj1BdSoQ7fE.jpg",
+    "imageThir": "https://framerusercontent.com/images/DGkoBXynd9Qg8RiIdj9WFzpsMHI.jpg",
+    "imageFor": "https://framerusercontent.com/images/0B1lHifiWxXRyDrRmyXbvHuZLSc.jpg",
+    "what": "Say goodbye to lost tags, manual records, and cattle fraud. Godhaar uses cutting-edge AI to identify and manage your cows with just a smartphone. From health tracking to ownership records, everything you need is at your fingertips, securely stored in the cloud.",
+    "how": [
+      "Take a quick photo of your cow’s muzzle using your smartphone.",
+      "Our AI instantly identifies the cow’s unique pattern.",
+      "All data is securely saved in the cloud.",
+      "Check records anytime, anywhere with ease."
+    ],
+    "why": [
+      "No Tags, No Hassle: Forget collars or belts—save costs and keep cows comfortable.  ",
+      "Go Paperless: All records are digital, making government monitoring and schemes easier.  ",
+      "Reliable & Permanent IDs: AI-based IDs help track livestock accurately, forever.",
+      "Health Made Simple: Monitor cow health, catch issues early, and ensure."
+    ],
+    "benefits": [
+      "No Tags, No Hassle: Forget collars or belts—save costs and keep cows comfortable.",
+      "Go Paperless: All records are digital, making government monitoring and schemes easier.",
+      "Reliable & Permanent IDs: AI-based IDs help track livestock accurately, forever.",
+      "Health Made Simple: Monitor cow health, catch issues early, and ensure better Care."
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Fitbattle",
+    "name": "Fitbattle",
+    "date": 2018,
+    "description": "Your Fitness Journey & Challenge Stay active, compete with friends, and build healthy habits with FitBattle—a fitness app that makes wellness fun!",
+    "tag": ["Mobile App", "Website"],
+    "projectType": "Web & Mobile App Development",
+    "industry": "Fitness Industry",
+    "techStack": "React, Next.js, HTML, SCSS, Tailwind CSS",
+    "liveUrl": "",
+    "imageFir": "https://framerusercontent.com/images/XwhaCXBj4aGEbb9myT3ElIE5g8.jpg",
+    "imageSec": "https://framerusercontent.com/images/xLOKzmSWr3oAmiaZsTvWdXTdnWY.png",
+    "imageThir": "https://framerusercontent.com/images/xU0YwOoDJLhO9UeeKnNMFnGuISk.png",
+    "imageFor": "https://framerusercontent.com/images/DxzHZVlSBWerTmoBe0MU80DbBxs.png",
+    "what": "FitBattle is a fitness app that makes staying active fun through social challenges, workout tracking, and habit-building features, motivating you to achieve your wellness goals",
+    "how": [
+      "Sign up and pick a fitness challenge or habit to track.",
+      "Sign up and pick a fitness challenge or habit to track.",
+      "Upload videos of your performance and compare with friends.",
+      "Monitor progress, earn streaks, and stay motivated."
+    ],
+    "why": [
+      "Social Fitness Challenges: Compete in pull-ups, push-ups, and more with friends",
+      "All-in-One Tracking: Log workouts, habits, and nutrition in a single app. ",
+      "Habit Streaks & Reminders: Stay consistent with daily goals",
+      "Nutrition Insights: Plan meals and track dietary habits for healthier choices."
+    ],
+    "benefits": [
+      "Stay Motivated: Fun competitions and social features keep you engaged.",
+      "Track Everything: Monitor workouts, habits, and nutrition in one place.",
+      "ReliBuild Healthy Routines: Reminders and streaks help you form lasting habits.",
+      "Achieve Goals: Progress tracking and challenges push you to improve daily."
+    ]
+  },
+  {
+    "id": 7,
+    "title": "VAIDYAM",
+    "name": "VAIDYAM",
+    "date": 2018,
+    "description": "Our Hospital Management System (HMS) is an all-in-one platform designed to streamline hospital operations, enhance patient care, and simplify administrative tasks for healthcare providers.. ",
+    "tag": ["EHR/EMR", "LIMS"],
+    "projectType": "Management Software",
+    "industry": "Healthcare",
+    "techStack": "React, Next.js, HTML, SCSS, Tailwind CSS",
+    "liveUrl": "",
+    "imageFir": "https://framerusercontent.com/images/YGKXMWSnAKUEMWVlTKsVPgZI.jpg",
+    "imageSec": "https://framerusercontent.com/images/qPHtDY7VL4VozETLAyaEvZmQ.png",
+    "imageThir": "https://framerusercontent.com/images/RokyeSWa0VbrYCYgwlkQZWHW8o.png?scale-down-to=512",
+    "imageFor": "https://framerusercontent.com/images/Qb7r0RYCJSY4TXA0hZlILtLmrg.png",
+    "what": "Our Hospital Management System (HMS) is an all-in-one platform designed to streamline hospital operations, enhance patient care, and simplify administrative tasks for healthcare providers.",
+    "how": [
+      "Add patients, staff, and departments into the system.",
+      "Schedule appointments, track patient records, and handle billing.",
+      "Use dashboards to oversee operations and resource allocation.",
+      "Analyze data to improve efficiency and patient outcomes."
+    ],
+    "why": [
+      "Comprehensive Integration: Manages patient records, billing, inventory, and scheduling in one platform.",
+      "Real-Time Insights: Dashboards provide live updates on hospital operations and patient care.",
+      "Secure Data Handling: Ensures patient data privacy with robust security measures.",
+      "Scalable Design: Adapts to hospitals of all sizes, from small clinics to large facilities."
+    ],
+    "benefits": [
+      "Improve Efficiency: Automate routine tasks to focus more on patient care.",
+      "Enhance Patient Care: Access medical records quickly for better decision-making.",
+      "Enhance Patient Care: Access medical records quickly for better decision-making.",
+      "Stay Compliant: Meet regulatory standards with secure and organized data management."
+    ]
+  },
+  {
+    "id": 8,
+    "title": "CRM",
+    "name": "Staff Ease",
+    "date": 2018,
+    "description": "Grow Easy, Stay Connected – Your All-in-One CRM Solution!",
+    "tag": ["Web App", "Mobile App"],
+    "projectType": "Customer Relationship Management",
+    "industry": "Corporate, Industries, Ecommerce",
+    "techStack": "React, Redux, Next.js, HTML, SCSS, Tailwind CSS, Swiper, Node.js, Express.js, AWS Cloud, MongoDB",
+    "liveUrl": "",
+    "imageFir": "https://framerusercontent.com/images/ALlFj508wPfIsL4uR1HqpQ5OQ8w.jpg",
+    "imageSec": "https://framerusercontent.com/images/dENRIb7CzY3UjUaNbPPMF4MU.jpg?scale-down-to=2048",
+    "imageThir": "https://framerusercontent.com/images/eHhLeunEK0ZJ3kPeREmlTwgvLk.jpg",
+    "imageFor": "https://framerusercontent.com/images/YmrwAAIrUg3ouKc3khoQOv5e9Qc.jpg",
+    "what": "Our CRM is a powerful, all-in-one platform designed to help businesses manage customer relationships, streamline operations, and boost growth with ease.",
+    "how": [
+      "Import or enter customer details into the system.",
+      "Monitor interactions, sales, and support tickets in one place.",
+      "Use reports to understand customer behavior and trends.",
+      "Automate follow-ups and nurture leads to drive sales."
+    ],
+    "why": [
+      "Centralized Customer Data: Store all customer information securely in one platform.",
+      "Automation Tools: Automate emails, reminders, and follow-ups to save time.",
+      "Customizable Dashboards: Get real-time insights with dashboards tailored to your business needs.",
+      "Scalable Solution: Grows with your business, from small startups to large enterprises."
+    ],
+    "benefits": [
+      "Save Time: Automate repetitive tasks and focus on building relationships.",
+      "Boost Sales: Track leads, manage pipelines, and close deals faster.",
+      "Understand Customers: Gain insights to personalize interactions and improve satisfaction.  ",
+      "Stay Organized: Keep all customer data and interactions in one accessible place."
+    ]
+  }
+]
