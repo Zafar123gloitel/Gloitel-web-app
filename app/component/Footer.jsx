@@ -97,12 +97,23 @@ export default function Footer() {
         <div>
           <h2 className="font-semibold text-white mb-3">Address</h2>
           <p className="text-sm sm:text-base mb-4 leading-relaxed text-white/50">
-            {address}
+            <Link
+              target="_blank"
+              href="https://maps.app.goo.gl/uNbYXqo81S7Wfuj37"
+              className="mt-2 text-gray-400 text-sm leading-relaxed"
+            >
+              {address}
+            </Link>
           </p>
           <h3 className="font-medium text-white mb-2">Contact</h3>
           <ul className="space-y-2 text-sm sm:text-base text-white/50">
             {telephone.map((t, index) => (
-              <li key={index}>(+91) {t.no}</li>
+              <Link
+                className="mt-2 text-gray-400 text-sm"
+                href={`tel:+${t.no}`}
+              >
+                <li key={index}>(+91) {t.no}</li>
+              </Link>
             ))}
           </ul>
         </div>

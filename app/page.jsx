@@ -16,7 +16,7 @@ import {
 } from "./component/SectionHeads";
 import { CenterBadge, LeftBadge } from "./component/Badge";
 import { GlowButton, WhiteButton } from "./component/Button";
-import { BgSquare2 } from "./component/BgSquare";
+import { BgSquare2, BgSquare3 } from "./component/BgSquare";
 import ServiceCard from "./component/serviceCard";
 import Image from "next/image";
 
@@ -163,9 +163,8 @@ const HomePage = () => {
 
       {/* Portfolio Section */}
       <section className="relative isolate px-4 sm:px-6 lg:px-8 py-12 lg:py-20 overflow-hidden">
+        <BgSquare3 />
         <div className="flex flex-col items-center justify-center max-w-7xl mx-auto relative z-10">
-          <BgSquare2 />
-
           {/* Header */}
           <div className="flex flex-col w-full sm:w-3/4 lg:w-1/2 text-center">
             <CenterBadge TechnologyBadge="Portfolio" />

@@ -91,9 +91,9 @@ const Testimonial = () => {
   ];
   return (
     <section className="relative isolate px-4 sm:px-6 lg:px-8 py-12 lg:py-20 overflow-hidden">
+      <BgSquare3 />
       <div className="flex flex-col items-center justify-center max-w-6xl mx-auto relative z-10">
         {/* HEADER */}
-        <BgSquare3 />
         <div className="flex flex-col w-full sm:w-3/4 lg:w-1/2 text-center">
           {/* Badge */}
           <CenterBadge TestimonialBadge="Testimonials" />
