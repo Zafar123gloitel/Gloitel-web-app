@@ -109,7 +109,7 @@ const HowWeWork = () => {
 
                   <div className="w-full h-px bg-gradient-to-r from-white/10 to-transparent my-2 sm:my-3 relative z-10"></div>
 
-                  <p className="text-gray-400 text-xs sm:text-sm md:text-base leading-relaxed relative z-10">
+                  <p className="text-gray-400 text-md sm:text-md md:text-base leading-relaxed relative z-10">
                     {item.description}
                   </p>
 

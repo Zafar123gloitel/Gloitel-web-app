@@ -57,15 +57,14 @@ const TechScroll = () => {
              border-2 border-white/5 p-2 sm:p-3 md:p-2"
           >
             <div className="relative w-full h-full rounded-3xl overflow-hidden border border-white/5 bg-gray-800/50">
-               <Image
-              width={1920}
-              height={1080}
-              src={site.img}
-              alt={`Project ${i}`}
-              className="w-full h-full object-cover rounded-2xl"
-            />
+              <Image
+                width={1920}
+                height={1080}
+                src={site.img}
+                alt={`Project ${i}`}
+                className="w-full h-full object-cover rounded-2xl"
+              />
             </div>
-           
           </div>
         ))}
       </div>
@@ -81,14 +80,13 @@ const TechScroll = () => {
           >
             <div className="relative w-full h-full rounded-3xl overflow-hidden border border-white/5 bg-gray-800/50">
               <Image
-              width={1920}
-              height={1080}
-              src={site.img}
-              alt={`Project ${i}`}
-              className="w-full h-full object-cover rounded-2xl"
-            />
+                width={1920}
+                height={1080}
+                src={site.img}
+                alt={`Project ${i}`}
+                className="w-full h-full object-cover rounded-2xl"
+              />
             </div>
-            
           </div>
         ))}
       </div>

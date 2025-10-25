@@ -8,7 +8,6 @@ import Link from "next/link";
 import {
   Instagram,
   Linkedin,
-  LinkedinIcon,
   Rocket,
   Spline,
   WandSparkles,
@@ -90,7 +89,6 @@ const Testimonial = () => {
       icon: <Linkedin />,
     },
   ];
-
   return (
     <section className="relative isolate px-4 sm:px-6 lg:px-8 py-12 lg:py-20 overflow-hidden">
       <div className="flex flex-col items-center justify-center max-w-6xl mx-auto relative z-10">
@@ -105,7 +103,7 @@ const Testimonial = () => {
             SectionHead="Customer Reviews About"
             SectionSubHead="Work, Usability and Design."
             SectionDescription="Hear from our happy clients! See how we’ve helped them achieve
- their goals and create lasting impact."
+            their goals and create lasting impact."
           />
           <div>
             <FeatureScroll />
@@ -129,22 +127,18 @@ const Testimonial = () => {
               >
                 {/* Gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-900/40 via-indigo-800/20 to-transparent opacity-50 rounded-2xl pointer-events-none"></div>
-
-                {/* Top Section */}
                 <div className="flex justify-between gap-3 relative z-10">
+                  {/* Left column: Avatar + Stars */}
                   <div className="flex flex-col gap-3">
-                    {/* Avatar */}
                     <div className="flex items-center justify-center w-10 h-10 sm:w-14 sm:h-14 rounded-full bg-white/5 overflow-hidden border border-white/10 shadow-md">
-                     <Image
-                    width={1920}
-                    height={1080}
-                    src={item.image}
-                    alt={item.name}
-                    className="w-full h-full object-cover"
-                  />
+                      <Image
+                        width={1920}
+                        height={1080}
+                        src={item.image}
+                        alt={item.name}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
-
-                    {/* Stars */}
                     <div className="flex flex-row gap-1">
                       {[1, 2, 3, 4, 5].map((i) => (
                         <svg
@@ -159,11 +153,11 @@ const Testimonial = () => {
                       ))}
                     </div>
                   </div>
-
-                  {/* Arrow/Icon */}
+                  {/* Right column: Icon */}
                   <div className="w-6 h-6 text-white/30 transition-colors duration-300 group-hover:text-white/60">
                     {item.icon}
                   </div>
+                </div>
 
                 {/* Middle Section (Review) */}
                 <p className="text-gray-400 mt-4 text-sm sm:text-base leading-relaxed relative z-10 flex-grow">
@@ -188,7 +182,6 @@ const Testimonial = () => {
                     {item.title}
                   </h4>
                 </div>
-              </div>
               </div>
             </Link>
           ))}

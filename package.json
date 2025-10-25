@@ -9,8 +9,8 @@
     "lint": "eslint",
     "prepare": "husky",
     "lint:fix": "eslint . --fix",
-    "format-check": "prettier --check \"./src/**/*.{js,jsx,ts,tsx,mjs,cjs,css,scss,sass,md,html,json}\"",
-    "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,mjs,cjs,css,scss,sass,md,html,json}\"",
+    "format": "prettier --write \"./**/*.{js,jsx,ts,tsx,mjs,cjs,css,scss,sass,md,html,json}\"",
+    "format-check": "prettier --check \"./**/*.{js,jsx,ts,tsx,mjs,cjs,css,scss,sass,md,html,json}\"",
     "lint-staged": "lint-staged --concurrent false",
     "pretty-quick": "pnpx pretty-quick --staged"
   },

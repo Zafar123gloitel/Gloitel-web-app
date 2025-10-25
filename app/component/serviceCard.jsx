@@ -20,9 +20,6 @@ export default function ServiceCard({
           src={image}
           alt={title}
           className="object-cover w-full h-full"
-          // sizes="(max-width: 768px) 100vw,
-          //        (max-width: 1200px) 50vw,
-          //        33vw"
         />
       </div>
 
@@ -37,7 +34,7 @@ export default function ServiceCard({
           )}
         </div>
         <HorizontalDivider />
-        <p className="text-gray-400 text-sm mt-3 leading-relaxed">
+        <p className="text-gray-400 text-md sm:text-md md:text-md mt-3 leading-relaxed">
           {description}
         </p>
       </div>

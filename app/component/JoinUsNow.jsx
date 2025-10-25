@@ -27,10 +27,10 @@ const JoinUsNow = () => {
             {/* Badge */}
             <CenterBadge JoinUsNowBadge="Join Us Now" />
             {/* Headings */}
-            <h3 className="text-2xl sm:text-3xl lg:text-5xl font-semibold text-white leading-snug">
+            <h3 className="text-2xl sm:text-3xl lg:text-5xl font-medium text-white">
               Each Project we Undertake
             </h3>
-            <h3 className="text-lg sm:text-2xl lg:text-4xl font-medium text-gray-300 mt-2 leading-snug">
+            <h3 className="text-2xl sm:text-2xl lg:text-5xl font-medium text-gray-300">
               is a Unique Opportunity.
             </h3>
 

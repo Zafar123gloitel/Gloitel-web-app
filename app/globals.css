@@ -7,7 +7,8 @@
 :root {
   --framer-font-family: "DM Sans", "DM Sans Placeholder", sans-serif;
   --framer-font-family-bold: "DM Sans", "DM Sans Placeholder", sans-serif;
-  --framer-font-family-bold-italic: "DM Sans", "DM Sans Placeholder", sans-serif;
+  --framer-font-family-bold-italic:
+    "DM Sans", "DM Sans Placeholder", sans-serif;
   --framer-font-family-italic: "DM Sans", "DM Sans Placeholder", sans-serif;
 }
 body {

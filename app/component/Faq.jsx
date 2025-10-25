@@ -10,7 +10,7 @@ export const FaqItem = ({ question, answer }) => {
     <div className="bg-white/5 border border-white/10 rounded-3xl shadow-md mb-7">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex justify-between items-center p-6 text-left font-medium text-white focus:outline-none"
+        className="w-full flex justify-between items-center p-6 text-left font-medium text-white focus:outline-none cursor-pointer"
       >
         <span>{question}</span>
         <span className="text-2xl">{isOpen ? "−" : "+"}</span>

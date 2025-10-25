@@ -129,7 +129,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`lg:hidden absolute top-full left-0 w-full bg-black/80 backdrop-blur-md overflow-hidden transition-all duration-300 ${
+        className={`lg:hidden w-full backdrop-blur-sm bg-black/5 overflow-hidden transition-all duration-300 ${
           isMobileMenuOpen
             ? "max-h-screen opacity-100 py-4"
             : "max-h-0 opacity-0 py-0"
@@ -147,12 +147,12 @@ const Navbar = () => {
             </Link>
           ))}
 
-          <a
+          <Link
             href="#"
-            className="mt-2 inline-block rounded-md bg-blue-700 px-5 py-2.5 text-sm font-semibold text-white shadow-lg hover:bg-indigo-400 transition"
+            className="mt-2 text-center inline-block rounded-md bg-blue-700/80 px-5 py-3 text-sm font-semibold text-white shadow-lg hover:bg-indigo-400/80 transition backdrop-blur-md"
           >
             Get In Touch
-          </a>
+          </Link>
         </div>
       </div>
     </header>
