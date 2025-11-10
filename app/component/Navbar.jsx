@@ -9,7 +9,7 @@ import Image from "next/image";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isHidden, setIsHidden] = useState(false); // new state for scroll
+  const [isHidden, setIsHidden] = useState(false);
   const pathname = usePathname();
 
   const links = [
@@ -18,141 +18,127 @@ const Navbar = () => {
     { href: "/creation", label: "Our Creations" },
     { href: "/contact", label: "Contact" },
     { href: "/faq", label: "FAQ" },
-    // { href: "/portfolio", label: "Portfolio" },
   ];
 
   const getLinkClasses = (href) =>
     pathname === href
-      ? "text-white"
-      : "text-white/60 hover:text-white transition";
+      ? "text-white font-semibold"
+      : "text-white/70 hover:text-white transition-colors";
 
-  // Track scroll direction
+  // 🧭 Hide navbar when scrolling down
   useEffect(() => {
     let lastScroll = 0;
-
     const handleScroll = () => {
       const currentScroll = window.scrollY;
-
-      if (currentScroll > lastScroll && currentScroll > 50) {
-        // Scrolling down
-        setIsHidden(true);
-      } else {
-        // Scrolling up
-        setIsHidden(false);
-      }
-
+      setIsHidden(currentScroll > lastScroll && currentScroll > 50);
       lastScroll = currentScroll;
     };
-
     window.addEventListener("scroll", handleScroll);
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <header
-      className={`fixed top-0 w-full z-50 backdrop-blur-md bg-black/50 transition-transform duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 bg-black/60 backdrop-blur-md transition-transform duration-300 ${
         isHidden ? "-translate-y-full" : "translate-y-0"
       }`}
     >
-      <nav className="mx-auto flex max-w-6xl items-center justify-between p-6 relative">
-        {/* Logo */}
-        <div className="flex items-center justify-between w-full lg:w-auto">
-          <Link href="#" className="p-1.5 mr-10">
-            <span className="sr-only">Your Company</span>
+      <nav className="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-8 py-5">
+        {/* 🔹 Logo Section */}
+        <div className="flex items-center">
+          <Link href="/" className="flex items-center gap-3">
             <Image
-              width={1920}
-              height={1080}
+              width={150}
+              height={100}
               src="https://framerusercontent.com/images/jQ28grv4AImGE9bV0hXi4CS7AR8.svg"
               alt="Logo"
-              className="h-10 w-auto"
             />
           </Link>
-
-          {/* Mobile menu button */}
-          <div className="lg:hidden ml-10">
-            <button
-              onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
-              className="inline-flex items-center justify-between rounded-md p-2.5 text-gray-400 hover:text-white hover:bg-gray-700"
-            >
-              <span className="sr-only">
-                {isMobileMenuOpen ? "Close menu" : "Open menu"}
-              </span>
-              {isMobileMenuOpen ? (
-                <svg
-                  className="h-6 w-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M6 18L18 6M6 6l12 12"
-                  ></path>
-                </svg>
-              ) : (
-                <svg
-                  className="h-6 w-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  ></path>
-                </svg>
-              )}
-            </button>
-          </div>
-          <VerticalDivider />
-
-          {/* Desktop Menu */}
-          <div className="hidden lg:flex lg:gap-x-8 ml-10">
-            {links.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`text-md ${getLinkClasses(link.href)}`}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
         </div>
-        <HeaderButton GetInTouch="Get In Touch" />
-      </nav>
 
-      {/* Mobile Menu */}
-      <div
-        className={`lg:hidden w-full backdrop-blur-sm bg-black/5 overflow-hidden transition-all duration-300 ${
-          isMobileMenuOpen
-            ? "max-h-screen opacity-100 py-4"
-            : "max-h-0 opacity-0 py-0"
-        }`}
-      >
-        <div className="flex flex-col px-6 space-y-2">
+        {/* 🔹 Desktop Links */}
+        <div className="hidden lg:flex items-center gap-8">
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`text-base font-semibold ${getLinkClasses(link.href)}`}
+              className={`text-base ${getLinkClasses(link.href)}`}
+            >
+              {link.label}
+            </Link>
+          ))}
+          <VerticalDivider />
+          <HeaderButton GetInTouch="Get In Touch" />
+        </div>
+
+        {/* 🔹 Mobile Toggle Button */}
+        <button
+          onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
+          className="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all"
+        >
+          {isMobileMenuOpen ? (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          ) : (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          )}
+        </button>
+      </nav>
+
+      {/* 🔹 Mobile Menu */}
+      <div
+        className={`lg:hidden transition-all duration-300 overflow-hidden bg-black/70 backdrop-blur-md ${
+          isMobileMenuOpen
+            ? "max-h-[400px] opacity-100 py-4"
+            : "max-h-0 opacity-0 py-0"
+        }`}
+      >
+        <div className="flex flex-col space-y-3 px-6">
+          {links.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={`block text-base font-medium ${getLinkClasses(link.href)} py-2`}
               onClick={() => setMobileMenuOpen(false)}
             >
               {link.label}
             </Link>
           ))}
 
-          <Link
-            href="#"
-            className="mt-2 text-center inline-block rounded-md bg-blue-700/80 px-5 py-3 text-sm font-semibold text-white shadow-lg hover:bg-indigo-400/80 transition backdrop-blur-md"
-          >
-            Get In Touch
-          </Link>
+          <div className="pt-3">
+            <Link
+              href="#contact"
+              className="block w-full text-center rounded-md bg-blue-600 hover:bg-blue-500 px-5 py-3 text-sm font-semibold text-white shadow-md transition"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Get In Touch
+            </Link>
+          </div>
         </div>
       </div>
     </header>

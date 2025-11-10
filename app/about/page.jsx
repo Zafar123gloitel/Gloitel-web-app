@@ -129,20 +129,61 @@ const AboutPage = () => {
 
           {/* Modal Video */}
           {showVideo && (
-            <div
-              className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
-              onClick={() => setShowVideo(false)}
-            >
-              <div className="relative w-full max-w-4xl">
-                <iframe
-                  src="https://www.youtube.com/embed/AMzVBmvh1Z0?autoplay=1"
-                  title="YouTube video player"
-                  className="w-full h-[60vh] sm:h-[70vh] rounded-2xl"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
+            <>
+              {/* Disable background scroll */}
+              <style jsx global>{`
+                body {
+                  overflow: hidden;
+                }
+              `}</style>
+
+              <div
+                className="fixed inset-0 bg-black/80 flex items-center justify-center z-[9999] p-6"
+                onClick={() => setShowVideo(false)}
+              >
+                {/* Stop propagation so clicking inside doesn’t close modal */}
+                <div
+                  className="relative w-full max-w-4xl"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {/* ❌ Close Button */}
+                  <button
+                    onClick={() => setShowVideo(false)}
+                    className="absolute -top-4 -right-4 bg-white/20 hover:bg-white/40 text-white p-2 rounded-full backdrop-blur-sm transition-all duration-200"
+                    aria-label="Close video"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-5 h-5 sm:w-6 sm:h-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </button>
+
+                  {/* ✅ YouTube Video iframe */}
+                  <iframe
+                    key={showVideo ? "video-playing" : "video-stopped"} // forces remount
+                    src={
+                      showVideo
+                        ? "https://www.youtube.com/embed/AMzVBmvh1Z0?autoplay=1"
+                        : ""
+                    }
+                    title="Gloitel Introduction Video"
+                    className="w-full h-[60vh] sm:h-[70vh] rounded-2xl shadow-lg"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
               </div>
-            </div>
+            </>
           )}
         </div>
       </section>

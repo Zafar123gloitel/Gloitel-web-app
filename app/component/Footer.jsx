@@ -108,12 +108,14 @@ export default function Footer() {
           <h3 className="font-medium text-white mb-2">Contact</h3>
           <ul className="space-y-2 text-sm sm:text-base text-white/50">
             {telephone.map((t, index) => (
-              <Link
-                className="mt-2 text-gray-400 text-sm"
-                href={`tel:+${t.no}`}
-              >
-                <li key={index}>(+91) {t.no}</li>
-              </Link>
+              <div key={index}>
+                <Link
+                  className="mt-2 text-gray-400 text-sm"
+                  href={`tel:+${t.no}`}
+                >
+                  <li key={index}>(+91) {t.no}</li>
+                </Link>
+              </div>
             ))}
           </ul>
         </div>
