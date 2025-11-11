@@ -14,6 +14,29 @@
 body {
   font-family: var(--framer-font-family);
 }
+.clip-curve {
+  clip-path: ellipse(850px 800px at 90% 80%);
+}
+.feature-fade-mask {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 25%,
+    black 75%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 25%,
+    black 75%,
+    transparent 100%
+  );
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
 
 @theme inline {
   --color-background: var(--background);
@@ -42,22 +65,40 @@ body {
     transform: translateX(-50%); /* Move left by half of total width */
   }
 }
-
-.animate-scroll {
-  display: flex;
-  animation: scrollLeft 20s linear infinite;
-}
-
-@keyframes scrollRight {
+@keyframes marquee {
   0% {
-    transform: translateX(-50%); /* Start shifted left */
+    transform: translateX(0);
   }
   100% {
-    transform: translateX(0); /* Move right back to origin */
+    transform: translateX(-50%);
   }
+}
+
+.animate-marquee {
+  display: flex;
+  animation: marquee 25s linear infinite;
 }
 
 .animate-scroll-right {
   display: flex;
   animation: scrollRight 20s linear infinite;
+}
+.button-glow {
+  font-size: 1.25rem;
+
+  &::before {
+    --vibrance: 50%;
+    content: "";
+    position: absolute;
+    inset: 400px 100px 2px;
+    /* Blue glow using OKLCH hue around 250–260° */
+    background: linear-gradient(
+      to right in oklch longer hue,
+      oklch(95% var(--vibrance) 250) 0,
+      oklch(95% var(--vibrance) 250) 100%
+    );
+    filter: blur(20px);
+    border-radius: inherit;
+    z-index: -1;
+  }
 }

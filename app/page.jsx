@@ -9,11 +9,7 @@ import LaunchYourSite from "./component/LaunchYourSite";
 import Testimonial from "./component/Testimonial";
 import { FAQPage } from "./component/Faq";
 import JoinUsNow from "./component/JoinUsNow";
-import {
-  LeftSectionHead2,
-  LeftSectionHeads,
-  MiddleSectionHeads,
-} from "./component/SectionHeads";
+import { LeftSectionHead2, MiddleSectionHeads } from "./component/SectionHeads";
 import { CenterBadge, LeftBadge } from "./component/Badge";
 import { GlowButton, WhiteButton } from "./component/Button";
 import { BgSquare2, BgSquare3 } from "./component/BgSquare";
@@ -36,7 +32,7 @@ const HomePage = () => {
   const services = [
     {
       image:
-        "https://framerusercontent.com/images/yV5q5tRVYanZRx5SyKhVIHDbi0.jpg?scale-down-to=1024",
+        "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762860905/Gloitel/custom_msnsx2.webp",
       title: "Custom Software Development",
       description:
         "Build secure, scalable, and high-performing web and mobile applications tailored to your business needs.",
@@ -47,28 +43,28 @@ const HomePage = () => {
     },
     {
       image:
-        "https://framerusercontent.com/images/QAmXciA1RA8AHgzbcI1iz87ro.jpg?scale-down-to-512",
+        "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762860905/Gloitel/cloud_xlrfwt.webp",
       title: "Cloud & DevOps Solutions",
       description:
         "Leverage cloud infrastructure and CI/CD pipelines to ensure speed, flexibility, and operational efficiency.",
     },
     {
       image:
-        "https://framerusercontent.com/images/JRAKWKlMtuarIVCJ574VvX8hUDQ.png?scale-down-to-512",
+        "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762860905/Gloitel/industry_phvtru.webp",
       title: "Industry-Specific Solutions",
       description:
         "From healthcare to retail, we provide domain-specific technology solutions that address unique industry challenges.",
     },
     {
       image:
-        "https://framerusercontent.com/images/MZ7PJfNe8bTL7jL3HQ09V23IaI.jpg?scale-down-to-512",
+        "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762860905/Gloitel/uiux_y66ojs.webp",
       title: "UI/UX Design & Development",
       description:
         "Create intuitive, user-focused designs that enhance engagement and provide seamless digital experiences.",
     },
     {
       image:
-        "https://framerusercontent.com/images/gqfCqc2W90G8IMBLWr8hZSk0s.jpg?scale-down-to-512",
+        "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762860904/Gloitel/ai_lai6ov.avif",
       title: "AI & Data-Driven Insights",
       description:
         "Unlock the power of data with advanced analytics, machine learning, and automation to drive smarter decisions.",
@@ -126,11 +122,12 @@ const HomePage = () => {
               SectionHead="Smart Solutions. Tangible Results."
               SectionSubHead="We turn your goals into measurable results."
             />
+
             <div className="mt-3 sm:mt-4 flex flex-wrap items-center gap-2 sm:gap-3">
               {benefitsBadge.map((text, idx) => (
                 <span
                   key={idx}
-                  className="px-4 sm:px-5 py-2 sm:py-3 rounded-md bg-white/5 text-xs sm:text-sm text-gray-300"
+                  className="px-3 sm:px-3 py-2 sm:py-1.5 rounded-md bg-white/5 text-xs sm:text-sm text-gray-400 border-2 border-gray-400/10"
                 >
                   {text.title}
                 </span>
@@ -138,13 +135,12 @@ const HomePage = () => {
               <WhiteButton ButtonText="Contact Now" Buttonlink="/contact" />
             </div>
           </div>
-
           {/* Services */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
             {services.map((service, i) => (
               <div
                 key={i}
-                className={i === 0 ? "col-span-1 md:col-span-2" : "col-span-1"}
+                className={i === 0 ? "col-span-1 md:col-span-2 " : "col-span-1"}
               >
                 <ServiceCard
                   image={service.image}

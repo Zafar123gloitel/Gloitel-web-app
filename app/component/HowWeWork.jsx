@@ -138,7 +138,6 @@ const HowWeWork = () => {
             ))}
           </div>
         </div>
-
         {/* RIGHT */}
         <ImageCard HowWeWorkImg="https://framerusercontent.com/images/oUAzCBZlCCsvzmsAiYQ3RDbhyg.jpeg?scale-down-to-1024" />
       </div>

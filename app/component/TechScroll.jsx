@@ -1,46 +1,49 @@
 import Image from "next/image";
 import React from "react";
+import Marquee from "react-fast-marquee";
 
 const GalleryOne = [
   {
-    img: "https://framerusercontent.com/images/1pPSjGU4S4FI7ghr7qYd1SZwjo.webp",
+    img: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762865533/Gloitel/azure_zhbd2i.webp",
   },
   {
-    img: "https://framerusercontent.com/images/SZfiBqTdlaKhnFFYnHIufjnvcEI.png",
+    img: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762865533/Gloitel/aws_nyqmjp.webp",
   },
   {
-    img: "https://framerusercontent.com/images/LII4rONieY4ivMPyQrwL8AEaK3g.jpg",
+    img: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762865534/Gloitel/gemini_emnenb.webp",
   },
   {
-    img: "https://framerusercontent.com/images/FzYRtwApmvuaW777AABhwZs9W8.jpg",
+    img: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762865533/Gloitel/supa_upvoa6.webp",
   },
   {
-    img: "https://framerusercontent.com/images/nBetJ5iutsK961pWUYORsGAae0.png",
+    img: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762865534/Gloitel/apache_n4fwmt.webp",
   },
   {
-    img: "https://framerusercontent.com/images/1YCmmthfQqX5jHF3bHBQEi44YhE.webp",
+    img: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762865534/Gloitel/apache_n4fwmt.webp",
   },
 ];
 
 const GalleryTwo = [
   {
-    img: "https://framerusercontent.com/images/Ec08xgiQaFXy7irJTBteA9eFCRM.webp",
+    img: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762865722/Gloitel/chatgpt_tg0l1d.png",
   },
   {
-    img: "https://framerusercontent.com/images/3HU1wPFPmG5B27scfFZWhwIpPU.webp",
+    img: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762865777/Gloitel/powerbi_vvewut.webp",
   },
   {
-    img: "https://framerusercontent.com/images/5qvqE8wkAaGTRuhz1Ijav6mJrg.png",
+    img: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762865724/Gloitel/figma_c8s0de.webp",
   },
   {
-    img: "https://framerusercontent.com/images/BmHiIOOZ8fRIoWY0ciDlhw1nu6E.webp",
+    img: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762865723/Gloitel/firebase_wmr3xd.png",
   },
   {
-    img: "https://framerusercontent.com/images/IxFV6qzk9YxT8sr9XVqGJ1P1SuY.png",
+    img: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762865722/Gloitel/docker_nmqrzp.webp",
   },
-  { img: "https://framerusercontent.com/images/Q75jFbpr6aUT83QVHuut6NzSQ.jpg" },
   {
-    img: "https://framerusercontent.com/images/gLSdJmYYVAc1De8bHWeCrIa7S28.png",
+    img: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762865725/Gloitel/terraform_vzvlbb.webp",
+  },
+  {
+    img: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762865727/Gloitel/django_clvomp.webp",
   },
 ];
 
@@ -48,47 +51,66 @@ const TechScroll = () => {
   return (
     <div className="relative overflow-hidden w-full py-6 sm:py-8">
       {/* First Row */}
-      <div className="flex animate-scroll whitespace-nowrap gap-4 sm:gap-4 px-4">
-        {GalleryOne.map((site, i) => (
-          <div
-            key={i}
-            className="flex justify-center items-center min-w-[230px] sm:min-w-[250px] md:min-w-[400px] h-40 sm:h-52 md:h-80 
-             rounded-4xl overflow-hidden bg-black/20 shadow-lg shadow-black/40 
-             border-2 border-white/5 p-2 sm:p-3 md:p-2"
-          >
-            <div className="relative w-full h-full rounded-3xl overflow-hidden border border-white/5 bg-gray-800/50">
-              <Image
-                width={1920}
-                height={1080}
-                src={site.img}
-                alt={`Project ${i}`}
-                className="w-full h-full object-cover rounded-2xl"
-              />
+      <div className="flex whitespace-nowrap gap-4 sm:gap-4 px-4">
+        <Marquee
+          gradient={true}
+          gradientColor={[0, 0, 0]}
+          speed={50}
+          pauseOnHover={false}
+          loop={0}
+        >
+          {GalleryOne.map((site, i) => (
+            <div
+              key={i}
+              className="flex justify-center items-center 
+        w-[350px] h-[200px] sm:w-[380px] sm:h-[220px] md:w-[480px] md:h-[330px]
+        rounded-4xl overflow-hidden bg-black/20 shadow-lg shadow-black/40 
+        border-2 border-white/5 p-2 sm:p-3 md:p-2 m-2"
+            >
+              <div className="relative w-full h-full rounded-3xl overflow-hidden border border-white/5 bg-gray-800/50">
+                <Image
+                  width={1920}
+                  height={1080}
+                  src={site.img}
+                  alt={`Project ${i}`}
+                  className="w-full h-full object-cover rounded-2xl"
+                />
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </Marquee>
       </div>
 
       {/* Second Row */}
       <div className="flex animate-scroll-right whitespace-nowrap gap-4 sm:gap-6 px-4 mt-6 sm:mt-8">
-        {GalleryTwo.map((site, i) => (
-          <div
-            key={i}
-            className="flex justify-center items-center min-w-[230px] sm:min-w-[250px] md:min-w-[400px] h-40 sm:h-52 md:h-80 
-             rounded-4xl overflow-hidden bg-black/20 shadow-lg shadow-black/40 
-             border-2 border-white/5 p-2 sm:p-3 md:p-2"
-          >
-            <div className="relative w-full h-full rounded-3xl overflow-hidden border border-white/5 bg-gray-800/50">
-              <Image
-                width={1920}
-                height={1080}
-                src={site.img}
-                alt={`Project ${i}`}
-                className="w-full h-full object-cover rounded-2xl"
-              />
+        <Marquee
+          gradient={true} // adds subtle fade edges
+          gradientColor={[0, 0, 0]} // black fade for dark backgrounds
+          speed={50} // control scroll speed
+          pauseOnHover={false} // stops when hovered
+          direction="right"
+          loop={0} // infinite scroll
+        >
+          {GalleryTwo.map((site, i) => (
+            <div
+              key={i}
+              className="flex justify-center items-center 
+        w-[350px] h-[300px] sm:w-[380px] sm:h-[220px] md:w-[480px] md:h-[330px]
+        rounded-4xl overflow-hidden bg-black/20 shadow-lg shadow-black/40 
+        border-2 border-white/5 p-2 sm:p-3 md:p-2  m-2"
+            >
+              <div className="relative w-full h-full rounded-3xl overflow-hidden border border-white/5 bg-gray-800/50">
+                <Image
+                  width={1920}
+                  height={1080}
+                  src={site.img}
+                  alt={`Project ${i}`}
+                  className="w-full h-full object-cover rounded-2xl"
+                />
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </Marquee>
       </div>
     </div>
   );

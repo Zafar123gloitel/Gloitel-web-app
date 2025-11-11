@@ -110,6 +110,7 @@ export const HomeAboutImg = ({ ImgLink }) => {
   return (
     <>
       <div className="flex justify-center lg:justify-start">
+        <div className="absolute  bottom-25 translate-x-25 w-[20%] h-[50px] bg-blue-700 blur-[30px] rounded-full pointer-events-none" />
         <div className="p-3 backdrop-blur-md w-full sm:w-4/5 lg:w-lg rounded-3xl bg-gray-950/70 from-gray-950/90 to-black/80 ring-1 ring-white/5">
           <Image
             width={1920}
