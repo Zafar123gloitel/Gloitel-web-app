@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #000000;
   --foreground: #171717;
 }
 :root {
@@ -15,7 +15,7 @@ body {
   font-family: var(--framer-font-family);
 }
 .clip-curve {
-  clip-path: ellipse(850px 800px at 90% 80%);
+  clip-path: ellipse(750px 700px at 90% 80%);
 }
 .feature-fade-mask {
   -webkit-mask-image: linear-gradient(

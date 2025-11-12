@@ -47,7 +47,7 @@ const stages = [
     date: 2025,
     tag: "Website & Mobile App",
     image:
-      "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762867005/Gloitel/portfolio/godhaar_s9qpfp.webp",
+      "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762927323/Gloitel/portfolio/godhaar_vljbzt.jpg",
   },
   {
     id: 6,
@@ -82,7 +82,7 @@ const CreationPage = () => {
       <section className="relative isolate sm:px-6 lg:px-8 py-16 lg:py-30 w-full h-full overflow-hidden">
         {/* Background Video */}
         <video
-          src="https://framerusercontent.com/assets/lr4LSmXa1klevAvb0jf1i2zsDE.mp4"
+          src="https://res.cloudinary.com/dsqu6pi0d/video/upload/v1762846419/Gloitel/bg_cij8h5.mp4"
           type="video/mp4"
           className="absolute top-0 left-0 w-full h-full object-cover z-0"
           autoPlay

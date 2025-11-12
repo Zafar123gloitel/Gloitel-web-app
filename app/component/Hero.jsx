@@ -16,11 +16,14 @@ const Hero = () => {
         loop
         playsInline
       />
-      <div className="absolute top-19 -right-40 w-full h-full flex justify-end items-center overflow-hidden z-26">
+      <div
+        className="absolute top-20 right-0 h-full justify-end items-center overflow-hidden z-30 hidden 2xl:flex
+"
+      >
         <video
           src="https://res.cloudinary.com/dsqu6pi0d/video/upload/v1762846419/Gloitel/human-vid_xpbx1j.mp4"
           type="video/mp4"
-          className="w-[900px] h-full object-cover clip-curve"
+          className="w-[700px] h-full object-cover clip-curve"
           autoPlay
           muted
           loop

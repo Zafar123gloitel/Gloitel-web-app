@@ -4,18 +4,20 @@ import React from "react";
 import Marquee from "react-fast-marquee";
 
 const logo = [
-  { link: "https://framerusercontent.com/images/8eCUvDX0OmqQtXMhw5mzOqg.png" },
   {
-    link: "https://framerusercontent.com/images/RCsXIAT64MXqKtjtESd1RB5UXto.png",
+    link: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762928121/Gloitel/featurescroll/experteeth_xisrqz.webp",
   },
   {
-    link: "https://framerusercontent.com/images/4OYXnlCAPJrNl3tfm2nmm7oJkw.png",
+    link: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762928156/Gloitel/featurescroll/glowel_hak4d9.webp",
   },
   {
-    link: "https://framerusercontent.com/images/lyJgvWvh86jt2XcHGLqhulc0wQ.png",
+    link: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762928124/Gloitel/featurescroll/travel_lkxxcs.webp",
   },
   {
-    link: "https://framerusercontent.com/images/4xbysOFxJf5RCzvs0GF86QcKik.png",
+    link: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762928121/Gloitel/featurescroll/experteeth_xisrqz.webp",
+  },
+  {
+    link: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762928130/Gloitel/featurescroll/fitbattle_k54old.webp",
   },
 ];
 

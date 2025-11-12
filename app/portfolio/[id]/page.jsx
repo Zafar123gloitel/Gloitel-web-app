@@ -52,7 +52,7 @@ const Portfolio = ({ params }) => {
       <section className="relative px-4 sm:px-6 lg:px-8 py-28 lg:py-28 w-full mx-auto overflow-hidden">
         {/* Background video */}
         <video
-          src="https://framerusercontent.com/assets/lr4LSmXa1klevAvb0jf1i2zsDE.mp4"
+          src="https://res.cloudinary.com/dsqu6pi0d/video/upload/v1762846419/Gloitel/bg_cij8h5.mp4"
           type="video/mp4"
           className="absolute top-0 left-0 w-full h-full object-cover z-0"
           autoPlay
@@ -113,7 +113,7 @@ const Portfolio = ({ params }) => {
                 {/* Background image */}
                 <div className="absolute -bottom-10 -right-10 opacity-70">
                   <Image
-                    src="https://framerusercontent.com/images/QMirkdl4WPEe5bmSFhvVcssWj4.svg"
+                    src="https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762926076/Gloitel/utils/star_fzn7cv.svg"
                     alt="design"
                     width={180}
                     height={180}

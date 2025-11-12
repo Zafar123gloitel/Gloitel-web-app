@@ -63,7 +63,7 @@ const TechScroll = () => {
             <div
               key={i}
               className="flex justify-center items-center 
-        w-[350px] h-[200px] sm:w-[380px] sm:h-[220px] md:w-[480px] md:h-[330px]
+         w-[300px] h-[260px] sm:w-[300px] sm:h-[260px] md:w-[480px] md:h-[330px]
         rounded-4xl overflow-hidden bg-black/20 shadow-lg shadow-black/40 
         border-2 border-white/5 p-2 sm:p-3 md:p-2 m-2"
             >
@@ -95,7 +95,7 @@ const TechScroll = () => {
             <div
               key={i}
               className="flex justify-center items-center 
-        w-[350px] h-[300px] sm:w-[380px] sm:h-[220px] md:w-[480px] md:h-[330px]
+        w-[300px] h-[260px] sm:w-[300px] sm:h-[260px] md:w-[480px] md:h-[330px]
         rounded-4xl overflow-hidden bg-black/20 shadow-lg shadow-black/40 
         border-2 border-white/5 p-2 sm:p-3 md:p-2  m-2"
             >

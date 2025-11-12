@@ -12,7 +12,7 @@ import JoinUsNow from "./component/JoinUsNow";
 import { LeftSectionHead2, MiddleSectionHeads } from "./component/SectionHeads";
 import { CenterBadge, LeftBadge } from "./component/Badge";
 import { GlowButton, WhiteButton } from "./component/Button";
-import { BgSquare2, BgSquare3 } from "./component/BgSquare";
+import { BgSquare3 } from "./component/BgSquare";
 import ServiceCard from "./component/serviceCard";
 import Image from "next/image";
 
@@ -99,7 +99,7 @@ const HomePage = () => {
 
           {/* Image */}
           <div className="order-2 md:order-1">
-            <HomeAboutImg ImgLink="https://framerusercontent.com/images/Qnjbg5sx80zqC8P7TMF9g3DgCA.jpeg?scale-down-to=1024" />
+            <HomeAboutImg ImgLink="https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762928286/Gloitel/aboutgloitel_h4ba1t.webp" />
           </div>
         </div>
       </section>
@@ -183,7 +183,7 @@ const HomePage = () => {
                 <Image
                   width={1920}
                   height={1080}
-                  src="https://framerusercontent.com/images/yV5q5tRVYanZRx5SyKhVIHDbi0.jpg?scale-down-to-1024"
+                  src="https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762927804/Gloitel/banner_mfm3ss.webp"
                   alt="Video Thumbnail"
                   className="absolute top-0 left-0 w-full h-full object-cover rounded-2xl"
                 />

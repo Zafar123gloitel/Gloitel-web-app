@@ -51,9 +51,9 @@ const Navbar = () => {
             {/* 🔹 Logo */}
             <Link href="/" className="flex items-center gap-2">
               <Image
+                src="https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762927934/Gloitel/logo_xbs2qc.svg"
                 width={140}
                 height={90}
-                src="https://framerusercontent.com/images/jQ28grv4AImGE9bV0hXi4CS7AR8.svg"
                 alt="Logo"
                 className="object-contain"
               />
