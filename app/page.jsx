@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect, useRef } from "react";
 import Hero from "./component/Hero";
 import { HomeAboutContent, HomeAboutImg } from "./component/About";
 import Result from "./component/Result";
@@ -14,6 +15,10 @@ import { CenterBadge, LeftBadge } from "./component/Badge";
 import { GlowButton, WhiteButton } from "./component/Button";
 import { BgSquare3 } from "./component/BgSquare";
 import ServiceCard from "./component/serviceCard";
+import Card from "./component/card";
+import { useScroll } from "framer-motion";
+import Lenis from "@studio-freight/lenis";
+import { projects } from "./data";
 import Image from "next/image";
 
 const HomePage = () => {
