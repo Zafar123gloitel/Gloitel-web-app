@@ -89,6 +89,7 @@ const CreationPage = () => {
           muted
           loop
           playsInline
+          unoptimized
         ></video>
 
         <div className="flex flex-col items-center justify-center mx-auto min-h-[60vh] relative z-10 pt-15 sm:pt-20 md:pt-20 lg:pt-20">

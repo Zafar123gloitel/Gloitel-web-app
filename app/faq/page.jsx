@@ -13,6 +13,7 @@ const page = () => {
           muted
           loop
           playsInline
+          unoptimized
         ></video>
 
         <div className="relative">

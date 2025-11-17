@@ -17,6 +17,7 @@ const JoinUsNow = () => {
             muted
             loop
             playsInline
+            unoptimized
           ></video>
 
           {/* Dark overlay */}

@@ -12,6 +12,7 @@ export const HeroVideoBg = () => {
         muted
         loop
         playsInline
+        unoptimized
       ></video>
     </div>
   );
