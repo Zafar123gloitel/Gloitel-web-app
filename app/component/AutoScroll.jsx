@@ -60,6 +60,7 @@ const AutoScroll = () => {
                     src={feature.img ?? "dummy.jpg"}
                     alt="Project"
                     className="w-full h-full object-cover"
+                    unoptimized
                   />
 
                   {/* Fade overlay (only bottom 10%) */}

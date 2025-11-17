@@ -74,6 +74,7 @@ const TechScroll = () => {
                   src={site.img}
                   alt={`Project ${i}`}
                   className="w-full h-full object-cover rounded-2xl"
+                  unoptimized
                 />
               </div>
             </div>
@@ -106,6 +107,7 @@ const TechScroll = () => {
                   src={site.img}
                   alt={`Project ${i}`}
                   className="w-full h-full object-cover rounded-2xl"
+                  unoptimized
                 />
               </div>
             </div>

@@ -118,6 +118,7 @@ export const HomeAboutImg = ({ ImgLink }) => {
             src={ImgLink}
             alt="About section"
             className="w-full h-auto rounded-3xl shadow-2xl ring-1 ring-white/5"
+            unoptimized
           />
         </div>
       </div>
@@ -239,6 +240,7 @@ export const AboutAboutImg1 = ({ ImgLink }) => {
             src={ImgLink}
             alt="About section"
             className="w-full h-auto rounded-3xl shadow-2xl ring-1 ring-white/5"
+            unoptimized
           />
         </div>
       </div>
@@ -256,6 +258,7 @@ export const AboutAboutImg2 = ({ ImgLink }) => {
             src={ImgLink}
             alt="About section"
             className="w-full h-auto rounded-3xl shadow-2xl ring-1 ring-white/5"
+            unoptimized
           />
         </div>
       </div>

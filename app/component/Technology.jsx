@@ -98,6 +98,7 @@ const Technology = () => {
                     src={item.img}
                     alt=""
                     className="rounded-full"
+                    unoptimized
                   />
                 </div>
 

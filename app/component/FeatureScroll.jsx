@@ -39,6 +39,7 @@ const FeatureScroll = () => {
                 src={img.link}
                 alt="Project"
                 className="w-40 object-cover"
+                unoptimized
               />
             </div>
           ))}

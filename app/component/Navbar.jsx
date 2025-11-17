@@ -56,6 +56,7 @@ const Navbar = () => {
                 height={90}
                 alt="Logo"
                 className="object-contain"
+                unoptimized
               />
             </Link>
             <VerticalDivider />

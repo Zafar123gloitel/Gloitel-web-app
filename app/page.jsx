@@ -191,6 +191,7 @@ const HomePage = () => {
                   src="https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762927804/Gloitel/banner_mfm3ss.webp"
                   alt="Video Thumbnail"
                   className="absolute top-0 left-0 w-full h-full object-cover rounded-2xl"
+                  unoptimized
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center bg-blue-600/90 rounded-full shadow-lg">

@@ -140,6 +140,7 @@ const Testimonial = () => {
                         src={item.image}
                         alt={item.name}
                         className="w-full h-full object-cover"
+                        unoptimized
                       />
                     </div>
                     <div className="flex flex-row gap-1">

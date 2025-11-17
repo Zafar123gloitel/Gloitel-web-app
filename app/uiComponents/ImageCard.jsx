@@ -15,6 +15,7 @@ export const ImageCard = ({ HowWeWorkImg }) => {
               src={HowWeWorkImg}
               alt="About section"
               className="w-full h-auto rounded-3xl shadow-xl ring-1 border border-gray-300/10"
+              unoptimized
             />
           </div>
 

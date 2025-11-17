@@ -117,6 +117,7 @@ const Portfolio = ({ params }) => {
                     alt="design"
                     width={180}
                     height={180}
+                    unoptimized
                   />
                 </div>
 
@@ -149,6 +150,7 @@ const Portfolio = ({ params }) => {
                         alt={project.name}
                         fill
                         className="object-cover rounded-2xl"
+                        unoptimized
                       />
                     </div>
 
@@ -180,6 +182,7 @@ const Portfolio = ({ params }) => {
                         alt={project.name}
                         fill
                         className="object-cover rounded-2xl"
+                        unoptimized
                       />
                     </div>
 

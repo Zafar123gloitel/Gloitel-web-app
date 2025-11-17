@@ -82,6 +82,7 @@ const Card = ({
                 sizes="(max-width: 768px) 100vw, 1000px"
                 className={styles.image}
                 priority={i === 0}
+                unoptimized
               />
             </motion.div>
           </div>
