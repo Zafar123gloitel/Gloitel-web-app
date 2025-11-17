@@ -43,7 +43,7 @@ const Navbar = () => {
         isHidden ? "-translate-y-full" : "translate-y-0"
       }`}
     >
-      <nav className="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-8">
+      <nav className=" mx-auto flex items-center justify-between px-4 sm:px-4 md:px-20 lg:px-44">
         {/* 🔹 Header Wrapper */}
         <div className="flex items-center justify-between w-full px-6 py-4">
           {/* 🔹 Left Section — Menu + Logo */}
@@ -56,6 +56,7 @@ const Navbar = () => {
                 height={90}
                 alt="Logo"
                 className="object-contain"
+                unoptimized
               />
             </Link>
             <VerticalDivider />

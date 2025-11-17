@@ -6,12 +6,12 @@ import {
   ProjectShowcase,
   ProjectShowcaseFourth,
   ProjectShowcaseSecond,
-  ProjectShowcaseThird,
 } from "../../component/ProjectShowcase";
 import { IntroHead2 } from "../../uiComponents/Heading";
 import Image from "next/image";
 import projects from "./data.json";
 import { GlowButton } from "../../component/Button";
+import GlowPanel from "../../component/GlowPanel";
 
 const Portfolio = ({ params }) => {
   const { id } = use(params); // unwrap params safely
@@ -59,6 +59,7 @@ const Portfolio = ({ params }) => {
           muted
           loop
           playsInline
+          unoptimized="true"
         />
 
         {/* Main content */}
@@ -117,6 +118,7 @@ const Portfolio = ({ params }) => {
                     alt="design"
                     width={180}
                     height={180}
+                    unoptimized
                   />
                 </div>
 
@@ -149,6 +151,7 @@ const Portfolio = ({ params }) => {
                         alt={project.name}
                         fill
                         className="object-cover rounded-2xl"
+                        unoptimized
                       />
                     </div>
 
@@ -180,6 +183,7 @@ const Portfolio = ({ params }) => {
                         alt={project.name}
                         fill
                         className="object-cover rounded-2xl"
+                        unoptimized
                       />
                     </div>
 
@@ -198,8 +202,8 @@ const Portfolio = ({ params }) => {
                 ),
             )}
         </div>
+        <GlowPanel />
       </section>
-
       {/* Bottom Sections */}
       <FAQPage />
       <JoinUsNow />

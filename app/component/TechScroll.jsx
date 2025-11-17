@@ -18,9 +18,6 @@ const GalleryOne = [
   {
     img: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762865534/Gloitel/apache_n4fwmt.webp",
   },
-  {
-    img: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762865534/Gloitel/apache_n4fwmt.webp",
-  },
 ];
 
 const GalleryTwo = [
@@ -74,6 +71,7 @@ const TechScroll = () => {
                   src={site.img}
                   alt={`Project ${i}`}
                   className="w-full h-full object-cover rounded-2xl"
+                  unoptimized
                 />
               </div>
             </div>
@@ -106,6 +104,7 @@ const TechScroll = () => {
                   src={site.img}
                   alt={`Project ${i}`}
                   className="w-full h-full object-cover rounded-2xl"
+                  unoptimized
                 />
               </div>
             </div>

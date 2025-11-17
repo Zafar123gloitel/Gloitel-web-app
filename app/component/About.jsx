@@ -99,7 +99,7 @@ export const HomeAboutContentHead = ({
       <h3 className="text-3xl sm:text-3xl lg:text-5xl font-medium text-gray-400 mt-2">
         {HomeAboutSubHeading}
       </h3>
-      <p className="text-base sm:text-sm lg:text-base font-medium text-gray-400 mt-2">
+      <p className="text-base sm:text-sm lg:text-base font-medium text-gray-400 mt-8">
         {HomeAboutDescription}
       </p>
     </div>
@@ -109,15 +109,16 @@ export const HomeAboutContentHead = ({
 export const HomeAboutImg = ({ ImgLink }) => {
   return (
     <>
-      <div className="flex justify-center lg:justify-start">
-        <div className="absolute  bottom-25 translate-x-25 w-[20%] h-[50px] bg-blue-700 blur-[30px] rounded-full pointer-events-none" />
-        <div className="p-3 backdrop-blur-md w-full sm:w-4/5 lg:w-lg rounded-3xl bg-gray-950/70 from-gray-950/90 to-black/80 ring-1 ring-white/5">
+      <div className=" relative flex justify-center lg:justify-start">
+        <div className="absolute bottom-0 sm:bottom-0 md:bottom-0 lg:bottom-0 translate-x-0 md:translate-x-0 lg:translate-x-30 w-[40%] sm:w-[40%] md:w-[50%] lg:w-[50%] h-[50px] bg-blue-700 blur-[30px] rounded-full pointer-events-none" />
+        <div className="p-3 backdrop-blur-md w-full sm:w-4/5 md:w-full lg:w-full h-auto md:h-1/2 rounded-3xl bg-gray-950/70 from-gray-950/90 to-black/80 ring-1 ring-white/5">
           <Image
             width={1920}
             height={1080}
             src={ImgLink}
             alt="About section"
-            className="w-full h-auto rounded-3xl shadow-2xl ring-1 ring-white/5"
+            className="w-full h-full rounded-3xl shadow-2xl ring-1 ring-white/5"
+            unoptimized
           />
         </div>
       </div>
@@ -239,6 +240,7 @@ export const AboutAboutImg1 = ({ ImgLink }) => {
             src={ImgLink}
             alt="About section"
             className="w-full h-auto rounded-3xl shadow-2xl ring-1 ring-white/5"
+            unoptimized
           />
         </div>
       </div>
@@ -256,6 +258,7 @@ export const AboutAboutImg2 = ({ ImgLink }) => {
             src={ImgLink}
             alt="About section"
             className="w-full h-auto rounded-3xl shadow-2xl ring-1 ring-white/5"
+            unoptimized
           />
         </div>
       </div>

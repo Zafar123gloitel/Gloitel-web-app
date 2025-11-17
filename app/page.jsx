@@ -20,6 +20,7 @@ import { useScroll } from "framer-motion";
 import Lenis from "@studio-freight/lenis";
 import { projects } from "./data";
 import Image from "next/image";
+import GlowPanel from "./component/GlowPanel";
 
 const HomePage = () => {
   const benefitsBadge = [
@@ -98,7 +99,7 @@ const HomePage = () => {
               ]}
               ButtonText="View About Gloitel"
               Buttonlink="/about"
-              HomeAboutTexts="Trusted by 50 agencies for excellence."
+              HomeAboutTexts="Trusted by 50+ agencies for excellence."
             />
           </div>
 
@@ -110,13 +111,13 @@ const HomePage = () => {
       </section>
 
       <HorizontalDivider />
-
       <Result />
-      <HorizontalDivider />
+
       <HowWeWork />
       <HorizontalDivider />
       <Technology />
 
+      <HorizontalDivider />
       {/* Benefits & Services */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
         <div className="flex flex-col gap-10 lg:gap-16 items-start">
@@ -163,7 +164,7 @@ const HomePage = () => {
       <HorizontalDivider />
 
       {/* Portfolio Section */}
-      <section className="relative isolate px-4 sm:px-6 lg:px-8 py-12 lg:py-20 overflow-hidden">
+      <section className="relative isolate px-4 sm:px-6 lg:px-8 py-10 overflow-hidden">
         <BgSquare3 />
         <div className="flex flex-col items-center justify-center max-w-7xl mx-auto relative z-10">
           {/* Header */}
@@ -189,32 +190,19 @@ const HomePage = () => {
                   width={1920}
                   height={1080}
                   src="https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762927804/Gloitel/banner_mfm3ss.webp"
-                  alt="Video Thumbnail"
+                  alt="image"
                   className="absolute top-0 left-0 w-full h-full object-cover rounded-2xl"
+                  unoptimized
                 />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center bg-blue-600/90 rounded-full shadow-lg">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="white"
-                      viewBox="0 0 24 24"
-                      className="w-8 h-8 sm:w-10 sm:h-10"
-                    >
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
         </div>
+        <GlowPanel />
       </section>
-
-      <HorizontalDivider />
       <LaunchYourSite />
       <HorizontalDivider />
       <Testimonial />
-      <HorizontalDivider />
       <FAQPage />
       <JoinUsNow />
     </>
