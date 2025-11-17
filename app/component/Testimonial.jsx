@@ -13,6 +13,7 @@ import {
   WandSparkles,
 } from "lucide-react";
 import Image from "next/image";
+import GlowPanel from "./GlowPanel";
 
 const Testimonial = () => {
   const stages = [
@@ -90,7 +91,7 @@ const Testimonial = () => {
     },
   ];
   return (
-    <section className="relative isolate px-4 sm:px-6 lg:px-8 py-12 lg:py-20 overflow-hidden">
+    <section className="relative isolate px-4 sm:px-6 lg:px-8 py-5 lg:py-15 overflow-hidden">
       <div className="flex flex-col items-center justify-center max-w-6xl mx-auto relative z-10">
         <BgSquare3 />
         {/* HEADER */}
@@ -191,6 +192,7 @@ const Testimonial = () => {
           ))}
         </div>
       </div>
+      <GlowPanel />
     </section>
   );
 };

@@ -5,6 +5,7 @@ import { LeftBadge } from "./Badge";
 import { LeftSectionHeads, MiddleSectionHeads } from "./SectionHeads";
 import { ImageCard } from "../uiComponents/ImageCard";
 import { GlowButton } from "./Button";
+import GlowPanel from "./GlowPanel";
 import { Blend, Crosshair, Rocket } from "lucide-react";
 
 const stages = [
@@ -77,7 +78,7 @@ const AnimatedCard = ({ children }) => {
 
 const HowWeWork = () => {
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
+    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:py-10 lg:pt-10 lg:pb-20 ">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
         {/* LEFT */}
         <div className="flex flex-col">

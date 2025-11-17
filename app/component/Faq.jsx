@@ -54,7 +54,7 @@ export const FAQPage = () => {
   ];
 
   return (
-    <section className="py-16 px-6 sm:px-12 lg:px-24 min-h-screen flex items-center ">
+    <section className="py-0 px-6 sm:px-12 lg:px-24 lg:pt-0 min-h-screen flex items-center ">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 w-6xl">
         {/* Left Side - Heading */}
         <div className="lg:col-span-5 flex flex-col ">

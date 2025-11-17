@@ -8,6 +8,7 @@ import JoinUsNow from "../component/JoinUsNow";
 import ContactForm from "../component/ContactForm";
 import { HeroVideoBg } from "../component/HeroHead";
 import { IntroHead } from "../uiComponents/Heading";
+import GlowPanel from "../component/GlowPanel";
 
 const ContactPage = () => {
   return (
@@ -30,6 +31,7 @@ const ContactPage = () => {
           </div>
           <ContactForm />
         </div>
+        <GlowPanel />
       </section>
       <FAQPage />
       <JoinUsNow />

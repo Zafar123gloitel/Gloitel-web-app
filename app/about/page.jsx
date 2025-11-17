@@ -14,6 +14,8 @@ import JoinUsNow from "../component/JoinUsNow";
 import { BgSquare2, BgSquare3 } from "../component/BgSquare";
 import { GlowButton } from "../component/Button";
 import { IntroHead } from "../uiComponents/Heading";
+import GlowPanel from "../component/GlowPanel";
+import { HorizontalDivider } from "../component/SectionDivider";
 
 const AboutPage = () => {
   const [showVideo, setShowVideo] = useState(false);
@@ -70,7 +72,7 @@ const AboutPage = () => {
           muted
           loop
           playsInline
-          unoptimized
+          unoptimized="true"
         ></video>
 
         <div className="flex flex-col items-center justify-center mx-auto min-h-[60vh] relative z-10 text-center pt-15 sm:pt-20 md:pt-20 lg:pt-20">
@@ -191,7 +193,7 @@ const AboutPage = () => {
           )}
         </div>
       </section>
-
+      <HorizontalDivider />
       {/* About Section 1 */}
       <section className="relative isolate px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24 ">
         <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-10 items-center z-30">
@@ -220,7 +222,7 @@ const AboutPage = () => {
           </div>
         </div>
       </section>
-
+      <HorizontalDivider />
       {/* About Section 2 */}
       <section className="relative isolate px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
         <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
@@ -245,7 +247,7 @@ const AboutPage = () => {
           <AboutAboutImg2 ImgLink="https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762928416/Gloitel/abouttwo_pic4v5.webp" />
         </div>
       </section>
-
+      <HorizontalDivider />
       {/* Testimonial Section */}
       <section className="relative isolate px-4 sm:px-6 lg:px-8 py-12 lg:py-20 overflow-hidden">
         <BgSquare3 />
@@ -300,7 +302,7 @@ const AboutPage = () => {
           </div>
         </div>
       </section>
-
+      <HorizontalDivider />
       {/* Culture Section */}
       <div className="relative flex flex-col items-center px-4 sm:px-6 lg:px-8 py-12 lg:py-20 overflow-hidden">
         <BgSquare3 />
@@ -322,6 +324,7 @@ const AboutPage = () => {
         <div className="overflow-x-auto scrollbar-hide mt-12 w-full">
           <TechScroll />
         </div>
+        <GlowPanel />
       </div>
 
       {/* FAQ + CTA */}

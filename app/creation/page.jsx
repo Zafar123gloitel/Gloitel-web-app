@@ -7,6 +7,7 @@ import Image from "next/image";
 import { FAQPage } from "../component/Faq";
 import JoinUsNow from "../component/JoinUsNow";
 import Link from "next/link";
+import GlowPanel from "../component/GlowPanel";
 
 const stages = [
   {
@@ -89,7 +90,7 @@ const CreationPage = () => {
           muted
           loop
           playsInline
-          unoptimized
+          unoptimized="true"
         ></video>
 
         <div className="flex flex-col items-center justify-center mx-auto min-h-[60vh] relative z-10 pt-15 sm:pt-20 md:pt-20 lg:pt-20">
@@ -170,6 +171,7 @@ const CreationPage = () => {
             ))}
           </div>
         </div>
+        <GlowPanel />
       </section>
       <FAQPage />
       <JoinUsNow />

@@ -1,4 +1,5 @@
 // components/Footer.tsx
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
@@ -38,10 +39,14 @@ export default function Footer() {
         {/* Logo & Subscribe */}
         <div>
           <div className="flex items-center gap-2 mb-6">
-            <div className="bg-white text-black w-8 h-8 flex items-center justify-center rounded">
-              <span className="font-bold text-lg">G</span>
-            </div>
-            <h1 className="text-xl font-semibold">Gloitel</h1>
+            <Image
+              src="https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762927934/Gloitel/logo_xbs2qc.svg"
+              width={140}
+              height={90}
+              alt="Logo"
+              className="object-contain"
+              unoptimized
+            />
           </div>
 
           <div className="w-full h-px bg-gradient-to-r from-white/10 to-transparent my-3"></div>

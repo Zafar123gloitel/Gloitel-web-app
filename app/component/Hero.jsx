@@ -15,7 +15,7 @@ const Hero = () => {
         muted
         loop
         playsInline
-        unoptimized
+        unoptimized="true"
       />
       <div
         className="absolute top-20 right-0 h-full justify-end items-center overflow-hidden z-30 hidden 2xl:flex
@@ -29,7 +29,7 @@ const Hero = () => {
           muted
           loop
           playsInline
-          unoptimized
+          unoptimized="true"
         />
       </div>
 

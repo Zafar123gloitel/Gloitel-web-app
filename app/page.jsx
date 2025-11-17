@@ -20,6 +20,7 @@ import { useScroll } from "framer-motion";
 import Lenis from "@studio-freight/lenis";
 import { projects } from "./data";
 import Image from "next/image";
+import GlowPanel from "./component/GlowPanel";
 
 const HomePage = () => {
   const benefitsBadge = [
@@ -98,7 +99,7 @@ const HomePage = () => {
               ]}
               ButtonText="View About Gloitel"
               Buttonlink="/about"
-              HomeAboutTexts="Trusted by 50 agencies for excellence."
+              HomeAboutTexts="Trusted by 50+ agencies for excellence."
             />
           </div>
 
@@ -110,13 +111,13 @@ const HomePage = () => {
       </section>
 
       <HorizontalDivider />
-
       <Result />
-      <HorizontalDivider />
+
       <HowWeWork />
       <HorizontalDivider />
       <Technology />
 
+      <HorizontalDivider />
       {/* Benefits & Services */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
         <div className="flex flex-col gap-10 lg:gap-16 items-start">
@@ -163,7 +164,7 @@ const HomePage = () => {
       <HorizontalDivider />
 
       {/* Portfolio Section */}
-      <section className="relative isolate px-4 sm:px-6 lg:px-8 py-12 lg:py-20 overflow-hidden">
+      <section className="relative isolate px-4 sm:px-6 lg:px-8 py-10 overflow-hidden">
         <BgSquare3 />
         <div className="flex flex-col items-center justify-center max-w-7xl mx-auto relative z-10">
           {/* Header */}
@@ -197,13 +198,11 @@ const HomePage = () => {
             </div>
           </div>
         </div>
+        <GlowPanel />
       </section>
-
-      <HorizontalDivider />
       <LaunchYourSite />
       <HorizontalDivider />
       <Testimonial />
-      <HorizontalDivider />
       <FAQPage />
       <JoinUsNow />
     </>
