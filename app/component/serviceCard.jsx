@@ -20,6 +20,7 @@ export default function ServiceCard({
           width={1920}
           height={1080}
           className="object-cover w-full h-full"
+          unoptimized
         />
       </div>
 
