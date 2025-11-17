@@ -23,7 +23,7 @@ export const WhiteButton = ({ ButtonText, Buttonlink }) => {
     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
       <Link
         href={Buttonlink || "#"}
-        className="relative rounded-md bg-white px-5 py-2 text-md sm:text-lg text-black transition duration-300 ease-in-out"
+        className="relative rounded-md bg-white px-3 py-2 sm:py-2 md:py-3 lg:py-1 text-xs sm:text-lg text-black transition duration-300 ease-in-out"
       >
         {ButtonText}
         <span className="absolute top-0 left-0 w-full h-1 bg-blue-400 blur-xl opacity-70 animate-pulse"></span>

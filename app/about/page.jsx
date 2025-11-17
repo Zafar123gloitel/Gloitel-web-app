@@ -60,10 +60,10 @@ const AboutPage = () => {
   return (
     <>
       {/* Hero Section with Video */}
-      <section className="relative isolate px-4 sm:px-6 lg:px-8 py-16 lg:py-24 w-full h-full  overflow-hidden">
+      <section className="relative isolate px-4 sm:px-6 lg:px-8 py-16 lg:py-24 w-full h-full z-10  overflow-hidden">
         {/* Background Video */}
         <video
-          src="https://framerusercontent.com/assets/lr4LSmXa1klevAvb0jf1i2zsDE.mp4"
+          src="https://res.cloudinary.com/dsqu6pi0d/video/upload/v1762846419/Gloitel/bg_cij8h5.mp4"
           type="video/mp4"
           className="absolute top-0 left-0 w-full h-full object-cover z-0"
           autoPlay
@@ -129,27 +129,71 @@ const AboutPage = () => {
 
           {/* Modal Video */}
           {showVideo && (
-            <div
-              className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
-              onClick={() => setShowVideo(false)}
-            >
-              <div className="relative w-full max-w-4xl">
-                <iframe
-                  src="https://www.youtube.com/embed/AMzVBmvh1Z0?autoplay=1"
-                  title="YouTube video player"
-                  className="w-full h-[60vh] sm:h-[70vh] rounded-2xl"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
+            <>
+              {/* Disable background scroll */}
+              <style jsx global>{`
+                body {
+                  overflow: hidden;
+                }
+              `}</style>
+
+              <div
+                className="fixed inset-0 flex items-center justify-center bg-black/80 backdrop-blur-sm z-32 p-4 sm:p-6 animate-fadeIn"
+                onClick={() => setShowVideo(false)}
+              >
+                {/* Stop propagation so clicking inside doesn’t close modal */}
+                <div
+                  className="relative w-full max-w-4xl aspect-video rounded-2xl overflow-hidden bg-black/30 border border-white/10 shadow-2xl"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {/* YouTube Iframe */}
+                  <iframe
+                    key={showVideo ? "video-playing" : "video-stopped"}
+                    src={
+                      showVideo
+                        ? "https://www.youtube.com/embed/AMzVBmvh1Z0?autoplay=1&modestbranding=1&rel=0&showinfo=0&controls=1"
+                        : ""
+                    }
+                    title="Gloitel Presentation"
+                    className="absolute inset-0 w-full h-full rounded-2xl border-none"
+                    style={{
+                      overflow: "hidden",
+                      clipPath: "inset(0 0 0 0 round 12px)",
+                    }}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                  {/* Close Button */}
+                  <button
+                    onClick={() => setShowVideo(false)}
+                    className="absolute top-0 right-0 bg-white/20 hover:bg-white/40 text-white p-2 rounded-full backdrop-blur-sm transition-all duration-200 z-32"
+                    aria-label="Close video"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-5 h-5 sm:w-6 sm:h-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </button>
+                </div>
               </div>
-            </div>
+            </>
           )}
         </div>
       </section>
 
       {/* About Section 1 */}
-      <section className="relative isolate px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
-        <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <section className="relative isolate px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24 ">
+        <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-10 items-center z-30">
           <div className="order-1 md:order-2">
             <AboutAboutContent
               AboutBadge="Gloitel Vision"
@@ -171,7 +215,7 @@ const AboutPage = () => {
             />
           </div>
           <div className="order-2 md:order-1">
-            <AboutAboutImg1 ImgLink="https://framerusercontent.com/images/mwSqQ9UKMvUvejak30qlmlWS8.jpeg?scale-down-to=1024" />
+            <AboutAboutImg1 ImgLink="https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762928419/Gloitel/aboutone_fulkws.webp" />
           </div>
         </div>
       </section>
@@ -197,14 +241,14 @@ const AboutPage = () => {
             Buttonlink="/contact"
             HomeAboutTexts="900+ People Rated"
           />
-          <AboutAboutImg2 ImgLink="https://framerusercontent.com/images/hZgGlHpPFf0bbzHL7dI9MolatA.jpeg?scale-down-to=1024" />
+          <AboutAboutImg2 ImgLink="https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762928416/Gloitel/abouttwo_pic4v5.webp" />
         </div>
       </section>
 
       {/* Testimonial Section */}
       <section className="relative isolate px-4 sm:px-6 lg:px-8 py-12 lg:py-20 overflow-hidden">
+        <BgSquare3 />
         <div className="flex flex-col items-center justify-center max-w-7xl mx-auto relative z-10">
-          <BgSquare2 />
           <div className="flex flex-col w-full sm:w-3/4 lg:w-1/2 text-center">
             <CenterBadge TestimonialBadge="Testimonial" />
 

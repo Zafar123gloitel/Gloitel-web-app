@@ -24,7 +24,7 @@ const Testimonial = () => {
       description:
         "Our website is sleek, fast, and user-friendly—perfectly aligned with our vision. The team nailed our brand and delivered a high-performing platform.",
       image:
-        "https://framerusercontent.com/images/CVxyC6O4rNzCTwwFaxPLfKZvbI.png",
+        "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762865924/Gloitel/user/satish_hargcz.webp",
       link: "https://bni-raipur.in/en-IN/memberdetails?encryptedMemberId=cAXuT0G5qYZ5FBgbFbtsgQ%3D%3D&name=Satish+Kumar+Kashyap",
       icon: <Spline />,
     },
@@ -36,7 +36,7 @@ const Testimonial = () => {
       description:
         "They delivered a dynamic, intuitive platform that makes learning easy. Smooth experience and exactly what we needed!",
       image:
-        "https://framerusercontent.com/images/4I620ynK1R7TN6BYh1FPWmvkGY.jpg",
+        "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762865921/Gloitel/user/hamid_umised.webp",
       link: "https://www.linkedin.com/in/dr-hamid-khan-59923a14a/?originalSubdomain=in&original_referer=https%3A%2F%2Fgloitel.framer.website%2F",
       icon: <Linkedin />,
     },
@@ -48,7 +48,7 @@ const Testimonial = () => {
       description:
         "Our website now mirrors our cloud expertise—sleek design, robust backend, and seamless performance. Exceptional work!",
       image:
-        "https://framerusercontent.com/images/hrEHI2jQbr3u9bx4ki6wQ9uN8fU.jpg",
+        "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762865920/Gloitel/user/rajeshwar_ldbq5n.webp",
       link: "https://rocketreach.co/rajeshwar-agarwal-email_60747941",
       icon: <Rocket />,
     },
@@ -60,7 +60,7 @@ const Testimonial = () => {
       description:
         "Our new website is clean, modern, and patient-friendly—covering everything from bookings to services. Couldn't be happier!",
       image:
-        "https://framerusercontent.com/images/Tj9MWSq6ff0loshbSVdXIPByocY.png",
+        "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762865920/Gloitel/user/manish_m3citd.webp",
       link: "https://www.instagram.com/experteeth_official/",
       icon: <Instagram />,
     },
@@ -72,7 +72,7 @@ const Testimonial = () => {
       description:
         "They perfectly captured our agro-business — the site is attractive, informative, and runs flawlessly. A big boost to our online presence!",
       image:
-        "https://framerusercontent.com/images/rfyfcmfoze8CPRpWcfNvBpzBCM.png",
+        "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762865919/Gloitel/user/ritendra_qk2pd3.webp",
       link: "https://www.indiamart.com/samridhi-agro-industries/enquiry.html",
       icon: <WandSparkles />,
     },
@@ -84,7 +84,7 @@ const Testimonial = () => {
       description:
         "Our website is now a one-stop hub for managing schools and sports events — seamless registrations, schedules, and updates. Outstanding work!",
       image:
-        "https://framerusercontent.com/images/rrBUbgduu8o8FWY2EbuqokKd7yI.png",
+        "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762865917/Gloitel/user/sowmya_bjugxb.webp",
       link: "https://www.linkedin.com/in/dr-sowmya-raghubir-5447a231/?originalSubdomain=in",
       icon: <Linkedin />,
     },
@@ -92,8 +92,8 @@ const Testimonial = () => {
   return (
     <section className="relative isolate px-4 sm:px-6 lg:px-8 py-12 lg:py-20 overflow-hidden">
       <div className="flex flex-col items-center justify-center max-w-6xl mx-auto relative z-10">
-        {/* HEADER */}
         <BgSquare3 />
+        {/* HEADER */}
         <div className="flex flex-col w-full sm:w-3/4 lg:w-1/2 text-center">
           {/* Badge */}
           <CenterBadge TestimonialBadge="Testimonials" />
@@ -105,8 +105,10 @@ const Testimonial = () => {
             SectionDescription="Hear from our happy clients! See how we’ve helped them achieve
             their goals and create lasting impact."
           />
-          <div>
-            <FeatureScroll />
+          <div className="relative w-full sm:w-auto overflow-hidden z-25">
+            <div className="relative feature-fade-mask">
+              <FeatureScroll />
+            </div>
           </div>
           <GlowButton ButtonText="View About Gloitel" Buttonlink="/about" />
         </div>
@@ -127,6 +129,7 @@ const Testimonial = () => {
               >
                 {/* Gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-900/40 via-indigo-800/20 to-transparent opacity-50 rounded-2xl pointer-events-none"></div>
+                <div className="absolute -top-10 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50%] h-[80px] bg-blue-700/90 blur-[7px] rounded-full pointer-events-none" />
                 <div className="flex justify-between gap-3 relative z-10">
                   {/* Left column: Avatar + Stars */}
                   <div className="flex flex-col gap-3">

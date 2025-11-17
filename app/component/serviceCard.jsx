@@ -11,14 +11,14 @@ export default function ServiceCard({
   badge,
 }) {
   return (
-    <div className="bg-gradient-to-tr from-blue-900/20 via-indigo-800/20 to-transparent rounded-3xl p-6 shadow-[0_0_40px_rgba(0,0,0,0.6)] flex flex-col justify-between transition pb-10">
+    <div className=" from-blue-900/20 via-indigo-800/20 to-transparent rounded-3xl p-6 shadow-[0_0_40px_rgba(0,0,0,0.6)] flex flex-col justify-between transition pb-10 border-2 border-gray-400/10">
       {/* Image */}
       <div className="relative w-full h-72 rounded-2xl overflow-hidden">
         <Image
-          width={1920}
-          height={1080}
           src={image}
           alt={title}
+          width={1920}
+          height={1080}
           className="object-cover w-full h-full"
         />
       </div>

@@ -138,9 +138,8 @@ const HowWeWork = () => {
             ))}
           </div>
         </div>
-
         {/* RIGHT */}
-        <ImageCard HowWeWorkImg="https://framerusercontent.com/images/oUAzCBZlCCsvzmsAiYQ3RDbhyg.jpeg?scale-down-to-1024" />
+        <ImageCard HowWeWorkImg="https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762927938/Gloitel/howwework_gzjhr8.webp" />
       </div>
     </section>
   );

@@ -1,40 +1,48 @@
 // components/AutoScrollCarousel.jsx
 import Image from "next/image";
 import React from "react";
+import Marquee from "react-fast-marquee";
 
 const logo = [
-  { link: "https://framerusercontent.com/images/8eCUvDX0OmqQtXMhw5mzOqg.png" },
   {
-    link: "https://framerusercontent.com/images/RCsXIAT64MXqKtjtESd1RB5UXto.png",
+    link: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762928121/Gloitel/featurescroll/experteeth_xisrqz.webp",
   },
   {
-    link: "https://framerusercontent.com/images/4OYXnlCAPJrNl3tfm2nmm7oJkw.png",
+    link: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762928156/Gloitel/featurescroll/glowel_hak4d9.webp",
   },
   {
-    link: "https://framerusercontent.com/images/lyJgvWvh86jt2XcHGLqhulc0wQ.png",
+    link: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762928124/Gloitel/featurescroll/travel_lkxxcs.webp",
   },
   {
-    link: "https://framerusercontent.com/images/4xbysOFxJf5RCzvs0GF86QcKik.png",
+    link: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762928121/Gloitel/featurescroll/experteeth_xisrqz.webp",
+  },
+  {
+    link: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762928130/Gloitel/featurescroll/fitbattle_k54old.webp",
   },
 ];
 
 const FeatureScroll = () => {
   return (
     <center>
-      <div className="relative w-md overflow-hidden">
-        <div className="flex animate-scroll w-5xl whitespace-nowrap">
+      <div className="relative overflow-hidden w-115">
+        <Marquee
+          gradient={true} // adds subtle fade edges
+          gradientColor={[0, 0, 0]} // black fade for dark backgrounds
+          speed={30} // control scroll speed
+          loop={0} // infinite scroll
+        >
           {logo.map((img, i) => (
-            <div key={i} className="w-6xl relative overflow-hidden m-2 ">
+            <div key={i} className="w-full relative overflow-hidden  ">
               <Image
-                width={1920}
-                height={1080}
+                width={320}
+                height={280}
                 src={img.link}
                 alt="Project"
-                className="w-80 object-cover"
+                className="w-40 object-cover"
               />
             </div>
           ))}
-        </div>
+        </Marquee>
       </div>
     </center>
   );
