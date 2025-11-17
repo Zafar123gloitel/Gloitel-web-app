@@ -59,6 +59,7 @@ const Portfolio = ({ params }) => {
           muted
           loop
           playsInline
+          unoptimized
         />
 
         {/* Main content */}
