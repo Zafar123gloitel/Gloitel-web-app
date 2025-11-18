@@ -21,26 +21,25 @@ const JoinUsNow = () => {
             unoptimized="true"
           ></video>
 
-          {/* Dark overlay */}
-          <div className="absolute inset-0 bg-black/50"></div>
-
           {/* Content */}
           <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4 sm:px-8">
             {/* Badge */}
             <CenterBadge JoinUsNowBadge="Join Us Now" />
             {/* Headings */}
-            <h3 className="text-2xl sm:text-3xl lg:text-5xl font-medium text-white">
+            <h3 className="text-2xl sm:text-3xl lg:text-5xl font-medium text-white mb-1">
               Each Project we Undertake
             </h3>
-            <h3 className="text-2xl sm:text-2xl lg:text-5xl font-medium text-gray-300">
+            <h3 className="text-2xl sm:text-2xl lg:text-5xl font-medium text-gray-400">
               is a Unique Opportunity.
             </h3>
 
-            {/* Paragraph */}
-            <p className="mt-4 sm:mt-6 text-sm sm:text-base lg:text-lg text-gray-300 max-w-2xl">
-              Ready to take the next step? Join us now and start transforming
-              your vision into reality with expert support.
-            </p>
+            <div className="w-xl">
+              {/* Paragraph */}
+              <p className="mt-4 sm:mt-6 text-sm sm:text-base lg:text-md text-gray-00 max-w-2xl">
+                Ready to take the next step? Join us now and start transforming
+                your vision into reality with expert support.
+              </p>
+            </div>
 
             {/* CTA Button */}
             <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">

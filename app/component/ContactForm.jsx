@@ -4,7 +4,10 @@ import Link from "next/link";
 
 const ContactForm = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center px-4 py-12">
+    <section
+      id="form"
+      className="min-h-screen flex items-center justify-center px-4 py-12"
+    >
       <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-4 gap-8">
         {/* Contact Form */}
         <div className="lg:col-span-3 border border-white/10 rounded-3xl shadow-lg p-3 relative bg-gradient-to-r from-gray-950/90 to-black/80  sm:p-2  overflow-hidden ">

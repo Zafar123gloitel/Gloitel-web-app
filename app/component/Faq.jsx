@@ -48,8 +48,9 @@ export const FAQPage = () => {
         "Yes! We provide cloud hosting, AWS, Azure, and other cloud-based solutions for secure and scalable performance.",
     },
     {
-      question: " How do I get started?",
-      answer: " How do I get started?",
+      question: "How do I get started?",
+      answer:
+        "Simply contact us with your project details, and our team will guide you through the process! ",
     },
   ];
 
@@ -61,7 +62,7 @@ export const FAQPage = () => {
           {/* Badge */}
           <div className="flex flex-col items-start">
             {/* Badge */}
-            <LeftBadge FaqBadge="FAQ" />
+            <LeftBadge FaqBadge="How We Work" />
 
             {/* Headings */}
             <h3 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-white">
@@ -73,7 +74,7 @@ export const FAQPage = () => {
 
             {/* Description */}
             <div>
-              <p className="mt-4 sm:mt-6 text-base sm:text-lg text-gray-400 max-w-2xl">
+              <p className="mt-4 sm:mt-6 text-base sm:text-md text-gray-400 max-w-2xl">
                 Have questions? Our FAQ section has you covered with quick
                 answers to the most common inquiries.
               </p>

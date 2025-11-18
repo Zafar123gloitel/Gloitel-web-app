@@ -1,5 +1,6 @@
 import React from "react";
 import { FAQPage } from "../component/Faq";
+import JoinUsNow from "../component/JoinUsNow";
 const page = () => {
   return (
     <div>
@@ -19,6 +20,7 @@ const page = () => {
         <div className="relative">
           <FAQPage />
         </div>
+        <JoinUsNow />
       </section>
     </div>
   );

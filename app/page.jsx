@@ -1,8 +1,9 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import Hero from "./component/Hero";
 import { HomeAboutContent, HomeAboutImg } from "./component/About";
 import Result from "./component/Result";
+import PortfolioCard from "./component/PortfolioCard";
 import HowWeWork from "./component/HowWeWork";
 import Technology from "./component/Technology";
 import { HorizontalDivider } from "./component/SectionDivider";
@@ -15,12 +16,8 @@ import { CenterBadge, LeftBadge } from "./component/Badge";
 import { GlowButton, WhiteButton } from "./component/Button";
 import { BgSquare3 } from "./component/BgSquare";
 import ServiceCard from "./component/serviceCard";
-import Card from "./component/card";
-import { useScroll } from "framer-motion";
-import Lenis from "@studio-freight/lenis";
-import { projects } from "./data";
-import Image from "next/image";
 import GlowPanel from "./component/GlowPanel";
+import { useScroll } from "framer-motion";
 
 const HomePage = () => {
   const benefitsBadge = [
@@ -77,6 +74,13 @@ const HomePage = () => {
       badge: "NEW",
     },
   ];
+  const listRef = useRef(null);
+
+  // Single scroll tracker for entire section
+  const { scrollYProgress } = useScroll({
+    target: listRef,
+    offset: ["start end", "end start"],
+  });
 
   return (
     <>
@@ -183,19 +187,12 @@ const HomePage = () => {
           </div>
 
           {/* Thumbnail */}
-          <div className="mt-10 sm:mt-12 w-full px-4 sm:px-8 md:px-16">
-            <div className="relative bg-gradient-to-r from-gray-950/90 to-black/80 p-2 sm:p-3 rounded-3xl shadow-lg overflow-hidden border border-white/10 cursor-pointer">
-              <div className="relative w-full pt-[56.25%]">
-                <Image
-                  width={1920}
-                  height={1080}
-                  src="https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762927804/Gloitel/banner_mfm3ss.webp"
-                  alt="image"
-                  className="absolute top-0 left-0 w-full h-full object-cover rounded-2xl"
-                  unoptimized
-                />
-              </div>
-            </div>
+
+          <div
+            ref={listRef}
+            className="relative w-full h-180 overflow-scroll hide-scrollbar portfolio-fade-bottom"
+          >
+            <PortfolioCard scrollProgress={scrollYProgress} />
           </div>
         </div>
         <GlowPanel />

@@ -12,6 +12,7 @@ import Image from "next/image";
 import projects from "./data.json";
 import { GlowButton } from "../../component/Button";
 import GlowPanel from "../../component/GlowPanel";
+import { usePathname } from "next/navigation";
 
 const Portfolio = ({ params }) => {
   const { id } = use(params); // unwrap params safely
@@ -90,7 +91,7 @@ const Portfolio = ({ params }) => {
 
             {/* RIGHT SIDE: Info Card */}
             <div className="flex justify-center lg:justify-end w-full">
-              <div className="relative bg-black/20 backdrop-blur-3xl p-6 sm:p-8 md:p-10 rounded-2xl w-full sm:w-[90%] lg:w-[85%] xl:w-[70%] flex flex-col gap-4 shadow-xl border border-white/10">
+              <div className="relative bg-black/20 backdrop-blur-3xl p-6 sm:p-8 md:p-10 rounded-2xl w-full sm:w-[90%] lg:w-[85%] xl:w-[70%] flex flex-col gap-4 shadow-xl border border-white/10 overflow-hidden">
                 {/* Project Info */}
                 <div>
                   {[
