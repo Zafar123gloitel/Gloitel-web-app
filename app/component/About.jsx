@@ -150,28 +150,28 @@ export const AboutAboutContent = ({
       <HorizontalDivider />
       {/* Dynamic Content Blocks */}
       {AboutContents1.map((content, i) => (
-        <div key={i} className="mt-4 sm:mt-6">
+        <div key={i} className="mt-4 sm:mt-6 w-lg">
           {content.title && (
-            <p className="text-sm sm:text-base font-medium lg:text-lg text-white leading-relaxed">
+            <p className="text-sm sm:text-base font-medium lg:text-lg text-white leading-relaxed mb-2">
               {content.title}
             </p>
           )}
           {content.text && (
-            <p className="text-sm sm:text-sm lg:text-lg text-gray-400 leading-relaxed">
+            <p className="text-sm sm:text-sm lg:text-[15px] text-gray-400 leading-relaxed">
               {content.text}
             </p>
           )}
         </div>
       ))}
       {AboutContents2.map((content, i) => (
-        <div key={i} className="mt-4 sm:mt-6">
+        <div key={i} className="mt-4 sm:mt-6 w-lg">
           {content.title && (
-            <p className="text-sm sm:text-base font-medium lg:text-lg text-white leading-relaxed">
+            <p className="text-sm sm:text-base font-medium lg:text-lg text-white leading-relaxed mb-2">
               {content.title}
             </p>
           )}
           {content.text && (
-            <p className="text-sm sm:text-base lg:text-lg text-gray-400 leading-relaxed">
+            <p className="text-sm sm:text-sm lg:text-[15px] text-gray-400 leading-relaxed">
               {content.text}
             </p>
           )}
