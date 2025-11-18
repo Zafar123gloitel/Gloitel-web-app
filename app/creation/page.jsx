@@ -127,7 +127,7 @@ const CreationPage = () => {
                   height={1080}
                   src={item.image}
                   alt={item.name}
-                  className="w-full h-60 sm:h-72 md:h-80 lg:h-96 object-cover rounded-xl sm:rounded-2xl 
+                  className="w-full h-60 sm:h-72 md:h-80 lg:h-96` object-cover rounded-xl sm:rounded-2xl 
                    transition-transform duration-500 ease-in-out group-hover:scale-105"
                   unoptimized
                 />

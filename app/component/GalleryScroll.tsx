@@ -66,7 +66,7 @@ const GalleryScroll = () => {
       <div className="flex whitespace-nowrap gap-4 sm:gap-4 px-4">
         <Marquee
           gradient={true}
-          gradientColor={[0, 0, 0]}
+          gradientColor="0, 0, 0"
           speed={50}
           pauseOnHover={false}
           loop={0}
@@ -98,7 +98,8 @@ const GalleryScroll = () => {
       <div className="flex animate-scroll-right whitespace-nowrap gap-4 sm:gap-6 px-4 mt-6 sm:mt-8">
         <Marquee
           gradient={true} // adds subtle fade edges
-          gradientColor={[0, 0, 0]} // black fade for dark backgrounds
+          gradientColor="0, 0, 0"
+          // black fade for dark backgrounds
           speed={50} // control scroll speed
           pauseOnHover={false} // stops when hovered
           direction="right"
