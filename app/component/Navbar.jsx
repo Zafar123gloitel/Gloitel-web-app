@@ -4,7 +4,7 @@ import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { VerticalDivider } from "./SectionDivider";
-import { HeaderButton } from "./Button";
+import { GlowButton, HeaderButton } from "./Button";
 import Image from "next/image";
 
 const Navbar = () => {
@@ -75,7 +75,7 @@ const Navbar = () => {
 
           {/* 🔹 Right Section — Button */}
           <div className="hidden lg:flex items-center">
-            <HeaderButton GetInTouch="Get In Touch" />
+            <GlowButton ButtonText="Get In Touch" Buttonlink="/contact" />
           </div>
         </div>
 
@@ -139,13 +139,11 @@ const Navbar = () => {
           ))}
 
           <div className="pt-3">
-            <Link
-              href="#contact"
-              className="block w-full text-center rounded-md bg-blue-600 hover:bg-blue-500 px-5 py-3 text-sm font-semibold text-white shadow-md transition"
+            <HeaderButton
+              ButtonText={"Get In Touch"}
+              Buttonlink={"/contact"}
               onClick={() => setMobileMenuOpen(false)}
-            >
-              Get In Touch
-            </Link>
+            />
           </div>
         </div>
       </div>

@@ -52,9 +52,7 @@ const ContactForm = () => {
                   <select className="w-full rounded-lg bg-neutral-950 border border-white/10 px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-blue-600">
                     <option>Select your country...</option>
                     <option>India</option>
-                    <option>USA</option>
-                    <option>UK</option>
-                    <option>Germany</option>
+                    <option>Other</option>
                   </select>
                 </div>
                 <div>
@@ -63,9 +61,10 @@ const ContactForm = () => {
                   </label>
                   <select className="w-full rounded-lg bg-neutral-950 border border-white/10 px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-blue-600">
                     <option>Select Category</option>
-                    <option>IT</option>
-                    <option>Finance</option>
-                    <option>Education</option>
+                    <option>Agency</option>
+                    <option>SAAS</option>
+                    <option>Banking</option>
+                    <option>Business</option>
                     <option>Other</option>
                   </select>
                 </div>

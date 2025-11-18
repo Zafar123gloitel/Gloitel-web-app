@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import { CenterBadge } from "./Badge";
+import { GlowButton } from "./Button";
 
 const JoinUsNow = () => {
   return (
@@ -43,16 +44,10 @@ const JoinUsNow = () => {
 
             {/* CTA Button */}
             <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link
-                href="/about"
-                className="relative rounded-md bg-blue-700 px-5 py-2.5 text-sm sm:text-base lg:text-lg text-white 
-                 transition duration-300 ease-in-out
-                 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 
-                 shadow-[0_0_25px_rgba(59,130,246,0.5)]"
-              >
-                View About Gloitel
-                <span className="absolute top-0 left-0 w-full h-1 bg-blue-400 blur-xl opacity-70 animate-pulse"></span>
-              </Link>
+              <GlowButton
+                ButtonText="Book An Appointment"
+                Buttonlink="/contact"
+              />
             </div>
           </div>
         </div>

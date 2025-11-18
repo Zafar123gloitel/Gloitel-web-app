@@ -16,6 +16,9 @@ import { GlowButton } from "../component/Button";
 import { IntroHead } from "../uiComponents/Heading";
 import GlowPanel from "../component/GlowPanel";
 import { HorizontalDivider } from "../component/SectionDivider";
+import { MiddleSectionHeads } from "../component/SectionHeads";
+import GalleryScroll from "../component/GalleryScroll";
+import { Linkedin, Twitter } from "lucide-react";
 
 const AboutPage = () => {
   const [showVideo, setShowVideo] = useState(false);
@@ -26,37 +29,49 @@ const AboutPage = () => {
       name: "Mr.Durgesh Sahu",
       role: "Director",
       image: "images/durgesh.avif",
+      icon: <Linkedin />,
+      link: "https://www.linkedin.com/in/durgesh-sahu-1543068/",
     },
     {
       id: 2,
       name: "Dr(Major) Rakesh Sharma",
       role: "Sr.Medical Auditor",
       image: "images/2nd.avif",
+      icon: <Twitter />,
+      link: "https://in.linkedin.com/",
     },
     {
       id: 3,
       name: "Mr. Janak Sahu",
       role: "Admin & MIS Head",
       image: "images/3rd.avif",
+      icon: <Twitter />,
+      link: "https://in.linkedin.com/",
     },
     {
       id: 4,
       name: "Mr. Shippu Sharma",
       role: "Senior Software Engineer",
       image: "images/4th.avif",
+      icon: <Linkedin />,
+      link: "https://in.linkedin.com/in/shippu-sharma",
     },
     {
       id: 5,
       name: "Er. Zafaryab Khan",
       role: "Project Lead",
       image: "images/5th.avif",
+      icon: <Twitter />,
+      link: "https://in.linkedin.com/",
     },
-    // {
-    //   id: 6,
-    //   name: "Mr. Sandeep",
-    //   role: "Project Manager",
-    //   image: "images/3rd.avif",
-    // },
+    {
+      id: 6,
+      name: "Mr. Sandeep",
+      role: "Project Manager",
+      image: "images/3rd.avif",
+      icon: <Twitter />,
+      link: "https://in.linkedin.com/",
+    },
   ];
 
   return (
@@ -82,8 +97,7 @@ const AboutPage = () => {
             HomeSubHeroBadge="Dig Deep About Us"
             main="Learn More About Gloitel"
             sub="Let's Deep Dive!"
-            description="Whether you have a question, need assistance,
-            or want to start a new project, our team is here to help."
+            description="We are a healthtech AI company. The dedicated team of tech-savvy enthusiasts and developers who bring to the table the best IT solutions."
           />
 
           {/* Buttons */}
@@ -103,7 +117,7 @@ const AboutPage = () => {
           </div>
 
           {/* Thumbnail with Play Button */}
-          <div className="mt-10 w-full sm:w-3/4 lg:w-2/3">
+          <div className="mt-10 w-full sm:w-3/4 lg:w-5/6">
             <div
               className="relative bg-gradient-to-r from-gray-950/90 to-black/80 p-2 sm:p-3 rounded-3xl shadow-lg overflow-hidden border border-white/10 cursor-pointer"
               onClick={() => setShowVideo(true)}
@@ -248,54 +262,51 @@ const AboutPage = () => {
         </div>
       </section>
       <HorizontalDivider />
-      {/* Testimonial Section */}
+      {/* Team Members Section */}
       <section className="relative isolate px-4 sm:px-6 lg:px-8 py-12 lg:py-20 overflow-hidden">
         <BgSquare3 />
         <div className="flex flex-col items-center justify-center max-w-7xl mx-auto relative z-10">
           <div className="flex flex-col w-full sm:w-3/4 lg:w-1/2 text-center">
-            <CenterBadge TestimonialBadge="Testimonial" />
-
-            <h3 className="text-2xl sm:text-3xl lg:text-5xl font-semibold text-white">
-              Customer Reviews About
-            </h3>
-            <h3 className="text-lg sm:text-2xl lg:text-4xl font-medium text-gray-400 mt-2">
-              Work, Usability and Design.
-            </h3>
-
-            <p className="my-6 sm:text-sm lg:text-base text-gray-400">
-              Hear from our happy clients! See how we’ve helped them achieve
-              their goals and create lasting impact.
-            </p>
+            <CenterBadge TechnologyBadge="Team Members" />
+            <MiddleSectionHeads
+              SectionHead="Meet the Team Making"
+              SectionSubHead="Things Happen Every Day"
+              SectionDescription="Our team is made up of passionate professionals who bring their expertise and creativity to every project."
+            />
+            <GlowButton
+              ButtonText="Book a 15-min call"
+              Buttonlink="/contact"
+              className="mt-6 sm:mt-8"
+            />
           </div>
-          <GlowButton ButtonText="Book a 15 Min Call" Buttonlink="/contact" />
 
           {/* Team Grid */}
           {/* grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 */}
           <div className="mt-12 flex flex-wrap justify-center gap-6 w-full">
             {stages.map((item) => (
               <div
-                key={item.id}
+                key={item?.id}
                 className="relative bg-gradient-to-r from-gray-950/90 to-black/80 p-2 sm:p-3 rounded-3xl shadow-lg overflow-hidden border border-white/10"
               >
                 <img
-                  src={item.image}
-                  alt={item.name}
-                  className="w-full h-60 sm:h-72 lg:h-[400px] object-cover rounded-2xl"
+                  src={item?.image}
+                  alt={item?.name}
+                  className="w-full h-60 sm:h-72 lg:h-[400px] object-cover rounded-2xl border-2 border-gray-500/10"
                 />
-                <div className="absolute inset-x-0 bottom-0 m-3 sm:m-5 rounded-xl bg-gradient-to-r from-blue-950/60 to-black/80 p-3 sm:p-4 backdrop-blur-md flex justify-between items-center">
+                <div className="absolute inset-x-0 bottom-0 m-3 sm:m-5 rounded-xl bg-gradient-to-r from-gray-900/90 to-black/80 p-3 sm:p-4 backdrop-blur-md flex justify-between items-center border-2 border-gray-500/30">
                   <div>
                     <h3 className="text-sm sm:text-md font-semibold text-white mb-1">
-                      {item.name}
+                      {item?.name}
                     </h3>
                     <p className="text-xs sm:text-sm text-gray-300">
-                      {item.role}
+                      {item?.role}
                     </p>
                   </div>
-                  <img
-                    src={item.image}
-                    alt=""
-                    className="w-7 sm:w-9 h-7 sm:h-9 rounded-xl"
-                  />
+                  <Link href={item?.link}>
+                    <div className="flex items-center justify-center w-10 h-10 px-3 py-3 rounded-lg bg-white/5 text-gray-400 shadow-[0_0_25px_rgba(59,130,246,0.3)] border-2 border-gray-400/20">
+                      {item?.icon}
+                    </div>
+                  </Link>
                 </div>
               </div>
             ))}
@@ -306,23 +317,22 @@ const AboutPage = () => {
       {/* Culture Section */}
       <div className="relative flex flex-col items-center px-4 sm:px-6 lg:px-8 py-12 lg:py-20 overflow-hidden">
         <BgSquare3 />
-        <div className="flex flex-col justify-center w-full sm:w-3/4 lg:w-1/2 text-center">
-          <CenterBadge AboutOurCulture="Our Culture" />
-          <h3 className="text-2xl sm:text-3xl lg:text-5xl font-semibold text-white">
-            Work, Celebrate &
-          </h3>
-          <h3 className="text-xl sm:text-3xl lg:text-5xl font-medium text-gray-400 mt-2">
-            Grow Together
-          </h3>
-          <p className="my-6 sm:text-sm lg:text-base text-gray-400">
-            Snapshot of our lively workplace—office life, celebrations, team
-            outings, and bonding events.
-          </p>
-          <GlowButton ButtonText="View About GLoitel" Buttonlink="/about" />
+        <div className="flex flex-col w-full sm:w-3/4 lg:w-1/2 text-center">
+          <CenterBadge TechnologyBadge="Our Culture" />
+          <MiddleSectionHeads
+            SectionHead="Work, Celebrate &"
+            SectionSubHead="Grow Together"
+            SectionDescription="snapshot of our lively workplace—office life, celebrations, team outings, and bonding events."
+          />
+          <GlowButton
+            ButtonText="View About Gloitel "
+            Buttonlink="/about"
+            className="mt-6 sm:mt-8"
+          />
         </div>
 
         <div className="overflow-x-auto scrollbar-hide mt-12 w-full">
-          <TechScroll />
+          <GalleryScroll />
         </div>
         <GlowPanel />
       </div>
