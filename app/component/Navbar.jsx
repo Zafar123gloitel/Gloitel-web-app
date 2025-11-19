@@ -22,8 +22,8 @@ const Navbar = () => {
 
   const getLinkClasses = (href) =>
     pathname === href
-      ? "text-white font-normal"
-      : "text-white/70 hover:text-white transition-colors";
+      ? "text-white"
+      : "text-white/50 hover:text-white transition-colors";
 
   // 🧭 Hide navbar when scrolling down
   useEffect(() => {
@@ -43,7 +43,7 @@ const Navbar = () => {
         isHidden ? "-translate-y-full" : "translate-y-0"
       }`}
     >
-      <nav className=" mx-auto flex items-center justify-between px-4 sm:px-4 md:px-20 lg:px-44">
+      <nav className=" mx-auto flex items-center justify-between px-4 sm:px-4 md:px-20 lg:px-44 border-b-1 border-gray-500/20">
         {/* 🔹 Header Wrapper */}
         <div className="flex items-center justify-between w-full px-6 py-4">
           {/* 🔹 Left Section — Menu + Logo */}
@@ -52,7 +52,7 @@ const Navbar = () => {
             <Link href="/" className="flex items-center gap-2">
               <Image
                 src="https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762927934/Gloitel/logo_xbs2qc.svg"
-                width={140}
+                width={120}
                 height={90}
                 alt="Logo"
                 className="object-contain"
@@ -60,7 +60,7 @@ const Navbar = () => {
               />
             </Link>
             <VerticalDivider />
-            <div className="hidden lg:flex items-center gap-6">
+            <div className="hidden lg:flex items-center gap-9 ">
               {links.map((link) => (
                 <Link
                   key={link.href}

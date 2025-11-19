@@ -13,7 +13,7 @@ export default function ServiceCard({
   return (
     <div className=" from-blue-900/20 via-indigo-800/20 to-transparent rounded-3xl p-6 shadow-[0_0_40px_rgba(0,0,0,0.6)] flex flex-col justify-between transition pb-10 border-2 border-gray-400/10">
       {/* Image */}
-      <div className="relative w-full h-72 rounded-2xl overflow-hidden">
+      <div className="relative w-full h-64 rounded-2xl overflow-hidden">
         <Image
           src={image}
           alt={title}

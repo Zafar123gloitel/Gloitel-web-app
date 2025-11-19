@@ -91,7 +91,7 @@ const Portfolio = ({ params }) => {
 
             {/* RIGHT SIDE: Info Card */}
             <div className="flex justify-center lg:justify-end w-full">
-              <div className="relative bg-black/20 backdrop-blur-3xl p-6 sm:p-8 md:p-10 rounded-2xl w-full sm:w-[90%] lg:w-[85%] xl:w-[70%] flex flex-col gap-4 shadow-xl border border-white/10 overflow-hidden">
+              <div className="relative bg-black/20 backdrop-blur-3xl p-6 sm:p-8 md:p-10 rounded-2xl w-full sm:w-[90%] lg:w-[85%] xl:w-[80%] flex flex-col gap-4 shadow-xl border border-white/10 overflow-hidden">
                 {/* Project Info */}
                 <div>
                   {[
@@ -103,7 +103,7 @@ const Portfolio = ({ params }) => {
                       <p className="text-gray-400 text-sm sm:text-base mb-1">
                         {item.label}
                       </p>
-                      <h3 className="text-white text-sm sm:text-base font-semibold break-words">
+                      <h3 className="text-white text-sm sm:text-base break-words">
                         {Array.isArray(item.value)
                           ? item.value.join(", ")
                           : item.value}

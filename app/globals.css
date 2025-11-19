@@ -148,3 +148,45 @@ body {
     z-index: -1;
   }
 }
+
+.progress-fill {
+  width: 500%;
+  height: 100%;
+  border-radius: 0.5rem;
+  background:
+    linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.06) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.06) 50%,
+      rgba(255, 255, 255, 0.06) 75%,
+      transparent 75%
+    ),
+    linear-gradient(to right, #003cff, #004cff, #0060ff);
+  background-size:
+    40px 40px,
+    100% 100%;
+  animation: progressLines 1.4s linear infinite;
+}
+
+/* Lines moving left */
+@keyframes progressLines {
+  from {
+    background-position:
+      40px 0,
+      0 0;
+  }
+  to {
+    background-position:
+      0 0,
+      0 0;
+  }
+}
+
+/* Soft outer glow */
+.shadow-inner-glow {
+  box-shadow:
+    0 0 20px rgba(0, 80, 255, 0.4),
+    inset 0 0 12px rgba(0, 0, 0, 0.6);
+}

@@ -5,7 +5,7 @@ export default function TermsPage() {
     <>
       <section className="relative isolate px-4 sm:px-6 lg:px-8 py-16 lg:py-24 w-full h-full z-10  overflow-hidden">
         {/* Background Video */}
-        {/* <video
+        <video
           src="https://res.cloudinary.com/dsqu6pi0d/video/upload/v1762846419/Gloitel/bg_cij8h5.mp4"
           type="video/mp4"
           className="absolute top-0 left-0 w-full h-full object-cover z-0"
@@ -14,12 +14,14 @@ export default function TermsPage() {
           loop
           playsInline
           unoptimized="true"
-        ></video> */}
+        ></video>
         {/* Container */}
         <div className="relative z-10 max-w-4xl mx-auto text-white py-16 px-6">
           {/* Title */}
-          <HeroBadge2 HomeHeroBadge="READ" HomeSubHeroBadge="Latest Policy" />
-          <h1 className="text-3xl sm:text-4xl font-bold mb-2">
+          <div className="flex">
+            <HeroBadge2 HomeHeroBadge="READ" HomeSubHeroBadge="Latest Policy" />
+          </div>
+          <h1 className="text-xl sm:text-4xl lg:text-7xl mb-2">
             Privacy Policy
           </h1>
 
@@ -32,33 +34,27 @@ export default function TermsPage() {
           <div className="space-y-10 leading-relaxed text-[15px] sm:text-base">
             {/* 1. Information We Collect */}
             <section>
-              <h2 className="font-semibold text-lg mb-2">
-                1. Information We Collect
-              </h2>
+              <h2 className=" text-3xl mb-6">1. Information We Collect</h2>
 
-              <p className="text-gray-300 font-semibold mb-2">
-                Personal Information
-              </p>
-              <p className="text-gray-300 mb-4">
+              <p className="text-white mb-4">Personal Information</p>
+              <p className="text-gray-400 mb-4">
                 We may collect personal details such as your name, email
                 address, phone number, employment information to process
                 transactions, provide customer support, and offer personalized
                 experiences.
               </p>
 
-              <p className="text-gray-300 font-semibold mb-2">
-                Device and Usage Data
-              </p>
-              <p className="text-gray-300 mb-4">
+              <p className="text-white mb-4">Device and Usage Data</p>
+              <p className="text-gray-400 mb-4">
                 We automatically collect data when you interact with our
                 services, including IP address, device details, operating
                 system, browser version, and activity logs.
               </p>
 
-              <p className="text-gray-300 font-semibold mb-2">
+              <p className="text-white mb-4">
                 Cookies and Tracking Technologies
               </p>
-              <p className="text-gray-300">
+              <p className="text-gray-400 mb-4">
                 We use cookies and similar technologies to enhance your
                 experience, remember preferences, and analyze site traffic. You
                 can manage cookie settings through your browser.
@@ -67,16 +63,14 @@ export default function TermsPage() {
 
             {/* 2. How We Use Your Information */}
             <section>
-              <h2 className="font-semibold text-lg mb-2">
-                2. How We Use Your Information
-              </h2>
+              <h2 className=" text-3xl mb-6">2. How We Use Your Information</h2>
 
-              <p className="text-gray-300 mb-4">
+              <p className="text-gray-400 mb-4">
                 We use your information to enhance your experience and improve
                 our services.
               </p>
 
-              <ul className="list-disc pl-6 text-gray-300 space-y-1">
+              <ul className="list-disc pl-6 text-gray-400 space-y-1">
                 <li>
                   Service Delivery: For tasks like registration, communication,
                   suggestions, and other features.
@@ -102,16 +96,14 @@ export default function TermsPage() {
 
             {/* 3. Data Sharing */}
             <section>
-              <h2 className="font-semibold text-lg mb-2">
-                3. Data Sharing and Disclosure
-              </h2>
-              <p className="text-gray-300 mb-4">
+              <h2 className=" text-3xl mb-6">3. Data Sharing and Disclosure</h2>
+              <p className="text-gray-400 mb-4">
                 We do not sell or share your personal information to third
                 parties. However, we may share data under the following
                 circumstances:
               </p>
 
-              <ul className="list-disc pl-6 text-gray-300 space-y-1">
+              <ul className="list-disc pl-6 text-gray-400 space-y-1">
                 <li>
                   Service Providers: With third-party vendors who assist in
                   operating Global’s platform.
@@ -129,8 +121,8 @@ export default function TermsPage() {
 
             {/* 4. Data Security */}
             <section>
-              <h2 className="font-semibold text-lg mb-2">4. Data Security</h2>
-              <p className="text-gray-300">
+              <h2 className=" text-3xl mb-6">4. Data Security</h2>
+              <p className="text-gray-400">
                 We use security measures to protect your data from unauthorized
                 access, data breaches, or misuse. However, no online service is
                 fully secure, and we cannot guarantee absolute protection.
@@ -139,15 +131,13 @@ export default function TermsPage() {
 
             {/* 5. Your Data Rights */}
             <section>
-              <h2 className="font-semibold text-lg mb-2">
-                5. Your Data Rights
-              </h2>
+              <h2 className=" text-3xl mb-6">5. Your Data Rights</h2>
 
-              <p className="text-gray-300 mb-4">
+              <p className="text-gray-400 mb-4">
                 You have rights regarding your personal information, including:
               </p>
 
-              <ul className="list-disc pl-6 text-gray-300 space-y-1">
+              <ul className="list-disc pl-6 text-gray-400 space-y-1">
                 <li>Right to access the data we hold about you.</li>
                 <li>
                   Right to request correction or deletion of inaccurate
@@ -163,10 +153,8 @@ export default function TermsPage() {
 
             {/* 6. Third-Party Links */}
             <section>
-              <h2 className="font-semibold text-lg mb-2">
-                6. Third-Party Links
-              </h2>
-              <p className="text-gray-300">
+              <h2 className=" text-3xl mb-6">6. Third-Party Links</h2>
+              <p className="text-gray-400">
                 Our Website may include links to third-party websites or
                 services. We are not responsible for the privacy practices or
                 content of those websites.
@@ -175,10 +163,8 @@ export default function TermsPage() {
 
             {/* 7. Children's Privacy */}
             <section>
-              <h2 className="font-semibold text-lg mb-2">
-                7. Children’s Privacy
-              </h2>
-              <p className="text-gray-300">
+              <h2 className=" text-3xl mb-6">7. Children’s Privacy</h2>
+              <p className="text-gray-400">
                 Our services are not intended for children under the age of 13.
                 We do not knowingly collect personal information from children.
               </p>
@@ -186,10 +172,10 @@ export default function TermsPage() {
 
             {/* 8. Changes to Policy */}
             <section>
-              <h2 className="font-semibold text-lg mb-2">
+              <h2 className=" text-3xl mb-6">
                 8. Changes to This Privacy Policy
               </h2>
-              <p className="text-gray-300">
+              <p className="text-gray-400">
                 We may update this Privacy Policy periodically. Changes will
                 appear on this page, and we encourage you to review this policy
                 regularly.
@@ -198,8 +184,8 @@ export default function TermsPage() {
 
             {/* 9. Contact */}
             <section>
-              <h2 className="font-semibold text-lg mb-2">9. Contact Us</h2>
-              <p className="text-gray-300">
+              <h2 className=" text-3xl mb-6">9. Contact Us</h2>
+              <p className="text-gray-400">
                 For questions or concerns regarding this Privacy Policy, contact
                 us at:
                 <span className="text-blue-400"> info@gloitel.com</span>

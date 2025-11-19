@@ -89,17 +89,17 @@ export const HomeAboutContentHead = ({
   HomeAboutDescription,
 }) => {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col w-xl">
       {/* Badge */}
       <LeftBadge HomeAboutBadge={HomeAboutBadge} />
       {/* Headings */}
-      <h3 className="text-3xl sm:text-3xl lg:text-5xl font-medium text-white">
+      <h3 className="text-3xl sm:text-3xl lg:text-5xl text-white">
         {homeAboutHeading}
       </h3>
-      <h3 className="text-3xl sm:text-3xl lg:text-5xl font-medium text-gray-400 mt-2">
+      <h3 className="text-3xl sm:text-3xl lg:text-5xl  text-gray-400 mt-2">
         {HomeAboutSubHeading}
       </h3>
-      <p className="text-base sm:text-sm lg:text-base font-medium text-gray-400 mt-8">
+      <p className="text-base sm:text-sm lg:text-base  text-gray-400 mt-8">
         {HomeAboutDescription}
       </p>
     </div>
@@ -152,7 +152,7 @@ export const AboutAboutContent = ({
       {AboutContents1.map((content, i) => (
         <div key={i} className="mt-4 sm:mt-6 w-lg">
           {content.title && (
-            <p className="text-sm sm:text-base font-medium lg:text-lg text-white leading-relaxed mb-2">
+            <p className="text-sm sm:text-base lg:text-lg text-white leading-relaxed mb-2">
               {content.title}
             </p>
           )}
@@ -166,7 +166,7 @@ export const AboutAboutContent = ({
       {AboutContents2.map((content, i) => (
         <div key={i} className="mt-4 sm:mt-6 w-lg">
           {content.title && (
-            <p className="text-sm sm:text-base font-medium lg:text-lg text-white leading-relaxed mb-2">
+            <p className="text-sm sm:text-base lg:text-lg text-white leading-relaxed mb-2">
               {content.title}
             </p>
           )}
@@ -219,10 +219,10 @@ export const AboutAboutContentHead = ({
       {/* Badge */}
       <LeftBadge AboutBadge={AboutBadge} />
       {/* Headings */}
-      <h3 className="text-2xl sm:text-3xl lg:text-5xl font-medium text-white">
+      <h3 className="text-2xl sm:text-3xl lg:text-5xl  text-white">
         {AboutHeading}
       </h3>
-      <h3 className="text-2xl sm:text-3xl lg:text-5xl font-medium text-gray-400 mt-2">
+      <h3 className="text-2xl sm:text-3xl lg:text-5xl text-gray-400 mt-2">
         {AboutSubHeading}
       </h3>
     </div>
