@@ -34,7 +34,7 @@ const ContactPage = () => {
               description="Whether you have a question, need assistance,
  or want to start a new project, our team is here to help."
             />
-            <GlowButton ButtonText="Fill The Form Out" onClick={scrollToForm} />
+            <GlowButton ButtonText="Fill The Form Out" Buttonlink={"#form"} />
           </div>
           <div ref={formRef} className=" w-full">
             <ContactForm />

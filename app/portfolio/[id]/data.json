@@ -49,7 +49,7 @@
     "name": "PATH IAS ACADEMY",
     "date": 2018,
     "description": "Path IAS Academy is a premier coaching institute that provides training for UPSC, CGPSC, and other competitive exams. Offers offline and online courses, test series, and study materials",
-    "tag": ["Website", "Mobile App"],
+    "tag": ["Website", "CRM"],
     "projectType": "Website Development",
     "industry": "Education & Competitive Exam Coaching",
     "techStack": "React, Redux, Next.js, HTML, SCSS, Tailwind CSS, Swiper, Node.js, Express.js, AWS Cloud, MongoDB",

@@ -38,7 +38,7 @@ export const CenterBadge = ({
       <div className="relative w-fit text-center backdrop-blur-md bg-gray-900/50 px-4 py-2 rounded-lg shadow-lg mb-6 overflow-hidden border-2 border-gray-600/20">
         {/* Top Blue Glow */}
         <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50%] h-[12px] bg-blue-700/90 blur-[5px] rounded-full pointer-events-none" />
-        <h2 className="flex items-center text-xs sm:text-sm text-white font-medium relative z-10">
+        <h2 className="flex items-center text-sm sm:text-sm text-white font-normal relative z-10">
           <span className="bg-white w-1.5 h-1.5 rounded-full inline-block mr-2"></span>
           {AboutOurCulture}
           {TechnologyBadge}

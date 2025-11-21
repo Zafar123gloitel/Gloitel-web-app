@@ -64,14 +64,6 @@ const AboutPage = () => {
       icon: <Twitter />,
       link: "https://in.linkedin.com/",
     },
-    {
-      id: 6,
-      name: "Mr. Sandeep",
-      role: "Project Manager",
-      image: "images/3rd.avif",
-      icon: <Twitter />,
-      link: "https://in.linkedin.com/",
-    },
   ];
 
   return (
@@ -295,7 +287,7 @@ const AboutPage = () => {
                 />
                 <div className="absolute inset-x-0 bottom-0 m-3 sm:m-5 rounded-xl bg-gradient-to-r from-gray-900/90 to-black/80 p-3 sm:p-4 backdrop-blur-md flex justify-between items-center border-2 border-gray-500/30">
                   <div>
-                    <h3 className="text-sm sm:text-md font-semibold text-white mb-1">
+                    <h3 className="text-sm sm:text-[16px] font-semibold text-white mb-1">
                       {item?.name}
                     </h3>
                     <p className="text-xs sm:text-sm text-gray-300">

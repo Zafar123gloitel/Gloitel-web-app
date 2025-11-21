@@ -116,57 +116,59 @@ const CreationPage = () => {
             {stages.map((item) => (
               <Link
                 key={item.id}
-                href={`/portfolio/${item.id}`} // dynamic route
+                href={`/portfolio/${item.id}`}
                 className="relative group bg-gradient-to-r from-gray-950/90 to-black/80 
-                 p-2 sm:p-3 rounded-2xl sm:rounded-3xl shadow-lg overflow-hidden 
-                 border border-white/10 cursor-pointer"
+        p-2 sm:p-3 rounded-2xl sm:rounded-3xl shadow-lg overflow-hidden 
+        border border-white/10 cursor-pointer"
               >
-                {/* Image */}
-                <Image
-                  width={1920}
-                  height={1080}
-                  src={item.image}
-                  alt={item.name}
-                  className="w-full h-60 sm:h-72 md:h-80 lg:h-96` object-cover rounded-xl sm:rounded-2xl 
-                   transition-transform duration-500 ease-in-out group-hover:scale-105"
-                  unoptimized
-                />
+                <span className="cursor-hover block">
+                  {/* Image */}
+                  <Image
+                    width={1920}
+                    height={1080}
+                    src={item.image}
+                    alt={item.name}
+                    className="w-full h-60 sm:h-72 md:h-80 lg:h-96 object-cover rounded-xl sm:rounded-2xl 
+            transition-transform duration-500 ease-in-out group-hover:scale-105"
+                    unoptimized
+                  />
 
-                {/* Bottom overlay */}
-                <div
-                  className="absolute flex justify-between items-center inset-x-0 bottom-0 
-                      m-3 sm:m-5 rounded-lg sm:rounded-xl 
-                      bg-gradient-to-r from-blue-950 to-black p-2 sm:p-4"
-                >
-                  <div>
-                    <h3 className="text-sm sm:text-md font-semibold text-white mb-0.5 sm:mb-1">
-                      {item.name}
-                    </h3>
-                  </div>
-                  <p
-                    className="text-xs sm:text-sm text-gray-300 
-                      bg-gradient-to-r from-blue-950/60 to-black/80 
-                      px-2 sm:px-3 py-0.5 sm:py-1 rounded-md"
-                  >
-                    {item.date}
-                  </p>
-                </div>
-
-                {/* Reveal div (hover for desktop, click for mobile) */}
-                <div
-                  className={`
-          absolute top-0 right-0 m-2 sm:m-4 transition-all duration-500 ease-out
-          group-hover:translate-y-0 group-hover:opacity-100
-        `}
-                >
+                  {/* Bottom overlay */}
                   <div
-                    className="bg-[radial-gradient(circle_at_center,_rgba(0,0,80,0.9),_rgba(0,0,0,1))] 
-                        text-white text-xs sm:text-sm font-medium 
-                        px-2 sm:px-4 py-1 sm:py-2 rounded-md sm:rounded-lg shadow-lg"
+                    className="absolute flex justify-between items-center inset-x-0 bottom-0 
+            m-3 sm:m-5 rounded-lg sm:rounded-xl 
+            bg-gradient-to-r from-blue-950 to-black p-2 sm:p-4"
                   >
-                    {item.tag}
+                    <div>
+                      <h3 className="text-sm sm:text-md font-semibold text-white mb-0.5 sm:mb-1">
+                        {item.name}
+                      </h3>
+                    </div>
+                    <p
+                      className="text-xs sm:text-sm text-gray-300 
+              bg-gradient-to-r from-blue-950/60 to-black/80 
+              px-2 sm:px-3 py-0.5 sm:py-1 rounded-md"
+                    >
+                      {item.date}
+                    </p>
                   </div>
-                </div>
+
+                  {/* Reveal tag */}
+                  <div
+                    className="
+            absolute top-0 right-0 m-2 sm:m-4 transition-all duration-500 ease-out
+            group-hover:translate-y-0 group-hover:opacity-100
+          "
+                  >
+                    <div
+                      className="bg-[radial-gradient(circle_at_center,_rgba(0,0,80,0.9),_rgba(0,0,0,1))] 
+              text-white text-xs sm:text-sm font-medium 
+              px-2 sm:px-4 py-1 sm:py-2 rounded-md sm:rounded-lg shadow-lg"
+                    >
+                      {item.tag}
+                    </div>
+                  </div>
+                </span>
               </Link>
             ))}
           </div>

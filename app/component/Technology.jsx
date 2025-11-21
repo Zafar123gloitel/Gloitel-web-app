@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import { CenterBadge } from "./Badge";
-import { BgSquare1, BgSquare2, BgSquare3 } from "./BgSquare";
+import { BgSquare3 } from "./BgSquare";
 import { MiddleSectionHeads } from "./SectionHeads";
 import { GlowButton } from "./Button";
 import { ArrowUpRight } from "lucide-react";

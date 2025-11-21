@@ -7,6 +7,7 @@ import { ImageCard } from "../uiComponents/ImageCard";
 import { GlowButton } from "./Button";
 import GlowPanel from "./GlowPanel";
 import { Blend, Crosshair, Rocket } from "lucide-react";
+import Image from "next/image";
 
 const stages = [
   {
@@ -94,7 +95,6 @@ const HowWeWork = () => {
               <AnimatedCard key={item.id}>
                 <div className="relative p-5 sm:p-10 rounded-2xl bg-black/40 backdrop-blur-md shadow-lg overflow-hidden border border-white/10">
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-900/40 via-indigo-800/20 to-transparent opacity-50 rounded-2xl pointer-events-none"></div>
-
                   <div className="flex items-center justify-between relative z-10">
                     <div className="flex items-center justify-center px-3 py-3 rounded-lg bg-white/5 text-white shadow-[0_0_25px_rgba(59,130,246,0.3)]">
                       {item.icon}
@@ -103,17 +103,13 @@ const HowWeWork = () => {
                       {item.stage}
                     </span>
                   </div>
-
                   <h3 className="mt-3 sm:mt-4 text-lg sm:text-xl font-semibold text-white relative z-10">
                     {item.title}
                   </h3>
-
                   <div className="w-full h-px bg-gradient-to-r from-white/10 to-transparent my-2 sm:my-3 relative z-10"></div>
-
                   <p className="text-gray-400 text-md sm:text-md md:text-base leading-relaxed relative z-10">
                     {item.description}
                   </p>
-
                   <div className="mt-3 sm:mt-4 flex flex-wrap gap-2 sm:gap-3 relative z-10">
                     {item.points.map((point, idx) => (
                       <span
@@ -124,13 +120,23 @@ const HowWeWork = () => {
                       </span>
                     ))}
                   </div>
-
                   {/* Conditionally render button only for the third card */}
                   {item.ButtonText && item.ButtonTextLink && (
                     <div className="flex justify-start mt-4">
                       <GlowButton
                         ButtonText={item.ButtonText}
                         ButtonLink={item.ButtonTextLink}
+                      />
+                    </div>
+                  )}
+                  {item.ButtonText && item.ButtonTextLink && (
+                    <div className="absolute -bottom-10 -right-10 opacity-70">
+                      <Image
+                        src="https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762926076/Gloitel/utils/star_fzn7cv.svg"
+                        alt="design"
+                        width={180}
+                        height={180}
+                        unoptimized
                       />
                     </div>
                   )}
