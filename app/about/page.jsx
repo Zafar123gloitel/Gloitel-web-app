@@ -14,6 +14,11 @@ import JoinUsNow from "../component/JoinUsNow";
 import { BgSquare2, BgSquare3 } from "../component/BgSquare";
 import { GlowButton } from "../component/Button";
 import { IntroHead } from "../uiComponents/Heading";
+import GlowPanel from "../component/GlowPanel";
+import { HorizontalDivider } from "../component/SectionDivider";
+import { MiddleSectionHeads } from "../component/SectionHeads";
+import GalleryScroll from "../component/GalleryScroll";
+import { Linkedin, Twitter } from "lucide-react";
 
 const AboutPage = () => {
   const [showVideo, setShowVideo] = useState(false);
@@ -24,63 +29,67 @@ const AboutPage = () => {
       name: "Mr.Durgesh Sahu",
       role: "Director",
       image: "images/durgesh.avif",
+      icon: <Linkedin />,
+      link: "https://www.linkedin.com/in/durgesh-sahu-1543068/",
     },
     {
       id: 2,
       name: "Dr(Major) Rakesh Sharma",
       role: "Sr.Medical Auditor",
       image: "images/2nd.avif",
+      icon: <Twitter />,
+      link: "https://in.linkedin.com/",
     },
     {
       id: 3,
       name: "Mr. Janak Sahu",
       role: "Admin & MIS Head",
       image: "images/3rd.avif",
+      icon: <Twitter />,
+      link: "https://in.linkedin.com/",
     },
     {
       id: 4,
       name: "Mr. Shippu Sharma",
       role: "Senior Software Engineer",
       image: "images/4th.avif",
+      icon: <Linkedin />,
+      link: "https://in.linkedin.com/in/shippu-sharma",
     },
     {
       id: 5,
       name: "Er. Zafaryab Khan",
       role: "Project Lead",
       image: "images/5th.avif",
+      icon: <Twitter />,
+      link: "https://in.linkedin.com/",
     },
-    // {
-    //   id: 6,
-    //   name: "Mr. Sandeep",
-    //   role: "Project Manager",
-    //   image: "images/3rd.avif",
-    // },
   ];
 
   return (
     <>
       {/* Hero Section with Video */}
-      <section className="relative isolate px-4 sm:px-6 lg:px-8 py-16 lg:py-24 w-full h-full  overflow-hidden">
+      <section className="relative isolate px-4 sm:px-6 lg:px-8 py-16 lg:py-24 w-full h-full z-10  overflow-hidden">
         {/* Background Video */}
         <video
-          src="https://framerusercontent.com/assets/lr4LSmXa1klevAvb0jf1i2zsDE.mp4"
+          src="https://res.cloudinary.com/dsqu6pi0d/video/upload/v1762846419/Gloitel/bg_cij8h5.mp4"
           type="video/mp4"
           className="absolute top-0 left-0 w-full h-full object-cover z-0"
           autoPlay
           muted
           loop
           playsInline
+          unoptimized="true"
         ></video>
 
         <div className="flex flex-col items-center justify-center mx-auto min-h-[60vh] relative z-10 text-center pt-15 sm:pt-20 md:pt-20 lg:pt-20">
           {/* Intro */}
           <IntroHead
             HomeHeroBadge="2025"
-            HomeSubHeroBadge="Frequently Asked Questions"
-            main="Any Questions Rising?"
-            sub="We are All Here."
-            description="Whether you have a question, need assistance,
-            or want to start a new project, our team is here to help."
+            HomeSubHeroBadge="Dig Deep About Us"
+            main="Learn More About Gloitel"
+            sub="Let's Deep Dive!"
+            description="We are a healthtech AI company. The dedicated team of tech-savvy enthusiasts and developers who bring to the table the best IT solutions."
           />
 
           {/* Buttons */}
@@ -100,7 +109,7 @@ const AboutPage = () => {
           </div>
 
           {/* Thumbnail with Play Button */}
-          <div className="mt-10 w-full sm:w-3/4 lg:w-2/3">
+          <div className="mt-10 w-full sm:w-3/4 lg:w-5/6">
             <div
               className="relative bg-gradient-to-r from-gray-950/90 to-black/80 p-2 sm:p-3 rounded-3xl shadow-lg overflow-hidden border border-white/10 cursor-pointer"
               onClick={() => setShowVideo(true)}
@@ -129,49 +138,97 @@ const AboutPage = () => {
 
           {/* Modal Video */}
           {showVideo && (
-            <div
-              className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
-              onClick={() => setShowVideo(false)}
-            >
-              <div className="relative w-full max-w-4xl">
-                <iframe
-                  src="https://www.youtube.com/embed/AMzVBmvh1Z0?autoplay=1"
-                  title="YouTube video player"
-                  className="w-full h-[60vh] sm:h-[70vh] rounded-2xl"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
+            <>
+              {/* Disable background scroll */}
+              <style jsx global>{`
+                body {
+                  overflow: hidden;
+                }
+              `}</style>
+
+              <div
+                className="fixed inset-0 flex items-center justify-center bg-black/80 backdrop-blur-sm z-32 p-4 sm:p-6 animate-fadeIn"
+                onClick={() => setShowVideo(false)}
+              >
+                {/* Stop propagation so clicking inside doesn’t close modal */}
+                <div
+                  className="relative w-full max-w-4xl aspect-video rounded-2xl overflow-hidden bg-black/30 border border-white/10 shadow-2xl"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {/* YouTube Iframe */}
+                  <iframe
+                    key={showVideo ? "video-playing" : "video-stopped"}
+                    src={
+                      showVideo
+                        ? "https://www.youtube.com/embed/AMzVBmvh1Z0?autoplay=1&modestbranding=1&rel=0&showinfo=0&controls=1"
+                        : ""
+                    }
+                    title="Gloitel Presentation"
+                    className="absolute inset-0 w-full h-full rounded-2xl border-none"
+                    style={{
+                      overflow: "hidden",
+                      clipPath: "inset(0 0 0 0 round 12px)",
+                    }}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                  {/* Close Button */}
+                  <button
+                    onClick={() => setShowVideo(false)}
+                    className="absolute top-0 right-0 bg-white/20 hover:bg-white/40 text-white p-2 rounded-full backdrop-blur-sm transition-all duration-200 z-32"
+                    aria-label="Close video"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-5 h-5 sm:w-6 sm:h-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </button>
+                </div>
               </div>
-            </div>
+            </>
           )}
         </div>
       </section>
-
+      <HorizontalDivider />
       {/* About Section 1 */}
-      <section className="relative isolate px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
-        <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-          <AboutAboutImg1 ImgLink="https://framerusercontent.com/images/mwSqQ9UKMvUvejak30qlmlWS8.jpeg?scale-down-to=1024" />
-          <AboutAboutContent
-            AboutBadge="Gloitel Vision"
-            AboutHeading="Building Stronger Brands"
-            AboutSubHeading="with Innovation"
-            AboutContents1={[
-              {
-                title: "Your Vision, Our Expertise",
-                text: "We craft digital experiences that drive success, delivering seamless IT solutions in HealthTech, AI, Cloud, and more.",
-              },
-              {
-                title: "Innovation Meets Excellence",
-                text: "From data intelligence to business automation, we deliver modern, scalable, and future-ready technologies that elevate your operations.",
-              },
-            ]}
-            ButtonText="Book an Appointment"
-            Buttonlink="/contact"
-            HomeAboutTexts="200+ Agencies Rated"
-          />
+      <section className="relative isolate px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24 ">
+        <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-10 items-center z-30">
+          <div className="order-1 md:order-2">
+            <AboutAboutContent
+              AboutBadge="Gloitel Vision"
+              AboutHeading="Empowering Businesses"
+              AboutSubHeading="with Innovation"
+              AboutContents1={[
+                {
+                  title: "Your Vision, Our Expertise",
+                  text: "We craft digital experiences that drive success, delivering seamless IT solutions in HealthTech, AI, Cloud, and more.",
+                },
+                {
+                  title: "Innovation Meets Excellence",
+                  text: "From data intelligence to business automation, we deliver modern, scalable, and future-ready technologies that elevate your operations.",
+                },
+              ]}
+              ButtonText="Book an Appointment"
+              Buttonlink="/contact"
+              HomeAboutTexts="200+ Agencies Rated"
+            />
+          </div>
+          <div className="order-2 md:order-1">
+            <AboutAboutImg1 ImgLink="https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762928419/Gloitel/aboutone_fulkws.webp" />
+          </div>
         </div>
       </section>
-
+      <HorizontalDivider />
       {/* About Section 2 */}
       <section className="relative isolate px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
         <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
@@ -193,86 +250,83 @@ const AboutPage = () => {
             Buttonlink="/contact"
             HomeAboutTexts="900+ People Rated"
           />
-          <AboutAboutImg2 ImgLink="https://framerusercontent.com/images/hZgGlHpPFf0bbzHL7dI9MolatA.jpeg?scale-down-to=1024" />
+          <AboutAboutImg2 ImgLink="https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762928416/Gloitel/abouttwo_pic4v5.webp" />
         </div>
       </section>
-
-      {/* Testimonial Section */}
+      <HorizontalDivider />
+      {/* Team Members Section */}
       <section className="relative isolate px-4 sm:px-6 lg:px-8 py-12 lg:py-20 overflow-hidden">
+        <BgSquare3 />
         <div className="flex flex-col items-center justify-center max-w-7xl mx-auto relative z-10">
-          <BgSquare2 />
           <div className="flex flex-col w-full sm:w-3/4 lg:w-1/2 text-center">
-            <CenterBadge TestimonialBadge="Testimonial" />
-
-            <h3 className="text-2xl sm:text-3xl lg:text-5xl font-semibold text-white">
-              Customer Reviews About
-            </h3>
-            <h3 className="text-lg sm:text-2xl lg:text-4xl font-medium text-gray-400 mt-2">
-              Work, Usability and Design.
-            </h3>
-
-            <p className="my-6 sm:text-sm lg:text-base text-gray-400">
-              Hear from our happy clients! See how we’ve helped them achieve
-              their goals and create lasting impact.
-            </p>
+            <CenterBadge TechnologyBadge="Team Members" />
+            <MiddleSectionHeads
+              SectionHead="Meet the Team Making"
+              SectionSubHead="Things Happen Every Day"
+              SectionDescription="Our team is made up of passionate professionals who bring their expertise and creativity to every project."
+            />
+            <GlowButton
+              ButtonText="Book a 15-min call"
+              Buttonlink="/contact"
+              className="mt-6 sm:mt-8"
+            />
           </div>
-          <GlowButton ButtonText="Book a 15 Min Call" Buttonlink="/contact" />
 
           {/* Team Grid */}
           {/* grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 */}
           <div className="mt-12 flex flex-wrap justify-center gap-6 w-full">
             {stages.map((item) => (
               <div
-                key={item.id}
+                key={item?.id}
                 className="relative bg-gradient-to-r from-gray-950/90 to-black/80 p-2 sm:p-3 rounded-3xl shadow-lg overflow-hidden border border-white/10"
               >
                 <img
-                  src={item.image}
-                  alt={item.name}
-                  className="w-full h-60 sm:h-72 lg:h-[400px] object-cover rounded-2xl"
+                  src={item?.image}
+                  alt={item?.name}
+                  className="w-full h-60 sm:h-72 lg:h-[400px] object-cover rounded-2xl border-2 border-gray-500/10"
                 />
-                <div className="absolute inset-x-0 bottom-0 m-3 sm:m-5 rounded-xl bg-gradient-to-r from-blue-950/60 to-black/80 p-3 sm:p-4 backdrop-blur-md flex justify-between items-center">
+                <div className="absolute inset-x-0 bottom-0 m-3 sm:m-5 rounded-xl bg-gradient-to-r from-gray-900/90 to-black/80 p-3 sm:p-4 backdrop-blur-md flex justify-between items-center border-2 border-gray-500/30">
                   <div>
-                    <h3 className="text-sm sm:text-md font-semibold text-white mb-1">
-                      {item.name}
+                    <h3 className="text-sm sm:text-[16px] font-semibold text-white mb-1">
+                      {item?.name}
                     </h3>
                     <p className="text-xs sm:text-sm text-gray-300">
-                      {item.role}
+                      {item?.role}
                     </p>
                   </div>
-                  <img
-                    src={item.image}
-                    alt=""
-                    className="w-7 sm:w-9 h-7 sm:h-9 rounded-xl"
-                  />
+                  <Link href={item?.link}>
+                    <div className="flex items-center justify-center w-10 h-10 px-3 py-3 rounded-lg bg-white/5 text-gray-400 shadow-[0_0_25px_rgba(59,130,246,0.3)] border-2 border-gray-400/20">
+                      {item?.icon}
+                    </div>
+                  </Link>
                 </div>
               </div>
             ))}
           </div>
         </div>
       </section>
-
+      <HorizontalDivider />
       {/* Culture Section */}
       <div className="relative flex flex-col items-center px-4 sm:px-6 lg:px-8 py-12 lg:py-20 overflow-hidden">
         <BgSquare3 />
-        <div className="flex flex-col justify-center w-full sm:w-3/4 lg:w-1/2 text-center">
-          <CenterBadge AboutOurCulture="Our Culture" />
-          <h3 className="text-2xl sm:text-3xl lg:text-5xl font-semibold text-white">
-            Work, Celebrate &
-          </h3>
-          <h3 className="text-xl sm:text-3xl lg:text-5xl font-medium text-gray-400 mt-2">
-            Grow Together
-          </h3>
-          <p className="my-6 sm:text-sm lg:text-base text-gray-400">
-            Snapshot of our lively workplace—office life, celebrations, team
-            outings, and bonding events.
-          </p>
-          <GlowButton ButtonText="View About GLoitel" Buttonlink="/about" />
+        <div className="flex flex-col w-full sm:w-3/4 lg:w-1/2 text-center">
+          <CenterBadge TechnologyBadge="Our Culture" />
+          <MiddleSectionHeads
+            SectionHead="Work, Celebrate &"
+            SectionSubHead="Grow Together"
+            SectionDescription="snapshot of our lively workplace—office life, celebrations, team outings, and bonding events."
+          />
+          <GlowButton
+            ButtonText="View About Gloitel "
+            Buttonlink="/about"
+            className="mt-6 sm:mt-8"
+          />
         </div>
 
         <div className="overflow-x-auto scrollbar-hide mt-12 w-full">
-          <TechScroll />
+          <GalleryScroll />
         </div>
+        <GlowPanel />
       </div>
 
       {/* FAQ + CTA */}

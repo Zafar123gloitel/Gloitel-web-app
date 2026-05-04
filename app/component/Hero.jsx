@@ -1,22 +1,37 @@
 import React from "react";
 import FeatureScroll from "./FeatureScroll";
-import HeroBadge from "./HeroBadge";
 import { HeroButton } from "./Button";
 import { HomeHeroHeading } from "./HeroHead";
 
 const Hero = () => {
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <div className="relative w-full max-h-full overflow-hidden py-32 px-5 sm:py-32 sm:px-5 md:pt-40 md:px-23 lg:py-15 lg:px-0">
       {/* Background Video */}
       <video
-        src="https://framerusercontent.com/assets/lr4LSmXa1klevAvb0jf1i2zsDE.mp4"
+        src="https://res.cloudinary.com/dsqu6pi0d/video/upload/v1762846419/Gloitel/bg_cij8h5.mp4"
         type="video/mp4"
         className="absolute top-0 left-0 w-full h-full object-cover z-0"
         autoPlay
         muted
         loop
         playsInline
+        unoptimized="true"
       />
+      <div
+        className="absolute top-20 right-0 h-full justify-end items-center overflow-hidden z-30 hidden 2xl:flex
+"
+      >
+        <video
+          src="https://res.cloudinary.com/dsqu6pi0d/video/upload/v1762846419/Gloitel/human-vid_xpbx1j.mp4"
+          type="video/mp4"
+          className="w-[700px] h-full object-cover clip-curve"
+          autoPlay
+          muted
+          loop
+          playsInline
+          unoptimized="true"
+        />
+      </div>
 
       {/* Overlay for better text readability */}
       <div className="absolute top-0 left-0 w-full h-full bg-black/40 z-5" />
@@ -31,9 +46,8 @@ const Hero = () => {
           HomeHeroSubHeading="Skyrocket Impact."
           HomeHeroDescription="Leverage the power of AI to streamline tasks, reduce manual effort, and maximize productivity."
         />
-
         {/* Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-4 sm:mt-6 w-full sm:w-auto justify-center sm:justify-start">
+        <div className="flex flex-col sm:flex-row  w-full sm:w-auto justify-center sm:justify-start">
           <HeroButton
             FirstHeroButtonText="Connect With Us"
             FirstHeroButtonLink="/contact"
@@ -42,9 +56,11 @@ const Hero = () => {
           />
         </div>
 
-        {/* Feature Scroll */}
-        <div className="mt-8 w-full sm:w-auto">
-          <FeatureScroll />
+        {/* Feature Scroll Wrapper */}
+        <div className="relative w-full sm:w-auto overflow-hidden z-25">
+          <div className="relative feature-fade-mask">
+            <FeatureScroll />
+          </div>
         </div>
       </div>
     </div>

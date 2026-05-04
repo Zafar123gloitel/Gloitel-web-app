@@ -1,8 +1,88 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #000000;
   --foreground: #171717;
+}
+:root {
+  --framer-font-family: "DM Sans", "DM Sans Placeholder", sans-serif;
+  --framer-font-family-bold: "DM Sans", "DM Sans Placeholder", sans-serif;
+  --framer-font-family-bold-italic:
+    "DM Sans", "DM Sans Placeholder", sans-serif;
+  --framer-font-family-italic: "DM Sans", "DM Sans Placeholder", sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: var(--framer-font-family);
+}
+.clip-curve {
+  clip-path: ellipse(750px 700px at 90% 80%);
+}
+.hide-scrollbar {
+  overflow-y: scroll; /* scrolling still works */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and old Edge */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge (WebKit) */
+}
+.feature-fade-mask-bottom {
+  -webkit-mask-image: linear-gradient(
+    to top,
+    transparent 0%,
+    black 3%,
+    black 30%,
+    transparent 100%
+  );
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+.portfolio-fade-bottom {
+  -webkit-mask-image: linear-gradient(
+    to top,
+    transparent 0%,
+    /* bottom start (fade) */ transparent 10%,
+    /* fade thickness */ black 30%,
+    /* fully visible area starts */ black 100% /* entire top visible */
+  );
+  -webkit-mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+
+  mask-image: linear-gradient(
+    to top,
+    transparent 0%,
+    transparent 5%,
+    black 10%,
+    black 100%
+  );
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+}
+
+.feature-fade-mask {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 25%,
+    black 75%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 25%,
+    black 75%,
+    transparent 100%
+  );
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
 }
 
 @theme inline {
@@ -22,7 +102,6 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
 @keyframes scrollLeft {
   0% {
@@ -32,22 +111,82 @@ body {
     transform: translateX(-50%); /* Move left by half of total width */
   }
 }
-
-.animate-scroll {
-  display: flex;
-  animation: scrollLeft 20s linear infinite;
-}
-
-@keyframes scrollRight {
+@keyframes marquee {
   0% {
-    transform: translateX(-50%); /* Start shifted left */
+    transform: translateX(0);
   }
   100% {
-    transform: translateX(0); /* Move right back to origin */
+    transform: translateX(-50%);
   }
+}
+
+.animate-marquee {
+  display: flex;
+  animation: marquee 25s linear infinite;
 }
 
 .animate-scroll-right {
   display: flex;
   animation: scrollRight 20s linear infinite;
+}
+.button-glow {
+  font-size: 1.25rem;
+
+  &::before {
+    --vibrance: 50%;
+    content: "";
+    position: absolute;
+    inset: 400px 100px 2px;
+    /* Blue glow using OKLCH hue around 250–260° */
+    background: linear-gradient(
+      to right in oklch longer hue,
+      oklch(95% var(--vibrance) 250) 0,
+      oklch(95% var(--vibrance) 250) 100%
+    );
+    filter: blur(20px);
+    border-radius: inherit;
+    z-index: -1;
+  }
+}
+
+.progress-fill {
+  width: 500%;
+  height: 100%;
+  border-radius: 0.5rem;
+  background:
+    linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.06) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.06) 50%,
+      rgba(255, 255, 255, 0.06) 75%,
+      transparent 75%
+    ),
+    linear-gradient(to right, #003cff, #004cff, #0060ff);
+  background-size:
+    40px 40px,
+    100% 100%;
+  animation: progressLines 1.4s linear infinite;
+}
+
+/* Lines moving left */
+@keyframes progressLines {
+  from {
+    background-position:
+      40px 0,
+      0 0;
+  }
+  to {
+    background-position:
+      0 0,
+      0 0;
+  }
+}
+
+/* Soft outer glow */
+.shadow-inner-glow {
+  box-shadow:
+    0 0 20px rgba(0, 80, 255, 0.4),
+    inset 0 0 12px rgba(0, 0, 0, 0.6);
 }

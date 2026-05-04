@@ -2,16 +2,17 @@ import Link from "next/link";
 import React from "react";
 import AutoScroll from "./AutoScroll";
 import { CenterBadge } from "./Badge";
-import { BgSquare1 } from "./BgSquare";
+import { BgSquare1, BgSquare2 } from "./BgSquare";
 import { GlowButton } from "./Button";
 import { MiddleSectionHeads } from "./SectionHeads";
+import GlowPanel from "./GlowPanel";
 
 const Result = () => {
   return (
-    <section className="relative isolate sm:px-6 lg:px-8 py-16 lg:py-24 overflow-hidden">
+    <section className="relative isolate pt-10 sm:px-6 lg:px-8 py-0 overflow-hidden">
       <div className="flex flex-col items-center justify-center mx-auto min-h-[60vh] relative z-10">
+        <BgSquare2 />
         <div className="flex flex-col w-full sm:w-1/2 lg:w-1/2 text-center">
-          <BgSquare1 />
           {/* Badge */}
           <CenterBadge ResultsBadge="Results" />
           <MiddleSectionHeads
@@ -23,10 +24,11 @@ const Result = () => {
         </div>
 
         {/* AutoScroll */}
-        <div className="overflow-x-auto scrollbar-hide mt-12 w-full">
+        <div className="mt-12 w-full">
           <AutoScroll />
         </div>
       </div>
+      <GlowPanel />
     </section>
   );
 };

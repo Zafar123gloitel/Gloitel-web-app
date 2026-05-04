@@ -1,14 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { VerticalDivider } from "./SectionDivider";
-import { HeaderButton } from "./Button";
+import { GlowButton, HeaderButton } from "./Button";
 import Image from "next/image";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
   const pathname = usePathname();
 
   const links = [
@@ -17,114 +18,133 @@ const Navbar = () => {
     { href: "/creation", label: "Our Creations" },
     { href: "/contact", label: "Contact" },
     { href: "/faq", label: "FAQ" },
-    { href: "/portfolio", label: "Portfolio" },
   ];
 
   const getLinkClasses = (href) =>
     pathname === href
-      ? "text-white "
-      : "text-white/60 hover:text-white transition";
+      ? "text-white"
+      : "text-white/50 hover:text-white transition-colors";
+
+  // 🧭 Hide navbar when scrolling down
+  useEffect(() => {
+    let lastScroll = 0;
+    const handleScroll = () => {
+      const currentScroll = window.scrollY;
+      setIsHidden(currentScroll > lastScroll && currentScroll > 50);
+      lastScroll = currentScroll;
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="fixed z-50 w-full backdrop-blur-md bg-black/50">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between p-6 relative">
-        {/* Logo */}
-        <div className="flex items-center justify-between w-full lg:w-auto">
-          <Link href="#" className="p-1.5 mr-10">
-            <span className="sr-only">Your Company</span>
-            <Image
-              width={1920}
-              height={1080}
-              src="https://framerusercontent.com/images/jQ28grv4AImGE9bV0hXi4CS7AR8.svg"
-              alt="Logo"
-              className="h-10 w-auto"
-            />
-          </Link>
-
-          {/* Mobile menu button */}
-          <div className="lg:hidden ml-10">
-            <button
-              onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
-              className="inline-flex items-center justify-between rounded-md p-2.5 text-gray-400 hover:text-white hover:bg-gray-700"
-            >
-              <span className="sr-only">
-                {isMobileMenuOpen ? "Close menu" : "Open menu"}
-              </span>
-              {isMobileMenuOpen ? (
-                <svg
-                  className="h-6 w-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-md transition-transform duration-300 ${
+        isHidden ? "-translate-y-full" : "translate-y-0"
+      }`}
+    >
+      <nav className=" mx-auto flex items-center justify-between px-4 sm:px-4 md:px-20 lg:px-44 border-b-1 border-gray-500/20">
+        {/* 🔹 Header Wrapper */}
+        <div className="flex items-center justify-between w-full px-6 py-4">
+          {/* 🔹 Left Section — Menu + Logo */}
+          <div className="flex items-center gap-6">
+            {/* 🔹 Logo */}
+            <Link href="/" className="flex items-center gap-2">
+              <Image
+                src="https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762927934/Gloitel/logo_xbs2qc.svg"
+                width={120}
+                height={90}
+                alt="Logo"
+                className="object-contain"
+                unoptimized
+              />
+            </Link>
+            <VerticalDivider />
+            <div className="hidden lg:flex items-center gap-9 ">
+              {links.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`text-md ${getLinkClasses(link.href)}`}
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M6 18L18 6M6 6l12 12"
-                  ></path>
-                </svg>
-              ) : (
-                <svg
-                  className="h-6 w-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  ></path>
-                </svg>
-              )}
-            </button>
+                  {link.label}
+                </Link>
+              ))}
+            </div>
           </div>
-          <VerticalDivider />
 
-          {/* Desktop Menu */}
-          <div className="hidden lg:flex lg:gap-x-8 ml-10">
-            {links.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`text-md ${getLinkClasses(link.href)}`}
-              >
-                {link.label}
-              </Link>
-            ))}
+          {/* 🔹 Right Section — Button */}
+          <div className="hidden lg:flex items-center">
+            <GlowButton ButtonText="Get In Touch" Buttonlink="/contact" />
           </div>
         </div>
-        <HeaderButton GetInTouch="Get In Touch" />
+
+        {/* 🔹 Mobile Toggle Button */}
+        <button
+          onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
+          className="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all"
+        >
+          {isMobileMenuOpen ? (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          ) : (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          )}
+        </button>
       </nav>
 
-      {/* Mobile Menu */}
+      {/* 🔹 Mobile Menu */}
       <div
-        className={`lg:hidden absolute top-full left-0 w-full bg-black/80 backdrop-blur-md overflow-hidden transition-all duration-300 ${
+        className={`lg:hidden transition-all duration-300 overflow-hidden bg-black/70 backdrop-blur-md ${
           isMobileMenuOpen
-            ? "max-h-screen opacity-100 py-4"
+            ? "max-h-[400px] opacity-100 py-4"
             : "max-h-0 opacity-0 py-0"
         }`}
       >
-        <div className="flex flex-col px-6 space-y-2">
+        <div className="flex flex-col space-y-3 px-6">
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`text-base font-semibold ${getLinkClasses(link.href)}`}
+              className={`block text-base font-medium ${getLinkClasses(link.href)} py-2`}
               onClick={() => setMobileMenuOpen(false)}
             >
               {link.label}
             </Link>
           ))}
 
-          <a
-            href="#"
-            className="mt-2 inline-block rounded-md bg-blue-700 px-5 py-2.5 text-sm font-semibold text-white shadow-lg hover:bg-indigo-400 transition"
-          >
-            Get In Touch
-          </a>
+          <div className="pt-3">
+            <HeaderButton
+              ButtonText={"Get In Touch"}
+              Buttonlink={"/contact"}
+              onClick={() => setMobileMenuOpen(false)}
+            />
+          </div>
         </div>
       </div>
     </header>

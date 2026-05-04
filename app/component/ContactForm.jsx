@@ -4,7 +4,10 @@ import Link from "next/link";
 
 const ContactForm = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center px-4 py-12">
+    <section
+      id="form"
+      className="min-h-screen flex items-center justify-center px-4 py-12"
+    >
       <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-4 gap-8">
         {/* Contact Form */}
         <div className="lg:col-span-3 border border-white/10 rounded-3xl shadow-lg p-3 relative bg-gradient-to-r from-gray-950/90 to-black/80  sm:p-2  overflow-hidden ">
@@ -52,9 +55,7 @@ const ContactForm = () => {
                   <select className="w-full rounded-lg bg-neutral-950 border border-white/10 px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-blue-600">
                     <option>Select your country...</option>
                     <option>India</option>
-                    <option>USA</option>
-                    <option>UK</option>
-                    <option>Germany</option>
+                    <option>Other</option>
                   </select>
                 </div>
                 <div>
@@ -63,9 +64,10 @@ const ContactForm = () => {
                   </label>
                   <select className="w-full rounded-lg bg-neutral-950 border border-white/10 px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-blue-600">
                     <option>Select Category</option>
-                    <option>IT</option>
-                    <option>Finance</option>
-                    <option>Education</option>
+                    <option>Agency</option>
+                    <option>SAAS</option>
+                    <option>Banking</option>
+                    <option>Business</option>
                     <option>Other</option>
                   </select>
                 </div>
@@ -84,7 +86,7 @@ const ContactForm = () => {
 
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-medium py-3 rounded-lg transition"
+                className="w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-medium py-3 rounded-lg transition cursor-pointer"
               >
                 Submit Now
               </button>

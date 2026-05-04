@@ -1,7 +1,7 @@
 import React from "react";
 import { LeftBadge } from "./Badge";
 import { GlowButton } from "./Button";
-import { VerticalDivider } from "./SectionDivider";
+import { HorizontalDivider, VerticalDivider } from "./SectionDivider";
 import Image from "next/image";
 
 // FOR HOME PAGE
@@ -32,7 +32,7 @@ export const HomeAboutContent = ({
         <dl className="mt-6 sm:mt-8 space-y-5 text-gray-400">
           {HomeAboutFeatures.map((feature, i) => (
             <div key={i} className="relative">
-              <dt className="flex items-center  gap-4 text-sm sm:text-base lg:text-md">
+              <dt className="flex items-center gap-4 text-sm sm:text-base lg:text-md">
                 <span className="left-1 w-5 h-5 text-indigo-400">
                   <svg
                     className="w-6 h-6 "
@@ -53,10 +53,10 @@ export const HomeAboutContent = ({
         </dl>
       )}
       {/* Buttons & Badge */}
-      <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+      <div className="mt-6 sm:mt-8 flex flex-col-reverse sm:flex-row-reverse md:flex-row items-start sm:items-center gap-4">
         <GlowButton ButtonText={ButtonText} Buttonlink={Buttonlink} />
         <VerticalDivider />
-        <div className="ml-5 gap-1">
+        <div className="ml-0 sm:ml-0 md:ml-5 gap-1">
           <div className="flex flex-row gap-1">
             {[1, 2, 3, 4, 5].map((i) => (
               <svg
@@ -89,17 +89,17 @@ export const HomeAboutContentHead = ({
   HomeAboutDescription,
 }) => {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col w-xl">
       {/* Badge */}
       <LeftBadge HomeAboutBadge={HomeAboutBadge} />
       {/* Headings */}
-      <h3 className="text-2xl sm:text-3xl lg:text-5xl font-semibold text-white">
+      <h3 className="text-3xl sm:text-3xl lg:text-5xl text-white">
         {homeAboutHeading}
       </h3>
-      <h3 className="text-2xl sm:text-3xl lg:text-5xl font-medium text-gray-400 mt-2">
+      <h3 className="text-3xl sm:text-3xl lg:text-5xl  text-gray-400 mt-2">
         {HomeAboutSubHeading}
       </h3>
-      <p className="text-base sm:text-sm lg:text-base font-medium text-gray-400 mt-2">
+      <p className="text-base sm:text-sm lg:text-base  text-gray-400 mt-8">
         {HomeAboutDescription}
       </p>
     </div>
@@ -109,14 +109,16 @@ export const HomeAboutContentHead = ({
 export const HomeAboutImg = ({ ImgLink }) => {
   return (
     <>
-      <div className="flex justify-center lg:justify-start">
-        <div className="p-3 backdrop-blur-md w-full sm:w-4/5 lg:w-lg rounded-3xl bg-gray-950/70 from-gray-950/90 to-black/80 ring-1 ring-white/5">
+      <div className=" relative flex justify-center lg:justify-start">
+        <div className="absolute bottom-0 sm:bottom-0 md:bottom-0 lg:bottom-0 translate-x-0 md:translate-x-0 lg:translate-x-30 w-[40%] sm:w-[40%] md:w-[50%] lg:w-[50%] h-[50px] bg-blue-700 blur-[30px] rounded-full pointer-events-none" />
+        <div className="p-3 backdrop-blur-md w-full sm:w-4/5 md:w-full lg:w-full h-auto md:h-1/2 rounded-3xl bg-gray-950/70 from-gray-950/90 to-black/80 ring-1 ring-white/5">
           <Image
             width={1920}
             height={1080}
             src={ImgLink}
             alt="About section"
-            className="w-full h-auto rounded-3xl shadow-2xl ring-1 ring-white/5"
+            className="w-full h-full rounded-3xl shadow-2xl ring-1 ring-white/5"
+            unoptimized
           />
         </div>
       </div>
@@ -144,33 +146,32 @@ export const AboutAboutContent = ({
         AboutBadge={AboutBadge}
         AboutHeading={AboutHeading}
         AboutSubHeading={AboutSubHeading}
-        // ABOUT SECOND HEADING AND SUB HEADING
-        HomeAboutTexts={HomeAboutTexts}
       />
+      <HorizontalDivider />
       {/* Dynamic Content Blocks */}
       {AboutContents1.map((content, i) => (
-        <div key={i} className="mt-4 sm:mt-6">
+        <div key={i} className="mt-4 sm:mt-6 w-lg">
           {content.title && (
-            <p className="text-sm sm:text-base font-semibold lg:text-lg text-white leading-relaxed">
+            <p className="text-sm sm:text-base lg:text-lg text-white leading-relaxed mb-2">
               {content.title}
             </p>
           )}
           {content.text && (
-            <p className="text-sm sm:text-base lg:text-lg text-gray-400 leading-relaxed">
+            <p className="text-sm sm:text-sm lg:text-[15px] text-gray-400 leading-relaxed">
               {content.text}
             </p>
           )}
         </div>
       ))}
       {AboutContents2.map((content, i) => (
-        <div key={i} className="mt-4 sm:mt-6">
+        <div key={i} className="mt-4 sm:mt-6 w-lg">
           {content.title && (
-            <p className="text-sm sm:text-base font-semibold lg:text-lg text-white leading-relaxed">
+            <p className="text-sm sm:text-base lg:text-lg text-white leading-relaxed mb-2">
               {content.title}
             </p>
           )}
           {content.text && (
-            <p className="text-sm sm:text-base lg:text-lg text-gray-400 leading-relaxed">
+            <p className="text-sm sm:text-sm lg:text-[15px] text-gray-400 leading-relaxed">
               {content.text}
             </p>
           )}
@@ -199,7 +200,9 @@ export const AboutAboutContent = ({
             ))}
           </div>
 
-          <span className="text-gray-400 text-xs sm:text-sm">{ButtonText}</span>
+          <span className="text-gray-400 text-xs sm:text-sm">
+            {HomeAboutTexts}
+          </span>
         </div>
       </div>
     </div>
@@ -216,10 +219,10 @@ export const AboutAboutContentHead = ({
       {/* Badge */}
       <LeftBadge AboutBadge={AboutBadge} />
       {/* Headings */}
-      <h3 className="text-2xl sm:text-3xl lg:text-5xl font-semibold text-white">
+      <h3 className="text-2xl sm:text-3xl lg:text-5xl  text-white">
         {AboutHeading}
       </h3>
-      <h3 className="text-2xl sm:text-3xl lg:text-5xl font-medium text-gray-400 mt-2">
+      <h3 className="text-2xl sm:text-3xl lg:text-5xl text-gray-400 mt-2">
         {AboutSubHeading}
       </h3>
     </div>
@@ -237,6 +240,7 @@ export const AboutAboutImg1 = ({ ImgLink }) => {
             src={ImgLink}
             alt="About section"
             className="w-full h-auto rounded-3xl shadow-2xl ring-1 ring-white/5"
+            unoptimized
           />
         </div>
       </div>
@@ -254,6 +258,7 @@ export const AboutAboutImg2 = ({ ImgLink }) => {
             src={ImgLink}
             alt="About section"
             className="w-full h-auto rounded-3xl shadow-2xl ring-1 ring-white/5"
+            unoptimized
           />
         </div>
       </div>

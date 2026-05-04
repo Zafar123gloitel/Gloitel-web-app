@@ -7,7 +7,7 @@ import { MiddleSectionHeads } from "./SectionHeads";
 
 const LaunchYourSite = () => {
   return (
-    <section className="relative isolate sm:px-6 lg:px-8 py-16 lg:py-24 overflow-hidden">
+    <section className="relative isolate sm:px-6 lg:px-8 py-0 overflow-hidden">
       <div className="flex flex-col items-center justify-center mx-auto min-h-[60vh] relative z-10">
         <BgSquare2 />
         <div className="flex flex-col w-full sm:w-1/2 lg:w-1/2 text-center">

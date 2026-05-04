@@ -5,13 +5,14 @@ export const HeroVideoBg = () => {
   return (
     <div>
       <video
-        src="https://framerusercontent.com/assets/lr4LSmXa1klevAvb0jf1i2zsDE.mp4"
+        src="https://res.cloudinary.com/dsqu6pi0d/video/upload/v1762846419/Gloitel/bg_cij8h5.mp4"
         type="video/mp4"
         className="absolute top-0 left-0 w-full h-full object-cover z-0"
         autoPlay
         muted
         loop
         playsInline
+        unoptimized="true"
       ></video>
     </div>
   );
@@ -50,11 +51,13 @@ export const HomeHeroHeading = ({
   HomeHeroDescription,
 }) => {
   return (
-    <div className="flex flex-col w-full">
-      <HeroBadge
-        HomeHeroBadge={HomeHeroBadge}
-        HomeSubHeroBadge={HomeSubHeroBadge}
-      />
+    <div className="w-full">
+      <div className="flex ">
+        <HeroBadge
+          HomeHeroBadge={HomeHeroBadge}
+          HomeSubHeroBadge={HomeSubHeroBadge}
+        />
+      </div>
 
       <h3 className="text-3xl sm:text-3xl lg:text-[3.5rem] text-white">
         {HomeHeroHeading}

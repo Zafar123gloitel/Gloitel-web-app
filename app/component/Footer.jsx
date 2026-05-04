@@ -1,4 +1,5 @@
 // components/Footer.tsx
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
@@ -38,10 +39,14 @@ export default function Footer() {
         {/* Logo & Subscribe */}
         <div>
           <div className="flex items-center gap-2 mb-6">
-            <div className="bg-white text-black w-8 h-8 flex items-center justify-center rounded">
-              <span className="font-bold text-lg">G</span>
-            </div>
-            <h1 className="text-xl font-semibold">Gloitel</h1>
+            <Image
+              src="https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762927934/Gloitel/logo_xbs2qc.svg"
+              width={140}
+              height={90}
+              alt="Logo"
+              className="object-contain"
+              unoptimized
+            />
           </div>
 
           <div className="w-full h-px bg-gradient-to-r from-white/10 to-transparent my-3"></div>
@@ -97,12 +102,25 @@ export default function Footer() {
         <div>
           <h2 className="font-semibold text-white mb-3">Address</h2>
           <p className="text-sm sm:text-base mb-4 leading-relaxed text-white/50">
-            {address}
+            <Link
+              target="_blank"
+              href="https://maps.app.goo.gl/uNbYXqo81S7Wfuj37"
+              className="mt-2 text-gray-400 text-sm leading-relaxed"
+            >
+              {address}
+            </Link>
           </p>
           <h3 className="font-medium text-white mb-2">Contact</h3>
           <ul className="space-y-2 text-sm sm:text-base text-white/50">
             {telephone.map((t, index) => (
-              <li key={index}>(+91) {t.no}</li>
+              <div key={index}>
+                <Link
+                  className="mt-2 text-gray-400 text-sm"
+                  href={`tel:+${t.no}`}
+                >
+                  <li key={index}>(+91) {t.no}</li>
+                </Link>
+              </div>
             ))}
           </ul>
         </div>

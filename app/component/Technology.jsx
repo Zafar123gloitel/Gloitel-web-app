@@ -1,9 +1,10 @@
 import Link from "next/link";
 import React from "react";
 import { CenterBadge } from "./Badge";
-import { BgSquare2 } from "./BgSquare";
+import { BgSquare3 } from "./BgSquare";
 import { MiddleSectionHeads } from "./SectionHeads";
 import { GlowButton } from "./Button";
+import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 
 const Technology = () => {
@@ -14,7 +15,7 @@ const Technology = () => {
       stage: "Stage 1",
       description:
         "Build ultra-fast, SEO-friendly web apps with Next.js – featuring SSR, static optimization, and powerful API routes.",
-      img: "https://framerusercontent.com/images/TT6inEjH042cegW9mZpIAdTOB4.webp",
+      img: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762860000/Gloitel/icon/next_urdukq.webp",
     },
     {
       id: 2,
@@ -22,7 +23,7 @@ const Technology = () => {
       stage: "Stage 2",
       description:
         "Build high-performance iOS & Android apps with one codebase using React Native — fast, efficient, and cross-platform.",
-      img: "https://framerusercontent.com/images/A7afpKmzesQoc3afvwjgMGf76A.webp",
+      img: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762860000/Gloitel/icon/react_cfs5vz.webp",
     },
     {
       id: 3,
@@ -30,7 +31,7 @@ const Technology = () => {
       stage: "Stage 3",
       description:
         "Power your backend with Node.js — fast, scalable, and perfect for real-time data and high-performance APIs.",
-      img: "https://framerusercontent.com/images/sRTbLby6EsdVJrKUoIgeMGv5yNQ.webp",
+      img: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762860000/Gloitel/icon/node_z9ziqo.webp",
     },
     {
       id: 4,
@@ -38,7 +39,7 @@ const Technology = () => {
       stage: "Stage 4",
       description:
         "Supercharge data management with PostgreSQL — fast, scalable, and reliably open-source.",
-      img: "https://framerusercontent.com/images/9tmtYa5n6CwXLNYnMCDs7r8cvus.svg",
+      img: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762860001/Gloitel/icon/postgre_aq8ajb.svg",
     },
     {
       id: 5,
@@ -46,7 +47,7 @@ const Technology = () => {
       stage: "Stage 5",
       description:
         "Fetch only what you need with GraphQL — flexible queries for faster, more efficient apps.",
-      img: "https://framerusercontent.com/images/5DdXHxN6sQskQMiojqV3qGi3we8.png?scale-down-to=512",
+      img: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762860000/Gloitel/icon/graph_v7lrwc.webp",
     },
     {
       id: 6,
@@ -54,14 +55,14 @@ const Technology = () => {
       stage: "Stage 6",
       description:
         "Build scalable, maintainable backends with NestJS — a TypeScript-ready, modular Node.js framework.",
-      img: "https://framerusercontent.com/images/duUmo28KDZoXPsjdrEKonCFKGI.png",
+      img: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762860000/Gloitel/icon/nest_fxzqfx.webp",
     },
   ];
 
   return (
     <section className="relative isolate px-4 sm:px-6 lg:px-8 py-12 lg:py-20 overflow-hidden">
-      <div className="flex flex-col items-center justify-center max-w-7xl mx-auto relative z-10">
-        <BgSquare2 />
+      <BgSquare3 />
+      <div className=" flex flex-col items-center justify-center max-w-7xl mx-auto  z-10">
         {/* HEADER */}
         <div className="flex flex-col w-full sm:w-3/4 lg:w-1/2 text-center">
           {/* Badge */}
@@ -79,12 +80,14 @@ const Technology = () => {
         {/* GRID */}
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
           {stages.map((item) => (
-            <div
+            <Link
               key={item.id}
-              className="relative p-6 sm:p-8 rounded-2xl bg-black/40 backdrop-blur-md shadow-lg overflow-hidden border border-white/10"
+              href={"/contact"} // make sure each item has an href property
+              className="group relative p-6 sm:p-8 rounded-2xl bg-black/40 backdrop-blur-md shadow-lg overflow-hidden border border-white/10 transition-transform"
             >
               {/* Gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-br from-blue-900/40 via-indigo-800/20 to-transparent opacity-50 rounded-2xl pointer-events-none"></div>
+              <div className="absolute -top-10 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50%] h-[80px] bg-blue-700/90 blur-[7px] rounded-full pointer-events-none" />
 
               {/* Stage header */}
               <div className="flex items-center justify-between relative z-10">
@@ -95,25 +98,26 @@ const Technology = () => {
                     src={item.img}
                     alt=""
                     className="rounded-full"
+                    unoptimized
                   />
                 </div>
-                <span className="px-3 py-1 text-xs sm:text-sm rounded-md bg-white/5 text-gray-300 shadow-inner">
-                  {item.stage}
-                </span>
+
+                {/* Arrow Icon with hover color change */}
+                <ArrowUpRight className="w-6 h-6 text-white/30 transition-colors duration-300 group-hover:text-white/60" />
               </div>
 
               {/* Title */}
-              <h3 className="my-4 sm:my-6 text-lg sm:text-xl font-semibold text-white relative z-10">
+              <h3 className="my-4 sm:my-6 text-md sm:text-lg font-semibold text-white relative z-10">
                 {item.title}
               </h3>
 
               <div className="w-full h-px bg-gradient-to-r from-white/10 to-transparent my-3 relative z-10"></div>
 
               {/* Description */}
-              <p className="text-gray-300 text-sm sm:text-base leading-relaxed relative z-10">
+              <p className="text-gray-400 text-sm sm:text-base leading-relaxed relative z-10">
                 {item.description}
               </p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
