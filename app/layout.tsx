@@ -1,6 +1,9 @@
 import "./globals.css";
 import Navbar from "./component/Navbar";
 import Footer from "./component/Footer";
+import { configs } from "./configs";
+import GoogleTagManager from "./_analytics/GoogleTagManager";
+import GoogleTagId from "./_analytics/GoogleTagId";
 import CustomCursor from "./component/CustomCursor";
 import { DM_Sans } from "next/font/google";
 
@@ -18,6 +21,7 @@ export const metadata = {
   },
 };
 export default function RootLayout({ children }) {
+  const { google } = configs;
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -33,6 +37,12 @@ export default function RootLayout({ children }) {
         <Navbar />
         {children}
         <Footer />
+        {/* {nodeEnv === production && <GoogleTagManager GTM_ID={google.tagId} />} */}
+
+        <script async src="https://apis.google.com/js/platform.js"></script>
+        <GoogleTagManager GTM_ID={google.tagId} />
+        <GoogleTagId GTAG={google.gtmId} />
+        {/* <GoogleAdsTag adsId={google.analyticsId} /> */}
       </body>
     </html>
   );
