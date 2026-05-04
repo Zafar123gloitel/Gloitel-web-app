@@ -40,7 +40,7 @@ export default function RootLayout({ children }) {
         {/* {nodeEnv === production && <GoogleTagManager GTM_ID={google.tagId} />} */}
 
         <script async src="https://apis.google.com/js/platform.js"></script>
-        <GoogleTagManager GTM_ID={google.tagId} />
+        {/* <GoogleTagManager GTM_ID={google.tagId} /> */}
         <GoogleTagId GTAG={google.gtmId} />
         {/* <GoogleAdsTag adsId={google.analyticsId} /> */}
       </body>
