@@ -6,6 +6,7 @@ import GoogleTagManager from "./_analytics/GoogleTagManager";
 import GoogleTagId from "./_analytics/GoogleTagId";
 import CustomCursor from "./component/CustomCursor";
 import { DM_Sans } from "next/font/google";
+import { Toaster } from "react-hot-toast";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -43,6 +44,7 @@ export default function RootLayout({ children }) {
         {/* <GoogleTagManager GTM_ID={google.tagId} /> */}
         <GoogleTagId GTAG={google.gtmId} />
         {/* <GoogleAdsTag adsId={google.analyticsId} /> */}
+        <Toaster position="bottom-right" />
       </body>
     </html>
   );

@@ -56,7 +56,7 @@ export default function Footer() {
             <p className="text-sm text-white/40">Technology made with Trust</p>
           </div>
 
-          <div className="flex items-center rounded-xl overflow-hidden border border-gray-800 bg-black/20">
+          {/* <div className="flex items-center rounded-xl overflow-hidden border border-gray-800 bg-black/20">
             <input
               type="email"
               placeholder="Enter your email..."
@@ -65,7 +65,7 @@ export default function Footer() {
             <button className="bg-blue-600 hover:bg-blue-700 text-white text-sm px-3 sm:px-4 py-2 sm:py-3 rounded-r-xl shadow-[0_0_25px_rgba(59,130,246,0.2)] whitespace-nowrap">
               Subscribe
             </button>
-          </div>
+          </div> */}
         </div>
 
         {/* Important Links */}
