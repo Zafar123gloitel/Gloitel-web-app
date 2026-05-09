@@ -1,9 +1,14 @@
+"use client";
+
 import React, { useState } from "react";
 import { HorizontalDivider } from "./SectionDivider";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { toast } from "react-hot-toast";
 
 const ContactForm = () => {
+  const router = useRouter();
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -13,7 +18,6 @@ const ContactForm = () => {
     message: "",
   });
 
-  const [showThankYou, setShowThankYou] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
@@ -57,21 +61,10 @@ const ContactForm = () => {
       // With no-cors, we can't read the response, but if no error thrown, assume success
       console.log("Data sent to Google Sheets (no-cors mode)");
 
-      setShowThankYou(true);
-      setFormData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        country: "",
-        companyType: "",
-        message: "",
-      });
-
-      setTimeout(() => {
-        setShowThankYou(false);
-      }, 5000);
-
       toast.success("Message sent successfully!");
+
+      // Redirect to thank you page
+      router.push("/thank-you");
     } catch (error) {
       console.error("Submission error:", error);
       toast.error("Failed to submit form");
@@ -89,128 +82,113 @@ const ContactForm = () => {
         {/* Contact Form */}
         <div className="lg:col-span-3 border border-white/10 rounded-3xl shadow-lg p-3 relative bg-gradient-to-r from-gray-950/90 to-black/80  sm:p-2  overflow-hidden ">
           <div className="lg:col-span-3 bg-black/70 border border-white/10 rounded-3xl shadow-lg p-6 sm:p-10">
-            {showThankYou ? (
-              <div className="flex items-center justify-center h-full min-h-[400px]">
-                <div className="text-center">
-                  <div className="text-green-400 text-6xl mb-4">✓</div>
-                  <h3 className="text-2xl font-bold text-white mb-2">
-                    Thank You!
-                  </h3>
-                  <p className="text-gray-300">
-                    Your message has been sent successfully. We'll get back to
-                    you soon!
-                  </p>
-                </div>
-              </div>
-            ) : (
-              <form className="space-y-6" onSubmit={handleSubmit}>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-medium text-white mb-2">
-                      First name*
-                    </label>
-                    <input
-                      type="text"
-                      name="firstName"
-                      value={formData.firstName}
-                      onChange={handleChange}
-                      required
-                      placeholder="Enter First Name"
-                      className="w-full rounded-lg bg-neutral-950 border border-white/10 px-4 py-3 text-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-white mb-2">
-                      Last Name*
-                    </label>
-                    <input
-                      type="text"
-                      name="lastName"
-                      value={formData.lastName}
-                      onChange={handleChange}
-                      required
-                      placeholder="Enter Last Name"
-                      className="w-full rounded-lg bg-neutral-950 border border-white/10 px-4 py-3 text-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600"
-                    />
-                  </div>
-                </div>
-
+            <form className="space-y-6" onSubmit={handleSubmit}>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-medium text-white mb-2">
-                    How can we reach you?*
+                    First name*
                   </label>
                   <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
+                    type="text"
+                    name="firstName"
+                    value={formData.firstName}
                     onChange={handleChange}
                     required
-                    placeholder="Example@mail.com"
+                    placeholder="Enter First Name"
                     className="w-full rounded-lg bg-neutral-950 border border-white/10 px-4 py-3 text-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600"
                   />
                 </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-medium text-white mb-2">
-                      Where Are you from?*
-                    </label>
-                    <select
-                      name="country"
-                      value={formData.country}
-                      onChange={handleChange}
-                      required
-                      className="w-full rounded-lg bg-neutral-950 border border-white/10 px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-blue-600"
-                    >
-                      <option value="">Select your country...</option>
-                      <option value="India">India</option>
-                      <option value="Other">Other</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-white mb-2">
-                      What’s the type of your company?*
-                    </label>
-                    <select
-                      name="companyType"
-                      value={formData.companyType}
-                      onChange={handleChange}
-                      required
-                      className="w-full rounded-lg bg-neutral-950 border border-white/10 px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-blue-600"
-                    >
-                      <option value="">Select Category</option>
-                      <option value="Agency">Agency</option>
-                      <option value="SAAS">SAAS</option>
-                      <option value="Banking">Banking</option>
-                      <option value="Business">Business</option>
-                      <option value="Other">Other</option>
-                    </select>
-                  </div>
-                </div>
-
                 <div>
                   <label className="block text-sm font-medium text-white mb-2">
-                    Message*
+                    Last Name*
                   </label>
-                  <textarea
-                    name="message"
-                    value={formData.message}
+                  <input
+                    type="text"
+                    name="lastName"
+                    value={formData.lastName}
                     onChange={handleChange}
-                    rows="5"
-                    placeholder="Type your message..."
+                    required
+                    placeholder="Enter Last Name"
                     className="w-full rounded-lg bg-neutral-950 border border-white/10 px-4 py-3 text-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600"
-                  ></textarea>
+                  />
                 </div>
+              </div>
 
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 disabled:opacity-50 disabled:cursor-not-allowed text-white font-medium py-3 rounded-lg transition cursor-pointer"
-                >
-                  {isSubmitting ? "Sending..." : "Submit Now"}
-                </button>
-              </form>
-            )}
+              <div>
+                <label className="block text-sm font-medium text-white mb-2">
+                  How can we reach you?*
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  placeholder="Example@mail.com"
+                  className="w-full rounded-lg bg-neutral-950 border border-white/10 px-4 py-3 text-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                />
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-medium text-white mb-2">
+                    Where Are you from?*
+                  </label>
+                  <select
+                    name="country"
+                    value={formData.country}
+                    onChange={handleChange}
+                    required
+                    className="w-full rounded-lg bg-neutral-950 border border-white/10 px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-blue-600"
+                  >
+                    <option value="">Select your country...</option>
+                    <option value="India">India</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-white mb-2">
+                    What’s the type of your company?*
+                  </label>
+                  <select
+                    name="companyType"
+                    value={formData.companyType}
+                    onChange={handleChange}
+                    required
+                    className="w-full rounded-lg bg-neutral-950 border border-white/10 px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-blue-600"
+                  >
+                    <option value="">Select Category</option>
+                    <option value="Agency">Agency</option>
+                    <option value="SAAS">SAAS</option>
+                    <option value="Banking">Banking</option>
+                    <option value="Business">Business</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-white mb-2">
+                  Message*
+                </label>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  rows="5"
+                  placeholder="Type your message..."
+                  className="w-full rounded-lg bg-neutral-950 border border-white/10 px-4 py-3 text-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 disabled:opacity-50 disabled:cursor-not-allowed text-white font-medium py-3 rounded-lg transition cursor-pointer"
+              >
+                {isSubmitting ? "Sending..." : "Submit Now"}
+              </button>
+            </form>
           </div>
         </div>
 
