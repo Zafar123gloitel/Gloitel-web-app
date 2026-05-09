@@ -128,6 +128,7 @@ const Portfolio = ({ params }) => {
                   <GlowButton
                     ButtonText="View Live Website"
                     Buttonlink={project.liveUrl}
+                    target="_blank"
                   />
                 </div>
               </div>

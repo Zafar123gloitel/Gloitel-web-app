@@ -2,19 +2,56 @@
 import Link from "next/link";
 import React from "react";
 
-export const GlowButton = ({ ButtonText, Buttonlink, onClick }) => {
+export const GlowButton = ({ ButtonText, Buttonlink, onClick, target }) => {
+  const hasLink = Buttonlink && Buttonlink.trim() !== "" && Buttonlink !== "#";
+
+  if (!hasLink) {
+    return (
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <button
+          type="button"
+          disabled
+          className="
+            cursor-not-allowed
+            border-3 border-white/10
+            relative rounded-lg
+            bg-muted
+            px-3 py-2
+            text-md sm:text-md
+            text-muted-foreground
+            opacity-70
+          "
+        >
+          Link Not Available
+        </button>
+      </div>
+    );
+  }
+
   return (
     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
       <Link
         onClick={onClick}
-        href={Buttonlink || "#"}
-        className="border-3 border-white/10 relative rounded-lg bg-blue-700 px-3 py-2 text-md sm:text-md text-white 
-                 shadow-[0_0_25px_rgba(59,30,246,0.6)]
-                 transition duration-300 ease-in-out
-                 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 hover:shadow-[0_0_25px_rgba(59,30,246,0.9)]"
+        target={target}
+        href={Buttonlink}
+        className="
+          border-3 border-white/10
+          relative rounded-lg
+          bg-blue-700
+          px-3 py-2
+          text-md sm:text-md
+          text-white
+          shadow-[0_0_25px_rgba(59,30,246,0.6)]
+          transition duration-300 ease-in-out
+          focus-visible:outline-2
+          focus-visible:outline-offset-2
+          focus-visible:outline-indigo-500
+          hover:shadow-[0_0_25px_rgba(59,30,246,0.9)]
+        "
       >
         {ButtonText}
-        <span className="absolute top-0 left-0 w-full h-1 bg-blue-400 blur-xl opacity-70 animate-pulse"></span>
+
+        <span className="absolute top-0 left-0 w-full h-1 bg-blue-400 blur-xl opacity-70 animate-pulse" />
       </Link>
     </div>
   );
