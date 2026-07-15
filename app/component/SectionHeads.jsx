@@ -1,9 +1,9 @@
 import React from "react";
 
 export const MiddleSectionHeads = ({
-  SectionHead,
-  SectionSubHead,
-  SectionDescription,
+  SectionHead = "",
+  SectionSubHead = "",
+  SectionDescription = "",
 }) => {
   return (
     <div className="flex flex-col items-center text-center px-4 sm:px-6 md:px-0 lg:px-0 max-w-4xl mx-auto mb-8">

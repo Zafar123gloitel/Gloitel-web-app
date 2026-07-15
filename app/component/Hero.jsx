@@ -49,7 +49,7 @@ const Hero = () => {
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row  w-full sm:w-auto justify-center sm:justify-start">
           <HeroButton
-            FirstHeroButtonText="Connect With Us"
+            FirstHeroButtonText="Connect With Us1"
             FirstHeroButtonLink="/contact"
             SecondHeroButtonText="What is Gloitel?"
             SecondHeroButtonLink="/about"

@@ -5,4 +5,4 @@ export {
   HeaderButton,
   HeroButton,
   ButtonGroup,
-} from "../../components/atoms/button";
+} from "./Button";
