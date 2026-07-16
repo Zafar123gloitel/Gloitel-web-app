@@ -4,14 +4,12 @@ import Link from "next/link";
 import React from "react";
 
 const variantStyles = {
-  glow:
-    "border border-blue-500/25 bg-blue-700 text-white shadow-[0_0_24px_rgba(37,99,235,0.55)] hover:bg-blue-600 hover:shadow-[0_0_28px_rgba(37,99,235,0.8)]",
+  glow: "border border-blue-500/25 bg-blue-700 text-white shadow-[0_0_24px_rgba(37,99,235,0.55)] hover:bg-blue-600 hover:shadow-[0_0_28px_rgba(37,99,235,0.8)]",
   light:
     "border border-white/70 bg-white text-slate-950 shadow-[0_10px_24px_rgba(15,23,42,0.12)] hover:bg-slate-50 hover:border-white",
   muted:
     "border border-white/10 bg-white/12 text-white/95 backdrop-blur-md hover:bg-white/16",
-  dark:
-    "border border-slate-600/80 bg-slate-600 text-white shadow-[0_14px_24px_rgba(15,23,42,0.2)] hover:bg-slate-500",
+  dark: "border border-slate-600/80 bg-slate-600 text-white shadow-[0_14px_24px_rgba(15,23,42,0.2)] hover:bg-slate-500",
   darkAccent:
     "border border-blue-500/20 bg-slate-700 text-white shadow-[0_0_18px_rgba(30,64,175,0.28)] hover:bg-slate-600",
   apple:
@@ -109,7 +107,13 @@ export function Button({
   );
 }
 
-export function GlowButton({ ButtonText, Buttonlink, onClick, target, className }) {
+export function GlowButton({
+  ButtonText,
+  Buttonlink = "#",
+  onClick,
+  target = "_self",
+  className = "",
+}) {
   return (
     <Button
       href={Buttonlink}

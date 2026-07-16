@@ -12,7 +12,7 @@ const ProblemCard = ({ title }: ProblemCardProps) => {
 
       {/* Card */}
       <div className="relative flex h-full min-h-[86px] items-center justify-center rounded-2xl border border-white/10 bg-[#080B18] px-8 text-center transition-all duration-300 group-hover:border-blue-500/30 group-hover:shadow-[0_0_35px_rgba(37,99,235,.18)]">
-        <p className=" text-lg font-normal leading-relaxed text-white/90">
+        <p className=" text-md font-normal leading-relaxed text-white/90">
           {title}
         </p>
       </div>

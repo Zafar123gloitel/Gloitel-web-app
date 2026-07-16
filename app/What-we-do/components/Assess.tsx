@@ -3,37 +3,49 @@ import React from "react";
 import StrategyBadge from "../../../components/StrategyBadge";
 import ProblemCard from "../../../components/ProblemCard";
 
-const Assess = () => {
+interface AssessProps {
+  badgeText: string;
+  title: string;
+  description: string;
+  cardTitle: string;
+  image: string;
+  imageAlt?: string;
+}
+
+const Assess = ({
+  badgeText,
+  title,
+  description,
+  cardTitle,
+  image,
+  imageAlt = "Section Image",
+}: AssessProps) => {
   return (
     <section className="m-auto flex max-w-7xl flex-col items-center justify-between gap-10 px-6 py-10 sm:px-10 lg:flex-row-reverse lg:px-14 lg:py-14">
-      <div className="">
-        <span style={{ display: "block", marginBottom: "25px" }}>
-          <StrategyBadge text="Our Approach" />
+      {/* Content */}
+      <div className="flex-1">
+        <span className="mb-6 block">
+          <StrategyBadge text={badgeText} />
         </span>
-        <h2 style={{ fontSize: "2rem", marginBottom: "16px" }}>Discover</h2>
-        <p style={{ fontSize: "1rem", lineHeight: "1.6", color: "#555" }}>
-          Map workflows, decision points, and value creation/loss across the
-          business.
-        </p>
+
+        <h2 className="mb-4 text-4xl font-semibold">{title}</h2>
+
+        <p className="text-base leading-7 text-[#555]">{description}</p>
+
         <div className="mt-10 inline-block">
-          <ProblemCard title="Current-state workflow map and value leakage analysis" />
+          <ProblemCard title={cardTitle} />
         </div>
       </div>
-      <div
-        className="discover-image"
-        style={{
-          flex: 1,
-          maxWidth: "50%",
-          textAlign: "right",
-        }}
-      >
+
+      {/* Image */}
+      <div className="flex-1 lg:max-w-[50%]">
         <div className="relative aspect-[4/3] overflow-hidden rounded-[1.4rem]">
           <Image
-            src="/images/What-we-do/Rectangle 1.png"
-            alt="AI strategy meeting"
+            src={image}
+            alt={imageAlt}
             width={455}
             height={445}
-            className="rounded-[24px] object-cover"
+            className="h-full w-full rounded-[24px] object-cover"
             unoptimized
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />

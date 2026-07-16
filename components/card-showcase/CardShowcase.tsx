@@ -36,10 +36,10 @@ export function CardShowcase({
           )}
 
           <Card>
-            <div className="flex h-full flex-col gap-8">
+            <div className="flex h-full flex-col ">
               <CardIcon>{item.icon}</CardIcon>
 
-              <div className="pt-8">
+              <div className="">
                 {showDivider && <CardDivider />}
 
                 <div className="mt-8 space-y-8">
