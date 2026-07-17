@@ -108,15 +108,15 @@ export function Button({
 }
 
 export function GlowButton({
-  ButtonText,
-  Buttonlink = "#",
+  buttonText,
+  buttonLink = "#",
   onClick,
   target = "_self",
   className = "",
 }) {
   return (
     <Button
-      href={Buttonlink}
+      href={buttonLink}
       onClick={onClick}
       target={target}
       variant="glow"
@@ -124,23 +124,29 @@ export function GlowButton({
       className={className}
       icon={<ArrowIcon />}
     >
-      {ButtonText}
+      {buttonText}
     </Button>
   );
 }
 
-export function WhiteButton({ ButtonText, Buttonlink, className }) {
-  return (
-    <Button href={Buttonlink} variant="light" size="md" className={className}>
-      {ButtonText}
-    </Button>
-  );
-}
-
-export function HeaderButton({ ButtonText, Buttonlink, onClick, className }) {
+export function WhiteButton({ buttonText, buttonLink, icon, className }) {
   return (
     <Button
-      href={Buttonlink}
+      href={buttonLink}
+      variant="light"
+      size="md"
+      icon={icon}
+      className={className}
+    >
+      {buttonText}
+    </Button>
+  );
+}
+
+export function HeaderButton({ buttonText, buttonLink, onClick, className }) {
+  return (
+    <Button
+      href={buttonLink}
       onClick={onClick}
       variant="glow"
       size="sm"
@@ -148,7 +154,7 @@ export function HeaderButton({ ButtonText, Buttonlink, onClick, className }) {
       className={className}
       icon={<ArrowIcon />}
     >
-      {ButtonText}
+      {buttonText}
     </Button>
   );
 }

@@ -1,3 +1,14 @@
+import {
+  ChevronRight,
+  Database,
+  Download,
+  FileText,
+  MessageCircleMore,
+  Shield,
+  SlidersHorizontal,
+  Workflow,
+} from "lucide-react";
+
 export const problems = [
   {
     title:
@@ -22,7 +33,7 @@ export const discoverData = {
   title: "Discover",
   description:
     "Map workflows, decision points, and value creation/loss across the business.",
-  cardTitle: "Current-state workflow map and value leakage analysis",
+  cardTitle: "Workflow maps, decision trees, and opportunity heatmaps",
   image: "/images/What-we-do/Rectangle 1.png",
   imageAlt: "AI strategy meeting",
 };
@@ -263,3 +274,156 @@ export const accordionData = [
       "Yes – directly. This engagement is run with business stakeholders, not delegated to IT teams. If leadership cannot participate, this is likely not the right fit.",
   },
 ];
+
+export const heroSectionData = {
+  badgeText: "AI Development Services",
+
+  title: "Define Your AI Roadmap Before You Build",
+
+  description:
+    "Most AI initiatives fail before they begin because of misdirected effort. We help you identify where AI should be applied first so every decision is grounded in business value.",
+
+  image: "/images/What-we-do/Rectangle 1.png",
+
+  imageAlt: "AI strategy meeting",
+
+  video:
+    "https://res.cloudinary.com/dsqu6pi0d/video/upload/v1762846419/Gloitel/bg_cij8h5.mp4",
+
+  primaryButton: {
+    text: "Book a Strategy Session",
+    href: "/contact",
+  },
+
+  secondaryButton: {
+    text: "Download a Sample Roadmap",
+    href: "/about",
+    icon: <Download size={16} />,
+  },
+};
+export const heroSectionDataGenerative = {
+  badgeText: "Generative AI & LLMs",
+
+  title: "Building AI Prototypes is Easy.Building Production Systems is not.",
+
+  description:
+    "Building an LLM prototype takes days. Building one that's accurate, secure, cost-controlled, and production-stable takes a team that's shipped it before.",
+
+  image: "/images/What-we-do/Rectangle 1.png",
+
+  imageAlt: "Generative AI & LLMs",
+
+  video:
+    "https://res.cloudinary.com/dsqu6pi0d/video/upload/v1762846419/Gloitel/bg_cij8h5.mp4",
+
+  primaryButton: {
+    text: "Talk to Our GenAI Team",
+    href: "/contact",
+  },
+
+  secondaryButton: {
+    text: "See What We've Built",
+    href: "/about",
+    icon: <ChevronRight size={16} />,
+  },
+};
+
+export const aiServicesData = [
+  {
+    id: 1,
+    icon: <MessageCircleMore size={28} />,
+    title: "Custom AI Chatbots & Assistants",
+    description:
+      "Intelligent conversational interfaces trained on your domain knowledge. Customer support bots, internal knowledge assistants, sales copilots – built with guardrails, citation support, and fallback logic.",
+  },
+  {
+    id: 2,
+    icon: <FileText size={28} />,
+    title: "Document Intelligence & Processing",
+    description:
+      "Automate document-heavy workflows with LLMs. Contract analysis, invoice extraction, report summarization, regulatory document parsing – structured outputs from unstructured inputs.",
+  },
+  {
+    id: 3,
+    icon: <Database size={28} />,
+    title: "RAG (Retrieval-Augmented Generation) Systems",
+    description:
+      "Connect LLMs to your proprietary data with vector search pipelines. Accurate, source-cited responses drawn from your internal knowledge base, documentation, or enterprise data.",
+  },
+  {
+    id: 4,
+    icon: <Workflow size={28} />,
+    title: "LLM-Powered Workflow Automation",
+    description:
+      "Replace rule-based automation with AI that understands context. Intelligent triage, email drafting, content generation, and multi-step reasoning tasks embedded in your existing workflows.",
+  },
+  {
+    id: 5,
+    icon: <SlidersHorizontal size={28} />,
+    title: "Fine-Tuning & Model Customization",
+    description:
+      "Custom fine-tuned models for domain-specific tasks where general-purpose LLMs underperform. Smaller, faster, cheaper – specialized for your exact use case.",
+  },
+  {
+    id: 6,
+    icon: <Shield size={28} />,
+    title: "Private LLM Deployment",
+    description:
+      "Deploy LLMs in secure, private environments with complete control over infrastructure and data. On-premises and VPC-hosted deployments built for healthcare, finance, and enterprise organizations with strict compliance and data residency requirements.",
+  },
+];
+
+export const executionStepOne = {
+  badgeText: "Step 01",
+  title: "Use Case Definition",
+  description:
+    "We scope the exact workflow to be augmented, define input/output formats, and establish success metrics before writing code.",
+  buttonText: "View more",
+  buttonLink: "/use-case-definition",
+  image: "/images/What-we-do/Rectangle 1.png",
+  imageAlt: "Use Case Definition",
+};
+
+export const executionStepTwo = {
+  badgeText: "Step 02",
+  title: "Model Selection",
+  description:
+    "We evaluate and recommend the right model (GPT-4o, Claude, Gemini, LLaMA, Mistral) based on accuracy requirements, latency, cost, and data sensitivity.",
+  buttonText: "View more",
+  buttonLink: "/model-selection",
+  image: "/images/What-we-do/Rectangle 1.png",
+  imageAlt: "Model Selection",
+};
+
+export const executionStepThree = {
+  badgeText: "Step 03",
+  title: "Prototype & Evaluation",
+  description:
+    "Rapid prototype with human evaluation loops. We measure accuracy, hallucination rate, latency, and cost before green-lighting production build.",
+  buttonText: "View more",
+  buttonLink: "/prototype-evaluation",
+  image: "/images/What-we-do/Rectangle 1.png",
+  imageAlt: "Prototype & Evaluation",
+};
+
+export const executionStepFour = {
+  badgeText: "Step 04",
+  title: "Production Deployment",
+  description:
+    "Deploy the validated solution into production with monitoring, observability, security, and scalability built into the deployment pipeline.",
+  buttonText: "View more",
+  buttonLink: "/production-deployment",
+  image: "/images/What-we-do/Rectangle 1.png",
+  imageAlt: "Production Deployment",
+};
+
+export const executionStepFive = {
+  badgeText: "Step 05",
+  title: "Continuous Optimization",
+  description:
+    "Monitor model performance, collect feedback, retrain when necessary, and continuously improve quality, speed, and business outcomes.",
+  buttonText: "View more",
+  buttonLink: "/continuous-optimization",
+  image: "/images/What-we-do/Rectangle 1.png",
+  imageAlt: "Continuous Optimization",
+};

@@ -2,12 +2,16 @@ import Image from "next/image";
 import React from "react";
 import StrategyBadge from "../../../components/StrategyBadge";
 import ProblemCard from "../../../components/ProblemCard";
+import { WhiteButton } from "../../component/Button";
+import { ArrowUpIcon } from "lucide-react";
 
 interface AssessProps {
   badgeText: string;
   title: string;
   description: string;
-  cardTitle: string;
+  cardTitle?: string;
+  buttonText?: string;
+  buttonLink?: string;
   image: string;
   imageAlt?: string;
 }
@@ -17,6 +21,8 @@ const Assess = ({
   title,
   description,
   cardTitle,
+  buttonText,
+  buttonLink,
   image,
   imageAlt = "Section Image",
 }: AssessProps) => {
@@ -32,9 +38,19 @@ const Assess = ({
 
         <p className="text-base leading-7 text-[#555]">{description}</p>
 
-        <div className="mt-10 inline-block">
-          <ProblemCard title={cardTitle} />
-        </div>
+        {cardTitle && (
+          <div className="mt-10 inline-block">
+            <ProblemCard title={cardTitle} />
+          </div>
+        )}
+        {buttonText && buttonLink && (
+          <WhiteButton
+            buttonText={buttonText}
+            buttonLink={buttonLink}
+            icon={<ArrowUpIcon className="ml-2 h-4 w-4 rotate-90" />}
+            className="mt-4"
+          />
+        )}
       </div>
 
       {/* Image */}

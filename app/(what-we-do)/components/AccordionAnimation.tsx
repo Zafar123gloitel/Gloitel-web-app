@@ -60,7 +60,7 @@ const Accordion = ({ data, className = "" }: AccordionProps) => {
           >
             <button
               onClick={() => toggleAccordion(index)}
-              className="flex w-full items-center justify-between  py-8 text-left"
+              className="flex w-full items-center justify-between  text-left"
             >
               <div className="flex items-center gap-6">
                 <h3 className="text-md font-medium text-white">{item.title}</h3>
