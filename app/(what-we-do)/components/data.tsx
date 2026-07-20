@@ -427,3 +427,64 @@ export const executionStepFive = {
   image: "/images/What-we-do/Rectangle 1.png",
   imageAlt: "Continuous Optimization",
 };
+
+export const Real_World = [
+  {
+    id: 1,
+    icon: "X",
+    description: "Reducing hallucinations in AI outputs.",
+  },
+  {
+    id: 2,
+    icon: "X",
+    description: "Managing costs as AI systems scale.",
+  },
+  {
+    id: 3,
+    icon: "X",
+    description: "Reducing latency across AI workflows.",
+  },
+  {
+    id: 4,
+    icon: "X",
+    description: "Protecting sensitive data and enterprise systems.",
+  },
+  {
+    id: 5,
+    icon: "X",
+    description: "Ensuring reliable performance in production.",
+  },
+];
+
+export const caseStudies = [
+  {
+    id: 1,
+    title: "Healthcare Client",
+    slug: "healthcare-client",
+    image: "/images/What-we-do/mega_manu_iamge.png",
+    description:
+      "Developed a private LLM for clinical documentation summarization, reducing physician admin time per consultation. Zero PHI data leaves the VPC.",
+    cta: "View Case Study",
+    href: "/case-studies/healthcare-client",
+  },
+  {
+    id: 2,
+    title: "Financial Services",
+    slug: "financial-services",
+    image: "/images/What-we-do/mega_manu_iamge.png",
+    description:
+      "Built a RAG-powered compliance assistant over 1000+ regulatory documents. Query response time under 2 seconds. Cited sources on every answer.",
+    cta: "View Case Study",
+    href: "/case-studies/financial-services",
+  },
+  {
+    id: 3,
+    title: "E-Commerce",
+    slug: "e-commerce",
+    image: "/images/What-we-do/mega_manu_iamge.png",
+    description:
+      "LLM-powered product description generator that reduced content creation time by over 90% while maintaining brand consistency.",
+    cta: "View Case Study",
+    href: "/case-studies/e-commerce",
+  },
+];

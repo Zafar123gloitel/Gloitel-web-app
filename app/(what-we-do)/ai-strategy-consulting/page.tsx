@@ -21,6 +21,7 @@ import TimeLine from "../components/TimeLine";
 import Asked_Q from "../components/Asked_Q";
 import Execution_Plan from "../components/Execution_Plan";
 import HeroSection from "../components/HeroSection";
+import { notIncludedData } from "../components/data";
 
 export default function WhatWeDoPage() {
   return (
@@ -102,10 +103,25 @@ export default function WhatWeDoPage() {
       />
       <Business />
 
-      <Strategy />
+      <Strategy
+        cardData={notIncludedData}
+        SectionHead={"Strategy before"}
+        SectionSubHead={"Solutions"}
+        SectionDescription={
+          "Every recommendation is grounded in business impact and feasibility. We do not start with technology, products, or predetermined solutions."
+        }
+        StrategyBadgeText={"What This Is Not"}
+      />
       <TimeLine />
       <Asked_Q />
-      <Execution_Plan />
+      <Execution_Plan
+        badgeText="AI Development Services"
+        title="Define Your AI Roadmap Before You Build"
+        description="Most AI initiatives fail before they begin because of misdirected effort. We help you identify where AI should be applied first so every decision is grounded in business value."
+        buttonText="Book a Strategy Session"
+        buttonLink="/contact"
+        onclick={() => ({})}
+      />
     </>
   );
 }

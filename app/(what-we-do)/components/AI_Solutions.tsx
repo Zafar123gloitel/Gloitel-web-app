@@ -67,6 +67,10 @@ const technologies = {
       name: "Cohere",
       logo: "/images/technology/cohere.png",
     },
+    {
+      name: "Cohere",
+      logo: "/images/technology/cohere.png",
+    },
   ],
   "Vector Stores": [
     {
@@ -152,7 +156,7 @@ const AI_Solutions = () => {
 
         {/* Cards */}
         <div className="mt-14 rounded-3xl border border-white/10 bg-[#0B0B0B] p-12">
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="flex flex-wrap justify-center duration-700  gap-8">
             {technologies[activeTab]?.map((item) => (
               <div
                 key={item.name}
@@ -170,10 +174,11 @@ const AI_Solutions = () => {
                   "after:pointer-events-none after:absolute after:inset-0 after:rounded-[10px]",
                   "after:bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.16),transparent_32%),radial-gradient(circle_at_top_right,rgba(96,165,250,0.08),transparent_26%)]",
                   "after:opacity-80",
+                  "w-full max-w-[200px] md:max-w-[200px]",
                 ].join(" ")}
               >
                 <div className="relative z-10 flex flex-col items-center p-8">
-                  <div className="flex h-16 w-16 items-center justify-center overflow-hidden rounded-full bg-white transition-all duration-500 group-hover:scale-110">
+                  <div className="flex h-16 w-16 items-center justify-center overflow-hidden rounded-full bg-white transition-all duration-700 group-hover:scale-110">
                     <img
                       src={item.logo}
                       alt={item.name}
@@ -181,7 +186,7 @@ const AI_Solutions = () => {
                     />
                   </div>
 
-                  <h3 className="mt-8 text-center text-lg text-white">
+                  <h3 className="mt-8 text-center text-nowrap text-lg text-white">
                     {item.name}
                   </h3>
                 </div>

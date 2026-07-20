@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import HeroSection from "../components/HeroSection";
 import {
@@ -10,6 +12,8 @@ import {
   executionStepThree,
   executionStepFour,
   executionStepFive,
+  Real_World,
+  caseStudies,
 } from "../components/data";
 import { MiddleSectionHeads } from "../../component/SectionHeads";
 import StrategyBadge from "../../../components/StrategyBadge";
@@ -18,6 +22,11 @@ import { CardShowcase } from "../../../components";
 import Discover from "../components/Discover";
 import Assess from "../components/Assess";
 import AI_Solutions from "../components/AI_Solutions";
+import Strategy from "../components/Strategy";
+import GlowPanel from "../../component/GlowPanel";
+import ImageCard from "../../component/ImageCard";
+import { ArrowUpIcon } from "lucide-react";
+import Execution_Plan from "../components/Execution_Plan";
 
 const page = () => {
   return (
@@ -108,7 +117,55 @@ const page = () => {
         <section className="w-full">
           <AI_Solutions />
         </section>
+        <GlowPanel />
+        <Strategy
+          cardData={Real_World}
+          SectionHead={"Real-World AI "}
+          SectionSubHead={"Constraints"}
+          SectionDescription={
+            "Moving AI from a proof of concept to production introduces challenges around accuracy, security, latency, cost, and reliability. Addressing these constraints requires deliberate architecture, continuous evaluation, and production-grade engineering."
+          }
+          StrategyBadgeText={"Production Challenges"}
+        />
       </div>
+      <div className="flex flex-col items-center mb-10 justify-center mx-auto min-h-[60vh] relative z-10">
+        <BgSquare2 />
+        <div className="flex flex-col w-full sm:w-1/2 lg:w-1/2 text-center">
+          {/* Badge */}
+          <span>
+            <StrategyBadge text="What We Build" />
+          </span>
+          <MiddleSectionHeads
+            SectionHead="AI Systems Built for"
+            SectionSubHead=" Real Business Workflows."
+            SectionDescription="We design and build production-ready generative AI solutions - from intelligent assistants and document processing systems to RAG platforms, workflow automation, and private LLM deployments."
+          />
+        </div>
+        <section className="w-[80%] mt-20 mx-auto flex justify-center gap-3">
+          {caseStudies.map((card) => (
+            <ImageCard
+              key={card.id}
+              className={"w-[21rem]"}
+              padding={"px-4"}
+              cardtitle={card.title}
+              carddescription={card.description}
+              buttintext={card.cta}
+              buttonurl={card.href}
+              buttonicon={<ArrowUpIcon />}
+              image={card.image}
+            />
+          ))}
+        </section>
+      </div>
+      <Execution_Plan
+        badgeText="Production-Ready GenAI starts here"
+        title="From Prototype to Production"
+        description="Turn promising experiments into reliable systems with the guardrails, observability, 
+and engineering needed to scale with confidence."
+        buttonText="Build Your GenAI System with Us"
+        buttonLink="/contact"
+        onclick={() => ({})}
+      />
     </div>
   );
 };

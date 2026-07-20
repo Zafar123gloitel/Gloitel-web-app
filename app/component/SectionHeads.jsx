@@ -8,18 +8,18 @@ export const MiddleSectionHeads = ({
   return (
     <div className="flex flex-col items-center text-center px-4 sm:px-6 md:px-0 lg:px-0 max-w-4xl mx-auto mb-8">
       {/* Section Head */}
-      <h3 className="text-3xl sm:text-3xl md:text-4xl lg:text-[50px] font-medium text-white leading-tight">
+      <h3 className="text-3xl sm:text-3xl md:text-4xl lg:text-[48px] font-medium text-white leading-tight">
         {SectionHead}
       </h3>
 
       {/* Section Sub Head */}
-      <h4 className="text-3xl sm:text-3xl md:text-3xl lg:text-[50px] font-medium text-gray-400 leading-tight">
+      <h4 className="text-3xl sm:text-3xl md:text-3xl lg:text-[48px] font-medium text-gray-400 leading-tight">
         {SectionSubHead}
       </h4>
 
       {/* Description */}
       <div className="w-full sm:w-11/12 md:w-10/12 lg:w-[35vw] mt-4 sm:mt-4">
-        <p className="text-sm sm:text-base md:text-md lg:text-md text-gray-400 leading-tight">
+        <p className="text-sm sm:text-base md:text-md lg:text-[16px] text-gray-400 leading-tight">
           {SectionDescription}
         </p>
       </div>

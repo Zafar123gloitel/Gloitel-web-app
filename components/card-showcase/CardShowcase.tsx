@@ -48,7 +48,7 @@ export function CardShowcase({
 
                 <CardTitle>{item.title}</CardTitle>
 
-                <CardDescription className="mt-6 text-sm flex-1">
+                <CardDescription className="mt-6 text-sm flex-1 leading-0 ">
                   {item.description}
                 </CardDescription>
               </div>

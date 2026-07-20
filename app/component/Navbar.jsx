@@ -14,10 +14,105 @@ const Navbar = () => {
 
   const links = [
     { href: "/", label: "Home" },
+    { label: "What we do", megaMenu: true },
     { href: "/about", label: "About" },
     { href: "/creation", label: "Our Creations" },
     { href: "/contact", label: "Contact" },
-    { href: "/faq", label: "FAQ" },
+  ];
+
+  const megaMenu = [
+    {
+      title: "AI & Intelligent Systems",
+      items: [
+        {
+          label: "AI Strategy & Consulting",
+          href: "/ai-strategy-consulting",
+        },
+        {
+          label: "Generative AI & LLMs",
+          href: "/generative-ai-llms",
+        },
+        {
+          label: "AI Agents & Automation",
+          href: "/ai-agents-automation",
+        },
+        {
+          label: "ML & Predictive Analytics",
+          href: "/ml-predictive-analytics",
+        },
+        {
+          label: "AI Integration",
+          href: "/ai-integration",
+        },
+      ],
+    },
+    {
+      title: "Product Engineering",
+      items: [
+        {
+          label: "Discovery & Validation",
+          href: "/discovery-validation",
+        },
+        {
+          label: "MVP Development",
+          href: "/mvp-development",
+        },
+        {
+          label: "Platform Scaling",
+          href: "/platform-scaling",
+        },
+        {
+          label: "Fractional Engineering Teams",
+          href: "/fractional-engineering-teams",
+        },
+      ],
+    },
+    {
+      title: "Enterprise Modernization",
+      items: [
+        {
+          label: "App Modernization",
+          href: "/app-modernization",
+        },
+        {
+          label: "Cloud Migration",
+          href: "/cloud-migration",
+        },
+        {
+          label: "Microservices Architecture",
+          href: "/microservices-architecture",
+        },
+        {
+          label: "Process Automation",
+          href: "/process-automation",
+        },
+      ],
+    },
+    {
+      title: "Digital Experience Design",
+      items: [
+        {
+          label: "UX Research & Strategy",
+          href: "/ux-research-strategy",
+        },
+        {
+          label: "UI/UX Design",
+          href: "/ui-ux-design",
+        },
+        {
+          label: "Design Systems",
+          href: "/design-systems",
+        },
+        {
+          label: "ML & Predictive Analytics",
+          href: "/ml-predictive-analytics",
+        },
+        {
+          label: "CX Optimization",
+          href: "/cx-optimization",
+        },
+      ],
+    },
   ];
 
   const getLinkClasses = (href) =>
@@ -60,16 +155,100 @@ const Navbar = () => {
               />
             </Link>
             <VerticalDivider />
-            <div className="hidden lg:flex items-center gap-9 ">
-              {links.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`text-md ${getLinkClasses(link.href)}`}
-                >
-                  {link.label}
-                </Link>
-              ))}
+            <div className="hidden lg:flex items-center gap-9">
+              {links.map((link) =>
+                link.megaMenu ? (
+                  <div key={link.label} className="relative group  ">
+                    <button className="flex items-center gap-1 text-white/60 hover:text-white transition">
+                      {link.label}
+
+                      <svg
+                        className="w-4 h-4 transition-transform duration-300 group-hover:rotate-180"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </button>
+
+                    {/* Mega Menu */}
+                    <div
+                      className="
+    fixed
+    left-1/2
+    top-[90px]
+    -translate-x-1/2
+    w-[1050px]
+    invisible
+    opacity-0
+    translate-y-4
+    group-hover:visible
+    group-hover:opacity-100
+    group-hover:translate-y-0
+    transition-all
+    duration-300
+    z-50
+
+  "
+                    >
+                      <div className="w-[1050px] rounded-sm bg-[#2b2b2b] p-8 shadow-2xl">
+                        <p className="mb-6 text-blue-400 text-sm font-medium">
+                          Mega Menu of What we do
+                        </p>
+
+                        <div className="grid grid-cols-5 text-nowrap gap-10">
+                          <div className="col-span-4 grid grid-cols-4 gap-8">
+                            {megaMenu.map((section) => (
+                              <div key={section.title}>
+                                <h4 className="mb-5 text-white font-semibold">
+                                  {section.title}
+                                </h4>
+
+                                <ul className="space-y-3">
+                                  {section.items.map((item, index) => (
+                                    <li key={index}>
+                                      <Link
+                                        href={item.href}
+                                        className="flex items-center gap-2 text-sm text-white/60 hover:text-blue-400"
+                                      >
+                                        <span>›</span>
+                                        {item.label}
+                                      </Link>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            ))}
+                          </div>
+
+                          <div className="flex items-center justify-center">
+                            <Image
+                              src="/images/What-we-do/mega_manu_iamge.png"
+                              width={280}
+                              height={220}
+                              alt="menu"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={`text-md ${getLinkClasses(link.href)}`}
+                  >
+                    {link.label}
+                  </Link>
+                ),
+              )}
             </div>
           </div>
 
@@ -120,23 +299,29 @@ const Navbar = () => {
 
       {/* 🔹 Mobile Menu */}
       <div
-        className={`lg:hidden transition-all duration-300 overflow-hidden bg-black/70 backdrop-blur-md ${
+        className={`lg:hidden transition-all duration-300 overflow-hidden bg-black/70  ${
           isMobileMenuOpen
             ? "max-h-[400px] opacity-100 py-4"
             : "max-h-0 opacity-0 py-0"
         }`}
       >
         <div className="flex flex-col space-y-3 px-6">
-          {links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={`block text-base font-medium ${getLinkClasses(link.href)} py-2`}
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {links.map((link) =>
+            link.megaMenu ? (
+              <button key={link.label} className="text-left py-2 text-white/70">
+                {link.label}
+              </button>
+            ) : (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`block py-2 ${getLinkClasses(link.href)}`}
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {link.label}
+              </Link>
+            ),
+          )}
 
           <div className="pt-3">
             <HeaderButton

@@ -17,7 +17,7 @@
   "dependencies": {
     "@studio-freight/lenis": "^1.0.42",
     "form-data": "^4.0.5",
-    "framer-motion": "^12.23.24",
+    "framer-motion": "^12.42.2",
     "lucide-react": "^0.547.0",
     "mailgun.js": "^13.0.0",
     "motion": "^12.23.24",
