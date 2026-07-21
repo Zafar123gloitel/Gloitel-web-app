@@ -5,7 +5,12 @@ import Link from "next/link";
 import { Download, ArrowRight } from "lucide-react";
 import StrategyBadge from "../../../components/StrategyBadge";
 import ProblemCard from "../../../components/ProblemCard";
-import { heroSectionData, problems, RankData } from "../components/data";
+import {
+  heroSectionData,
+  outcomesData,
+  problems,
+  RankData,
+} from "../components/data";
 import { BgSquare2 } from "../../component/BgSquare";
 import { MiddleSectionHeads } from "../../component/SectionHeads";
 import { Card, CardShowcase } from "../../../components";
@@ -22,6 +27,7 @@ import Asked_Q from "../components/Asked_Q";
 import Execution_Plan from "../components/Execution_Plan";
 import HeroSection from "../components/HeroSection";
 import { notIncludedData } from "../components/data";
+import GlowPanel from "../../component/GlowPanel";
 
 export default function WhatWeDoPage() {
   return (
@@ -41,7 +47,6 @@ export default function WhatWeDoPage() {
           />
         </div>
       </div>
-
       <section className="grid grid-cols-1 gap-6 md:grid-cols-2 w-[80%] mx-auto ">
         {problems.map((item, index) => (
           <ProblemCard key={index} title={item.title} />
@@ -66,6 +71,7 @@ export default function WhatWeDoPage() {
             showStepBadge
             showDivider={false}
             items={showcaseItems}
+            cardHeight="h-[230px]  max-w-[230px] "
           />
         </section>
       </section>
@@ -101,8 +107,14 @@ export default function WhatWeDoPage() {
         image={assessData.image}
         imageAlt={assessData.imageAlt}
       />
-      <Business />
-
+      <Business
+        badgeText="What You Walk Away With"
+        sectionHead="A Clear AI Roadmap backed by "
+        sectionSubHead="Business Value"
+        sectionDescription="Leave with a prioritized plan, validated opportunities, and a practical roadmap designed to deliver measurable business outcomes."
+        data={outcomesData}
+      />
+      <GlowPanel />
       <Strategy
         cardData={notIncludedData}
         SectionHead={"Strategy before"}

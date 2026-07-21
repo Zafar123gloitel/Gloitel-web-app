@@ -14,6 +14,7 @@ import {
   executionStepFive,
   Real_World,
   caseStudies,
+  aiSolutionsData,
 } from "../components/data";
 import { MiddleSectionHeads } from "../../component/SectionHeads";
 import StrategyBadge from "../../../components/StrategyBadge";
@@ -48,8 +49,9 @@ const page = () => {
         <section className="w-[80%] mt-20 mx-auto">
           <CardShowcase
             items={aiServicesData}
-            showDivider={false}
+            showDivider={true}
             showStepBadge={false}
+            cardHeight="max-h-[350px]  max-w-[350px] "
           />
         </section>
       </div>
@@ -115,7 +117,13 @@ const page = () => {
           />
         </section>
         <section className="w-full">
-          <AI_Solutions />
+          <AI_Solutions
+            badge={aiSolutionsData.badge}
+            title={aiSolutionsData.title}
+            description={aiSolutionsData.description}
+            tabs={aiSolutionsData.tabs}
+            technologies={aiSolutionsData.technologies}
+          />
         </section>
         <GlowPanel />
         <Strategy

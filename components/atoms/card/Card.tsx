@@ -15,7 +15,7 @@ export function Card({
     <article
       className={[
         "group relative overflow-hidden rounded-[28px] border border-white/10",
-        // "bg-[linear-gradient(180deg,rgba(82,84,103,0.96)_0%,rgba(87,88,98,0.96)_100%)]",
+        "bg-[linear-gradient(to_left,#372AAC00_0%,#372AAC33_45%,#1C398E66_100%)]",
         "shadow-[0_22px_40px_rgba(15,23,42,0.22)] transition-all duration-300 ease-out",
         " hover:border-blue-500/80",
         "before:pointer-events-none before:absolute before:left-1/2 before:top-0 before:h-px before:w-[60%] before:-translate-x-1/2",
@@ -63,7 +63,7 @@ export function CardIcon({ children, className = "" }) {
         "after:bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.16),transparent_32%),radial-gradient(circle_at_top_right,rgba(96,165,250,0.08),transparent_26%)]",
         "after:opacity-80",
 
-        "inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10",
+        "inline-flex h-14 w-14 items-center justify-center rounded-full border border-white/10",
         "text-white shadow-[0_12px_28px_rgba(15,23,42,0.24)]",
         "transition-all duration-300 ease-out",
         "group-hover:bg-blue-600 ",

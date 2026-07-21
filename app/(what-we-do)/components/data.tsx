@@ -7,6 +7,25 @@ import {
   Shield,
   SlidersHorizontal,
   Workflow,
+  Timer,
+  SearchCode,
+  GitBranch,
+  BookOpen,
+  BarChart3,
+  History,
+  Bell,
+} from "lucide-react";
+import { RefreshCcw, Users, Wrench, Handshake, Zap } from "lucide-react";
+import {
+  ChartNoAxesCombined,
+  CircleAlert,
+  Target,
+  BadgeCheck,
+  Eye,
+  Link2,
+  Server,
+  Puzzle,
+  Network,
 } from "lucide-react";
 
 export const problems = [
@@ -486,5 +505,347 @@ export const caseStudies = [
       "LLM-powered product description generator that reduced content creation time by over 90% while maintaining brand consistency.",
     cta: "View Case Study",
     href: "/case-studies/e-commerce",
+  },
+];
+
+export const ai_agents_designed = [
+  {
+    id: 1,
+    title: "Agentic Workflow Automation",
+    icon: <RefreshCcw />,
+    description:
+      "Replace manual multi-step processes with agents that handle them end-to-end. Lead qualification, invoice processing, content moderation, compliance checks, research aggregation — automated with full audit trails.",
+  },
+  {
+    id: 2,
+    title: "Multi-Agent Systems",
+    icon: <Users />,
+    description:
+      "Orchestrate teams of specialized agents working in parallel. One agent researches, another writes, another reviews. Each agent is optimized for a specific responsibility within the workflow. Complex tasks completed in minutes instead of hours.",
+  },
+  {
+    id: 3,
+    title: "Tool-Using Agents",
+    icon: <Wrench />,
+    description:
+      "Agents integrated with your real business tools – CRMs, ERPs, databases, Slack, email, calendars, file systems. Seamlessly connecting data, workflows, and actions across your organization. They don't just generate text; they take action inside your systems.",
+  },
+  {
+    id: 4,
+    title: "Human-in-the-Loop Workflows",
+    icon: <Handshake />,
+    description:
+      "Autonomous agents with configurable human oversight gates. The agent handles routine decisions; humans review exceptions. Designed for regulated industries and high-stakes workflows.",
+  },
+  {
+    id: 5,
+    title: "AI-Powered Process Automation",
+    icon: <Zap />,
+    description:
+      "Next-generation RPA where agents handle unstructured inputs that rule-based bots can't. Document processing, email triage, form filling, data entry – with understanding, not just pattern matching.",
+  },
+];
+
+export const aiSolutionsData = {
+  badge: "Technologies & Stack",
+
+  title: "The Technologies Behind Our AI Solutions.",
+
+  description:
+    "We combine leading AI models, frameworks, vector databases, and deployment platforms to build secure, scalable, and production-ready AI systems.",
+
+  tabs: [
+    "LLM APIs",
+    "Open Source",
+    "RAG Frameworks",
+    "Vector Stores",
+    "Orchestration",
+    "Deployment",
+  ],
+
+  technologies: {
+    "LLM APIs": [
+      {
+        name: "OpenAI",
+        logo: "/images/technology/openai.png",
+      },
+      {
+        name: "Anthropic Claude",
+        logo: "/images/technology/claude.png",
+      },
+      {
+        name: "Google Gemini",
+        logo: "/images/technology/gemini.png",
+      },
+      {
+        name: "Cohere",
+        logo: "/images/technology/cohere.png",
+      },
+      {
+        name: "Google Gemini",
+        logo: "/images/technology/gemini.png",
+      },
+      {
+        name: "Cohere",
+        logo: "/images/technology/cohere.png",
+      },
+    ],
+
+    "Open Source": [
+      {
+        name: "OpenAI",
+        logo: "/images/technology/openai.png",
+      },
+      {
+        name: "Anthropic Claude",
+        logo: "/images/technology/claude.png",
+      },
+      {
+        name: "Google Gemini",
+        logo: "/images/technology/gemini.png",
+      },
+      {
+        name: "Cohere",
+        logo: "/images/technology/cohere.png",
+      },
+    ],
+    "RAG Frameworks": [
+      {
+        name: "OpenAI",
+        logo: "/images/technology/openai.png",
+      },
+      {
+        name: "Anthropic Claude",
+        logo: "/images/technology/claude.png",
+      },
+      {
+        name: "Google Gemini",
+        logo: "/images/technology/gemini.png",
+      },
+      {
+        name: "Cohere",
+        logo: "/images/technology/cohere.png",
+      },
+      {
+        name: "Cohere",
+        logo: "/images/technology/cohere.png",
+      },
+    ],
+    "Vector Stores": [
+      {
+        name: "OpenAI",
+        logo: "/images/technology/openai.png",
+      },
+      {
+        name: "Anthropic Claude",
+        logo: "/images/technology/claude.png",
+      },
+      {
+        name: "Google Gemini",
+        logo: "/images/technology/gemini.png",
+      },
+      {
+        name: "Cohere",
+        logo: "/images/technology/cohere.png",
+      },
+    ],
+    Orchestration: [
+      {
+        name: "OpenAI",
+        logo: "/images/technology/openai.png",
+      },
+      {
+        name: "Anthropic Claude",
+        logo: "/images/technology/claude.png",
+      },
+      {
+        name: "Google Gemini",
+        logo: "/images/technology/gemini.png",
+      },
+    ],
+    Deployment: [
+      {
+        name: "OpenAI",
+        logo: "/images/technology/openai.png",
+      },
+      {
+        name: "Anthropic Claude",
+        logo: "/images/technology/claude.png",
+      },
+    ],
+  },
+};
+
+export const outcomesData2 = [
+  {
+    id: 1,
+    icon: <ChartNoAxesCombined className="h-6 w-6" />,
+    title: "Predictive Forecasting",
+    description:
+      "Forecast demand, revenue, inventory, and resource utilization with models that support smarter planning decisions. Built for sales forecasting, capacity planning, energy demand prediction, and financial projections.",
+  },
+  {
+    id: 2,
+    icon: <CircleAlert className="h-6 w-6" />,
+    title: "Anomaly Detection",
+    description:
+      "Detect fraud, defects, equipment failures, and unusual system behavior before they cause business impact. Real-time monitoring helps identify risks early and improve operational reliability.",
+  },
+  {
+    id: 3,
+    icon: <Target className="h-6 w-6" />,
+    title: "Recommendation Systems",
+    description:
+      "Deliver personalized recommendations that increase engagement, conversion, and retention. Ideal for product suggestions, content personalization, search ranking, and next-best-action experiences.",
+  },
+  {
+    id: 4,
+    icon: <BadgeCheck className="h-6 w-6" />,
+    title: "Classification & Scoring",
+    description:
+      "Assign categories, risk scores, and priority rankings using explainable machine learning models. Commonly used for lead scoring, churn prediction, customer segmentation, and credit risk assessment.",
+  },
+  {
+    id: 5,
+    icon: <MessageCircleMore className="h-6 w-6" />,
+    title: "Natural Language Processing",
+    description:
+      "Extract meaningful insights from unstructured text through sentiment analysis, entity extraction, and intent classification. Applied to customer feedback, support tickets, reviews, and compliance documents.",
+  },
+  {
+    id: 6,
+    icon: <Eye className="h-6 w-6" />,
+    title: "Computer Vision",
+    description:
+      "Analyze images and video using object detection, classification, and visual inspection systems. Used for quality control, retail analytics, medical imaging, and security monitoring.",
+  },
+];
+
+export const engineeringData = [
+  {
+    id: 1,
+    icon: <Link2 className="h-7 w-7" />,
+    title: "Integration Stability",
+    description:
+      "AI systems often fail not because the model is ineffective, but because the surrounding integrations are unreliable. We build stable connections between AI services, applications, and enterprise systems with proper error handling, fallback mechanisms, and operational safeguards.",
+  },
+  {
+    id: 2,
+    icon: <RefreshCcw className="h-7 w-7" />,
+    title: "Resilient Processing",
+    description:
+      "Production AI requires systems that can recover gracefully from failures. We implement retry logic, queue-based processing, and recovery workflows that ensure temporary disruptions do not impact business operations or user experience.",
+  },
+  {
+    id: 3,
+    icon: <ChartNoAxesCombined className="h-7 w-7" />,
+    title: "Visibility & Control",
+    description:
+      "Without observability, AI systems can degrade silently over time. We provide monitoring, performance tracking, usage analytics, and alerting capabilities that help teams detect issues early and maintain consistent production performance.",
+  },
+];
+
+export const engineeringServicesData = [
+  {
+    id: 1,
+    icon: <Link2 className="h-7 w-7" />,
+    title: "Third-Party AI API Integration",
+    description:
+      "Connect your product to OpenAI, Anthropic, Google AI, AWS Bedrock, Azure OpenAI, and other AI providers. Prompt engineering, response parsing, error handling, cost controls, and caching layers included.",
+  },
+  {
+    id: 2,
+    icon: <Server className="h-7 w-7" />,
+    title: "Model Serving Infrastructure",
+    description:
+      "Deploy custom-trained models as low-latency REST APIs. Docker-containerized, auto-scaling, version-managed serving infrastructure with health checks and rollback capability.",
+  },
+  {
+    id: 3,
+    icon: <Workflow className="h-7 w-7" />,
+    title: "Data Pipeline Engineering for AI",
+    description:
+      "Build the pipelines that feed your AI systems—ingestion, transformation, vector embedding, indexing, and retrieval. Clean data in = useful AI out.",
+  },
+  {
+    id: 4,
+    icon: <ChartNoAxesCombined className="h-7 w-7" />,
+    title: "AI Monitoring & Observability",
+    description:
+      "Instrument your AI systems for performance tracking: latency, cost, accuracy drift, error rates, and token usage. Alert pipelines so you know before users do when something degrades.",
+  },
+  {
+    id: 5,
+    icon: <Puzzle className="h-7 w-7" />,
+    title: "Legacy System AI Augmentation",
+    description:
+      "Add AI capabilities to existing systems without a full rebuild. Plugin architecture, API bridges, and event-driven integrations that layer intelligence onto what you already have.",
+  },
+  {
+    id: 6,
+    icon: <Network className="h-7 w-7" />,
+    title: "Enterprise AI Platform Setup",
+    description:
+      "Stand up internal AI platforms—model registries, experimentation infrastructure, prompt management systems, and access control—for teams building AI at scale.",
+  },
+];
+
+export const architecturePatternsData = [
+  {
+    id: 1,
+    icon: <Timer className="h-7 w-7" />,
+    title: "Synchronous API Pattern",
+    description:
+      "User-facing features where AI generates a response in real time. Optimized for latency with streaming support and graceful fallback.",
+  },
+  {
+    id: 2,
+    icon: <Network className="h-7 w-7" />,
+    title: "Async Pipeline Pattern",
+    description:
+      "Background AI processing—document ingestion, batch enrichment, async summarization. Queue-based with retry logic and dead letter handling.",
+  },
+  {
+    id: 3,
+    icon: <SearchCode className="h-7 w-7" />,
+    title: "Retrieval-Augmented Pattern",
+    description:
+      "RAG systems where AI responses are grounded in retrieved documents. Vector search + LLM inference + citation extraction, built as a unified service.",
+  },
+  {
+    id: 4,
+    icon: <GitBranch className="h-7 w-7" />,
+    title: "Event-Driven Pattern",
+    description:
+      "AI triggered by business events—a new contract uploaded, a support ticket created, a transaction flagged. Integrated with your event bus (Kafka, SQS, Pub/Sub).",
+  },
+];
+
+
+export const deliverablesData = [
+  {
+    id: 1,
+    icon: <FileText className="h-7 w-7" />,
+    title: "Documented API contracts for every AI integration",
+  },
+  {
+    id: 2,
+    icon: <BookOpen className="h-7 w-7" />,
+    title: "Runbooks for common failure scenarios",
+  },
+  {
+    id: 3,
+    icon: <BarChart3 className="h-7 w-7" />,
+    title: "Cost dashboards with per-feature AI spend breakdown",
+  },
+  {
+    id: 4,
+    icon: <History className="h-7 w-7" />,
+    title: "Model version control and rollback procedures",
+  },
+  {
+    id: 5,
+    icon: <Bell className="h-7 w-7" />,
+    title: "Monitoring alerts configured and tested before handoff",
   },
 ];

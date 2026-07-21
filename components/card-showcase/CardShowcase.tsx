@@ -20,19 +20,23 @@ interface CardShowcaseProps {
   // New Props
   gridClassName?: string;
   cardClassName?: string;
+  cardHeight?: string;
 }
 
 export function CardShowcase({
   items,
   showDivider = true,
   showStepBadge = true,
-  gridClassName = "grid-cols-1 sm:grid-cols-2 xl:grid-cols-3",
+  gridClassName = "",
   cardClassName = "h-full",
+  cardHeight = "max-h-[350px] max-w-[350px]",
 }: CardShowcaseProps) {
   return (
-    <div className={`grid items-stretch gap-x-6 gap-y-16 ${gridClassName}`}>
+    <div
+      className={`flex flex-wrap my-10 items-center justify-center gap-x-6 gap-y-16 ${gridClassName}`}
+    >
       {items.map((item, index) => (
-        <div key={item.title} className="relative h-full">
+        <div key={item.title} className={`relative ${cardHeight} `}>
           {showStepBadge && (
             <div className="absolute left-1/2 -top-22 z-20 -translate-x-1/2">
               <StepBadge number={item.step ?? index + 1} />

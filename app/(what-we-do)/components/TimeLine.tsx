@@ -27,6 +27,7 @@ const TimeLine = () => {
           showStepBadge={false}
           showDivider={false}
           items={showcaseItems}
+          cardHeight="h-[230px]  max-w-[230px] "
         />
       </section>
       <GlowPanel />

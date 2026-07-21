@@ -2,37 +2,58 @@ import React from "react";
 import { BgSquare2 } from "../../component/BgSquare";
 import StrategyBadge from "../../../components/StrategyBadge";
 import { MiddleSectionHeads } from "../../component/SectionHeads";
-import { outcomesData } from "../components/data";
 import BusinessCard from "./BusinessCard";
-import GlowPanel from "../../component/GlowPanel";
 
-const Business = () => {
+
+interface BusinessProps {
+  badgeText: string;
+  sectionHead: string;
+  sectionSubHead: string;
+  sectionDescription: string;
+  data: {
+    id: number;
+    icon: React.ReactNode;
+    title: string;
+  }[];
+}
+
+const Business = ({
+  badgeText,
+  sectionHead,
+  sectionSubHead,
+  sectionDescription,
+  data,
+}: BusinessProps) => {
   return (
     <div>
-      <div className="flex flex-col items-center justify-center mx-auto min-h-[60vh] relative z-10">
+      <div className="relative z-10 mx-auto flex min-h-[60vh] flex-col items-center justify-center">
         <BgSquare2 />
-        <div className="flex flex-col w-full sm:w-1/2 lg:w-1/2 text-center">
-          {/* Badge */}
+
+        <div className="flex w-full -mt-[10rem] flex-col text-center sm:w-1/2 lg:w-1/2">
           <span>
-            <StrategyBadge text="What You Walk Away With" />
+            <StrategyBadge text={badgeText} />
           </span>
+
           <MiddleSectionHeads
-            SectionHead="A Clear AI Roadmap backed by "
-            SectionSubHead=" Business Value"
-            SectionDescription="Leave with a prioritized plan, validated opportunities, and a practical roadmap designed to deliver measurable business outcomes."
+            SectionHead={sectionHead}
+            SectionSubHead={sectionSubHead}
+            SectionDescription={sectionDescription}
           />
         </div>
       </div>
 
-      {outcomesData.map((item) => (
-        <BusinessCard
-          key={item.id}
-          icon={item.icon}
-          title={item.title}
-          className=""
-        />
-      ))}
-      <GlowPanel />
+      <div className="mx-auto grid -mt-10 w-[85%] grid-cols-1 gap-5">
+        {data.map((item) => (
+          <BusinessCard
+            key={item.id}
+            icon={item.icon}
+            title={item.title}
+            className=""
+          />
+        ))}
+      </div>
+
+      
     </div>
   );
 };

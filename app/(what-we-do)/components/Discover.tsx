@@ -57,11 +57,11 @@ const Discover = ({
       <div className="flex-1 lg:max-w-[50%]">
         <div className="relative aspect-[4/3] overflow-hidden rounded-[1.4rem]">
           <Image
-            src="/images/What-we-do/Rectangle 1.png"
-            alt="AI strategy meeting"
+            src={image}
+            alt={imageAlt}
             width={455}
             height={445}
-            className="rounded-[24px] object-cover"
+            className="h-full w-full rounded-[24px] object-cover"
             unoptimized
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
