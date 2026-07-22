@@ -6,6 +6,7 @@ import { Download, ArrowRight } from "lucide-react";
 import StrategyBadge from "../../../components/StrategyBadge";
 import ProblemCard from "../../../components/ProblemCard";
 import {
+  enableData,
   heroSectionData,
   outcomesData,
   problems,
@@ -31,31 +32,37 @@ import GlowPanel from "../../component/GlowPanel";
 
 export default function WhatWeDoPage() {
   return (
-    <>
-      <HeroSection {...heroSectionData} />
-      <div className="flex flex-col items-center justify-center mx-auto min-h-[60vh] relative z-10">
-        <BgSquare2 />
-        <div className="flex flex-col w-full sm:w-1/2 lg:w-1/2 text-center">
-          {/* Badge */}
-          <span>
-            <StrategyBadge text="Who This Is For" />
-          </span>
-          <MiddleSectionHeads
-            SectionHead="Built for Teams Ready to move"
-            SectionSubHead=" beyond AI Experimentation"
-            SectionDescription="Designed for organizations that want to invest in AI strategically, align initiatives with business outcomes, and prioritize the right opportunities before committing resources."
-          />
-        </div>
+    <div>
+      <div className="">
+        <HeroSection {...heroSectionData} />
       </div>
-      <section className="grid grid-cols-1 gap-6 md:grid-cols-2 w-[80%] mx-auto ">
-        {problems.map((item, index) => (
-          <ProblemCard key={index} title={item.title} />
-        ))}
-      </section>
-      <section>
-        <div className="flex flex-col items-center justify-center mx-auto min-h-[60vh] relative z-10">
+      <div className="overflow-hidden h-screen">
+        <section className="my-14 lg:my-24">
+          <div className="flex flex-col  items-center justify-center mx-auto min-h-[60vh] relative z-10">
+            <BgSquare2 />
+            <div className="flex flex-col gap-6.5  -mt-44 w-full sm:w-1/2 lg:w-1/2 text-center">
+              {/* Badge */}
+              <span>
+                <StrategyBadge text="Who This Is For" />
+              </span>
+              <MiddleSectionHeads
+                SectionHead="Built for Teams Ready to move beyond AI Experimentation"
+                SectionSubHead=""
+                SectionDescription="Designed for organizations that want to invest in AI strategically, align initiatives with business outcomes, and prioritize the right opportunities before committing resources."
+              />
+            </div>
+          </div>
+          <section className="grid grid-cols-1 -mt-20 gap-6 md:grid-cols-2 w-[80%] mx-auto ">
+            {problems.map((item, index) => (
+              <ProblemCard key={index} title={item.title} />
+            ))}
+          </section>
+        </section>
+      </div>
+      <section className=" overflow-hidden">
+        <div className="flex flex-col items-center  mt-10 justify-center mx-auto min-h-[60vh] relative z-10">
           <BgSquare2 />
-          <div className="flex flex-col w-full sm:w-1/2 lg:w-1/2 text-center">
+          <div className="flex flex-col gap-6.5 -mt-44 w-full sm:w-1/2 lg:w-1/2 text-center">
             {/* Badge */}
             <span>
               <StrategyBadge text="Our Approach" />
@@ -66,12 +73,13 @@ export default function WhatWeDoPage() {
             />
           </div>
         </div>
-        <section className="w-[80%] mx-auto">
+        <section className="w-full  sm:w-[80%] -mt-20 mx-auto">
           <CardShowcase
             showStepBadge
             showDivider={false}
             items={showcaseItems}
             cardHeight="h-[230px]  max-w-[230px] "
+            gridClassName="gap-y-28"
           />
         </section>
       </section>
@@ -100,25 +108,25 @@ export default function WhatWeDoPage() {
         imageAlt={RankData.imageAlt}
       />
       <Assess
-        badgeText={assessData.badgeText}
+        badgeText={enableData.badgeText}
         title={assessData.title}
         description={assessData.description}
         cardTitle={assessData.cardTitle}
         image={assessData.image}
-        imageAlt={assessData.imageAlt}
+        imageAlt={enableData.imageAlt}
       />
       <Business
         badgeText="What You Walk Away With"
-        sectionHead="A Clear AI Roadmap backed by "
-        sectionSubHead="Business Value"
+        sectionHead="A Clear AI Roadmap backed by Business Value"
+        sectionSubHead=""
         sectionDescription="Leave with a prioritized plan, validated opportunities, and a practical roadmap designed to deliver measurable business outcomes."
         data={outcomesData}
       />
       <GlowPanel />
       <Strategy
         cardData={notIncludedData}
-        SectionHead={"Strategy before"}
-        SectionSubHead={"Solutions"}
+        SectionHead={"Strategy before Solutions"}
+        SectionSubHead={""}
         SectionDescription={
           "Every recommendation is grounded in business impact and feasibility. We do not start with technology, products, or predetermined solutions."
         }
@@ -127,13 +135,13 @@ export default function WhatWeDoPage() {
       <TimeLine />
       <Asked_Q />
       <Execution_Plan
-        badgeText="AI Development Services"
-        title="Define Your AI Roadmap Before You Build"
-        description="Most AI initiatives fail before they begin because of misdirected effort. We help you identify where AI should be applied first so every decision is grounded in business value."
-        buttonText="Book a Strategy Session"
-        buttonLink="/contact"
+        badgeText="Start with Strategy, Not Assumptions"
+        title="Turn AI Ambition into an Execution Plan"
+        description="Every successful AI initiative starts with the right decisions. We provide the structure, insight, and direction needed to make them."
+        buttonText="Start with a Discovery Call"
+        buttonLink="/"
         onclick={() => ({})}
       />
-    </>
+    </div>
   );
 }

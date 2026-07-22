@@ -33,7 +33,7 @@ export function CardShowcase({
 }: CardShowcaseProps) {
   return (
     <div
-      className={`flex flex-wrap my-10 items-center justify-center gap-x-6 gap-y-16 ${gridClassName}`}
+      className={`flex flex-wrap my-10 items-center justify-center gap-x-6  ${gridClassName}`}
     >
       {items.map((item, index) => (
         <div key={item.title} className={`relative ${cardHeight} `}>

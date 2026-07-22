@@ -3,31 +3,32 @@ import { BgSquare2 } from "../../component/BgSquare";
 import StrategyBadge from "../../../components/StrategyBadge";
 import { MiddleSectionHeads } from "../../component/SectionHeads";
 import { CardShowcase } from "../../../components";
-import { showcaseItems } from "./showcaseItems ";
+import { EngagementData } from "./showcaseItems ";
 import GlowPanel from "../../component/GlowPanel";
 
 const TimeLine = () => {
   return (
-    <section>
-      <div className="flex flex-col items-center justify-center mx-auto min-h-[60vh] relative z-10">
+    <section className="overflow-hidden ">
+      <div className="flex flex-col my-14 lg:my-40 items-center justify-center mx-auto min-h-[60vh] relative z-10">
         <BgSquare2 />
-        <div className="flex flex-col w-full sm:w-1/2 lg:w-1/2 text-center">
+        <div className="flex flex-col -mt-40 gap-6.5 w-full sm:w-1/2 lg:w-1/2 text-center">
           {/* Badge */}
           <span>
-            <StrategyBadge text="Our Approach" />
+            <StrategyBadge text="Engagement Details" />
           </span>
           <MiddleSectionHeads
-            SectionHead="Diagnose Before You Deploy"
-            SectionDescription="We run a structured Discovery Sprint - a fixed-scope, 3–4 week engagement that maps your workflows, assesses feasibility, and delivers a prioritized AI roadmap."
+            SectionHead="Clear Scope. Defined Timeline. Predictable Outcomes."
+            SectionDescription="A focused engagement designed to deliver strategic clarity through a structured process, fixed scope, and clearly defined deliverables."
           />
         </div>
       </div>
-      <section className="w-[80%] mx-auto">
+      <section className="w-full sm:w-[80%] mx-auto -mt-20">
         <CardShowcase
           showStepBadge={false}
           showDivider={false}
-          items={showcaseItems}
+          items={EngagementData}
           cardHeight="h-[230px]  max-w-[230px] "
+          gridClassName="gap-y-6"
         />
       </section>
       <GlowPanel />

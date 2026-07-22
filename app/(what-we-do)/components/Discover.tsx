@@ -27,19 +27,21 @@ const Discover = ({
   imageAlt = "Section Image",
 }: DiscoverProps) => {
   return (
-    <section className="discover-section m-auto flex max-w-7xl flex-col items-center justify-between gap-10 px-6 py-10 sm:px-10 lg:flex-row lg:px-14 lg:py-14">
+    <section className="discover-section mt-16  md:mt-24.25 overflow-hidden m-auto flex max-w-7xl flex-col justify-between gap-33.25 px-6 py-10 sm:px-10 lg:flex-row lg:px-14 lg:py-14">
       {/* Left Content */}
       <div className="discover-text flex-1">
         <span className="mb-6 block">
           <StrategyBadge text={badgeText} />
         </span>
 
-        <h2 className="mb-4 text-4xl font-semibold">{title}</h2>
+        <h2 className="mb-6 text-[56px] font-semibold">{title}</h2>
 
-        <p className="text-base leading-7 text-[#555]">{description}</p>
+        <p className="text-base leading-8 text-[24px] text-[#555]">
+          {description}
+        </p>
 
         {cardTitle && (
-          <div className="mt-10 inline-block">
+          <div className="mt-10  inline-block">
             <ProblemCard title={cardTitle} />
           </div>
         )}

@@ -48,12 +48,12 @@ export const problems = [
 ];
 
 export const discoverData = {
-  badgeText: "Our Approach",
+  badgeText: "Phase 01",
   title: "Discover",
   description:
     "Map workflows, decision points, and value creation/loss across the business.",
-  cardTitle: "Workflow maps, decision trees, and opportunity heatmaps",
-  image: "/images/What-we-do/Rectangle 1.png",
+  cardTitle: "Current-state workflow map and value leakage analysis",
+  image: "/images/What-we-do/discover.png",
   imageAlt: "AI strategy meeting",
 };
 
@@ -63,23 +63,33 @@ export const RankData = {
   description:
     "Prioritize use cases by value at stake, feasibility, and speed to ROI.",
   cardTitle: "Prioritized use case stack with impact vs. effort matrix",
-  image: "/images/What-we-do/Rectangle 1.png",
+  image: "/images/What-we-do/rank.png",
   imageAlt: "AI strategy meeting",
 };
 
 export const assessData = {
-  badgeText: "Our Approach",
+  badgeText: "Phase 02",
   title: "Assess",
   description:
-    "Evaluate AI opportunities based on business impact, technical feasibility, and organizational readiness.",
-  cardTitle: "AI readiness assessment and prioritized opportunity roadmap",
-  image: "/images/What-we-do/Rectangle 1.png",
+    "Evaluate data maturity, system readiness, and implementation constraints.",
+  cardTitle: "Feasibility assessment across shortlisted use cases",
+  image: "/images/What-we-do/assess.png",
+  imageAlt: "AI assessment",
+};
+export const enableData = {
+  badgeText: "Phase 04",
+  title: "Enable",
+  description:
+    "Scope the highest-priority use case into a pilot-ready brief with a clear investment case.",
+  cardTitle: "Defined pilot scope, success metrics, and execution roadmap",
+  image: "/images/What-we-do/enable.png",
   imageAlt: "AI assessment",
 };
 
 export const outcomesData = [
   {
-    id: 1,
+    id: crypto.randomUUID(),
+
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -127,7 +137,7 @@ export const outcomesData = [
     title: "Clarity on where AI will create measurable business impact",
   },
   {
-    id: 2,
+    id: crypto.randomUUID(),
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -154,7 +164,7 @@ export const outcomesData = [
     title: "A prioritised use case stack ranked by value and feasibility",
   },
   {
-    id: 3,
+    id: crypto.randomUUID(),
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -173,7 +183,7 @@ export const outcomesData = [
     title: "Defined pilot scope with expected outcomes and success metrics",
   },
   {
-    id: 4,
+    id: crypto.randomUUID(),
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -217,7 +227,7 @@ export const outcomesData = [
     title: "A structured roadmap aligned to business priorities",
   },
   {
-    id: 5,
+    id: crypto.randomUUID(),
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -250,23 +260,83 @@ export const outcomesData = [
 
 export const notIncludedData = [
   {
-    id: 1,
-    icon: "X",
+    id: crypto.randomUUID(),
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="27"
+        height="27"
+        viewBox="0 0 27 27"
+        fill="none"
+      >
+        <path
+          d="M24.9027 24.9027L1.46484 1.46484M24.9027 1.46484L1.46484 24.9027"
+          stroke="white"
+          stroke-width="2.92973"
+          stroke-linecap="round"
+        />
+      </svg>
+    ),
     description: "Not a vendor-led engagement where we pre-sell a solution",
   },
   {
-    id: 2,
-    icon: "X",
+    id: crypto.randomUUID(),
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="27"
+        height="27"
+        viewBox="0 0 27 27"
+        fill="none"
+      >
+        <path
+          d="M24.9027 24.9027L1.46484 1.46484M24.9027 1.46484L1.46484 24.9027"
+          stroke="white"
+          stroke-width="2.92973"
+          stroke-linecap="round"
+        />
+      </svg>
+    ),
     description: "Not a free strategy workshop with vague outputs",
   },
   {
-    id: 3,
-    icon: "X",
+    id: crypto.randomUUID(),
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="27"
+        height="27"
+        viewBox="0 0 27 27"
+        fill="none"
+      >
+        <path
+          d="M24.9027 24.9027L1.46484 1.46484M24.9027 1.46484L1.46484 24.9027"
+          stroke="white"
+          stroke-width="2.92973"
+          stroke-linecap="round"
+        />
+      </svg>
+    ),
     description: "Not an open-ended consulting retainer",
   },
   {
-    id: 4,
-    icon: "X",
+    id: crypto.randomUUID(),
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="27"
+        height="27"
+        viewBox="0 0 27 27"
+        fill="none"
+      >
+        <path
+          d="M24.9027 24.9027L1.46484 1.46484M24.9027 1.46484L1.46484 24.9027"
+          stroke="white"
+          stroke-width="2.92973"
+          stroke-linecap="round"
+        />
+      </svg>
+    ),
     description: "Not a build-first approach without a validated roadmap",
   },
 ];
@@ -295,12 +365,12 @@ export const accordionData = [
 ];
 
 export const heroSectionData = {
-  badgeText: "AI Development Services",
+  badgeText: "AI Strategy & Consulting",
 
   title: "Define Your AI Roadmap Before You Build",
 
   description:
-    "Most AI initiatives fail before they begin because of misdirected effort. We help you identify where AI should be applied first so every decision is grounded in business value.",
+    "Most AI initiatives fail before they begin — not because of bad technology, but because of misdirected effort. We help you decide *where* AI should be applied before a single line of code is written.",
 
   image: "/images/What-we-do/Rectangle 1.png",
 
@@ -349,42 +419,42 @@ export const heroSectionDataGenerative = {
 
 export const aiServicesData = [
   {
-    id: 1,
+    id: crypto.randomUUID(),
     icon: <MessageCircleMore size={28} />,
     title: "Custom AI Chatbots & Assistants",
     description:
       "Intelligent conversational interfaces trained on your domain knowledge. Customer support bots, internal knowledge assistants, sales copilots – built with guardrails, citation support, and fallback logic.",
   },
   {
-    id: 2,
+    id: crypto.randomUUID(),
     icon: <FileText size={28} />,
     title: "Document Intelligence & Processing",
     description:
       "Automate document-heavy workflows with LLMs. Contract analysis, invoice extraction, report summarization, regulatory document parsing – structured outputs from unstructured inputs.",
   },
   {
-    id: 3,
+    id: crypto.randomUUID(),
     icon: <Database size={28} />,
     title: "RAG (Retrieval-Augmented Generation) Systems",
     description:
       "Connect LLMs to your proprietary data with vector search pipelines. Accurate, source-cited responses drawn from your internal knowledge base, documentation, or enterprise data.",
   },
   {
-    id: 4,
+    id: crypto.randomUUID(),
     icon: <Workflow size={28} />,
     title: "LLM-Powered Workflow Automation",
     description:
       "Replace rule-based automation with AI that understands context. Intelligent triage, email drafting, content generation, and multi-step reasoning tasks embedded in your existing workflows.",
   },
   {
-    id: 5,
+    id: crypto.randomUUID(),
     icon: <SlidersHorizontal size={28} />,
     title: "Fine-Tuning & Model Customization",
     description:
       "Custom fine-tuned models for domain-specific tasks where general-purpose LLMs underperform. Smaller, faster, cheaper – specialized for your exact use case.",
   },
   {
-    id: 6,
+    id: crypto.randomUUID(),
     icon: <Shield size={28} />,
     title: "Private LLM Deployment",
     description:
@@ -449,35 +519,110 @@ export const executionStepFive = {
 
 export const Real_World = [
   {
-    id: 1,
-    icon: "X",
+    id: crypto.randomUUID(),
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="27"
+        height="27"
+        viewBox="0 0 27 27"
+        fill="none"
+      >
+        <path
+          d="M24.9027 24.9027L1.46484 1.46484M24.9027 1.46484L1.46484 24.9027"
+          stroke="white"
+          stroke-width="2.92973"
+          stroke-linecap="round"
+        />
+      </svg>
+    ),
     description: "Reducing hallucinations in AI outputs.",
   },
   {
-    id: 2,
-    icon: "X",
+    id: crypto.randomUUID(),
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="27"
+        height="27"
+        viewBox="0 0 27 27"
+        fill="none"
+      >
+        <path
+          d="M24.9027 24.9027L1.46484 1.46484M24.9027 1.46484L1.46484 24.9027"
+          stroke="white"
+          stroke-width="2.92973"
+          stroke-linecap="round"
+        />
+      </svg>
+    ),
     description: "Managing costs as AI systems scale.",
   },
   {
-    id: 3,
-    icon: "X",
+    id: crypto.randomUUID(),
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="27"
+        height="27"
+        viewBox="0 0 27 27"
+        fill="none"
+      >
+        <path
+          d="M24.9027 24.9027L1.46484 1.46484M24.9027 1.46484L1.46484 24.9027"
+          stroke="white"
+          stroke-width="2.92973"
+          stroke-linecap="round"
+        />
+      </svg>
+    ),
     description: "Reducing latency across AI workflows.",
   },
   {
-    id: 4,
-    icon: "X",
+    id: crypto.randomUUID(),
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="27"
+        height="27"
+        viewBox="0 0 27 27"
+        fill="none"
+      >
+        <path
+          d="M24.9027 24.9027L1.46484 1.46484M24.9027 1.46484L1.46484 24.9027"
+          stroke="white"
+          stroke-width="2.92973"
+          stroke-linecap="round"
+        />
+      </svg>
+    ),
     description: "Protecting sensitive data and enterprise systems.",
   },
   {
-    id: 5,
-    icon: "X",
+    id: crypto.randomUUID(),
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="27"
+        height="27"
+        viewBox="0 0 27 27"
+        fill="none"
+      >
+        <path
+          d="M24.9027 24.9027L1.46484 1.46484M24.9027 1.46484L1.46484 24.9027"
+          stroke="white"
+          stroke-width="2.92973"
+          stroke-linecap="round"
+        />
+      </svg>
+    ),
     description: "Ensuring reliable performance in production.",
   },
 ];
 
 export const caseStudies = [
   {
-    id: 1,
+    id: crypto.randomUUID(),
     title: "Healthcare Client",
     slug: "healthcare-client",
     image: "/images/What-we-do/mega_manu_iamge.png",
@@ -487,7 +632,7 @@ export const caseStudies = [
     href: "/case-studies/healthcare-client",
   },
   {
-    id: 2,
+    id: crypto.randomUUID(),
     title: "Financial Services",
     slug: "financial-services",
     image: "/images/What-we-do/mega_manu_iamge.png",
@@ -497,7 +642,7 @@ export const caseStudies = [
     href: "/case-studies/financial-services",
   },
   {
-    id: 3,
+    id: crypto.randomUUID(),
     title: "E-Commerce",
     slug: "e-commerce",
     image: "/images/What-we-do/mega_manu_iamge.png",
@@ -510,35 +655,35 @@ export const caseStudies = [
 
 export const ai_agents_designed = [
   {
-    id: 1,
+    id: crypto.randomUUID(),
     title: "Agentic Workflow Automation",
     icon: <RefreshCcw />,
     description:
       "Replace manual multi-step processes with agents that handle them end-to-end. Lead qualification, invoice processing, content moderation, compliance checks, research aggregation — automated with full audit trails.",
   },
   {
-    id: 2,
+    id: crypto.randomUUID(),
     title: "Multi-Agent Systems",
     icon: <Users />,
     description:
       "Orchestrate teams of specialized agents working in parallel. One agent researches, another writes, another reviews. Each agent is optimized for a specific responsibility within the workflow. Complex tasks completed in minutes instead of hours.",
   },
   {
-    id: 3,
+    id: crypto.randomUUID(),
     title: "Tool-Using Agents",
     icon: <Wrench />,
     description:
       "Agents integrated with your real business tools – CRMs, ERPs, databases, Slack, email, calendars, file systems. Seamlessly connecting data, workflows, and actions across your organization. They don't just generate text; they take action inside your systems.",
   },
   {
-    id: 4,
+    id: crypto.randomUUID(),
     title: "Human-in-the-Loop Workflows",
     icon: <Handshake />,
     description:
       "Autonomous agents with configurable human oversight gates. The agent handles routine decisions; humans review exceptions. Designed for regulated industries and high-stakes workflows.",
   },
   {
-    id: 5,
+    id: crypto.randomUUID(),
     title: "AI-Powered Process Automation",
     icon: <Zap />,
     description:
@@ -678,42 +823,42 @@ export const aiSolutionsData = {
 
 export const outcomesData2 = [
   {
-    id: 1,
+    id: crypto.randomUUID(),
     icon: <ChartNoAxesCombined className="h-6 w-6" />,
     title: "Predictive Forecasting",
     description:
       "Forecast demand, revenue, inventory, and resource utilization with models that support smarter planning decisions. Built for sales forecasting, capacity planning, energy demand prediction, and financial projections.",
   },
   {
-    id: 2,
+    id: crypto.randomUUID(),
     icon: <CircleAlert className="h-6 w-6" />,
     title: "Anomaly Detection",
     description:
       "Detect fraud, defects, equipment failures, and unusual system behavior before they cause business impact. Real-time monitoring helps identify risks early and improve operational reliability.",
   },
   {
-    id: 3,
+    id: crypto.randomUUID(),
     icon: <Target className="h-6 w-6" />,
     title: "Recommendation Systems",
     description:
       "Deliver personalized recommendations that increase engagement, conversion, and retention. Ideal for product suggestions, content personalization, search ranking, and next-best-action experiences.",
   },
   {
-    id: 4,
+    id: crypto.randomUUID(),
     icon: <BadgeCheck className="h-6 w-6" />,
     title: "Classification & Scoring",
     description:
       "Assign categories, risk scores, and priority rankings using explainable machine learning models. Commonly used for lead scoring, churn prediction, customer segmentation, and credit risk assessment.",
   },
   {
-    id: 5,
+    id: crypto.randomUUID(),
     icon: <MessageCircleMore className="h-6 w-6" />,
     title: "Natural Language Processing",
     description:
       "Extract meaningful insights from unstructured text through sentiment analysis, entity extraction, and intent classification. Applied to customer feedback, support tickets, reviews, and compliance documents.",
   },
   {
-    id: 6,
+    id: crypto.randomUUID(),
     icon: <Eye className="h-6 w-6" />,
     title: "Computer Vision",
     description:
@@ -723,21 +868,21 @@ export const outcomesData2 = [
 
 export const engineeringData = [
   {
-    id: 1,
+    id: crypto.randomUUID(),
     icon: <Link2 className="h-7 w-7" />,
     title: "Integration Stability",
     description:
       "AI systems often fail not because the model is ineffective, but because the surrounding integrations are unreliable. We build stable connections between AI services, applications, and enterprise systems with proper error handling, fallback mechanisms, and operational safeguards.",
   },
   {
-    id: 2,
+    id: crypto.randomUUID(),
     icon: <RefreshCcw className="h-7 w-7" />,
     title: "Resilient Processing",
     description:
       "Production AI requires systems that can recover gracefully from failures. We implement retry logic, queue-based processing, and recovery workflows that ensure temporary disruptions do not impact business operations or user experience.",
   },
   {
-    id: 3,
+    id: crypto.randomUUID(),
     icon: <ChartNoAxesCombined className="h-7 w-7" />,
     title: "Visibility & Control",
     description:
@@ -747,42 +892,42 @@ export const engineeringData = [
 
 export const engineeringServicesData = [
   {
-    id: 1,
+    id: crypto.randomUUID(),
     icon: <Link2 className="h-7 w-7" />,
     title: "Third-Party AI API Integration",
     description:
       "Connect your product to OpenAI, Anthropic, Google AI, AWS Bedrock, Azure OpenAI, and other AI providers. Prompt engineering, response parsing, error handling, cost controls, and caching layers included.",
   },
   {
-    id: 2,
+    id: crypto.randomUUID(),
     icon: <Server className="h-7 w-7" />,
     title: "Model Serving Infrastructure",
     description:
       "Deploy custom-trained models as low-latency REST APIs. Docker-containerized, auto-scaling, version-managed serving infrastructure with health checks and rollback capability.",
   },
   {
-    id: 3,
+    id: crypto.randomUUID(),
     icon: <Workflow className="h-7 w-7" />,
     title: "Data Pipeline Engineering for AI",
     description:
       "Build the pipelines that feed your AI systems—ingestion, transformation, vector embedding, indexing, and retrieval. Clean data in = useful AI out.",
   },
   {
-    id: 4,
+    id: crypto.randomUUID(),
     icon: <ChartNoAxesCombined className="h-7 w-7" />,
     title: "AI Monitoring & Observability",
     description:
       "Instrument your AI systems for performance tracking: latency, cost, accuracy drift, error rates, and token usage. Alert pipelines so you know before users do when something degrades.",
   },
   {
-    id: 5,
+    id: crypto.randomUUID(),
     icon: <Puzzle className="h-7 w-7" />,
     title: "Legacy System AI Augmentation",
     description:
       "Add AI capabilities to existing systems without a full rebuild. Plugin architecture, API bridges, and event-driven integrations that layer intelligence onto what you already have.",
   },
   {
-    id: 6,
+    id: crypto.randomUUID(),
     icon: <Network className="h-7 w-7" />,
     title: "Enterprise AI Platform Setup",
     description:
@@ -792,28 +937,28 @@ export const engineeringServicesData = [
 
 export const architecturePatternsData = [
   {
-    id: 1,
+    id: crypto.randomUUID(),
     icon: <Timer className="h-7 w-7" />,
     title: "Synchronous API Pattern",
     description:
       "User-facing features where AI generates a response in real time. Optimized for latency with streaming support and graceful fallback.",
   },
   {
-    id: 2,
+    id: crypto.randomUUID(),
     icon: <Network className="h-7 w-7" />,
     title: "Async Pipeline Pattern",
     description:
       "Background AI processing—document ingestion, batch enrichment, async summarization. Queue-based with retry logic and dead letter handling.",
   },
   {
-    id: 3,
+    id: crypto.randomUUID(),
     icon: <SearchCode className="h-7 w-7" />,
     title: "Retrieval-Augmented Pattern",
     description:
       "RAG systems where AI responses are grounded in retrieved documents. Vector search + LLM inference + citation extraction, built as a unified service.",
   },
   {
-    id: 4,
+    id: crypto.randomUUID(),
     icon: <GitBranch className="h-7 w-7" />,
     title: "Event-Driven Pattern",
     description:
@@ -821,30 +966,29 @@ export const architecturePatternsData = [
   },
 ];
 
-
 export const deliverablesData = [
   {
-    id: 1,
+    id: crypto.randomUUID(),
     icon: <FileText className="h-7 w-7" />,
     title: "Documented API contracts for every AI integration",
   },
   {
-    id: 2,
+    id: crypto.randomUUID(),
     icon: <BookOpen className="h-7 w-7" />,
     title: "Runbooks for common failure scenarios",
   },
   {
-    id: 3,
+    id: crypto.randomUUID(),
     icon: <BarChart3 className="h-7 w-7" />,
     title: "Cost dashboards with per-feature AI spend breakdown",
   },
   {
-    id: 4,
+    id: crypto.randomUUID(),
     icon: <History className="h-7 w-7" />,
     title: "Model version control and rollback procedures",
   },
   {
-    id: 5,
+    id: crypto.randomUUID(),
     icon: <Bell className="h-7 w-7" />,
     title: "Monitoring alerts configured and tested before handoff",
   },

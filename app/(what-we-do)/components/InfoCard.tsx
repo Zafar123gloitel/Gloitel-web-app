@@ -45,7 +45,7 @@ const InfoCard = ({ icon, description, className = "" }: InfoCardProps) => {
             "after:bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.16),transparent_32%),radial-gradient(circle_at_top_right,rgba(96,165,250,0.08),transparent_26%)]",
             "after:opacity-80",
 
-            "inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10",
+            "inline-flex h-12 w-12 text-[35px] items-center justify-center rounded-full border border-white/10",
             "text-white shadow-[0_12px_28px_rgba(15,23,42,0.24)]",
             "transition-all duration-300 ease-out",
             "group-hover:bg-red-600 ",

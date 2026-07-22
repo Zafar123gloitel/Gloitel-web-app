@@ -15,7 +15,7 @@ export function Card({
     <article
       className={[
         "group relative overflow-hidden rounded-[28px] border border-white/10",
-        "bg-[linear-gradient(to_left,#372AAC00_0%,#372AAC33_45%,#1C398E66_100%)]",
+        "bg-[linear-gradient(114deg, rgba(28, 57, 142, 0.40) 0%, rgba(55, 42, 172, 0.20) 50%, rgba(55, 42, 172, 0.00) 100%)]",
         "shadow-[0_22px_40px_rgba(15,23,42,0.22)] transition-all duration-300 ease-out",
         " hover:border-blue-500/80",
         "before:pointer-events-none before:absolute before:left-1/2 before:top-0 before:h-px before:w-[60%] before:-translate-x-1/2",
@@ -44,7 +44,7 @@ export function StepBadge({ number }: StepBadgeProps) {
       {/* Rotating Border */}
       <div className="relative inline-flex rounded-full  p-[1.5px] overflow-hidden">
         {/* Button */}
-        <div className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full border border-white/15 bg-[#0B1128] text-3xl font-light text-white shadow-[0_0_35px_rgba(37,99,235,.45)]">
+        <div className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full border border-[#FFFFFF4D] bg-[#1447E633] text-3xl font-light text-white shadow-[0_0_35px_rgba(37,99,235,.45)]">
           {number}
         </div>
       </div>

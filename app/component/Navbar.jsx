@@ -10,6 +10,7 @@ import Image from "next/image";
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
+  const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
   const pathname = usePathname();
 
   const links = [
@@ -132,6 +133,11 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    setIsMegaMenuOpen(false);
+    setMobileMenuOpen(false);
+  }, [pathname]);
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-md transition-transform duration-300 ${
@@ -158,12 +164,17 @@ const Navbar = () => {
             <div className="hidden lg:flex items-center gap-9">
               {links.map((link) =>
                 link.megaMenu ? (
-                  <div key={link.label} className="relative group  ">
+                  <div
+                    key={link.label}
+                    className="relative"
+                    onMouseEnter={() => setIsMegaMenuOpen(true)}
+                    onMouseLeave={() => setIsMegaMenuOpen(false)}
+                  >
                     <button className="flex items-center gap-1 text-white/60 hover:text-white transition">
                       {link.label}
 
                       <svg
-                        className="w-4 h-4 transition-transform duration-300 group-hover:rotate-180"
+                        className={`w-4 h-4 transition-transform duration-300 ${isMegaMenuOpen ? "rotate-180" : ""}`}
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -179,23 +190,11 @@ const Navbar = () => {
 
                     {/* Mega Menu */}
                     <div
-                      className="
-    fixed
-    left-1/2
-    top-[90px]
-    -translate-x-1/2
-    w-[1050px]
-    invisible
-    opacity-0
-    translate-y-4
-    group-hover:visible
-    group-hover:opacity-100
-    group-hover:translate-y-0
-    transition-all
-    duration-300
-    z-50
-
-  "
+                      className={`fixed left-1/2 top-[90px] -translate-x-1/2 w-[1050px] transition-all duration-300 z-50 ${
+                        isMegaMenuOpen
+                          ? "visible opacity-100 translate-y-0"
+                          : "invisible opacity-0 translate-y-4"
+                      }`}
                     >
                       <div className="w-[1050px] rounded-sm bg-[#2b2b2b] p-8 shadow-2xl">
                         <p className="mb-6 text-blue-400 text-sm font-medium">

@@ -56,14 +56,16 @@ const Accordion = ({ data, className = "" }: AccordionProps) => {
         return (
           <div
             key={index}
-            className="group border-2 rounded-lg mt-4 p-2 border-white/10"
+            className="group border-2 rounded-lg mt-4 p-6 border-white/10"
           >
             <button
               onClick={() => toggleAccordion(index)}
               className="flex w-full items-center justify-between  text-left"
             >
               <div className="flex items-center gap-6">
-                <h3 className="text-md font-medium text-white">{item.title}</h3>
+                <h3 className="text-[16px] font-medium text-white">
+                  {item.title}
+                </h3>
               </div>
 
               <ExpandIcon isOpen={isOpen} />
