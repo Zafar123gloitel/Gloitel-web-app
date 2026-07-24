@@ -14,7 +14,7 @@ const BusinessCard = ({ icon, title, className }: BusinessCardProps) => {
         <div className="absolute left-1/2 top-0 h-[8px] w-[60%] -translate-x-1/2 rounded-full bg-gradient-to-r from-transparent via-blue-500 to-transparent blur-[2px]" />
 
         {/* Card */}
-        <div className="relative flex h-full min-h-[66px] gap-5 items-center  rounded-2xl border border-white/10 bg-[#080B18] p-6 md:p-[32px] transition-all duration-300 group-hover:border-blue-500/30 group-hover:shadow-[0_0_35px_rgba(37,99,235,.18)]">
+        <div className="relative flex h-full min-h-[66px] gap-5 items-center  rounded-2xl border border-white/10 bg-surface-card p-6 md:p-[32px] transition-all duration-300 group-hover:border-blue-500/30 group-hover:shadow-[0_0_35px_rgba(37,99,235,.18)]">
           <div
             className={[
               "relative",

@@ -29,9 +29,11 @@ const TimeLine = () => {
           items={EngagementData}
           cardHeight="h-[230px]  max-w-[230px] "
           gridClassName="gap-y-6"
+          titleClassName="text-[28px] leading-8 "
+          descriptionClassName="text-[16px] leading-6 mt-3 text-muted "
         />
       </section>
-      <GlowPanel />
+     
     </section>
   );
 };

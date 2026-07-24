@@ -11,6 +11,7 @@ const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
+  const [isMobileMegaMenuOpen, setMobileMegaMenuOpen] = useState(false);
   const pathname = usePathname();
 
   const links = [
@@ -298,18 +299,73 @@ const Navbar = () => {
 
       {/* 🔹 Mobile Menu */}
       <div
-        className={`lg:hidden transition-all duration-300 overflow-hidden bg-black/70  ${
+        className={`lg:hidden transition-all duration-300 overflow-hidden bg-black/70 ${
           isMobileMenuOpen
-            ? "max-h-[400px] opacity-100 py-4"
+            ? "max-h-[760px] opacity-100 py-4"
             : "max-h-0 opacity-0 py-0"
         }`}
       >
         <div className="flex flex-col space-y-3 px-6">
           {links.map((link) =>
             link.megaMenu ? (
-              <button key={link.label} className="text-left py-2 text-white/70">
-                {link.label}
-              </button>
+              <div
+                key={link.label}
+                className="rounded-lg border border-white/10 bg-white/5"
+              >
+                <button
+                  type="button"
+                  onClick={() => setMobileMegaMenuOpen(!isMobileMegaMenuOpen)}
+                  className="flex w-full items-center justify-between px-4 py-3 text-left text-white/80"
+                >
+                  <span>{link.label}</span>
+                  <svg
+                    className={`h-4 w-4 transition-transform duration-300 ${isMobileMegaMenuOpen ? "rotate-180" : ""}`}
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M6 9l6 6 6-6" />
+                  </svg>
+                </button>
+
+                <div
+                  className={`grid overflow-hidden transition-all duration-300 ${
+                    isMobileMegaMenuOpen
+                      ? "grid-rows-[1fr] opacity-100"
+                      : "grid-rows-[0fr] opacity-0"
+                  }`}
+                >
+                  <div className="overflow-hidden">
+                    <div className="space-y-2 border-t border-white/10 px-4 py-3">
+                      {megaMenu.map((section) => (
+                        <div key={section.title} className="pb-2">
+                          <p className="mb-2 text-sm font-semibold text-blue-400">
+                            {section.title}
+                          </p>
+                          <div className="space-y-2">
+                            {section.items.map((item, index) => (
+                              <Link
+                                key={`${section.title}-${index}`}
+                                href={item.href}
+                                className="block text-sm text-white/70 hover:text-white"
+                                onClick={() => {
+                                  setMobileMenuOpen(false);
+                                  setMobileMegaMenuOpen(false);
+                                }}
+                              >
+                                {item.label}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
             ) : (
               <Link
                 key={link.href}
@@ -324,8 +380,8 @@ const Navbar = () => {
 
           <div className="pt-3">
             <HeaderButton
-              ButtonText={"Get In Touch"}
-              Buttonlink={"/contact"}
+              ButtonText="Get In Touch"
+              Buttonlink="/contact"
               onClick={() => setMobileMenuOpen(false)}
             />
           </div>

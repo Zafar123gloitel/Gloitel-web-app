@@ -14,12 +14,12 @@ const The_Engineering = () => {
           {/* LEFT */}
           <div className="flex gap-4 flex-col">
             <span>
-              <StrategyBadge text="Everything You Need to Know" />
+              <StrategyBadge text="What AI Integration Actually Involves" />
             </span>
             <LeftSectionHeads
-              SectionHead="Frequently Asked "
-              SectionSubHead="Questions"
-              SectionDescription="Answers to common questions about the Discovery Sprint, engagement process, timelines, and expected outcomes."
+              SectionHead="The Engineering behind Production AI Systems."
+              SectionSubHead=""
+              SectionDescription="Successful AI integration requires more than connecting a model to an application. We build the infrastructure, recovery mechanisms, and monitoring layers that keep AI systems stable, observable, and production-ready."
             />
           </div>
           <div className="flex gap-4 flex-row flex-wrap justify-center lg:justify-start ">

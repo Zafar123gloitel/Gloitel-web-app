@@ -12,7 +12,7 @@ const InfoCard = ({ icon, description, className = "" }: InfoCardProps) => {
       className={[
         "group relative overflow-hidden rounded-2xl",
         "border border-blue-500/30",
-        "bg-[#080B18] p-[1px]",
+        "bg-surface-card p-[1px]",
         "w-[20rem]",
         "transition-all duration-300 ease-out",
 
@@ -34,7 +34,7 @@ const InfoCard = ({ icon, description, className = "" }: InfoCardProps) => {
         className,
       ].join(" ")}
     >
-      <div className="relative z-10  min-h-[86px] items-center gap-5 rounded-2xl bg-[#080B18] px-8 py-5">
+      <div className="relative z-10  min-h-[86px] items-center gap-5 rounded-2xl bg-surface-card px-8 py-5">
         {/* Icon */}
         <div
           className={[

@@ -25,7 +25,7 @@ const Business = ({
 }: BusinessProps) => {
   console.log(data, "0000");
   return (
-    <div className="  overflow-hidden">
+    <div className="  overflow-hidden mb-10">
       <div className="relative z-10 mx-auto flex min-h-[60vh] flex-col items-center justify-center mt-40">
         <BgSquare2 />
 

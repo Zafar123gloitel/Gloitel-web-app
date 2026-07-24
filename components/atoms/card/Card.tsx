@@ -92,30 +92,21 @@ export function CardDivider({ className = "" }) {
   );
 }
 
-export function CardTitle({ children, className = "" }) {
+export function CardTitle({
+  children,
+  className = "text-[28px] font-normal leading-8 tracking-[-0.04em] text-white text-left",
+}) {
   return (
-    <h3
-      className={[
-        "text-xl font-normal leading-[1.08] tracking-[-0.04em] text-white text-left",
-        className,
-      ]
-        .filter(Boolean)
-        .join(" ")}
-    >
-      {children}
-    </h3>
+    <h3 className={["", className].filter(Boolean).join(" ")}>{children}</h3>
   );
 }
 
-export function CardDescription({ children, className = "" }) {
+export function CardDescription({
+  children,
+  className = "text-[16px]  text-muted  leading-7 text-left",
+}) {
   return (
-    <p
-      className={["text-base leading-4.5 text-white/45 text-left", className]
-        .filter(Boolean)
-        .join(" ")}
-    >
-      {children}
-    </p>
+    <p className={["", className].filter(Boolean).join(" ")}>{children}</p>
   );
 }
 

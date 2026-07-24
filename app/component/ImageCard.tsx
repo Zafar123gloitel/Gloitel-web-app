@@ -26,7 +26,7 @@ const ImageCard = ({
           "after:pointer-events-none after:absolute after:inset-0 after:rounded-[28px]",
           "after:bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.16),transparent_32%),radial-gradient(circle_at_top_right,rgba(96,165,250,0.08),transparent_26%)]",
           "after:opacity-80",
-          "flex flex-col h-full",
+          "flex flex-col w-[394px] h-[475px]",
           className,
         ]
           .filter(Boolean)
@@ -39,10 +39,10 @@ const ImageCard = ({
             </div>
           </div>
         </div>
-        <div className={[padding, "relative z-10"].filter(Boolean).join(" ")}>
+        <div className={[padding, "relative z-10 "].filter(Boolean).join(" ")}>
           <h3
             className={[
-              "text-xl font-normal leading-[1.08] tracking-[-0.04em] text-white text-left",
+              "text-3xl font-normal leading-[1.08] tracking-[-0.04em] text-white text-left",
               className,
             ]
               .filter(Boolean)
@@ -51,21 +51,20 @@ const ImageCard = ({
             {cardtitle}
           </h3>
           <p
-            className={["text-sm py-2 leading-4.5 text-white/45 text-left"]
+            className={["text-base py-2 leading-6 text-white/45 text-left"]
               .filter(Boolean)
               .join(" ")}
           >
             {carddescription}
           </p>
-
-          <Link
-            href={buttonurl}
-            className="flex gap-2 pb-3 pt-2 text-md group-hover:text-blue-600 items-center  "
-          >
-            {buttintext}
-            <span className="rotate-90 -mb-1">{buttonicon}</span>
-          </Link>
         </div>
+        <Link
+          href={buttonurl}
+          className="flex gap-2 pb-3 pt-2 absolute bottom-1.5 left-5 text-base group-hover:text-blue-600 items-center  "
+        >
+          {buttintext}
+          <span className="rotate-90 -mb-1">{buttonicon}</span>
+        </Link>
       </article>
     </div>
   );

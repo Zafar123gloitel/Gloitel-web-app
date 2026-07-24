@@ -21,6 +21,9 @@ interface CardShowcaseProps {
   gridClassName?: string;
   cardClassName?: string;
   cardHeight?: string;
+  titleClassName?: string;
+  descriptionClassName?: string;
+  iconClassName?: string;
 }
 
 export function CardShowcase({
@@ -29,11 +32,14 @@ export function CardShowcase({
   showStepBadge = true,
   gridClassName = "",
   cardClassName = "h-full",
-  cardHeight = "max-h-[350px] max-w-[350px]",
+  cardHeight = "",
+  titleClassName = "",
+  descriptionClassName = "",
+  iconClassName = "",
 }: CardShowcaseProps) {
   return (
     <div
-      className={`flex flex-wrap my-10 items-center justify-center gap-x-6  ${gridClassName}`}
+      className={`flex flex-wrap my-10 items-center justify-center gap-x-6 gap-y-6 ${gridClassName}`}
     >
       {items.map((item, index) => (
         <div key={item.title} className={`relative ${cardHeight} `}>
@@ -45,14 +51,14 @@ export function CardShowcase({
 
           <Card className={cardClassName}>
             <div className="flex h-full flex-col">
-              <CardIcon>{item.icon}</CardIcon>
+              <CardIcon className={iconClassName}>{item.icon}</CardIcon>
 
               <div className="mt-8 flex flex-1 flex-col">
                 {showDivider && <CardDivider className="mb-8" />}
 
-                <CardTitle>{item.title}</CardTitle>
+                <CardTitle className={titleClassName}>{item.title}</CardTitle>
 
-                <CardDescription className="mt-6 text-sm flex-1 leading-0 ">
+                <CardDescription className={descriptionClassName}>
                   {item.description}
                 </CardDescription>
               </div>

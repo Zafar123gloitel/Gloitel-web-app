@@ -16,13 +16,13 @@ const PurposeCard = ({
   return (
     <div
       className={[
-        "group relative overflow-hidden rounded-[28px] border border-white/10",
-        "bg-[linear-gradient(to_left,#372AAC00_0%,#372AAC33_45%,#1C398E66_100%)]",
+        "group relative overflow-hidden rounded-[16px] border border-white/10",
+        "bg-[linear-gradient(114deg, rgba(28, 57, 142, 0.40) 0%, rgba(55, 42, 172, 0.20) 50%, rgba(55, 42, 172, 0.00) 100%)]",
         "shadow-[0_22px_40px_rgba(15,23,42,0.22)] transition-all duration-300 ease-out",
         " hover:border-blue-500/80",
         "before:pointer-events-none before:absolute before:left-1/2 before:top-0 before:h-px before:w-[60%] before:-translate-x-1/2",
         "before:bg-gradient-to-r before:from-transparent before:via-blue-500 before:to-transparent",
-        "after:pointer-events-none after:absolute after:inset-0 after:rounded-[28px]",
+        "after:pointer-events-none after:absolute after:inset-0 after:rounded-[16px]",
         "after:bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.16),transparent_32%),radial-gradient(circle_at_top_right,rgba(96,165,250,0.08),transparent_26%)]",
         "after:opacity-80",
       ]
@@ -57,9 +57,9 @@ const PurposeCard = ({
 
         {/* Content */}
         <div>
-          <h3 className="text-[30px] font-semibold text-white">{title}</h3>
+          <h3 className="text-[32px] font-semibold text-white">{title}</h3>
 
-          <p className="text-[15px] leading-6 text-gray-400">{description}</p>
+          <p className="text-[16px] leading-6 text-gray-400">{description}</p>
         </div>
       </div>
     </div>
