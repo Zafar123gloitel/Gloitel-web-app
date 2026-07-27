@@ -35,8 +35,8 @@ export const showcaseItems = [
         <path
           d="M2.56252 6.22469H4.02739M14.2815 6.22469H8.42199M15.7463 1.09766H12.8166M8.42199 1.09766H1.09766"
           stroke="white"
-          stroke-width="2.1973"
-          stroke-linecap="round"
+          strokeWidth="2.1973"
+          strokeLinecap="round"
         />
       </svg>
     ),
@@ -56,8 +56,8 @@ export const showcaseItems = [
         <path
           d="M16.1135 1.46484V23.4378M8.78918 10.254V23.4378M1.46484 14.6486V23.4378"
           stroke="white"
-          stroke-width="2.92973"
-          stroke-linecap="round"
+          strokeWidth="2.92973"
+          strokeLinecap="round"
         />
       </svg>
     ),

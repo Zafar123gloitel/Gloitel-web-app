@@ -35,7 +35,7 @@ const IconCard = ({
         "after:bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.16),transparent_32%),radial-gradient(circle_at_top_right,rgba(96,165,250,0.08),transparent_26%)]",
         "after:opacity-80",
 
-        "w-full max-w-[250px] ",
+        "w-full max-w-[250px] min-h-[220px] flex flex-col ",
       ].join(" ")}
     >
       <div className="relative z-10 flex flex-col items-center p-8">

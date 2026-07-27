@@ -66,7 +66,7 @@ const AI_Solutions = ({
         </div>
 
         {/* Cards */}
-        <div className="mt-14 hidden overflow-hidden rounded-3xl border-white/10 bg-surface-2 p-12 md:block">
+        <div className="mt-14  hidden overflow-hidden rounded-3xl border-white/10 bg-surface-2 py-12  px-auto md:block">
           <div
             className="flex transition-transform duration-1000 ease-out p-5 sm:p-0 "
             style={{ transform: `translateX(-${activeTabIndex * 100}%)` }}
@@ -87,7 +87,7 @@ const AI_Solutions = ({
             ))}
           </div>
         </div>
-
+        {/* mobile screen */}
         <div className="mt-14 rounded-3xl border-white/10 bg-surface-2 p-4 md:hidden">
           <div
             key={activeTab}

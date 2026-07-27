@@ -34,9 +34,9 @@ const Discover = ({
           <StrategyBadge text={badgeText} />
         </span>
 
-        <h2 className="mb-6 text-5xl sm:text-[56px] font-semibold">{title}</h2>
+        <h2 className="mb-6 text-5xl sm:text-[48px] font-semibold">{title}</h2>
 
-        <p className=" leading-4 sm:leading-8 text-sm sm:text-[24px] text-muted">
+        <p className=" leading-4 sm:leading-8 text-sm sm:text-[20px] text-muted">
           {description}
         </p>
 

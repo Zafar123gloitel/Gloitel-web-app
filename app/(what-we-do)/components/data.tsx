@@ -80,7 +80,7 @@ export const enableData = {
 
 export const outcomesData = [
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
 
     icon: (
       <svg
@@ -129,7 +129,7 @@ export const outcomesData = [
     title: "Clarity on where AI will create measurable business impact",
   },
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -142,21 +142,21 @@ export const outcomesData = [
         <path
           d="M7.91725 15.4003C4.75887 14.1376 3.17969 13.5063 3.17969 12.7206C3.17969 11.935 4.75887 11.3053 7.91725 10.041L12.3829 8.25503C15.5412 6.99073 17.122 6.35938 19.0829 6.35938C21.0437 6.35938 22.6245 6.99073 25.7829 8.25503L30.2485 10.041C33.4069 11.3037 34.9861 11.935 34.9861 12.7206C34.9861 13.5063 33.4069 14.136 30.2485 15.4003L25.7829 17.1879C22.6245 18.4506 21.0437 19.0819 19.0829 19.0819C17.122 19.0819 15.5412 18.4506 12.3829 17.1879L7.91725 15.4003Z"
           stroke="white"
-          stroke-width="2.38548"
+          strokeWidth="2.38548"
         />
           
         <path
           opacity="0.5"
           d="M9.16883 15.9023L7.91725 16.4033C4.75887 17.666 3.17969 18.299 3.17969 19.083C3.17969 19.867 4.75887 20.4984 7.91725 21.7627L12.3829 23.5502C15.5412 24.8129 17.122 25.4443 19.0829 25.4443C21.0437 25.4443 22.6245 24.8129 25.7829 23.5502L30.2485 21.7627C33.4069 20.5 34.9861 19.867 34.9861 19.083C34.9861 18.299 33.4069 17.6676 30.2485 16.4033L28.9969 15.9023M9.16883 22.2636L7.91725 22.7646C4.75887 24.0273 3.17969 24.6602 3.17969 25.4443C3.17969 26.2283 4.75887 26.8596 7.91725 28.1239L12.3829 29.9115C15.5412 31.1742 17.122 31.8055 19.0829 31.8055C21.0437 31.8055 22.6245 31.1742 25.7829 29.9099L30.2485 28.1239C33.4069 26.8612 34.9861 26.2299 34.9861 25.4443C34.9861 24.6602 33.4069 24.0289 30.2485 22.7646L28.9969 22.2636"
           stroke="white"
-          stroke-width="2.38548"
+          strokeWidth="2.38548"
         />
       </svg>
     ),
     title: "A prioritised use case stack ranked by value and feasibility",
   },
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -175,7 +175,7 @@ export const outcomesData = [
     title: "Defined pilot scope with expected outcomes and success metrics",
   },
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -188,38 +188,38 @@ export const outcomesData = [
         <path
           d="M29.77 17.0393C29.4615 17.3319 29.0526 17.4951 28.6274 17.4951C28.2022 17.4951 27.7932 17.3319 27.4847 17.0393C24.6778 14.3628 20.9167 11.3714 22.7503 7.02985C23.7427 4.68254 26.1218 3.17969 28.6266 3.17969C31.1313 3.17969 33.512 4.68254 34.5028 7.02826C36.3348 11.3666 32.5849 14.3708 29.77 17.0393Z"
           stroke="white"
-          stroke-width="2.38548"
+          strokeWidth="2.38548"
         />
           
         <path
           d="M28.8386 9.54211H28.6398M29.0373 9.54211C29.0373 9.64756 28.9955 9.74868 28.9209 9.82324C28.8463 9.8978 28.7452 9.93969 28.6398 9.93969C28.5343 9.93969 28.4332 9.8978 28.3586 9.82324C28.2841 9.74868 28.2422 9.64756 28.2422 9.54211C28.2422 9.43667 28.2841 9.33554 28.3586 9.26098C28.4332 9.18642 28.5343 9.14453 28.6398 9.14453C28.7452 9.14453 28.8463 9.18642 28.9209 9.26098C28.9955 9.33554 29.0373 9.43667 29.0373 9.54211Z"
           stroke="white"
-          stroke-width="2.38548"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2.38548"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
           
         <path
           d="M7.95064 34.9872C10.5856 34.9872 12.7216 32.8512 12.7216 30.2163C12.7216 27.5813 10.5856 25.4453 7.95064 25.4453C5.31572 25.4453 3.17969 27.5813 3.17969 30.2163C3.17969 32.8512 5.31572 34.9872 7.95064 34.9872Z"
           stroke="white"
-          stroke-width="2.38548"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2.38548"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
           
         <path
           d="M17.4907 11.1324H15.1052C12.0311 11.1324 9.53906 13.2682 9.53906 15.9034C9.53906 18.5385 12.0311 20.6743 15.1052 20.6743H19.8761C22.9502 20.6743 25.4422 22.8101 25.4422 25.4453C25.4422 28.0805 22.9502 30.2162 19.8761 30.2162H17.4907M28.8376 9.54211H28.6388M29.0364 9.54211C29.0364 9.64756 28.9945 9.74868 28.9199 9.82324C28.8454 9.8978 28.7442 9.93969 28.6388 9.93969C28.5333 9.93969 28.4322 9.8978 28.3577 9.82324C28.2831 9.74868 28.2412 9.64756 28.2412 9.54211C28.2412 9.43667 28.2831 9.33554 28.3577 9.26098C28.4322 9.18642 28.5333 9.14453 28.6388 9.14453C28.7442 9.14453 28.8454 9.18642 28.9199 9.26098C28.9945 9.33554 29.0364 9.43667 29.0364 9.54211Z"
           stroke="white"
-          stroke-width="2.38548"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2.38548"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </svg>
     ),
     title: "A structured roadmap aligned to business priorities",
   },
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -232,17 +232,17 @@ export const outcomesData = [
         <path
           d="M4.76953 20.6747C10.4947 7.95218 27.6701 7.95218 33.3953 20.6747"
           stroke="white"
-          stroke-width="2.38548"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2.38548"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
           
         <path
           d="M17.2577 26.6709C17.8365 26.9107 18.4569 27.0341 19.0835 27.0341C20.3488 27.0341 21.5623 26.5314 22.457 25.6367C23.3518 24.742 23.8544 23.5285 23.8544 22.2631C23.8544 20.9978 23.3518 19.7843 22.457 18.8896C21.5623 17.9948 20.3488 17.4922 19.0835 17.4922C18.4569 17.4922 17.8365 17.6156 17.2577 17.8554C16.6789 18.0951 16.1529 18.4465 15.7099 18.8896C15.2669 19.3326 14.9154 19.8585 14.6757 20.4374C14.4359 21.0162 14.3125 21.6366 14.3125 22.2631C14.3125 22.8897 14.4359 23.5101 14.6757 24.0889C14.9154 24.6677 15.2669 25.1937 15.7099 25.6367C16.1529 26.0797 16.6789 26.4312 17.2577 26.6709Z"
           stroke="white"
-          stroke-width="2.38548"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2.38548"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </svg>
     ),
@@ -252,7 +252,7 @@ export const outcomesData = [
 
 export const notIncludedData = [
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -264,15 +264,15 @@ export const notIncludedData = [
         <path
           d="M24.9027 24.9027L1.46484 1.46484M24.9027 1.46484L1.46484 24.9027"
           stroke="white"
-          stroke-width="2.92973"
-          stroke-linecap="round"
+          strokeWidth="2.92973"
+          strokeLinecap="round"
         />
       </svg>
     ),
     description: "Not a vendor-led engagement where we pre-sell a solution",
   },
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -284,15 +284,15 @@ export const notIncludedData = [
         <path
           d="M24.9027 24.9027L1.46484 1.46484M24.9027 1.46484L1.46484 24.9027"
           stroke="white"
-          stroke-width="2.92973"
-          stroke-linecap="round"
+          strokeWidth="2.92973"
+          strokeLinecap="round"
         />
       </svg>
     ),
     description: "Not a free strategy workshop with vague outputs",
   },
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -304,15 +304,15 @@ export const notIncludedData = [
         <path
           d="M24.9027 24.9027L1.46484 1.46484M24.9027 1.46484L1.46484 24.9027"
           stroke="white"
-          stroke-width="2.92973"
-          stroke-linecap="round"
+          strokeWidth="2.92973"
+          strokeLinecap="round"
         />
       </svg>
     ),
     description: "Not an open-ended consulting retainer",
   },
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -324,8 +324,8 @@ export const notIncludedData = [
         <path
           d="M24.9027 24.9027L1.46484 1.46484M24.9027 1.46484L1.46484 24.9027"
           stroke="white"
-          stroke-width="2.92973"
-          stroke-linecap="round"
+          strokeWidth="2.92973"
+          strokeLinecap="round"
         />
       </svg>
     ),
@@ -411,7 +411,7 @@ export const heroSectionDataGenerative = {
 
 export const aiServicesData = [
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -431,7 +431,7 @@ export const aiServicesData = [
       "Intelligent conversational interfaces trained on your domain knowledge. Customer support bots, internal knowledge assistants, sales copilots – built with guardrails, citation support, and fallback logic.",
   },
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -443,8 +443,8 @@ export const aiServicesData = [
         <path
           d="M6.32812 29.5316V21.094C6.32812 13.1394 6.32812 9.16109 8.80035 6.69098C11.2726 4.22086 15.2488 4.21875 23.2034 4.21875H27.4222C35.3768 4.21875 39.3551 4.21875 41.8252 6.69098C43.2048 8.06842 43.8144 9.91415 44.0823 12.6564M44.2975 21.094V29.5316C44.2975 37.4862 44.2975 41.4646 41.8252 43.9347C39.353 46.4048 35.3768 46.4069 27.4222 46.4069H23.2034C15.2488 46.4069 11.2705 46.4069 8.80035 43.9347C7.4208 42.5572 6.81118 40.7115 6.54328 37.9693M16.8752 29.5316H27.4222M16.8752 21.094H18.9846M33.7504 21.094H25.3128"
           stroke="white"
-          stroke-width="3.16411"
-          stroke-linecap="round"
+          strokeWidth="3.16411"
+          strokeLinecap="round"
         />
       </svg>
     ),
@@ -453,7 +453,7 @@ export const aiServicesData = [
       "Automate document-heavy workflows with LLMs. Contract analysis, invoice extraction, report summarization, regulatory document parsing – structured outputs from unstructured inputs.",
   },
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -465,13 +465,13 @@ export const aiServicesData = [
         <path
           d="M8.4375 37.9691V12.6562M42.188 12.6562V37.9691"
           stroke="white"
-          stroke-width="3.16411"
-          stroke-linecap="round"
+          strokeWidth="3.16411"
+          strokeLinecap="round"
         />
         <path
           d="M42.188 25.3128C42.188 29.9746 34.6321 33.7505 25.3128 33.7505C15.9934 33.7505 8.4375 29.9746 8.4375 25.3128M42.188 37.9693C42.188 42.6311 34.6321 46.4069 25.3128 46.4069C15.9934 46.4069 8.4375 42.6311 8.4375 37.9693M25.3128 21.094C34.6321 21.094 42.188 17.3182 42.188 12.6564C42.188 7.99459 34.6321 4.21875 25.3128 4.21875C15.9934 4.21875 8.4375 7.99459 8.4375 12.6564C8.4375 17.3182 15.9934 21.094 25.3128 21.094Z"
           stroke="white"
-          stroke-width="3.16411"
+          strokeWidth="3.16411"
         />
       </svg>
     ),
@@ -480,7 +480,7 @@ export const aiServicesData = [
       "Connect LLMs to your proprietary data with vector search pipelines. Accurate, source-cited responses drawn from your internal knowledge base, documentation, or enterprise data.",
   },
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -500,7 +500,7 @@ export const aiServicesData = [
       "Replace rule-based automation with AI that understands context. Intelligent triage, email drafting, content generation, and multi-step reasoning tasks embedded in your existing workflows.",
   },
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -535,7 +535,7 @@ export const aiServicesData = [
       "Custom fine-tuned models for domain-specific tasks where general-purpose LLMs underperform. Smaller, faster, cheaper – specialized for your exact use case.",
   },
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -547,9 +547,9 @@ export const aiServicesData = [
         <path
           d="M24.1884 43.9197C24.5116 44.1657 24.9066 44.2989 25.3128 44.2989C25.7189 44.2989 26.1139 44.1657 26.4371 43.9197C29.886 41.3315 40.0786 32.8791 40.0786 23.2391V12.8397C40.0808 12.5715 39.9834 12.3119 39.8054 12.1113C39.6273 11.9106 39.3812 11.7831 39.1146 11.7534C34.8909 11.3207 30.8427 9.83697 27.3399 7.43751L26.0532 6.55789C25.8353 6.40823 25.5771 6.32812 25.3128 6.32812C25.0484 6.32812 24.7903 6.40823 24.5724 6.55789L23.2856 7.43751C19.7828 9.83697 15.7347 11.3207 11.5109 11.7534C11.2443 11.7831 10.9982 11.9106 10.8201 12.1113C10.6421 12.3119 10.5447 12.5715 10.5469 12.8397V23.2391C10.5469 32.8791 20.7396 41.3315 24.1884 43.9155"
           stroke="white"
-          stroke-width="3.16411"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="3.16411"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </svg>
     ),
@@ -737,7 +737,7 @@ export const deploymentMonitoringStep = {
 
 export const Real_World = [
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -749,15 +749,15 @@ export const Real_World = [
         <path
           d="M24.9027 24.9027L1.46484 1.46484M24.9027 1.46484L1.46484 24.9027"
           stroke="white"
-          stroke-width="2.92973"
-          stroke-linecap="round"
+          strokeWidth="2.92973"
+          strokeLinecap="round"
         />
       </svg>
     ),
     description: "Reducing hallucinations in AI outputs.",
   },
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -769,15 +769,15 @@ export const Real_World = [
         <path
           d="M24.9027 24.9027L1.46484 1.46484M24.9027 1.46484L1.46484 24.9027"
           stroke="white"
-          stroke-width="2.92973"
-          stroke-linecap="round"
+          strokeWidth="2.92973"
+          strokeLinecap="round"
         />
       </svg>
     ),
     description: "Managing costs as AI systems scale.",
   },
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -789,15 +789,15 @@ export const Real_World = [
         <path
           d="M24.9027 24.9027L1.46484 1.46484M24.9027 1.46484L1.46484 24.9027"
           stroke="white"
-          stroke-width="2.92973"
-          stroke-linecap="round"
+          strokeWidth="2.92973"
+          strokeLinecap="round"
         />
       </svg>
     ),
     description: "Reducing latency across AI workflows.",
   },
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -809,15 +809,15 @@ export const Real_World = [
         <path
           d="M24.9027 24.9027L1.46484 1.46484M24.9027 1.46484L1.46484 24.9027"
           stroke="white"
-          stroke-width="2.92973"
-          stroke-linecap="round"
+          strokeWidth="2.92973"
+          strokeLinecap="round"
         />
       </svg>
     ),
     description: "Protecting sensitive data and enterprise systems.",
   },
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -829,8 +829,8 @@ export const Real_World = [
         <path
           d="M24.9027 24.9027L1.46484 1.46484M24.9027 1.46484L1.46484 24.9027"
           stroke="white"
-          stroke-width="2.92973"
-          stroke-linecap="round"
+          strokeWidth="2.92973"
+          strokeLinecap="round"
         />
       </svg>
     ),
@@ -840,7 +840,7 @@ export const Real_World = [
 
 export const Agent_Projects = [
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -852,15 +852,15 @@ export const Agent_Projects = [
         <path
           d="M24.9027 24.9027L1.46484 1.46484M24.9027 1.46484L1.46484 24.9027"
           stroke="white"
-          stroke-width="2.92973"
-          stroke-linecap="round"
+          strokeWidth="2.92973"
+          strokeLinecap="round"
         />
       </svg>
     ),
     description: "Reducing hallucinations in AI outputs.",
   },
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -872,15 +872,15 @@ export const Agent_Projects = [
         <path
           d="M24.9027 24.9027L1.46484 1.46484M24.9027 1.46484L1.46484 24.9027"
           stroke="white"
-          stroke-width="2.92973"
-          stroke-linecap="round"
+          strokeWidth="2.92973"
+          strokeLinecap="round"
         />
       </svg>
     ),
     description: "Managing costs as AI systems scale.",
   },
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -892,15 +892,15 @@ export const Agent_Projects = [
         <path
           d="M24.9027 24.9027L1.46484 1.46484M24.9027 1.46484L1.46484 24.9027"
           stroke="white"
-          stroke-width="2.92973"
-          stroke-linecap="round"
+          strokeWidth="2.92973"
+          strokeLinecap="round"
         />
       </svg>
     ),
     description: "Reducing latency across AI workflows.",
   },
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -912,15 +912,15 @@ export const Agent_Projects = [
         <path
           d="M24.9027 24.9027L1.46484 1.46484M24.9027 1.46484L1.46484 24.9027"
           stroke="white"
-          stroke-width="2.92973"
-          stroke-linecap="round"
+          strokeWidth="2.92973"
+          strokeLinecap="round"
         />
       </svg>
     ),
     description: "Protecting sensitive data and enterprise systems.",
   },
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -932,8 +932,8 @@ export const Agent_Projects = [
         <path
           d="M24.9027 24.9027L1.46484 1.46484M24.9027 1.46484L1.46484 24.9027"
           stroke="white"
-          stroke-width="2.92973"
-          stroke-linecap="round"
+          strokeWidth="2.92973"
+          strokeLinecap="round"
         />
       </svg>
     ),
@@ -943,7 +943,7 @@ export const Agent_Projects = [
 
 export const caseStudies = [
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     title: "Healthcare Client",
     slug: "healthcare-client",
     image: "/images/What-we-do/mega_manu_iamge.png",
@@ -953,7 +953,7 @@ export const caseStudies = [
     href: "/case-studies/healthcare-client",
   },
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     title: "Financial Services",
     slug: "financial-services",
     image: "/images/What-we-do/mega_manu_iamge.png",
@@ -963,7 +963,7 @@ export const caseStudies = [
     href: "/case-studies/financial-services",
   },
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     title: "E-Commerce",
     slug: "e-commerce",
     image: "/images/What-we-do/mega_manu_iamge.png",
@@ -976,35 +976,35 @@ export const caseStudies = [
 
 export const ai_agents_designed = [
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     title: "Agentic Workflow Automation",
     icon: <RefreshCcw />,
     description:
       "Replace manual multi-step processes with agents that handle them end-to-end. Lead qualification, invoice processing, content moderation, compliance checks, research aggregation — automated with full audit trails.",
   },
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     title: "Multi-Agent Systems",
     icon: <Users />,
     description:
       "Orchestrate teams of specialized agents working in parallel. One agent researches, another writes, another reviews. Each agent is optimized for a specific responsibility within the workflow. Complex tasks completed in minutes instead of hours.",
   },
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     title: "Tool-Using Agents",
     icon: <Wrench />,
     description:
       "Agents integrated with your real business tools – CRMs, ERPs, databases, Slack, email, calendars, file systems. Seamlessly connecting data, workflows, and actions across your organization. They don't just generate text; they take action inside your systems.",
   },
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     title: "Human-in-the-Loop Workflows",
     icon: <Handshake />,
     description:
       "Autonomous agents with configurable human oversight gates. The agent handles routine decisions; humans review exceptions. Designed for regulated industries and high-stakes workflows.",
   },
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     title: "AI-Powered Process Automation",
     icon: <Zap />,
     description:
@@ -1052,91 +1052,91 @@ export const aiSolutionsData = {
     "Open Source": [
       {
         name: "Meta LLaMA 3",
-        logo: "/images/what-we-do/ai_image/meta.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960576/Gloitel/icon/meta_brzl7j.png",
       },
       {
         name: "Mistral",
-        logo: "/images/what-we-do/ai_image/mistral.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960577/Gloitel/icon/mistral_bmr5b7.png",
       },
       {
         name: "Phi-3",
-        logo: "/images/what-we-do/ai_image/phi-3.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960584/Gloitel/icon/phi-3_v9nclj.png",
       },
       {
         name: "Qwen",
-        logo: "/images/what-we-do/ai_image/qwen.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960590/Gloitel/icon/qwen_oyj4re.png",
       },
     ],
     "RAG Frameworks": [
       {
         name: "LangChain",
-        logo: "/images/what-we-do/ai_image/langchain.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960570/Gloitel/icon/langChain_kugupr.png",
       },
       {
         name: "LlamaIndex",
-        logo: "/images/what-we-do/ai_image/llamaindex.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960574/Gloitel/icon/llamaindex_mgxavz.png",
       },
       {
         name: "Haystack",
-        logo: "/images/what-we-do/ai_image/haystack.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960566/Gloitel/icon/haystack_o9evlj.png",
       },
     ],
     "Vector Stores": [
       {
         name: "Pinecone",
-        logo: "/images/what-we-do/ai_image/Pinecone.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960586/Gloitel/icon/pinecone_bpg10a.png",
       },
       {
         name: "Weaviate",
-        logo: "/images/what-we-do/ai_image/weaviate.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960614/Gloitel/icon/weaviate_cc0krw.png",
       },
       {
         name: "Qdrant",
-        logo: "/images/what-we-do/ai_image/qdrant.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960590/Gloitel/icon/qdrant_kyjm65.png",
       },
       {
         name: "pgvector",
-        logo: "/images/what-we-do/ai_image/pgvector.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960583/Gloitel/icon/pgvector_ofb3i2.png",
       },
       {
         name: "Chroma",
-        logo: "/images/what-we-do/ai_image/chroma.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960637/Gloitel/icon/chroma_txebzp.png",
       },
     ],
     Orchestration: [
       {
         name: "LangGraph",
-        logo: "/images/what-we-do/ai_image/langgraph.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960571/Gloitel/icon/langgraph_hqwris.png",
       },
       {
         name: "AutoGen",
-        logo: "/images/what-we-do/ai_image/autogen.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960616/Gloitel/icon/autogen_hmeonp.png",
       },
       {
         name: "CrewAI",
-        logo: "/images/what-we-do/ai_image/crewai.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960655/Gloitel/icon/crewai_r8gkaq.png",
       },
     ],
     Deployment: [
       {
         name: "FastAPI",
-        logo: "/images/what-we-do/ai_image/fastapi.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960667/Gloitel/icon/fastApi_bwbwom.png",
       },
       {
         name: "Modal",
-        logo: "/images/what-we-do/ai_image/modal.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960579/Gloitel/icon/modal_ndijkk.png",
       },
       {
         name: "AWS Bedrock",
-        logo: "/images/what-we-do/ai_image/awsBedrock.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960617/Gloitel/icon/AWS_Bedrock_segrwb.png",
       },
       {
         name: "Azure OpenAI Service",
-        logo: "/images/what-we-do/ai_image/azure.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960628/Gloitel/icon/azure_lfqjy0.png",
       },
       {
         name: "Google Vertex AI",
-        logo: "/images/what-we-do/ai_image/vertexai.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960612/Gloitel/icon/vertexAi_axdca5.png",
       },
     ],
   },
@@ -1163,146 +1163,146 @@ export const TechnologiesData = {
     "AI APIs": [
       {
         name: "OpenAI",
-        logo: "/images/What-we-do/ai_image/openai.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960583/Gloitel/icon/openai_wwedph.png",
       },
       {
         name: "Anthropic Claude",
-        logo: "/images/what-we-do/ai_image/claude.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960642/Gloitel/icon/claude_sszoov.png",
       },
       {
         name: "Google Gemini",
-        logo: "/images/what-we-do/ai_image/gemini.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960682/Gloitel/icon/gemini_b4dcsa.png",
       },
       {
         name: "AWS Bedrock",
-        logo: "/images/what-we-do/ai_image/awsBedrock.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960626/Gloitel/icon/awsBedrock_lhcxbo.png",
       },
       {
         name: "Cohere",
-        logo: "/images/what-we-do/ai_image/cohere.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960654/Gloitel/icon/cohere_xdhzeq.png",
       },
       {
         name: "Replicate",
-        logo: "/images/what-we-do/ai_image/replicate.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960599/Gloitel/icon/Replicate_lljrha.png",
       },
     ],
 
     Serving: [
       {
         name: "FastAPI",
-        logo: "/images/what-we-do/ai_image/fastapi.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960583/Gloitel/icon/openai_wwedph.png",
       },
       {
         name: "TorchServe",
-        logo: "/images/what-we-do/ai_image/TorchServe.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960609/Gloitel/icon/TorchServe_ili0ug.png",
       },
       {
         name: "TensorFlow Serving",
-        logo: "/images/what-we-do/ai_image/TensorFlow Serving.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960606/Gloitel/icon/TensorFlow_Serving_htauuz.png",
       },
       {
         name: "BentoML",
-        logo: "/images/what-we-do/ai_image/bentoml.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960632/Gloitel/icon/BentoML_ut5xaw.png",
       },
       {
         name: "Triton",
-        logo: "/images/what-we-do/ai_image/triton.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960609/Gloitel/icon/Triton_v28arn.png",
       },
     ],
 
     Messaging: [
       {
         name: "Kafka",
-        logo: "/images/what-we-do/ai_image/Kafka.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960567/Gloitel/icon/Kafka_wmgb4v.png",
       },
       {
         name: "RabbitMQ",
-        logo: "/images/what-we-do/ai_image/RabbitMQ.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960592/Gloitel/icon/RabbitMQ_om1s1r.png",
       },
       {
         name: "AWS SQS",
-        logo: "/images/what-we-do/ai_image/AWS SQS.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960621/Gloitel/icon/AWS_SQS_ylmsp7.png",
       },
       {
         name: "Google Pub/Sub",
-        logo: "/images/what-we-do/ai_image/Google pubsub.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960685/Gloitel/icon/Google_PubSub_j2vhtu.png",
       },
     ],
 
     Monitoring: [
       {
         name: "LangSmith",
-        logo: "/images/what-we-do/ai_image/langsmith.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960572/Gloitel/icon/LangSmith_hhcbvt.png",
       },
       {
         name: "Helicone",
-        logo: "/images/what-we-do/ai_image/helicone.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960567/Gloitel/icon/Helicone_nqk9cv.png",
       },
       {
         name: "Arize",
-        logo: "/images/what-we-do/ai_image/Arize AI.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960615/Gloitel/icon/Arize_AI_n3ha33.png",
       },
       {
         name: "Datadog",
-        logo: "/images/what-we-do/ai_image/datadog.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960660/Gloitel/icon/Datadog_apthol.png",
       },
       {
         name: "Grafana",
-        logo: "/images/what-we-do/ai_image/grafana.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960688/Gloitel/icon/Grafana_gti3tp.png",
       },
     ],
 
     Infrastructure: [
       {
         name: "Docker",
-        logo: "/images/what-we-do/ai_image/docker.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960661/Gloitel/icon/Docker_aliwyn.png",
       },
       {
         name: "Kubernetes",
-        logo: "/images/what-we-do/ai_image/kubernetes.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960569/Gloitel/icon/Kubernetes_fuqbbd.png",
       },
       {
         name: "Terraform",
-        logo: "/images/what-we-do/ai_image/terraform.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960607/Gloitel/icon/Terraform_aiqade.png",
       },
       {
         name: "AWS",
-        logo: "/images/what-we-do/ai_image/aws.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960607/Gloitel/icon/Terraform_aiqade.png",
       },
       {
         name: "GCP",
-        logo: "/images/what-we-do/ai_image/gcp.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960680/Gloitel/icon/GCP_knskhn.png",
       },
       {
         name: "Azure",
-        logo: "/images/what-we-do/ai_image/azure.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960628/Gloitel/icon/azure_lfqjy0.png",
       },
     ],
 
     Data: [
       {
         name: "PostgreSQL",
-        logo: "/images/what-we-do/ai_image/postgresql.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960587/Gloitel/icon/PostgreSQL_fmo3yl.png",
       },
       {
         name: "Redis",
-        logo: "/images/what-we-do/ai_image/redis.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960597/Gloitel/icon/Redis_ppexpj.png",
       },
       {
         name: "Pinecone",
-        logo: "/images/what-we-do/ai_image/pinecone.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960586/Gloitel/icon/pinecone_bpg10a.png",
       },
       {
         name: "Weaviate",
-        logo: "/images/what-we-do/ai_image/weaviate.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960614/Gloitel/icon/weaviate_cc0krw.png",
       },
       {
         name: "S3",
-        logo: "/images/what-we-do/ai_image/s3.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960601/Gloitel/icon/S3_n3dent.png",
       },
       {
         name: "BigQuery",
-        logo: "/images/what-we-do/ai_image/BigQuery.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960635/Gloitel/icon/BigQuery_dgjvnk.png",
       },
     ],
   },
@@ -1328,99 +1328,99 @@ export const aiAgentTechnologyData = {
     Frameworks: [
       {
         name: "LangGraph",
-        logo: "/images/What-we-do/ai_image/langgraph.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960571/Gloitel/icon/langgraph_hqwris.png",
       },
       {
         name: "CrewAI",
-        logo: "/images/What-we-do/ai_image/crewai.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960655/Gloitel/icon/crewai_r8gkaq.png",
       },
       {
         name: "AutoGen",
-        logo: "/images/What-we-do/ai_image/autogen.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960616/Gloitel/icon/autogen_hmeonp.png",
       },
       {
         name: "Semantic Kernel",
-        logo: "/images/What-we-do/ai_image/semanticKernel.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960602/Gloitel/icon/semanticKernel_ypmoe4.png",
       },
       {
         name: "LlamaIndex Workflows",
-        logo: "/images/What-we-do/ai_image/llamaindex.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960574/Gloitel/icon/llamaindex_mgxavz.png",
       },
     ],
 
     "Tool Integration": [
       {
         name: "REST APIs",
-        logo: "/images/What-we-do/ai_image/RESTAPIs.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960600/Gloitel/icon/RESTAPIs_aldign.png",
       },
       {
         name: "MCP",
-        logo: "/images/What-we-do/ai_image/MCP.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960575/Gloitel/icon/MCP_q296fc.png",
       },
       {
         name: "Function Calling",
-        logo: "/images/What-we-do/ai_image/FunctionCalling.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960677/Gloitel/icon/FunctionCalling_ybe6uu.png",
       },
     ],
 
     Memory: [
       {
         name: "Redis",
-        logo: "/images/What-we-do/ai_image/Redis.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960597/Gloitel/icon/Redis_ppexpj.png",
       },
       {
         name: "PostgreSQL",
-        logo: "/images/What-we-do/ai_image/PostgreSQL.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960587/Gloitel/icon/PostgreSQL_fmo3yl.png",
       },
       {
         name: "Pinecone",
-        logo: "/images/What-we-do/ai_image/pinecone.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960586/Gloitel/icon/pinecone_bpg10a.png",
       },
       {
         name: "In-context Memory Management",
-        logo: "/images/What-we-do/ai_image/chroma.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960637/Gloitel/icon/chroma_txebzp.png",
       },
     ],
 
     Observability: [
       {
         name: "LangSmith",
-        logo: "/images/What-we-do/ai_image/langSmith.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960572/Gloitel/icon/LangSmith_hhcbvt.png",
       },
       {
         name: "Arize AI",
-        logo: "/images/What-we-do/ai_image/Arize AI.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960615/Gloitel/icon/Arize_AI_n3ha33.png",
       },
       {
         name: "Helicone",
-        logo: "/images/What-we-do/ai_image/Helicone.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960567/Gloitel/icon/Helicone_nqk9cv.png",
       },
       {
         name: "Custom Logging Pipelines",
-        logo: "/images/What-we-do/ai_image/Custom Logging Pipelines.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960666/Gloitel/icon/Custom_logging_pipelines_p1gbgn.png",
       },
     ],
 
     Deployment: [
       {
         name: "Docker",
-        logo: "/images/What-we-do/ai_image/Docker.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960661/Gloitel/icon/Docker_aliwyn.png",
       },
       {
         name: "Kubernetes",
-        logo: "/images/What-we-do/ai_image/Kubernetes.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960569/Gloitel/icon/Kubernetes_fuqbbd.png",
       },
       {
         name: "Modal",
-        logo: "/images/What-we-do/ai_image/Modal.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960579/Gloitel/icon/modal_ndijkk.png",
       },
       {
         name: "AWS Lambda",
-        logo: "/images/What-we-do/ai_image/AWS Lambda.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960619/Gloitel/icon/AWS_Lambda_cmuj6h.png",
       },
       {
         name: "Cloud Run",
-        logo: "/images/What-we-do/ai_image/Cloud Run.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960648/Gloitel/icon/Cloud_Run_ada7sy.png",
       },
     ],
   },
@@ -1442,134 +1442,134 @@ export const aiSolutionsDataJson = {
   technologies: {
     "LLM APIs": [
       {
-        id: crypto.randomUUID(),
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
         name: "OpenAI",
-        logo: "/images/What-we-do/ai_image/openai.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960583/Gloitel/icon/openai_wwedph.png",
       },
       {
-        id: crypto.randomUUID(),
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
         name: "Anthropic Claude",
-        logo: "/images/What-we-do/ai_image/claude.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960642/Gloitel/icon/claude_sszoov.png",
       },
       {
-        id: crypto.randomUUID(),
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
         name: "Google Gemini",
-        logo: "/images/what-we-do/ai_image/gemini.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960682/Gloitel/icon/gemini_b4dcsa.png",
       },
       {
-        id: crypto.randomUUID(),
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
         name: "Cohere",
-        logo: "/images/what-we-do/ai_image/cohere.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960654/Gloitel/icon/cohere_xdhzeq.png",
       },
     ],
     "Open Source": [
       {
-        id: crypto.randomUUID(),
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
         name: "Meta LLaMA 3",
-        logo: "/images/what-we-do/ai_image/meta.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960576/Gloitel/icon/meta_brzl7j.png",
       },
       {
-        id: crypto.randomUUID(),
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
         name: "Mistral",
-        logo: "/images/what-we-do/ai_image/mistral.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960577/Gloitel/icon/mistral_bmr5b7.png",
       },
       {
-        id: crypto.randomUUID(),
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
         name: "Phi-3",
-        logo: "/images/what-we-do/ai_image/phi-3.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960584/Gloitel/icon/phi-3_v9nclj.png",
       },
       {
-        id: crypto.randomUUID(),
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
         name: "Qwen",
-        logo: "/images/what-we-do/ai_image/qwen.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960590/Gloitel/icon/qwen_oyj4re.png",
       },
     ],
     "RAG Frameworks": [
       {
-        id: crypto.randomUUID(),
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
         name: "LangChain",
-        logo: "/images/what-we-do/ai_image/langchain.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960570/Gloitel/icon/langChain_kugupr.png",
       },
       {
-        id: crypto.randomUUID(),
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
         name: "LlamaIndex",
-        logo: "/images/what-we-do/ai_image/llamaindex.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960574/Gloitel/icon/llamaindex_mgxavz.png",
       },
       {
-        id: crypto.randomUUID(),
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
         name: "Haystack",
-        logo: "/images/what-we-do/ai_image/haystack.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960566/Gloitel/icon/haystack_o9evlj.png",
       },
     ],
     "Vector Stores": [
       {
-        id: crypto.randomUUID(),
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
         name: "Pinecone",
-        logo: "/images/what-we-do/ai_image/Pinecone.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960586/Gloitel/icon/pinecone_bpg10a.png",
       },
       {
-        id: crypto.randomUUID(),
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
         name: "Weaviate",
-        logo: "/images/what-we-do/ai_image/weaviate.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960614/Gloitel/icon/weaviate_cc0krw.png",
       },
       {
-        id: crypto.randomUUID(),
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
         name: "Qdrant",
-        logo: "/images/what-we-do/ai_image/qdrant.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960590/Gloitel/icon/qdrant_kyjm65.png",
       },
       {
-        id: crypto.randomUUID(),
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
         name: "pgvector",
-        logo: "/images/what-we-do/ai_image/pgvector.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960583/Gloitel/icon/pgvector_ofb3i2.png",
       },
       {
-        id: crypto.randomUUID(),
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
         name: "Chroma",
-        logo: "/images/what-we-do/ai_image/chroma.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960637/Gloitel/icon/chroma_txebzp.png",
       },
     ],
     Orchestration: [
       {
-        id: crypto.randomUUID(),
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
         name: "LangGraph",
-        logo: "/images/what-we-do/ai_image/langgraph.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960571/Gloitel/icon/langgraph_hqwris.png",
       },
       {
-        id: crypto.randomUUID(),
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
         name: "AutoGen",
-        logo: "/images/what-we-do/ai_image/autogen.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960616/Gloitel/icon/autogen_hmeonp.png",
       },
       {
-        id: crypto.randomUUID(),
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
         name: "CrewAI",
-        logo: "/images/what-we-do/ai_image/crewai.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960655/Gloitel/icon/crewai_r8gkaq.png",
       },
     ],
     Deployment: [
       {
-        id: crypto.randomUUID(),
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
         name: "FastAPI",
-        logo: "/images/what-we-do/ai_image/fastapi.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960667/Gloitel/icon/fastApi_bwbwom.png",
       },
       {
-        id: crypto.randomUUID(),
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
         name: "Modal",
-        logo: "/images/what-we-do/ai_image/modal.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960579/Gloitel/icon/modal_ndijkk.png",
       },
       {
-        id: crypto.randomUUID(),
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
         name: "AWS Bedrock",
-        logo: "/images/what-we-do/ai_image/awsBedrock.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960617/Gloitel/icon/AWS_Bedrock_segrwb.png",
       },
       {
-        id: crypto.randomUUID(),
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
         name: "Azure OpenAI Service",
-        logo: "/images/what-we-do/ai_image/azure.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960628/Gloitel/icon/azure_lfqjy0.png",
       },
       {
-        id: crypto.randomUUID(),
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
         name: "Google Vertex AI",
-        logo: "/images/what-we-do/ai_image/vertexai.png",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960612/Gloitel/icon/vertexAi_axdca5.png",
       },
     ],
   },
@@ -1577,7 +1577,7 @@ export const aiSolutionsDataJson = {
 
 export const outcomesData2 = [
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -1589,16 +1589,16 @@ export const outcomesData2 = [
         <path
           d="M6.64453 7.59375V33.2231C6.64453 34.7336 7.24458 36.1822 8.31268 37.2503C9.38077 38.3184 10.8294 38.9185 12.3399 38.9185H37.9692"
           stroke="white"
-          stroke-width="2.8477"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2.8477"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           d="M12.3398 28.4768L20.8829 19.9337L27.5276 26.5783L37.9691 16.1367"
           stroke="white"
-          stroke-width="2.8477"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2.8477"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </svg>
     ),
@@ -1607,7 +1607,7 @@ export const outcomesData2 = [
       "Forecast demand, revenue, inventory, and resource utilization with models that support smarter planning decisions. Built for sales forecasting, capacity planning, energy demand prediction, and financial projections.",
   },
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -1639,7 +1639,7 @@ export const outcomesData2 = [
       "Detect fraud, defects, equipment failures, and unusual system behavior before they cause business impact. Real-time monitoring helps identify risks early and improve operational reliability.",
   },
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -1671,7 +1671,7 @@ export const outcomesData2 = [
       "Deliver personalized recommendations that increase engagement, conversion, and retention. Ideal for product suggestions, content personalization, search ranking, and next-best-action experiences.",
   },
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -1691,7 +1691,7 @@ export const outcomesData2 = [
       "Assign categories, risk scores, and priority rankings using explainable machine learning models. Commonly used for lead scoring, churn prediction, customer segmentation, and credit risk assessment.",
   },
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -1711,7 +1711,7 @@ export const outcomesData2 = [
       "Extract meaningful insights from unstructured text through sentiment analysis, entity extraction, and intent classification. Applied to customer feedback, support tickets, reviews, and compliance documents.",
   },
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -1723,16 +1723,16 @@ export const outcomesData2 = [
         <path
           d="M5.69531 24.6799C12.5298 9.49213 33.0332 9.49213 39.8677 24.6799"
           stroke="white"
-          stroke-width="2.8477"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2.8477"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           d="M20.6018 31.8401C21.2928 32.1263 22.0334 32.2736 22.7813 32.2736C24.2919 32.2736 25.7405 31.6736 26.8086 30.6055C27.8767 29.5374 28.4767 28.0887 28.4767 26.5782C28.4767 25.0677 27.8767 23.6191 26.8086 22.551C25.7405 21.4829 24.2919 20.8828 22.7813 20.8828C22.0334 20.8828 21.2928 21.0301 20.6018 21.3163C19.9108 21.6026 19.2829 22.0221 18.7541 22.551C18.2252 23.0798 17.8057 23.7077 17.5195 24.3987C17.2333 25.0897 17.0859 25.8303 17.0859 26.5782C17.0859 27.3261 17.2333 28.0668 17.5195 28.7577C17.8057 29.4487 18.2252 30.0766 18.7541 30.6055C19.2829 31.1343 19.9108 31.5539 20.6018 31.8401Z"
           stroke="white"
-          stroke-width="2.8477"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2.8477"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </svg>
     ),
@@ -1744,7 +1744,7 @@ export const outcomesData2 = [
 
 export const engineeringData = [
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -1767,7 +1767,7 @@ export const engineeringData = [
   },
 
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -1792,7 +1792,7 @@ export const engineeringData = [
   },
 
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -1817,7 +1817,7 @@ export const engineeringData = [
 
 export const engineeringServicesData = [
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -1840,7 +1840,7 @@ export const engineeringServicesData = [
   },
 
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -1865,7 +1865,7 @@ export const engineeringServicesData = [
   },
 
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -1893,7 +1893,7 @@ export const engineeringServicesData = [
   },
 
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -1916,7 +1916,7 @@ export const engineeringServicesData = [
   },
 
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -1938,7 +1938,7 @@ export const engineeringServicesData = [
   },
 
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -1971,28 +1971,28 @@ export const engineeringServicesData = [
 
 export const architecturePatternsData = [
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     icon: <Timer className="h-7 w-7" />,
     title: "Synchronous API Pattern",
     description:
       "User-facing features where AI generates a response in real time. Optimized for latency with streaming support and graceful fallback.",
   },
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     icon: <Network className="h-7 w-7" />,
     title: "Async Pipeline Pattern",
     description:
       "Background AI processing—document ingestion, batch enrichment, async summarization. Queue-based with retry logic and dead letter handling.",
   },
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     icon: <SearchCode className="h-7 w-7" />,
     title: "Retrieval-Augmented Pattern",
     description:
       "RAG systems where AI responses are grounded in retrieved documents. Vector search + LLM inference + citation extraction, built as a unified service.",
   },
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     icon: <GitBranch className="h-7 w-7" />,
     title: "Event-Driven Pattern",
     description:
@@ -2002,7 +2002,7 @@ export const architecturePatternsData = [
 
 export const deliverablesData = [
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -2025,7 +2025,7 @@ export const deliverablesData = [
   },
 
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -2046,7 +2046,7 @@ export const deliverablesData = [
   },
 
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -2071,7 +2071,7 @@ export const deliverablesData = [
   },
 
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -2093,7 +2093,7 @@ export const deliverablesData = [
   },
 
   {
-    id: crypto.randomUUID(),
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"

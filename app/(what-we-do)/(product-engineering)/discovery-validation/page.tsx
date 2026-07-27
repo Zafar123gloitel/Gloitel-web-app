@@ -110,8 +110,9 @@ const page = () => {
 
       <Business
         badgeText="Deliverables The Outputs That Guide"
-        sectionHead=""
-        sectionSubHead="Product Decisions"
+        sectionHead="The Outputs That Guide 
+Product Decisions"
+        sectionSubHead=""
         sectionDescription="A practical set of research, strategy, and planning deliverables that help align stakeholders, define priorities, and guide the product build with clarity."
         data={outcomesData}
       />

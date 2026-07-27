@@ -100,9 +100,8 @@ complex datasets."
             ))}
           </div>
         </div>
-        <GlowPanel />
       </section>
-      <section className="flex flex-col mt-20 items-center justify-center mx-auto min-h-[60vh] relative z-10">
+      <section className="flex flex-col mt-30 items-center justify-center mx-auto min-h-[60vh] relative z-10">
         <BgSquare2 />
         <div className="flex flex-col gap-6.5 -mt-10 w-full sm:w-1/2 lg:w-1/2 text-center">
           {/* Badge */}

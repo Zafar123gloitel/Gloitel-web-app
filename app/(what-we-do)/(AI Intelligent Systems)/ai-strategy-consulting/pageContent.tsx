@@ -6,6 +6,7 @@ import { Download, ArrowRight } from "lucide-react";
 import StrategyBadge from "../../../../components/StrategyBadge";
 import ProblemCard from "../../../../components/ProblemCard";
 import {
+  accordionData,
   enableData,
   heroSectionData,
   outcomesData,
@@ -135,7 +136,15 @@ export default function WhatWeDoPage() {
         StrategyBadgeText={"What This Is Not"}
       />
       <TimeLine />
-      <Asked_Q />
+      <Asked_Q
+        accordionData={accordionData}
+        badgeText={"Everything You Need to Know"}
+        sectionHead={"Frequently Asked Questions"}
+        sectionSubHead=""
+        sectionDescription={
+          "Answers to common questions about the Discovery Sprint, engagement process, timelines, and expected outcomes."
+        }
+      />
       <Execution_Plan
         badgeText="Start with Strategy, Not Assumptions"
         title="Turn AI Ambition into an Execution Plan"

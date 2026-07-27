@@ -177,7 +177,7 @@ export default function ArchitectureCircle() {
           {[...Array(6)].map((_, i) => (
             <span
               key={i}
-              className="absolute w-6 h-6 rounded-full bg-blue-900 border border-blue-500"
+              className="absolute w-6 h-6 rounded-full  bg-blue-700/20 border border-blue-500"
               style={{
                 left: `${50 + 51 * Math.cos(((i * 60 - 90) * Math.PI) / 180)}%`,
                 top: `${50 + 50 * Math.sin(((i * 60 - 90) * Math.PI) / 180)}%`,
