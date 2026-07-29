@@ -85,13 +85,13 @@ export const outcomesData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="39"
-        height="39"
+        width="25"
+        height="25"
         viewBox="0 0 39 39"
         fill="none"
       >
           
-        <g clip-path="url(#clip0_1347_31006)">
+        <g clipPath="url(#clip0_1347_31006)">
               
           <path
             d="M19.0841 2.12123C17.5609 2.12648 16.0453 2.33688 14.5782 2.74675L15.3946 4.71874C18.5653 3.87921 21.9244 4.10812 24.9519 5.37005C27.9794 6.63198 30.5066 8.85658 32.1424 11.6996C33.7782 14.5426 34.4314 17.8454 34.0008 21.0971C33.5703 24.3487 32.0801 27.3677 29.7608 29.6871C27.4415 32.0064 24.4224 33.4966 21.1708 33.9271C17.9191 34.3577 14.6163 33.7045 11.7733 32.0687C8.93028 30.4329 6.70569 27.9057 5.44376 24.8782C4.18182 21.8507 3.95291 18.4916 4.79245 15.3209L2.82046 14.4939C1.85811 17.9173 1.99598 21.5566 3.21456 24.8974C4.43314 28.2382 6.67081 31.1115 9.61132 33.1114C12.5518 35.1112 16.0465 36.1363 19.6013 36.0419C23.1561 35.9475 26.5914 34.7383 29.4216 32.5852C32.2518 30.4321 34.3338 27.444 35.3733 24.0432C36.4129 20.6424 36.3573 17.001 35.2146 13.6335C34.0719 10.266 31.8998 7.34276 29.0053 5.27695C26.1107 3.21114 22.6402 2.10722 19.0841 2.12123Z"
@@ -133,8 +133,8 @@ export const outcomesData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="39"
-        height="39"
+        width="25"
+        height="25"
         viewBox="0 0 39 39"
         fill="none"
       >
@@ -160,8 +160,8 @@ export const outcomesData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="39"
-        height="39"
+        width="25"
+        height="25"
         viewBox="0 0 39 39"
         fill="none"
       >
@@ -179,8 +179,8 @@ export const outcomesData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="39"
-        height="39"
+        width="25"
+        height="25"
         viewBox="0 0 39 39"
         fill="none"
       >
@@ -223,8 +223,8 @@ export const outcomesData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="39"
-        height="39"
+        width="25"
+        height="25"
         viewBox="0 0 39 39"
         fill="none"
       >
@@ -256,8 +256,8 @@ export const notIncludedData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="27"
-        height="27"
+        width="25"
+        height="25"
         viewBox="0 0 27 27"
         fill="none"
       >
@@ -276,8 +276,8 @@ export const notIncludedData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="27"
-        height="27"
+        width="25"
+        height="25"
         viewBox="0 0 27 27"
         fill="none"
       >
@@ -296,8 +296,8 @@ export const notIncludedData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="27"
-        height="27"
+        width="25"
+        height="25"
         viewBox="0 0 27 27"
         fill="none"
       >
@@ -316,8 +316,8 @@ export const notIncludedData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="27"
-        height="27"
+        width="25"
+        height="25"
         viewBox="0 0 27 27"
         fill="none"
       >
@@ -415,8 +415,8 @@ export const aiServicesData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="30"
-        height="30"
+        width="25"
+        height="25"
         viewBox="0 0 45 45"
         fill="none"
       >
@@ -435,8 +435,8 @@ export const aiServicesData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="30"
-        height="30"
+        width="25"
+        height="25"
         viewBox="0 0 51 51"
         fill="none"
       >
@@ -457,8 +457,8 @@ export const aiServicesData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="30"
-        height="30"
+        width="25"
+        height="25"
         viewBox="0 0 51 51"
         fill="none"
       >
@@ -484,8 +484,8 @@ export const aiServicesData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="30"
-        height="30"
+        width="25"
+        height="25"
         viewBox="0 0 51 51"
         fill="none"
       >
@@ -504,12 +504,12 @@ export const aiServicesData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="30"
-        height="30"
+        width="25"
+        height="25"
         viewBox="0 0 51 51"
         fill="none"
       >
-        <g clip-path="url(#clip0_1565_889)">
+        <g clipPath="url(#clip0_1565_889)">
           <path
             d="M16.8737 17.3955C16.879 16.1443 16.467 14.9271 15.703 13.9364C14.9389 12.9456 13.8663 12.2379 12.6549 11.9251V7.03127C12.6549 6.65831 12.5067 6.30061 12.243 6.03689C11.9793 5.77316 11.6216 5.625 11.2486 5.625C10.8756 5.625 10.5179 5.77316 10.2542 6.03689C9.99049 6.30061 9.84233 6.65831 9.84233 7.03127V11.9251C8.61305 12.2195 7.51876 12.9194 6.73593 13.9118C5.95309 14.9043 5.52734 16.1315 5.52734 17.3955C5.52734 18.6595 5.95309 19.8867 6.73593 20.8792C7.51876 21.8716 8.61305 22.5715 9.84233 22.8659V43.5943C9.84233 43.9673 9.99049 44.325 10.2542 44.5887C10.5179 44.8524 10.8756 45.0006 11.2486 45.0006C11.6216 45.0006 11.9793 44.8524 12.243 44.5887C12.5067 44.325 12.6549 43.9673 12.6549 43.5943V22.8659C13.8663 22.5531 14.9389 21.8454 15.703 20.8546C16.467 19.8639 16.879 18.6466 16.8737 17.3955ZM11.2486 20.208C10.6923 20.208 10.1486 20.0431 9.68604 19.734C9.22352 19.425 8.86303 18.9857 8.65015 18.4718C8.43728 17.9579 8.38158 17.3924 8.4901 16.8468C8.59862 16.3012 8.86649 15.8001 9.25983 15.4067C9.65318 15.0134 10.1543 14.7455 10.6999 14.637C11.2455 14.5285 11.811 14.5842 12.3249 14.797C12.8388 15.0099 13.2781 15.3704 13.5871 15.8329C13.8962 16.2954 14.0611 16.8392 14.0611 17.3955C14.0667 17.7684 13.9981 18.1386 13.8593 18.4848C13.7204 18.8309 13.5142 19.1459 13.2524 19.4116C12.9907 19.6772 12.6788 19.8882 12.3348 20.0322C11.9907 20.1761 11.6215 20.2503 11.2486 20.2502V20.208Z"
             fill="white"
@@ -539,8 +539,8 @@ export const aiServicesData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="30"
-        height="30"
+        width="25"
+        height="25"
         viewBox="0 0 51 51"
         fill="none"
       >
@@ -741,8 +741,8 @@ export const Real_World = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="27"
-        height="27"
+        width="25"
+        height="25"
         viewBox="0 0 27 27"
         fill="none"
       >
@@ -761,8 +761,8 @@ export const Real_World = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="27"
-        height="27"
+        width="25"
+        height="25"
         viewBox="0 0 27 27"
         fill="none"
       >
@@ -781,8 +781,8 @@ export const Real_World = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="27"
-        height="27"
+        width="25"
+        height="25"
         viewBox="0 0 27 27"
         fill="none"
       >
@@ -801,8 +801,8 @@ export const Real_World = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="27"
-        height="27"
+        width="25"
+        height="25"
         viewBox="0 0 27 27"
         fill="none"
       >
@@ -821,8 +821,8 @@ export const Real_World = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="27"
-        height="27"
+        width="25"
+        height="25"
         viewBox="0 0 27 27"
         fill="none"
       >
@@ -844,8 +844,8 @@ export const Agent_Projects = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="27"
-        height="27"
+        width="25"
+        height="25"
         viewBox="0 0 27 27"
         fill="none"
       >
@@ -864,8 +864,8 @@ export const Agent_Projects = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="27"
-        height="27"
+        width="25"
+        height="25"
         viewBox="0 0 27 27"
         fill="none"
       >
@@ -884,8 +884,8 @@ export const Agent_Projects = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="27"
-        height="27"
+        width="25"
+        height="25"
         viewBox="0 0 27 27"
         fill="none"
       >
@@ -904,8 +904,8 @@ export const Agent_Projects = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="27"
-        height="27"
+        width="25"
+        height="25"
         viewBox="0 0 27 27"
         fill="none"
       >
@@ -924,8 +924,8 @@ export const Agent_Projects = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="27"
-        height="27"
+        width="25"
+        height="25"
         viewBox="0 0 27 27"
         fill="none"
       >
@@ -1581,8 +1581,8 @@ export const outcomesData2 = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="46"
-        height="46"
+        width="25"
+        height="25"
         viewBox="0 0 46 46"
         fill="none"
       >
@@ -1611,20 +1611,20 @@ export const outcomesData2 = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="46"
-        height="46"
+        width="25"
+        height="25"
         viewBox="0 0 46 46"
         fill="none"
       >
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M41.7662 22.7815C41.7662 33.2668 33.2668 41.7662 22.7815 41.7662C12.2963 41.7662 3.79688 33.2668 3.79688 22.7815C3.79688 12.2963 12.2963 3.79688 22.7815 3.79688C33.2668 3.79688 41.7662 12.2963 41.7662 22.7815ZM22.7815 37.9693C26.8096 37.9693 30.6726 36.3691 33.5209 33.5209C36.3691 30.6726 37.9693 26.8096 37.9693 22.7815C37.9693 18.7535 36.3691 14.8904 33.5209 12.0422C30.6726 9.19394 26.8096 7.59381 22.7815 7.59381C18.7535 7.59381 14.8904 9.19394 12.0422 12.0422C9.19394 14.8904 7.59381 18.7535 7.59381 22.7815C7.59381 26.8096 9.19394 30.6726 12.0422 33.5209C14.8904 36.3691 18.7535 37.9693 22.7815 37.9693Z"
           fill="white"
         />
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M22.7813 26.5783C22.2778 26.5783 21.7949 26.3783 21.4389 26.0223C21.0828 25.6663 20.8828 25.1834 20.8828 24.6799V15.1875C20.8828 14.684 21.0828 14.2011 21.4389 13.8451C21.7949 13.4891 22.2778 13.2891 22.7813 13.2891C23.2848 13.2891 23.7677 13.4891 24.1237 13.8451C24.4797 14.2011 24.6797 14.684 24.6797 15.1875V24.6799C24.6797 25.1834 24.4797 25.6663 24.1237 26.0223C23.7677 26.3783 23.2848 26.5783 22.7813 26.5783Z"
           fill="white"
         />
@@ -1643,8 +1643,8 @@ export const outcomesData2 = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="46"
-        height="46"
+        width="25"
+        height="25"
         viewBox="0 0 46 46"
         fill="none"
       >
@@ -1675,8 +1675,8 @@ export const outcomesData2 = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="46"
-        height="46"
+        width="25"
+        height="25"
         viewBox="0 0 46 46"
         fill="none"
       >
@@ -1695,8 +1695,8 @@ export const outcomesData2 = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="46"
-        height="46"
+        width="25"
+        height="25"
         viewBox="0 0 46 46"
         fill="none"
       >
@@ -1715,8 +1715,8 @@ export const outcomesData2 = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="46"
-        height="46"
+        width="25"
+        height="25"
         viewBox="0 0 46 46"
         fill="none"
       >
@@ -1748,8 +1748,8 @@ export const engineeringData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="28"
-        height="28"
+        width="25"
+        height="25"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -1771,8 +1771,8 @@ export const engineeringData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="28"
-        height="28"
+        width="25"
+        height="25"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -1796,8 +1796,8 @@ export const engineeringData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="28"
-        height="28"
+        width="25"
+        height="25"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -1821,8 +1821,8 @@ export const engineeringServicesData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="28"
-        height="28"
+        width="25"
+        height="25"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -1844,8 +1844,8 @@ export const engineeringServicesData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="28"
-        height="28"
+        width="25"
+        height="25"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -1869,8 +1869,8 @@ export const engineeringServicesData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="28"
-        height="28"
+        width="25"
+        height="25"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -1897,8 +1897,8 @@ export const engineeringServicesData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="28"
-        height="28"
+        width="25"
+        height="25"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -1920,8 +1920,8 @@ export const engineeringServicesData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="28"
-        height="28"
+        width="25"
+        height="25"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -1942,8 +1942,8 @@ export const engineeringServicesData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="28"
-        height="28"
+        width="25"
+        height="25"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -2006,8 +2006,8 @@ export const deliverablesData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="28"
-        height="28"
+        width="25"
+        height="25"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -2029,8 +2029,8 @@ export const deliverablesData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="28"
-        height="28"
+        width="25"
+        height="25"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -2050,8 +2050,8 @@ export const deliverablesData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="28"
-        height="28"
+        width="25"
+        height="25"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -2075,8 +2075,8 @@ export const deliverablesData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="28"
-        height="28"
+        width="25"
+        height="25"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -2097,8 +2097,8 @@ export const deliverablesData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="28"
-        height="28"
+        width="25"
+        height="25"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -2113,3 +2113,57 @@ export const deliverablesData = [
     title: "Monitoring alerts configured and tested before handoff",
   },
 ];
+
+export const notEveryProblemData = {
+  badgeText: "When ML Isn't the Right Answer",
+  heading: "Not Every Problem Needs AI",
+  description:
+    "Business rules, statistical models, and workflow automation can often deliver better outcomes with less complexity than machine learning.",
+  cards: [
+    {
+      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="25"
+          height="25"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="white"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M19.439 7.85c-.049.322.059.648.289.878l1.568 1.568c.47.47.706 1.087.706 1.704s-.235 1.233-.706 1.704l-1.611 1.611a.98.98 0 0 1-.837.276c-.47-.07-.802-.48-.968-.925a2.501 2.501 0 1 0-3.214 3.214c.446.166.855.497.925.968a.979.979 0 0 1-.276.837l-1.61 1.61a2.404 2.404 0 0 1-1.705.707 2.402 2.402 0 0 1-1.704-.706l-1.568-1.568a1.026 1.026 0 0 0-.877-.29c-.493.074-.84.504-1.02.968a2.5 2.5 0 1 1-3.237-3.237c.464-.18.894-.527.967-1.02a1.026 1.026 0 0 0-.289-.877l-1.568-1.568A2.402 2.402 0 0 1 1.998 12c0-.617.236-1.234.706-1.704L4.23 8.77c.24-.24.581-.353.917-.303.515.077.877.528 1.073 1.01a2.5 2.5 0 1 0 3.259-3.259c-.482-.196-.933-.558-1.01-1.073-.05-.336.062-.676.303-.917l1.525-1.525A2.402 2.402 0 0 1 12 1.998c.617 0 1.234.236 1.704.706l1.568 1.568c.23.23.556.338.877.29.493-.074.84-.504 1.02-.968a2.5 2.5 0 1 1 3.237 3.237c-.464.18-.894.527-.967 1.02Z" />
+        </svg>
+      ),
+      title: "Machine Learning",
+      description:
+        "Best suited for complex prediction problems, pattern recognition, and decision-making scenarios where data-driven intelligence creates measurable business value.",
+    },
+    {
+      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="25"
+          height="25"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="white"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
+          <circle cx="12" cy="12" r="3" />
+        </svg>
+      ),
+      title: "Simpler Alternatives",
+      description:
+        "When business rules are clear and outcomes are predictable, simpler solutions often deliver faster implementation, lower costs, and easier maintenance.",
+    },
+  ],
+  bottomText:
+    "We've implemented both approaches. The recommendation depends on your business goals, data maturity, and operational requirements.",
+};

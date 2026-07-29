@@ -86,38 +86,40 @@ export default function WhatWeDoPage() {
           />
         </section>
       </section>
-      <Discover
-        badgeText={discoverData.badgeText}
-        title={discoverData.title}
-        description={discoverData.description}
-        cardTitle={discoverData.cardTitle}
-        image={discoverData.image}
-        imageAlt={discoverData.imageAlt}
-      />
-      <Assess
-        badgeText={assessData.badgeText}
-        title={assessData.title}
-        description={assessData.description}
-        cardTitle={assessData.cardTitle}
-        image={assessData.image}
-        imageAlt={assessData.imageAlt}
-      />
-      <Discover
-        badgeText={RankData.badgeText}
-        title={RankData.title}
-        description={RankData.description}
-        cardTitle={RankData.cardTitle}
-        image={RankData.image}
-        imageAlt={RankData.imageAlt}
-      />
-      <Assess
-        badgeText={enableData.badgeText}
-        title={assessData.title}
-        description={assessData.description}
-        cardTitle={assessData.cardTitle}
-        image={assessData.image}
-        imageAlt={enableData.imageAlt}
-      />
+      <div className="">
+        <Discover
+          badgeText={discoverData.badgeText}
+          title={discoverData.title}
+          description={discoverData.description}
+          cardTitle={discoverData.cardTitle}
+          image={discoverData.image}
+          imageAlt={discoverData.imageAlt}
+        />
+        <Assess
+          badgeText={assessData.badgeText}
+          title={assessData.title}
+          description={assessData.description}
+          cardTitle={assessData.cardTitle}
+          image={assessData.image}
+          imageAlt={assessData.imageAlt}
+        />
+        <Discover
+          badgeText={RankData.badgeText}
+          title={RankData.title}
+          description={RankData.description}
+          cardTitle={RankData.cardTitle}
+          image={RankData.image}
+          imageAlt={RankData.imageAlt}
+        />
+        <Assess
+          badgeText={enableData.badgeText}
+          title={assessData.title}
+          description={assessData.description}
+          cardTitle={assessData.cardTitle}
+          image={assessData.image}
+          imageAlt={enableData.imageAlt}
+        />
+      </div>
       <Business
         badgeText="What You Walk Away With"
         sectionHead="A Clear AI Roadmap backed by Business Value"

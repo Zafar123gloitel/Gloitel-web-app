@@ -3,12 +3,12 @@ import StrategyBadge from "../../../components/StrategyBadge";
 import { GlowButton } from "../../../components";
 
 interface ExecutionPlanProps {
-  badgeText: string;
-  title: string;
-  description: string;
-  buttonText: string;
-  buttonLink: string;
-  onclick(data: any): void;
+  badgeText?: string;
+  title?: string;
+  description?: string;
+  buttonText?: string;
+  buttonLink?: string;
+  onclick(data?: any): void;
   videoUrl?: string;
   className?: string;
 }

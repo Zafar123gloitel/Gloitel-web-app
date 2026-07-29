@@ -1,4 +1,4 @@
-import { Download, ChevronRight, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export const heroSectionData = {
   badgeText: "Discovery & Validation",
@@ -169,8 +169,8 @@ export const outcomesData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="28"
-        height="28"
+        width="25"
+        height="25"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -191,8 +191,8 @@ export const outcomesData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="28"
-        height="28"
+        width="25"
+        height="25"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -213,8 +213,8 @@ export const outcomesData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="28"
-        height="28"
+        width="25"
+        height="25"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -234,8 +234,8 @@ export const outcomesData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="28"
-        height="28"
+        width="25"
+        height="25"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -255,8 +255,8 @@ export const outcomesData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="28"
-        height="28"
+        width="25"
+        height="25"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -277,8 +277,8 @@ export const outcomesData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="28"
-        height="28"
+        width="25"
+        height="25"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -298,8 +298,8 @@ export const outcomesData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="28"
-        height="28"
+        width="25"
+        height="25"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -321,8 +321,8 @@ export const strategyCards = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="27"
-        height="27"
+        width="25"
+        height="25"
         viewBox="0 0 27 27"
         fill="none"
       >
@@ -343,8 +343,8 @@ export const strategyCards = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="27"
-        height="27"
+        width="25"
+        height="25"
         viewBox="0 0 27 27"
         fill="none"
       >
@@ -365,8 +365,8 @@ export const strategyCards = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="27"
-        height="27"
+        width="25"
+        height="25"
         viewBox="0 0 27 27"
         fill="none"
       >
@@ -387,8 +387,8 @@ export const strategyCards = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="27"
-        height="27"
+        width="25"
+        height="25"
         viewBox="0 0 27 27"
         fill="none"
       >
@@ -409,8 +409,8 @@ export const strategyCards = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="27"
-        height="27"
+        width="25"
+        height="25"
         viewBox="0 0 27 27"
         fill="none"
       >
@@ -459,8 +459,8 @@ export const noteveryproduct = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
+        width="25"
+        height="25"
         viewBox="0 0 24 24"
         fill="none"
       >
@@ -481,8 +481,8 @@ export const noteveryproduct = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
+        width="25"
+        height="25"
         viewBox="0 0 24 24"
         fill="none"
       >
@@ -503,8 +503,8 @@ export const noteveryproduct = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
+        width="25"
+        height="25"
         viewBox="0 0 24 24"
         fill="none"
       >
@@ -530,8 +530,8 @@ export const coreFeaturesData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
+        width="25"
+        height="25"
         viewBox="0 0 24 24"
         fill="none"
       >
@@ -560,8 +560,8 @@ export const coreFeaturesData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
+        width="25"
+        height="25"
         viewBox="0 0 24 24"
         fill="none"
       >
@@ -589,8 +589,8 @@ export const coreFeaturesData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
+        width="25"
+        height="25"
         viewBox="0 0 24 24"
         fill="none"
       >
@@ -609,8 +609,8 @@ export const coreFeaturesData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
+        width="25"
+        height="25"
         viewBox="0 0 24 24"
         fill="none"
       >
@@ -632,8 +632,8 @@ export const coreFeaturesData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
+        width="25"
+        height="25"
         viewBox="0 0 24 24"
         fill="none"
       >
@@ -655,8 +655,8 @@ export const coreFeaturesData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
+        width="25"
+        height="25"
         viewBox="0 0 24 24"
         fill="none"
       >
@@ -847,8 +847,8 @@ export const scalingIndicators = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="27"
-        height="27"
+        width="25"
+        height="25"
         viewBox="0 0 27 27"
         fill="none"
       >
@@ -869,8 +869,8 @@ export const scalingIndicators = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="27"
-        height="27"
+        width="25"
+        height="25"
         viewBox="0 0 27 27"
         fill="none"
       >
@@ -891,8 +891,8 @@ export const scalingIndicators = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="27"
-        height="27"
+        width="25"
+        height="25"
         viewBox="0 0 27 27"
         fill="none"
       >
@@ -913,8 +913,8 @@ export const scalingIndicators = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="27"
-        height="27"
+        width="25"
+        height="25"
         viewBox="0 0 27 27"
         fill="none"
       >
@@ -935,8 +935,8 @@ export const scalingIndicators = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="27"
-        height="27"
+        width="25"
+        height="25"
         viewBox="0 0 27 27"
         fill="none"
       >
@@ -957,8 +957,8 @@ export const scalingIndicators = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="27"
-        height="27"
+        width="25"
+        height="25"
         viewBox="0 0 27 27"
         fill="none"
       >
@@ -982,8 +982,8 @@ export const scalingSolutions = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="46"
-        height="46"
+        width="25"
+        height="25"
         viewBox="0 0 46 46"
         fill="none"
       >
@@ -1006,8 +1006,8 @@ export const scalingSolutions = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="46"
-        height="46"
+        width="25"
+        height="25"
         viewBox="0 0 46 46"
         fill="none"
       >
@@ -1040,8 +1040,8 @@ export const scalingSolutions = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="46"
-        height="46"
+        width="25"
+        height="25"
         viewBox="0 0 46 46"
         fill="none"
       >
@@ -1062,8 +1062,8 @@ export const scalingSolutions = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="46"
-        height="46"
+        width="25"
+        height="25"
         viewBox="0 0 46 46"
         fill="none"
       >
@@ -1087,8 +1087,8 @@ export const scalingSolutions = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="46"
-        height="46"
+        width="25"
+        height="25"
         viewBox="0 0 46 46"
         fill="none"
       >
@@ -1123,8 +1123,8 @@ export const scalingSolutions = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="46"
-        height="46"
+        width="25"
+        height="25"
         viewBox="0 0 46 46"
         fill="none"
       >
@@ -1206,8 +1206,8 @@ export const principlesData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="28"
-        height="28"
+        width="25"
+        height="25"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -1229,8 +1229,8 @@ export const principlesData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="28"
-        height="28"
+        width="25"
+        height="25"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -1251,8 +1251,8 @@ export const principlesData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="28"
-        height="28"
+        width="25"
+        height="25"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -1275,8 +1275,8 @@ export const principlesData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="28"
-        height="28"
+        width="25"
+        height="25"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -1295,8 +1295,8 @@ export const principlesData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="28"
-        height="28"
+        width="25"
+        height="25"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -1358,8 +1358,8 @@ export const showcaseItems2 = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="26"
-        height="26"
+        width="25"
+        height="25"
         viewBox="0 0 26 26"
         fill="none"
       >
@@ -1393,8 +1393,8 @@ export const showcaseItems2 = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="26"
-        height="26"
+        width="25"
+        height="25"
         viewBox="0 0 36 36"
         fill="none"
       >
@@ -1413,8 +1413,8 @@ export const showcaseItems2 = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="26"
-        height="26"
+        width="25"
+        height="25"
         viewBox="0 0 36 36"
         fill="none"
       >
@@ -1450,8 +1450,8 @@ export const showcaseItems2 = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="26"
-        height="26"
+        width="25"
+        height="25"
         viewBox="0 0 36 36"
         fill="none"
       >
@@ -1479,8 +1479,8 @@ export const podsData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
+        width="25"
+        height="25"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -1509,8 +1509,8 @@ export const podsData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
+        width="25"
+        height="25"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -1533,8 +1533,8 @@ export const podsData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
+        width="25"
+        height="25"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -1575,8 +1575,8 @@ export const integrationPrinciplesData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="29"
-        height="29"
+        width="25"
+        height="25"
         viewBox="0 0 39 39"
         fill="none"
       >
@@ -1597,8 +1597,8 @@ export const integrationPrinciplesData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="29"
-        height="29"
+        width="25"
+        height="25"
         viewBox="0 0 39 39"
         fill="none"
       >
@@ -1619,8 +1619,8 @@ export const integrationPrinciplesData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="29"
-        height="29"
+        width="25"
+        height="25"
         viewBox="0 0 39 39"
         fill="none"
       >
@@ -1638,8 +1638,8 @@ export const integrationPrinciplesData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="29"
-        height="29"
+        width="25"
+        height="25"
         viewBox="0 0 39 39"
         fill="none"
       >
@@ -1670,8 +1670,8 @@ export const teamValuesData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="28"
-        height="28"
+        width="25"
+        height="25"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -1692,8 +1692,8 @@ export const teamValuesData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="28"
-        height="28"
+        width="25"
+        height="25"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -1714,8 +1714,8 @@ export const teamValuesData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="26"
-        height="26"
+        width="25"
+        height="25"
         viewBox="0 0 51 51"
         fill="none"
       >
@@ -1746,8 +1746,8 @@ export const teamValuesData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="28"
-        height="28"
+        width="25"
+        height="25"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -1770,8 +1770,8 @@ export const teamValuesData = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="26"
-        height="26"
+        width="25"
+        height="25"
         viewBox="0 0 51 51"
         fill="none"
       >
@@ -1803,8 +1803,8 @@ export const scaleReadinessIndicators = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="26"
-        height="26"
+        width="25"
+        height="25"
         viewBox="0 0 36 36"
         fill="none"
       >
@@ -1824,8 +1824,8 @@ export const scaleReadinessIndicators = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="26"
-        height="26"
+        width="25"
+        height="25"
         viewBox="0 0 36 36"
         fill="none"
       >
@@ -1845,8 +1845,8 @@ export const scaleReadinessIndicators = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="26"
-        height="26"
+        width="25"
+        height="25"
         viewBox="0 0 36 36"
         fill="none"
       >
@@ -1866,8 +1866,8 @@ export const scaleReadinessIndicators = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="26"
-        height="26"
+        width="25"
+        height="25"
         viewBox="0 0 36 36"
         fill="none"
       >
@@ -1887,8 +1887,8 @@ export const scaleReadinessIndicators = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="26"
-        height="26"
+        width="25"
+        height="25"
         viewBox="0 0 36 36"
         fill="none"
       >

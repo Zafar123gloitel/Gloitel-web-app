@@ -57,9 +57,13 @@ const PurposeCard = ({
 
         {/* Content */}
         <div>
-          <h3 className="text-[32px] font-semibold text-white">{title}</h3>
+          <h3 className="text-xl md:text-[32px]  font-semibold text-white">
+            {title}
+          </h3>
 
-          <p className="text-[16px] leading-6 text-gray-400">{description}</p>
+          <p className="text-[14px] md:text-[16px] mt-2 leading-6 text-gray-400">
+            {description}
+          </p>
         </div>
       </div>
     </div>

@@ -66,7 +66,7 @@ const AI_Solutions = ({
         </div>
 
         {/* Cards */}
-        <div className="mt-14  hidden overflow-hidden rounded-3xl border-white/10 bg-surface-2 py-12  px-auto md:block">
+        <div className="mt-14  hidden overflow-hidden rounded-3xl border-white/10 bg-surface-2 py-12  px-auto lg:block">
           <div
             className="flex transition-transform duration-1000 ease-out p-5 sm:p-0 "
             style={{ transform: `translateX(-${activeTabIndex * 100}%)` }}
@@ -88,7 +88,7 @@ const AI_Solutions = ({
           </div>
         </div>
         {/* mobile screen */}
-        <div className="mt-14 rounded-3xl border-white/10 bg-surface-2 p-4 md:hidden">
+        <div className="mt-14 rounded-3xl border-white/10 bg-surface-2 p-4 lg:hidden">
           <div
             key={activeTab}
             className="grid animate-fadeIn grid-cols-2 justify-items-center gap-4 sm:grid-cols-3"

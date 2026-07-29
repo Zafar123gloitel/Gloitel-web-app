@@ -86,24 +86,52 @@
 //   );
 // }
 
+// import Image from "next/image";
+// import { ReactNode } from "react";
+
+// interface ArchitectureItem {
+//   id: string;
+//   icon: ReactNode;
+//   title: string;
+//   description: string;
+// }
+// interface ArchitectureCircleProps {
+//   data: ArchitectureItem[];
+//   image: string;
+// }
+
 import Image from "next/image";
-import { coreFeaturesData } from "../(product-engineering)/data";
+import { ReactNode } from "react";
 
-export default function ArchitectureCircle() {
-  const positions = {
-    top: "lg:top-2 lg:left-1/2 lg:-translate-x-1/2",
+export type PositionKey =
+  | "top"
+  | "leftTop"
+  | "rightTop"
+  | "leftBottom"
+  | "bottom"
+  | "rightBottom";
 
-    leftTop: "lg:left-8 xl:left-24 2xl:left-40 lg:top-52",
+interface ArchitectureItem {
+  id: string;
+  icon: ReactNode;
+  title: string;
+  description: string;
+  position: PositionKey;
+}
 
-    rightTop: "lg:right-8 xl:right-24 2xl:right-40 lg:top-52",
+type PositionClasses = Record<PositionKey, string>;
 
-    leftBottom: "lg:left-8 xl:left-24 2xl:left-40 lg:bottom-52",
+interface ArchitectureCircleProps {
+  data: ArchitectureItem[];
+  image: string;
+  positions: PositionClasses;
+}
 
-    bottom: "lg:bottom-2 lg:left-1/2 lg:-translate-x-1/2",
-
-    rightBottom: "lg:right-8 xl:right-24 2xl:right-40 lg:bottom-52",
-  };
-
+export default function ArchitectureCircle({
+  data,
+  image,
+  positions,
+}: ArchitectureCircleProps) {
   return (
     <section className="relative w-full">
       {/* ---------------- Mobile & Tablet ---------------- */}
@@ -120,7 +148,7 @@ export default function ArchitectureCircle() {
 
         {/* Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-5xl ">
-          {coreFeaturesData.map((item) => (
+          {data.map((item) => (
             <div
               key={item.id}
               className="group rounded-3xl hover:border-blue-500/80 p-6 border border-white/10
@@ -166,7 +194,7 @@ export default function ArchitectureCircle() {
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="relative w-[220px] h-[220px] rounded-full overflow-hidden">
               <Image
-                src="/images/hrm.png"
+                src={image}
                 alt="HRM"
                 fill
                 className="object-cover rounded-full"
@@ -188,7 +216,7 @@ export default function ArchitectureCircle() {
         </div>
 
         {/* Desktop Cards */}
-        {coreFeaturesData.map((item) => (
+        {data.map((item) => (
           <div
             key={item.id}
             className={`${positions[item.position]} absolute group hover:border-blue-500/80 w-[280px] rounded-3xl border border-white/10  p-6
@@ -220,7 +248,7 @@ export default function ArchitectureCircle() {
               {item.title}
             </h3>
 
-            <p className="text-muted text-sm leading-7">{item.description}</p>
+            <p className="text-muted text-sm leading-6">{item.description}</p>
           </div>
         ))}
       </div>

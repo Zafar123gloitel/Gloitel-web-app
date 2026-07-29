@@ -331,7 +331,7 @@ faster decision-making."
 analysis and tool design to testing and supervision, we follow a structured methodology to build agents that perform in real-world environments."
           />
         </div>
-        <section className="w-full sm:w-[80%]  mx-auto">
+        <section className="w-full md:w-[80%]  mx-auto">
           <Discover
             badgeText={ApproachStepOne.badgeText}
             title={ApproachStepOne.title}

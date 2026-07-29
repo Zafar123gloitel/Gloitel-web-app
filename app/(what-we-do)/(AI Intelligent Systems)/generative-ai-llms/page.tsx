@@ -73,7 +73,7 @@ into Production Systems."
             SectionDescription="From initial discovery and model selection to deployment and ongoing monitoring, we follow a structured process that transforms AI concepts into secure, scalable, and production-ready solutions."
           />
         </div>
-        <section className="w-full sm:w-[80%]  mx-auto">
+        <section className="w-full md:w-[80%]  mx-auto">
           <Discover
             badgeText={executionStepOne.badgeText}
             title={executionStepOne.title}

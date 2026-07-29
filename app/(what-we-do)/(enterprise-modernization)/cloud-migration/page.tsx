@@ -112,10 +112,10 @@ const page = () => {
         />
       </section>
       <Execution_Plan
-        badgeText="Let's Build Together"
-        title="Dedicated Engineers. Faster Execution."
-        description="From product iteration to large-scale development, our fractional teams provide the expertise and flexibility needed to support your next stage of growth."
-        buttonText="Build Your Pod"
+        badgeText="Don't Just Move. Modernize."
+        title="Build Better Than Before"
+        description="Don't replicate yesterday's limitations. Design a cloud environment optimized for efficiency, flexibility, and future demands."
+        buttonText="Start Your Cloud Migration"
         buttonLink="/contact"
         onclick={() => ({})}
       />

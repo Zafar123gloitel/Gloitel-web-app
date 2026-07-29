@@ -70,7 +70,7 @@ const page = () => {
             />
           </div>
         </div>
-        <section className="w-full  sm:w-[80%] -mt-20 mx-auto">
+        <section className="w-full  sm:w-[80%] -mt-20 lg:-mt-10 mx-auto">
           <CardShowcase
             showStepBadge
             showDivider={false}
@@ -96,7 +96,7 @@ const page = () => {
           </div>
         </div>
 
-        <section className=" -mt-40 gap-6   ">
+        <section className=" -mt-40 gap-6 md:w-[80%]  mx-auto ">
           <Discover
             badgeText={auditPhaseData2.badgeText}
             title={auditPhaseData2.title}

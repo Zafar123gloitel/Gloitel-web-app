@@ -1,9 +1,10 @@
-"use client"
+"use client";
 
 import React from "react";
 import HeroSection from "../../components/HeroSection";
 import {
   accordionData2,
+  coreFeaturesData,
   mvpheroSection,
   technologyChoicesData,
   weekFourData,
@@ -22,6 +23,14 @@ import Asked_Q from "../../components/Asked_Q";
 import Execution_Plan from "../../components/Execution_Plan";
 
 const page = () => {
+  const positions = {
+    top: "lg:top-2 lg:left-1/2 lg:-translate-x-1/2",
+    leftTop: "lg:left-8 xl:left-24 2xl:left-40 lg:top-52",
+    rightTop: "lg:right-8 xl:right-24 2xl:right-40 lg:top-52",
+    leftBottom: "lg:left-8 xl:left-24 2xl:left-40 lg:bottom-52",
+    bottom: "lg:bottom-2 lg:left-1/2 lg:-translate-x-1/2",
+    rightBottom: "lg:right-8 xl:right-24 2xl:right-40 lg:bottom-52",
+  };
   return (
     <div>
       <HeroSection {...mvpheroSection} />
@@ -40,7 +49,12 @@ const page = () => {
         </div>
 
         <section className="flex items-center -mt-10">
-          <ArchitectureCircle />
+          <ArchitectureCircle
+            data={coreFeaturesData}
+            image="/images/hrm.png"
+            positions={positions}
+          />
+          ;
         </section>
       </section>
       <section className="overflow-hidden py-12 lg:py-20">
@@ -57,7 +71,7 @@ const page = () => {
           </div>
         </div>
 
-        <section className=" -mt-40 gap-6   ">
+        <section className=" -mt-40 gap-6 md:w-[80%] mx-auto    ">
           <Discover
             badgeText={weekOneData.badgeText}
             title={weekOneData.title}
