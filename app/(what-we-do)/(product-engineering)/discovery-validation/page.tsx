@@ -7,7 +7,7 @@ import Assess from "../../components/Assess";
 import Strategy from "../../components/Strategy";
 import TimeLine from "../../components/TimeLine";
 import Asked_Q from "../../components/Asked_Q";
-import Execution_Plan from "../../components/Execution_Plan";
+import Execution_Plan from "../../../uiComponents/Execution_Plan";
 import GlowPanel from "../../../component/GlowPanel";
 import { BgSquare2 } from "../../../component/BgSquare";
 import StrategyBadge from "../../../../components/StrategyBadge";

@@ -110,8 +110,8 @@ export type PositionKey =
   | "leftBottom"
   | "bottom"
   | "rightBottom";
-
-interface ArchitectureItem {
+ 
+export interface ArchitectureItem {
   id: string;
   icon: ReactNode;
   title: string;

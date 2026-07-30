@@ -22,12 +22,14 @@ import { BgSquare2 } from "../../../component/BgSquare";
 import { CardShowcase } from "../../../../components";
 import Discover from "../../components/Discover";
 import Assess from "../../components/Assess";
-import AI_Solutions from "../../components/AI_Solutions";
+
 import Strategy from "../../components/Strategy";
 import GlowPanel from "../../../component/GlowPanel";
 import ImageCard from "../../../component/ImageCard";
 import { ArrowUpIcon } from "lucide-react";
-import Execution_Plan from "../../components/Execution_Plan";
+import AI_Solutions from "../../../uiComponents/AI_Solutions";
+import Execution_Plan from "../../../uiComponents/Execution_Plan";
+
 
 const page = () => {
   return (
@@ -169,7 +171,7 @@ into Production Systems."
           ))}
         </section>
       </div>
-      <Execution_Plan
+      <Execution_Plan 
         badgeText="Production-Ready GenAI starts here"
         title="From Prototype to Production"
         description="Turn promising experiments into reliable systems with the guardrails, observability, 

@@ -8,8 +8,7 @@ import { MiddleSectionHeads } from "../../../component/SectionHeads";
 import { CardShowcase } from "../../../../components";
 import Discover from "../../components/Discover";
 import Assess from "../../components/Assess";
-import AI_Solutions from "../../components/AI_Solutions";
-import Execution_Plan from "../../components/Execution_Plan";
+
 import {
   cxCoversData,
   cxCoversSectionHead,
@@ -23,6 +22,8 @@ import {
   instrumentMeasureData,
   optimizationProcessSectionHead,
 } from "../data";
+import AI_Solutions from "../../../uiComponents/AI_Solutions";
+import Execution_Plan from "../../../uiComponents/Execution_Plan";
 
 const page = () => {
   return (

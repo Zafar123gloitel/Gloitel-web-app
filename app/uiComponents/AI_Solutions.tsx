@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import StrategyBadge from "../../../components/StrategyBadge";
-import IconCard from "./IconCard";
+import StrategyBadge from "../../components/StrategyBadge";
+import IconCard from "../../components/card-showcase/IconCard";
 
 interface Technology {
   name: string;

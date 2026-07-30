@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import { ArchitectureItem } from "../../uiComponents/ArchitectureCircle";
 
 export const heroSectionData = {
   badgeText: "Discovery & Validation",
@@ -520,7 +521,7 @@ export const noteveryproduct = [
   },
 ];
 
-export const coreFeaturesData = [
+export const coreFeaturesData: ArchitectureItem[] = [
   {
     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     position: "top",

@@ -15,12 +15,14 @@ import {
 import { BgSquare2 } from "../../../component/BgSquare";
 import StrategyBadge from "../../../../components/StrategyBadge";
 import { MiddleSectionHeads } from "../../../component/SectionHeads";
-import ArchitectureCircle from "../../components/ArchitectureCircle";
 import Discover from "../../components/Discover";
 import Assess from "../../components/Assess";
-import AI_Solutions from "../../components/AI_Solutions";
+
 import Asked_Q from "../../components/Asked_Q";
-import Execution_Plan from "../../components/Execution_Plan";
+import AI_Solutions from "../../../uiComponents/AI_Solutions";
+import Execution_Plan from "../../../uiComponents/Execution_Plan";
+import ArchitectureCircle from "../../../uiComponents/ArchitectureCircle";
+
 
 const page = () => {
   const positions = {

@@ -5,10 +5,9 @@ import HeroSection from "../../components/HeroSection";
 import { BgSquare2 } from "../../../component/BgSquare";
 import StrategyBadge from "../../../../components/StrategyBadge";
 import { MiddleSectionHeads } from "../../../component/SectionHeads";
-import ArchitectureCircle from "../../components/ArchitectureCircle";
 import ProblemCard from "../../../../components/ProblemCard";
 import Strategy from "../../components/Strategy";
-import Execution_Plan from "../../components/Execution_Plan";
+import Execution_Plan from "../../../uiComponents/Execution_Plan";
 import {
   assumptionsData,
   assumptionsSectionHead,
@@ -20,6 +19,7 @@ import {
   uxResearchHeroData,
 } from "../data";
 import Business from "../../components/Business";
+import ArchitectureCircle from "../../../uiComponents/ArchitectureCircle";
 
 const page = () => {
   const positions = {

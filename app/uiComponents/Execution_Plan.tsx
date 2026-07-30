@@ -1,6 +1,6 @@
 import React from "react";
-import StrategyBadge from "../../../components/StrategyBadge";
-import { GlowButton } from "../../../components";
+import StrategyBadge from "../../components/StrategyBadge";
+import { GlowButton } from "../../components";
 
 interface ExecutionPlanProps {
   badgeText?: string;

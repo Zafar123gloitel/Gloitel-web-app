@@ -21,8 +21,9 @@ import {
   sunsetPhaseData,
   technologiesModernizedData,
 } from "../data";
-import AI_Solutions from "../../components/AI_Solutions";
-import Execution_Plan from "../../components/Execution_Plan";
+import AI_Solutions from "../../../uiComponents/AI_Solutions";
+import Execution_Plan from "../../../uiComponents/Execution_Plan";
+
 
 const page = () => {
   return (

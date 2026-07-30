@@ -26,7 +26,7 @@ import Strategy from "../../components/Strategy";
 import Result from "../../../component/Result";
 import TimeLine from "../../components/TimeLine";
 import Asked_Q from "../../components/Asked_Q";
-import Execution_Plan from "../../components/Execution_Plan";
+import Execution_Plan from "../../../uiComponents/Execution_Plan";
 import HeroSection from "../../components/HeroSection";
 import { notIncludedData } from "../../components/data";
 import GlowPanel from "../../../component/GlowPanel";

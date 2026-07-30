@@ -401,6 +401,8 @@ import { usePathname } from "next/navigation";
 import { VerticalDivider } from "./SectionDivider";
 import { GlowButton, HeaderButton } from "./Button";
 import Image from "next/image";
+import { links } from "./NavData";
+import { megaMenus } from "./NavData";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -409,239 +411,27 @@ const Navbar = () => {
   const [mobileOpenMegaMenu, setMobileOpenMegaMenu] = useState(null);
   const pathname = usePathname();
 
-  const links = [
-    { href: "/", label: "Home" },
-    { label: "What we do", megaMenu: "whatWeDo" },
-    { label: "Industries", megaMenu: "industries" },
-    { label: "Engineering", megaMenu: "engineering" },
-    { label: "About us", megaMenu: "aboutUs" },
-    { label: "Career", megaMenu: "career" },
-    { href: "/contact", label: "Contact" },
-  ];
+  const getLinkClasses = (href) => {
+    const isActive =
+      pathname === href || (href !== "/" && pathname.startsWith(href));
 
-  // Each key maps to an array of groups. Each group has a title and items.
-  const megaMenus = {
-    whatWeDo: {
-      width: "w-[1050px]",
-      columns: "grid-cols-5",
-      groupsSpan: "col-span-4 grid-cols-4",
-      image: "/images/What-we-do/mega_manu_iamge (2).png",
-      groups: [
-        {
-          title: "AI & Intelligent Systems",
-          items: [
-            {
-              label: "AI Strategy & Consulting",
-              href: "/ai-strategy-consulting",
-            },
-            { label: "Generative AI & LLMs", href: "/generative-ai-llms" },
-            { label: "AI Agents & Automation", href: "/ai-agents-automation" },
-            {
-              label: "ML & Predictive Analytics",
-              href: "/ml-predictive-analytics",
-            },
-            { label: "AI Integration", href: "/ai-integration" },
-          ],
-        },
-        {
-          title: "Product Engineering",
-          items: [
-            { label: "Discovery & Validation", href: "/discovery-validation" },
-            { label: "MVP Development", href: "/mvp-development" },
-            { label: "Platform Scaling", href: "/platform-scaling" },
-            {
-              label: "Fractional Engineering Teams",
-              href: "/fractional-engineering-teams",
-            },
-          ],
-        },
-        {
-          title: "Enterprise Modernization",
-          items: [
-            { label: "App Modernization", href: "/app-modernization" },
-            { label: "Cloud Migration", href: "/cloud-migration" },
-            {
-              label: "Microservices Architecture",
-              href: "/microservices-architecture",
-            },
-            { label: "Process Automation", href: "/process-automation" },
-          ],
-        },
-        {
-          title: "Digital Experience Design",
-          items: [
-            { label: "UX Research & Strategy", href: "/ux-research-strategy" },
-            { label: "UI/UX Design", href: "/ui-ux-design" },
-            { label: "Design Systems", href: "/design-systems" },
-            {
-              label: "ML & Predictive Analytics",
-              href: "/ml-predictive-analytics",
-            },
-            { label: "CX Optimization", href: "/cx-optimization" },
-          ],
-        },
-      ],
-    },
-
-    industries: {
-      width: "w-[750px]",
-      columns: "grid-cols-2",
-      groupsSpan: "col-span-1 grid-cols-3",
-      image: "/images/What-we-do/mega_manu_iamge (2).png",
-      groups: [
-        {
-          title: "Domain & Industries",
-          items: [
-            {
-              label: "Healthcare & Medtech",
-              href: "/industries/healthcare-medtech",
-            },
-            { label: "Finance & Banking", href: "/industries/finance-banking" },
-            {
-              label: "E-Commerce & Retail",
-              href: "/industries/ecommerce-retail",
-            },
-            {
-              label: "Real Estate & PropTech",
-              href: "/industries/real-estate-proptech",
-            },
-            { label: "EdTech", href: "/industries/edtech" },
-            {
-              label: "Digital Marketing",
-              href: "/industries/digital-marketing",
-            },
-          ],
-        },
-      ],
-    },
-
-    engineering: {
-      width: "w-[750px]",
-      columns: "grid-cols-2",
-      groupsSpan: "col-span-1 grid-cols-3",
-      image: "/images/What-we-do/mega_manu_iamge (2).png",
-      groups: [
-        {
-          title: "Types of Engineering",
-          items: [
-            { label: "AI Engineering", href: "/engineering/ai-engineering" },
-            {
-              label: "Frontend Engineering",
-              href: "/engineering/frontend-engineering",
-            },
-            {
-              label: "Backend Engineering",
-              href: "/engineering/backend-engineering",
-            },
-            {
-              label: "Mobile Engineering",
-              href: "/engineering/mobile-engineering",
-            },
-            {
-              label: "Full Stack Engineering",
-              href: "/engineering/full-stack-engineering",
-            },
-            { label: "DevOps & Cloud", href: "/engineering/devops-cloud" },
-            { label: "QA Engineering", href: "/engineering/qa-engineering" },
-            { label: "IoT Engineering", href: "/engineering/iot-engineering" },
-            {
-              label: "Business Analysis",
-              href: "/engineering/business-analysis",
-            },
-          ],
-        },
-      ],
-    },
-
-    aboutUs: {
-      width: "w-[750px]",
-      columns: "grid-cols-2",
-      groupsSpan: "col-span-1 grid-cols-3",
-      image: "/images/What-we-do/mega_manu_iamge (2).png",
-      groups: [
-        {
-          title: "Company",
-          items: [
-            { label: "Who We Are", href: "/about/who-we-are" },
-            { label: "Our Journey", href: "/about/our-journey" },
-            { label: "Mission & Vision", href: "/about/mission-vision" },
-            { label: "What We Believe", href: "/about/what-we-believe" },
-          ],
-        },
-        {
-          title: "Expertise",
-          items: [
-            { label: "Our Expertise", href: "/about/our-expertise" },
-            {
-              label: "Industries We Serve",
-              href: "/about/industries-we-serve",
-            },
-            {
-              label: "Technology Ecosystem",
-              href: "/about/technology-ecosystem",
-            },
-          ],
-        },
-        {
-          title: "People",
-          items: [
-            { label: "Our Team", href: "/about/our-team" },
-            { label: "Our Culture", href: "/about/our-culture" },
-            {
-              label: "Client Testimonials",
-              href: "/about/client-testimonials",
-            },
-          ],
-        },
-      ],
-    },
-
-    career: {
-      width: "w-[750px]",
-      columns: "grid-cols-2",
-      groupsSpan: "col-span-1 grid-cols-4",
-      image: "/images/What-we-do/mega_manu_iamge (2).png",
-      groups: [
-        {
-          title: "Why Gloitel",
-          items: [
-            { label: "Why Join Gloitel", href: "/career/why-join-gloitel" },
-            { label: "Benefits & Perks", href: "/career/benefits-perks" },
-          ],
-        },
-        {
-          title: "Opportunities",
-          items: [
-            { label: "Open Opportunities", href: "/career/open-opportunities" },
-            { label: "Internships", href: "/career/internships" },
-          ],
-        },
-        {
-          title: "Hiring",
-          items: [
-            { label: "Our Hiring Process", href: "/career/our-hiring-process" },
-            { label: "Employee Stories", href: "/career/employee-stories" },
-          ],
-        },
-        {
-          title: "Apply",
-          items: [
-            {
-              label: "View Open Positions",
-              href: "/career/view-open-positions",
-            },
-            { label: "Apply Now", href: "/career/apply-now" },
-          ],
-        },
-      ],
-    },
+    return isActive
+      ? "text-white translate-y-0 scale-100"
+      : "text-white/50 hover:text-white hover:-translate-y-1 hover:scale-105 transition-all duration-300 ease-out";
   };
 
-  const getLinkClasses = (href) =>
-    pathname === href
-      ? "text-white"
-      : "text-white/50 hover:text-white transition-colors";
+  const isMegaMenuActive = (megaMenu) => {
+    const menu = megaMenus[megaMenu];
 
+    if (!menu) return false;
+
+    return menu.groups.some((group) =>
+      group.items.some(
+        (item) =>
+          pathname === item.href || pathname.startsWith(item.href + "/"),
+      ),
+    );
+  };
   // 🧭 Hide navbar when scrolling down
   useEffect(() => {
     let lastScroll = 0;
@@ -691,7 +481,13 @@ const Navbar = () => {
                     onMouseEnter={() => setOpenMegaMenu(link.megaMenu)}
                     onMouseLeave={() => setOpenMegaMenu(null)}
                   >
-                    <button className="flex items-center gap-1 text-white/60 hover:text-white transition">
+                    <button
+                      className={`flex items-center gap-1 transition ${
+                        isMegaMenuActive(link.megaMenu)
+                          ? "text-white"
+                          : "text-white/60 hover:text-white"
+                      }`}
+                    >
                       {link.label}
 
                       <svg
@@ -718,21 +514,21 @@ const Navbar = () => {
                       const isOpen = openMegaMenu === link.megaMenu;
                       return (
                         <div
-                          className={`fixed left-1/2 top-[90px] -translate-x-1/2 ${menu.width} transition-all duration-300 z-50 ${
+                          className={`fixed left-1/2 top-[90px] -translate-x-1/2 w-full  transition-all duration-100 z-50 ${
                             isOpen
                               ? "visible opacity-100 translate-y-0"
                               : "invisible opacity-0 translate-y-4"
                           }`}
                         >
                           <div
-                            className={`${menu.width} rounded-sm bg-[#2b2b2b] p-8 shadow-2xl`}
+                            className={`w-full h-80 rounded-b-sm bg-gray-900 opacity-100 p-8 shadow-2xl`}
                           >
                             <p className="mb-6 text-blue-400 text-sm font-medium">
                               {link.label}
                             </p>
 
                             <div
-                              className={`grid ${menu.columns} text-nowrap gap-10`}
+                              className={`grid ${menu.columns} text-nowrap  gap-10`}
                             >
                               <div className={`${menu.groupsSpan} grid gap-8`}>
                                 {menu.groups.map((section) => (
@@ -740,31 +536,53 @@ const Navbar = () => {
                                     <h4 className="mb-5 text-white font-semibold">
                                       {section.title}
                                     </h4>
-
-                                    <ul className="space-y-3">
-                                      {section.items.map((item, index) => (
-                                        <li key={index}>
-                                          <Link
-                                            href={item.href}
-                                            className="flex items-center gap-2 text-sm text-white/60 hover:text-blue-400"
+                                    <div className="grid grid-flow-col gap-8">
+                                      {Array.from(
+                                        {
+                                          length: Math.ceil(
+                                            section.items.length / 4,
+                                          ),
+                                        },
+                                        (_, chunkIndex) => (
+                                          <ul
+                                            key={chunkIndex}
+                                            className="space-y-3"
                                           >
-                                            <span>›</span>
-                                            {item.label}
-                                          </Link>
-                                        </li>
-                                      ))}
-                                    </ul>
+                                            {section.items
+                                              .slice(
+                                                chunkIndex * 5,
+                                                chunkIndex * 5 + 5,
+                                              )
+                                              .map((item, index) => (
+                                                <li key={index}>
+                                                  <Link
+                                                    href={item.href}
+                                                    className={`flex items-center gap-2 text-sm ${getLinkClasses(
+                                                      item.href,
+                                                    )}`}
+                                                  >
+                                                    {item.label}
+                                                  </Link>
+                                                </li>
+                                              ))}
+                                          </ul>
+                                        ),
+                                      )}
+                                    </div>
                                   </div>
                                 ))}
                               </div>
 
-                              <div className="flex items-center justify-center">
-                                <Image
-                                  src={menu.image}
-                                  width={280}
-                                  height={220}
-                                  alt="menu"
-                                />
+                              <div className="flex items-center -mt-6 justify-center ">
+                                <div className="rounded-2xl h-56 w-56 shadow-[0_0_80px_rgba(37,99,235,0.45)]">
+                                  <Image
+                                    src={menu.image}
+                                    width={280}
+                                    height={220}
+                                    alt="menu"
+                                    className="rounded-2xl h-full w-full drop-shadow-[0_25px_50px_rgba(37,99,235,0.35)]"
+                                  />
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -838,7 +656,7 @@ const Navbar = () => {
             : "max-h-0 opacity-0 py-0"
         }`}
       >
-        <div className="flex flex-col space-y-3 px-6">
+        <div className="flex flex-col space-y-3 pb-10 px-6">
           {links.map((link) =>
             link.megaMenu ? (
               <div
@@ -891,7 +709,7 @@ const Navbar = () => {
                               <Link
                                 key={`${section.title}-${index}`}
                                 href={item.href}
-                                className="block text-sm text-white/70 hover:text-white"
+                                className={`block text-sm ${getLinkClasses(item.href)}`}
                                 onClick={() => {
                                   setMobileMenuOpen(false);
                                   setMobileOpenMegaMenu(null);

@@ -17,7 +17,7 @@ import { BgSquare2 } from "../../../component/BgSquare";
 import StrategyBadge from "../../../../components/StrategyBadge";
 import { MiddleSectionHeads } from "../../../component/SectionHeads";
 import PurposeCard from "../../components/PurposeCard";
-import Execution_Plan from "../../components/Execution_Plan";
+import Execution_Plan from "../../../uiComponents/Execution_Plan";
 import Business from "../../components/Business";
 import Assess from "../../components/Assess";
 import Discover from "../../components/Discover";

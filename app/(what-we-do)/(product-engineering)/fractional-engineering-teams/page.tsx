@@ -19,7 +19,7 @@ import PodCard from "../../components/PodCard";
 import { CardShowcase } from "../../../../components";
 import Business from "../../components/Business";
 import Strategy from "../../components/Strategy";
-import Execution_Plan from "../../components/Execution_Plan";
+import Execution_Plan from "../../../uiComponents/Execution_Plan";
 
 const page = () => {
   return (

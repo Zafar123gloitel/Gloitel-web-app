@@ -20,13 +20,13 @@ import { MiddleSectionHeads } from "../../../component/SectionHeads";
 import ProblemCard from "../../../../components/ProblemCard";
 import Image from "next/image";
 import { CardShowcase } from "../../../../components";
-import IconCard from "../../components/IconCard";
-import AI_Solutions from "../../components/AI_Solutions";
 import Discover from "../../components/Discover";
 import Assess from "../../components/Assess";
 import GlowPanel from "../../../component/GlowPanel";
 import Strategy from "../../components/Strategy";
-import Execution_Plan from "../../components/Execution_Plan";
+import IconCard from "../../../../components/card-showcase/IconCard";
+import AI_Solutions from "../../../uiComponents/AI_Solutions";
+import Execution_Plan from "../../../uiComponents/Execution_Plan";
 
 const page = () => {
   const problems = [

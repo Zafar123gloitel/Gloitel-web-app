@@ -17,11 +17,11 @@ import {
 import { BgSquare2 } from "../../../component/BgSquare";
 import StrategyBadge from "../../../../components/StrategyBadge";
 import { MiddleSectionHeads } from "../../../component/SectionHeads";
-import ArchitectureCircle from "../../components/ArchitectureCircle";
 import ProblemCard from "../../../../components/ProblemCard";
 import { CardShowcase } from "../../../../components";
-import Execution_Plan from "../../components/Execution_Plan";
+import Execution_Plan from "../../../uiComponents/Execution_Plan";
 import HeroSection from "../../components/HeroSection";
+import ArchitectureCircle from "../../../uiComponents/ArchitectureCircle";
 
 const page = () => {
   const positions = {

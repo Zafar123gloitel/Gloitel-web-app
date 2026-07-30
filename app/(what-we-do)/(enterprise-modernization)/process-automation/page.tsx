@@ -19,8 +19,9 @@ import { MiddleSectionHeads } from "../../../component/SectionHeads";
 import PurposeCard from "../../components/PurposeCard";
 import Discover from "../../components/Discover";
 import Assess from "../../components/Assess";
-import AI_Solutions from "../../components/AI_Solutions";
-import Execution_Plan from "../../components/Execution_Plan";
+import AI_Solutions from "../../../uiComponents/AI_Solutions";
+import Execution_Plan from "../../../uiComponents/Execution_Plan";
+
 
 const page = () => {
   return (

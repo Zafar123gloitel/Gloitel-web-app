@@ -27,7 +27,7 @@ import Discover from "../../components/Discover";
 import Assess from "../../components/Assess";
 import ImageCard from "../../components/ImageCard";
 import ProblemCard from "../../../../components/ProblemCard";
-import Execution_Plan from "../../components/Execution_Plan";
+import Execution_Plan from "../../../uiComponents/Execution_Plan";
 import Business from "../../components/Business";
 
 const page = () => {
