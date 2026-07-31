@@ -566,7 +566,8 @@ export const executionStepOne = {
     "We scope the exact workflow to be augmented, define input/output formats, and establish success metrics before writing code.",
   buttonText: "View more",
   buttonLink: "/use-case-definition",
-  image: "/images/What-we-do/assess.png",
+  image:
+    "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785498264/Gloitel/what-we-do/use-case-definition_izirji.png",
   imageAlt: "Use Case Definition",
 };
 
@@ -577,7 +578,8 @@ export const executionStepTwo = {
     "We evaluate and recommend the right model (GPT-4o, Claude, Gemini, LLaMA, Mistral) based on accuracy requirements, latency, cost, and data sensitivity.",
   buttonText: "View more",
   buttonLink: "/model-selection",
-  image: "/images/What-we-do/discover.png",
+  image:
+    "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785498263/Gloitel/what-we-do/model-selection_kwalzf.png",
   imageAlt: "Model Selection",
 };
 
@@ -588,30 +590,33 @@ export const executionStepThree = {
     "Rapid prototype with human evaluation loops. We measure accuracy, hallucination rate, latency, and cost before green-lighting production build.",
   buttonText: "View more",
   buttonLink: "/prototype-evaluation",
-  image: "/images/What-we-do/enable.png",
+  image:
+    "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785498266/Gloitel/what-we-do/prototype-evaluation_kenj6r.png",
   imageAlt: "Prototype & Evaluation",
 };
 
 export const executionStepFour = {
   badgeText: "Step 04",
-  title: "Production Deployment",
+  title: "Production Engineering",
   description:
-    "Deploy the validated solution into production with monitoring, observability, security, and scalability built into the deployment pipeline.",
+    "Full-stack build with authentication, logging, monitoring, rate limiting, fallback handling, and CI/CD pipelines.",
   buttonText: "View more",
   buttonLink: "/production-deployment",
-  image: "/images/What-we-do/rank.png",
+  image:
+    "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785498265/Gloitel/what-we-do/Production-ngineering_pra50l.png",
   imageAlt: "Production Deployment",
 };
 
 export const executionStepFive = {
   badgeText: "Step 05",
-  title: "Continuous Optimization",
+  title: "Deployment & Monitoring",
   description:
-    "Monitor model performance, collect feedback, retrain when necessary, and continuously improve quality, speed, and business outcomes.",
+    "Cloud-native deployment with model performance monitoring, cost dashboards, and drift detection.",
   buttonText: "View more",
-  buttonLink: "/continuous-optimization",
-  image: "/images/What-we-do/assess.png",
-  imageAlt: "Continuous Optimization",
+  buttonLink: "/deployment-monitoring",
+  image:
+    "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785498263/Gloitel/what-we-do/deployment-monitoring_ex4dem.png",
+  imageAlt: "Deployment & Monitoring",
 };
 
 export const ApproachStepOne = {

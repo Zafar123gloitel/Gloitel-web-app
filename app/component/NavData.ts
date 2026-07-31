@@ -2,7 +2,7 @@ export const links = [
   { href: "/", label: "Home" },
 
   {
-    href: "/ai-strategy-consulting",   // 👈 add this
+    href: "/ai-intelligent-systems",
     label: "What we do",
     megaMenu: "whatWeDo",
   },
@@ -44,55 +44,98 @@ export  const megaMenus = {
       groups: [
         {
           title: "AI & Intelligent Systems",
+          href: "/ai-intelligent-systems",
           items: [
             {
               label: "AI Strategy & Consulting",
-              href: "/ai-strategy-consulting",
+              href: "/ai-intelligent-systems/ai-strategy-consulting",
             },
-            { label: "Generative AI & LLMs", href: "/generative-ai-llms" },
-            { label: "AI Agents & Automation", href: "/ai-agents-automation" },
+            {
+              label: "Generative AI & LLMs",
+              href: "/ai-intelligent-systems/generative-ai-llms",
+            },
+            {
+              label: "AI Agents & Automation",
+              href: "/ai-intelligent-systems/ai-agents-automation",
+            },
             {
               label: "ML & Predictive Analytics",
-              href: "/ml-predictive-analytics",
+              href: "/ai-intelligent-systems/ml-predictive-analytics",
             },
-            { label: "AI Integration", href: "/ai-integration" },
+            {
+              label: "AI Integration",
+              href: "/ai-intelligent-systems/ai-integration",
+            },
           ],
         },
         {
           title: "Product Engineering",
+          href: "/product-engineering",
           items: [
-            { label: "Discovery & Validation", href: "/discovery-validation" },
-            { label: "MVP Development", href: "/mvp-development" },
-            { label: "Platform Scaling", href: "/platform-scaling" },
+            {
+              label: "Discovery & Validation",
+              href: "/product-engineering/discovery-validation",
+            },
+            {
+              label: "MVP Development",
+              href: "/product-engineering/mvp-development",
+            },
+            {
+              label: "Platform Scaling",
+              href: "/product-engineering/platform-scaling",
+            },
             {
               label: "Fractional Engineering Teams",
-              href: "/fractional-engineering-teams",
+              href: "/product-engineering/fractional-engineering-teams",
             },
           ],
         },
         {
           title: "Enterprise Modernization",
+          href: "/enterprise-modernization",
           items: [
-            { label: "App Modernization", href: "/app-modernization" },
-            { label: "Cloud Migration", href: "/cloud-migration" },
+            {
+              label: "App Modernization",
+              href: "/enterprise-modernization/app-modernization",
+            },
+            {
+              label: "Cloud Migration",
+              href: "/enterprise-modernization/cloud-migration",
+            },
             {
               label: "Microservices Architecture",
-              href: "/microservices-architecture",
+              href: "/enterprise-modernization/microservices-architecture",
             },
-            { label: "Process Automation", href: "/process-automation" },
+            {
+              label: "Process Automation",
+              href: "/enterprise-modernization/process-automation",
+            },
           ],
         },
         {
           title: "Digital Experience Design",
+          href: "/digital-experience-design",
           items: [
-            { label: "UX Research & Strategy", href: "/ux-research-strategy" },
-            { label: "UI/UX Design", href: "/ui-ux-design" },
-            { label: "Design Systems", href: "/design-systems" },
+            {
+              label: "UX Research & Strategy",
+              href: "/digital-experience-design/ux-research-strategy",
+            },
+            {
+              label: "UI/UX Design",
+              href: "/digital-experience-design/ui-ux-design",
+            },
+            {
+              label: "Design Systems",
+              href: "/digital-experience-design/design-systems",
+            },
             {
               label: "ML & Predictive Analytics",
-              href: "/ml-predictive-analytics",
+              href: "/digital-experience-design/ml-predictive-analytics",
             },
-            { label: "CX Optimization", href: "/cx-optimization" },
+            {
+              label: "CX Optimization",
+              href: "/digital-experience-design/cx-optimization",
+            },
           ],
         },
       ],

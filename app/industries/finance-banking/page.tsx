@@ -113,15 +113,6 @@ const page = () => {
           ;
         </section>
       </section>
-      {/* <section>
-        <AI_Solutions
-          badge={healthcareTechStackData.badge}
-          title={healthcareTechStackData.title}
-          description={healthcareTechStackData.description}
-          tabs={healthcareTechStackData.tabs}
-          technologies={healthcareTechStackData.technologies}
-        />
-      </section> */}
       <section>
         <Execution_Plan
           badgeText={financeCTAData.badgeText}

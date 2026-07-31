@@ -57,7 +57,7 @@ const Discover = ({
 
       {/* Right Image */}
       <div className="flex-1 lg:max-w-[50%]">
-        <div className="relative aspect-[4/3] overflow-hidden rounded-[1.4rem]">
+        <div className="relative aspect-[4/3] overflow-hidden rounded-[1.4rem] shadow-[0_0_60px_rgba(255,255,255,0.25)]">
           <Image
             src={image}
             alt={imageAlt}

@@ -34,7 +34,7 @@ const ImageCard = ({
       >
         <div>
           <div className=" ">
-            <div className="flex items-center justify-center bg-none m-4 bg-white rounded-2xl">
+            <div className="flex items-center justify-center bg-none m-4  rounded-2xl">
               <Image src={image} width={280} height={220} alt="menu" />
             </div>
           </div>

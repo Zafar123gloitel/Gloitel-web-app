@@ -1,16 +1,10 @@
 "use client";
 import React, { useRef } from "react";
+import dynamic from "next/dynamic";
 import Hero from "./component/Hero";
 import { HomeAboutContent, HomeAboutImg } from "./component/About";
-import Result from "./component/Result";
-import PortfolioCard from "./component/PortfolioCard";
-import HowWeWork from "./component/HowWeWork";
-import Technology from "./component/Technology";
+import { LoadingSection } from "./component/LoadingSection";
 import { HorizontalDivider } from "./component/SectionDivider";
-import LaunchYourSite from "./component/LaunchYourSite";
-import Testimonial from "./component/Testimonial";
-import { FAQPage } from "./component/Faq";
-import JoinUsNow from "./component/JoinUsNow";
 import { LeftSectionHead2, MiddleSectionHeads } from "./component/SectionHeads";
 import { CenterBadge, LeftBadge } from "./component/Badge";
 import { GlowButton, WhiteButton } from "./component/Button";
@@ -18,6 +12,41 @@ import { BgSquare3 } from "./component/BgSquare";
 import ServiceCard from "./component/serviceCard";
 import GlowPanel from "./component/GlowPanel";
 import { useScroll } from "framer-motion";
+
+const Result = dynamic(() => import("./component/Result"), {
+  loading: () => <LoadingSection minHeight="min-h-[280px]" />,
+});
+
+const HowWeWork = dynamic(() => import("./component/HowWeWork"), {
+  loading: () => <LoadingSection minHeight="min-h-[520px]" />,
+});
+
+const Technology = dynamic(() => import("./component/Technology"), {
+  loading: () => <LoadingSection minHeight="min-h-[420px]" />,
+});
+
+const PortfolioCard = dynamic(() => import("./component/PortfolioCard"), {
+  loading: () => <LoadingSection minHeight="min-h-[560px]" />,
+});
+
+const LaunchYourSite = dynamic(() => import("./component/LaunchYourSite"), {
+  loading: () => <LoadingSection minHeight="min-h-[260px]" />,
+});
+
+const Testimonial = dynamic(() => import("./component/Testimonial"), {
+  loading: () => <LoadingSection minHeight="min-h-[360px]" />,
+});
+
+const FAQPage = dynamic(
+  () => import("./component/Faq").then((mod) => mod.FAQPage),
+  {
+    loading: () => <LoadingSection minHeight="min-h-[420px]" />,
+  },
+);
+
+const JoinUsNow = dynamic(() => import("./component/JoinUsNow"), {
+  loading: () => <LoadingSection minHeight="min-h-[220px]" />,
+});
 
 const HomePage = () => {
   const benefitsBadge = [

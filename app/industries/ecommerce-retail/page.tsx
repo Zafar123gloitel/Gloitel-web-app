@@ -3,13 +3,10 @@
 import React from "react";
 import {
   ecommerceHeroData,
-  ecommerceChallengesData ,
+  ecommerceChallengesData,
   ecommerceChallengesSectionHead,
-  healthcareComplianceData,
-  healthcareComplianceSectionHead,
   ecommerceCTAData,
-  healthcareHeroData,
-  ecommerceSolutionsData ,
+  ecommerceSolutionsData,
   ecommerceSolutionsSectionHead,
   ecommerceTechStackData,
 } from "../data";
@@ -20,19 +17,15 @@ import { MiddleSectionHeads } from "../../component/SectionHeads";
 import ProblemCard from "../../../components/ProblemCard";
 import Image from "next/image";
 import { CardShowcase } from "../../../components";
-import ArchitectureCircle from "../../(what-we-do)/components/ArchitectureCircle";
-import AI_Solutions from "../../uiComponents/AI_Solutions";
 import Execution_Plan from "../../uiComponents/Execution_Plan";
+import dynamic from "next/dynamic";
+import { LoadingSection } from "../../component/LoadingSection";
+
+const AI_Solutions = dynamic(() => import("../../uiComponents/AI_Solutions"), {
+  loading: () => <LoadingSection minHeight="min-h-[500px]" />,
+});
 
 const page = () => {
-  const positions = {
-    top: "lg:top-2 lg:left-1/2 lg:-translate-x-1/2",
-    leftTop: "lg:left-8 xl:left-24 2xl:left-40 lg:top-52",
-    rightTop: "lg:right-8 xl:right-24 2xl:right-40 lg:top-52",
-    leftBottom: "lg:left-8 xl:left-24 2xl:left-40 lg:bottom-52",
-    bottom: "lg:bottom-2 lg:left-1/2 lg:-translate-x-1/2",
-    rightBottom: "lg:right-8 xl:right-24 2xl:right-40 lg:bottom-52",
-  };
   return (
     <div>
       <HeroSection {...ecommerceHeroData} />
@@ -62,7 +55,7 @@ const page = () => {
           </div>
 
           <section className="grid grid-cols-1 mb-10  gap-6 md:grid-cols-2 w-[80%] mx-auto ">
-            {ecommerceChallengesData .map((item, index) => (
+            {ecommerceChallengesData.map((item, index) => (
               <ProblemCard key={index} title={item.text} />
             ))}
           </section>
@@ -83,7 +76,7 @@ const page = () => {
         </div>
         <section className="p-5 sm:p-0  sm:max-w-320.25 -mt-5 mx-auto">
           <CardShowcase
-            items={ecommerceSolutionsData }
+            items={ecommerceSolutionsData}
             showDivider={true}
             showStepBadge={false}
             cardHeight="h-[411px] max-w-[411px] "

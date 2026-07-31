@@ -451,11 +451,14 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-md transition-transform duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 bg-black/20  backdrop-blur-md transition-transform duration-300 ${
         isHidden ? "-translate-y-full" : "translate-y-0"
       }`}
     >
-      <nav className=" mx-auto flex items-center justify-between px-4  md:px-10  border-b-1 border-gray-500/20">
+      <nav
+        onMouseLeave={() => setOpenMegaMenu(null)}
+        className=" mx-auto flex items-center justify-between px-4  md:px-10  border-b-1 border-gray-500/20"
+      >
         {/* 🔹 Header Wrapper */}
         <div className="flex items-center justify-between w-full px-6 py-4">
           {/* 🔹 Left Section — Menu + Logo */}
@@ -479,7 +482,7 @@ const Navbar = () => {
                     key={link.label}
                     className="relative"
                     onMouseEnter={() => setOpenMegaMenu(link.megaMenu)}
-                    onMouseLeave={() => setOpenMegaMenu(null)}
+                    // onMouseLeave={() => setOpenMegaMenu(null)}
                   >
                     <button
                       className={`flex items-center gap-1 transition ${
@@ -514,7 +517,8 @@ const Navbar = () => {
                       const isOpen = openMegaMenu === link.megaMenu;
                       return (
                         <div
-                          className={`fixed left-1/2 top-[90px] -translate-x-1/2 w-full  transition-all duration-100 z-50 ${
+                          onMouseLeave={() => setOpenMegaMenu(null)}
+                          className={`fixed left-1/2 top-[89px] -translate-x-1/2 w-full  transition-all duration-100 z-50 ${
                             isOpen
                               ? "visible opacity-100 translate-y-0"
                               : "invisible opacity-0 translate-y-4"
@@ -533,9 +537,18 @@ const Navbar = () => {
                               <div className={`${menu.groupsSpan} grid gap-8`}>
                                 {menu.groups.map((section) => (
                                   <div key={section.title}>
-                                    <h4 className="mb-5 text-white font-semibold">
-                                      {section.title}
-                                    </h4>
+                                    {section.href ? (
+                                      <Link
+                                        href={section.href}
+                                        className="mb-5 block font-semibold text-white transition-colors hover:text-blue-400"
+                                      >
+                                        {section.title}
+                                      </Link>
+                                    ) : (
+                                      <h4 className="mb-5 text-white font-semibold">
+                                        {section.title}
+                                      </h4>
+                                    )}
                                     <div className="grid grid-flow-col gap-8">
                                       {Array.from(
                                         {
@@ -672,7 +685,11 @@ const Navbar = () => {
                         : link.megaMenu,
                     )
                   }
-                  className="flex w-full items-center justify-between px-4 py-3 text-left text-white/80"
+                  className={`flex w-full items-center justify-between px-4 py-3 text-left  ${
+                    isMegaMenuActive(link.megaMenu)
+                      ? "text-white"
+                      : "text-white/60 hover:text-white"
+                  }`}
                 >
                   <span>{link.label}</span>
                   <svg
@@ -701,9 +718,20 @@ const Navbar = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 sm:place-items-center gap-4 border-t border-white/10 px-4 py-3">
                       {megaMenus[link.megaMenu]?.groups.map((section) => (
                         <div key={section.title} className="pb-2">
-                          <p className="mb-2 text-sm font-semibold text-blue-400">
-                            {section.title}
-                          </p>
+                          {section.href ? (
+                            <Link
+                              href={section.href}
+                              className="mb-2 text-sm font-semibold text-blue-400"
+                            >
+                              {section.title}
+                            </Link>
+                          ) : (
+                            <>
+                              <p className="mb-2 text-sm font-semibold text-blue-400">
+                                {section.title}
+                              </p>
+                            </>
+                          )}
                           <div className="space-y-2">
                             {section.items.map((item, index) => (
                               <Link
@@ -729,18 +757,35 @@ const Navbar = () => {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`block py-2 ${getLinkClasses(link.href)}`}
+                className={`group flex items-center justify-between rounded-lg px-2 py-2 ${getLinkClasses(
+                  link.href,
+                )}`}
                 onClick={() => setMobileMenuOpen(false)}
               >
-                {link.label}
+                <span>{link.label}</span>
+
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M4 12h16" />
+                  <path d="m14 6 6 6-6 6" />
+                </svg>
               </Link>
             ),
           )}
 
           <div className="pt-3">
             <HeaderButton
-              ButtonText="Get In Touch"
-              Buttonlink="/contact"
+              buttonText="Get In Touch"
+              buttonLink="/contact"
               onClick={() => setMobileMenuOpen(false)}
             />
           </div>

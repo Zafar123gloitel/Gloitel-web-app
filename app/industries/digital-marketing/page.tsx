@@ -1,10 +1,10 @@
 import React from "react";
 
-import { digitalMarketingData } from "../data";
 import HeroSection from "../../../components/HeroSection";
+import { realEstateHeroData } from "../data";
 
 const page = () => {
-  return <HeroSection {...digitalMarketingData} />;
+  return <HeroSection {...realEstateHeroData} />;
 };
 
 export default page;

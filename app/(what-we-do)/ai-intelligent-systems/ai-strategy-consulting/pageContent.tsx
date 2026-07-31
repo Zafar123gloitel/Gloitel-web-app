@@ -33,7 +33,7 @@ import GlowPanel from "../../../component/GlowPanel";
 
 export default function WhatWeDoPage() {
   return (
-    <div>
+    <div className="">
       <div className="">
         <HeroSection {...heroSectionData} />
       </div>

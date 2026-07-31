@@ -19,14 +19,6 @@ import { CardShowcase } from "../../../components";
 import Execution_Plan from "../../uiComponents/Execution_Plan";
 
 const page = () => {
-  const positions = {
-    top: "lg:top-2 lg:left-1/2 lg:-translate-x-1/2",
-    leftTop: "lg:left-8 xl:left-24 2xl:left-40 lg:top-52",
-    rightTop: "lg:right-8 xl:right-24 2xl:right-40 lg:top-52",
-    leftBottom: "lg:left-8 xl:left-24 2xl:left-40 lg:bottom-52",
-    bottom: "lg:bottom-2 lg:left-1/2 lg:-translate-x-1/2",
-    rightBottom: "lg:right-8 xl:right-24 2xl:right-40 lg:bottom-52",
-  };
   return (
     <div>
       <HeroSection {...realEstateHeroData} />
