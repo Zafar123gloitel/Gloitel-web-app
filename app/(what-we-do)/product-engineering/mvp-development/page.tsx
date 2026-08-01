@@ -73,7 +73,7 @@ const page = () => {
           </div>
         </div>
 
-        <section className=" -mt-40 gap-6 md:w-[80%] mx-auto    ">
+        <section className=" -mt-40 gap-6 md:w-[80%] xl:w-[90%] mx-auto    ">
           <Discover
             badgeText={weekOneData.badgeText}
             title={weekOneData.title}

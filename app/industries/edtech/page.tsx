@@ -69,7 +69,7 @@ const page = () => {
             SectionDescription={edtechSolutionsSectionHead.description}
           />
         </div>
-        <section className="p-5 sm:p-0  sm:max-w-320.25 -mt-5 mx-auto">
+        <section className="p-5 sm:p-0  sm:max-w-[90%] -mt-5 mx-auto">
           <CardShowcase
             items={edtechSolutionsData}
             showDivider={true}

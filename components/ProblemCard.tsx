@@ -18,7 +18,9 @@ const ProblemCard = ({
       className={`group relative overflow-visible rounded-2xl p-[1px] ${step ? "" : ""}`}
     >
       {/* Blue top glow */}
-      <div className="absolute left-1/2 top-0 h-[8px] w-[60%] -translate-x-1/2 rounded-full bg-gradient-to-r from-transparent via-blue-500 to-transparent blur-[2px]" />
+      <div
+        className={`absolute ${step ? "left-[60%] " : "left-1/2"} top-0 h-[8px] w-[60%]  -translate-x-1/2 rounded-full bg-gradient-to-r from-transparent via-blue-500 to-transparent blur-[2px]`}
+      />
 
       {step ? (
         <div className="relative">

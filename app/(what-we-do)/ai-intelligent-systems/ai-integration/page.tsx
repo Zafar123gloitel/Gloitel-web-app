@@ -59,7 +59,7 @@ const page = () => {
               SectionDescription="From API connectivity and model serving to monitoring, data pipelines, and enterprise platform setup, we build the engineering layer that enables AI systems to operate effectively within real-world business environments."
             />
           </div>
-          <section className=" w-full sm:w-[80%] mt-5 px-6 sm:px-0  mx-auto ">
+          <section className=" w-full sm:w-[90%] mt-5 px-6 sm:px-0  mx-auto ">
             <CardShowcase
               items={engineeringServicesData}
               showDivider={true}

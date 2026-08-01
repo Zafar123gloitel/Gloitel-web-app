@@ -6,7 +6,7 @@ export const MiddleSectionHeads = ({
   SectionDescription = "",
 }) => {
   return (
-    <div className="flex flex-col items-center text-center px-4 sm:px-6 md:px-0 lg:px-0 max-w-4xl mx-auto mb-8">
+    <div className="flex flex-col items-center text-center px-4  md:px-0 lg:px-0 max-w-4xl mx-auto mb-8">
       {/* Section Head */}
       <h3 className="text-3xl sm:text-3xl md:text-4xl xl:text-[48px] font-medium text-white leading-tight">
         {SectionHead}

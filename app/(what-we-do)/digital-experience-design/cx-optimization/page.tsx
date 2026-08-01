@@ -43,7 +43,7 @@ const page = () => {
               SectionDescription={cxCoversSectionHead.description}
             />
           </div>
-          <section className=" w-full sm:w-[80%] mt-5 px-6 sm:px-0  mx-auto ">
+          <section className=" w-full sm:w-[90%] mt-5 px-6 sm:px-0  mx-auto ">
             <CardShowcase
               items={cxCoversData}
               showDivider={true}
@@ -70,7 +70,7 @@ const page = () => {
           </div>
         </div>
 
-        <section className=" md:w-[80%]  -mt-40 gap-6  mx-auto ">
+        <section className=" md:w-[90%]  -mt-40 gap-6  mx-auto ">
           <Discover
             badgeText={instrumentMeasureData.badgeText}
             title={instrumentMeasureData.title}

@@ -65,7 +65,7 @@ const page = () => {
           </div>
         </div>
 
-        <section className=" -mt-40 gap-6  md:w-[80%] mx-auto ">
+        <section className=" -mt-40 gap-6  md:w-[80%] xl:w-[90%] mx-auto ">
           <Discover
             badgeText={discoverPhaseData.badgeText}
             title={discoverPhaseData.title}
@@ -128,7 +128,7 @@ Product Decisions"
       />
 
       <section className=" overflow-hidden">
-        <div className="flex flex-col items-center  mt-10 justify-center mx-auto min-h-[60vh] relative z-10">
+        <div className="flex flex-col items-center  mt-20 justify-center mx-auto min-h-[60vh] relative z-10">
           <BgSquare2 />
           <div className="flex flex-col gap-6.5 -mt-44 w-full sm:w-1/2 lg:w-1/2 text-center">
             {/* Badge */}
@@ -141,15 +141,15 @@ Product Decisions"
             />
           </div>
         </div>
-        <section className="w-full  sm:w-[80%] -mt-20 mx-auto">
+        <section className="w-full  sm:w-[90%] -mt-20 mx-auto">
           <CardShowcase
             showStepBadge
             showDivider={false}
             items={noteveryproduct}
             cardHeight="h-[263px]  max-w-[330px] "
-            gridClassName="h-full"
+            gridClassName="h-full gap-y-30 "
             titleClassName="text-[28px] leading-8 "
-            descriptionClassName="text-[16px] leading-6 mt-3 text-muted "
+            descriptionClassName="text-[16px] xl:text-[18px] leading-6 mt-3 text-muted "
           />
         </section>
       </section>

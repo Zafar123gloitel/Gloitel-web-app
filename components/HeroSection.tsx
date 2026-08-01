@@ -46,7 +46,7 @@ const HeroSection = ({
         <source src={video} type="video/mp4" />
       </video>
 
-      <div className="relative z-10 mx-auto max-w-7xl">
+      <div className="relative z-10 mx-auto w-full lg:w-7xl xl:w-[90%]">
         <div className="overflow-hidden rounded-[2rem]">
           <div className="grid min-h-[560px] grid-cols-1 items-center gap-10 px-6 py-10 sm:min-h-[680px] sm:px-10 lg:grid-cols-2 lg:px-14 lg:py-14">
             <div className="max-w-2xl">

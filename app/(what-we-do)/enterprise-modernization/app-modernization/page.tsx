@@ -24,7 +24,6 @@ import {
 import AI_Solutions from "../../../uiComponents/AI_Solutions";
 import Execution_Plan from "../../../uiComponents/Execution_Plan";
 
-
 const page = () => {
   return (
     <div>
@@ -44,7 +43,7 @@ const page = () => {
               SectionDescription={constraintsSectionHead.description}
             />
           </div>
-          <section className=" w-full sm:w-[80%] mt-5 px-6 sm:px-0  mx-auto ">
+          <section className=" w-full sm:w-[90%] mt-5 px-6 sm:px-0  mx-auto ">
             <CardShowcase
               items={applicationConstraintsData}
               showDivider={true}
@@ -71,22 +70,22 @@ const page = () => {
             />
           </div>
         </div>
-        <section className="w-full  sm:w-[80%] -mt-20 lg:-mt-10 mx-auto">
+        <section className="w-full  sm:w-[90%] -mt-20 lg:-mt-10 mx-auto">
           <CardShowcase
             showStepBadge
             showDivider={false}
             items={phasedApproachData}
-            cardHeight="h-[230px]  max-w-[230px] "
-            gridClassName="gap-y-28"
+            cardHeight="h-[263px]  max-w-[330px] "
+            gridClassName="h-full gap-y-30 "
             titleClassName="text-[28px] leading-8 "
-            descriptionClassName="text-[16px] leading-5 mt-3 text-muted "
+            descriptionClassName="text-[16px] xl:text-[18px] leading-6 mt-3 text-muted "
           />
         </section>
       </section>
       <section className="overflow-hidden py-20 lg:py-20">
         <div className="flex flex-col items-center justify-center mx-auto min-h-[60vh] relative z-10">
           <BgSquare2 />
-          <div className="flex flex-col gap-6.5 -mt-44 w-full sm:w-1/2 lg:w-1/2 text-center">
+          <div className="flex flex-col gap-6.5 -mt-10 w-full sm:w-1/2 lg:w-1/2 text-center">
             <span>
               <StrategyBadge text={strategySectionHead.badgeText} />
             </span>
@@ -95,49 +94,48 @@ const page = () => {
               SectionDescription={strategySectionHead.description}
             />
           </div>
+          <section className="  gap-6 md:w-[90%]  mx-auto ">
+            <Discover
+              badgeText={auditPhaseData2.badgeText}
+              title={auditPhaseData2.title}
+              description={auditPhaseData2.description}
+              buttonText={auditPhaseData2.buttonText}
+              buttonLink={auditPhaseData2.buttonLink}
+              image={auditPhaseData2.image}
+              imageAlt={auditPhaseData2.imageAlt}
+            />
+
+            <Assess
+              badgeText={foundationPhaseData.badgeText}
+              title={foundationPhaseData.title}
+              description={foundationPhaseData.description}
+              buttonText={foundationPhaseData.buttonText}
+              buttonLink={foundationPhaseData.buttonLink}
+              image={foundationPhaseData.image}
+              imageAlt={foundationPhaseData.imageAlt}
+            />
+
+            <Discover
+              badgeText={migrationPhaseData.badgeText}
+              title={migrationPhaseData.title}
+              description={migrationPhaseData.description}
+              buttonText={migrationPhaseData.buttonText}
+              buttonLink={migrationPhaseData.buttonLink}
+              image={migrationPhaseData.image}
+              imageAlt={migrationPhaseData.imageAlt}
+            />
+
+            <Assess
+              badgeText={sunsetPhaseData.badgeText}
+              title={sunsetPhaseData.title}
+              description={sunsetPhaseData.description}
+              buttonText={sunsetPhaseData.buttonText}
+              buttonLink={sunsetPhaseData.buttonLink}
+              image={sunsetPhaseData.image}
+              imageAlt={sunsetPhaseData.imageAlt}
+            />
+          </section>
         </div>
-
-        <section className=" -mt-40 gap-6 md:w-[80%]  mx-auto ">
-          <Discover
-            badgeText={auditPhaseData2.badgeText}
-            title={auditPhaseData2.title}
-            description={auditPhaseData2.description}
-            buttonText={auditPhaseData2.buttonText}
-            buttonLink={auditPhaseData2.buttonLink}
-            image={auditPhaseData2.image}
-            imageAlt={auditPhaseData2.imageAlt}
-          />
-
-          <Assess
-            badgeText={foundationPhaseData.badgeText}
-            title={foundationPhaseData.title}
-            description={foundationPhaseData.description}
-            buttonText={foundationPhaseData.buttonText}
-            buttonLink={foundationPhaseData.buttonLink}
-            image={foundationPhaseData.image}
-            imageAlt={foundationPhaseData.imageAlt}
-          />
-
-          <Discover
-            badgeText={migrationPhaseData.badgeText}
-            title={migrationPhaseData.title}
-            description={migrationPhaseData.description}
-            buttonText={migrationPhaseData.buttonText}
-            buttonLink={migrationPhaseData.buttonLink}
-            image={migrationPhaseData.image}
-            imageAlt={migrationPhaseData.imageAlt}
-          />
-
-          <Assess
-            badgeText={sunsetPhaseData.badgeText}
-            title={sunsetPhaseData.title}
-            description={sunsetPhaseData.description}
-            buttonText={sunsetPhaseData.buttonText}
-            buttonLink={sunsetPhaseData.buttonLink}
-            image={sunsetPhaseData.image}
-            imageAlt={sunsetPhaseData.imageAlt}
-          />
-        </section>
       </section>
       <section className="w-full">
         <AI_Solutions

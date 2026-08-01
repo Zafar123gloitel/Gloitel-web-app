@@ -27,7 +27,7 @@ const Assess = ({
   imageAlt = "Section Image",
 }: AssessProps) => {
   return (
-    <section className="discover-section lg:flex-row-reverse mt-16  md:mt-24.25 overflow-hidden m-auto flex max-w-7xl flex-col justify-between gap-33.25 px-6 py-10 sm:px-10  lg:px-14 lg:py-14">
+    <section className="discover-section lg:flex-row-reverse mt-16  md:mt-24.25 overflow-hidden m-auto flex max-w-8xl xl:mx-20 flex-col justify-between gap-33.25 px-6 py-10 sm:px-10  lg:px-14 lg:py-14">
       {/* Content */}
       <div className="flex-1">
         <span className="mb-6 block">

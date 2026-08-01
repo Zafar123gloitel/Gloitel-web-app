@@ -3,8 +3,6 @@
 import React from "react";
 import HeroSection from "../../components/HeroSection";
 import {
-  deliverablesData,
-  deliverablesSectionHead,
   designHandoffData,
   designProcessSectionHead,
   designStandardsData,
@@ -13,20 +11,17 @@ import {
   interactivePrototypeData,
   uxDesignCTAData,
   uxDesignHeroData,
-  uxResearchCTAData,
   visualDesignData,
   whatWeDesignData,
   whatWeDesignSectionHead,
   wireframingData,
 } from "../data";
 import { BgSquare2 } from "../../../component/BgSquare";
-import { automationApproachSectionHead } from "../../(enterprise-modernization)/data";
 import StrategyBadge from "../../../../components/StrategyBadge";
 import { MiddleSectionHeads } from "../../../component/SectionHeads";
 import Discover from "../../components/Discover";
 import Assess from "../../components/Assess";
 import ImageCard from "../../components/ImageCard";
-import ProblemCard from "../../../../components/ProblemCard";
 import Execution_Plan from "../../../uiComponents/Execution_Plan";
 import Business from "../../components/Business";
 
@@ -48,7 +43,7 @@ const page = () => {
           </div>
         </div>
 
-        <section className=" -mt-40 gap-6  md:w-[80%] mx-auto ">
+        <section className=" -mt-40 gap-6  md:w-[90%] mx-auto ">
           <Discover
             badgeText={discoveryResearchData.badgeText}
             title={discoveryResearchData.title}

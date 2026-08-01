@@ -37,17 +37,17 @@ const Execution_Plan = ({
         <source src={videoUrl} type="video/mp4" />
       </video>
 
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-8xl">
         <div className="relative overflow-hidden rounded-[2rem]">
           <div className="flex items-center justify-center gap-10 px-6 py-10 sm:px-10 lg:px-14 lg:py-14">
             <div className="relative z-10 max-w-2xl text-center">
               <StrategyBadge text={badgeText} />
 
-              <h1 className="mt-7 text-4xl font-medium leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-[3rem]">
+              <h1 className="mt-7 text-4xl xl:text-6xl font-medium leading-[1.09] tracking-tight text-white sm:text-5xl lg:text-[3rem]">
                 {title}
               </h1>
 
-              <p className="mt-6 text-[16px] leading-7 text-white/45 sm:text-base">
+              <p className="mt-6 text-[16px] xl:text-[20px] leading-7 text-white/45 sm:text-base">
                 {description}
               </p>
 

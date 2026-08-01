@@ -3,11 +3,8 @@
 import React from "react";
 import HeroSection from "../../components/HeroSection";
 import {
-  auditPhaseData2,
-  cloudCoverageData,
+
   buildingBlocksSectionHead,
-  cloudMigrationHeroData,
-  cloudPlatformsData,
   decompositionApproachSectionHead,
   domainDrivenDesignData,
   incrementalExtractionData,
@@ -15,18 +12,12 @@ import {
   antiCorruptionLayerData,
   signalsData,
   signalsSectionHead,
-  strategySectionHead,
   buildingBlocksData,
   techStackSectionHead,
   techStackData,
   microservicesCTAData,
 } from "../data";
 import Strategy from "../../components/Strategy";
-import {
-  scaleReadinessIndicators,
-  scaleReadinessSectionHead,
-} from "../../(product-engineering)/data";
-import { CircleAlert } from "lucide-react";
 import { BgSquare2 } from "../../../component/BgSquare";
 import StrategyBadge from "../../../../components/StrategyBadge";
 import { MiddleSectionHeads } from "../../../component/SectionHeads";
@@ -97,7 +88,7 @@ const page = () => {
           </div>
         </div>
 
-        <section className=" -mt-40 gap-6 md:w-[80%] mx-auto   ">
+        <section className=" -mt-40 gap-6 md:w-[90%] mx-auto   ">
           <Discover
             badgeText={domainDrivenDesignData.badgeText}
             title={domainDrivenDesignData.title}

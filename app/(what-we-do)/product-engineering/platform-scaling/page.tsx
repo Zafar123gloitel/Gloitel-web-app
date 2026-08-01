@@ -37,7 +37,7 @@ It's Time to Scale"
         />
       </section>
       <section>
-        <div className="flex flex-col items-center justify-center mx-auto min-h-[60vh] relative z-10">
+        <div className="flex flex-col items-center mt-20 justify-center mx-auto min-h-[60vh] relative z-10">
           <BgSquare2 />
           <div className="flex flex-col w-full gap-6.5 -mt-40 sm:w-1/2 lg:w-1/2 text-center">
             {/* Badge */}
@@ -54,7 +54,7 @@ on the areas that matter most for sustainable scale."
           </div>
         </div>
 
-        <div className="sm:w-[80%] -mt-10 mx-auto">
+        <div className="sm:w-[80%] -mt-20 mx-auto">
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 p-5 ">
             {scalingSolutions.map((item) => (
               <PurposeCard
@@ -82,7 +82,7 @@ on the areas that matter most for sustainable scale."
           </div>
         </div>
 
-        <section className="-mt-40 gap-6 md:w-[80%] mx-auto   ">
+        <section className="-mt-40 gap-6 md:w-[80%] xl:w-[90%] mx-auto   ">
           <Discover
             badgeText={auditPhaseData.badgeText}
             title={auditPhaseData.title}

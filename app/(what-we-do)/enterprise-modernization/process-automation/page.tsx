@@ -22,7 +22,6 @@ import Assess from "../../components/Assess";
 import AI_Solutions from "../../../uiComponents/AI_Solutions";
 import Execution_Plan from "../../../uiComponents/Execution_Plan";
 
-
 const page = () => {
   return (
     <div>
@@ -72,7 +71,7 @@ const page = () => {
           </div>
         </div>
 
-        <section className=" -mt-40 gap-6 md:w-[80%] mx-auto   ">
+        <section className=" -mt-40 gap-6 md:w-[90%] mx-auto   ">
           <Discover
             badgeText={processInventoryData.badgeText}
             title={processInventoryData.title}

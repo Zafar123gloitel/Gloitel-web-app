@@ -30,10 +30,9 @@ import { ArrowUpIcon } from "lucide-react";
 import AI_Solutions from "../../../uiComponents/AI_Solutions";
 import Execution_Plan from "../../../uiComponents/Execution_Plan";
 
-
 const page = () => {
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden mt-10">
       <HeroSection {...heroSectionDataGenerative} />
       <div className="flex flex-col items-center justify-center mx-auto min-h-[60vh] relative z-10">
         <BgSquare2 />
@@ -48,7 +47,7 @@ const page = () => {
             SectionDescription="We design and build production-ready generative AI solutions - from intelligent assistants and document processing systems to RAG platforms, workflow automation, and private LLM deployments."
           />
         </div>
-        <section className="p-5 sm:p-0  sm:max-w-320.25 mt-20 mx-auto">
+        <section className="p-5 sm:p-0  sm:max-w-[90%] mt-20 mx-auto">
           <CardShowcase
             items={aiServicesData}
             showDivider={true}
@@ -75,7 +74,7 @@ into Production Systems."
             SectionDescription="From initial discovery and model selection to deployment and ongoing monitoring, we follow a structured process that transforms AI concepts into secure, scalable, and production-ready solutions."
           />
         </div>
-        <section className="w-full md:w-[80%]  mx-auto">
+        <section className="w-full md:w-[80%] xl:w-[90%] mx-auto">
           <Discover
             badgeText={executionStepOne.badgeText}
             title={executionStepOne.title}
@@ -171,7 +170,7 @@ into Production Systems."
           ))}
         </section>
       </div>
-      <Execution_Plan 
+      <Execution_Plan
         badgeText="Production-Ready GenAI starts here"
         title="From Prototype to Production"
         description="Turn promising experiments into reliable systems with the guardrails, observability, 

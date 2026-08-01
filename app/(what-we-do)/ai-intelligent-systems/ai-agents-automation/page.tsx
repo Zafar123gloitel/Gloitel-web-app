@@ -265,7 +265,7 @@ achieve outcomes."
               SectionDescription="We design and build production-ready generative AI solutions - from intelligent assistants and document processing systems to RAG platforms, workflow automation, and private LLM deployments."
             />
           </div>
-          <section className="w-[80%] mt-20 mx-auto ">
+          <section className="w-[90%] mt-20 mx-auto ">
             <CardShowcase
               items={ai_agents_designed}
               showDivider={true}

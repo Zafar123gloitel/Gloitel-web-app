@@ -37,7 +37,7 @@ const Asked_Q: React.FC<AskedQProps> = ({
   return (
     <>
       {showGlow && <GlowPanel />}
-      <section className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 sm:py-10 lg:pb-20 overflow-hidden">
+      <section className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-20 sm:py-10 lg:pb-20 overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
           {/* LEFT */}
           <div className="flex gap-6.5 flex-col">

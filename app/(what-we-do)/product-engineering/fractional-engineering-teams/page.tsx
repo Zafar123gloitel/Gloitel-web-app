@@ -40,20 +40,20 @@ const page = () => {
             />
           </div>
         </div>
-        <section className="w-full  sm:w-[80%] -mt-20 mx-auto">
+        <section className="w-full  sm:w-[90%] -mt-20 mx-auto">
           <CardShowcase
             showStepBadge
             showDivider={false}
             items={showcaseItems2}
-            cardHeight="h-[230px]  max-w-[230px] "
-            gridClassName="gap-y-28"
+            cardHeight="h-[263px]  max-w-[330px] "
+            gridClassName="h-full gap-y-30 "
             titleClassName="text-[28px] leading-8 "
-            descriptionClassName="text-[16px] leading-5 mt-3 text-muted "
+            descriptionClassName="text-[16px] xl:text-[18px] leading-6 mt-3 text-muted "
           />
         </section>
       </section>
 
-      <section className=" overflow-hidden">
+      <section className=" overflow-hidden px-10">
         <div className="flex flex-col items-center  mt-10 justify-center mx-auto min-h-[60vh] relative z-10">
           <BgSquare2 />
           <div className="flex flex-col gap-6.5 -mt-44 w-full sm:w-1/2 lg:w-1/2 text-center">
@@ -96,7 +96,7 @@ const page = () => {
               SectionDescription={teamSectionHead.description}
             />
           </div>
-          <section className=" w-full sm:w-[80%] mt-5 px-6 sm:px-0  mx-auto ">
+          <section className=" w-full sm:w-[90%] mt-5 px-6 sm:px-0  mx-auto ">
             <CardShowcase
               items={teamValuesData}
               showDivider={true}

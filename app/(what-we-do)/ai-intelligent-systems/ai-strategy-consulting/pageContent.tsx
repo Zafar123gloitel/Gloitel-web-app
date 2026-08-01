@@ -37,11 +37,11 @@ export default function WhatWeDoPage() {
       <div className="">
         <HeroSection {...heroSectionData} />
       </div>
-      <div className="overflow-hidden h-screen">
-        <section className="my-14 lg:my-24">
-          <div className="flex flex-col  items-center justify-center mx-auto min-h-[60vh] relative z-10">
+      <div className="overflow-hidden ">
+        <section className="my-14 lg:my-24 ">
+          <div className="flex flex-col  items-center justify-center mx-auto  relative z-10">
             <BgSquare2 />
-            <div className="flex flex-col gap-6.5  -mt-44 w-full sm:w-1/2 lg:w-1/2 text-center">
+            <div className="flex flex-col gap-6.5  w-full lg:-mt-10 sm:w-1/2 lg:w-1/2 text-center">
               {/* Badge */}
               <span>
                 <StrategyBadge text="Who This Is For" />
@@ -53,7 +53,7 @@ export default function WhatWeDoPage() {
               />
             </div>
           </div>
-          <section className="grid grid-cols-1 -mt-20 gap-6 md:grid-cols-2 w-[80%] mx-auto ">
+          <section className="grid grid-cols-1 mt-5 gap-6 md:grid-cols-2 w-[80%] mx-auto ">
             {problems.map((item, index) => (
               <ProblemCard key={index} title={item.title} />
             ))}
@@ -63,7 +63,7 @@ export default function WhatWeDoPage() {
       <section className=" overflow-hidden">
         <div className="flex flex-col items-center  mt-10 justify-center mx-auto min-h-[60vh] relative z-10">
           <BgSquare2 />
-          <div className="flex flex-col gap-6.5 -mt-44 w-full sm:w-1/2 lg:w-1/2 text-center">
+          <div className="flex flex-col gap-6.5  w-full sm:w-1/2 lg:w-1/2 text-center">
             {/* Badge */}
             <span>
               <StrategyBadge text="Our Approach" />
@@ -73,18 +73,18 @@ export default function WhatWeDoPage() {
               SectionDescription="We run a structured Discovery Sprint - a fixed-scope, 3–4 week engagement that maps your workflows, assesses feasibility, and delivers a prioritized AI roadmap."
             />
           </div>
+          <section className="w-full  sm:w-[90%] mt-20 mx-auto">
+            <CardShowcase
+              showStepBadge
+              showDivider={false}
+              items={showcaseItems}
+              cardHeight="h-[250px]   max-w-[300px] "
+              gridClassName="gap-y-28"
+              titleClassName="text-[28px] leading-8 "
+              descriptionClassName="text-[16px] leading-5 mt-3 text-muted "
+            />
+          </section>
         </div>
-        <section className="w-full  sm:w-[80%] -mt-20 mx-auto">
-          <CardShowcase
-            showStepBadge
-            showDivider={false}
-            items={showcaseItems}
-            cardHeight="h-[230px]  max-w-[230px] "
-            gridClassName="gap-y-28"
-            titleClassName="text-[28px] leading-8 "
-            descriptionClassName="text-[16px] leading-5 mt-3 text-muted "
-          />
-        </section>
       </section>
       <div className="">
         <Discover

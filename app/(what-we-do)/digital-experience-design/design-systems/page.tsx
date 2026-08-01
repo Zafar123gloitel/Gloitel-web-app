@@ -26,11 +26,11 @@ import ArchitectureCircle from "../../../uiComponents/ArchitectureCircle";
 const page = () => {
   const positions = {
     top: "lg:top-0 lg:left-1/2 -translate-x-1/2",
-    leftTop: "lg:left-0 xl:left-10 2xl:left-30 lg:top-40",
-    rightTop: "lg:right-0 xl:right-10 2xl:right-30 lg:top-40",
-    leftBottom: "lg:left-0 xl:left-10 2xl:left-30 lg:bottom-40",
+    leftTop: "lg:left-0 xl:left-10 2xl:left-60 lg:top-40",
+    rightTop: "lg:right-0 xl:right-10 2xl:right-60 lg:top-40",
+    leftBottom: "lg:left-0 xl:left-10 2xl:left-60 lg:bottom-40",
     bottom: "lg:-bottom-5 lg:left-1/2 -translate-x-1/2",
-    rightBottom: "lg:right-0 xl:right-10 2xl:right-30 lg:bottom-40",
+    rightBottom: "lg:right-0 xl:right-10 2xl:right-60 lg:bottom-40",
   };
   return (
     <div>
@@ -108,7 +108,7 @@ const page = () => {
               />
             </div>
           </div>
-          <section className="w-full  sm:w-[80%] -mt-20 mx-auto">
+          <section className="w-full  sm:w-[90%] -mt-20 mx-auto">
             <CardShowcase
               showStepBadge
               showDivider={false}

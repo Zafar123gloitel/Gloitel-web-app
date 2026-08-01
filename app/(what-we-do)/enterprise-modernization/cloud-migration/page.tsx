@@ -3,7 +3,6 @@
 import React from "react";
 import HeroSection from "../../components/HeroSection";
 import {
-  appModernizationHeroData,
   cloudCoverageData,
   cloudCoverageSectionHead,
   cloudMigrationHeroData,
@@ -12,17 +11,12 @@ import {
   migrationApproachSectionHead,
   migrationStrategySectionHead,
   migrationStrategySteps,
-  phasedApproachData,
-  phasedApproachSectionHead,
-  technologiesModernizedData,
 } from "../data";
 import { BgSquare2 } from "../../../component/BgSquare";
 import StrategyBadge from "../../../../components/StrategyBadge";
 import { MiddleSectionHeads } from "../../../component/SectionHeads";
 import { CardShowcase } from "../../../../components";
-import { whoThisIsForData } from "../../(product-engineering)/data";
 import ProblemCard from "../../../../components/ProblemCard";
-import { steps } from "framer-motion";
 import AI_Solutions from "../../../uiComponents/AI_Solutions";
 import Execution_Plan from "../../../uiComponents/Execution_Plan";
 
@@ -45,7 +39,7 @@ const page = () => {
             />
           </div>
         </div>
-        <section className="w-full  sm:w-[80%] -mt-20 mx-auto">
+        <section className="w-full  sm:w-[90%] -mt-20 mx-auto">
           <CardShowcase
             showStepBadge
             showDivider={false}

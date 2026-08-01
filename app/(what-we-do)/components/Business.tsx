@@ -42,7 +42,7 @@ const Business = ({
         </div>
       </div>
 
-      <div className="mx-auto grid -mt-10 w-full md:w-[85%] grid-cols-1 gap-5">
+      <div className="mx-auto grid -mt-10 w-full md:w-[85%] grid-cols-1 gap-5 px-10">
         {data.map((item) => (
           <BusinessCard
             key={item.id}
