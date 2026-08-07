@@ -209,7 +209,7 @@ export const fullStackRoadmapData = [
         <circle cx="12" cy="12" r="1" />
       </svg>
     ),
-    text: "Clarity on where AI will create measurable business impact",
+    title: "Clarity on where AI will create measurable business impact",
   },
   {
     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
@@ -229,7 +229,7 @@ export const fullStackRoadmapData = [
         <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z" />
       </svg>
     ),
-    text: "A prioritised use case stack ranked by value and feasibility",
+    title: "A prioritised use case stack ranked by value and feasibility",
   },
   {
     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
@@ -249,7 +249,7 @@ export const fullStackRoadmapData = [
         <path d="m22 12-4.6 4.6a2 2 0 0 1-2.8 0l-5.2-5.2a2 2 0 0 1 0-2.8L14 4" />
       </svg>
     ),
-    text: "Defined pilot scope with expected outcomes and success metrics",
+    title: "Defined pilot scope with expected outcomes and success metrics",
   },
   {
     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
@@ -269,7 +269,7 @@ export const fullStackRoadmapData = [
         <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 1 0 7.07 7.07l1.76-1.77" />
       </svg>
     ),
-    text: "A structured roadmap aligned to business priorities",
+    title: "A structured roadmap aligned to business priorities",
   },
   {
     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
@@ -291,6 +291,6 @@ export const fullStackRoadmapData = [
         <line x1="2" y1="2" x2="22" y2="22" />
       </svg>
     ),
-    text: "A clear view of what *not* to build — equally valuable",
+    title: "A clear view of what *not* to build — equally valuable",
   },
 ];

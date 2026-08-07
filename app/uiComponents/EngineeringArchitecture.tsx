@@ -145,6 +145,37 @@ export default function EngineeringArchitecture({
             ))}
         </div>
       </section>
+      {/* ---------------- Mobile & Tablet ---------------- */}
+      <div className="flex lg:hidden flex-col -mt-40 p-10 items-center gap-10 w-full">
+        {/* Phone Image */}
+        <div className={`relative ${imageWidth} ${imageHeight}`}>
+          <Image
+            src={image}
+            alt={imageAlt}
+            fill
+            className="object-contain"
+          />
+        </div>
+
+        {/* Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-6xl">
+          {data.map((item) => (
+            <Card key={item.id} className="w-full min-h-[320px]">
+              <CardIcon className="text-blue-500">
+                {item.icon}
+              </CardIcon>
+
+              <CardTitle className="mt-4 text-3xl text-white">
+                {item.title}
+              </CardTitle>
+
+              <CardDescription className="mt-5  leading-6">
+                {item.description}
+              </CardDescription>
+            </Card>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }

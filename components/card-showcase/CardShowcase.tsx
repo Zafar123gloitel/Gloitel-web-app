@@ -42,7 +42,7 @@ export function CardShowcase({
       className={`flex flex-wrap my-10 items-center justify-center gap-x-6 gap-y-6  ${gridClassName}`}
     >
       {items.map((item, index) => (
-        <div key={item.title} className={`relative ${cardHeight} `}>
+        <div key={index} className={`relative ${cardHeight} `}>
           {showStepBadge && (
             <div className="absolute left-1/2 -top-22 z-20 -translate-x-1/2">
               <StepBadge number={item.step ?? index + 1} />
@@ -56,7 +56,9 @@ export function CardShowcase({
               <div className="mt-8 flex flex-1 flex-col">
                 {showDivider && <CardDivider className="mb-8" />}
 
-                <CardTitle className={titleClassName}>{item.title}</CardTitle>
+                <CardTitle className={`text-white ${titleClassName}`}>
+                  {item.title}
+                </CardTitle>
 
                 <CardDescription className={descriptionClassName}>
                   {item.description}

@@ -1,35 +1,19 @@
-export const aiEngineeringHeroData = {
-  badgeText: "AI Engineering",
+export const devOpsCloudHeroData = {
+  badgeText: "DevOps & Cloud Engineering",
   title: "AI Engineering That Ships and Stays Shipped",
   description:
-    "Building an AI proof-of-concept takes days. Building one that handles production traffic reliably, costs predictably, and can be debugged when something goes wrong - that's engineering. We've done that latter.",
-  image: "/images/Engineering/ai-engineering-hero.png",
-  imageAlt: "AI engineering",
-  video:
-    "https://res.cloudinary.com/dsqu6pi0d/video/upload/v1762846419/Gloitel/bg_cij8h5.mp4",
+    "Building an AI proof-of-concept takes days. Building one that handles production traffic reliably, costs predictably, and can be debugged when something goes wrong – that's engineering.",
+ image: "/images/Engineering/backend-engineering-hero.png",
+  imageAlt: "",
+  video: "",
   primaryButton: {
     text: "Talk to Our AI Engineers",
-    href: "/contact",
+    href: "",
   },
   secondaryButton: {
     text: "View AI Work",
-    href: "/about",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="16"
-        height="16"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M5 12h14" />
-        <path d="m12 5 7 7-7 7" />
-      </svg>
-    ),
+    href: "",
+    icon: "",
   },
 };
 export const aiSystemsSectionHead = {
@@ -247,27 +231,27 @@ export const aiEcosystemData = {
       {
         id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
         name: "OpenAI GPT-4o",
-        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960583/Gloitel/icon/openai_wwedph.png",
+        logo: "",
       },
       {
         id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
         name: "Claude 3.5 Sonnet",
-        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960642/Gloitel/icon/claude_sszoov.png",
+        logo: "",
       },
       {
         id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
         name: "Gemini 1.5 Pro",
-        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960682/Gloitel/icon/gemini_b4dcsa.png",
+        logo: "",
       },
       {
         id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
         name: "LLaMA 3",
-        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960576/Gloitel/icon/meta_brzl7j.png",
+        logo: "",
       },
       {
         id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
         name: "Mistral",
-        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960577/Gloitel/icon/mistral_bmr5b7.png",
+        logo: "",
       },
     ],
     "RAG/Orchestration": [],
@@ -279,120 +263,12 @@ export const aiEcosystemData = {
     "Cloud AI": [],
   },
 };
-export const aiEngineeringNotData = {
-  badgeText: "What This Is Not",
-  heading: "Strategy before Solutions",
-  description:
-    "Every recommendation is grounded in business impact and feasibility. We do not start with technology, products, or predetermined solutions.",
-  items: [
-    {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="27"
-          height="27"
-          viewBox="0 0 27 27"
-          fill="none"
-        >
-          <path
-            d="M24.9027 24.9027L1.46484 1.46484M24.9027 1.46484L1.46484 24.9027"
-            stroke="white"
-            strokeWidth="2.92973"
-            strokeLinecap="round"
-          />
-        </svg>
-      ),
-      description: "Not a vendor-led engagement where we pre-sell a solution",
-    },
-    {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="27"
-          height="27"
-          viewBox="0 0 27 27"
-          fill="none"
-        >
-          <path
-            d="M24.9027 24.9027L1.46484 1.46484M24.9027 1.46484L1.46484 24.9027"
-            stroke="white"
-            strokeWidth="2.92973"
-            strokeLinecap="round"
-          />
-        </svg>
-      ),
-      description: "Not a free strategy workshop with vague outputs",
-    },
-    {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="27"
-          height="27"
-          viewBox="0 0 27 27"
-          fill="none"
-        >
-          <path
-            d="M24.9027 24.9027L1.46484 1.46484M24.9027 1.46484L1.46484 24.9027"
-            stroke="white"
-            strokeWidth="2.92973"
-            strokeLinecap="round"
-          />
-        </svg>
-      ),
-      description: "Not an open-ended consulting retainer",
-    },
-    {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="27"
-          height="27"
-          viewBox="0 0 27 27"
-          fill="none"
-        >
-          <path
-            d="M24.9027 24.9027L1.46484 1.46484M24.9027 1.46484L1.46484 24.9027"
-            stroke="white"
-            strokeWidth="2.92973"
-            strokeLinecap="round"
-          />
-        </svg>
-      ),
-      description: "Not an open-ended consulting retainer",
-    },
-    {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="27"
-          height="27"
-          viewBox="0 0 27 27"
-          fill="none"
-        >
-          <path
-            d="M24.9027 24.9027L1.46484 1.46484M24.9027 1.46484L1.46484 24.9027"
-            stroke="white"
-            strokeWidth="2.92973"
-            strokeLinecap="round"
-          />
-        </svg>
-      ),
-      description: "Not a build-first approach without a validated roadmap",
-    },
-  ],
-};
-export const aiEngineeringCTAData = {
+
+export const devOpsCloudCTAData = {
   badgeText: "Ready to Build?",
-  title: "Let's Build Your Next AI Solution!",
+  title: "Let's Build Your Next Healthcare Solution!",
   description:
-    "Whether you're launching an AI-powered feature, integrating with LLM systems, or building production AI infrastructure, we can help you move from concept to compliant production-ready systems.",
-  buttonText: "Build Your AI Solution",
+    "Whether you're launching a digital health platform, integrating with EHR systems, or building AI-powered healthcare tools, we can help you move from concept to compliant, production-ready software.",
+  buttonText: "Build Your Healthcare Solution",
   buttonLink: "/contact",
 };
-

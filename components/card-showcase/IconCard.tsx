@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React, { ReactNode } from "react";
 
 interface IconCardProps {
@@ -70,15 +71,21 @@ const IconCard = ({
           </div>
         ) : (
           <div className="flex h-16 w-16 items-center justify-center overflow-hidden rounded-full bg-white transition-all duration-700 group-hover:scale-110">
-            <img
-              src={logo}
-              alt={name}
-              className="h-full w-full object-contain"
-            />
+            {typeof logo === "string" && logo.trim().length > 0 ? (
+              <Image
+                height={64}
+                width={64}
+                src={logo}
+                alt={name}
+                className="h-full w-full object-contain"
+              />
+            ) : (
+              <div className="h-10 w-10 rounded-full bg-slate-200" />
+            )}
           </div>
         )}
 
-        <h3 className="mt-8 text-center  text-lg ">{name}</h3>
+        <h3 className="mt-8 text-center  text-lg text-white ">{name}</h3>
       </div>
     </div>
   );

@@ -1,3 +1,69 @@
+"use client";
+
+import StrategyBadge from "../../../components/StrategyBadge";
+import { BgSquare2 } from "../../component/BgSquare";
+import EngineeringHeroSection from "../../component/EngineeringHeroSection";
+import { MiddleSectionHeads } from "../../component/SectionHeads";
+import AI_Solutions from "../../uiComponents/AI_Solutions";
+import ArchitectureCircle from "../../uiComponents/ArchitectureCircle";
+import Execution_Plan from "../../uiComponents/Execution_Plan";
+import { aiEcosystemData, aiEngineeringCTAData, fullStackComplianceData, fullStackComplianceSectionHead, iotHeroData } from "./data";
+
 export default function Page() {
-  return <div>IoT Engineering</div>;
+  const positions = {
+    top: "lg:top-2 lg:left-1/2 lg:-translate-x-1/2",
+    leftTop: "lg:left-8 xl:left-24 2xl:left-40 lg:top-52",
+    rightTop: "lg:right-8 xl:right-24 2xl:right-40 lg:top-52",
+    leftBottom: "lg:left-8 xl:left-24 2xl:left-40 lg:bottom-52",
+    bottom: "lg:bottom-2 lg:left-1/2 lg:-translate-x-1/2",
+    rightBottom: "lg:right-8 xl:right-24 2xl:right-40 lg:bottom-52",
+  };
+  return <div>
+    <EngineeringHeroSection
+      badgeText={iotHeroData.badgeText}
+      title={iotHeroData.title}
+      description={iotHeroData.description}
+      image={iotHeroData.image}
+      imageAlt={iotHeroData.imageAlt}
+      primaryButton={iotHeroData.primaryButton}
+      secondaryButton={iotHeroData.secondaryButton}
+    />
+    <div className="flex flex-col items-center justify-center mx-auto min-h-[60vh] relative z-10">
+      <BgSquare2 />
+      <div className="flex flex-col gap-6.5 -mt-44 w-full sm:w-1/2 lg:w-1/2 text-center">
+        <span>
+          <StrategyBadge text={fullStackComplianceSectionHead.badgeText} />
+        </span>
+        <MiddleSectionHeads
+          SectionHead={fullStackComplianceSectionHead.title}
+          SectionDescription={fullStackComplianceSectionHead.description}
+        />
+      </div>
+    </div>
+
+    <section className="flex items-center -mt-40 mb-10">
+      <ArchitectureCircle
+        data={fullStackComplianceData}
+        image="/images/hrm.png"
+        positions={positions}
+      />
+    </section>
+    <section className="w-full">
+      <AI_Solutions
+        badge={aiEcosystemData.badge}
+        title={aiEcosystemData.title}
+        description={aiEcosystemData.description}
+        tabs={aiEcosystemData.tabs}
+        technologies={aiEcosystemData.technologies}
+      />
+    </section>
+    <Execution_Plan
+      badgeText={aiEngineeringCTAData.badgeText}
+      title={aiEngineeringCTAData.title}
+      description={aiEngineeringCTAData.description}
+      buttonText={aiEngineeringCTAData.buttonText}
+      buttonLink={aiEngineeringCTAData.buttonLink}
+      onclick={() => ({})}
+    />
+  </div>;
 }
