@@ -62,7 +62,7 @@ export default function Footer() {
           viewBox="0 0 30 30"
           fill="none"
         >
-          <g clip-path="url(#clip0_1316_68944)">
+          <g clipPath="url(#clip0_1316_68944)">
             <g mask="url(#mask0_1316_68944)">
               <path
                 d="M23.625 1.40625H28.2257L18.1757 12.922L30 28.5948H20.7429L13.4871 19.0912L5.19429 28.5948H0.589286L11.3379 16.2734L0 1.40839H9.49286L16.0414 10.0934L23.625 1.40625ZM22.0071 25.8348H24.5571L8.1 4.02268H5.36571L22.0071 25.8348Z"
@@ -171,41 +171,52 @@ export default function Footer() {
                 </button>
               ))}
           </div>
+          {activeMenu && (
+            <div className="rounded-xl absolute top-0 left-40 w-lg  border flex flex-col gap-3   border-white/10 bg-[#111] p-6">
+              {megaMenus[activeMenu].groups.map((group) => (
+                <div key={group.title}>
+                  <button
+                    onClick={() =>
+                      setActiveGroup(
+                        activeGroup === group.title ? null : group.title,
+                      )
+                    }
+                  >
+                    {group.title}
+                  </button>
+
+                  {(activeGroup === group.title ||
+                    (!activeGroup &&
+                      megaMenus[activeMenu].groups[0].title ===
+                        group.title)) && (
+                    <div className="flex flex-col gap-2 mt-2 text-sm sm:text-base text-white/50">
+                      {group.items.map((item) => (
+                        <Link key={item.href} href={item.href}>
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
         </div>
-
-        {activeMenu && (
-          <div className="rounded-xl z-50 border flex flex-col gap-3   border-white/10 bg-[#111] p-6">
-            {megaMenus[activeMenu].groups.map((group) => (
-              <div key={group.title}>
-                <button
-                  onClick={() =>
-                    setActiveGroup(
-                      activeGroup === group.title ? null : group.title,
-                    )
-                  }
-                >
-                  {group.title}
-                </button>
-
-                {activeGroup === group.title && (
-                  <div>
-                    {group.items.map((item) => (
-                      <Link key={item.href} href={item.href}>
-                        {item.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        )}
 
         {/* Social Links */}
 
         {/* Address & Contact */}
         <div>
-          <h2 className="font-semibold text-white mb-3">Address</h2>
+          <h3 className="mt-5 mb-2 font-medium text-white">Email</h3>
+
+          <Link
+            href="gloitel-it@gloitel.in"
+            className="text-sm text-gray-400 transition-colors  sm:text-base"
+          >
+            gloitel-it@gloitel.in
+          </Link>
+
+          <h2 className="font-semibold text-white mt-4 mb-3">Address</h2>
           <p className="text-sm sm:text-base mb-4 leading-relaxed text-white/50">
             <Link
               target="_blank"

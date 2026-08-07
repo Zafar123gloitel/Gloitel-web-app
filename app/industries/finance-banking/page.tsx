@@ -110,7 +110,6 @@ const page = () => {
             image="/images/hrm.png"
             positions={positions}
           />
-          ;
         </section>
       </section>
       <section>

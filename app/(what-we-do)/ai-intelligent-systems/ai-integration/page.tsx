@@ -11,6 +11,7 @@ import { CardShowcase } from "../../../../components";
 import {
   architecturePatternsData,
   deliverablesData,
+  engineeringData,
   engineeringServicesData,
   TechnologiesData,
 } from "../../components/data";
@@ -18,6 +19,19 @@ import PurposeCard from "../../components/PurposeCard";
 import Business from "../../components/Business";
 import AI_Solutions from "../../../uiComponents/AI_Solutions";
 import Execution_Plan from "../../../uiComponents/Execution_Plan";
+
+export const engineeringSectionData = {
+  badgeText: "What AI Integration Actually Involves",
+
+  sectionHead: "The Engineering behind Production AI Systems.",
+
+  sectionSubHead: "",
+
+  sectionDescription:
+    "Successful AI integration requires more than connecting a model to an application. We build the infrastructure, recovery mechanisms, and monitoring layers that keep AI systems stable, observable, and production-ready.",
+
+  data: engineeringData,
+};
 
 
 const page = () => {
@@ -43,7 +57,14 @@ const page = () => {
         />
       </section>
       <section>
-        <The_Engineering />
+        <The_Engineering
+          badgeText={engineeringSectionData.badgeText}
+          sectionHead={engineeringSectionData.sectionHead}
+          sectionSubHead={engineeringSectionData.sectionSubHead}
+          sectionDescription={engineeringSectionData.sectionDescription}
+          data={engineeringSectionData.data}
+        />
+        ;
       </section>
       <section>
         <div className="flex flex-col items-center mt-20 justify-center mx-auto min-h-[60vh] relative z-10">

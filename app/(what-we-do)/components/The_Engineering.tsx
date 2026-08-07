@@ -1,30 +1,54 @@
+"use client";
+
 import React from "react";
 import GlowPanel from "../../component/GlowPanel";
 import StrategyBadge from "../../../components/StrategyBadge";
 import { LeftSectionHeads } from "../../component/SectionHeads";
 import PurposeCard from "./PurposeCard";
-import { engineeringData } from "./data";
 
-const The_Engineering = () => {
+interface EngineeringItem {
+  id: string;
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}
+
+interface TheEngineeringProps {
+  badgeText: string;
+  sectionHead: string;
+  sectionSubHead?: string;
+  sectionDescription: string;
+  data: EngineeringItem[];
+}
+
+const The_Engineering = ({
+  badgeText,
+  sectionHead,
+  sectionSubHead = "",
+  sectionDescription,
+  data,
+}: TheEngineeringProps) => {
   return (
     <div>
       <GlowPanel />
-      <section className=" max-w-[90%]  mx-auto px-4 sm:px-6 lg:px-8 sm:py-10 lg:pt-10  lg:pb-20 ">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
-          {/* LEFT */}
-          <div className="flex gap-4 flex-col">
-            <span>
-              <StrategyBadge text="What AI Integration Actually Involves" />
-            </span>
+
+      <section className="mx-auto max-w-[90%] px-4 sm:px-6 sm:py-10 lg:px-8 lg:pt-10 lg:pb-20">
+        <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-2 lg:gap-16">
+          {/* Left */}
+          <span className="flex flex-col gap-4">
+            <StrategyBadge text={badgeText} />
+
             <LeftSectionHeads
-              SectionHead="The Engineering behind Production AI Systems."
-              SectionSubHead=""
-              SectionDescription="Successful AI integration requires more than connecting a model to an application. We build the infrastructure, recovery mechanisms, and monitoring layers that keep AI systems stable, observable, and production-ready."
+              SectionHead={sectionHead}
+              SectionSubHead={sectionSubHead}
+              SectionDescription={sectionDescription}
             />
-          </div>
-          <div className="flex gap-4 flex-row flex-wrap justify-center lg:justify-start ">
+          </span>
+
+          {/* Right */}
+          <div className="flex flex-wrap justify-center gap-4 lg:justify-start">
             <div className="flex flex-col gap-3">
-              {engineeringData.map((item) => (
+              {data.map((item) => (
                 <PurposeCard
                   key={item.id}
                   icon={item.icon}
