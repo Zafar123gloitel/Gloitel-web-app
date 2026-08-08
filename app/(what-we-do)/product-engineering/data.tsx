@@ -1953,3 +1953,294 @@ export const scaleReadinessIndicators = [
     description: "Validating direction before hiring.",
   },
 ];
+
+
+export const productEngineeringHeroData = {
+  badgeText: "Product Engineering",
+  title: "From Idea to Production, Without Cutting Corners",
+  description:
+    "Building a product is easy. Building one that works at scale, survives real users, and can be maintained and extended by a team - that takes engineering discipline that most shops skip in the rush to ship.",
+  image: "/images/What-we-do/product-engineering-hero.png",
+  imageAlt: "Product engineering",
+  video:
+    "https://res.cloudinary.com/dsqu6pi0d/video/upload/v1762846419/Gloitel/bg_cij8h5.mp4",
+  primaryButton: {
+    text: "Start Building with Us",
+    href: "/contact",
+  },
+  secondaryButton: {
+    text: "See Our Product Work",
+    href: "/about",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M5 12h14" />
+        <path d="m12 5 7 7-7 7" />
+      </svg>
+    ),
+  },
+};
+
+export const productStruggleData = {
+  badgeText: "The Problem with Most Product Builds",
+  heading: "Why Promising Products Struggle to Scale",
+  description:
+    "Many products fail not because of the idea, but because critical decisions are made without validation, scalability, or long-term maintainability in mind.",
+  items: [
+    {
+      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none">
+          <path d="M24.9027 24.9027L1.46484 1.46484M24.9027 1.46484L1.46484 24.9027" stroke="white" strokeWidth="2.92973" strokeLinecap="round" />
+        </svg>
+      ),
+      description: "Built before the core value proposition is validated",
+    },
+    {
+      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none">
+          <path d="M24.9027 24.9027L1.46484 1.46484M24.9027 1.46484L1.46484 24.9027" stroke="white" strokeWidth="2.92973" strokeLinecap="round" />
+        </svg>
+      ),
+      description: "Architecture built for speed, not scale",
+    },
+    {
+      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none">
+          <path d="M24.9027 24.9027L1.46484 1.46484M24.9027 1.46484L1.46484 24.9027" stroke="white" strokeWidth="2.92973" strokeLinecap="round" />
+        </svg>
+      ),
+      description: "Scope that expands without a corresponding plan for scale",
+    },
+    {
+      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none">
+          <path d="M24.9027 24.9027L1.46484 1.46484M24.9027 1.46484L1.46484 24.9027" stroke="white" strokeWidth="2.92973" strokeLinecap="round" />
+        </svg>
+      ),
+      description: "Teams that ship fast but struggle to maintain and scale",
+    },
+  ],
+};
+
+export const productStruggleNote = {
+  icon: (
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10" />
+      <path d="M12 16v-4" />
+      <path d="M12 8h.01" />
+    </svg>
+  ),
+  text: "We've been through enough product builds to know where the shortcuts cause the most damage - and where speed is genuinely fine.",
+};
+
+export const productPracticeSectionHead = {
+  badgeText: "Our Product Engineering Practice",
+  title: "Engineering Support Across Every Stage of Product Growth",
+  description:
+    "From validating ideas and launching MVPs to scaling platforms and expanding engineering capacity, we help teams build products that are designed to last.",
+};
+
+export const productPracticeData = [
+  {
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    image: "/images/What-we-do/discovery-validation.png",
+    imageAlt: "Discovery and validation",
+    title: "Discovery & Validation",
+    description:
+      "Validate the right problem before investing in development. Define scope, uncover insights, and reduce risk early.",
+    buttonText: "Learn More",
+    buttonLink: "/discovery-validation",
+  },
+  {
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    image: "/images/What-we-do/mvp-development.png",
+    imageAlt: "MVP development",
+    title: "MVP Development",
+    description:
+      "Build a production-ready MVP focused on proving value. Fast to launch, easy to maintain.",
+    buttonText: "Learn More",
+    buttonLink: "/mvp-development",
+  },
+  {
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    image: "/images/What-we-do/platform-scaling.png",
+    imageAlt: "Platform scaling",
+    title: "Platform Scaling",
+    description:
+      "Scale architecture, infrastructure, and performance as adoption grows. Built for long-term sustainability.",
+    buttonText: "Learn More",
+    buttonLink: "/platform-scaling",
+  },
+  {
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    image: "/images/What-we-do/fractional-engineering-teams.png",
+    imageAlt: "Fractional engineering teams",
+    title: "Fractional Engineering Teams",
+    description:
+      "Add senior engineering expertise directly into your workflow. Flexible support without expanding headcount.",
+    buttonText: "Learn More",
+    buttonLink: "/fractional-engineering-teams",
+  },
+];
+
+export const productionGradeSectionHead = {
+  badgeText: "What We Mean by Production-Grade",
+  title: "Built to Perform Beyond Launch",
+  description:
+    "Production-grade products are designed to be reliable, secure, maintainable, and ready to scale as your business grows.",
+};
+
+export const productionGradeData = [
+  {
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="4" y="4" width="16" height="17" rx="2" />
+        <path d="M8 3v3" />
+        <path d="M16 3v3" />
+        <path d="m9 14 2 2 4-4" />
+      </svg>
+    ),
+    title: "Catch regressions early with automated testing across critical workflows",
+  },
+  {
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M3 3v18h18" />
+        <path d="m7 15 4-4 3 3 5-6" />
+      </svg>
+    ),
+    title: "Monitor performance and issues with logging, metrics, and alerts",
+  },
+  {
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" />
+      </svg>
+    ),
+    title: "Protect users and systems through secure development practices",
+  },
+  {
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <polyline points="16 18 22 12 16 6" />
+        <polyline points="8 6 2 12 8 18" />
+      </svg>
+    ),
+    title: "Build clean, understandable code that teams can extend confidently",
+  },
+  {
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="3" />
+        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+      </svg>
+    ),
+    title: "Design architectures that support growth without major rewrites",
+  },
+];
+
+export const productTechStackData = {
+  badge: "Technologies We Work With",
+  title: "The Technology Stack behind Every Product",
+  description:
+    "A carefully selected ecosystem of frameworks, platforms, and tools that support reliable product development at scale.",
+
+  tabs: ["Frontend", "Backend", "Databases", "Cloud", "DevOps", "Testing"],
+
+  technologies: {
+    Frontend: [
+      { id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2), name: "React", logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762860000/Gloitel/icon/react_cfs5vz.webp" },
+      { id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2), name: "Next.js", logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762860000/Gloitel/icon/next_urdukq.webp" },
+      { id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2), name: "React Native", logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762860000/Gloitel/icon/react_cfs5vz.webp" },
+      { id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2), name: "Flutter", logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960672/Gloitel/icon/flutter_lplnyz.png" },
+      { id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2), name: "Vue.js", logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/Gloitel/icon/vuejs_xxxxxx.png" },
+      { id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2), name: "TypeScript", logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960523/Gloitel/icon/typescript_qce4ug.png" },
+    ],
+    Backend: [],
+    Databases: [],
+    Cloud: [],
+    DevOps: [],
+    Testing: [],
+  },
+};
+
+export const productAudienceSectionHead = {
+  badgeText: "Who We Work With",
+  title: "Built for Product Teams, Backed by Engineers",
+  description:
+    "Whether you're validating an idea, scaling infrastructure, or expanding engineering capacity, we provide the expertise needed at every stage of growth.",
+};
+
+export const productAudienceData = [
+  {
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    step: 1,
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.08-2.92a2.18 2.18 0 0 0-2.92-.08z" />
+        <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" />
+        <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" />
+        <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
+      </svg>
+    ),
+    title: "First Product",
+    description:
+      "Validate product ideas early before investing heavily in development.",
+  },
+  {
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    step: 2,
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M3 3v18h18" />
+        <path d="m7 15 4-4 3 3 5-6" />
+      </svg>
+    ),
+    title: "Growth Stage",
+    description:
+      "Strengthen systems and infrastructure as product adoption increases.",
+  },
+  {
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    step: 3,
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2Z" />
+        <path d="M14 2v6h6" />
+      </svg>
+    ),
+    title: "Enterprise Teams",
+    description:
+      "Launch new digital initiatives alongside internal teams.",
+  },
+  {
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    step: 4,
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <polyline points="16 18 22 12 16 6" />
+        <polyline points="8 6 2 12 8 18" />
+      </svg>
+    ),
+    title: "CTOs & Founders",
+    description:
+      "Access senior technical expertise without expanding internal headcount requirements.",
+  },
+];
+
+export const productEngineeringCTAData = {
+  badgeText: "Ready to Build Your Product?",
+  title: "Turn Product Ideas into Production-Ready Software",
+  description:
+    "Partner with an engineering team focused on creating scalable, market-ready, growth-ready digital products.",
+  buttonText: "Talk About Your Product",
+  buttonLink: "/contact",
+};

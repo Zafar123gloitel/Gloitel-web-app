@@ -62,7 +62,7 @@ const page = () => {
               `,
             }}
           >
-            <span className="inline-flex h-12 min-w-12 items-center text-2xl bg-[#1447E633] justify-center rounded-full ">
+            <span className="inline-flex h-12 min-w-12 items-center text-2xl text-white bg-[#1447E633] justify-center rounded-full ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -81,7 +81,9 @@ const page = () => {
                 <line x1="12" x2="12.01" y1="16" y2="16" />
               </svg>
             </span>
-            <p>{"We diagnose before we build. Engineering starts only after we've defined where AI will create measurable business impact and long-term value."}</p>
+            <p className="text-white">
+              {"We diagnose before we build. Engineering starts only after we've defined where AI will create measurable business impact and long-term value."}
+            </p>
           </div>
         </section>
       </div>

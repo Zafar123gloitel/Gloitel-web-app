@@ -17,55 +17,31 @@ import Strategy from "../components/Strategy";
 import AI_Solutions from "../../uiComponents/AI_Solutions";
 import Execution_Plan from "../../uiComponents/Execution_Plan";
 import Business from "../components/Business";
+import { productAudienceData, productAudienceSectionHead, productEngineeringCTAData, productEngineeringHeroData, productionGradeData, productionGradeSectionHead, productPracticeData, productPracticeSectionHead, productStruggleData, productStruggleNote, productTechStackData,  } from "./data";
 
 
 const page = () => {
   return <div>
     <section>
       <HeroSection
-        badgeText="AI Agents & Automation"
-        title="AI Agents that Take Action, Not Just Instructions."
-        description="We design and deploy production-ready AI agents that can make decisions, interact with systems, and automate complex workflows with minimal human intervention."
-        image="/images/What-we-do/Rectangle 1.png"
-        imageAlt="Hero Image"
-        video="https://res.cloudinary.com/dsqu6pi0d/video/upload/v1762846419/Gloitel/bg_cij8h5.mp4"
-        primaryButton={{
-          href: "/contact",
-          text: "Discuss Your Automation Use Case",
-        }}
-        secondaryButton={{
-          href: "/case-studies",
-          text: "Explore Agentic AI",
-          icon: (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="w-4 h-4"
-            >
-              <path d="M5 12h14" />
-              <path d="m12 5 7 7-7 7" />
-            </svg>
-          ),
-        }}
+        badgeText={productEngineeringHeroData.badgeText}
+        title={productEngineeringHeroData.title}
+        description={productEngineeringHeroData.description}
+        image={productEngineeringHeroData.image}
+        imageAlt={productEngineeringHeroData.imageAlt}
+        video={productEngineeringHeroData.video}
+        primaryButton={productEngineeringHeroData.primaryButton}
+        secondaryButton={productEngineeringHeroData.secondaryButton}
       />
     </section>
     <section>
       <GlowPanel />
       <Strategy
-        cardData={notIncludedData}
-        SectionHead={"Strategy before Solutions"}
+        cardData={productStruggleData.items}
+        SectionHead={productStruggleData.heading}
         SectionSubHead={""}
-        SectionDescription={
-          "Every recommendation is grounded in business impact and feasibility. We do not start with technology, products, or predetermined solutions."
-        }
-        StrategyBadgeText={"What This Is Not"}
+        SectionDescription={productStruggleData.description}
+        StrategyBadgeText={productStruggleData.badgeText}
       />
       <div
         className="max-w-[75%] mx-auto mt-4 rounded-2xl flex items-center gap-3 border border-transparent p-3"
@@ -76,26 +52,10 @@ const page = () => {
               `,
         }}
       >
-        <span className="inline-flex h-12 min-w-12 items-center text-2xl bg-[#1447E633] justify-center rounded-full ">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="h-5 w-5 text-blue-400"
-            aria-hidden="true"
-          >
-            <circle cx="12" cy="12" r="10" />
-            <line x1="12" x2="12" y1="8" y2="12" />
-            <line x1="12" x2="12.01" y1="16" y2="16" />
-          </svg>
+        <span className="inline-flex h-12 min-w-12 items-center text-2xl text-white bg-[#1447E633] justify-center rounded-full ">
+         {productStruggleNote.icon}
         </span>
-        <p>{"We diagnose before we build. Engineering starts only after we've defined where AI will create measurable business impact and long-term value."}</p>
+        <p className="text-white">{productStruggleNote.text}</p>
       </div>
     </section>
     <section className="overflow-hidden py-20 lg:py-20">
@@ -103,17 +63,17 @@ const page = () => {
         <BgSquare2 />
         <div className="flex flex-col gap-6.5 -mt-44 w-full sm:w-1/2 lg:w-1/2 text-center">
           <span>
-            <StrategyBadge text={whatWeDesignSectionHead.badgeText} />
+            <StrategyBadge text={productPracticeSectionHead.badgeText} />
           </span>
           <MiddleSectionHeads
-            SectionHead={whatWeDesignSectionHead.title}
-            SectionDescription={whatWeDesignSectionHead.description}
+            SectionHead={productPracticeSectionHead.title}
+            SectionDescription={productPracticeSectionHead.description}
           />
         </div>
       </div>
 
       <div className=" -mt-10 flex justify-center items-center flex-wrap gap-6  ">
-        {whatWeDesignData.map((item) => (
+        {productPracticeData.map((item) => (
           <ImageCard key={item.id} data={item} />
         ))}
       </div>
@@ -121,23 +81,22 @@ const page = () => {
 
     <section>
       <Business
-        badgeText="What We Deliver"
-        sectionHead="Deliverables Designed for 
-Long-Term Success"
+        badgeText={productionGradeSectionHead.badgeText}
+        sectionHead={productionGradeSectionHead.title}
         sectionSubHead=""
-        sectionDescription="Every engagement concludes with documented systems, operational safeguards, and implementation assets that help your team manage, scale, and maintain AI capabilities with confidence."
-        data={deliverablesData}
+        sectionDescription={productionGradeSectionHead.description}
+        data={productionGradeData}
       />
     </section>
 
 
     <section>
       <AI_Solutions
-        badge={aiSolutionsDataJson.badge}
-        title={aiSolutionsDataJson.title}
-        description={aiSolutionsDataJson.description}
-        tabs={aiSolutionsDataJson.tabs}
-        technologies={aiSolutionsDataJson.technologies}
+        badge={productTechStackData.badge}
+        title={productTechStackData.title}
+        description={productTechStackData.description}
+        tabs={productTechStackData.tabs}
+        technologies={productTechStackData.technologies}
       />
     </section>
     <section className=" overflow-hidden">
@@ -146,18 +105,18 @@ Long-Term Success"
         <div className="flex flex-col gap-6.5  w-full sm:w-1/2 lg:w-1/2 text-center">
           {/* Badge */}
           <span>
-            <StrategyBadge text="Our Approach" />
+            <StrategyBadge text={productAudienceSectionHead.badgeText} />
           </span>
           <MiddleSectionHeads
-            SectionHead="Diagnose Before You Deploy"
-            SectionDescription="We run a structured Discovery Sprint - a fixed-scope, 3–4 week engagement that maps your workflows, assesses feasibility, and delivers a prioritized AI roadmap."
+            SectionHead={productAudienceSectionHead.title}
+            SectionDescription={productAudienceSectionHead.description}
           />
         </div>
         <section className="w-full  sm:w-[90%] mt-20 mx-auto">
           <CardShowcase
             showStepBadge
             showDivider={false}
-            items={showcaseItems}
+            items={productAudienceData}
             cardHeight="h-[250px]   max-w-[300px] "
             gridClassName="gap-y-28"
             titleClassName="text-[28px] leading-8 "
@@ -169,11 +128,11 @@ Long-Term Success"
     </section>
     <section>
       <Execution_Plan
-        badgeText="Start Your ML Initiative"
-        title="Build ML Systems that Measurable Outcomes"
-        description="Whether you're exploring your first ML use case or scaling existing models, we help you build solutions that create real operational impact."
-        buttonText="Talk to Our ML Team"
-        buttonLink="/contact"
+        badgeText={productEngineeringCTAData.badgeText}
+        title={productEngineeringCTAData.title}
+        description={productEngineeringCTAData.description}
+        buttonText={productEngineeringCTAData.buttonText}
+        buttonLink={productEngineeringCTAData.buttonLink}
         onclick={() => undefined}
       />
     </section>
