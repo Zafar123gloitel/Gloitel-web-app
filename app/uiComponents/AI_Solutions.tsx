@@ -47,17 +47,16 @@ const AI_Solutions = ({
 
         {/* Tabs */}
         <div className="mt-14 flex justify-center">
-          <div className="flex w-full gap-4 overflow-x-auto pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:w-auto md:overflow-visible">
+          <div className="flex w-[90%] max-w-6xl gap-4 overflow-x-auto pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             {tabs.map((tab, index) => (
               <button
                 key={tab}
                 type="button"
                 onClick={() => handleTabClick(index)}
-                className={`shrink-0 rounded-lg border px-5 py-2.5 text-sm transition-all duration-300 ${
-                  activeTabIndex === index
+                className={`shrink-0 whitespace-nowrap rounded-lg border px-5 py-2.5 text-sm transition-all duration-300 ${activeTabIndex === index
                     ? "border-blue-500 bg-blue-600 text-white shadow-[0_0_20px_rgba(37,99,235,.35)]"
                     : "border-white/15 bg-transparent text-white/80 hover:border-blue-500"
-                }`}
+                  }`}
               >
                 {tab}
               </button>

@@ -2,21 +2,53 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { CardDivider, CardIcon } from "../../components";
+import { CardDivider, CardIcon, GlowButton } from "../../components";
 import { links } from "./NavData";
 import { megaMenus } from "./NavData";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
+import { Input } from "../uiComponents/input";
+
+
+const contact = {
+  email: "gloitel-it@gloitel.in",
+  phones: ["+91 97112 03424", "+91 81098 10339"],
+  addressLines: [
+    "477/4, Muskan Residency road, Lalpur,",
+    "Pachpedi Naka, Raipur, Chhattisgarh",
+    "492001",
+  ],
+  mapUrl:
+    "https://www.google.com/maps/search/?api=1&query=477%2F4%20Muskan%20Residency%20road%2C%20Lalpur%2C%20Pachpedi%20Naka%2C%20Raipur%2C%20Chhattisgarh%20492001",
+};
+
+const telHref = (phone) => `tel:${phone.replace(/[^\d+]/g, "")}`;
 
 export default function Footer() {
   const [activeMenu, setActiveMenu] = useState(null);
-  const [activeGroup, setActiveGroup] = useState(null);
-  const menu = [
-    { name: "Home", link: "/" },
-    { name: "About", link: "/about" },
-    { name: "Our Creation", link: "/creation" },
-    { name: "Contact", link: "/contact" },
-    { name: "FAQ", link: "/faq" },
-  ];
+const [activeGroup, setActiveGroup] = useState(null);
+const menuRef = useRef(null);
+  // const menu = [
+  //   { name: "Home", link: "/" },
+  //   { name: "About", link: "/about" },
+  //   { name: "Our Creation", link: "/creation" },
+  //   { name: "Contact", link: "/contact" },
+  //   { name: "FAQ", link: "/faq" },
+  // ];
+
+  useEffect(() => {
+  const handleClickOutside = (event) => {
+    if (menuRef.current && !menuRef.current.contains(event.target)) {
+      setActiveMenu(null);
+      setActiveGroup(null);
+    }
+  };
+
+  document.addEventListener("mousedown", handleClickOutside);
+
+  return () => {
+    document.removeEventListener("mousedown", handleClickOutside);
+  };
+}, []);
 
   const SocialMediaIcons = [
     {
@@ -101,10 +133,9 @@ export default function Footer() {
     },
   ];
 
-  const telephone = [{ no: 9711203424 }, { no: 8109981039 }];
+  const [email, setEmail] = useState("");
 
-  const address =
-    "477/4, Muskan Residency road, Lalpur, Pachpedi Naka, Raipur, Chhattisgarh 492001";
+
 
   return (
     <footer className="bg-gradient-to-r from-black via-gray-900 to-black text-gray-300 px-6 sm:px-12 md:px-20 lg:px-40 py-10">
@@ -152,8 +183,10 @@ export default function Footer() {
         </div>
 
         {/* Important Links */}
-        <div className="relative  ml-10 gap-5">
-          <CardDivider className=" absolute top-30 -left-44 sm:-left-20 lg:-left-48   rotate-90" />
+        <div
+          ref={menuRef} 
+        className="relative  ml-10 gap-5">
+          <CardDivider className=" absolute top-30 -left-48 sm:-left-40 lg:-left-30   rotate-90" />
           <h2 className="font-semibold text-white mb-4">Navigation Links</h2>
           <div className=" flex flex-col items-start gap-3 text-sm sm:text-base text-white/50">
             {links
@@ -188,59 +221,196 @@ export default function Footer() {
                   {(activeGroup === group.title ||
                     (!activeGroup &&
                       megaMenus[activeMenu].groups[0].title ===
-                        group.title)) && (
-                    <div className="flex flex-col gap-2 mt-2 text-sm sm:text-base text-white/50">
-                      {group.items.map((item) => (
-                        <Link key={item.href} href={item.href}>
-                          {item.label}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
+                      group.title)) && (
+                      <div className="flex flex-col gap-2 mt-2 text-sm sm:text-base text-white/50">
+                        {group.items.map((item) => (
+                          <Link key={item.href} href={item.href}>
+                            {item.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
                 </div>
               ))}
             </div>
           )}
         </div>
 
-        {/* Social Links */}
-
-        {/* Address & Contact */}
-        <div>
-          <h3 className="mt-5 mb-2 font-medium text-white">Email</h3>
-
-          <Link
-            href="gloitel-it@gloitel.in"
-            className="text-sm text-gray-400 transition-colors  sm:text-base"
-          >
-            gloitel-it@gloitel.in
-          </Link>
-
-          <h2 className="font-semibold text-white mt-4 mb-3">Address</h2>
-          <p className="text-sm sm:text-base mb-4 leading-relaxed text-white/50">
-            <Link
-              target="_blank"
-              href="https://maps.app.goo.gl/uNbYXqo81S7Wfuj37"
-              className="mt-2 text-gray-400 text-sm leading-relaxed"
-            >
-              {address}
-            </Link>
-          </p>
-          <h3 className="font-medium text-white mb-2">Contact</h3>
-          <ul className="space-y-2 text-sm sm:text-base text-white/50">
-            {telephone.map((t, index) => (
-              <div key={index}>
-                <Link
-                  className="mt-2 text-gray-400 text-sm"
-                  href={`tel:+${t.no}`}
-                >
-                  <li key={index}>(+91) {t.no}</li>
-                </Link>
-              </div>
-            ))}
+        {/* Contact */}
+        <div className="min-w-0">
+          <h2 className="text-sm font-semibold tracking-wide text-footer-foreground">
+            Contact us
+          </h2>
+          <ul className="mt-6 space-y-5 text-sm text-footer-muted">
+            <li className="flex min-w-0 items-start gap-3">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="mt-0.5 size-4 shrink-0 text-footer-muted"
+                aria-hidden="true"
+              >
+                <rect width="20" height="16" x="2" y="4" rx="2" />
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+              </svg>
+              <a
+                href={`mailto:${contact.email}`}
+                className="truncate transition-colors hover:text-footer-foreground"
+              >
+                {contact.email}
+              </a>
+            </li>
+            <li className="flex min-w-0 items-start gap-3">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="mt-0.5 size-4 shrink-0 text-footer-muted"
+                aria-hidden="true"
+              >
+                <rect width="14" height="20" x="5" y="2" rx="2" />
+                <path d="M12 18h.01" />
+              </svg>
+              <span className="flex min-w-0 flex-col gap-1">
+                {contact.phones.map((phone) => (
+                  <a
+                    key={phone}
+                    href={telHref(phone)}
+                    className="transition-colors hover:text-footer-foreground"
+                  >
+                    {phone}
+                  </a>
+                ))}
+              </span>
+            </li>
+            <li className="flex min-w-0 items-start gap-3">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="mt-0.5 size-4 shrink-0 text-footer-muted"
+                aria-hidden="true"
+              >
+                <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              <a
+                href={contact.mapUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="leading-relaxed transition-colors hover:text-footer-foreground"
+              >
+                {contact.addressLines.map((line) => (
+                  <span key={line} className="block">
+                    {line}
+                  </span>
+                ))}
+              </a>
+            </li>
           </ul>
         </div>
+
+        {/* Newsletter */}
+        <div className="min-w-0">
+          <h2 className="text-sm font-semibold tracking-wide text-footer-foreground">
+            Newsletter
+          </h2>
+          <p className="mt-6 text-sm leading-relaxed text-footer-muted">
+            Subscribe to receive the latest insights, technology updates,
+            industry trends, and company news.
+          </p>
+          <form
+            className="mt-5 flex flex-col gap-3 2xl:flex-row "
+            onSubmit={(event) => {
+              event.preventDefault();
+              if (!email) return;
+              toast.success("Thanks for subscribing!");
+              setEmail("");
+            }}
+          >
+            <label className="sr-only" htmlFor="footer-newsletter-email">
+              Email address
+            </label>
+            <Input
+              id="footer-newsletter-email"
+              type="email"
+              required
+              value={email}
+              onChange={(event) => setEmail(event.target.value)}
+              placeholder="Enter your email"
+              className="h-11 min-w-0 flex-1 rounded-full border-footer-border bg-footer-surface text-sm text-white placeholder:text-footer-muted focus-visible:ring-primary/40"
+            />
+            <GlowButton
+              type="submit"
+              className="h-11 shrink-0 rounded-full px-6 text-sm font-medium"
+              buttonText="Subscribe"
+            />
+
+
+          </form>
+          <p className="mt-4 text-xs leading-relaxed text-footer-muted/80">
+            Receive curated technology insights and important updates while we
+            ensure your inbox stays free from unnecessary spam.
+          </p>
+        </div>
+       
+
       </div>
+       <div className="flex items-center justify-between gap-6 flex-wrap  pb-10 w-full ">
+          {[
+            {
+              "name": "footer.png",
+              "src": "/footer/footer.png"
+            },
+            {
+              "name": "footer2.png",
+              "src": "/footer/footer2.png"
+            },
+            {
+              "name": "footer3.png",
+              "src": "/footer/footer3.png"
+            },
+            {
+              "name": "footer4.png",
+              "src": "/footer/footer4.png"
+            },
+            {
+              "name": "footer5.png",
+              "src": "/footer/footer5.png"
+            },
+            {
+              "name": "footer6.png",
+              "src": "/footer/footer6.png"
+            }
+          ].map((image) => (
+            <Image
+              key={image.name}
+              src={image.src}
+              alt={image.name}
+              width={100}
+              height={60}
+              className="object-contain h-36 w-36 bg-cover"
+            />
+          ))}
+        </div>
 
       {/* Bottom Section */}
       <div className="border-t border-gray-700 pt-6 flex flex-col md:flex-row items-center justify-between text-xs sm:text-sm text-white/50 gap-4">

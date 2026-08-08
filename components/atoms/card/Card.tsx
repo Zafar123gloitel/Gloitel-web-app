@@ -14,7 +14,7 @@ export function Card({
   return (
     <article
       className={[
-        "group relative overflow-hidden rounded-[28px] border border-white/10",
+        "group relative overflow-hidden rounded-[28px] border border-white/20",
         "bg-[linear-gradient(114deg, rgba(28, 57, 142, 0.40) 0%, rgba(55, 42, 172, 0.20) 50%, rgba(55, 42, 172, 0.00) 100%)]",
         "shadow-[0_22px_40px_rgba(15,23,42,0.22)] transition-all duration-300 ease-out",
         " hover:border-blue-500/80",

@@ -16,7 +16,7 @@ const PurposeCard = ({
   return (
     <div
       className={[
-        "group relative overflow-hidden rounded-[16px] border border-white/10",
+        "group relative overflow-hidden rounded-[16px] border border-white/20",
         "bg-[linear-gradient(114deg, rgba(28, 57, 142, 0.40) 0%, rgba(55, 42, 172, 0.20) 50%, rgba(55, 42, 172, 0.00) 100%)]",
         "shadow-[0_22px_40px_rgba(15,23,42,0.22)] transition-all duration-300 ease-out",
         " hover:border-blue-500/80",
@@ -43,7 +43,7 @@ const PurposeCard = ({
             "after:bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.16),transparent_32%),radial-gradient(circle_at_top_right,rgba(96,165,250,0.08),transparent_26%)]",
             "after:opacity-80",
 
-            "inline-flex h-14 min-w-14 items-center justify-center rounded-full border border-white/10",
+            "inline-flex h-14 min-w-14 items-center justify-center rounded-full border border-white/20",
             "text-white shadow-[0_12px_28px_rgba(15,23,42,0.24)]",
             "transition-all duration-300 ease-out",
             "group-hover:bg-blue-600 ",
