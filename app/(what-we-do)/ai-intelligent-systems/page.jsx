@@ -6,17 +6,14 @@ import { BgSquare2 } from "../../component/BgSquare";
 import StrategyBadge from "../../../components/StrategyBadge";
 import { MiddleSectionHeads } from "../../component/SectionHeads";
 import { CardShowcase } from "../../../components";
-import { showcaseItems } from "../components/showcaseItems ";
 import ImageCard from "../components/ImageCard";
-import { whatWeDesignData, whatWeDesignSectionHead } from "../digital-experience-design/data";
 import Discover from "../components/Discover";
-import { aiSolutionsDataJson, assessData, discoverData, notIncludedData, RankData } from "../components/data";
 import Assess from "../components/Assess";
 import GlowPanel from "../../component/GlowPanel";
 import Strategy from "../components/Strategy";
 import AI_Solutions from "../../uiComponents/AI_Solutions";
 import Execution_Plan from "../../uiComponents/Execution_Plan";
-import { aiClarityData, aiEngagementSectionHead, aiGapData, aiGapSectionHead, aiIntelligentSystemsCTAData, aiIntelligentSystemsHeroData, aiPilotData, aiPracticeAreasData, aiPracticeAreasSectionHead, aiTechStackLandingData, discoverySprintData, fullStackComplianceData, fullStackComplianceSectionHead, fullStackHeroData, fullStackRoadmapData, fullStackRoadmapSectionHead, productionScaleData } from "./data";
+import { aiClarityData, aiEngagementSectionHead, aiGapData, aiGapSectionHead, aiIntelligentSystemsCTAData, aiIntelligentSystemsHeroData, aiPilotData, aiPracticeAreasData, aiPracticeAreasSectionHead, aiTechStackLandingData, discoverySprintData, productionScaleData } from "./data";
 
 
 const page = () => {
