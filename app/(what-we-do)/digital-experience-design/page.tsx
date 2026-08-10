@@ -7,7 +7,7 @@ import { LeftSectionHeads, MiddleSectionHeads } from "../../component/SectionHea
 import { Card, CardShowcase, CardTitle, } from "../../../components";
 import { showcaseItems } from "../components/showcaseItems ";
 import ImageCard from "../components/ImageCard";
-import { whatWeDesignData, whatWeDesignSectionHead } from "./data";
+import { designGapData, designGapNote, designGapSectionHead, designTeamData, designTeamSectionHead, designToolsData, digitalExperienceCTAData, digitalExperienceHeroData, digitalPracticeData, digitalPracticeSectionHead, whatWeDesignData, whatWeDesignSectionHead } from "./data";
 import AI_Solutions from "../../uiComponents/AI_Solutions";
 import { aiSolutionsDataJson, notIncludedData } from "../components/data";
 import Execution_Plan from "../../uiComponents/Execution_Plan";
@@ -18,37 +18,14 @@ const page = () => {
   return <div>
     <section>
       <HeroSection
-        badgeText="AI Agents & Automation"
-        title="AI Agents that Take Action, Not Just Instructions."
-        description="We design and deploy production-ready AI agents that can make decisions, interact with systems, and automate complex workflows with minimal human intervention."
-        image="/images/What-we-do/Rectangle 1.png"
-        imageAlt="Hero Image"
-        video="https://res.cloudinary.com/dsqu6pi0d/video/upload/v1762846419/Gloitel/bg_cij8h5.mp4"
-        primaryButton={{
-          href: "/contact",
-          text: "Discuss Your Automation Use Case",
-        }}
-        secondaryButton={{
-          href: "/case-studies",
-          text: "Explore Agentic AI",
-          icon: (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="w-4 h-4"
-            >
-              <path d="M5 12h14" />
-              <path d="m12 5 7 7-7 7" />
-            </svg>
-          ),
-        }}
+        badgeText={digitalExperienceHeroData.badgeText}
+        title={digitalExperienceHeroData.title}
+        description={digitalExperienceHeroData.description}
+        image={digitalExperienceHeroData.image}
+        imageAlt={digitalExperienceHeroData.imageAlt}
+        video={digitalExperienceHeroData.video}
+        primaryButton={digitalExperienceHeroData.primaryButton}
+        secondaryButton={digitalExperienceHeroData.secondaryButton}
       />
     </section>
     <section className=" overflow-hidden">
@@ -57,19 +34,19 @@ const page = () => {
         <div className="flex flex-col gap-6.5  w-full sm:w-1/2 lg:w-1/2 text-center">
           {/* Badge */}
           <span>
-            <StrategyBadge text="Our Approach" />
+            <StrategyBadge text={designGapSectionHead.badgeText} />
           </span>
           <MiddleSectionHeads
-            SectionHead="Diagnose Before You Deploy"
-            SectionDescription="We run a structured Discovery Sprint - a fixed-scope, 3–4 week engagement that maps your workflows, assesses feasibility, and delivers a prioritized AI roadmap."
+            SectionHead={designGapSectionHead.title}
+            SectionDescription={designGapSectionHead.description}
           />
         </div>
         <section className="w-full  sm:w-[90%] mt-20 mx-auto">
           <CardShowcase
             showStepBadge
             showDivider={false}
-            items={showcaseItems}
-            cardHeight="h-[250px]   max-w-[300px] "
+            items={designGapData}
+            cardHeight="h-[290px]   max-w-[300px] "
             gridClassName="gap-y-28"
             titleClassName="text-[28px] leading-8 "
             descriptionClassName="text-[16px] leading-5 mt-3 text-muted "
@@ -83,26 +60,10 @@ const page = () => {
                 `,
             }}
           >
-            <span className="inline-flex h-12 min-w-12 items-center text-2xl bg-[#1447E633] justify-center rounded-full ">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="h-5 w-5 text-blue-400"
-                aria-hidden="true"
-              >
-                <circle cx="12" cy="12" r="10" />
-                <line x1="12" x2="12" y1="8" y2="12" />
-                <line x1="12" x2="12.01" y1="16" y2="16" />
-              </svg>
+            <span className="inline-flex h-12 min-w-12 items-center text-2xl text-white bg-[#1447E633] justify-center rounded-full ">
+             {designGapNote.icon}
             </span>
-            <p>{"We diagnose before we build. Engineering starts only after we've defined where AI will create measurable business impact and long-term value."}</p>
+            <p className="text-white">{designGapNote.text}</p>
           </div>
         </section>
       </div>
@@ -112,28 +73,28 @@ const page = () => {
         <BgSquare2 />
         <div className="flex flex-col gap-6.5 -mt-44 w-full sm:w-1/2 lg:w-1/2 text-center">
           <span>
-            <StrategyBadge text={whatWeDesignSectionHead.badgeText} />
+            <StrategyBadge text={digitalPracticeSectionHead.badgeText} />
           </span>
           <MiddleSectionHeads
-            SectionHead={whatWeDesignSectionHead.title}
-            SectionDescription={whatWeDesignSectionHead.description}
+            SectionHead={digitalPracticeSectionHead.title}
+            SectionDescription={digitalPracticeSectionHead.description}
           />
         </div>
       </div>
 
       <div className=" -mt-10 flex justify-center items-center flex-wrap gap-6  ">
-        {whatWeDesignData.map((item) => (
+        {digitalPracticeData.map((item) => (
           <ImageCard key={item.id} data={item} />
         ))}
       </div>
     </section>
     <section>
       <AI_Solutions
-        badge={aiSolutionsDataJson.badge}
-        title={aiSolutionsDataJson.title}
-        description={aiSolutionsDataJson.description}
-        tabs={aiSolutionsDataJson.tabs}
-        technologies={aiSolutionsDataJson.technologies}
+        badge={designToolsData.badge}
+        title={designToolsData.title}
+        description={designToolsData.description}
+        tabs={designToolsData.tabs}
+        technologies={designToolsData.technologies}
       />
     </section>
     <section>
@@ -143,31 +104,22 @@ const page = () => {
           {/* LEFT */}
           <div className="flex gap-4 flex-col">
             <span>
-              <StrategyBadge text={""} />
+              <StrategyBadge text={designTeamSectionHead.badgeText} />
             </span>
             <LeftSectionHeads
-              SectionHead={"SectionHead"}
+              SectionHead={designTeamSectionHead.title}
               SectionSubHead={""}
-              SectionDescription={" SectionDescription "}
+              SectionDescription={designTeamSectionHead.description}
             />
 
             <div className="mt-2 sm:mt-4 grid gap-4 sm:gap-6"></div>
           </div>
           <div className="flex gap-4 flex-col  justify-center lg:justify-end ">
-            {[{ title: " fdnvjkgvkdjnkv" },
-            { title: " fdnvjkgvkdjnkv" },
-            { title: " fdnvjkgvkdjnkv" },
-            { title: " fdnvjkgvkdjnkv" },
-            { title: " fdnvjkgvkdjnkv" },
-            { title: " fdnvjkgvkdjnkv" },
-            { title: " fdnvjkgvkdjnkv" },
-            { title: " fdnvjkgvkdjnkv" }
-
-            ].map((item) => (
-              <Card>
+            {designTeamData.map((item) => (
+              <Card key={item.id} className=" border border-white/10 rounded-2xl flex gap-4 items-center">
                 <CardTitle className="flex items-center gap-4 text-2xl">
                   <span className="h-2 w-2 shrink-0 rounded-full bg-white" />
-                  {item.title}
+                  {item.text}
                 </CardTitle>
               </Card>
 
@@ -179,11 +131,11 @@ const page = () => {
     </section>
     <section>
       <Execution_Plan
-        badgeText="Start Your ML Initiative"
-        title="Build ML Systems that Measurable Outcomes"
-        description="Whether you're exploring your first ML use case or scaling existing models, we help you build solutions that create real operational impact."
-        buttonText="Talk to Our ML Team"
-        buttonLink="/contact"
+        badgeText={digitalExperienceCTAData.badgeText}
+        title={digitalExperienceCTAData.title}
+        description={digitalExperienceCTAData.description}
+        buttonText={digitalExperienceCTAData.buttonText}
+        buttonLink={digitalExperienceCTAData.buttonLink}
         onclick={() => undefined}
       />
     </section>

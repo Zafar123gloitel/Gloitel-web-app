@@ -5,8 +5,6 @@ import HeroSection from "../../components/HeroSection";
 import {
   heroSectionDataGenerative,
   aiServicesData,
-  discoverData,
-  assessData,
   executionStepOne,
   executionStepTwo,
   executionStepThree,
@@ -154,7 +152,7 @@ into Production Systems."
             SectionDescription="Explore how organizations across healthcare, financial services, and e-commerce are using production-ready AI systems to improve efficiency, reduce costs, and accelerate business outcomes."
           />
         </div>
-        <section className="w-[80%] mt-20 mx-auto flex flex-wrap justify-center gap-3">
+        <section className="p-5 mt-20 mx-auto flex flex-wrap justify-center gap-3">
           {caseStudies.map((card) => (
             <ImageCard
               key={card.id}
@@ -164,7 +162,22 @@ into Production Systems."
               carddescription={card.description}
               buttintext={card.cta}
               buttonurl={card.href}
-              buttonicon={<ArrowUpIcon />}
+              buttonicon={<svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="1.8"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                className="transition-transform duration-300 group-hover:translate-x-1"
+                                aria-hidden="true"
+                            >
+                                <path d="M5 12h14" />
+                                <path d="m13 6 6 6-6 6" />
+                            </svg>}
               image={card.image}
             />
           ))}

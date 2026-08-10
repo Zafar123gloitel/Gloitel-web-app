@@ -1546,3 +1546,184 @@ export const cxOptimizationCTAData = {
   buttonText: "Start a CX Optimization Engagement",
   buttonLink: "/contact",
 };
+
+export const digitalExperienceHeroData = {
+  badgeText: "Digital Experience Design",
+  title: "Experiences That Work as Good as They Look",
+  description:
+    "Design that isn't grounded in user research creates beautiful confusion. Engineering that ignores design creates functional ugliness. We operate at the intersection - where strategy, design, and engineering work together from day one.",
+  image: "/images/What-we-do/digital-experience-hero.png",
+  imageAlt: "Digital experience design",
+  video:
+    "https://res.cloudinary.com/dsqu6pi0d/video/upload/v1762846419/Gloitel/bg_cij8h5.mp4",
+  primaryButton: {
+    text: "Start a Design Engagement",
+    href: "/contact",
+  },
+  secondaryButton: {
+    text: "View Our Design Work",
+    href: "/about",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M5 12h14" />
+        <path d="m12 5 7 7-7 7" />
+      </svg>
+    ),
+  },
+};
+
+export const designGapSectionHead = {
+  badgeText: "The Gap We Close",
+  title: "From Design Handoff to Product Delivery",
+  description:
+    "A collaborative process that keeps design intent, engineering execution, and user experience aligned from start to launch.",
+};
+
+export const designGapData = [
+  {
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    step: 1,
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none">
+        <path d="M4.61124 23.817L8.21591 22.6151C9.06736 22.3317 9.49254 22.1899 9.89245 21.9999C10.3643 21.7744 10.8104 21.4985 11.2229 21.177C11.5723 20.9045 11.8898 20.587 12.5237 19.9531L21.8853 10.5926L22.9038 9.57415C23.7139 8.76396 24.1691 7.66512 24.1691 6.51935C24.1691 5.37358 23.7139 4.27474 22.9038 3.46456C22.0936 2.65437 20.9947 2.19922 19.849 2.19922C18.7032 2.19922 17.6043 2.65437 16.7942 3.46456L15.7757 4.483L6.41302 13.8435C5.7791 14.4785 5.46159 14.796 5.18913 15.1454C4.86765 15.5579 4.59175 16.004 4.36624 16.4759C4.17617 16.8758 4.03445 17.302 3.751 18.1524L2.54907 21.7571M21.8853 10.5926C21.8853 10.5926 19.7221 10.4652 17.8126 8.5557C15.9032 6.64734 15.7768 4.483 15.7768 4.483M4.61124 23.817L3.73012 24.1115C3.52473 24.1803 3.30421 24.1906 3.09333 24.141C2.88245 24.0914 2.68959 23.984 2.53641 23.8308C2.38323 23.6776 2.27581 23.4848 2.22623 23.2739C2.17665 23.063 2.18686 22.8425 2.25573 22.6371L2.55017 21.756L4.61124 23.817Z" stroke="white" stroke-width="1.64797" />
+      </svg>
+    ),
+    title: "Design Handoff",
+    description:
+      "Design decisions are documented and passed to engineering, often creating interpretation gaps and delayed feedback.",
+  },
+  {
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    step: 2,
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+        <path d="M21.2832 2.88651C20.8817 2.48485 20.4049 2.16624 19.8802 1.94886C19.3555 1.73148 18.7931 1.61959 18.2251 1.61959C17.6572 1.61959 17.0948 1.73148 16.5701 1.94886C16.0454 2.16624 15.5686 2.48485 15.1671 2.88651L13.2444 4.80914C13.0882 4.95469 12.8816 5.03393 12.6681 5.03016C12.4547 5.0264 12.251 4.93992 12.1 4.78895C11.9491 4.63798 11.8626 4.43431 11.8588 4.22084C11.8551 4.00737 11.9343 3.80077 12.0798 3.64457L14.0025 1.72194C15.1249 0.613969 16.64 -0.00503181 18.2172 3.08113e-05C19.7944 0.00509343 21.3055 0.633808 22.4208 1.74896C23.5361 2.86411 24.165 4.37516 24.1703 5.95231C24.1755 7.52947 23.5567 9.04468 22.4489 10.1673L20.7306 11.8855C20.5744 12.0311 20.3678 12.1103 20.1543 12.1066C19.9409 12.1028 19.7372 12.0163 19.5862 11.8654C19.4353 11.7144 19.3488 11.5107 19.345 11.2972C19.3413 11.0838 19.4205 10.8772 19.566 10.721L21.2832 9.00269C21.6849 8.60113 22.0035 8.12438 22.2209 7.59967C22.4383 7.07495 22.5501 6.51256 22.5501 5.9446C22.5501 5.37664 22.4383 4.81424 22.2209 4.28953C22.0035 3.76482 21.6849 3.28807 21.2832 2.88651ZM9.68039 12.4623C9.85204 12.3272 10.0703 12.2657 10.2873 12.2915C10.5042 12.3172 10.702 12.4281 10.8373 12.5997C10.942 12.7337 11.057 12.863 11.1822 12.9875C12.6632 14.4685 14.9023 14.731 16.5546 13.7104L12.2457 10.5705L12.1831 10.5298C10.6241 9.41688 8.38838 9.66517 6.92718 11.1264L2.94238 15.1112C2.13132 15.9222 1.67567 17.0223 1.67567 18.1693C1.67567 19.3163 2.13132 20.4163 2.94238 21.2274C3.75343 22.0384 4.85346 22.4941 6.00047 22.4941C7.14747 22.4941 8.2475 22.0384 9.05856 21.2274L12.3545 17.9314C12.4299 17.8505 12.5209 17.7855 12.622 17.7405C12.7231 17.6955 12.8322 17.6712 12.9428 17.6693C13.0534 17.6673 13.1633 17.6877 13.2659 17.7291C13.3685 17.7706 13.4617 17.8323 13.54 17.9105C13.6182 17.9887 13.6799 18.0819 13.7214 18.1845C13.7628 18.2871 13.7832 18.397 13.7812 18.5077C13.7793 18.6183 13.755 18.7274 13.71 18.8285C13.665 18.9296 13.6 19.0205 13.5191 19.096L10.2231 22.3919C9.66992 22.9525 9.0113 23.3981 8.28518 23.7031C7.55906 24.0082 6.77978 24.1665 5.99221 24.1692C5.20463 24.1718 4.42431 24.0186 3.69617 23.7185C2.96803 23.4183 2.30645 22.9771 1.74951 22.4202C1.19257 21.8634 0.751273 21.2018 0.451024 20.4737C0.150775 19.7456 -0.00249732 18.9653 3.07712e-05 18.1778C0.00255886 17.3902 0.160837 16.6109 0.465755 15.8847C0.770672 15.1586 1.21621 14.4999 1.77671 13.9466L5.76261 9.96071C6.66006 9.05987 7.81883 8.46511 9.07394 8.2611L1.32846 2.61844C1.15174 2.48979 1.03336 2.29621 0.999362 2.08029C0.965366 1.86436 1.01854 1.64377 1.14718 1.46705C1.27583 1.29033 1.4694 1.17195 1.68533 1.13795C1.90126 1.10396 2.12185 1.15713 2.29857 1.28577L24.5462 17.4909C24.7229 17.6196 24.8413 17.8134 24.8752 18.0294C24.9091 18.2454 24.8557 18.4661 24.727 18.6428C24.5982 18.8195 24.4044 18.9378 24.1884 18.9717C23.9724 19.0056 23.7517 18.9523 23.575 18.8235L17.962 14.7343C15.5944 16.6119 12.1633 16.2999 10.0166 14.1521C9.84925 13.9831 9.69118 13.8052 9.54306 13.6192C9.40792 13.4476 9.34646 13.2293 9.37222 13.0123C9.39797 12.7954 9.50882 12.5976 9.68039 12.4623Z" fill="white" />
+      </svg>
+    ),
+    title: "Alignment Gaps",
+    description:
+      "As implementation progresses, design intent can drift, leading to rework and inconsistent product experiences.",
+  },
+  {
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    step: 3,
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="27" viewBox="0 0 30 27" fill="none">
+        <path d="M14.2133 24.8456C14.4047 24.8456 14.601 24.8026 14.8022 24.7167C15.0033 24.6308 15.1659 24.5258 15.29 24.4017L26.7101 12.9802C27.0782 12.612 27.3624 12.236 27.5626 11.8522C27.7618 11.4665 27.8615 11.0436 27.8615 10.5837C27.8615 10.1178 27.7618 9.66568 27.5626 9.22719C27.3624 8.78773 27.0782 8.38734 26.7101 8.026L21.2168 2.53275C20.8545 2.16458 20.4819 1.89456 20.0991 1.72268C19.7173 1.55081 19.2934 1.46487 18.8276 1.46487C18.3677 1.46487 17.9404 1.55081 17.5459 1.72268C17.1513 1.89456 16.7797 2.1641 16.4311 2.53129L15.1537 3.80865L17.8637 6.52598C18.1548 6.81212 18.372 7.13732 18.5156 7.50158C18.6582 7.86584 18.7295 8.23548 18.7295 8.61048C18.7295 9.37319 18.48 10.0041 17.9809 10.5031C17.4819 11.0021 16.8515 11.2512 16.0898 11.2502C15.7138 11.2502 15.3471 11.193 14.9897 11.0788C14.6322 10.9645 14.3105 10.7643 14.0243 10.4782L11.222 7.68615L4.89674 14.01C4.74928 14.1584 4.63844 14.3269 4.56422 14.5154C4.49 14.7038 4.45289 14.8943 4.45289 15.0867C4.45289 15.4324 4.56373 15.717 4.78541 15.9407C5.00612 16.1653 5.28933 16.2776 5.63503 16.2776C5.82644 16.2776 6.02274 16.2346 6.22391 16.1487C6.42509 16.0618 6.58769 15.9563 6.71171 15.8323L11.3539 11.1901L12.391 12.2272L7.75616 16.8709C7.60772 17.0183 7.49639 17.1863 7.42217 17.3748C7.34893 17.5642 7.31231 17.7547 7.31231 17.9461C7.31231 18.2732 7.42754 18.552 7.65802 18.7825C7.88849 19.013 8.1673 19.1287 8.49445 19.1297C8.68586 19.1297 8.88215 19.0862 9.08333 18.9993C9.2845 18.9124 9.4471 18.8074 9.57113 18.6844L14.5517 13.7126L15.5888 14.7483L10.6156 19.7288C10.4857 19.8528 10.3792 20.0154 10.2962 20.2166C10.2123 20.4178 10.1703 20.6141 10.1703 20.8055C10.1703 21.1317 10.286 21.41 10.5174 21.6405C10.7479 21.8729 11.0267 21.9891 11.3539 21.9891C11.5453 21.9891 11.7357 21.952 11.9252 21.8778C12.1146 21.8036 12.2826 21.6922 12.4291 21.5438L17.4096 16.5706L18.4468 17.6077L13.4662 22.5882C13.3187 22.7367 13.2079 22.9149 13.1337 23.1229C13.0595 23.3309 13.0224 23.5209 13.0224 23.6927C13.0224 24.0385 13.1439 24.3173 13.3871 24.5292C13.6303 24.7411 13.9057 24.8471 14.2133 24.8471M14.2045 26.3119C13.4516 26.3119 12.807 26.0365 12.2709 25.4857C11.7347 24.934 11.4994 24.2533 11.5648 23.4437C10.7347 23.4535 10.0438 23.2059 9.49203 22.701C8.94026 22.1952 8.67805 21.4901 8.70539 20.5858C7.80108 20.5955 7.08818 20.3367 6.56669 19.8094C6.0452 19.282 5.80789 18.5877 5.85476 17.7263C5.0403 17.7361 4.35865 17.5066 3.80981 17.0379C3.26195 16.5711 2.98802 15.9207 2.98802 15.0867C2.98802 14.7107 3.06078 14.3347 3.20629 13.9587C3.3518 13.5818 3.56664 13.2507 3.85083 12.9655L11.222 5.60311L15.0043 9.3854C15.1283 9.51528 15.2817 9.62222 15.4643 9.7062C15.6469 9.79019 15.8525 9.83169 16.081 9.83072C16.3945 9.83072 16.6713 9.72134 16.9116 9.50259C17.1518 9.28383 17.2724 8.99867 17.2734 8.64711C17.2734 8.41859 17.2314 8.2135 17.1474 8.03186C17.0634 7.84924 16.957 7.69592 16.8281 7.57189L11.7889 2.53275C11.4257 2.16458 11.0482 1.89456 10.6566 1.72268C10.265 1.55081 9.83627 1.46487 9.37044 1.46487C8.91048 1.46487 8.4925 1.55081 8.11652 1.72268C7.74151 1.89456 7.36992 2.16458 7.00175 2.53275L2.5427 7.0006C2.22824 7.3131 1.97433 7.68664 1.78097 8.12122C1.58761 8.55482 1.48507 9.00258 1.47335 9.4645C1.46358 9.79556 1.4919 10.1134 1.55831 10.4181C1.62472 10.7228 1.73214 11.0099 1.88058 11.2795L0.770213 12.3898C0.524116 11.9973 0.33173 11.5451 0.193056 11.0334C0.054382 10.5216 -0.00958386 9.99918 0.00115849 9.46597C0.0128774 8.79994 0.14618 8.16272 0.401067 7.55431C0.655954 6.94591 1.02119 6.40342 1.49679 5.92685L5.92801 1.49563C6.43876 0.989761 6.97929 0.613779 7.54961 0.367682C8.11994 0.122561 8.73665 0 9.39974 0C10.0628 0 10.6742 0.123049 11.2338 0.369146C11.7943 0.614267 12.3275 0.989761 12.8334 1.49563L14.1078 2.77153L15.3852 1.49563C15.8959 0.989761 16.4316 0.613779 16.9921 0.367682C17.5527 0.122561 18.1645 0 18.8276 0C19.4907 0 20.1074 0.123049 20.6777 0.369146C21.2471 0.614267 21.7842 0.989761 22.2891 1.49563L27.7472 6.95226C28.2521 7.45715 28.6417 8.02405 28.9162 8.65296C29.1906 9.28188 29.3273 9.92789 29.3263 10.591C29.3263 11.2551 29.1896 11.8669 28.9162 12.4265C28.6427 12.986 28.2531 13.5193 27.7472 14.0261L16.3256 25.4374C16.0219 25.7421 15.6909 25.9638 15.3324 26.1025C14.975 26.2411 14.599 26.3105 14.2045 26.3105" fill="white" />
+      </svg>
+    ),
+    title: "Integrated Delivery",
+    description:
+      "Design and engineering stay aligned throughout delivery, resulting in faster iteration and stronger outcomes.",
+  },
+];
+
+export const designGapNote = {
+  icon: (
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" color="white" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10" />
+      <path d="M12 16v-4" />
+      <path d="M12 8h.01" />
+    </svg>
+  ),
+  text: "The best digital experiences are built when design and engineering work together from the beginning, not at handoff.",
+};
+
+export const digitalPracticeSectionHead = {
+  badgeText: "Our Digital Experience Practice",
+  title: "Designed for Every Stage of the Product Journey",
+  description:
+    "From early discovery to optimization, we help shape experiences that balance user needs and business goals.",
+};
+
+export const digitalPracticeData = [
+  {
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    image: "/images/What-we-do/ux-research-strategy.png",
+    imageAlt: "UX research and strategy",
+    title: "UX Research & Strategy",
+    description:
+      "Before designing anything, understand the people who will use it. Research-backed experience strategy that grounds every design decision in actual user behavior.",
+    buttonText: "Learn More",
+    buttonLink: "/ux-research-strategy",
+  },
+  {
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    image: "/images/What-we-do/ui-ux-design.png",
+    imageAlt: "UI/UX design",
+    title: "UI/UX Design",
+    description:
+      "Design interfaces that balance usability, aesthetics, and technical feasibility. Create wireframes, prototypes, and implementation-ready design specifications.",
+    buttonText: "Learn More",
+    buttonLink: "/ui-ux-design",
+  },
+  {
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    image: "/images/What-we-do/design-systems.png",
+    imageAlt: "Design systems",
+    title: "Design Systems",
+    description:
+      "Build reusable component libraries and design systems that improve consistency, scalability, and development speed.",
+    buttonText: "Learn More",
+    buttonLink: "/design-systems",
+  },
+  {
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    image: "/images/What-we-do/cx-optimization.png",
+    imageAlt: "CX optimization",
+    title: "CX Optimization",
+    description:
+      "Improve digital experiences with conversion optimization, testing, and data-backed UX enhancements.",
+    buttonText: "Learn More",
+    buttonLink: "/cx-optimization",
+  },
+];
+
+export const designToolsData = {
+  badge: "Tools We Work In",
+  title: "Built with the Industry's Leading Design Stack",
+  description:
+    "A carefully selected toolkit that supports every stage of the digital experience lifecycle, from discovery to optimization.",
+
+  tabs: ["Design", "Research", "Prototyping", "Design Systems", "Analytics"],
+
+  technologies: {
+    Design: [
+      { id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2), name: "Figma", logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/Gloitel/icon/figma_xxxxxx.png" },
+      { id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2), name: "FigJam", logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/Gloitel/icon/figjam_xxxxxx.png" },
+      { id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2), name: "Principle", logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/Gloitel/icon/principle_xxxxxx.png" },
+      { id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2), name: "Lottie", logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/Gloitel/icon/lottie_xxxxxx.png" },
+      { id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2), name: "Framer", logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/Gloitel/icon/framer_xxxxxx.png" },
+    ],
+    Research: [],
+    Prototyping: [],
+    "Design Systems": [],
+    Analytics: [],
+  },
+};
+
+export const designTeamSectionHead = {
+  badgeText: "Design Disciplines in Our Team",
+  title: "A Team Built for End-to End Experience Design",
+  description:
+    "Combining diverse design expertise to solve complex challenges and deliver experiences users love to use.",
+};
+
+export const designTeamData = [
+  { id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2), text: "UX Designers" },
+  { id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2), text: "Visual / UI Designers" },
+  { id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2), text: "UX Researchers" },
+  { id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2), text: "Interaction Designers" },
+  { id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2), text: "Design System Architects" },
+  { id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2), text: "Motion Designers" },
+  { id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2), text: "Accessibility Specialists" },
+];
+
+export const digitalExperienceCTAData = {
+  badgeText: "Ready to Improve Your Product Experience?",
+  title: "From User Research to Product Impact",
+  description:
+    "Work with a multidisciplinary design team to create experiences that are intuitive, scalable, and built for measurable outcomes.",
+  buttonText: "Talk About Your Design Needs",
+  buttonLink: "/contact",
+};

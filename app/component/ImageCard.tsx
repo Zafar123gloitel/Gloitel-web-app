@@ -63,7 +63,7 @@ const ImageCard = ({
           className="flex gap-2 pb-3 pt-2 absolute bottom-1.5 left-5 text-base group-hover:text-blue-600 items-center  "
         >
           {buttintext}
-          <span className="rotate-90 -mb-1">{buttonicon}</span>
+          <span className="-mb-1">{buttonicon}</span>
         </Link>
       </article>
     </div>

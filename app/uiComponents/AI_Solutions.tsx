@@ -47,7 +47,7 @@ const AI_Solutions = ({
 
         {/* Tabs */}
         <div className="mt-14 flex justify-center">
-          <div className="flex w-[90%] max-w-6xl gap-4 overflow-x-auto pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <div className="flex w-[90%] max-w-6xl gap-4 mx-auto overflow-x-auto pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             {tabs.map((tab, index) => (
               <button
                 key={tab}

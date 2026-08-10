@@ -27,6 +27,6 @@
     "app/privacy_policies/page.jsx",
     "app/component/GalleryScroll.jsx",
     "app/_analytics/GoogleAnalytics.jsx"
-  ],
+, "app/resources/data.tx"  ],
   "exclude": ["node_modules"]
 }

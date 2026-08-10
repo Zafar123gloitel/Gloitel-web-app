@@ -4,6 +4,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { ReactNode } from "react";
 import StrategyBadge from "./StrategyBadge";
+import { CardIcon } from "./atoms/card";
+
+
+export interface HeroCard {
+  id: string;
+  title: string;
+  position: "top-left" | "top-right" | "bottom-left" | "bottom-right";
+  icon: string;
+}
 
 interface HeroSectionProps {
   badgeText?: string;
@@ -22,6 +31,12 @@ interface HeroSectionProps {
     href?: string;
     icon?: ReactNode;
   };
+ heroCards?: HeroCard[];
+
+  cardPositions?: Record<
+    HeroCard["position"],
+    string
+  >;
 }
 
 const HeroSection = ({
@@ -33,6 +48,8 @@ const HeroSection = ({
   video,
   primaryButton,
   secondaryButton,
+  heroCards,
+  cardPositions,
 }: HeroSectionProps) => {
   return (
     <section className="font-dmSans relative isolate overflow-hidden px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
@@ -79,7 +96,7 @@ const HeroSection = ({
               </div>
             </div>
 
-            <div className="relative w-full overflow-hidden rounded-[1.4rem]">
+            {/* <div className="relative w-full overflow-hidden rounded-[1.4rem]">
               <div className="aspect-[4/3] w-full overflow-hidden rounded-[1.4rem]">
                 <Image
                   src={image || ""}
@@ -90,6 +107,40 @@ const HeroSection = ({
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
               </div>
+            </div> */}
+
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[1.4rem]">
+              <Image
+                src={image || ""}
+                alt={imageAlt}
+                fill
+                className="object-cover"
+                unoptimized
+              />
+
+              {/* Image Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />
+
+              {/* Floating Cards */}
+              {heroCards?.map((card) => (
+                <div
+                  key={card.id}
+                  className={`absolute z-20 ${cardPositions[card.position]} rounded-xl border border-[#1447E6] bg-transparent py-3 px-4 backdrop-blur-sm`}
+                >
+                  <div className="flex flex-col justify-center   items-center gap-5 text-[#1447E6] ">
+                    {/* <CardIcon  type={card.icon} /> */}
+                    <span
+                      dangerouslySetInnerHTML={{
+                        __html: card.icon,
+                      }}
+                    />
+
+                    <span className="text-sm font-medium text-white">
+                      {card.title}
+                    </span>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
