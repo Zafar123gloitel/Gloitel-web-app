@@ -1,3 +1,5 @@
+import { label } from "framer-motion/client";
+
 export const links = [
   { href: "/", label: "Home" },
 
@@ -236,6 +238,7 @@ export const megaMenus = {
         title: "Expertise",
         items: [
           { label: "Our Expertise", href: "/about#our-expertise" },
+          {label:"Work Celebrate", href:"/about#work-celebrate"},
           {
             label: "Industries We Serve",
             href: "/about#industries-we-serve",

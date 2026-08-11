@@ -22,7 +22,8 @@ export function Card({
         "before:bg-gradient-to-r before:from-transparent before:via-blue-500 before:to-transparent",
         "after:pointer-events-none after:absolute after:inset-0 after:rounded-[28px]",
         "after:bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.16),transparent_32%),radial-gradient(circle_at_top_right,rgba(96,165,250,0.08),transparent_26%)]",
-        "after:opacity-80",
+        "after:opacity-80 flex",
+       
         className,
       ]
         .filter(Boolean)

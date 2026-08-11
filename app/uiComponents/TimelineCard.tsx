@@ -1,9 +1,14 @@
-import { Card, CardDescription, CardIcon, CardTitle } from "../../components";
+import {
+  Card,
+  CardDescription,
+  CardIcon,
+  CardTitle,
+} from "../../components";
 
 interface TimelineCardProps {
   item: {
     icon: React.ReactNode;
-    title: string;
+    year: string;
     description: string;
   };
   side: "left" | "right";
@@ -11,28 +16,37 @@ interface TimelineCardProps {
 
 const TimelineCard = ({ item, side }: TimelineCardProps) => {
   return (
-    <div className="grid min-h-[300px] grid-cols-[1fr_48px_1fr] items-center">
+    <div className="relative grid h-[150px] grid-cols-[1fr_48px_1fr] items-center">
 
-      {/* LEFT SIDE */}
-      <div className="flex justify-end">
+      {/* ================= LEFT SIDE ================= */}
+      <div className="flex justify-end pr-24">
         {side === "left" && (
           <div className="relative">
-            
-            {/* Dashed line */}
-            <div className="absolute left-full top-1/2 h-px w-28 border-t border-dashed border-white/30" />
 
-            <Card className="relative z-10 h-[350px] w-[350px]">
-              <CardIcon className="text-blue-500">
-                {item.icon}
-              </CardIcon>
+            {/* Dashed connector */}
+            <div className="absolute left-full top-1/2 z-0 w-[125px] -translate-y-1/2 border-t border-dashed border-white/80" />
 
-              <CardTitle className="mt-4 leading-[1.25] text-4xl">
-                {item.title}
-              </CardTitle>
+            {/* Card */}
+            <Card className="relative z-10 min-h-[125px] min-w-[270px] ">
 
-              <CardDescription className="text-muted mt-5 leading-6">
-                {item.description}
-              </CardDescription>
+              <div className="flex gap-5">
+                <div className="w-14 h-14">
+                  <CardIcon className="text-blue-500 ">
+                    {item.icon}
+                  </CardIcon>
+                </div>
+
+                <div>
+                  <CardTitle className="mt-2 text-lg leading-tight">
+                    {item.year}
+                  </CardTitle>
+
+                  <CardDescription className="mt-3 text-sm text-muted leading-5">
+                    {item.description}
+                  </CardDescription>
+                </div>
+
+              </div>
             </Card>
 
           </div>
@@ -40,32 +54,43 @@ const TimelineCard = ({ item, side }: TimelineCardProps) => {
       </div>
 
 
-      {/* CENTER DOT */}
-      <div className="relative z-20 flex justify-center">
-        <div className="h-10 w-10 rounded-full border border-blue-400 bg-blue-950/80 shadow-[0_0_20px_rgba(37,99,235,0.25)]" />
+      {/* ================= CENTER DOT ================= */}
+      <div className="relative z-20 flex items-center justify-center">
+
+        <div className="h-10 w-10 rounded-full border border-blue-400 bg-[#06163d] shadow-[0_0_15px_rgba(37,99,235,0.25)]" />
+
       </div>
 
 
-      {/* RIGHT SIDE */}
-      <div className="flex justify-start">
+      {/* ================= RIGHT SIDE ================= */}
+      <div className="flex justify-start pl-24">
         {side === "right" && (
           <div className="relative">
 
-            {/* Dashed line */}
-            <div className="absolute right-full top-1/2 h-px w-28 border-t border-dashed border-white/30" />
+            {/* Dashed connector */}
+            <div className="absolute right-full top-1/2 z-0 w-[125px] -translate-y-1/2 border-t border-dashed border-white/80" />
 
-            <Card className="relative z-10 h-[350px] w-[350px]">
-              <CardIcon className="text-blue-500">
-                {item.icon}
-              </CardIcon>
+            <Card className="relative z-10 min-h-[125px] min-w-[270px] ">
 
-              <CardTitle className="mt-4 leading-[1.25] text-4xl">
-                {item.title}
-              </CardTitle>
+              <div className="flex gap-5">
+                <div className="w-14 h-14">
+                  <CardIcon className="text-blue-500 ">
+                    {item.icon}
+                  </CardIcon>
+                </div>
 
-              <CardDescription className="text-muted mt-5 leading-6">
-                {item.description}
-              </CardDescription>
+
+                <div>
+                  <CardTitle className="mt-2 text-lg leading-tight">
+                    {item.year}
+                  </CardTitle>
+
+                  <CardDescription className="mt-3 text-sm text-muted leading-5">
+                    {item.description}
+                  </CardDescription>
+                </div>
+
+              </div>
             </Card>
 
           </div>

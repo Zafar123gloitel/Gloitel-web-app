@@ -1,9 +1,11 @@
 import React from "react";
+import { CardIcon } from "../../components";
 
 export const MiddleSectionHeads = ({
   SectionHead = "",
   SectionSubHead = "",
   SectionDescription = "",
+  sectionIocn = ""
 }) => {
   return (
     <div className="flex flex-col items-center text-center px-4  md:px-0 lg:px-0 max-w-4xl mx-auto mb-8">
@@ -16,6 +18,10 @@ export const MiddleSectionHeads = ({
       <h4 className="text-3xl sm:text-3xl md:text-3xl xl:text-[48px] font-medium text-gray-400 leading-tight">
         {SectionSubHead}
       </h4>
+
+      {sectionIocn && <CardIcon>
+        {sectionIocn}
+      </CardIcon>}
 
       {/* Description */}
       <div className="w-full sm:w-11/12 md:w-10/12 lg:w-[35vw] mt-4 sm:mt-6.5">

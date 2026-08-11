@@ -201,133 +201,113 @@
 //       </section>
 //       <HorizontalDivider />
 //       {/* About Section 1 */}
-//       <section className="relative isolate px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24 ">
-//         <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-10 items-center z-30">
-//           <div className="order-1 md:order-2">
-//             <AboutAboutContent
-//               AboutBadge="Gloitel Vision"
-//               AboutHeading="Empowering Businesses"
-//               AboutSubHeading="with Innovation"
-//               AboutContents1={[
-//                 {
-//                   title: "Your Vision, Our Expertise",
-//                   text: "We craft digital experiences that drive success, delivering seamless IT solutions in HealthTech, AI, Cloud, and more.",
-//                 },
-//                 {
-//                   title: "Innovation Meets Excellence",
-//                   text: "From data intelligence to business automation, we deliver modern, scalable, and future-ready technologies that elevate your operations.",
-//                 },
-//               ]}
-//               ButtonText="Book an Appointment"
-//               Buttonlink="/contact"
-//               HomeAboutTexts="200+ Agencies Rated"
-//             />
-//           </div>
-//           <div className="order-2 md:order-1">
-//             <AboutAboutImg1 ImgLink="https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762928419/Gloitel/aboutone_fulkws.webp" />
-//           </div>
-//         </div>
-//       </section>
+// <section className="relative isolate px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24 ">
+//   <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-10 items-center z-30">
+//     <div className="order-1 md:order-2">
+//       <AboutAboutContent
+//         AboutBadge="Gloitel Vision"
+//         AboutHeading="Empowering Businesses"
+//         AboutSubHeading="with Innovation"
+//         AboutContents1={[
+//           {
+//             title: "Your Vision, Our Expertise",
+//             text: "We craft digital experiences that drive success, delivering seamless IT solutions in HealthTech, AI, Cloud, and more.",
+//           },
+//           {
+//             title: "Innovation Meets Excellence",
+//             text: "From data intelligence to business automation, we deliver modern, scalable, and future-ready technologies that elevate your operations.",
+//           },
+//         ]}
+//         ButtonText="Book an Appointment"
+//         Buttonlink="/contact"
+//         HomeAboutTexts="200+ Agencies Rated"
+//       />
+//     </div>
+//     <div className="order-2 md:order-1">
+//       <AboutAboutImg1 ImgLink="https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762928419/Gloitel/aboutone_fulkws.webp" />
+//     </div>
+//   </div>
+// </section>
+// <HorizontalDivider />
+// {/* About Section 2 */}
+// <section className="relative isolate px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
+//   <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+//     <AboutAboutContent
+//       AboutBadge="Gloitel Mission"
+//       AboutHeading="Smarter Solutions with"
+//       AboutSubHeading="AI-Powered Precision"
+//       AboutContents2={[
+//         {
+//           title: "AI-Driven Innovation, Every Step of the Way",
+//           text: "From concept to completion, we integrate AI-driven insights to streamline processes, enhance efficiency, and bring your vision to life effortlessly.",
+//         },
+//         {
+//           title: "Beyond Just Delivery – Continuous AI Support",
+//           text: "Our commitment doesn’t end at launch. With AI-powered monitoring, automated updates, and real-time optimizations, we ensure your systems evolve with your needs.",
+//         },
+//       ]}
+//       ButtonText="Book an Appointment"
+//       Buttonlink="/contact"
+//       HomeAboutTexts="900+ People Rated"
+//     />
+//     <AboutAboutImg2 ImgLink="https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762928416/Gloitel/abouttwo_pic4v5.webp" />
+//   </div>
+// </section>
 //       <HorizontalDivider />
-//       {/* About Section 2 */}
-//       <section className="relative isolate px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
-//         <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-//           <AboutAboutContent
-//             AboutBadge="Gloitel Mission"
-//             AboutHeading="Smarter Solutions with"
-//             AboutSubHeading="AI-Powered Precision"
-//             AboutContents2={[
-//               {
-//                 title: "AI-Driven Innovation, Every Step of the Way",
-//                 text: "From concept to completion, we integrate AI-driven insights to streamline processes, enhance efficiency, and bring your vision to life effortlessly.",
-//               },
-//               {
-//                 title: "Beyond Just Delivery – Continuous AI Support",
-//                 text: "Our commitment doesn’t end at launch. With AI-powered monitoring, automated updates, and real-time optimizations, we ensure your systems evolve with your needs.",
-//               },
-//             ]}
-//             ButtonText="Book an Appointment"
-//             Buttonlink="/contact"
-//             HomeAboutTexts="900+ People Rated"
-//           />
-//           <AboutAboutImg2 ImgLink="https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762928416/Gloitel/abouttwo_pic4v5.webp" />
-//         </div>
-//       </section>
-//       <HorizontalDivider />
-//       {/* Team Members Section */}
-//       <section className="relative isolate px-4 sm:px-6 lg:px-8 py-12 lg:py-20 overflow-hidden">
-//         <BgSquare3 />
-//         <div className="flex flex-col items-center justify-center max-w-7xl mx-auto relative z-10">
-//           <div className="flex flex-col w-full sm:w-3/4 lg:w-1/2 text-center">
-//             <CenterBadge TechnologyBadge="Team Members" />
-//             <MiddleSectionHeads
-//               SectionHead="Meet the Team Making"
-//               SectionSubHead="Things Happen Every Day"
-//               SectionDescription="Our team is made up of passionate professionals who bring their expertise and creativity to every project."
-//             />
-//             <GlowButton
-//               ButtonText="Book a 15-min call"
-//               Buttonlink="/contact"
-//               className="mt-6 sm:mt-8"
-//             />
-//           </div>
+      // {/* Team Members Section */}
+      // <section className="relative isolate px-4 sm:px-6 lg:px-8 py-12 lg:py-20 overflow-hidden">
+      //   <BgSquare3 />
+      //   <div className="flex flex-col items-center justify-center max-w-7xl mx-auto relative z-10">
+      //     <div className="flex flex-col w-full sm:w-3/4 lg:w-1/2 text-center">
+      //       <CenterBadge TechnologyBadge="Team Members" />
+      //       <MiddleSectionHeads
+      //         SectionHead="Meet the Team Making"
+      //         SectionSubHead="Things Happen Every Day"
+      //         SectionDescription="Our team is made up of passionate professionals who bring their expertise and creativity to every project."
+      //       />
+      //       <GlowButton
+      //         ButtonText="Book a 15-min call"
+      //         Buttonlink="/contact"
+      //         className="mt-6 sm:mt-8"
+      //       />
+      //     </div>
 
-//           {/* Team Grid */}
-//           {/* grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 */}
-//           <div className="mt-12 flex flex-wrap justify-center gap-6 w-full">
-//             {stages.map((item) => (
-//               <div
-//                 key={item?.id}
-//                 className="relative bg-gradient-to-r from-gray-950/90 to-black/80 p-2 sm:p-3 rounded-3xl shadow-lg overflow-hidden border border-white/10"
-//               >
-//                 <img
-//                   src={item?.image}
-//                   alt={item?.name}
-//                   className="w-full h-60 sm:h-72 lg:h-[400px] object-cover rounded-2xl border-2 border-gray-500/10"
-//                 />
-//                 <div className="absolute inset-x-0 bottom-0 m-3 sm:m-5 rounded-xl bg-gradient-to-r from-gray-900/90 to-black/80 p-3 sm:p-4 backdrop-blur-md flex justify-between items-center border-2 border-gray-500/30">
-//                   <div>
-//                     <h3 className="text-sm sm:text-[16px] font-semibold text-white mb-1">
-//                       {item?.name}
-//                     </h3>
-//                     <p className="text-xs sm:text-sm text-gray-300">
-//                       {item?.role}
-//                     </p>
-//                   </div>
-//                   <Link href={item?.link}>
-//                     <div className="flex items-center justify-center w-10 h-10 px-3 py-3 rounded-lg bg-white/5 text-gray-400 shadow-[0_0_25px_rgba(59,130,246,0.3)] border-2 border-gray-400/20">
-//                       {item?.icon}
-//                     </div>
-//                   </Link>
-//                 </div>
-//               </div>
-//             ))}
-//           </div>
-//         </div>
-//       </section>
+      //     {/* Team Grid */}
+      //     {/* grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 */}
+      //     <div className="mt-12 flex flex-wrap justify-center gap-6 w-full">
+      //       {stages.map((item) => (
+      //         <div
+      //           key={item?.id}
+      //           className="relative bg-gradient-to-r from-gray-950/90 to-black/80 p-2 sm:p-3 rounded-3xl shadow-lg overflow-hidden border border-white/10"
+      //         >
+      //           <img
+      //             src={item?.image}
+      //             alt={item?.name}
+      //             className="w-full h-60 sm:h-72 lg:h-[400px] object-cover rounded-2xl border-2 border-gray-500/10"
+      //           />
+      //           <div className="absolute inset-x-0 bottom-0 m-3 sm:m-5 rounded-xl bg-gradient-to-r from-gray-900/90 to-black/80 p-3 sm:p-4 backdrop-blur-md flex justify-between items-center border-2 border-gray-500/30">
+      //             <div>
+      //               <h3 className="text-sm sm:text-[16px] font-semibold text-white mb-1">
+      //                 {item?.name}
+      //               </h3>
+      //               <p className="text-xs sm:text-sm text-gray-300">
+      //                 {item?.role}
+      //               </p>
+      //             </div>
+      //             <Link href={item?.link}>
+      //               <div className="flex items-center justify-center w-10 h-10 px-3 py-3 rounded-lg bg-white/5 text-gray-400 shadow-[0_0_25px_rgba(59,130,246,0.3)] border-2 border-gray-400/20">
+      //                 {item?.icon}
+      //               </div>
+      //             </Link>
+      //           </div>
+      //         </div>
+      //       ))}
+      //     </div>
+      //   </div>
+      // </section>
 //       <HorizontalDivider />
 //       {/* Culture Section */}
-//       <div className="relative flex flex-col items-center px-4 sm:px-6 lg:px-8 py-12 lg:py-20 overflow-hidden">
-//         <BgSquare3 />
-//         <div className="flex flex-col w-full sm:w-3/4 lg:w-1/2 text-center">
-//           <CenterBadge TechnologyBadge="Our Culture" />
-//           <MiddleSectionHeads
-//             SectionHead="Work, Celebrate &"
-//             SectionSubHead="Grow Together"
-//             SectionDescription="snapshot of our lively workplace—office life, celebrations, team outings, and bonding events."
-//           />
-//           <GlowButton
-//             ButtonText="View About Gloitel "
-//             Buttonlink="/about"
-//             className="mt-6 sm:mt-8"
-//           />
-//         </div>
 
-//         <div className="overflow-x-auto scrollbar-hide mt-12 w-full">
-//           <GalleryScroll />
-//         </div>
-//         <GlowPanel />
-//       </div>
 
 //       {/* FAQ + CTA */}
 //       <FAQPage />
@@ -339,45 +319,47 @@
 // export default AboutPage;
 
 
-import { WhoWeAre, OurJourney, MissionVision, WhatWeBelieve, OurExpertise, IndustriesWeServe, TechnologyEcosystem, OurTeam, OurCulture, ClientTestimonials } from "../component/About";
+import {
+  WhoWeAre,
+  OurJourney,
+  OurProcess,
+  OurServices,
+  OurTeam,
+  OurCulture,
+  OptimizationProcess,
+  IndustriesWeServe,
+  TechnologyEcosystem,
+  ClientTestimonials,
+  ExecutionPlanCTA,
+} from "../component/About";
 import EngineeringHeroSection from "../component/EngineeringHeroSection";
-import { aiEngineeringHeroData } from "../engineering/ai-engineering/data";
-
+import { aiEngineeringHeroData } from "./data";
 
 
 const page = () => {
   return (
     <main className="bg-black text-white">
-       <EngineeringHeroSection
-              badgeText={aiEngineeringHeroData.badgeText}
-              title={aiEngineeringHeroData.title}
-              description={aiEngineeringHeroData.description}
-              image={aiEngineeringHeroData.image}
-              imageAlt={aiEngineeringHeroData.imageAlt}
-              primaryButton={aiEngineeringHeroData.primaryButton}
-              secondaryButton={aiEngineeringHeroData.secondaryButton}
-            />
+      <EngineeringHeroSection
+        badgeText={aiEngineeringHeroData.badgeText}
+        title={aiEngineeringHeroData.title}
+        description={aiEngineeringHeroData.description}
+        image={aiEngineeringHeroData.image}
+        imageAlt={aiEngineeringHeroData.imageAlt}
+        primaryButton={aiEngineeringHeroData.primaryButton}
+        secondaryButton={aiEngineeringHeroData.secondaryButton}
+      />
 
       <WhoWeAre />
-
       <OurJourney />
-
-      <MissionVision />
-
-      <WhatWeBelieve />
-
-      <OurExpertise />
-
-      <IndustriesWeServe />
-
-      <TechnologyEcosystem />
-
+      <OurProcess />
+      <OurServices />
       <OurTeam />
-
       <OurCulture />
-
+      <OptimizationProcess />
+      <IndustriesWeServe />
+      <TechnologyEcosystem />
       <ClientTestimonials />
-
+      <ExecutionPlanCTA />
     </main>
   );
 };

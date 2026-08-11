@@ -14,6 +14,7 @@ interface AI_SolutionsProps {
   title: string;
   description: string;
   tabs: string[];
+  icontype:boolean
   technologies: Record<string, Technology[]>;
 }
 
@@ -23,6 +24,7 @@ const AI_Solutions = ({
   description,
   tabs,
   technologies,
+  icontype = false
 }: AI_SolutionsProps) => {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
   const activeTab = tabs[activeTabIndex];
