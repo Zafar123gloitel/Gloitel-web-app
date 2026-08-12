@@ -461,6 +461,10 @@ export const teamCardsData = {
           id: 1,
           type: "linkedin",
         },
+        {
+          id: 2,
+          type: "linkedin",
+        },
       ],
     },
     {
@@ -498,11 +502,158 @@ export const teamCardsData = {
  
   ],
 
-  "RAG/Orchestration": [],
+  "RAG/Orchestration": [
+    {
+      id: "openai-gpt-4o",
+      image:
+        "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960583/Gloitel/icon/openai_wwedph.png",
+      imageAlt: "OpenAI GPT-4o",
+      heading: "OpenAI GPT-4o",
+      subheading: "Foundation Model",
+      cardDescription:
+        "Advanced multimodal AI model for building intelligent and production-ready applications.",
+      icons: [
+        {
+          id: 1,
+          type: "linkedin",
+        },
+      ],
+    },
+    {
+      id: "claude-3-5-sonnet",
+      image:
+        "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960642/Gloitel/icon/claude_sszoov.png",
+      imageAlt: "Claude 3.5 Sonnet",
+      heading: "Claude 3.5 Sonnet",
+      subheading: "Foundation Model",
+      cardDescription:
+        "Powerful language model designed for reasoning, coding, analysis, and enterprise AI workloads.",
+      icons: [
+        {
+          id: 1,
+          type: "linkedin",
+        },
+      ],
+    },
+    {
+      id: "gemini-1-5-pro",
+      image:
+        "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960682/Gloitel/icon/gemini_b4dcsa.png",
+      imageAlt: "Gemini 1.5 Pro",
+      heading: "Gemini 1.5 Pro",
+      subheading: "Foundation Model",
+      cardDescription:
+        "Multimodal AI model built for long-context reasoning and complex enterprise use cases.",
+      icons: [
+        {
+          id: 1,
+          type: "linkedin",
+        },
+      ],
+    },
+  ],
 
-  "Vector DBs": [],
+  "Vector DBs": [
+    {
+      id: "openai-gpt-4o",
+      image:
+        "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960583/Gloitel/icon/openai_wwedph.png",
+      imageAlt: "OpenAI GPT-4o",
+      heading: "OpenAI GPT-4o",
+      subheading: "Foundation Model",
+      cardDescription:
+        "Advanced multimodal AI model for building intelligent and production-ready applications.",
+      icons: [
+        {
+          id: 1,
+          type: "linkedin",
+        },
+      ],
+    },
+    {
+      id: "claude-3-5-sonnet",
+      image:
+        "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960642/Gloitel/icon/claude_sszoov.png",
+      imageAlt: "Claude 3.5 Sonnet",
+      heading: "Claude 3.5 Sonnet",
+      subheading: "Foundation Model",
+      cardDescription:
+        "Powerful language model designed for reasoning, coding, analysis, and enterprise AI workloads.",
+      icons: [
+        {
+          id: 1,
+          type: "linkedin",
+        },
+      ],
+    },
+    {
+      id: "gemini-1-5-pro",
+      image:
+        "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960682/Gloitel/icon/gemini_b4dcsa.png",
+      imageAlt: "Gemini 1.5 Pro",
+      heading: "Gemini 1.5 Pro",
+      subheading: "Foundation Model",
+      cardDescription:
+        "Multimodal AI model built for long-context reasoning and complex enterprise use cases.",
+      icons: [
+        {
+          id: 1,
+          type: "linkedin",
+        },
+      ],
+    },
+  ],
 
-  ML: [],
+  ML: [
+    {
+      id: "openai-gpt-4o",
+      image:
+        "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960583/Gloitel/icon/openai_wwedph.png",
+      imageAlt: "OpenAI GPT-4o",
+      heading: "OpenAI GPT-4o",
+      subheading: "Foundation Model",
+      cardDescription:
+        "Advanced multimodal AI model for building intelligent and production-ready applications.",
+      icons: [
+        {
+          id: 1,
+          type: "linkedin",
+        },
+      ],
+    },
+    {
+      id: "claude-3-5-sonnet",
+      image:
+        "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960642/Gloitel/icon/claude_sszoov.png",
+      imageAlt: "Claude 3.5 Sonnet",
+      heading: "Claude 3.5 Sonnet",
+      subheading: "Foundation Model",
+      cardDescription:
+        "Powerful language model designed for reasoning, coding, analysis, and enterprise AI workloads.",
+      icons: [
+        {
+          id: 1,
+          type: "linkedin",
+        },
+      ],
+    },
+    {
+      id: "gemini-1-5-pro",
+      image:
+        "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960682/Gloitel/icon/gemini_b4dcsa.png",
+      imageAlt: "Gemini 1.5 Pro",
+      heading: "Gemini 1.5 Pro",
+      subheading: "Foundation Model",
+      cardDescription:
+        "Multimodal AI model built for long-context reasoning and complex enterprise use cases.",
+      icons: [
+        {
+          id: 1,
+          type: "linkedin",
+        },
+      ],
+    },
+  ],
 
   MLOps: [],
 
@@ -962,3 +1113,11 @@ export const clientTestimonialsData = [
       "Move from a single server to horizontally scalable infrastructure. Container orchestration, auto-scaling groups, load balancing. Move from a single server to horizontally scalable infrastructure. Container orchestration, auto-scaling groups, load balancing.",
   },
 ];
+export const executionPlanSectionHead = {
+  badgeText: "Start with Strategy, Not Assumptions",
+  title: "Turn AI Ambition into an Execution Plan",
+  description:
+    "Every successful AI initiative starts with the right decisions. We provide the structure, insight, and direction needed to make them.",
+  buttonText: "Start with a Discovery Call",
+  buttonLink: "/",
+};

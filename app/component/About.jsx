@@ -23,7 +23,7 @@ import { aiEcosystemData } from "../engineering/ai-engineering/data";
 import TestimonialCard from "./TestimonialCard";
 import Execution_Plan from "../uiComponents/Execution_Plan";
 import HelpCard from "./HelpCard";
-import { aiBuildProcessSectionHead, aiSystemsData, aiSystemsSectionHead, clientTestimonialsData, clientTestimonialsSectionHead, designTestData, helpCards, helpData, hypothesizeData, identifyOpportunitiesData, implementMonitorData, industriesWeServeData, industriesWeServeSectionHead, instrumentMeasureData, modelSelectionData, optimizationProcessSectionHead, scalingSolutions, scalingSolutionsHead, teamCardsData, teamCardsSectionHead, teamCardsTabs, useCaseDefinitionData, whoThisIsForSectionHead, whoThisIsForTimelineData } from "../about/data";
+import { aiBuildProcessSectionHead, aiSystemsData, aiSystemsSectionHead, clientTestimonialsData, clientTestimonialsSectionHead, designTestData, executionPlanSectionHead, helpCards, helpData, hypothesizeData, identifyOpportunitiesData, implementMonitorData, industriesWeServeData, industriesWeServeSectionHead, instrumentMeasureData, modelSelectionData, optimizationProcessSectionHead, scalingSolutions, scalingSolutionsHead, teamCardsData, teamCardsSectionHead, teamCardsTabs, useCaseDefinitionData, whoThisIsForSectionHead, whoThisIsForTimelineData } from "../about/data";
 import { CenterBadge } from "./Badge";
 import GalleryScroll from "./GalleryScroll";
 import IconCard from "../../components/card-showcase/IconCard";
@@ -351,7 +351,7 @@ export const OurJourney = () => {
       </div>
       <div className="sm:w-[80%] -mt-10 mx-auto">
         <div className="relative px-5">
-          <div className="absolute left-1/2 top-20 bottom-20 z-0 w-[0.5px] -translate-x-1/2 bg-white/50" />
+          <div className="absolute left-10 sm:left-1/2 top-20 bottom-20 z-0 w-[0.5px] -translate-x-1/2 bg-white/50" />
           <div className="relative flex flex-col">
             {whoThisIsForTimelineData.map((item, index) => (
               <TimelineCard
@@ -680,7 +680,7 @@ export const ClientTestimonials = () => {
         </div>
 
         {/* Testimonials */}
-        <div className="relative -mt-20">
+        <div className="relative z-10 -mt-20">
           {/* Navigation Buttons */}
           <div className="mb-8 flex justify-end gap-4 px-5 sm:px-10 lg:px-20">
             {/* LEFT BUTTON */}
@@ -735,7 +735,7 @@ export const ClientTestimonials = () => {
           {/* Cards Container */}
           <div
             ref={testimonialsRef}
-            className="flex w-full gap-6 overflow-x-auto px-5 pb-5 sm:px-10 lg:px-20"
+            className="flex gap-5 overflow-x-auto w-[90%] mx-auto "
             style={{
               scrollbarWidth: "none",
               msOverflowStyle: "none",
@@ -744,7 +744,7 @@ export const ClientTestimonials = () => {
             {clientTestimonialsData.map((testimonial, index) => (
               <div
                 key={`${testimonial.name}-${index}`}
-                className="w-[calc(100vw-40px)] shrink-0 sm:w-[420px] lg:w-[455px]"
+                className="  shrink-0 "
               >
                 <TestimonialCard
                   name={testimonial.name}
@@ -764,11 +764,11 @@ export const ExecutionPlanCTA = () => {
   return (
     <section id="execution-plan">
       <Execution_Plan
-        badgeText={mobileEngineeringCTAData.badgeText}
-        title={mobileEngineeringCTAData.title}
-        description={mobileEngineeringCTAData.description}
-        buttonText={mobileEngineeringCTAData.buttonText}
-        buttonLink={mobileEngineeringCTAData.buttonLink}
+        badgeText={executionPlanSectionHead.badgeText}
+        title={executionPlanSectionHead.title}
+        description={executionPlanSectionHead.description}
+        buttonText={executionPlanSectionHead.buttonText}
+        buttonLink={executionPlanSectionHead.buttonLink}
         onclick={() => ({})}
       />
     </section>

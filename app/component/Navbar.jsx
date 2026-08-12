@@ -396,7 +396,7 @@
 "use client";
 
 import Link from "next/link";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, } from "react";
 import { usePathname } from "next/navigation";
 import { VerticalDivider } from "./SectionDivider";
 import { GlowButton, HeaderButton } from "./Button";
@@ -404,12 +404,17 @@ import Image from "next/image";
 import { links } from "./NavData";
 import { megaMenus } from "./NavData";
 
+import { useRouter } from "next/navigation";
+
+
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
   const [openMegaMenu, setOpenMegaMenu] = useState(null); // holds the label of open mega menu
   const [mobileOpenMegaMenu, setMobileOpenMegaMenu] = useState(null);
   const pathname = usePathname();
+
+  const router = useRouter()
 
   const getLinkClasses = (href) => {
     const isActive =
@@ -419,30 +424,30 @@ const Navbar = () => {
       ? "text-white translate-y-0 scale-100"
       : "text-white/50 hover:text-white hover:-translate-y-1 hover:scale-105 transition-all duration-300 ease-out";
   };
+
+
   const isMegaMenuActive = (megaMenu) => {
     const menu = megaMenus[megaMenu];
 
     if (!menu) return false;
 
     return menu.groups.some((group) => {
-      // Check group-level route
-      if (
-        group.href &&
-        (pathname === group.href ||
-          pathname.startsWith(group.href + "/"))
-      ) {
+      // Group route
+      if (group.href && pathname.includes(group.href)) {
         return true;
       }
 
-      // Check child items
-      return group.items.some(
-        (item) =>
-          pathname === item.href ||
-          pathname.startsWith(item.href + "/"),
-      );
+      // Child route
+      return group.items?.some((item) => {
+        const itemPath = item.href?.split("#")[0];
+
+        return itemPath && pathname.includes(itemPath);
+      });
     });
   };
   // 🧭 Hide navbar when scrolling down
+
+
   useEffect(() => {
     let lastScroll = 0;
     const handleScroll = () => {
@@ -494,15 +499,17 @@ const Navbar = () => {
                   // onMouseLeave={() => setOpenMegaMenu(null)}
                   >
                     <button
-                      className={`flex items-center gap-1 transition ${isMegaMenuActive(link.megaMenu)
-                          ? "text-white"
-                          : "text-white/60 hover:text-white"
+                      type="button"
+                      onClick={() => router.push(link.href)}
+                      className={`relative z-20 flex items-center gap-1 transition ${isMegaMenuActive(link.megaMenu)
+                        ? "text-white"
+                        : "text-white/60 hover:text-white"
                         }`}
                     >
                       {link.label}
 
                       <svg
-                        className={`w-4 h-4 transition-transform duration-300 ${openMegaMenu === link.megaMenu ? "rotate-180" : ""
+                        className={`h-4 w-4 transition-transform duration-300 ${openMegaMenu === link.megaMenu ? "rotate-180" : ""
                           }`}
                         fill="none"
                         stroke="currentColor"
@@ -526,8 +533,8 @@ const Navbar = () => {
                         <div
                           onMouseLeave={() => setOpenMegaMenu(null)}
                           className={`fixed left-1/2 top-[89px] -translate-x-1/2 w-full  transition-all duration-100 z-50 ${isOpen
-                              ? "visible opacity-100 translate-y-0"
-                              : "invisible opacity-0 translate-y-4"
+                            ? "visible opacity-100 translate-y-0"
+                            : "invisible opacity-0 translate-y-4"
                             }`}
                         >
                           <div
@@ -576,7 +583,7 @@ const Navbar = () => {
                                                 <li key={index}>
                                                   <Link
                                                     href={item.href}
-                                                    className={`flex items-center gap-2 text-sm ${ getLinkClasses(
+                                                    className={`flex items-center gap-2 text-sm ${getLinkClasses(
                                                       item.href,
                                                     )}`}
                                                     onClick={() => setOpenMegaMenu(null)}
@@ -671,8 +678,8 @@ const Navbar = () => {
       {/* 🔹 Mobile Menu */}
       <div
         className={`lg:hidden transition-all duration-300 overflow-y-auto bg-black/70 ${isMobileMenuOpen
-            ? "max-h-[760px] opacity-100 py-4"
-            : "max-h-0 opacity-0 py-0"
+          ? "max-h-[760px] opacity-100 py-4"
+          : "max-h-0 opacity-0 py-0"
           }`}
       >
         <div className="flex flex-col space-y-3 pb-10 px-6">
@@ -684,16 +691,18 @@ const Navbar = () => {
               >
                 <button
                   type="button"
-                  onClick={() =>
+                  onClick={() => {
+                    router.push(link.href)
                     setMobileOpenMegaMenu(
                       mobileOpenMegaMenu === link.megaMenu
                         ? null
                         : link.megaMenu,
                     )
                   }
+                  }
                   className={`flex w-full items-center justify-between px-4 py-3 text-left  ${isMegaMenuActive(link.megaMenu)
-                      ? "text-white"
-                      : "text-white/60 hover:text-white"
+                    ? "text-white"
+                    : "text-white/60 hover:text-white"
                     }`}
                 >
                   <span>{link.label}</span>
@@ -713,8 +722,8 @@ const Navbar = () => {
 
                 <div
                   className={`grid overflow-hidden transition-all duration-300 ${mobileOpenMegaMenu === link.megaMenu
-                      ? "grid-rows-[1fr] opacity-100"
-                      : "grid-rows-[0fr] opacity-0"
+                    ? "grid-rows-[1fr] opacity-100"
+                    : "grid-rows-[0fr] opacity-0"
                     }`}
                 >
                   <div className="overflow-hidden">

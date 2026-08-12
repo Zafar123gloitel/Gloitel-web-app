@@ -15,7 +15,7 @@ import StrategyBadge from "../../../components/StrategyBadge";
 import { MiddleSectionHeads } from "../../component/SectionHeads";
 import { CardShowcase } from "../../../components";
 import { showcaseItems } from "../../(what-we-do)/components/showcaseItems ";
-import AI_Solutions from "../../uiComponents/AI_Solutions";
+
 import {
   aiSolutionsData,
   Real_World,
@@ -23,6 +23,7 @@ import {
 import GlowPanel from "../../component/GlowPanel";
 import Strategy from "../../(what-we-do)/components/Strategy";
 import Execution_Plan from "../../uiComponents/Execution_Plan";
+import AI_Solutions from "../../uiComponents/AI_Solutions";
 
 const page = () => {
   return (

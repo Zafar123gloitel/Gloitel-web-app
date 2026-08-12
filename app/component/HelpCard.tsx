@@ -202,22 +202,25 @@ const HelpCard = ({
             </div>
 
             {/* ================= MOBILE CARDS ================= */}
-            <div className="relative mt-14 w-full px-4 lg:hidden">
-                <div className="flex animate-fadeIn flex-wrap justify-center gap-5">
+            <div className="mt-14 rounded-3xl border-white/10 bg-surface-2 p-4 lg:hidden">
+                <div
+                    key={activeTab}
+                    className="grid animate-fadeIn grid-cols-1 justify-items-center gap-4 sm:grid-cols-2"
+                >
                     {data[activeTab]?.map((card) => (
                         <Card
                             key={card.id}
                             className="w-full max-w-[410px]"
                         >
-                            <div className="flex min-h-[650px] flex-col items-center justify-center overflow-hidden p-6">
+                            <div className="flex min-h-[450px] flex-col items-center justify-center overflow-hidden p-6">
                                 {/* Image */}
-                                <div className="flex h-[200px] w-[200px] shrink-0 items-center justify-center rounded-full bg-white">
+                                <div className="flex h-[150px] w-[150px] shrink-0 items-center justify-center rounded-full bg-white">
                                     <Image
                                         width={1920}
                                         height={1080}
                                         src={card.image}
                                         alt={card.imageAlt || card.heading}
-                                        className="h-full w-full rounded-full object-cover shadow-xl"
+                                        className="h-full w-full rounded-full object-cover p-3 shadow-xl"
                                         unoptimized
                                     />
                                 </div>
@@ -238,7 +241,7 @@ const HelpCard = ({
                                 </div>
 
                                 {/* Icons */}
-                                <div className="mt-6 flex items-center justify-center gap-4">
+                                <div className="mt-10 flex items-center justify-center gap-4">
                                     {card.icons.map((icon) => (
                                         <CardIcon key={icon.id}>
                                             {icon.type === "linkedin" && (

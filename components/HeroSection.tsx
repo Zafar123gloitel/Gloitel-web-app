@@ -109,7 +109,7 @@ const HeroSection = ({
               </div>
             </div> */}
 
-            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[1.4rem]">
+            <div className="relative aspect-[4/3] z-20 w-full overflow-hidden rounded-[1.4rem]">
               <Image
                 src={image || ""}
                 alt={imageAlt}

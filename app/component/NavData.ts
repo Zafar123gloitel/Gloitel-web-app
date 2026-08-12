@@ -11,13 +11,13 @@ export const links = [
   },
 
   {
-    href: "/industries",
+    href: "/industries/healthcare-medtech",
     label: "Industries",
     megaMenu: "industries",
   },
 
   {
-    href: "/engineering",
+    href: "/engineering/ai-engineering",
     label: "Engineering",
     megaMenu: "engineering",
   },
@@ -25,7 +25,7 @@ export const links = [
   {
     href: "/about",
     label: "About us",
-    megaMenu: "aboutUs",
+    megaMenu: "about",
   },
 
 
@@ -219,7 +219,7 @@ export const megaMenus = {
     ],
   },
 
-  aboutUs: {
+  about: {
     width: "w-[1150px]",
     columns: "grid-cols-5",
     groupsSpan: "col-span-4 grid-cols-4",
@@ -238,7 +238,7 @@ export const megaMenus = {
         title: "Expertise",
         items: [
           { label: "Our Expertise", href: "/about#our-expertise" },
-          {label:"Work Celebrate", href:"/about#work-celebrate"},
+          { label: "Work Celebrate", href: "/about#work-celebrate" },
           {
             label: "Industries We Serve",
             href: "/about#industries-we-serve",
@@ -272,22 +272,40 @@ export const megaMenus = {
       {
         title: "Why Gloitel",
         items: [
-          { label: "Why Join Gloitel", href: "/career/why-join-gloitel" },
-          { label: "Benefits & Perks", href: "/career/benefits-perks" },
+          {
+            label: "Why Join Gloitel",
+            href: "/career#why-join-gloitel",
+          },
+          {
+            label: "Benefits & Perks",
+            href: "/career#benefits-perks",
+          },
         ],
       },
       {
         title: "Opportunities",
         items: [
-          { label: "Open Opportunities", href: "/career/open-opportunities" },
-          { label: "Internships", href: "/career/internships" },
+          {
+            label: "Open Opportunities",
+            href: "/career#open-opportunities",
+          },
+          {
+            label: "Internships",
+            href: "/career#internships",
+          },
         ],
       },
       {
         title: "Hiring",
         items: [
-          { label: "Our Hiring Process", href: "/career/our-hiring-process" },
-          { label: "Employee Stories", href: "/career/employee-stories" },
+          {
+            label: "Our Hiring Process",
+            href: "/career#our-hiring-process",
+          },
+          {
+            label: "Employee Stories",
+            href: "/career#employee-stories",
+          },
         ],
       },
       {
@@ -295,9 +313,12 @@ export const megaMenus = {
         items: [
           {
             label: "View Open Positions",
-            href: "/career/view-open-positions",
+            href: "/career#view-open-positions",
           },
-          { label: "Apply Now", href: "/career/apply-now" },
+          {
+            label: "Apply Now",
+            href: "/career#apply-now",
+          },
         ],
       },
     ],

@@ -14,7 +14,7 @@ const TestimonialCard = ({
   avatar,
 }: TestimonialCardProps) => {
   return (
-    <div className="relative w-full max-w-[455px]">
+    <div className="relative  w-[300px] min-sm:w-[355px] ">
       {/* Testimonial Badge */}
       
 
