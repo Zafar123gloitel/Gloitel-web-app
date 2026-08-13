@@ -51,7 +51,7 @@ const page = () => {
               cardClassName="h-[411px] max-w-[350px] gap-y-6 "
               gridClassName="h-full"
               titleClassName="text-[28px] leading-8 "
-              descriptionClassName="text-[16px] leading-6 mt-3 text-muted "
+              descriptionClassName="text-[16px] leading-6 mt-3 text-description "
             />
           </section>
         </div>

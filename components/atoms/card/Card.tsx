@@ -45,7 +45,7 @@ export function StepBadge({ number }: StepBadgeProps) {
       {/* Rotating Border */}
       <div className="relative inline-flex rounded-full  p-[1.5px] overflow-hidden">
         {/* Button */}
-        <div className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full border border-[#FFFFFF4D] bg-[#1447E633] text-3xl font-light text-white shadow-[0_0_35px_rgba(37,99,235,.45)]">
+        <div className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full border border-[#FFFFFF4D] bg-[#1447E633] text-3xl font-light text-title shadow-[0_0_35px_rgba(37,99,235,.45)]">
           {number}
         </div>
       </div>
@@ -65,7 +65,7 @@ export function CardIcon({ children, className = "" }) {
         "after:opacity-80",
 
         "inline-flex h-14 w-14 items-center justify-center rounded-full border border-white/10",
-        "text-white shadow-[0_12px_28px_rgba(15,23,42,0.24)]",
+        "text-title shadow-[0_12px_28px_rgba(15,23,42,0.24)]",
         "transition-all duration-300 ease-out",
         "group-hover:bg-blue-600 ",
         "group-hover:scale-[1.04]",
@@ -95,7 +95,7 @@ export function CardDivider({ className = "" }) {
 
 export function CardTitle({
   children,
-  className = "text-[28px] font-normal leading-8 tracking-[-0.04em] text-white text-left",
+  className = "text-[28px] font-normal leading-8 tracking-[-0.04em] text-title text-left",
 }) {
   return (
     <h3 className={["", className].filter(Boolean).join(" ")}>{children}</h3>
@@ -104,7 +104,7 @@ export function CardTitle({
 
 export function CardDescription({
   children,
-  className = "text-[16px]  text-muted  leading-7 text-left",
+  className = "text-[16px]  text-description  leading-7 text-left",
 }) {
   return (
     <p className={["", className].filter(Boolean).join(" ")}>{children}</p>
@@ -115,7 +115,7 @@ export function CardMeta({ children, className = "" }) {
   return (
     <div
       className={[
-        "text-xs uppercase tracking-[0.22em] text-white/40",
+        "text-xs uppercase tracking-[0.22em] text-",
         className,
       ]
         .filter(Boolean)

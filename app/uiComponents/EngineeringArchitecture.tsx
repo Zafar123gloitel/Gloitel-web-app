@@ -83,7 +83,7 @@ export default function EngineeringArchitecture({
             <CardTitle className=" mt-4 leading-[1.25] text-4xl ">
               {item.title}
             </CardTitle>
-            <CardDescription className="text-muted  mt-5 leading-6 ">
+            <CardDescription className="text-description  mt-5 leading-6 ">
               {item.description}
             </CardDescription>
           </Card>
@@ -165,7 +165,7 @@ export default function EngineeringArchitecture({
                 {item.icon}
               </CardIcon>
 
-              <CardTitle className="mt-4 text-3xl text-white">
+              <CardTitle className="mt-4 text-3xl text-title">
                 {item.title}
               </CardTitle>
 

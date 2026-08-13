@@ -119,8 +119,8 @@
 
 //   const getLinkClasses = (href) =>
 //     pathname === href
-//       ? "text-white"
-//       : "text-white/50 hover:text-white transition-colors";
+//       ? "text-title"
+//       : "text-title/50 hover:text-title transition-colors";
 
 //   // 🧭 Hide navbar when scrolling down
 //   useEffect(() => {
@@ -171,7 +171,7 @@
 //                     onMouseEnter={() => setIsMegaMenuOpen(true)}
 //                     onMouseLeave={() => setIsMegaMenuOpen(false)}
 //                   >
-//                     <button className="flex items-center gap-1 text-white/60 hover:text-white transition">
+//                     <button className="flex items-center gap-1 text-title/60 hover:text-title transition">
 //                       {link.label}
 
 //                       <svg
@@ -206,7 +206,7 @@
 //                           <div className="col-span-4 grid grid-cols-4 gap-8">
 //                             {megaMenu.map((section) => (
 //                               <div key={section.title}>
-//                                 <h4 className="mb-5 text-white font-semibold">
+//                                 <h4 className="mb-5 text-title font-semibold">
 //                                   {section.title}
 //                                 </h4>
 
@@ -215,7 +215,7 @@
 //                                     <li key={index}>
 //                                       <Link
 //                                         href={item.href}
-//                                         className="flex items-center gap-2 text-sm text-white/60 hover:text-blue-400"
+//                                         className="flex items-center gap-2 text-sm text-title/60 hover:text-blue-400"
 //                                       >
 //                                         <span>›</span>
 //                                         {item.label}
@@ -261,7 +261,7 @@
 //         {/* 🔹 Mobile Toggle Button */}
 //         <button
 //           onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
-//           className="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all"
+//           className="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-300 hover:text-title hover:bg-gray-800/50 transition-all"
 //         >
 //           {isMobileMenuOpen ? (
 //             <svg
@@ -315,7 +315,7 @@
 //                 <button
 //                   type="button"
 //                   onClick={() => setMobileMegaMenuOpen(!isMobileMegaMenuOpen)}
-//                   className="flex w-full items-center justify-between px-4 py-3 text-left text-white/80"
+//                   className="flex w-full items-center justify-between px-4 py-3 text-left text-title/80"
 //                 >
 //                   <span>{link.label}</span>
 //                   <svg
@@ -350,7 +350,7 @@
 //                               <Link
 //                                 key={`${section.title}-${index}`}
 //                                 href={item.href}
-//                                 className="block text-sm text-white/70 hover:text-white"
+//                                 className="block text-sm text-title/70 hover:text-title"
 //                                 onClick={() => {
 //                                   setMobileMenuOpen(false);
 //                                   setMobileMegaMenuOpen(false);
@@ -421,8 +421,8 @@ const Navbar = () => {
       pathname === href || (href !== "/" && pathname.startsWith(href));
 
     return isActive
-      ? "text-white translate-y-0 scale-100"
-      : "text-white/50 hover:text-white hover:-translate-y-1 hover:scale-105 transition-all duration-300 ease-out";
+      ? "text-title translate-y-0 scale-100"
+      : "text-description hover:text-title hover:-translate-y-1 hover:scale-105 transition-all duration-300 ease-out";
   };
 
 
@@ -501,9 +501,9 @@ const Navbar = () => {
                     <button
                       type="button"
                       onClick={() => router.push(link.href)}
-                      className={`relative z-20 flex items-center gap-1 transition ${isMegaMenuActive(link.megaMenu)
-                        ? "text-white"
-                        : "text-white/60 hover:text-white"
+                      className={`relative z-20 flex items-center cursor-pointer gap-1 transition ${isMegaMenuActive(link.megaMenu)
+                        ? "text-title"
+                        : "text-description hover:text-title"
                         }`}
                     >
                       {link.label}
@@ -553,12 +553,12 @@ const Navbar = () => {
                                     {section.href ? (
                                       <Link
                                         href={section.href}
-                                        className="mb-5 block font-semibold text-white transition-colors hover:text-blue-400"
+                                        className="mb-5 block font-semibold text-title transition-colors hover:text-blue-400"
                                       >
                                         {section.title}
                                       </Link>
                                     ) : (
-                                      <h4 className="mb-5 text-white font-semibold">
+                                      <h4 className="mb-5 text-title font-semibold">
                                         {section.title}
                                       </h4>
                                     )}
@@ -639,7 +639,7 @@ const Navbar = () => {
         {/* 🔹 Mobile Toggle Button */}
         <button
           onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
-          className="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all"
+          className="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-description hover:text-title hover:bg-gray-800/50 transition-all"
         >
           {isMobileMenuOpen ? (
             <svg
@@ -701,8 +701,8 @@ const Navbar = () => {
                   }
                   }
                   className={`flex w-full items-center justify-between px-4 py-3 text-left  ${isMegaMenuActive(link.megaMenu)
-                    ? "text-white"
-                    : "text-white/60 hover:text-white"
+                    ? "text-title"
+                    : "text-title/60 hover:text-title"
                     }`}
                 >
                   <span>{link.label}</span>

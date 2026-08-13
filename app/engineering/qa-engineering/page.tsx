@@ -40,7 +40,7 @@ export default function Page() {
             cardHeight="h-[450px]   max-w-[350px] "
             gridClassName="gap-y-28"
             titleClassName="text-[32px]  leading-8 "
-            descriptionClassName="text-[18px] leading-7 mt-5  text-muted "
+            descriptionClassName="text-[18px] leading-7 mt-5  text-description "
             
           />
         </section>

@@ -22,11 +22,11 @@ const JoinUsNow = () => {
           ></video>
 
           {/* Content */}
-          <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4 sm:px-8">
+          <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-title px-4 sm:px-8">
             {/* Badge */}
             <CenterBadge JoinUsNowBadge="Join Us Now" />
             {/* Headings */}
-            <h3 className="text-2xl sm:text-3xl lg:text-5xl font-medium text-white mb-1">
+            <h3 className="text-2xl sm:text-3xl lg:text-5xl font-medium text-title mb-1">
               Each Project we Undertake
             </h3>
             <h3 className="text-2xl sm:text-2xl lg:text-5xl font-medium text-gray-400">

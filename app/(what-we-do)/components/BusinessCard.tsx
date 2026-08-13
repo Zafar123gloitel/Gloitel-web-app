@@ -25,7 +25,7 @@ const BusinessCard = ({ icon, title, className }: BusinessCardProps) => {
               "after:opacity-80",
 
               "inline-flex  min-h-14 h-10 min-w-14  items-center justify-center rounded-full border border-white/10",
-              "text-white shadow-[0_12px_28px_rgba(15,23,42,0.24)]",
+              "text-title shadow-[0_12px_28px_rgba(15,23,42,0.24)]",
               "transition-all duration-300 ease-out",
               "group-hover:bg-blue-600 ",
               "group-hover:scale-[1.04]",
@@ -37,7 +37,7 @@ const BusinessCard = ({ icon, title, className }: BusinessCardProps) => {
           >
             {icon}
           </div>
-          <p className="text-[16px] sm:text-[20px] lg:text-[24px] font-normal leading-relaxed text-white/90">
+          <p className="text-[16px] sm:text-[20px] lg:text-[24px] font-normal leading-relaxed text-title">
             {title}
           </p>
         </div>

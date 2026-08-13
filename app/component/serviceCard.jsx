@@ -27,9 +27,9 @@ export default function ServiceCard({
       {/* Content */}
       <div className="mt-5 flex-1">
         <div className="flex items-center gap-2">
-          <h3 className="text-white text-xl font-semibold">{title}</h3>
+          <h3 className="text-title text-xl font-semibold">{title}</h3>
           {badge && (
-            <span className="text-xs bg-blue-600 text-white px-2 py-0.5 rounded-full">
+            <span className="text-xs bg-blue-600 text-title px-2 py-0.5 rounded-full">
               {badge}
             </span>
           )}
@@ -49,7 +49,7 @@ export default function ServiceCard({
               href={btn.href}
               className={`px-5 py-2 rounded-md text-sm font-medium transition ${
                 btn.primary
-                  ? "text-white bg-gradient-to-r from-blue-500 to-blue-700 shadow-lg shadow-blue-500/30 hover:from-blue-600 hover:to-blue-800"
+                  ? "text-title bg-gradient-to-r from-blue-500 to-blue-700 shadow-lg shadow-blue-500/30 hover:from-blue-600 hover:to-blue-800"
                   : "text-gray-200 bg-[#1e293b] hover:bg-[#334155]"
               }`}
             >

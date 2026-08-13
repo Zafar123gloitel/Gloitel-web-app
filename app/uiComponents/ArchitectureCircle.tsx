@@ -64,7 +64,7 @@
 //               "after:opacity-80",
 
 //               "inline-flex h-14 w-14 items-center justify-center rounded-full border border-white/10",
-//               "text-white shadow-[0_12px_28px_rgba(15,23,42,0.24)]",
+//               "text-title shadow-[0_12px_28px_rgba(15,23,42,0.24)]",
 //               "transition-all duration-300 ease-out",
 //               "group-hover:bg-blue-600 ",
 //               "group-hover:scale-[1.04]",
@@ -75,11 +75,11 @@
 //             {item.icon}
 //           </div>
 
-//           <h3 className="text-white text-2xl mt-4 font-semibold mb-3">
+//           <h3 className="text-title text-2xl mt-4 font-semibold mb-3">
 //             {item.title}
 //           </h3>
 
-//           <p className="text-muted text-sm leading-7">{item.description}</p>
+//           <p className="text-description text-sm leading-7">{item.description}</p>
 //         </div>
 //       ))}
 //     </section>
@@ -166,7 +166,7 @@ export default function ArchitectureCircle({
                   "after:opacity-80",
 
                   "inline-flex h-14 w-14 items-center justify-center rounded-full border border-white/10",
-                  "text-white shadow-[0_12px_28px_rgba(15,23,42,0.24)]",
+                  "text-title shadow-[0_12px_28px_rgba(15,23,42,0.24)]",
                   "transition-all duration-300 ease-out",
                   "group-hover:bg-blue-600 ",
                   "group-hover:scale-[1.04]",
@@ -177,11 +177,11 @@ export default function ArchitectureCircle({
                 {item.icon}
               </div>
 
-              <h3 className="text-white text-2xl mt-4 font-semibold mb-3">
+              <h3 className="text-title text-2xl mt-4 font-semibold mb-3">
                 {item.title}
               </h3>
 
-              <p className="text-muted text-sm leading-7">{item.description}</p>
+              <p className="text-description text-sm leading-7">{item.description}</p>
             </div>
           ))}
         </div>
@@ -233,7 +233,7 @@ export default function ArchitectureCircle({
                 "after:opacity-80",
 
                 "inline-flex h-14 w-14 items-center justify-center rounded-full border border-white/10",
-                "text-white shadow-[0_12px_28px_rgba(15,23,42,0.24)]",
+                "text-title shadow-[0_12px_28px_rgba(15,23,42,0.24)]",
                 "transition-all duration-300 ease-out",
                 "group-hover:bg-blue-600 ",
                 "group-hover:scale-[1.04]",
@@ -244,11 +244,11 @@ export default function ArchitectureCircle({
               {item.icon}
             </div>
 
-            <h3 className="text-white text-2xl mt-4 font-semibold mb-3">
+            <h3 className="text-title text-2xl mt-4 font-semibold mb-3">
               {item.title}
             </h3>
 
-            <p className="text-muted text-sm leading-6">{item.description}</p>
+            <p className="text-description text-sm leading-6">{item.description}</p>
           </div>
         ))}
       </div>

@@ -14,6 +14,7 @@ import ArchitectureCircle from "../uiComponents/ArchitectureCircle";
 import { fullStackComplianceData } from "../engineering/full-stack-engineering/data";
 import { AiAgentsIndustriesdata, AiExecutionServicesdata, aiInfrastructureData, aiInfrastructureSectionHead, aiRoadmapData, CareerFinalCtadata, diagnoseBeforeDeployData, heroData } from "../career/data";
 import Execution_Plan from "../uiComponents/Execution_Plan";
+import { TestimonialButton } from "../../components/atoms/button/Button";
 
 export const CareerHero = () => {
 
@@ -45,7 +46,7 @@ export const AiRoadmapSection = () => {
                 cardClassName={""}
                 cardHeight={"h-[263px] w-[302px]"}
                 titleClassName={"text-[28px]"}
-                descriptionClassName={"text-[14px] text-muted "}
+                descriptionClassName={"text-[14px] text-description "}
                 iconClassName={""}
             />
         </section>
@@ -53,7 +54,7 @@ export const AiRoadmapSection = () => {
 };
 
 export const AiExecutionServices = () => {
-  
+
 
     return (
         <section>
@@ -93,7 +94,7 @@ export const AiExecutionServices = () => {
                 </div>
                 <div className="mx-auto text-center mt-5 ">                <a
                     href={"/career"}
-                    className="group inline-flex items-center gap-2 text-[11px] text-white/80 transition-colors duration-300 hover:text-white"
+                    className="group inline-flex items-center gap-2 text-[11px] text-description transition-colors duration-300 hover:text-title"
                 >
                     <span className="text-xl">{"View all open positions"}</span>
 
@@ -151,7 +152,7 @@ export const DiagnoseBeforeDeploy = () => {
                             cardHeight="h-[300px]   max-w-[300px] "
                             gridClassName="gap-y-28"
                             titleClassName="text-[32px] leading-8 "
-                            descriptionClassName="text-[18px] leading-7 mt-5  text-muted "
+                            descriptionClassName="text-[18px] leading-7 mt-5  text-description "
                         />
                     </section>
                 </div>
@@ -222,52 +223,19 @@ export const AiAgentsIndustries = () => {
                     {/* Navigation Buttons */}
                     <div className="mb-8 flex justify-end gap-4 px-5 sm:px-10 lg:px-20">
                         {/* LEFT BUTTON */}
-                        <button
-                            type="button"
-                            onClick={() => scrollTestimonials("left")}
-                            aria-label="Previous testimonials"
-                            className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border border-white/10 bg-[#050511] text-white transition-all duration-300 hover:border-blue-500/50 hover:bg-blue-500/10"
-                        >
-                            <svg
-                                width="22"
-                                height="22"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    d="M15 18L9 12L15 6"
-                                    stroke="currentColor"
-                                    strokeWidth="1.8"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                />
-                            </svg>
-                        </button>
 
-                        {/* RIGHT BUTTON */}
-                        <button
-                            type="button"
+                        <TestimonialButton
+                            className="h-12 min-w-12"
+                            ariaLabel="Previous testimonials"
+                            onClick={() => scrollTestimonials("left")}
+                        />
+
+                        <TestimonialButton
+                            className="h-12 min-w-12"
+                            direction="right"
+                            ariaLabel="Next testimonials"
                             onClick={() => scrollTestimonials("right")}
-                            aria-label="Next testimonials"
-                            className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border border-white/10 bg-[#050511] text-white transition-all duration-300 hover:border-blue-500/50 hover:bg-blue-500/10"
-                        >
-                            <svg
-                                width="22"
-                                height="22"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    d="M9 18L15 12L9 6"
-                                    stroke="currentColor"
-                                    strokeWidth="1.8"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                />
-                            </svg>
-                        </button>
+                        />
                     </div>
 
                     {/* Cards Container */}

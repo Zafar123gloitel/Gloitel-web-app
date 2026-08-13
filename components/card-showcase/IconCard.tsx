@@ -51,7 +51,7 @@ const IconCard = ({
               "after:opacity-80",
 
               "inline-flex h-16 w-16 items-center justify-center rounded-sm border border-white/10",
-              "text-white shadow-[0_12px_28px_rgba(15,23,42,0.24)]",
+              "text-title shadow-[0_12px_28px_rgba(15,23,42,0.24)]",
               "group-hover:bg-blue-600 ",
             ]
               .filter(Boolean)
@@ -60,7 +60,7 @@ const IconCard = ({
             {iconNode ? (
               typeof iconNode === "function" ? (
                 React.createElement(iconNode as any, {
-                  className: "h-7 w-7 text-white",
+                  className: "h-7 w-7 text-title",
                 })
               ) : (
                 iconNode
@@ -85,7 +85,7 @@ const IconCard = ({
           </div>
         )}
 
-        <h3 className="mt-8 text-center  text-lg text-white ">{name}</h3>
+        <h3 className="mt-8 text-center  text-lg text-title ">{name}</h3>
       </div>
     </div>
   );

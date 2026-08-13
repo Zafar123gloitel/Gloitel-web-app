@@ -21,7 +21,7 @@ interface AskedQProps {
   showGlow?: boolean;
 }
 
-const Asked_Q: React.FC<AskedQProps> = ({
+   const Asked_Q: React.FC<AskedQProps> = ({
   badgeText = "Everything You Need to Know",
   sectionHead = "Frequently Asked Questions",
   sectionSubHead = "",
@@ -54,7 +54,7 @@ const Asked_Q: React.FC<AskedQProps> = ({
 
           {/* RIGHT */}
           <div className="flex gap-4 flex-row flex-wrap justify-center lg:justify-start">
-            <Accordion data={accordionData} />
+            <Accordion data={accordionData} />    
           </div>
         </div>
       </section>
@@ -63,3 +63,4 @@ const Asked_Q: React.FC<AskedQProps> = ({
 };
 
 export default Asked_Q;
+     

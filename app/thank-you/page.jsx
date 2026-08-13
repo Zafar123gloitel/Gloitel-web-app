@@ -20,7 +20,7 @@ export default function ThankYouPage() {
                 <div className="border border-white/10 rounded-3xl shadow-lg p-3 relative bg-linear-to-r from-gray-950/90 to-black/80 sm:p-2 overflow-hidden">
                   <div className="bg-black/70 border border-white/10 rounded-3xl shadow-lg p-8 sm:p-12 flex flex-col items-center justify-center text-center">
                     <div className="text-green-400 text-6xl mb-6">✓</div>
-                    <h1 className="text-3xl font-bold text-white mb-4">
+                    <h1 className="text-3xl font-bold text-title mb-4">
                       Thank You!
                     </h1>
                     <p className="text-gray-300 mb-6">
@@ -35,13 +35,13 @@ export default function ThankYouPage() {
                     <div className="flex flex-col sm:flex-row gap-4 w-full">
                       <Link
                         href="/"
-                        className="inline-flex items-center justify-center flex-1 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-medium py-3 px-6 rounded-lg transition cursor-pointer"
+                        className="inline-flex items-center justify-center flex-1 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-title font-medium py-3 px-6 rounded-lg transition cursor-pointer"
                       >
                         ← Back to Home
                       </Link>
                       <Link
                         href="/contact"
-                        className="inline-flex items-center justify-center flex-1 bg-transparent border border-white/20 hover:bg-white/10 text-white font-medium py-3 px-6 rounded-lg transition cursor-pointer"
+                        className="inline-flex items-center justify-center flex-1 bg-transparent border border-white/20 hover:bg-white/10 text-title font-medium py-3 px-6 rounded-lg transition cursor-pointer"
                       >
                         Send Another Message
                       </Link>

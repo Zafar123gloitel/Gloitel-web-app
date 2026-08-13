@@ -48,7 +48,7 @@ const page = () => {
             cardHeight="h-[263px]  max-w-[330px] "
             gridClassName="h-full gap-y-30 "
             titleClassName="text-[28px] leading-8 "
-            descriptionClassName="text-[16px] xl:text-[18px] leading-6 mt-3 text-muted "
+            descriptionClassName="text-[16px] xl:text-[18px] leading-6 mt-3 text-description "
           />
         </section>
       </section>
@@ -104,7 +104,7 @@ const page = () => {
               cardClassName="h-[411px] max-w-[350px] gap-y-6 "
               gridClassName="h-full"
               titleClassName="text-[28px] leading-8 "
-              descriptionClassName="text-[16px] leading-6 mt-3 text-muted "
+              descriptionClassName="text-[16px] leading-6 mt-3 text-description "
             />
           </section>
         </div>

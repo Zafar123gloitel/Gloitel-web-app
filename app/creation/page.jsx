@@ -140,7 +140,7 @@ const CreationPage = () => {
             bg-gradient-to-r from-blue-950 to-black p-2 sm:p-4"
                   >
                     <div>
-                      <h3 className="text-sm sm:text-md font-semibold text-white mb-0.5 sm:mb-1">
+                      <h3 className="text-sm sm:text-md font-semibold text-title mb-0.5 sm:mb-1">
                         {item.name}
                       </h3>
                     </div>
@@ -162,7 +162,7 @@ const CreationPage = () => {
                   >
                     <div
                       className="bg-[radial-gradient(circle_at_center,_rgba(0,0,80,0.9),_rgba(0,0,0,1))] 
-              text-white text-xs sm:text-sm font-medium 
+              text-title text-xs sm:text-sm font-medium 
               px-2 sm:px-4 py-1 sm:py-2 rounded-md sm:rounded-lg shadow-lg"
                     >
                       {item.tag}

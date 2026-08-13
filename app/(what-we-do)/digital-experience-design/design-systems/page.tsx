@@ -116,7 +116,7 @@ const page = () => {
               cardHeight="h-[330px]  max-w-[330px] "
               gridClassName="gap-y-28"
               titleClassName="text-[28px] leading-8 "
-              descriptionClassName="text-[16px] leading-5 mt-3 text-muted "
+              descriptionClassName="text-[16px] leading-5 mt-3 text-description "
             />
           </section>
         </section>

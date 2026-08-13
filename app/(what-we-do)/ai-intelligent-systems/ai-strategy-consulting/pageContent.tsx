@@ -1,35 +1,21 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
-import { Download, ArrowRight } from "lucide-react";
 import StrategyBadge from "../../../../components/StrategyBadge";
 import ProblemCard from "../../../../components/ProblemCard";
-import {
-  accordionData,
-  enableData,
-  heroSectionData,
-  outcomesData,
-  problems,
-  RankData,
-} from "../../components/data";
 import { BgSquare2 } from "../../../component/BgSquare";
 import { MiddleSectionHeads } from "../../../component/SectionHeads";
-import { Card, CardShowcase } from "../../../../components";
-import { showcaseItems } from "../../components/showcaseItems ";
+import { CardShowcase } from "../../../../components";
 import Discover from "../../components/Discover";
 import Assess from "../../components/Assess";
-import { discoverData } from "../../components/data";
-import { assessData } from "../../components/data";
+
 import Business from "../../components/Business";
 import Strategy from "../../components/Strategy";
-import Result from "../../../component/Result";
 import TimeLine from "../../components/TimeLine";
 import Asked_Q from "../../components/Asked_Q";
 import Execution_Plan from "../../../uiComponents/Execution_Plan";
 import HeroSection from "../../components/HeroSection";
-import { notIncludedData } from "../../components/data";
 import GlowPanel from "../../../component/GlowPanel";
+import { accordionData, assessData, discoverData, enableData, heroSectionData, notIncludedData, outcomesData, problems, RankData, showcaseItems } from "./data";
 
 export default function WhatWeDoPage() {
   return (
@@ -81,7 +67,7 @@ export default function WhatWeDoPage() {
               cardHeight="h-[250px]   max-w-[300px] "
               gridClassName="gap-y-28"
               titleClassName="text-[28px] leading-8 "
-              descriptionClassName="text-[16px] leading-5 mt-3 text-muted "
+              descriptionClassName="text-[16px] leading-5 mt-3 text-description "
             />
           </section>
         </div>

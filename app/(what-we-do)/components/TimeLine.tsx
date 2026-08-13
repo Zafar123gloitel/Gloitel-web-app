@@ -3,8 +3,7 @@ import { BgSquare2 } from "../../component/BgSquare";
 import StrategyBadge from "../../../components/StrategyBadge";
 import { MiddleSectionHeads } from "../../component/SectionHeads";
 import { CardShowcase } from "../../../components";
-import { EngagementData } from "./showcaseItems ";
-import GlowPanel from "../../component/GlowPanel";
+import { EngagementData } from "../ai-intelligent-systems/ai-strategy-consulting/data";
 
 const TimeLine = () => {
   return (
@@ -29,7 +28,7 @@ const TimeLine = () => {
             cardHeight="h-[250px]   max-w-[300px] "
             gridClassName="gap-y-6"
             titleClassName="text-[28px] leading-8 "
-            descriptionClassName="text-[16px] leading-6 mt-3 text-muted "
+            descriptionClassName="text-[16px] leading-6 mt-3 text-description "
           />
         </section>
       </div>

@@ -38,11 +38,11 @@ const ImageCard = ({ data }: ImageCardProps) => {
         </div>
 
         {/* Content */}
-        <CardTitle className="text-[25px] lg:text-[28px] font-normal leading-8 tracking-[-0.04em] text-white text-left">
+        <CardTitle className="text-[25px] lg:text-[28px] font-normal leading-8 tracking-[-0.04em] text-title text-left">
           {title}
         </CardTitle>
 
-        <CardDescription className="text-[14px] lg:text-[16px]   text-muted  leading-6 text-left">
+        <CardDescription className="text-[14px] lg:text-[16px]   text-description  leading-6 text-left">
           {description}
         </CardDescription>
 

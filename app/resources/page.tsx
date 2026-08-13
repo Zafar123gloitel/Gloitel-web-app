@@ -152,7 +152,7 @@ const cardPositions = {
                         {enterpriseModernizationTagsData.map((item) => (
                             <div key={item.id} className="flex border p-2 items-center  justify-between  border-[#c2c2c260] rounded-2xl gap-3">
                                 <CardIcon className='h-10 w-10 ' >{item.icon}</CardIcon>
-                                <CardTitle className=" text-md md:text-lg text-white text-nowrap ">{item.label}</CardTitle>
+                                <CardTitle className=" text-md md:text-lg text-title text-nowrap ">{item.label}</CardTitle>
                                 <CardIcon>{item.icons}</CardIcon>
                             </div>
                         ))}

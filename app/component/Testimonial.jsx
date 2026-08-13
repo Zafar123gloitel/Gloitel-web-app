@@ -159,7 +159,7 @@ const Testimonial = () => {
                     </div>
                   </div>
                   {/* Right column: Icon */}
-                  <div className="w-6 h-6 text-white/30 transition-colors duration-300 group-hover:text-white/60">
+                  <div className="w-6 h-6 text-description transition-colors duration-300 group-hover:text-title">
                     {item.icon}
                   </div>
                 </div>
@@ -175,11 +175,11 @@ const Testimonial = () => {
                 {/* Bottom Section (Name, Role, Title) */}
                 <div className="relative z-10">
                   <div className="flex items-center gap-2 py-2">
-                    <h3 className="text-white font-semibold text-sm sm:text-md">
+                    <h3 className="text-title font-semibold text-sm sm:text-md">
                       {item.name}
                     </h3>
                     <span className="w-1 h-1 bg-white rounded-full"></span>
-                    <p className="text-white font-semibold text-sm sm:text-md">
+                    <p className="text-title font-semibold text-sm sm:text-md">
                       {item.role}
                     </p>
                   </div>

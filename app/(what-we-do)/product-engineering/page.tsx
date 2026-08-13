@@ -52,10 +52,10 @@ const page = () => {
               `,
         }}
       >
-        <span className="inline-flex h-12 min-w-12 items-center text-2xl text-white bg-[#1447E633] justify-center rounded-full ">
+        <span className="inline-flex h-12 min-w-12 items-center text-2xl text-title bg-[#1447E633] justify-center rounded-full ">
          {productStruggleNote.icon}
         </span>
-        <p className="text-white">{productStruggleNote.text}</p>
+        <p className="text-title">{productStruggleNote.text}</p>
       </div>
     </section>
     <section className="overflow-hidden py-20 lg:py-20">
@@ -120,7 +120,7 @@ const page = () => {
             cardHeight="h-[250px]   max-w-[300px] "
             gridClassName="gap-y-28"
             titleClassName="text-[28px] leading-8 "
-            descriptionClassName="text-[16px] leading-5 mt-3 text-muted "
+            descriptionClassName="text-[16px] leading-5 mt-3 text-description "
           />
 
         </section>

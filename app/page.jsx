@@ -2,7 +2,7 @@
 import React, { useRef } from "react";
 import dynamic from "next/dynamic";
 import Hero from "./component/Hero";
-import { HomeAboutContent, HomeAboutImg } from "./component/About";
+import { HomeAboutContent, HomeAboutImg, WhoWeAre } from "./component/About";
 import { LoadingSection } from "./component/LoadingSection";
 import { HorizontalDivider } from "./component/SectionDivider";
 import { LeftSectionHead2, MiddleSectionHeads } from "./component/SectionHeads";
@@ -116,9 +116,9 @@ const HomePage = () => {
       <Hero />
 
       {/* About Section */}
-      <section className="relative isolate px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
+      {/* <section className="relative isolate px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
         <div className="mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-          {/* Content */}
+         
           <div className="order-1 md:order-2">
             <HomeAboutContent
               HomeAboutBadge="About Gloitel"
@@ -136,12 +136,14 @@ const HomePage = () => {
             />
           </div>
 
-          {/* Image */}
+         
           <div className="order-2 md:order-1">
             <HomeAboutImg ImgLink="https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762928286/Gloitel/aboutgloitel_h4ba1t.webp" />
           </div>
         </div>
-      </section>
+      </section> */}
+
+       <WhoWeAre/>
 
       <HorizontalDivider />
       <Result />

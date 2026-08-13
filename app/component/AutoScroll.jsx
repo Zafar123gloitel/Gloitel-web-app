@@ -70,7 +70,7 @@ const AutoScroll = () => {
                 {/* Overlay */}
                 <div className="absolute inset-x-0 bottom-0 m-5 bg-neutral-950 p-4 bg rounded-xl">
                   {/* Title */}
-                  <h3 className="text-base sm:text-md md:text-lg font-medium text-white uppercase mb-2">
+                  <h3 className="text-base sm:text-md md:text-lg font-medium text-title uppercase mb-2">
                     {feature.title}
                   </h3>
                   <hr className="border-white/10 mb-2" />

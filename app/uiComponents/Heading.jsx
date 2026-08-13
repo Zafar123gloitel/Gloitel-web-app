@@ -17,7 +17,7 @@ export const IntroHead = ({
         />
       </div>
 
-      <h3 className="text-4xl sm:text-5xl lg:text-[5rem] text-white">
+      <h3 className="text-4xl sm:text-5xl lg:text-[5rem] text-title">
         {main}
         <br /> {sub}
       </h3>
@@ -44,7 +44,7 @@ export const IntroHead2 = ({
         />
       </div>
 
-      <h3 className="text-5xl sm:text-5xl lg:text-[5rem] text-white">
+      <h3 className="text-5xl sm:text-5xl lg:text-[5rem] text-title">
         {main}
         <br /> {sub}
       </h3>

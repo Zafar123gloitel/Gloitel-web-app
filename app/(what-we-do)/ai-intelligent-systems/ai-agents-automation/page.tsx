@@ -4,7 +4,6 @@ import React from "react";
 import HeroSection from "../../components/HeroSection";
 import {
   Agent_Projects,
-  ai_agents_designed,
   aiAgentTechnologyData,
   aiSolutionsData,
   ApproachStepFive,
@@ -27,6 +26,7 @@ import Strategy from "../../components/Strategy";
 import IconCard from "../../../../components/card-showcase/IconCard";
 import AI_Solutions from "../../../uiComponents/AI_Solutions";
 import Execution_Plan from "../../../uiComponents/Execution_Plan";
+import { ai_agents_designed } from "./data";
 
 const page = () => {
   const problems = [
@@ -204,7 +204,7 @@ const page = () => {
           badgeText="AI Agents & Automation"
           title="AI Agents that Take Action, Not Just Instructions."
           description="We design and deploy production-ready AI agents that can make decisions, interact with systems, and automate complex workflows with minimal human intervention."
-          image="/images/What-we-do/Rectangle 1.png"
+          image="https://res.cloudinary.com/dsqu6pi0d/image/upload/v1786613040/Gloitel/what%20we%20do/AI_Agents_Automation_pjmzaj.png"
           imageAlt="Hero Image"
           video="https://res.cloudinary.com/dsqu6pi0d/video/upload/v1762846419/Gloitel/bg_cij8h5.mp4"
           primaryButton={{
@@ -254,7 +254,7 @@ achieve outcomes."
         </div>
         <div className="relative h-[400px] mb-16 overflow-hidden w-[80%]  mx-auto">
           <Image
-            src="/images/What-we-do/Rectangle 1.png"
+            src="https://res.cloudinary.com/dsqu6pi0d/image/upload/v1786613039/Gloitel/what%20we%20do/How_AI_Agents_Work_zed02c.png"
             alt="Problem"
             fill
             className="object-cover rounded-2xl h-full w-full  bg-white"
@@ -289,7 +289,7 @@ achieve outcomes."
               cardClassName="max-h-[411px] max-w-[350px]  "
               gridClassName="h-full"
               titleClassName="text-[28px] "
-              descriptionClassName="text-[16px] leading-6 mt-5 text-muted "
+              descriptionClassName="text-[16px] leading-6 mt-5 text-description "
               iconClassName=""
             />
           </section>

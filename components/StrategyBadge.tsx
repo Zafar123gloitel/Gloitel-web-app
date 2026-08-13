@@ -13,7 +13,7 @@ export default function StrategyBadge({
 
       <div className="relative z-10 inline-flex items-center gap-3 rounded-[10px] border-2 border-white/20 bg-[#0B1128] px-6 py-3">
         <span className="h-2 w-2 rounded-full bg-white" />
-        <span className="text-[14px] text-white xl:text-[16px]">{text}</span>
+        <span className="text-[14px] text-title xl:text-[16px]">{text}</span>
       </div>
     </span>
   );

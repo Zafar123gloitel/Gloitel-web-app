@@ -16,7 +16,7 @@ export default function TermsPage() {
           unoptimized="true"
         ></video>
         {/* Container */}
-        <div className="relative z-10 max-w-4xl mx-auto text-white py-16 px-6">
+        <div className="relative z-10 max-w-4xl mx-auto text-title py-16 px-6">
           {/* Title */}
           <div className="flex">
             <HeroBadge2 HomeHeroBadge="READ" HomeSubHeroBadge="Latest Policy" />
@@ -36,7 +36,7 @@ export default function TermsPage() {
             <section>
               <h2 className=" text-3xl mb-6">1. Information We Collect</h2>
 
-              <p className="text-white mb-4">Personal Information</p>
+              <p className="text-title mb-4">Personal Information</p>
               <p className="text-gray-400 mb-4">
                 We may collect personal details such as your name, email
                 address, phone number, employment information to process
@@ -44,14 +44,14 @@ export default function TermsPage() {
                 experiences.
               </p>
 
-              <p className="text-white mb-4">Device and Usage Data</p>
+              <p className="text-title mb-4">Device and Usage Data</p>
               <p className="text-gray-400 mb-4">
                 We automatically collect data when you interact with our
                 services, including IP address, device details, operating
                 system, browser version, and activity logs.
               </p>
 
-              <p className="text-white mb-4">
+              <p className="text-title mb-4">
                 Cookies and Tracking Technologies
               </p>
               <p className="text-gray-400 mb-4">

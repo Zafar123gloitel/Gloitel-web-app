@@ -13,7 +13,7 @@ export const ProjectShowcase = ({ sections }) => {
         >
           {/* LEFT SIDE: Title */}
           <div className="w-full lg:w-[48%]">
-            <h2 className="text-3xl font-bold text-white mb-4">
+            <h2 className="text-3xl font-bold text-title mb-4">
               {section.title}
             </h2>
           </div>
@@ -23,7 +23,7 @@ export const ProjectShowcase = ({ sections }) => {
             <ul className="space-y-4">
               {section.points?.map((point, i) => (
                 <li key={i} className="flex items-start text-gray-400">
-                  <span className="text-lg text-white mr-3">•</span>
+                  <span className="text-lg text-title mr-3">•</span>
                   <p className="flex-1 text-base">{point}</p>
                 </li>
               ))}
@@ -47,7 +47,7 @@ export const ProjectShowcaseSecond = ({ sections }) => {
         >
           {/* LEFT SIDE: Title */}
           <div className="w-full">
-            <h2 className="text-3xl font-bold text-white mb-4">
+            <h2 className="text-3xl font-bold text-title mb-4">
               {section.title}
             </h2>
           </div>
@@ -80,7 +80,7 @@ export const ProjectShowcaseFourth = ({ sections }) => {
         >
           {/* LEFT SIDE: Title */}
           <div className="w-full lg:w-[48%]">
-            <h2 className="text-3xl md:text-3xl font-semibold text-white">
+            <h2 className="text-3xl md:text-3xl font-semibold text-title">
               {section.title}
             </h2>
           </div>
@@ -91,7 +91,7 @@ export const ProjectShowcaseFourth = ({ sections }) => {
               <ul className="space-y-4">
                 {section.points.map((point, i) => (
                   <li key={i} className="flex items-start text-gray-400">
-                    <span className="text-lg text-white mr-3">•</span>
+                    <span className="text-lg text-title mr-3">•</span>
                     <p className="flex-1 text-base">
                       {typeof point === "string" ? point : point.text || point}
                     </p>
@@ -120,7 +120,7 @@ export const ProjectShowcaseThird = ({ sections }) => {
         >
           {/* TITLE */}
           <div className="w-full">
-            <h2 className="text-3xl font-bold text-white mb-4">
+            <h2 className="text-3xl font-bold text-title mb-4">
               {section.title}
             </h2>
           </div>
@@ -131,7 +131,7 @@ export const ProjectShowcaseThird = ({ sections }) => {
               <ul className="space-y-4">
                 {section.points.map((point, i) => (
                   <li key={i} className="flex items-start text-gray-400">
-                    <span className="text-lg text-white mr-3">•</span>
+                    <span className="text-lg text-title mr-3">•</span>
                     <p className="flex-1 text-base">{point}</p>
                   </li>
                 ))}

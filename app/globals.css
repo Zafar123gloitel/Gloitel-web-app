@@ -26,7 +26,7 @@ body {
   --surface-1: #151515;
   --surface-2: #0b0b0b;
   --surface-card: #080b18;
-  --text-muted: #555;
+
   --card-glow: linear-gradient(
     to left,
     #372aac00 0%,
@@ -34,6 +34,60 @@ body {
     #1c398e66 100%
   );
 }
+
+/* Project color tokens requested by the user */
+:root {
+  --title-color: #FFFFFF; /* Title text color */
+  --description-color: #969696; /* Description / secondary text color */
+  --btn-primary: #1447E6; /* Primary button background */
+  --btn-secondary: #FFFFFF; /* Secondary button text / border color */
+  --btn-3: #FFFFFF1A; /* Accent / translucent button background (white @ ~10% opacity) */
+}
+
+/* Semantic text helpers */
+.text-title {
+  color: var(--title-color) !important;
+}
+
+.text-description {
+  color: var(--description-color) !important;
+}
+
+/* Button primitives */
+/* .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 150ms ease, color 150ms ease, box-shadow 150ms ease;
+} */
+
+/* .btn-primary {
+  background-color: var(--btn-primary);
+  color: var(--btn-secondary);
+  border: 1px solid transparent;
+}
+
+.btn-primary:hover {
+  filter: brightness(0.95);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--btn-secondary);
+  border: 1px solid var(--btn-secondary);
+}
+
+.btn-ghost {
+  background-color: var(--btn-3);
+  color: var(--title-color);
+  border: 1px solid transparent;
+} */
+
 
 .bg-surface-1 {
   background-color: var(--surface-1);
@@ -47,9 +101,6 @@ body {
   background-color: var(--surface-card);
 }
 
-.text-muted {
-  color: var(--text-muted);
-}
 
 .bg-card-glow {
   background-image: var(--card-glow);

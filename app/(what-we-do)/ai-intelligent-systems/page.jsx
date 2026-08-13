@@ -51,7 +51,7 @@ const page = () => {
             cardHeight="h-[300px]   max-w-[300px] "
             gridClassName="gap-y-28"
             titleClassName="text-[28px] leading-8 "
-            descriptionClassName="text-[16px] leading-5 mt-3 text-muted "
+            descriptionClassName="text-[16px] leading-5 mt-3 text-description "
           />
           <div
             className="max-w-[75%] mx-auto mt-4 rounded-2xl flex items-center gap-3 border border-transparent p-3"
@@ -62,7 +62,7 @@ const page = () => {
               `,
             }}
           >
-            <span className="inline-flex h-12 min-w-12 items-center text-2xl text-white bg-[#1447E633] justify-center rounded-full ">
+            <span className="inline-flex h-12 min-w-12 items-center text-2xl text-title bg-[#1447E633] justify-center rounded-full ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -81,7 +81,7 @@ const page = () => {
                 <line x1="12" x2="12.01" y1="16" y2="16" />
               </svg>
             </span>
-            <p className="text-white">
+            <p className="text-title">
               {"We diagnose before we build. Engineering starts only after we've defined where AI will create measurable business impact and long-term value."}
             </p>
           </div>

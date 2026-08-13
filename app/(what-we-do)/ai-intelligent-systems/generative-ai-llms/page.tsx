@@ -2,18 +2,7 @@
 
 import React from "react";
 import HeroSection from "../../components/HeroSection";
-import {
-  heroSectionDataGenerative,
-  aiServicesData,
-  executionStepOne,
-  executionStepTwo,
-  executionStepThree,
-  executionStepFour,
-  executionStepFive,
-  Real_World,
-  caseStudies,
-  aiSolutionsData,
-} from "../../components/data";
+
 import { MiddleSectionHeads } from "../../../component/SectionHeads";
 import StrategyBadge from "../../../../components/StrategyBadge";
 import { BgSquare2 } from "../../../component/BgSquare";
@@ -27,6 +16,8 @@ import ImageCard from "../../../component/ImageCard";
 import { ArrowUpIcon } from "lucide-react";
 import AI_Solutions from "../../../uiComponents/AI_Solutions";
 import Execution_Plan from "../../../uiComponents/Execution_Plan";
+import { aiServicesData, aiSolutionsData, caseStudies, executionStepFive, executionStepFour, executionStepOne, executionStepThree, executionStepTwo, heroSectionDataGenerative, Real_World } from "./data";
+import { ArrowRightIcon } from "../../../component/SvgIcon";
 
 const page = () => {
   return (
@@ -53,7 +44,7 @@ const page = () => {
             cardHeight="h-[411px] max-w-[411px] "
             gridClassName="gap-y-6"
             titleClassName="text-[28px] leading-8 "
-            descriptionClassName="text-[16px] leading-6 mt-3 text-muted "
+            descriptionClassName="text-[16px] leading-6 mt-3 text-description "
           />
         </section>
       </div>
@@ -156,28 +147,14 @@ into Production Systems."
           {caseStudies.map((card) => (
             <ImageCard
               key={card.id}
-              className={"w-[21rem]"}
+              className={""}
+              cradClass={"w-[25rem] min-h-[550px]"}
               padding={"px-4"}
               cardtitle={card.title}
               carddescription={card.description}
               buttintext={card.cta}
               buttonurl={card.href}
-              buttonicon={<svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="1.8"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                className="transition-transform duration-300 group-hover:translate-x-1"
-                                aria-hidden="true"
-                            >
-                                <path d="M5 12h14" />
-                                <path d="m13 6 6 6-6 6" />
-                            </svg>}
+              buttonicon={<ArrowRightIcon/>}
               image={card.image}
             />
           ))}

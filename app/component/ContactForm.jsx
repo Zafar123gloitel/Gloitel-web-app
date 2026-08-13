@@ -5,6 +5,7 @@ import { HorizontalDivider } from "./SectionDivider";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { toast } from "react-hot-toast";
+import { Button } from "./Button";
 
 const ContactForm = () => {
   const router = useRouter();
@@ -85,7 +86,7 @@ const ContactForm = () => {
             <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-white mb-2">
+                  <label className="block text-sm font-medium text-title mb-2">
                     First name*
                   </label>
                   <input
@@ -95,11 +96,11 @@ const ContactForm = () => {
                     onChange={handleChange}
                     required
                     placeholder="Enter First Name"
-                    className="w-full rounded-lg bg-neutral-950 border border-white/10 px-4 py-3 text-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                    className="w-full rounded-lg bg-neutral-950 border border-white/10 px-4 py-3 text-sm text-title placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-white mb-2">
+                  <label className="block text-sm font-medium text-title mb-2">
                     Last Name*
                   </label>
                   <input
@@ -109,13 +110,13 @@ const ContactForm = () => {
                     onChange={handleChange}
                     required
                     placeholder="Enter Last Name"
-                    className="w-full rounded-lg bg-neutral-950 border border-white/10 px-4 py-3 text-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                    className="w-full rounded-lg bg-neutral-950 border border-white/10 px-4 py-3 text-sm text-title placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-white mb-2">
+                <label className="block text-sm font-medium text-title mb-2">
                   How can we reach you?*
                 </label>
                 <input
@@ -125,13 +126,13 @@ const ContactForm = () => {
                   onChange={handleChange}
                   required
                   placeholder="Example@mail.com"
-                  className="w-full rounded-lg bg-neutral-950 border border-white/10 px-4 py-3 text-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                  className="w-full rounded-lg bg-neutral-950 border border-white/10 px-4 py-3 text-sm text-title placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600"
                 />
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-white mb-2">
+                  <label className="block text-sm font-medium text-title mb-2">
                     Where Are you from?*
                   </label>
                   <select
@@ -139,7 +140,7 @@ const ContactForm = () => {
                     value={formData.country}
                     onChange={handleChange}
                     required
-                    className="w-full rounded-lg bg-neutral-950 border border-white/10 px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-blue-600"
+                    className="w-full rounded-lg bg-neutral-950 border border-white/10 px-4 py-3 text-sm text-title focus:outline-none focus:ring-2 focus:ring-blue-600"
                   >
                     <option value="">Select your country...</option>
                     <option value="India">India</option>
@@ -147,7 +148,7 @@ const ContactForm = () => {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-white mb-2">
+                  <label className="block text-sm font-medium text-title mb-2">
                     What’s the type of your company?*
                   </label>
                   <select
@@ -155,7 +156,7 @@ const ContactForm = () => {
                     value={formData.companyType}
                     onChange={handleChange}
                     required
-                    className="w-full rounded-lg bg-neutral-950 border border-white/10 px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-blue-600"
+                    className="w-full rounded-lg bg-neutral-950 border border-white/10 px-4 py-3 text-sm text-title focus:outline-none focus:ring-2 focus:ring-blue-600"
                   >
                     <option value="">Select Category</option>
                     <option value="Agency">Agency</option>
@@ -168,7 +169,7 @@ const ContactForm = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-white mb-2">
+                <label className="block text-sm font-medium text-title mb-2">
                   Message*
                 </label>
                 <textarea
@@ -177,17 +178,18 @@ const ContactForm = () => {
                   onChange={handleChange}
                   rows="5"
                   placeholder="Type your message..."
-                  className="w-full rounded-lg bg-neutral-950 border border-white/10 px-4 py-3 text-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                  className="w-full rounded-lg bg-neutral-950 border border-white/10 px-4 py-3 text-sm text-title placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600"
                 ></textarea>
               </div>
 
-              <button
+              <Button
                 type="submit"
+                variant="glow"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 disabled:opacity-50 disabled:cursor-not-allowed text-white font-medium py-3 rounded-lg transition cursor-pointer"
+                // className="w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 disabled:opacity-50 disabled:cursor-not-allowed text-title font-medium py-3 rounded-lg transition cursor-pointer"
               >
                 {isSubmitting ? "Sending..." : "Submit Now"}
-              </button>
+              </Button>
             </form>
           </div>
         </div>
@@ -196,7 +198,7 @@ const ContactForm = () => {
         <div className="space-y-6">
           <div className=" bg-gradient-to-r from-gray-950/90 to-black/80 p-2 sm:p-2 rounded-3xl shadow-lg border border-white/10">
             <div className="bg-black-700 border border-white/10 rounded-3xl p-6 ">
-              <p className="flex items-center justify-between text-white text-sm font-medium">
+              <p className="flex items-center justify-between text-title text-sm font-medium">
                 <span className="flex items-center gap-2">✉️ Email</span>
                 <span className="bg-blue-600 text-xs font-semibold px-2 py-0.5 rounded">
                   24/7
@@ -214,7 +216,7 @@ const ContactForm = () => {
 
           <div className=" bg-gradient-to-r from-gray-950/90 to-black/80 p-2 sm:p-2 rounded-3xl shadow-lg border border-white/10">
             <div className="bg-black-700 border border-white/10 rounded-3xl p-6">
-              <p className="flex items-center gap-2 text-white text-sm font-medium">
+              <p className="flex items-center gap-2 text-title text-sm font-medium">
                 📞 Phone
               </p>
               <HorizontalDivider />
@@ -229,7 +231,7 @@ const ContactForm = () => {
 
           <div className=" bg-gradient-to-r from-gray-950/90 to-black/80 p-2 sm:p-2 rounded-3xl shadow-lg border border-white/10">
             <div className="bg-black-700 border border-white/10 rounded-3xl p-6">
-              <p className="flex items-center justify-between text-white text-sm font-medium">
+              <p className="flex items-center justify-between text-title text-sm font-medium">
                 <span className="flex items-center gap-2">📍 Address</span>
                 <span className="bg-blue-600 text-xs font-semibold px-2 py-0.5 rounded">
                   OFFICE

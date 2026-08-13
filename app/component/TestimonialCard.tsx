@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 interface TestimonialCardProps {
@@ -30,7 +31,7 @@ const TestimonialCard = ({
             {/* Avatar */}
             <div className="relative h-[50px] w-[50px] shrink-0">
               {avatar ? (
-                <img
+                <Image
                   src={avatar}
                   alt={name}
                   className="h-full w-full rounded-full object-cover"
@@ -42,7 +43,7 @@ const TestimonialCard = ({
 
             {/* Name + Designation */}
             <div>
-              <h3 className="text-[14px] font-medium text-white">
+              <h3 className="text-[14px] font-medium text-title">
                 {name}
               </h3>
 
@@ -56,7 +57,7 @@ const TestimonialCard = ({
           <div className="my-7 h-px w-full bg-white/[0.07]" />
 
           {/* Testimonial */}
-          <p className="text-[11px] font-normal leading-[1.65] text-white/50">
+          <p className="text-[11px] font-normal leading-[1.65] text-description">
             {description}
           </p>
         </div>

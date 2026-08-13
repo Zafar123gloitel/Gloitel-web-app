@@ -121,8 +121,8 @@ const HelpCard = ({
                 duration-300
 
                 ${activeTabIndex === index
-                                    ? "border-blue-500 bg-blue-600 text-white shadow-[0_0_20px_rgba(37,99,235,.35)]"
-                                    : "border-white/15 bg-transparent text-white/80 hover:border-blue-500"
+                                    ? "border-blue-500 bg-blue-600 text-title shadow-[0_0_20px_rgba(37,99,235,.35)]"
+                                    : "border-white/15 bg-transparent text-description hover:border-blue-500"
                                 }
               `}
                         >

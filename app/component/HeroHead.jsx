@@ -23,13 +23,13 @@ export const HeroHeading = () => {
     <div className="flex flex-col w-full text-center">
       <div className="flex justify-center mb-6">
         <div className="backdrop-blur-md bg-white/5 rounded-lg px-1.5 py-1.5 text-sm text-gray-300 ring-1 ring-white/10">
-          <div className="inline-block rounded-lg bg-blue-600 px-3 py-1 mr-3 font-medium text-white shadow">
+          <div className="inline-block rounded-lg bg-blue-600 px-3 py-1 mr-3 font-medium text-title shadow">
             Explore
           </div>
           Our Homegrown Products
         </div>
       </div>
-      <h3 className="text-4xl sm:text-5xl lg:text-[5rem] text-white">
+      <h3 className="text-4xl sm:text-5xl lg:text-[5rem] text-title">
         Check Out Some <br />
         Extra-Ordinary Work.
       </h3>
@@ -59,10 +59,10 @@ export const HomeHeroHeading = ({
         />
       </div>
 
-      <h3 className="text-3xl sm:text-3xl lg:text-[3.5rem] text-white">
+      <h3 className="text-3xl sm:text-3xl lg:text-[3.5rem] text-title">
         {HomeHeroHeading}
       </h3>
-      <h3 className="text-3xl sm:text-3xl lg:text-[3.5rem] text-white">
+      <h3 className="text-3xl sm:text-3xl lg:text-[3.5rem] text-title">
         {HomeHeroSubHeading}
       </h3>
 

@@ -96,13 +96,13 @@
 //           <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 items-center">
 //             <Link
 //               href="/contact"
-//               className="w-full sm:w-auto text-center rounded-md bg-white px-5 py-2.5 text-md text-black shadow-lg hover:bg-indigo-500 hover:text-white transition"
+//               className="w-full sm:w-auto text-center rounded-md bg-white px-5 py-2.5 text-md text-black shadow-lg hover:bg-indigo-500 hover:text-title transition"
 //             >
 //               Connect With Us
 //             </Link>
 //             <Link
 //               href="/about"
-//               className="w-full sm:w-auto text-center backdrop-blur-md bg-white/10 px-5 py-2.5 rounded-md shadow-lg text-md text-white"
+//               className="w-full sm:w-auto text-center backdrop-blur-md bg-white/10 px-5 py-2.5 rounded-md shadow-lg text-md text-title"
 //             >
 //               What is Gloitel?
 //             </Link>
@@ -175,7 +175,7 @@
 //                   {/* Close Button */}
 //                   <button
 //                     onClick={() => setShowVideo(false)}
-//                     className="absolute top-0 right-0 bg-white/20 hover:bg-white/40 text-white p-2 rounded-full backdrop-blur-sm transition-all duration-200 z-32"
+//                     className="absolute top-0 right-0 bg-white/20 hover:bg-white/40 text-title p-2 rounded-full backdrop-blur-sm transition-all duration-200 z-32"
 //                     aria-label="Close video"
 //                   >
 //                     <svg
@@ -287,7 +287,7 @@
       //           />
       //           <div className="absolute inset-x-0 bottom-0 m-3 sm:m-5 rounded-xl bg-gradient-to-r from-gray-900/90 to-black/80 p-3 sm:p-4 backdrop-blur-md flex justify-between items-center border-2 border-gray-500/30">
       //             <div>
-      //               <h3 className="text-sm sm:text-[16px] font-semibold text-white mb-1">
+      //               <h3 className="text-sm sm:text-[16px] font-semibold text-title mb-1">
       //                 {item?.name}
       //               </h3>
       //               <p className="text-xs sm:text-sm text-gray-300">
@@ -338,7 +338,7 @@ import { aiEngineeringHeroData } from "./data";
 
 const page = () => {
   return (
-    <main className="bg-black text-white">
+    <main className="bg-black text-title">
       <EngineeringHeroSection
         badgeText={aiEngineeringHeroData.badgeText}
         title={aiEngineeringHeroData.title}

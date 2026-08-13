@@ -56,7 +56,7 @@ export function CardShowcase({
               <div className="mt-8 flex flex-1 flex-col">
                 {showDivider && <CardDivider className="mb-8" />}
 
-                <CardTitle className={`text-white ${titleClassName}`}>
+                <CardTitle className={`text-title ${titleClassName}`}>
                   {item.title}
                 </CardTitle>
 

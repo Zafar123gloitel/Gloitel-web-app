@@ -67,7 +67,7 @@ const page = () => {
             </svg>
           </span>
           <p className="text-[14px] sm:text-[16px]">
-            If these aren't your problems, a well-modularized monolith may serve
+            If these aren&apos;t your problems, a well-modularized monolith may serve
             you better.
           </p>
         </div>

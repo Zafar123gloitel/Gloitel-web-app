@@ -46,7 +46,7 @@ const InfoCard = ({ icon, description, className = "" }: InfoCardProps) => {
             "after:opacity-80",
 
             "inline-flex h-12 w-12 text-[35px] items-center justify-center rounded-full border border-white/10",
-            "text-white shadow-[0_12px_28px_rgba(15,23,42,0.24)]",
+            "text-title shadow-[0_12px_28px_rgba(15,23,42,0.24)]",
             "transition-all duration-300 ease-out",
             "group-hover:bg-red-600 ",
             "group-hover:before:via-red-500",
@@ -57,7 +57,7 @@ const InfoCard = ({ icon, description, className = "" }: InfoCardProps) => {
         </div>
 
         {/* Description */}
-        <p className="text-[20px] mt-5 leading-[33px] text-white/90">
+        <p className="text-[20px] mt-5 leading-[33px] text-description">
           {description}
         </p>
       </div>

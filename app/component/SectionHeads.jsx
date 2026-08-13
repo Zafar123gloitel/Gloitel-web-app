@@ -10,7 +10,7 @@ export const MiddleSectionHeads = ({
   return (
     <div className="flex flex-col items-center text-center px-4  md:px-0 lg:px-0 max-w-4xl mx-auto mb-8">
       {/* Section Head */}
-      <h3 className="text-3xl sm:text-3xl md:text-4xl xl:text-[48px] font-medium text-white leading-tight">
+      <h3 className="text-3xl sm:text-3xl md:text-4xl xl:text-[48px] font-medium text-title leading-tight">
         {SectionHead}
       </h3>
 
@@ -41,7 +41,7 @@ export const LeftSectionHeads = ({
   return (
     <div className="flex flex-col items-start text-left px-2 sm:px-2 lg:px-0 max-w-4xl">
       {/* Section Head */}
-      <h3 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-white">
+      <h3 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-title">
         {SectionHead}
       </h3>
 
@@ -61,7 +61,7 @@ export const LeftSectionHeads = ({
 export const LeftSectionHead2 = ({ SectionHead, SectionSubHead }) => {
   return (
     <div>
-      <h3 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-white">
+      <h3 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-title">
         {SectionHead}
       </h3>
       <h3 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-gray-400 mt-2">

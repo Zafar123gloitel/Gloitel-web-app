@@ -70,7 +70,7 @@ const EngineeringHeroSection = ({
 
           <Link
             href={secondaryButton.href}
-            className="inline-flex items-center justify-center gap-2 rounded-md border border-white/10 bg-white/10 px-5 py-3 text-sm font-medium text-white transition hover:border-white/20 hover:bg-white/15"
+            className="inline-flex items-center justify-center gap-2 rounded-md border border-white/10 bg-white/10 px-5 py-3 text-sm font-medium text-title transition hover:border-white/20 hover:bg-white/15"
           >
             {secondaryButton.text}
             {secondaryButton.icon}

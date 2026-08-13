@@ -10,12 +10,12 @@ export const FaqItem = ({ question, answer }) => {
     <div className="bg-white/5 border border-white/10 rounded-3xl shadow-md mb-7">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex justify-between items-center p-6 text-left font-medium text-white focus:outline-none cursor-pointer"
+        className="w-full flex justify-between items-center p-6 text-left font-medium text-title focus:outline-none cursor-pointer"
       >
         <span>{question}</span>
         <span className="text-2xl">{isOpen ? "−" : "+"}</span>
       </button>
-      {isOpen && <p className="px-7 pb-7 text-white/60">{answer}</p>}
+      {isOpen && <p className="px-7 pb-7 text-description">{answer}</p>}
     </div>
   );
 };
@@ -65,7 +65,7 @@ export const FAQPage = () => {
             <LeftBadge FaqBadge="How We Work" />
 
             {/* Headings */}
-            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-white">
+            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-title">
               Frequently
             </h3>
             <h3 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-gray-400 mt-2">
@@ -74,7 +74,7 @@ export const FAQPage = () => {
 
             {/* Description */}
             <div>
-              <p className="mt-4 sm:mt-6 text-base sm:text-md text-gray-400 max-w-2xl">
+              <p className="mt-4 sm:mt-6 text-base sm:text-md text-description max-w-2xl">
                 Have questions? Our FAQ section has you covered with quick
                 answers to the most common inquiries.
               </p>

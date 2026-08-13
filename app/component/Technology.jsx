@@ -103,11 +103,11 @@ const Technology = () => {
                 </div>
 
                 {/* Arrow Icon with hover color change */}
-                <ArrowUpRight className="w-6 h-6 text-white/30 transition-colors duration-300 group-hover:text-white/60" />
+                <ArrowUpRight className="w-6 h-6 text-description transition-colors duration-300 group-hover:text-title" />
               </div>
 
               {/* Title */}
-              <h3 className="my-4 sm:my-6 text-md sm:text-lg font-semibold text-white relative z-10">
+              <h3 className="my-4 sm:my-6 text-md sm:text-lg font-semibold text-title relative z-10">
                 {item.title}
               </h3>
 

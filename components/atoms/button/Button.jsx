@@ -2,18 +2,21 @@
 
 import Link from "next/link";
 import React from "react";
+import { ArrowRightIcon, LeftArrowIcon, RightArrowIcon } from "../../../app/component/SvgIcon";
 
 const variantStyles = {
-  glow: "border border-blue-500/25 bg-blue-700 text-white shadow-[0_0_24px_rgba(37,99,235,0.55)] hover:bg-blue-600 hover:shadow-[0_0_28px_rgba(37,99,235,0.8)]",
+  glow: "border border-blue-500/25 bg-blue-700 rounded-lg text-title shadow-[0_0_24px_rgba(37,99,235,0.55)] hover:bg-blue-600 hover:shadow-[0_0_28px_rgba(37,99,235,0.8)]",
   light:
-    "border border-white/70 bg-white text-slate-950 shadow-[0_10px_24px_rgba(15,23,42,0.12)] hover:bg-slate-50 hover:border-white",
+    "border border-white/70 bg-white text-slate-950 rounded-lg shadow-[0_10px_24px_rgba(15,23,42,0.12)] hover:bg-slate-50 hover:border-white",
   muted:
-    "border border-white/10 bg-white/12 text-white/95 backdrop-blur-md hover:bg-white/16",
-  dark: "border border-slate-600/80 bg-slate-600 text-white shadow-[0_14px_24px_rgba(15,23,42,0.2)] hover:bg-slate-500",
+    "border border-white/10 bg-white/12 text- backdrop-blur-md hover:bg-white/16 rounded-lg",
+  dark: "border border-slate-600/80 bg-slate-600 text-title shadow-[0_14px_24px_rgba(15,23,42,0.2)] hover:bg-slate-500 rounded-lg",
   darkAccent:
-    "border border-blue-500/20 bg-slate-700 text-white shadow-[0_0_18px_rgba(30,64,175,0.28)] hover:bg-slate-600",
+    "border border-blue-500/20 bg-slate-700 text-title shadow-[0_0_18px_rgba(30,64,175,0.28)] hover:bg-slate-600 rounded-lg",
   apple:
-    "border border-white/10 bg-slate-600 text-white shadow-[0_14px_28px_rgba(15,23,42,0.25)] hover:bg-slate-500",
+    "border border-white/10 bg-slate-600 text-title shadow-[0_14px_28px_rgba(15,23,42,0.25)] hover:bg-slate-500 rounded-lg",
+  testimonial:
+    "flex cursor-pointer items-center justify-center rounded-full border border-white/10 bg-[#050511] text-title transition-all duration-300 hover:border-blue-500/50 hover:bg-blue-500/10",
 };
 
 const sizeStyles = {
@@ -21,10 +24,11 @@ const sizeStyles = {
   md: "h-11 px-5 text-base",
   lg: "h-12 px-6 text-[15px]",
   xl: "h-14 px-7 text-base sm:text-lg",
+  square: "h-12 w-12 p-0",
 };
 
 const baseStyles =
-  "inline-flex items-center justify-center gap-2 rounded-lg font-medium transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/70 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent active:translate-y-[1px]";
+  "inline-flex items-center justify-center gap-2  font-medium transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/70 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent active:translate-y-[1px]";
 
 function ArrowIcon() {
   return (
@@ -122,7 +126,7 @@ export function GlowButton({
       variant="glow"
       size="md"
       className={className}
-      icon={<ArrowIcon />}
+      icon={<ArrowRightIcon size={20}/>}
     >
       {buttonText}
     </Button>
@@ -152,7 +156,7 @@ export function HeaderButton({ buttonText, buttonLink, onClick, className }) {
       size="sm"
       fullWidth
       className={className}
-      icon={<ArrowIcon />}
+      icon={<ArrowRightIcon size={20}/>}
     >
       {buttonText}
     </Button>
@@ -172,7 +176,7 @@ export function HeroButton({
         variant="light"
         size="lg"
         fullWidth
-        className="sm:min-w-[180px]"
+        className="sm:min-w-[180px] rounded-lg"
       >
         {FirstHeroButtonText}
       </Button>
@@ -181,7 +185,7 @@ export function HeroButton({
         variant="muted"
         size="lg"
         fullWidth
-        className="sm:min-w-[180px]"
+        className="sm:min-w-[180px] rounded-lg"
       >
         {SecondHeroButtonText}
       </Button>
@@ -198,3 +202,21 @@ export function ButtonGroup({ children, className = "" }) {
     </div>
   );
 }
+
+export function TestimonialButton({ direction = "left", onClick, ariaLabel, className = "" }) {
+  const leftSvg = (
+    <LeftArrowIcon size={22} />
+  );
+
+  const rightSvg = (
+    <RightArrowIcon size={22} />
+  );
+
+  return (
+    <Button onClick={onClick} ariaLabel={ariaLabel} variant="testimonial" size="square" className={className}>
+      {direction === "left" ? leftSvg : rightSvg}
+    </Button>
+  );
+}
+
+

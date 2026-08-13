@@ -7,7 +7,7 @@
 import { Rocket } from "lucide-react";
 import { aiEngagementSectionHead, aiPilotData, discoverySprintData } from "../(what-we-do)/ai-intelligent-systems/data";
 import Assess from "../(what-we-do)/components/Assess";
-import { Card, CardIcon, CardShowcase, CardTitle, GlowButton } from "../../components";
+import { Button, Card, CardIcon, CardShowcase, CardTitle, GlowButton } from "../../components";
 import { mobileEngineeringCTAData, mobileProcessSectionHead } from "../engineering/mobile-engineering/data";
 import GlowPanel from "./GlowPanel";
 import { BgSquare2, BgSquare3 } from "./BgSquare";
@@ -28,6 +28,7 @@ import { CenterBadge } from "./Badge";
 import GalleryScroll from "./GalleryScroll";
 import IconCard from "../../components/card-showcase/IconCard";
 import React, { useRef } from "react";
+import { TestimonialButton } from "../../components/atoms/button/Button";
 
 
 // // FOR HOME PAGE
@@ -119,7 +120,7 @@ import React, { useRef } from "react";
 //       {/* Badge */}
 //       <LeftBadge HomeAboutBadge={HomeAboutBadge} />
 //       {/* Headings */}
-//       <h3 className="text-3xl sm:text-3xl lg:text-5xl text-white">
+//       <h3 className="text-3xl sm:text-3xl lg:text-5xl text-title">
 //         {homeAboutHeading}
 //       </h3>
 //       <h3 className="text-3xl sm:text-3xl lg:text-5xl  text-gray-400 mt-2">
@@ -178,7 +179,7 @@ import React, { useRef } from "react";
 //       {AboutContents1.map((content, i) => (
 //         <div key={i} className="mt-4 sm:mt-6 w-lg">
 //           {content.title && (
-//             <p className="text-sm sm:text-base lg:text-lg text-white leading-relaxed mb-2">
+//             <p className="text-sm sm:text-base lg:text-lg text-title leading-relaxed mb-2">
 //               {content.title}
 //             </p>
 //           )}
@@ -192,7 +193,7 @@ import React, { useRef } from "react";
 //       {AboutContents2.map((content, i) => (
 //         <div key={i} className="mt-4 sm:mt-6 w-lg">
 //           {content.title && (
-//             <p className="text-sm sm:text-base lg:text-lg text-white leading-relaxed mb-2">
+//             <p className="text-sm sm:text-base lg:text-lg text-title leading-relaxed mb-2">
 //               {content.title}
 //             </p>
 //           )}
@@ -245,7 +246,7 @@ import React, { useRef } from "react";
 //       {/* Badge */}
 //       <LeftBadge AboutBadge={AboutBadge} />
 //       {/* Headings */}
-//       <h3 className="text-2xl sm:text-3xl lg:text-5xl  text-white">
+//       <h3 className="text-2xl sm:text-3xl lg:text-5xl  text-title">
 //         {AboutHeading}
 //       </h3>
 //       <h3 className="text-2xl sm:text-3xl lg:text-5xl text-gray-400 mt-2">
@@ -322,7 +323,7 @@ export const WhoWeAre = () => {
         cardClassName={""}
         cardHeight={"h-[263px] w-[302px]"}
         titleClassName={"text-[28px]"}
-        descriptionClassName={"text-[14px] text-muted "}
+        descriptionClassName={"text-[14px] text-description "}
         iconClassName={""}
       />
     </section>
@@ -649,7 +650,7 @@ export const ClientTestimonials = () => {
           : container.scrollLeft - scrollAmount,
       behavior: "smooth",
     });
-    
+
   };
 
   return (
@@ -682,54 +683,19 @@ export const ClientTestimonials = () => {
         {/* Testimonials */}
         <div className="relative z-10 -mt-20">
           {/* Navigation Buttons */}
-          <div className="mb-8 flex justify-end gap-4 px-5 sm:px-10 lg:px-20">
-            {/* LEFT BUTTON */}
-            <button
-              type="button"
+          <div className="mb-8 flex justify-end gap-4 px-5 sm:px-10 lg:px-20 ">
+            <TestimonialButton
+              className="h-12 min-w-12"
+              ariaLabel="Previous testimonials"
               onClick={() => scrollTestimonials("left")}
-              aria-label="Previous testimonials"
-              className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border border-white/10 bg-[#050511] text-white transition-all duration-300 hover:border-blue-500/50 hover:bg-blue-500/10"
-            >
-              <svg
-                width="22"
-                height="22"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M15 18L9 12L15 6"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
+            />
 
-            {/* RIGHT BUTTON */}
-            <button
-              type="button"
+            <TestimonialButton
+              className="h-12 min-w-12"
+              direction="right"
+              ariaLabel="Next testimonials"
               onClick={() => scrollTestimonials("right")}
-              aria-label="Next testimonials"
-              className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border border-white/10 bg-[#050511] text-white transition-all duration-300 hover:border-blue-500/50 hover:bg-blue-500/10"
-            >
-              <svg
-                width="22"
-                height="22"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M9 18L15 12L9 6"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
+            />
           </div>
 
           {/* Cards Container */}

@@ -103,7 +103,7 @@ const Portfolio = ({ params }) => {
                       <p className="text-gray-400 text-sm sm:text-base mb-1">
                         {item.label}
                       </p>
-                      <h3 className="text-white text-sm sm:text-base break-words">
+                      <h3 className="text-title text-sm sm:text-base break-words">
                         {Array.isArray(item.value)
                           ? item.value.join(", ")
                           : item.value}

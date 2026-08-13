@@ -14,7 +14,14 @@ interface AccordionProps {
 }
 
 const ExpandIcon = ({ isOpen }: { isOpen: boolean }) => (
-  <motion.svg width="28" height="28" viewBox="0 0 24 24">
+  <motion.svg
+    width="28"
+    height="28"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    {/* Horizontal line */}
     <line
       x1="5"
       y1="12"
@@ -22,7 +29,10 @@ const ExpandIcon = ({ isOpen }: { isOpen: boolean }) => (
       y2="12"
       stroke="currentColor"
       strokeWidth="1.5"
+      strokeLinecap="round"
     />
+
+    {/* Vertical line */}
     <motion.line
       x1="12"
       y1="5"
@@ -30,9 +40,17 @@ const ExpandIcon = ({ isOpen }: { isOpen: boolean }) => (
       y2="19"
       stroke="currentColor"
       strokeWidth="1.5"
-      animate={{ rotate: isOpen ? 90 : 0 }}
-      transition={{ duration: 0.3 }}
-      style={{ originX: "50%", originY: "50%" }}
+      strokeLinecap="round"
+      animate={{
+        rotate: isOpen ? 90 : 0,
+      }}
+      transition={{
+        duration: 0.3,
+        ease: "easeInOut",
+      }}
+      style={{
+        transformOrigin: "12px 12px",
+      }}
     />
   </motion.svg>
 );
@@ -60,10 +78,10 @@ const Accordion = ({ data, className = "" }: AccordionProps) => {
           >
             <button
               onClick={() => toggleAccordion(index)}
-              className="flex w-full items-center justify-between  text-left"
+              className="flex w-full items-center justify-between text-description text-left"
             >
               <div className="flex items-center gap-6">
-                <h3 className="text-[16px] font-medium text-white">
+                <h3 className="text-[16px] font-medium text-title">
                   {item.title}
                 </h3>
               </div>
@@ -80,7 +98,7 @@ const Accordion = ({ data, className = "" }: AccordionProps) => {
               transition={{ duration: 0.35 }}
               className="overflow-hidden"
             >
-              <p className="py-4 pr-12 text-sm text-white/40">
+              <p className="py-4 pr-12 text-sm text-description ">
                 {item.description}
               </p>
             </motion.div>

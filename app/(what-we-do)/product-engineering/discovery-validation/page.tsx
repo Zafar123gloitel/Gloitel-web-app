@@ -149,7 +149,7 @@ Product Decisions"
             cardHeight="h-[263px]  max-w-[330px] "
             gridClassName="h-full gap-y-30 "
             titleClassName="text-[28px] leading-8 "
-            descriptionClassName="text-[16px] xl:text-[18px] leading-6 mt-3 text-muted "
+            descriptionClassName="text-[16px] xl:text-[18px] leading-6 mt-3 text-description "
           />
         </section>
       </section>

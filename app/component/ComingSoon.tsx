@@ -33,7 +33,7 @@ const ComingSoon = () => {
         </div>
 
         {/* Heading */}
-        <h2 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl">
+        <h2 className="text-4xl font-semibold tracking-tight text-title sm:text-5xl md:text-6xl">
           Coming
           <span className="ml-3 bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
             Soon
@@ -41,7 +41,7 @@ const ComingSoon = () => {
         </h2>
 
         {/* Description */}
-        <p className="mx-auto mt-6 max-w-xl text-sm leading-7 text-white/50 sm:text-base">
+        <p className="mx-auto mt-6 max-w-xl text-sm leading-7 text-description sm:text-base">
           We’re building something exciting behind the scenes.
           This page is currently under development and will be
           available soon.
@@ -53,7 +53,7 @@ const ComingSoon = () => {
         </div>
 
         {/* Bottom Text */}
-        <p className="mt-6 text-xs uppercase tracking-[0.25em] text-white/30">
+        <p className="mt-6 text-xs uppercase tracking-[0.25em] text-description">
           Stay tuned
         </p>
 

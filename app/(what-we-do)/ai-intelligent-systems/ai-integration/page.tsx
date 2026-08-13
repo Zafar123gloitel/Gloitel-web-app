@@ -20,7 +20,7 @@ import Business from "../../components/Business";
 import AI_Solutions from "../../../uiComponents/AI_Solutions";
 import Execution_Plan from "../../../uiComponents/Execution_Plan";
 
-export const engineeringSectionData = {
+const engineeringSectionData = {
   badgeText: "What AI Integration Actually Involves",
 
   sectionHead: "The Engineering behind Production AI Systems.",
@@ -104,7 +104,7 @@ const page = () => {
               cardClassName="h-[411px] max-w-[350px] gap-y-6 "
               gridClassName="h-full"
               titleClassName="text-[28px] leading-8 "
-              descriptionClassName="text-[16px] leading-6 mt-3 text-muted "
+              descriptionClassName="text-[16px] leading-6 mt-3 text-description "
             />
           </section>
         </div>

@@ -14,7 +14,7 @@ interface AI_SolutionsProps {
   title: string;
   description: string;
   tabs: string[];
-  icontype:boolean
+  icontype?: boolean;
   technologies: Record<string, Technology[]>;
 }
 
@@ -40,9 +40,9 @@ const AI_Solutions = ({
         <div className="text-center">
           <StrategyBadge text={badge} />
 
-          <h2 className="mt-8 text-5xl font-medium text-white">{title}</h2>
+          <h2 className="mt-8 text-5xl font-medium text-title">{title}</h2>
 
-          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-white/45">
+          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-description">
             {description}
           </p>
         </div>
@@ -56,8 +56,8 @@ const AI_Solutions = ({
                 type="button"
                 onClick={() => handleTabClick(index)}
                 className={`shrink-0 whitespace-nowrap rounded-lg border px-5 py-2.5 text-sm transition-all duration-300 ${activeTabIndex === index
-                    ? "border-blue-500 bg-blue-600 text-white shadow-[0_0_20px_rgba(37,99,235,.35)]"
-                    : "border-white/15 bg-transparent text-white/80 hover:border-blue-500"
+                    ? "border-blue-500 bg-blue-600 text-title shadow-[0_0_20px_rgba(37,99,235,.35)]"
+                    : "border-white/15 bg-transparent text-description hover:border-blue-500"
                   }`}
               >
                 {tab}

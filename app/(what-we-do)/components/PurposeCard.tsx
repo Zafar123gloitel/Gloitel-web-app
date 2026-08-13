@@ -28,7 +28,7 @@
 
 //     {/* Content */}
 //     <div>
-//       <h3 className="text-xl font-semibold text-white md:text-[32px]">
+//       <h3 className="text-xl font-semibold text-title md:text-[32px]">
 //         {title}
 //       </h3>
 
@@ -86,11 +86,11 @@ const PurposeCard = ({
 }: PurposeCardProps) => {
   const content = (
     <div>
-      <h3 className="text-xl font-semibold text-white md:text-[32px]">
+      <h3 className="text-xl font-semibold text-title md:text-[32px]">
         {title}
       </h3>
 
-      <p className="mt-2 text-[14px] leading-6 text-gray-400 md:text-[16px]">
+      <p className="mt-2 text-[14px] leading-6 text-description md:text-[16px]">
         {description}
       </p>
     </div>
@@ -116,7 +116,7 @@ const PurposeCard = ({
   const viewBox = viewText ? (
     <a
       href={viewLink}
-      className="group absolute bottom-5 left-12 inline-flex items-center gap-3 text-[14px] font-normal text-white transition-all duration-300 md:text-[16px]"
+      className="group absolute bottom-5 left-12 inline-flex items-center gap-3 text-[14px] font-normal text-title transition-all duration-300 md:text-[16px]"
     >
       <span>{viewText}</span>
 
@@ -167,7 +167,7 @@ const PurposeCard = ({
           {buttonText && (
             <a
               href={buttonLink}
-              className="group inline-flex min-w-[100px] items-center justify-center gap-2 rounded-md bg-blue-600 px-4 py-2 text-[11px] font-medium text-white shadow-[0_0_20px_rgba(37,99,235,0.35)] transition-all duration-300 hover:bg-blue-500 hover:shadow-[0_0_25px_rgba(37,99,235,0.5)]"
+              className="group inline-flex min-w-[100px] items-center justify-center gap-2 rounded-md bg-blue-600 px-4 py-2 text-[11px] font-medium text-title shadow-[0_0_20px_rgba(37,99,235,0.35)] transition-all duration-300 hover:bg-blue-500 hover:shadow-[0_0_25px_rgba(37,99,235,0.5)]"
             >
               <span>{buttonText}</span>
 
@@ -200,7 +200,7 @@ const PurposeCard = ({
           {viewText && (
             <a
               href={viewLink}
-              className="group inline-flex items-center gap-2 text-[11px] text-white/80 transition-colors duration-300 hover:text-white"
+              className="group inline-flex items-center gap-2 text-[11px] text-title transition-colors duration-300 hover:text-title"
             >
               <span>{viewText}</span>
 

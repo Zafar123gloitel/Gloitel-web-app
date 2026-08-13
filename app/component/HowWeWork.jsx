@@ -96,14 +96,14 @@ const HowWeWork = () => {
                 <div className="relative p-5 sm:p-10 rounded-2xl bg-black/40 backdrop-blur-md shadow-lg overflow-hidden border border-white/10">
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-900/40 via-indigo-800/20 to-transparent opacity-50 rounded-2xl pointer-events-none"></div>
                   <div className="flex items-center justify-between relative z-10">
-                    <div className="flex items-center justify-center px-3 py-3 rounded-lg bg-white/5 text-white shadow-[0_0_25px_rgba(59,130,246,0.3)]">
+                    <div className="flex items-center justify-center px-3 py-3 rounded-lg bg-white/5 text-title shadow-[0_0_25px_rgba(59,130,246,0.3)]">
                       {item.icon}
                     </div>
                     <span className="px-4 py-2 text-xs sm:text-sm rounded-xl bg-blue-600/20 text-gray-300 shadow-[0_0_25px_rgba(59,130,246,0.3)]">
                       {item.stage}
                     </span>
                   </div>
-                  <h3 className="mt-3 sm:mt-4 text-lg sm:text-xl font-semibold text-white relative z-10">
+                  <h3 className="mt-3 sm:mt-4 text-lg sm:text-xl font-semibold text-title relative z-10">
                     {item.title}
                   </h3>
                   <div className="w-full h-px bg-gradient-to-r from-white/10 to-transparent my-2 sm:my-3 relative z-10"></div>

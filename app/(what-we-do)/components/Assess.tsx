@@ -4,6 +4,7 @@ import StrategyBadge from "../../../components/StrategyBadge";
 import ProblemCard from "../../../components/ProblemCard";
 import { WhiteButton } from "../../component/Button";
 import { ArrowUpIcon } from "lucide-react";
+import { ArrowRightIcon } from "../../component/SvgIcon";
 
 interface AssessProps {
   badgeText: string;
@@ -34,9 +35,9 @@ const Assess = ({
           <StrategyBadge text={badgeText} />
         </span>
 
-        <h2 className="mb-6 text-5xl sm:text-[48px] font-semibold">{title}</h2>
+        <h2 className="mb-6 text-5xl sm:text-[48px] text-title font-semibold">{title}</h2>
 
-        <p className="leading-4 sm:leading-8 text-sm sm:text-[20px] text-muted">
+        <p className="leading-4 sm:leading-8 text-sm sm:text-[20px] text-description">
           {description}
         </p>
 
@@ -49,7 +50,7 @@ const Assess = ({
           <WhiteButton
             buttonText={buttonText}
             buttonLink={buttonLink}
-            icon={<ArrowUpIcon className="ml-2 h-4 w-4 rotate-90" />}
+            icon={<ArrowRightIcon size={20}/>}
             className="mt-4"
           />
         )}

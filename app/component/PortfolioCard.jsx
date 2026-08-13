@@ -84,7 +84,7 @@ const PortfolioCard = ({ i, color, scrollProgress }) => {
         py-2 px-4 
         text-sm sm:text-base"
                     >
-                      <h2 className="text-white text-lg tracking-wide">
+                      <h2 className="text-title text-lg tracking-wide">
                         {item?.title}
                       </h2>
 

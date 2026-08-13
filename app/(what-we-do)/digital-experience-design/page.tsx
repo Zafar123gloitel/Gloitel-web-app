@@ -49,7 +49,7 @@ const page = () => {
             cardHeight="h-[290px]   max-w-[300px] "
             gridClassName="gap-y-28"
             titleClassName="text-[28px] leading-8 "
-            descriptionClassName="text-[16px] leading-5 mt-3 text-muted "
+            descriptionClassName="text-[16px] leading-5 mt-3 text-description "
           />
           <div
             className="max-w-[75%] mx-auto mt-4 rounded-2xl flex items-center gap-3 border border-transparent p-3"
@@ -60,10 +60,10 @@ const page = () => {
                 `,
             }}
           >
-            <span className="inline-flex h-12 min-w-12 items-center text-2xl text-white bg-[#1447E633] justify-center rounded-full ">
+            <span className="inline-flex h-12 min-w-12 items-center text-2xl text-title bg-[#1447E633] justify-center rounded-full ">
              {designGapNote.icon}
             </span>
-            <p className="text-white">{designGapNote.text}</p>
+            <p className="text-title">{designGapNote.text}</p>
           </div>
         </section>
       </div>

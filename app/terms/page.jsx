@@ -15,7 +15,7 @@ export default function TermsPage() {
           playsInline
           unoptimized="true"
         ></video>
-        <div className="relative z-10 max-w-4xl mx-auto text-white py-16 px-6">
+        <div className="relative z-10 max-w-4xl mx-auto text-title py-16 px-6">
           {/* Container */}
           <div className="max-w-4xl mx-auto">
             <div className="flex">

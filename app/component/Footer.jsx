@@ -7,6 +7,7 @@ import { links } from "./NavData";
 import { megaMenus } from "./NavData";
 import { useState, useEffect, useRef } from "react";
 import { Input } from "../uiComponents/input";
+import { EmailIcon, LocationIcon, PhoneIcon } from "./SvgIcon";
 
 
 const contact = {
@@ -25,8 +26,8 @@ const telHref = (phone) => `tel:${phone.replace(/[^\d+]/g, "")}`;
 
 export default function Footer() {
   const [activeMenu, setActiveMenu] = useState(null);
-const [activeGroup, setActiveGroup] = useState(null);
-const menuRef = useRef(null);
+  const [activeGroup, setActiveGroup] = useState(null);
+  const menuRef = useRef(null);
   // const menu = [
   //   { name: "Home", link: "/" },
   //   { name: "About", link: "/about" },
@@ -36,19 +37,19 @@ const menuRef = useRef(null);
   // ];
 
   useEffect(() => {
-  const handleClickOutside = (event) => {
-    if (menuRef.current && !menuRef.current.contains(event.target)) {
-      setActiveMenu(null);
-      setActiveGroup(null);
-    }
-  };
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setActiveMenu(null);
+        setActiveGroup(null);
+      }
+    };
 
-  document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
 
-  return () => {
-    document.removeEventListener("mousedown", handleClickOutside);
-  };
-}, []);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const SocialMediaIcons = [
     {
@@ -158,15 +159,15 @@ const menuRef = useRef(null);
 
           <div className="mb-6">
             <h3 className="font-medium">Gloitel Consulting Pvt. Ltd.</h3>
-            <p className="text-sm text-white/40">
+            <p className="text-sm text-description">
               Delivering end-to-end services across design, engineering, AI,
               cloud, software development, and digital marketing.
             </p>
           </div>
 
           <div className="flex flex-col gap-5  rounded-xl overflow-hidden ">
-            <span className="font-semibold text-white mr-4">Follow Us:</span>
-            <ul className="space-y-3 text-sm sm:text-base flex text-white/50">
+            <span className="font-semibold text-title mr-4">Follow Us:</span>
+            <ul className="space-y-3 text-sm sm:text-base flex text-description">
               {SocialMediaIcons.map((item, index) => (
                 <li key={index}>
                   <Link
@@ -184,11 +185,11 @@ const menuRef = useRef(null);
 
         {/* Important Links */}
         <div
-          ref={menuRef} 
-        className="relative  ml-10 gap-5">
-          <CardDivider className=" absolute top-30 -left-48 sm:-left-40 lg:-left-30   rotate-90" />
-          <h2 className="font-semibold text-white mb-4">Navigation Links</h2>
-          <div className=" flex flex-col items-start gap-3 text-sm sm:text-base text-white/50">
+          ref={menuRef}
+          className="relative  ml-10 gap-5">
+          <CardDivider className=" absolute top-30 -left-48 sm:-left-40 lg:-left-30 2xl:-left-44   rotate-90" />
+          <h2 className="font-semibold text-title mb-4">Navigation Links</h2>
+          <div className=" flex flex-col items-start gap-3 text-sm sm:text-base text-description">
             {links
               .filter((link) => link.megaMenu)
               .map((link) => (
@@ -222,7 +223,7 @@ const menuRef = useRef(null);
                     (!activeGroup &&
                       megaMenus[activeMenu].groups[0].title ===
                       group.title)) && (
-                      <div className="flex flex-col gap-2 mt-2 text-sm sm:text-base text-white/50">
+                      <div className="flex flex-col gap-2 mt-2 text-sm sm:text-base text-description">
                         {group.items.map((item) => (
                           <Link key={item.href} href={item.href}>
                             {item.label}
@@ -238,85 +239,53 @@ const menuRef = useRef(null);
 
         {/* Contact */}
         <div className="min-w-0">
-          <h2 className="text-sm font-semibold tracking-wide text-footer-foreground">
+          <h2 className="text-sm font-semibold tracking-wide text-title">
             Contact us
           </h2>
-          <ul className="mt-6 space-y-5 text-sm text-footer-muted">
+
+          <ul className="mt-6 space-y-5 text-sm text-description">
+            {/* Email */}
             <li className="flex min-w-0 items-start gap-3">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="mt-0.5 size-4 shrink-0 text-footer-muted"
-                aria-hidden="true"
-              >
-                <rect width="20" height="16" x="2" y="4" rx="2" />
-                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-              </svg>
+              <EmailIcon
+              />
+
               <a
                 href={`mailto:${contact.email}`}
-                className="truncate transition-colors hover:text-footer-foreground"
+                className="truncate transition-colors hover:text-title"
               >
                 {contact.email}
               </a>
             </li>
+
+            {/* Phone */}
             <li className="flex min-w-0 items-start gap-3">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="mt-0.5 size-4 shrink-0 text-footer-muted"
-                aria-hidden="true"
-              >
-                <rect width="14" height="20" x="5" y="2" rx="2" />
-                <path d="M12 18h.01" />
-              </svg>
+              <PhoneIcon
+               
+              />
+
               <span className="flex min-w-0 flex-col gap-1">
                 {contact.phones.map((phone) => (
                   <a
                     key={phone}
                     href={telHref(phone)}
-                    className="transition-colors hover:text-footer-foreground"
+                    className="transition-colors hover:text-title"
                   >
                     {phone}
                   </a>
                 ))}
               </span>
             </li>
+
+            {/* Address */}
             <li className="flex min-w-0 items-start gap-3">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="mt-0.5 size-4 shrink-0 text-footer-muted"
-                aria-hidden="true"
-              >
-                <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
+              <LocationIcon
+              />
+
               <a
                 href={contact.mapUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="leading-relaxed transition-colors hover:text-footer-foreground"
+                className="leading-relaxed transition-colors hover:text-title"
               >
                 {contact.addressLines.map((line) => (
                   <span key={line} className="block">
@@ -330,10 +299,10 @@ const menuRef = useRef(null);
 
         {/* Newsletter */}
         <div className="min-w-0">
-          <h2 className="text-sm font-semibold tracking-wide text-footer-foreground">
+          <h2 className="text-sm font-semibold tracking-wide text-title">
             Newsletter
           </h2>
-          <p className="mt-6 text-sm leading-relaxed text-footer-muted">
+          <p className="mt-6 text-sm leading-relaxed text-description">
             Subscribe to receive the latest insights, technology updates,
             industry trends, and company news.
           </p>
@@ -356,7 +325,7 @@ const menuRef = useRef(null);
               value={email}
               onChange={(event) => setEmail(event.target.value)}
               placeholder="Enter your email"
-              className="h-11 min-w-0 flex-1 rounded-full border-footer-border bg-footer-surface text-sm text-white placeholder:text-footer-muted focus-visible:ring-primary/40"
+              className="h-11 min-w-0 flex-1 rounded-full border-footer-border bg-footer-surface text-sm text-title placeholder:text-description focus-visible:ring-primary/40"
             />
             <GlowButton
               type="submit"
@@ -366,54 +335,54 @@ const menuRef = useRef(null);
 
 
           </form>
-          <p className="mt-4 text-xs leading-relaxed text-footer-muted/80">
+          <p className="mt-4 text-xs leading-relaxed text-description/80">
             Receive curated technology insights and important updates while we
             ensure your inbox stays free from unnecessary spam.
           </p>
         </div>
-       
+
 
       </div>
-       <div className="flex items-center justify-between gap-6 flex-wrap  pb-10 w-full ">
-          {[
-            {
-              "name": "footer.png",
-              "src": "/footer/footer.png"
-            },
-            {
-              "name": "footer2.png",
-              "src": "/footer/footer2.png"
-            },
-            {
-              "name": "footer3.png",
-              "src": "/footer/footer3.png"
-            },
-            {
-              "name": "footer4.png",
-              "src": "/footer/footer4.png"
-            },
-            {
-              "name": "footer5.png",
-              "src": "/footer/footer5.png"
-            },
-            {
-              "name": "footer6.png",
-              "src": "/footer/footer6.png"
-            }
-          ].map((image) => (
-            <Image
-              key={image.name}
-              src={image.src}
-              alt={image.name}
-              width={100}
-              height={60}
-              className="object-contain h-36 w-36 bg-cover"
-            />
-          ))}
-        </div>
+      <div className="flex items-center justify-between gap-6 flex-wrap  pb-10 w-full ">
+        {[
+          {
+            "name": "footer.png",
+            "src": "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1786625740/Gloitel/what%20we%20do/footer_ncvflp.png"
+          },
+          {
+            "name": "footer2.png",
+            "src": "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1786625804/Gloitel/what%20we%20do/footer2_kgr6pn.png"
+          },
+          {
+            "name": "footer3.png",
+            "src": "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1786625742/Gloitel/what%20we%20do/footer3_vjxxpp.png"
+          },
+          {
+            "name": "footer4.png",
+            "src": "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1786625743/Gloitel/what%20we%20do/footer4_zlznfo.png"
+          },
+          {
+            "name": "footer5.png",
+            "src": "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1786625741/Gloitel/what%20we%20do/footer5_s09ktj.png"
+          },
+          {
+            "name": "footer6.png",
+            "src": "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1786625741/Gloitel/what%20we%20do/footer6_dvtdfq.png"
+          }
+        ].map((image) => (
+          <Image
+            key={image.name}
+            src={image.src}
+            alt={image.name}
+            width={100}
+            height={60}
+            className="object-contain h-36 w-36 bg-cover"
+          />
+        ))}
+      </div>
 
       {/* Bottom Section */}
-      <div className="border-t border-gray-700 pt-6 flex flex-col md:flex-row items-center justify-between text-xs sm:text-sm text-white/50 gap-4">
+      <div className="border-t border-gray-700 pt-6 flex flex-col md:flex-row items-center justify-between text-xs sm:text-sm text-description gap-4">
         <p className="text-center md:text-left">
           © Gloitel. All rights reserved | CIN: U74110DL2016PTC309781
         </p>
