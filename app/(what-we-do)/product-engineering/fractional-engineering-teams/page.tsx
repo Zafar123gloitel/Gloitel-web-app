@@ -11,7 +11,7 @@ import {
   teamSectionHead,
   scaleReadinessIndicators,
   scaleReadinessSectionHead,
-} from "../data";
+} from "./data";
 import { BgSquare2 } from "../../../component/BgSquare";
 import StrategyBadge from "../../../../components/StrategyBadge";
 import { MiddleSectionHeads } from "../../../component/SectionHeads";

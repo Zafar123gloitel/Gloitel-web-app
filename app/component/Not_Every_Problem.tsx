@@ -54,7 +54,7 @@ const Not_Every_Problem = ({
             {index !== cards.length - 1 && (
               <div
                 className={[
-                  "inline-flex h-16 min-w-16 items-center justify-center rounded-full",
+                  "inline-flex h-16 min-w-16 items-center justify-center text-title rounded-full",
                   "bg-[#1447E633] text-2xl border border-white",
                 ].join(" ")}
               >
@@ -65,7 +65,7 @@ const Not_Every_Problem = ({
         ))}
       </div>
       <div
-        className="max-w-[75%] mx-auto mt-4 rounded-2xl flex items-center gap-3 border border-transparent p-3"
+        className="max-w-[75%] mx-auto mt-10 rounded-2xl flex items-center gap-3 border border-transparent p-3"
         style={{
           background: `
       linear-gradient(#080B18, #080B18) padding-box,
@@ -76,7 +76,7 @@ const Not_Every_Problem = ({
         <span className="inline-flex h-12 min-w-12 items-center text-2xl bg-[#1447E633] justify-center rounded-full ">
           <CircleAlert className="h-5 w-5 text-blue-400" />
         </span>
-        <p>{bottomText}</p>
+        <p className="text-title">{bottomText}</p>
       </div>
     </div>
   );

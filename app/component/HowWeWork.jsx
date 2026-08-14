@@ -11,7 +11,7 @@ import Image from "next/image";
 
 const stages = [
   {
-    id: 1,
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     title: "Kickoff",
     stage: "Stage 1",
     description:
@@ -20,7 +20,7 @@ const stages = [
     icon: <Rocket />,
   },
   {
-    id: 2,
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     title: "Execution",
     stage: "Stage 2",
     description:
@@ -29,7 +29,7 @@ const stages = [
     icon: <Crosshair />,
   },
   {
-    id: 3,
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     title: "Development & Deliver",
     stage: "Stage 3",
     description:

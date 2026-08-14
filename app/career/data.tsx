@@ -35,7 +35,7 @@ export const aiRoadmapData = {
 
     features: [
         {
-            id: 1,
+            id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
             title: "R&D Systems",
             description:
                 "Build a strong foundation for AI experimentation and innovation.",
@@ -58,7 +58,7 @@ export const aiRoadmapData = {
         },
 
         {
-            id: 2,
+            id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
             title: "LLM features",
             description:
                 "Identify and implement high-value capabilities powered by large language models.",
@@ -83,7 +83,7 @@ export const aiRoadmapData = {
         },
 
         {
-            id: 3,
+            id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
             title: "Agent Systems",
             description:
                 "Design intelligent agents that automate workflows and business processes.",
@@ -111,7 +111,7 @@ export const aiRoadmapData = {
         },
 
         {
-            id: 4,
+            id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
             title: "Custom Models",
             description:
                 "Evaluate and build specialized models for unique business requirements.",
@@ -625,33 +625,33 @@ export const diagnoseBeforeDeployData = {
     "Evaluate your AI readiness, identify gaps, and define the right path before moving into implementation.",
 
   steps: [
-    {
-      id: 1,
-      number: 1,
+        {
+            id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+            number: 1,
       title: "Discover",
       description:
         "Understand your business, technology, data, and AI opportunities.",
       icon: "search",
     },
-    {
-      id: 2,
-      number: 2,
+        {
+            id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+            number: 2,
       title: "Assess",
       description:
         "Evaluate current capabilities, challenges, and AI readiness.",
       icon: "assessment",
     },
-    {
-      id: 3,
-      number: 3,
+        {
+            id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+            number: 3,
       title: "Plan",
       description:
         "Prioritize opportunities and define the right implementation approach.",
       icon: "plan",
     },
-    {
-      id: 4,
-      number: 4,
+        {
+            id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+            number: 4,
       title: "Validate",
       description:
         "Validate the roadmap against business goals and technical feasibility.",
@@ -670,7 +670,7 @@ export const AiAgentsIndustriesdata = {
 
         testimonials: [
             {
-                id: 1,
+                id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
                 name: "Durgesh Sahu",
                 designation: "Founder and Director",
                 description:
@@ -679,7 +679,7 @@ export const AiAgentsIndustriesdata = {
             },
 
             {
-                id: 2,
+                id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
                 name: "Durgesh Sahu",
                 designation: "Founder and Director",
                 description:
@@ -688,7 +688,7 @@ export const AiAgentsIndustriesdata = {
             },
 
             {
-                id: 3,
+                id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
                 name: "Durgesh Sahu",
                 designation: "Founder and Director",
                 description:
@@ -697,7 +697,7 @@ export const AiAgentsIndustriesdata = {
             },
 
             {
-                id: 4,
+                id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
                 name: "Durgesh Sahu",
                 designation: "Founder and Director",
                 description:

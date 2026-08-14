@@ -18,7 +18,7 @@ import GlowPanel from "./GlowPanel";
 const Testimonial = () => {
   const stages = [
     {
-      id: 1,
+      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
       title: "Reerth (Electronics-based Product)",
       name: "Staish Kashyap",
       role: "CEO",
@@ -30,7 +30,7 @@ const Testimonial = () => {
       icon: <Spline />,
     },
     {
-      id: 2,
+      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
       title: "Path ISA (Educational Platform)",
       name: "Dr. Hamid Khan",
       role: "Founder",
@@ -42,7 +42,7 @@ const Testimonial = () => {
       icon: <Linkedin />,
     },
     {
-      id: 3,
+      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
       title: "HRM Technologies (IT & Cloud Services)",
       name: "Rajeshwar Agarwal",
       role: "Director",
@@ -54,7 +54,7 @@ const Testimonial = () => {
       icon: <Rocket />,
     },
     {
-      id: 4,
+      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
       title: "Experteeth (Dental Services)",
       name: "Manish Agrawal",
       role: "Founder",
@@ -66,7 +66,7 @@ const Testimonial = () => {
       icon: <Instagram />,
     },
     {
-      id: 5,
+      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
       title: "Samriddhi Agro (Agriculture Products)",
       name: "Ritendra Nayak",
       role: "Owner",
@@ -78,7 +78,7 @@ const Testimonial = () => {
       icon: <WandSparkles />,
     },
     {
-      id: 6,
+      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
       title: "Sapradha (School Sports Management)",
       name: "Dr. Sowmya Raghubir",
       role: "Chairman",

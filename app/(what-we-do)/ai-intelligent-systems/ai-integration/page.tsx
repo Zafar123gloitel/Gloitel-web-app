@@ -8,30 +8,14 @@ import { BgSquare2 } from "../../../component/BgSquare";
 import StrategyBadge from "../../../../components/StrategyBadge";
 import { MiddleSectionHeads } from "../../../component/SectionHeads";
 import { CardShowcase } from "../../../../components";
-import {
-  architecturePatternsData,
-  deliverablesData,
-  engineeringData,
-  engineeringServicesData,
-  TechnologiesData,
-} from "../../components/data";
 import PurposeCard from "../../components/PurposeCard";
 import Business from "../../components/Business";
 import AI_Solutions from "../../../uiComponents/AI_Solutions";
 import Execution_Plan from "../../../uiComponents/Execution_Plan";
+import { ArrowRightIcon } from "../../../component/SvgIcon";
+import { engineeringData, engineeringSectionData, engineeringServicesData ,architecturePatternsData, TechnologiesData, deliverablesData } from "./data";
 
-const engineeringSectionData = {
-  badgeText: "What AI Integration Actually Involves",
 
-  sectionHead: "The Engineering behind Production AI Systems.",
-
-  sectionSubHead: "",
-
-  sectionDescription:
-    "Successful AI integration requires more than connecting a model to an application. We build the infrastructure, recovery mechanisms, and monitoring layers that keep AI systems stable, observable, and production-ready.",
-
-  data: engineeringData,
-};
 
 
 const page = () => {
@@ -42,7 +26,7 @@ const page = () => {
           badgeText="AI Integration"
           title="Connect AI to the Systems that Run Your Business."
           description="Building an AI model is one challenge. Getting it to work reliably inside your product, ERP, CRM, or data platform is another. We handle the engineering that makes AI operational in production."
-          image="/images/What-we-do/Rectangle 1.png"
+          image="https://res.cloudinary.com/dsqu6pi0d/image/upload/v1786613037/Gloitel/what%20we%20do/AI_Integration_lzjw5j.png"
           imageAlt="Hero Image"
           video="https://res.cloudinary.com/dsqu6pi0d/video/upload/v1762846419/Gloitel/bg_cij8h5.mp4"
           primaryButton={{
@@ -52,23 +36,7 @@ const page = () => {
           secondaryButton={{
             href: "/case-studies",
             text: "Book a Technical Review",
-           icon: (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="16"
-    height="16"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className="w-4 h-4"
-  >
-    <path d="M5 12h14" />
-    <path d="m12 5 7 7-7 7" />
-  </svg>
-),
+           icon: <ArrowRightIcon size={20}/>,
           }}
         />
       </section>
@@ -78,7 +46,7 @@ const page = () => {
           sectionHead={engineeringSectionData.sectionHead}
           sectionSubHead={engineeringSectionData.sectionSubHead}
           sectionDescription={engineeringSectionData.sectionDescription}
-          data={engineeringSectionData.data}
+          data={engineeringData}
         />
         ;
       </section>

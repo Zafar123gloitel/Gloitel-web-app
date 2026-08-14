@@ -448,7 +448,7 @@ export const teamCardsTabs = [
 export const teamCardsData = {
   LLMs: [
     {
-      id: "openai-gpt-4o",
+      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
       image:
         "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960583/Gloitel/icon/openai_wwedph.png",
       imageAlt: "OpenAI GPT-4o",
@@ -458,17 +458,13 @@ export const teamCardsData = {
         "Advanced multimodal AI model for building intelligent and production-ready applications.",
       icons: [
         {
-          id: 1,
-          type: "linkedin",
-        },
-        {
-          id: 2,
+          id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
           type: "linkedin",
         },
       ],
     },
     {
-      id: "claude-3-5-sonnet",
+      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
       image:
         "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960642/Gloitel/icon/claude_sszoov.png",
       imageAlt: "Claude 3.5 Sonnet",
@@ -478,13 +474,13 @@ export const teamCardsData = {
         "Powerful language model designed for reasoning, coding, analysis, and enterprise AI workloads.",
       icons: [
         {
-          id: 1,
+          id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
           type: "linkedin",
         },
       ],
     },
     {
-      id: "gemini-1-5-pro",
+      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
       image:
         "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960682/Gloitel/icon/gemini_b4dcsa.png",
       imageAlt: "Gemini 1.5 Pro",
@@ -494,7 +490,7 @@ export const teamCardsData = {
         "Multimodal AI model built for long-context reasoning and complex enterprise use cases.",
       icons: [
         {
-          id: 1,
+          id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
           type: "linkedin",
         },
       ],
@@ -514,7 +510,7 @@ export const teamCardsData = {
         "Advanced multimodal AI model for building intelligent and production-ready applications.",
       icons: [
         {
-          id: 1,
+          id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
           type: "linkedin",
         },
       ],
@@ -530,7 +526,7 @@ export const teamCardsData = {
         "Powerful language model designed for reasoning, coding, analysis, and enterprise AI workloads.",
       icons: [
         {
-          id: 1,
+          id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
           type: "linkedin",
         },
       ],
@@ -546,7 +542,7 @@ export const teamCardsData = {
         "Multimodal AI model built for long-context reasoning and complex enterprise use cases.",
       icons: [
         {
-          id: 1,
+          id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
           type: "linkedin",
         },
       ],
@@ -565,7 +561,7 @@ export const teamCardsData = {
         "Advanced multimodal AI model for building intelligent and production-ready applications.",
       icons: [
         {
-          id: 1,
+          id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
           type: "linkedin",
         },
       ],
@@ -581,7 +577,7 @@ export const teamCardsData = {
         "Powerful language model designed for reasoning, coding, analysis, and enterprise AI workloads.",
       icons: [
         {
-          id: 1,
+          id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
           type: "linkedin",
         },
       ],
@@ -597,7 +593,7 @@ export const teamCardsData = {
         "Multimodal AI model built for long-context reasoning and complex enterprise use cases.",
       icons: [
         {
-          id: 1,
+          id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
           type: "linkedin",
         },
       ],
@@ -616,7 +612,7 @@ export const teamCardsData = {
         "Advanced multimodal AI model for building intelligent and production-ready applications.",
       icons: [
         {
-          id: 1,
+          id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
           type: "linkedin",
         },
       ],
@@ -632,7 +628,7 @@ export const teamCardsData = {
         "Powerful language model designed for reasoning, coding, analysis, and enterprise AI workloads.",
       icons: [
         {
-          id: 1,
+          id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
           type: "linkedin",
         },
       ],
@@ -648,7 +644,7 @@ export const teamCardsData = {
         "Multimodal AI model built for long-context reasoning and complex enterprise use cases.",
       icons: [
         {
-          id: 1,
+          id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
           type: "linkedin",
         },
       ],

@@ -10,7 +10,7 @@ import Image from "next/image";
 const Technology = () => {
   const stages = [
     {
-      id: 1,
+      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
       title: "Next.js",
       stage: "Stage 1",
       description:
@@ -18,7 +18,7 @@ const Technology = () => {
       img: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762860000/Gloitel/icon/next_urdukq.webp",
     },
     {
-      id: 2,
+      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
       title: "React Native",
       stage: "Stage 2",
       description:
@@ -26,7 +26,7 @@ const Technology = () => {
       img: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762860000/Gloitel/icon/react_cfs5vz.webp",
     },
     {
-      id: 3,
+      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
       title: "Node.JS",
       stage: "Stage 3",
       description:
@@ -34,7 +34,7 @@ const Technology = () => {
       img: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762860000/Gloitel/icon/node_z9ziqo.webp",
     },
     {
-      id: 4,
+      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
       title: "PostgreSQL",
       stage: "Stage 4",
       description:
@@ -42,7 +42,7 @@ const Technology = () => {
       img: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762860001/Gloitel/icon/postgre_aq8ajb.svg",
     },
     {
-      id: 5,
+      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
       title: "GraphQL",
       stage: "Stage 5",
       description:
@@ -50,7 +50,7 @@ const Technology = () => {
       img: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762860000/Gloitel/icon/graph_v7lrwc.webp",
     },
     {
-      id: 6,
+      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
       title: "Nest.JS",
       stage: "Stage 6",
       description:

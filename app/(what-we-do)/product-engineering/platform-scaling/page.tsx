@@ -11,7 +11,7 @@ import {
   roadmapPhaseData,
   scalingIndicators,
   scalingSolutions,
-} from "../data";
+} from "./data";
 import Strategy from "../../components/Strategy";
 import { BgSquare2 } from "../../../component/BgSquare";
 import StrategyBadge from "../../../../components/StrategyBadge";

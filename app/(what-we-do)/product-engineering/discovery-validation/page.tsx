@@ -23,7 +23,7 @@ import {
   outcomesData,
   strategyCards,
   noteveryproduct,
-} from "../data";
+} from "./data";
 import { CardShowcase } from "../../../../components";
 
 const page = () => {

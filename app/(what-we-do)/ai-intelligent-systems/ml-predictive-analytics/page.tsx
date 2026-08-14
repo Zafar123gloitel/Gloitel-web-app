@@ -2,28 +2,17 @@
 
 import React from "react";
 import HeroSection from "../../components/HeroSection";
-import { ArrowRight } from "lucide-react";
 import { BgSquare2 } from "../../../component/BgSquare";
 import StrategyBadge from "../../../../components/StrategyBadge";
 import { MiddleSectionHeads } from "../../../component/SectionHeads";
-import GlowPanel from "../../../component/GlowPanel";
-import {
-  aiSolutionsDataJson,
-  validationTestingStep,
-  modelDevelopmentSelectionStep,
-  dataAssessmentStep,
-  featureEngineeringStep,
-  baselineBenchmarkingStep,
-  outcomesData2,
-  notEveryProblemData,
-} from "../../components/data";
 import PurposeCard from "../../components/PurposeCard";
 import Discover from "../../components/Discover";
 import Assess from "../../components/Assess";
-
 import Not_Every_Problem from "../../../component/Not_Every_Problem";
 import AI_Solutions from "../../../uiComponents/AI_Solutions";
 import Execution_Plan from "../../../uiComponents/Execution_Plan";
+import { aiSolutionsDataJson, baselineBenchmarkingStep, dataAssessmentStep, featureEngineeringStep, modelDevelopmentSelectionStep, notEveryProblemData, outcomesData2, validationTestingStep } from "./data";
+import { ArrowRightIcon } from "../../../component/SvgIcon";
 
 
 const page = () => {
@@ -34,7 +23,7 @@ const page = () => {
           badgeText="ML & Predictive Analytics"
           title="Models Built for Your Data. Validated on Your Metrics."
           description="General-purpose AI answers general questions. If your business has specific prediction needs - demand forecasting, churn prediction, fraud detection, quality control - you need models trained on your data, optimized for your outcomes."
-          image="/images/What-we-do/Rectangle 1.png"
+          image="https://res.cloudinary.com/dsqu6pi0d/image/upload/v1786613038/Gloitel/what%20we%20do/ML_Predictive_Analytics_lkiy5f.png"
           imageAlt="Hero Image"
           video="https://res.cloudinary.com/dsqu6pi0d/video/upload/v1762846419/Gloitel/bg_cij8h5.mp4"
           primaryButton={{
@@ -44,32 +33,7 @@ const page = () => {
           secondaryButton={{
             href: "/case-studies",
             text: "Explore ML Case Studies",
-            icon: (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-              >
-                <g clipPath="url(#clip0_1316_55059)">
-                  <path
-                    d="M11.333 15.3664L16.6719 9.99971L11.333 4.63304C11.2848 4.56972 11.2235 4.5175 11.1534 4.47992C11.0832 4.44233 11.0058 4.42026 10.9264 4.41519C10.8469 4.41012 10.7674 4.42218 10.693 4.45054C10.6186 4.47891 10.5512 4.52292 10.4954 4.5796C10.4395 4.63627 10.3964 4.70429 10.3691 4.77905C10.3418 4.85381 10.3309 4.93356 10.3371 5.01291C10.3433 5.09225 10.3665 5.16934 10.4051 5.23895C10.4437 5.30856 10.4968 5.36907 10.5608 5.41637L14.5552 9.44415H3.92743C3.78009 9.44415 3.63878 9.50268 3.53459 9.60687C3.43041 9.71105 3.37188 9.85236 3.37188 9.99971C3.37188 10.147 3.43041 10.2884 3.53459 10.3925C3.63878 10.4967 3.78009 10.5553 3.92743 10.5553H14.5552L10.5608 14.583C10.4569 14.6877 10.3988 14.8292 10.3993 14.9767C10.3999 15.1241 10.4589 15.2653 10.5635 15.3691C10.6682 15.473 10.8097 15.5311 10.9572 15.5306C11.1046 15.53 11.2458 15.471 11.3497 15.3664H11.333Z"
-                    fill="white"
-                  />
-                </g>
-                <defs>
-                  <clipPath id="clip0_1316_55059">
-                    <rect
-                      width="20"
-                      height="20"
-                      fill="white"
-                      transform="matrix(0 1 -1 0 20 0)"
-                    />
-                  </clipPath>
-                </defs>
-              </svg>
-            ),
+            icon:  <ArrowRightIcon size={20}/>,
           }}
         />
       </section>

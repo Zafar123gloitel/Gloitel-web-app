@@ -11,7 +11,7 @@ import GlowPanel from "../component/GlowPanel";
 
 const stages = [
   {
-    id: 1,
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     name: "CGMMSSY",
     date: 2018,
     tag: "Web & App Development",
@@ -19,7 +19,7 @@ const stages = [
       "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762867021/Gloitel/portfolio/cgmmssy_oww8hb.svg",
   },
   {
-    id: 2,
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     name: "PATH IAS ACADEMY",
     date: 2024,
     tag: "Business",
@@ -27,7 +27,7 @@ const stages = [
       "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762867010/Gloitel/portfolio/pathias_usuts5.webp",
   },
   {
-    id: 3,
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     name: "HRM TECHNOLOGY",
     date: 2024,
     tag: "Website",
@@ -35,7 +35,7 @@ const stages = [
       "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762867011/Gloitel/portfolio/hrm_wwb6ki.svg",
   },
   {
-    id: 4,
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     name: "Experteeth",
     date: 2023,
     tag: "Website",
@@ -43,7 +43,7 @@ const stages = [
       "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762867007/Gloitel/portfolio/experteeth_zk1kdv.webp",
   },
   {
-    id: 5,
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     name: "Godhaar",
     date: 2025,
     tag: "Website & Mobile App",
@@ -51,7 +51,7 @@ const stages = [
       "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762927323/Gloitel/portfolio/godhaar_vljbzt.jpg",
   },
   {
-    id: 6,
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     name: "Fitbattle",
     date: 2025,
     tag: "Mobile App & Website",
@@ -59,7 +59,7 @@ const stages = [
       "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762866980/Gloitel/portfolio/fitbattle_esztbn.webp",
   },
   {
-    id: 7,
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     name: "VIADYAM (HMS)",
     date: 2024,
     tag: "HMS",
@@ -67,7 +67,7 @@ const stages = [
       "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762866990/Gloitel/portfolio/vidyam_vemacx.webp",
   },
   {
-    id: 8,
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     name: "STAFFEASE (CRM)",
     date: 2024,
     tag: "CRM",
