@@ -78,6 +78,7 @@ const IconCard = ({
                 src={logo}
                 alt={name}
                 className="h-full w-full object-contain"
+                loading="lazy"
               />
             ) : (
               <div className="h-10 w-10 rounded-full bg-slate-200" />

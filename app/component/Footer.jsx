@@ -152,6 +152,7 @@ export default function Footer() {
               alt="Logo"
               className="object-contain"
               unoptimized
+              loading="lazy"
             />
           </div>
 
@@ -377,6 +378,7 @@ export default function Footer() {
             width={100}
             height={60}
             className="object-contain h-36 w-36 bg-cover"
+            loading="lazy"
           />
         ))}
       </div>

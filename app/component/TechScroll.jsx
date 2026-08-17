@@ -72,6 +72,7 @@ const TechScroll = () => {
                   alt={`Project ${i}`}
                   className="w-full h-full object-cover rounded-2xl"
                   unoptimized
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -105,6 +106,7 @@ const TechScroll = () => {
                   alt={`Project ${i}`}
                   className="w-full h-full object-cover rounded-2xl"
                   unoptimized
+                  loading="lazy"
                 />
               </div>
             </div>

@@ -86,6 +86,7 @@ const EngineeringHeroSection = ({
           fill
           className="rounded-2xl object-cover"
           unoptimized
+          loading="lazy"
         />
       </div>
     </section>

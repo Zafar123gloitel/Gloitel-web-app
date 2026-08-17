@@ -105,6 +105,7 @@ const PurposeCard = ({
         fill
         className="object-cover"
         unoptimized
+        loading="lazy"
       />
     </div>
   ) : null;

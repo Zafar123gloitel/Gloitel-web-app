@@ -5,11 +5,9 @@ import { BgSquare2 } from "../../component/BgSquare";
 import StrategyBadge from "../../../components/StrategyBadge";
 import { LeftSectionHeads, MiddleSectionHeads } from "../../component/SectionHeads";
 import { Card, CardShowcase, CardTitle, } from "../../../components";
-import { showcaseItems } from "../components/showcaseItems ";
 import ImageCard from "../components/ImageCard";
 import { designGapData, designGapNote, designGapSectionHead, designTeamData, designTeamSectionHead, designToolsData, digitalExperienceCTAData, digitalExperienceHeroData, digitalPracticeData, digitalPracticeSectionHead, whatWeDesignData, whatWeDesignSectionHead } from "./data";
 import AI_Solutions from "../../uiComponents/AI_Solutions";
-import { aiSolutionsDataJson, notIncludedData } from "../components/data";
 import Execution_Plan from "../../uiComponents/Execution_Plan";
 import GlowPanel from "../../component/GlowPanel";
 

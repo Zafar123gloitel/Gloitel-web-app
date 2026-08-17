@@ -99,6 +99,7 @@ const Technology = () => {
                     alt=""
                     className="rounded-full"
                     unoptimized
+                    loading="lazy"
                   />
                 </div>
 

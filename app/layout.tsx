@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className={`${dmSans.variable} antialiased `}>
         <section className="overflow-x-hidden w-full">
-          <CustomCursor />
+          {/* <CustomCursor /> */}
           <Navbar />
           {children}
           <Footer />

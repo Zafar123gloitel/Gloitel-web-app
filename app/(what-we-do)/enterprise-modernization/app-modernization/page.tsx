@@ -20,7 +20,7 @@ import {
   strategySectionHead,
   sunsetPhaseData,
   technologiesModernizedData,
-} from "../data";
+} from "./data";
 import AI_Solutions from "../../../uiComponents/AI_Solutions";
 import Execution_Plan from "../../../uiComponents/Execution_Plan";
 
@@ -98,6 +98,7 @@ const page = () => {
             <Discover
               badgeText={auditPhaseData2.badgeText}
               title={auditPhaseData2.title}
+              subtitle={auditPhaseData2.subTitle}
               description={auditPhaseData2.description}
               buttonText={auditPhaseData2.buttonText}
               buttonLink={auditPhaseData2.buttonLink}
@@ -108,6 +109,7 @@ const page = () => {
             <Assess
               badgeText={foundationPhaseData.badgeText}
               title={foundationPhaseData.title}
+              subtitle={auditPhaseData2.subTitle}
               description={foundationPhaseData.description}
               buttonText={foundationPhaseData.buttonText}
               buttonLink={foundationPhaseData.buttonLink}

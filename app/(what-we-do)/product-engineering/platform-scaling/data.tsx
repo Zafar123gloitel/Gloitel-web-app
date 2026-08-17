@@ -6,7 +6,7 @@ export const platformHeroSection = {
   title: "Your MVP Got You Here. You Need Something Different to Go Further.",
   description:
     "Architectures built for speed in the early days show their limits when scale arrives. Slow queries, deployment bottlenecks, on-call nightmares, and features that take 3x longer than they should - these are engineering debt coming due. We help you pay it down without stopping the product.",
-  image: "/images/What-we-do/Rectangle 1.png",
+  image: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1786712282/Gloitel/Product%20Engineering/Platform_Scaling_azysql.png",
   imageAlt: "Discovery and validation workshop",
   video:
     "https://res.cloudinary.com/dsqu6pi0d/video/upload/v1762846419/Gloitel/bg_cij8h5.mp4",
@@ -21,7 +21,7 @@ export const auditPhaseData = {
     "Instrument, profile, and document the current system. Identify the top 10 issues ranked by impact and effort. No guessing.",
   buttonText: "View more",
   buttonLink: "/",
-  image: "/images/What-we-do/audit.png",
+  image: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1786712282/Gloitel/Product%20Engineering/Technical_Audit_ko3ec5.png",
   imageAlt: "Technical audit",
 };
 
@@ -32,7 +32,7 @@ export const roadmapPhaseData = {
     "A phased plan that addresses the highest-impact issues first, with each phase delivering measurable improvement that can be shipped and validated independently.",
   buttonText: "View more",
   buttonLink: "/",
-  image: "/images/What-we-do/roadmap.png",
+  image: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1786712282/Gloitel/Product%20Engineering/Prioritized_Roadmap_yxlgjv.png",
   imageAlt: "Prioritized roadmap",
 };
 
@@ -43,7 +43,7 @@ export const executionPhaseData = {
     "Work alongside your existing team. We don't take over — we accelerate and upskill. Changes made in branches, reviewed, and deployed with your existing process.",
   buttonText: "View more",
   buttonLink: "/",
-  image: "/images/What-we-do/execution.png",
+  image: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1786712281/Gloitel/Product%20Engineering/Execution_aihpdn.png",
   imageAlt: "Execution phase",
 };
 
@@ -54,7 +54,7 @@ export const handoffPhaseData = {
     "Architecture documentation, runbooks, and knowledge transfer so your team can own what we've built.",
   buttonText: "View more",
   buttonLink: "/",
-  image: "/images/What-we-do/handoff.png",
+  image: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1786712281/Gloitel/Product%20Engineering/Handoff_Documentation_keykkd.png",
   imageAlt: "Handoff and documentation",
 };
 
@@ -80,5 +80,6 @@ export const scalingSolutions = [
   { id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2), icon: <DatabaseIcon size={25} className="" />, title: "Database Architecture & Migration", description: "Schema redesign, read replica setup, connection pooling, sharding strategy for high-throughput systems, and safe zero-downtime migration execution." },
   { id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2), icon: <CloudIcon size={25} className="" />, title: "Infrastructure Redesign", description: "Move from a single server to horizontally scalable infrastructure. Container orchestration, auto-scaling groups, load balancing, and infrastructure-as-code so your environment is reproducible." },
   { id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2), icon: <WorkflowIcon1 size={25} className="" />, title: "API Gateway & Microservices", description: "When a monolith has outgrown itself, we plan and execute the decomposition — starting with the highest-value, most isolated services, not a full rewrite." },
-  { id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2), icon: <CodeIcon size={25} className="" />, title: "Caching Layer Design", description: "Redis/Memcached strategy across application, database, and CDN layers. Proper cache invalidation patterns that don't cause the bugs that give caching its bad reputation." },
+  { id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2), icon: <DiamondStackIcon size={25} className="" />, title: "Caching Layer Design", description: "Redis/Memcached strategy across application, database, and CDN layers. Proper cache invalidation patterns that don't cause the bugs that give caching its bad reputation." },
+  { id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2), icon: <CodeIcon size={25} className="" />, title: "Caching LEngineering Process Improvementayer Design", description: "Technical debt inventory, CI/CD pipeline optimization, test coverage improvement, code review standards, and documentation practices that scale with your team" },
 ];

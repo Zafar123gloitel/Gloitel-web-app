@@ -87,6 +87,7 @@ const GalleryScroll = () => {
                   alt={`Project ${i}`}
                   className="w-full h-full object-cover rounded-xl"
                   unoptimized
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -121,6 +122,7 @@ const GalleryScroll = () => {
                   alt={`Project ${i}`}
                   className="w-full h-full object-cover rounded-xl"
                   unoptimized
+                  loading="lazy"
                 />
               </div>
             </div>

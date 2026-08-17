@@ -35,6 +35,7 @@ const TestimonialCard = ({
                   src={avatar}
                   alt={name}
                   className="h-full w-full rounded-full object-cover"
+                  loading="lazy"
                 />
               ) : (
                 <div className="h-full w-full rounded-full bg-white shadow-[0_0_18px_rgba(59,130,246,0.35)]" />

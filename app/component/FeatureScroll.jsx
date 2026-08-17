@@ -40,6 +40,7 @@ const FeatureScroll = () => {
                 alt="Project"
                 className="w-40 object-cover"
                 unoptimized
+                loading="lazy"
               />
             </div>
           ))}

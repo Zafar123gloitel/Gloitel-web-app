@@ -9,6 +9,7 @@ import { ArrowRightIcon } from "../../component/SvgIcon";
 interface DiscoverProps {
   badgeText: string;
   title: string;
+  subtitle?:string
   description: string;
   cardTitle?: string;
   buttonText?: string;
@@ -20,6 +21,7 @@ interface DiscoverProps {
 const Discover = ({
   badgeText,
   title,
+  subtitle,
   description,
   cardTitle,
   buttonText,
@@ -35,7 +37,8 @@ const Discover = ({
           <StrategyBadge text={badgeText} />
         </span>
 
-        <h2 className="mb-6 text-5xl sm:text-[48px] text-title font-semibold">{title}</h2>
+ <span className="flex gap-5">  <h2 className="mb-6 text-5xl sm:text-[48px] text-title font-semibold">{title}</h2>
+          <h3 className="mb-6 text-4xl sm:text-[35px] text-description font-semibold">{subtitle}</h3></span>
 
         <p className=" leading-4 sm:leading-8 text-sm sm:text-[20px] text-description">
           {description}
@@ -64,8 +67,9 @@ const Discover = ({
             alt={imageAlt}
             width={455}
             height={445}
-            className="h-full w-full rounded-[24px] object-cover"
+            className="h-full w-full rounded-[24px] object-contain "
             unoptimized
+            loading="lazy"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
         </div>

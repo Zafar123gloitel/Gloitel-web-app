@@ -128,6 +128,7 @@ export default function EngineeringArchitecture({
               fill
               className="object-contain"
               unoptimized
+              loading="lazy"
             />
           </div>
         </div>
@@ -154,6 +155,7 @@ export default function EngineeringArchitecture({
             alt={imageAlt}
             fill
             className="object-contain"
+            loading="lazy"
           />
         </div>
 

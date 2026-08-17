@@ -120,6 +120,7 @@ const Portfolio = ({ params }) => {
                     width={180}
                     height={180}
                     unoptimized
+                    loading="lazy"
                   />
                 </div>
 
@@ -154,6 +155,7 @@ const Portfolio = ({ params }) => {
                         fill
                         className="object-cover rounded-2xl"
                         unoptimized
+                        loading="lazy"
                       />
                     </div>
 
@@ -186,6 +188,7 @@ const Portfolio = ({ params }) => {
                         fill
                         className="object-cover rounded-2xl"
                         unoptimized
+                        loading="lazy"
                       />
                     </div>
 

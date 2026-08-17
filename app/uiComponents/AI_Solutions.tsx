@@ -28,6 +28,7 @@ const AI_Solutions = ({
 }: AI_SolutionsProps) => {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
   const activeTab = tabs[activeTabIndex];
+  const hasMoreThanFiveTabs = tabs.length > 5;
 
   const handleTabClick = (index: number) => {
     setActiveTabIndex(index);
@@ -49,7 +50,12 @@ const AI_Solutions = ({
 
         {/* Tabs */}
         <div className="mt-14 flex justify-center">
-          <div className="flex w-[90%] max-w-6xl gap-4 mx-auto overflow-x-auto pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <div
+            className={`flex gap-4 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ${hasMoreThanFiveTabs
+                ? "mx-auto w-[90%] max-w-6xl overflow-x-auto"
+                : "mx-auto w-[90%] max-w-6xl overflow-x-auto lg:w-auto lg:max-w-none lg:justify-center lg:overflow-visible"
+              }`}
+          >
             {tabs.map((tab, index) => (
               <button
                 key={tab}

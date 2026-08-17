@@ -55,6 +55,7 @@ const page = () => {
               alt={financeChallengesSectionHead.imageAlt}
               fill
               className="object-cover rounded-2xl h-full w-full  bg-white"
+              loading="lazy"
             />
           </div>
 

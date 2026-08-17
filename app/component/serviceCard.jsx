@@ -21,6 +21,7 @@ export default function ServiceCard({
           height={1080}
           className="object-cover w-full h-full"
           unoptimized
+          loading="lazy"
         />
       </div>
 

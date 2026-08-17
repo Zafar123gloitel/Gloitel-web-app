@@ -68,6 +68,7 @@ const PortfolioCard = ({ i, color, scrollProgress }) => {
                       alt="image"
                       className="object-cover w-full h-full rounded-2xl"
                       unoptimized
+                      loading="lazy"
                     />
                   </motion.div>
 

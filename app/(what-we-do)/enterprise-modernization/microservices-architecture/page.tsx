@@ -1,6 +1,8 @@
 "use client";
 
 import React from "react";
+import { InfoIcon } from "../../../component/SvgIcon";
+import { HeroArrowRightIcon } from "../../../component/SvgIcon";
 import HeroSection from "../../components/HeroSection";
 import {
 
@@ -16,7 +18,7 @@ import {
   techStackSectionHead,
   techStackData,
   microservicesCTAData,
-} from "../data";
+} from "./data";
 import Strategy from "../../components/Strategy";
 import { BgSquare2 } from "../../../component/BgSquare";
 import StrategyBadge from "../../../../components/StrategyBadge";
@@ -49,24 +51,9 @@ const page = () => {
           }}
         >
           <span className="inline-flex h-12 min-w-12 items-center text-2xl bg-[#1447E633] justify-center rounded-full ">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="h-5 w-5 text-blue-400"
-            >
-              <circle cx="12" cy="12" r="10" />
-              <line x1="12" y1="8" x2="12" y2="12" />
-              <line x1="12" y1="16" x2="12.01" y2="16" />
-            </svg>
+            <InfoIcon className="h-5 w-5 text-blue-400" />
           </span>
-          <p className="text-[14px] sm:text-[16px]">
+          <p className="text-[14px] text-title sm:text-[16px]">
             If these aren&apos;t your problems, a well-modularized monolith may serve
             you better.
           </p>

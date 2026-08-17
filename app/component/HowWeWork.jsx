@@ -137,6 +137,7 @@ const HowWeWork = () => {
                         width={180}
                         height={180}
                         unoptimized
+                        loading="lazy"
                       />
                     </div>
                   )}

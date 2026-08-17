@@ -486,6 +486,7 @@ const Navbar = () => {
                 alt="Logo"
                 className="object-contain"
                 unoptimized
+                loading="lazy"
               />
             </Link>
             <VerticalDivider />
@@ -608,6 +609,7 @@ const Navbar = () => {
                                     height={220}
                                     alt="menu"
                                     className="rounded-2xl h-full w-full drop-shadow-[0_25px_50px_rgba(37,99,235,0.35)]"
+                                    loading="lazy"
                                   />
                                 </div>
                               </div>

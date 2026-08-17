@@ -83,6 +83,7 @@ const Card = ({
                 className={styles.image}
                 priority={i === 0}
                 unoptimized
+                loading="lazy"
               />
             </motion.div>
           </div>

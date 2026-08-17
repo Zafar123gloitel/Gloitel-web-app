@@ -142,6 +142,7 @@ const Testimonial = () => {
                         alt={item.name}
                         className="w-full h-full object-cover"
                         unoptimized
+                        loading="lazy"
                       />
                     </div>
                     <div className="flex flex-row gap-1">

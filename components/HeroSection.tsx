@@ -116,6 +116,7 @@ const HeroSection = ({
                 fill
                 className="object-cover"
                 unoptimized
+                loading="lazy"
               />
 
               {/* Image Overlay */}

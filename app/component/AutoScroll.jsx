@@ -61,6 +61,7 @@ const AutoScroll = () => {
                     alt="Project"
                     className="w-full h-full object-cover"
                     unoptimized
+                    loading="lazy"
                   />
 
                   {/* Fade overlay (only bottom 10%) */}

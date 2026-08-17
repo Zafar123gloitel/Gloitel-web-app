@@ -34,6 +34,7 @@ const ImageCard = ({ data }: ImageCardProps) => {
             className="object-cover"
             sizes="(max-width:640px) 100vw, 420px"
             unoptimized
+            loading="lazy"
           />
         </div>
 

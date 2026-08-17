@@ -21,7 +21,7 @@ const ImageCard = ({
         <div>
           <div className=" ">
             <div className="flex items-center justify-center bg-none m-4 h-[295.47px] rounded-2xl">
-              <Image src={image} width={280} height={220} alt="menu" />
+              <Image src={image} width={280} height={220} alt="menu" loading="lazy"/>
             </div>
           </div>
         </div>

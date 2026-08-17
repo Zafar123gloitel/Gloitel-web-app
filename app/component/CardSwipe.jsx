@@ -35,6 +35,7 @@ export default function CardSwipe() {
             alt={`Slide ${i + 1}`}
             className="w-full h-full object-cover rounded-lg"
             unoptimized
+            loading="lazy"
           />
         </SwiperSlide>
       ))}

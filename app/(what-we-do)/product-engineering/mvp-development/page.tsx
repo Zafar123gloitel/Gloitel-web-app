@@ -53,7 +53,7 @@ const page = () => {
         <section className="flex items-center -mt-10">
           <ArchitectureCircle
             data={coreFeaturesData}
-            image="/images/hrm.png"
+            image="https://res.cloudinary.com/dsqu6pi0d/image/upload/v1786712281/Gloitel/Product%20Engineering/Production_-_Ready_by_Default_tpqka0.png"
             positions={positions}
           />
           ;

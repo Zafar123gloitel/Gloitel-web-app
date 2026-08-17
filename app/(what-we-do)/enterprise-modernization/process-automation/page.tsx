@@ -11,7 +11,8 @@ import {
   processInventoryData,
   automationTechStackData,
   processAutomationCTAData,
-} from "../data";
+  PhasedImplementation,
+} from "./data";
 import HeroSection from "../../components/HeroSection";
 import { BgSquare2 } from "../../../component/BgSquare";
 import StrategyBadge from "../../../../components/StrategyBadge";
@@ -102,13 +103,13 @@ const page = () => {
             imageAlt={buildVsBuyData.imageAlt}
           />
           <Assess
-            badgeText={phasedImplementationData.badgeText}
-            title={phasedImplementationData.title}
-            description={phasedImplementationData.description}
-            buttonText={phasedImplementationData.buttonText}
-            buttonLink={phasedImplementationData.buttonLink}
-            image={phasedImplementationData.image}
-            imageAlt={phasedImplementationData.imageAlt}
+            badgeText={PhasedImplementation.badgeText}
+            title={PhasedImplementation.title}
+            description={PhasedImplementation.description}
+            buttonText={PhasedImplementation.buttonText}
+            buttonLink={PhasedImplementation.buttonLink}
+            image={PhasedImplementation.image}
+            imageAlt={PhasedImplementation.imageAlt}
           />
         </section>
       </section>

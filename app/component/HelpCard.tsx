@@ -162,6 +162,7 @@ const HelpCard = ({
                                                     alt={card.imageAlt}
                                                     className="h-full w-full rounded-full object-contain p-8"
                                                     unoptimized
+                                                    loading="lazy"
                                                 />
                                             </div>
 
@@ -222,6 +223,7 @@ const HelpCard = ({
                                         alt={card.imageAlt || card.heading}
                                         className="h-full w-full rounded-full object-cover p-3 shadow-xl"
                                         unoptimized
+                                        loading="lazy"
                                     />
                                 </div>
 

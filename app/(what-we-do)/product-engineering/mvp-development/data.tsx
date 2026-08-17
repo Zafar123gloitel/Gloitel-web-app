@@ -6,7 +6,7 @@ export const mvpheroSection = {
     title: "Ship Something Real. Fast. That You Won't Regret.",
     description:
         "An MVP is not a rough prototype thrown together to 'move fast.' It's the smallest complete product that lets you test your most important assumption with real users in production. Done right, it takes weeks and gives you genuine signal. Done wrong, it takes months and teaches you nothing.",
-    image: "/images/What-we-do/Rectangle 1.png",
+    image: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1786712285/Gloitel/Product%20Engineering/MVP_Development_exyebf.png",
     imageAlt: "Discovery and validation workshop",
     video:
         "https://res.cloudinary.com/dsqu6pi0d/video/upload/v1762846419/Gloitel/bg_cij8h5.mp4",
@@ -28,7 +28,7 @@ export const weekOneData = {
         "Repository setup, infrastructure provisioning, team onboarding, architectural decisions documented. No surprises mid-build.",
     buttonText: "View more",
     buttonLink: "#",
-    image: "/images/What-we-do/discover.png",
+    image: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1786712283/Gloitel/Product%20Engineering/Setup_Architecture_sieo3b.png",
     imageAlt: "Setup & Architecture",
 };
 
@@ -39,7 +39,7 @@ export const weekTwoData = {
         "Agile sprints with weekly demos. You see working software every week—not a big reveal at the end.",
     buttonText: "View more",
     buttonLink: "#",
-    image: "/images/What-we-do/assess.png",
+    image: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1786712282/Gloitel/Product%20Engineering/Core_Build_quiwdw.png",
     imageAlt: "Core Build",
 };
 
@@ -50,7 +50,7 @@ export const weekThreeData = {
         "QA pass, performance testing, security review, deployment configuration, and launch checklist.",
     buttonText: "View more",
     buttonLink: "#",
-    image: "/images/What-we-do/rank.png",
+    image: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1786712282/Gloitel/Product%20Engineering/Hardening_Launch_Prep_dkomfv.png",
     imageAlt: "Hardening & Launch Prep",
 };
 
@@ -61,7 +61,7 @@ export const weekFourData = {
         "Support your first real users. Instrument the product to capture the metrics that answer your core hypothesis.",
     buttonText: "View more",
     buttonLink: "#",
-    image: "/images/What-we-do/enable.png",
+    image: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1786712282/Gloitel/Product%20Engineering/Measure_Iterate_keay83.png",
     imageAlt: "Measure & Iterate",
 };
 

@@ -143,6 +143,7 @@ export default function ArchitectureCircle({
             alt="HRM"
             fill
             className="object-cover"
+            loading="lazy"
           />
         </div>
 
@@ -198,6 +199,7 @@ export default function ArchitectureCircle({
                 alt="HRM"
                 fill
                 className="object-cover rounded-full"
+                loading="lazy"
               />
             </div>
           </div>
