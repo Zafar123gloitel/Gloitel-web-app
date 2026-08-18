@@ -138,7 +138,7 @@ export const megaMenus = {
           },
           {
             label: "ML & Predictive Analytics",
-            href: "/digital-experience-design/ml-predictive-analytics",
+            href: "/ai-intelligent-systems/ml-predictive-analytics",
           },
           {
             label: "CX Optimization",

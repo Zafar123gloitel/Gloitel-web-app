@@ -4,12 +4,13 @@ import HeroSection from "../components/HeroSection";
 import { BgSquare2 } from "../../component/BgSquare";
 import StrategyBadge from "../../../components/StrategyBadge";
 import { LeftSectionHeads, MiddleSectionHeads } from "../../component/SectionHeads";
-import { Card, CardShowcase, CardTitle, } from "../../../components";
-import ImageCard from "../components/ImageCard";
-import { designGapData, designGapNote, designGapSectionHead, designTeamData, designTeamSectionHead, designToolsData, digitalExperienceCTAData, digitalExperienceHeroData, digitalPracticeData, digitalPracticeSectionHead, whatWeDesignData, whatWeDesignSectionHead } from "./data";
+import { Card, CardShowcase, CardTitle, } from "../../../components"
+import { designGapData, designGapNote, designGapSectionHead, designTeamData, designTeamSectionHead, designToolsData, digitalExperienceCTAData, digitalExperienceHeroData, digitalPracticeData, digitalPracticeSectionHead, } from "./data";
 import AI_Solutions from "../../uiComponents/AI_Solutions";
 import Execution_Plan from "../../uiComponents/Execution_Plan";
 import GlowPanel from "../../component/GlowPanel";
+import ImageCard from "../../component/ImageCard";
+import { ArrowRightIcon } from "../../component/SvgIcon";
 
 
 const page = () => {
@@ -59,7 +60,7 @@ const page = () => {
             }}
           >
             <span className="inline-flex h-12 min-w-12 items-center text-2xl text-title bg-[#1447E633] justify-center rounded-full ">
-             {designGapNote.icon}
+              {designGapNote.icon}
             </span>
             <p className="text-title">{designGapNote.text}</p>
           </div>
@@ -82,7 +83,18 @@ const page = () => {
 
       <div className=" -mt-10 flex justify-center items-center flex-wrap gap-6  ">
         {digitalPracticeData.map((item) => (
-          <ImageCard key={item.id} data={item} />
+          <ImageCard
+            key={item.id}
+            className={""}
+            cradClass={"w-[25rem] min-h-[550px]"}
+            padding={"px-4"}
+            cardtitle={item.title}
+            carddescription={item.description}
+            buttintext={item.buttonText}
+            buttonurl={item.buttonLink}
+            buttonicon={<ArrowRightIcon />}
+            image={item.image}
+          />
         ))}
       </div>
     </section>

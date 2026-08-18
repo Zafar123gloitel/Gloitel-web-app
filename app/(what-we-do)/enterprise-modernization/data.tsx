@@ -1,5 +1,6 @@
-import { AnalyticsIcon, ChecklistIcon, CodeIcon, DatabaseIcon, HeroArrowRightIcon, LinkIcon, MonitorIcon, RefreshCcwIcon, ShieldIcon, WorkflowIcon } from "../../component/SvgIcon";
+// import { AnalyticsIcon, ChecklistIcon, CodeIcon, DatabaseIcon, HeroArrowRightIcon, LinkIcon, MonitorIcon, RefreshCcwIcon, ShieldIcon, WorkflowIcon } from "../../component/SvgIcon";
 
+/* Non-exported data retained for reference.
 const appModernizationHeroData = {
   badgeText: "App Modernization",
   title: "Modernize Your Application Without Rebuilding Everything",
@@ -926,18 +927,20 @@ const processInventoryData = {
   image: "/images/What-we-do/process-inventory.png",
   imageAlt: "Process inventory",
 };
+*/
 
-export const automationScoringData = {
-  badgeText: "Step 02",
-  title: "Automation Suitability Scoring",
-  description:
-    "Score each process on: rule clarity, exception frequency, data structure, and integration complexity, and business impact.",
-  buttonText: "View more",
-  buttonLink: "/",
-  image: "/images/What-we-do/automation-scoring.png",
-  imageAlt: "Automation suitability scoring",
-};
+// export const automationScoringData = {
+//   badgeText: "Step 02",
+//   title: "Automation Suitability Scoring",
+//   description:
+//     "Score each process on: rule clarity, exception frequency, data structure, and integration complexity, and business impact.",
+//   buttonText: "View more",
+//   buttonLink: "/",
+//   image: "/images/What-we-do/automation-scoring.png",
+//   imageAlt: "Automation suitability scoring",
+// };
 
+/* Non-exported data retained for reference.
 const buildVsBuyData = {
   badgeText: "Step 03",
   title: "Build vs Buy Decision",
@@ -1090,4 +1093,4 @@ const processAutomationCTAData = {
   buttonText: "Automate Your Processes",
   buttonLink: "/contact",
 };
-
+*/

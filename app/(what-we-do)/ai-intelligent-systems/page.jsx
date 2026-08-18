@@ -6,14 +6,16 @@ import { BgSquare2 } from "../../component/BgSquare";
 import StrategyBadge from "../../../components/StrategyBadge";
 import { MiddleSectionHeads } from "../../component/SectionHeads";
 import { CardShowcase } from "../../../components";
-import ImageCard from "../components/ImageCard";
 import Discover from "../components/Discover";
 import Assess from "../components/Assess";
 import GlowPanel from "../../component/GlowPanel";
 import Strategy from "../components/Strategy";
 import AI_Solutions from "../../uiComponents/AI_Solutions";
 import Execution_Plan from "../../uiComponents/Execution_Plan";
+import { ArrowRightIcon, InfoIcon } from "../../component/SvgIcon";
 import { aiClarityData, aiEngagementSectionHead, aiGapData, aiGapSectionHead, aiIntelligentSystemsCTAData, aiIntelligentSystemsHeroData, aiPilotData, aiPracticeAreasData, aiPracticeAreasSectionHead, aiTechStackLandingData, discoverySprintData, productionScaleData } from "./data";
+import ImageCard from "../../component/ImageCard";
+
 
 
 const page = () => {
@@ -63,23 +65,7 @@ const page = () => {
             }}
           >
             <span className="inline-flex h-12 min-w-12 items-center text-2xl text-title bg-[#1447E633] justify-center rounded-full ">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="h-5 w-5 text-blue-400"
-                aria-hidden="true"
-              >
-                <circle cx="12" cy="12" r="10" />
-                <line x1="12" x2="12" y1="8" y2="12" />
-                <line x1="12" x2="12.01" y1="16" y2="16" />
-              </svg>
+              <InfoIcon className="h-5 w-5 text-blue-400" />
             </span>
             <p className="text-title">
               {"We diagnose before we build. Engineering starts only after we've defined where AI will create measurable business impact and long-term value."}
@@ -104,7 +90,18 @@ const page = () => {
 
       <div className=" -mt-10 flex justify-center items-center flex-wrap gap-6  ">
         {aiPracticeAreasData.map((item) => (
-          <ImageCard key={item.id} data={item} />
+            <ImageCard
+              key={item.id}
+              className={""}
+              cradClass={"w-[25rem] min-h-[550px]"}
+              padding={"px-4"}
+              cardtitle={item.title}
+              carddescription={item.description}
+              buttintext={item.buttonText}
+              buttonurl={item.buttonLink}
+              buttonicon={<ArrowRightIcon />}
+              image={item.image}
+            />
         ))}
       </div>
     </section>

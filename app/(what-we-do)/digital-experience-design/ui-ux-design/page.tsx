@@ -21,9 +21,11 @@ import StrategyBadge from "../../../../components/StrategyBadge";
 import { MiddleSectionHeads } from "../../../component/SectionHeads";
 import Discover from "../../components/Discover";
 import Assess from "../../components/Assess";
-import ImageCard from "../../components/ImageCard";
+// import ImageCard from "../../components/ImageCard";
 import Execution_Plan from "../../../uiComponents/Execution_Plan";
 import Business from "../../components/Business";
+import ImageCard from "../../../component/ImageCard";
+import { ArrowRightIcon } from "../../../component/SvgIcon";
 
 const page = () => {
   return (
@@ -118,7 +120,18 @@ const page = () => {
 
         <div className=" -mt-10 flex justify-center items-center flex-wrap gap-6  ">
           {whatWeDesignData.map((item) => (
-            <ImageCard key={item.id} data={item} />
+              <ImageCard
+              key={item.id}
+              className={""}
+              cradClass={"w-[25rem] min-h-[550px]"}
+              padding={"px-4"}
+              cardtitle={item.title}
+              carddescription={item.description}
+              buttintext={item.buttonText}
+              buttonurl={item.buttonLink}
+              buttonicon={<ArrowRightIcon/>}
+              image={item.image}
+            />
           ))}
         </div>
       </section>

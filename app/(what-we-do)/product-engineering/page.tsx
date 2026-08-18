@@ -6,13 +6,14 @@ import { BgSquare2 } from "../../component/BgSquare";
 import StrategyBadge from "../../../components/StrategyBadge";
 import { MiddleSectionHeads } from "../../component/SectionHeads";
 import { CardShowcase } from "../../../components";
-import ImageCard from "../components/ImageCard";
 import GlowPanel from "../../component/GlowPanel";
 import Strategy from "../components/Strategy";
 import AI_Solutions from "../../uiComponents/AI_Solutions";
 import Execution_Plan from "../../uiComponents/Execution_Plan";
 import Business from "../components/Business";
-import { productAudienceData, productAudienceSectionHead, productEngineeringCTAData, productEngineeringHeroData, productionGradeData, productionGradeSectionHead, productPracticeData, productPracticeSectionHead, productStruggleData, productStruggleNote, productTechStackData,  } from "./data";
+import { productAudienceData, productAudienceSectionHead, productEngineeringCTAData, productEngineeringHeroData, productionGradeData, productionGradeSectionHead, productPracticeData, productPracticeSectionHead, productStruggleData, productStruggleNote, productTechStackData, } from "./data";
+import { ArrowRightIcon } from "../../component/SvgIcon";
+import ImageCard from "../../component/ImageCard";
 
 
 const page = () => {
@@ -47,8 +48,8 @@ const page = () => {
               `,
         }}
       >
-        <span className="inline-flex h-12 min-w-12 items-center text-2xl text-title bg-[#1447E633] justify-center rounded-full ">
-         {productStruggleNote.icon}
+        <span className="inline-flex h-12 min-w-12 items-center text-2xl  bg-[#1447E633] justify-center rounded-full ">
+          {productStruggleNote.icon}
         </span>
         <p className="text-title">{productStruggleNote.text}</p>
       </div>
@@ -69,7 +70,18 @@ const page = () => {
 
       <div className=" -mt-10 flex justify-center items-center flex-wrap gap-6  ">
         {productPracticeData.map((item) => (
-          <ImageCard key={item.id} data={item} />
+          <ImageCard
+            key={item.id}
+            className={""}
+            cradClass={"w-[25rem] min-h-[550px]"}
+            padding={"px-4"}
+            cardtitle={item.title}
+            carddescription={item.description}
+            buttintext={item.buttonText}
+            buttonurl={item.buttonLink}
+            buttonicon={<ArrowRightIcon />}
+            image={item.image}
+          />
         ))}
       </div>
     </section>

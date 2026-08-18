@@ -10,7 +10,7 @@ import {
   financeCTAData,
   financeSolutionsData,
   financeSolutionsSectionHead,
-} from "../data";
+} from "./data";
 import HeroSection from "../../../components/HeroSection";
 import { BgSquare2 } from "../../component/BgSquare";
 import StrategyBadge from "../../../components/StrategyBadge";

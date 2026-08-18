@@ -51,7 +51,7 @@ const page = () => {
         <section className="flex items-center -mt-10 ">
           <ArchitectureCircle
             data={researchMethodsData}
-            image="/images/hrm.png"
+            image="https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787033714/Gloitel/Digital%20Experience%20Design/Research_Methods_We_Use_kgxhdv.png"
             positions={positions}
           />
           ;

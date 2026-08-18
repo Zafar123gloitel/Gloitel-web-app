@@ -1,3 +1,9 @@
+import {
+  HeroArrowRightIcon,
+  LinkIcon,
+  ResilientProcessingIcon,
+  VisibilityControlIcon,
+} from "../../component/SvgIcon";
 export const frontendEngineeringHeroData = {
   badgeText: "Frontend Engineering",
   title: "AI Engineering That Ships and Stays Shipped", // ⚠️ mismatch - AI Engineering ka title hai
@@ -116,68 +122,21 @@ export const frontendEngineeringDeepDiveData = {
   cards: [
     {
       id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="28"
-          height="28"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07L11.7 5.24" />
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 1 0 7.07 7.07l1.76-1.77" />
-        </svg>
-      ),
+      icon: <LinkIcon size={28} />,
       title: "Integration Stability",
       description:
         "AI systems often fail not because the model is ineffective, but because the surrounding integrations are unreliable. We build stable connections between AI services, applications, and enterprise systems with proper error handling, fallback mechanisms, and operational safeguards.",
     },
     {
       id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="28"
-          height="28"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M3 12a9 9 0 0 1 15.5-6.4L21 8" />
-          <path d="M21 3v5h-5" />
-          <path d="M21 12a9 9 0 0 1-15.5 6.4L3 16" />
-          <path d="M3 21v-5h5" />
-        </svg>
-      ),
+      icon: <ResilientProcessingIcon />,
       title: "Resilient Processing",
       description:
         "Production AI requires systems that can recover gracefully from failures. We implement retry logic, queue-based processing, and recovery workflows that ensure temporary disruptions do not impact business operations or user experience.",
     },
     {
       id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="28"
-          height="28"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M3 3v18h18" />
-          <path d="M7 15l4-4 3 3 5-6" />
-        </svg>
-      ),
+      icon: <VisibilityControlIcon />,
       title: "Visibility & Control",
       description:
         "Without observability, AI systems can degrade silently over time. We provide monitoring, performance tracking, usage analytics, and alerting capabilities that help teams detect issues early and maintain consistent production performance.",
@@ -192,4 +151,3 @@ export const frontendEngineeringCTAData = {
   buttonText: "Build Your Healthcare Solution", // ⚠️ mismatch
   buttonLink: "/contact",
 };
-import { HeroArrowRightIcon } from "../../component/SvgIcon";
