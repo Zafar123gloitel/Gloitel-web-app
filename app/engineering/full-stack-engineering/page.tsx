@@ -1,7 +1,6 @@
 "use client";
 
 import Business from "../../(what-we-do)/components/Business";
-import { deliverablesData } from "../../(what-we-do)/components/data";
 import Strategy from "../../(what-we-do)/components/Strategy";
 import StrategyBadge from "../../../components/StrategyBadge";
 import { BgSquare2 } from "../../component/BgSquare";

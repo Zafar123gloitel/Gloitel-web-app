@@ -12,7 +12,7 @@ import {
   foundationDecisionData,
   maintenanceData,
   maintenanceSectionHead,
-} from "../data";
+} from "./data";
 
 import { BgSquare2 } from "../../../component/BgSquare";
 import StrategyBadge from "../../../../components/StrategyBadge";

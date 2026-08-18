@@ -17,7 +17,7 @@ import {
   researchMethodsSectionHead,
   uxResearchCTAData,
   uxResearchHeroData,
-} from "../data";
+} from "./data";
 import Business from "../../components/Business";
 import ArchitectureCircle from "../../../uiComponents/ArchitectureCircle";
 

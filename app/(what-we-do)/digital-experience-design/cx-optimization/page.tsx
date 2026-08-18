@@ -21,7 +21,7 @@ import {
   implementMonitorData,
   instrumentMeasureData,
   optimizationProcessSectionHead,
-} from "../data";
+} from "./data";
 import AI_Solutions from "../../../uiComponents/AI_Solutions";
 import Execution_Plan from "../../../uiComponents/Execution_Plan";
 
