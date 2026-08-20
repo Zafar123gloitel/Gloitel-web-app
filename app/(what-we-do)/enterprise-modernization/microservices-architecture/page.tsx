@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { InfoIcon } from "components/SvgIcon";
+import { InfoIcon } from 'components/SvgIcon';
 // import HeroSection from "../../components/HeroSection";
 import {
   buildingBlocksSectionHead,
@@ -15,20 +15,20 @@ import {
   techStackSectionHead,
   techStackData,
   microservicesCTAData,
-} from "./data";
+} from './data';
 // import Strategy from "../../components/Strategy";
-import { BgSquare2 } from "components/BgSquare";
-import StrategyBadge from "../../../../components/StrategyBadge";
-import { MiddleSectionHeads } from "components/SectionHeads";
+import { BgSquare2 } from 'components/BgSquare';
+import StrategyBadge from '../../../../components/StrategyBadge';
+import { MiddleSectionHeads } from 'components/SectionHeads';
 // import Discover from "../../components/Discover";
 // import Assess from "../../components/Assess";
-import ProblemCard from "../../../../components/ProblemCard";
-import AI_Solutions from "uiComponents/AI_Solutions";
-import Execution_Plan from "uiComponents/Execution_Plan";
-import HeroSection from "@/components/HeroSection";
-import Assess from "@/components/what-we-do/Assess";
-import Discover from "@/components/what-we-do/Discover";
-import Strategy from "@/components/what-we-do/Strategy";
+import ProblemCard from '../../../../components/ProblemCard';
+import AI_Solutions from 'uiComponents/AI_Solutions';
+import Execution_Plan from 'uiComponents/Execution_Plan';
+import HeroSection from '@/components/HeroSection';
+import Assess from '@/components/what-we-do/Assess';
+import Discover from '@/components/what-we-do/Discover';
+import Strategy from '@/components/what-we-do/Strategy';
 
 const page = () => {
   return (
@@ -38,12 +38,12 @@ const page = () => {
         <Strategy
           cardData={signalsData}
           SectionHead={signalsSectionHead.title}
-          SectionSubHead=""
+          SectionSubHead=''
           SectionDescription={signalsSectionHead.description}
           StrategyBadgeText={signalsSectionHead.badgeText}
         />
         <div
-          className="max-w-[75%] mx-auto md:-mt-5 lg:-mt-10 mt-5 sm:mt-0 mb-10 rounded-2xl flex items-center gap-3 border border-transparent p-3"
+          className='mx-auto mt-5 mb-10 flex max-w-[75%] items-center gap-3 rounded-2xl border border-transparent p-3 sm:mt-0 md:-mt-5 lg:-mt-10'
           style={{
             background: `
       linear-gradient(#080B18, #080B18) padding-box,
@@ -51,23 +51,20 @@ const page = () => {
     `,
           }}
         >
-          <span className="inline-flex h-12 min-w-12 items-center text-2xl bg-[#1447E633] justify-center rounded-full ">
-            <InfoIcon className="h-5 w-5 text-blue-400" />
+          <span className='inline-flex h-12 min-w-12 items-center justify-center rounded-full bg-[#1447E633] text-2xl'>
+            <InfoIcon className='h-5 w-5 text-blue-400' />
           </span>
-          <p className="text-[14px] text-title sm:text-[16px]">
-            If these aren&apos;t your problems, a well-modularized monolith may
-            serve you better.
+          <p className='text-title text-[14px] sm:text-[16px]'>
+            If these aren&apos;t your problems, a well-modularized monolith may serve you better.
           </p>
         </div>
       </section>
-      <section className="overflow-hidden py-20 lg:py-20">
-        <div className="flex flex-col items-center justify-center mx-auto min-h-[60vh] relative z-10">
+      <section className='overflow-hidden py-20 lg:py-20'>
+        <div className='relative z-10 mx-auto flex min-h-[60vh] flex-col items-center justify-center'>
           <BgSquare2 />
-          <div className="flex flex-col gap-6.5 -mt-44 w-full sm:w-1/2 lg:w-1/2 text-center">
+          <div className='-mt-44 flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
             <span>
-              <StrategyBadge
-                text={decompositionApproachSectionHead.badgeText}
-              />
+              <StrategyBadge text={decompositionApproachSectionHead.badgeText} />
             </span>
             <MiddleSectionHeads
               SectionHead={decompositionApproachSectionHead.title}
@@ -76,7 +73,7 @@ const page = () => {
           </div>
         </div>
 
-        <section className=" -mt-40 gap-6 md:w-[90%] mx-auto   ">
+        <section className='mx-auto -mt-40 gap-6 md:w-[90%]'>
           <Discover
             badgeText={domainDrivenDesignData.badgeText}
             title={domainDrivenDesignData.title}
@@ -108,10 +105,10 @@ const page = () => {
           />
         </section>
       </section>
-      <section className="overflow-hidden py-12 lg:py-20">
-        <div className="flex flex-col items-center justify-center mx-auto min-h-[60vh] relative z-10">
+      <section className='overflow-hidden py-12 lg:py-20'>
+        <div className='relative z-10 mx-auto flex min-h-[60vh] flex-col items-center justify-center'>
           <BgSquare2 />
-          <div className="flex flex-col gap-6.5 -mt-44 w-full sm:w-1/2 lg:w-1/2 text-center">
+          <div className='-mt-44 flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
             <span>
               <StrategyBadge text={buildingBlocksSectionHead.badgeText} />
             </span>
@@ -122,13 +119,13 @@ const page = () => {
           </div>
         </div>
 
-        <section className="grid grid-cols-1 -mt-20 gap-6 md:grid-cols-2 w-[80%] mx-auto">
+        <section className='mx-auto -mt-20 grid w-[80%] grid-cols-1 gap-6 md:grid-cols-2'>
           {buildingBlocksData.map((item, index) => (
             <ProblemCard key={index} title={item.title} />
           ))}
         </section>
       </section>
-      <section className="w-full">
+      <section className='w-full'>
         <AI_Solutions
           badge={techStackSectionHead.badgeText}
           title={techStackSectionHead.title}

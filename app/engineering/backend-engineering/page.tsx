@@ -1,26 +1,24 @@
-"use client";
+'use client';
 
-
-import { CardShowcase } from "../../../components";
-import StrategyBadge from "../../../components/StrategyBadge";
-import { BgSquare2 } from "components/BgSquare";
-import EngineeringHeroSection from "components/EngineeringHeroSection";
-import { MiddleSectionHeads } from "components/SectionHeads";
-import AI_Solutions from "uiComponents/AI_Solutions";
-import Execution_Plan from "uiComponents/Execution_Plan";
+import { CardShowcase } from '../../../components';
+import StrategyBadge from '../../../components/StrategyBadge';
+import { BgSquare2 } from 'components/BgSquare';
+import EngineeringHeroSection from 'components/EngineeringHeroSection';
+import { MiddleSectionHeads } from 'components/SectionHeads';
+import AI_Solutions from 'uiComponents/AI_Solutions';
+import Execution_Plan from 'uiComponents/Execution_Plan';
 import {
   backendAgentsData,
   backendAgentsSectionHead,
   backendEngineeringCTAData,
   backendEngineeringHeroData,
   backendTechStackData,
-} from "./data";
-
+} from './data';
 
 export default function Page() {
   return (
     <div>
-      {" "}
+      {' '}
       <EngineeringHeroSection
         badgeText={backendEngineeringHeroData.badgeText}
         title={backendEngineeringHeroData.title}
@@ -30,7 +28,7 @@ export default function Page() {
         primaryButton={backendEngineeringHeroData.primaryButton}
         secondaryButton={backendEngineeringHeroData.secondaryButton}
       />
-      <section className="w-full">
+      <section className='w-full'>
         <AI_Solutions
           badge={backendTechStackData.badge}
           title={backendTechStackData.title}
@@ -39,28 +37,28 @@ export default function Page() {
           technologies={backendTechStackData.technologies}
         />
       </section>
-      <div className="flex flex-col mt-24 items-center justify-center mx-auto min-h-[60vh] relative z-10">
+      <div className='relative z-10 mx-auto mt-24 flex min-h-[60vh] flex-col items-center justify-center'>
         <BgSquare2 />
-        <div className="flex flex-col -mt-10 w-full gap-6.5 sm:w-1/2 lg:w-1/2 text-center">
+        <div className='-mt-10 flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
           {/* Badge */}
           <span>
             <StrategyBadge text={backendAgentsSectionHead.badgeText} />
           </span>
           <MiddleSectionHeads
             SectionHead={backendAgentsSectionHead.title}
-            SectionSubHead=""
+            SectionSubHead=''
             SectionDescription={backendAgentsSectionHead.description}
           />
         </div>
-        <section className="p-5 sm:p-0  sm:max-w-[90%] -mt-5 mx-auto">
+        <section className='mx-auto -mt-5 p-5 sm:max-w-[90%] sm:p-0'>
           <CardShowcase
             items={backendAgentsData}
             showDivider={true}
             showStepBadge={false}
-            cardHeight="h-[411px] max-w-[411px] "
-            gridClassName="gap-y-6"
-            titleClassName=""
-            descriptionClassName=""
+            cardHeight='h-[411px] max-w-[411px] '
+            gridClassName='gap-y-6'
+            titleClassName=''
+            descriptionClassName=''
           />
         </section>
       </div>

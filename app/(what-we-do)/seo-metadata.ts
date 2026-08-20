@@ -1,6 +1,6 @@
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 
-const siteUrl = "https://www.gloitel.in";
+const siteUrl = 'https://www.gloitel.in';
 
 interface ServiceMetadataOptions {
   title: string;
@@ -40,13 +40,13 @@ export function createServiceMetadata({
       title: pageTitle,
       description,
       url: canonicalUrl,
-      siteName: "Gloitel",
-      type: "website",
-      locale: "en_IN",
+      siteName: 'Gloitel',
+      type: 'website',
+      locale: 'en_IN',
       images,
     },
     twitter: {
-      card: image ? "summary_large_image" : "summary",
+      card: image ? 'summary_large_image' : 'summary',
       title: pageTitle,
       description,
       images: image ? [image] : undefined,

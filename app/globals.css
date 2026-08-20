@@ -1,20 +1,14 @@
-@import "tailwindcss";
-
-
-
-
-
+@import 'tailwindcss';
 
 :root {
   --background: #000000;
   --foreground: #171717;
 }
 :root {
-  --framer-font-family: "DM Sans", "DM Sans Placeholder", sans-serif;
-  --framer-font-family-bold: "DM Sans", "DM Sans Placeholder", sans-serif;
-  --framer-font-family-bold-italic:
-    "DM Sans", "DM Sans Placeholder", sans-serif;
-  --framer-font-family-italic: "DM Sans", "DM Sans Placeholder", sans-serif;
+  --framer-font-family: 'DM Sans', 'DM Sans Placeholder', sans-serif;
+  --framer-font-family-bold: 'DM Sans', 'DM Sans Placeholder', sans-serif;
+  --framer-font-family-bold-italic: 'DM Sans', 'DM Sans Placeholder', sans-serif;
+  --framer-font-family-italic: 'DM Sans', 'DM Sans Placeholder', sans-serif;
 }
 html {
   scroll-behavior: smooth;
@@ -27,21 +21,16 @@ body {
   --surface-2: #0b0b0b;
   --surface-card: #080b18;
 
-  --card-glow: linear-gradient(
-    to left,
-    #372aac00 0%,
-    #372aac33 45%,
-    #1c398e66 100%
-  );
+  --card-glow: linear-gradient(to left, #372aac00 0%, #372aac33 45%, #1c398e66 100%);
 }
 
 /* Project color tokens requested by the user */
 :root {
-  --title-color: #FFFFFF; /* Title text color */
+  --title-color: #ffffff; /* Title text color */
   --description-color: #969696; /* Description / secondary text color */
-  --btn-primary: #1447E6; /* Primary button background */
-  --btn-secondary: #FFFFFF; /* Secondary button text / border color */
-  --btn-3: #FFFFFF1A; /* Accent / translucent button background (white @ ~10% opacity) */
+  --btn-primary: #1447e6; /* Primary button background */
+  --btn-secondary: #ffffff; /* Secondary button text / border color */
+  --btn-3: #ffffff1a; /* Accent / translucent button background (white @ ~10% opacity) */
 }
 
 /* Semantic text helpers */
@@ -88,7 +77,6 @@ body {
   border: 1px solid transparent;
 } */
 
-
 .bg-surface-1 {
   background-color: var(--surface-1);
 }
@@ -100,7 +88,6 @@ body {
 .bg-surface-card {
   background-color: var(--surface-card);
 }
-
 
 .bg-card-glow {
   background-image: var(--card-glow);
@@ -142,13 +129,7 @@ body {
   -webkit-mask-size: 100% 100%;
   -webkit-mask-repeat: no-repeat;
 
-  mask-image: linear-gradient(
-    to top,
-    transparent 0%,
-    transparent 5%,
-    black 10%,
-    black 100%
-  );
+  mask-image: linear-gradient(to top, transparent 0%, transparent 5%, black 10%, black 100%);
   mask-size: 100% 100%;
   mask-repeat: no-repeat;
 }
@@ -161,13 +142,7 @@ body {
     black 75%,
     transparent 100%
   );
-  mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 25%,
-    black 75%,
-    transparent 100%
-  );
+  mask-image: linear-gradient(to right, transparent 0%, black 25%, black 75%, transparent 100%);
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   -webkit-mask-size: 100% 100%;
@@ -238,7 +213,7 @@ body {
 
   &::before {
     --vibrance: 50%;
-    content: "";
+    content: '';
     position: absolute;
     inset: 400px 100px 2px;
     /* Blue glow using OKLCH hue around 250–260° */

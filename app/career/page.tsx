@@ -6,7 +6,7 @@ import {
   CareerHero,
   DiagnoseBeforeDeploy,
   ProductionReadyAi,
-} from "@/components/Career";
+} from '@/components/Career';
 
 const page = () => {
   return (

@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import StrategyBadge from "../../../../components/StrategyBadge";
-import ProblemCard from "../../../../components/ProblemCard";
-import { BgSquare2 } from "components/BgSquare";
-import { MiddleSectionHeads } from "components/SectionHeads";
-import { CardShowcase } from "../../../../components";
+import StrategyBadge from '../../../../components/StrategyBadge';
+import ProblemCard from '../../../../components/ProblemCard';
+import { BgSquare2 } from 'components/BgSquare';
+import { MiddleSectionHeads } from 'components/SectionHeads';
+import { CardShowcase } from '../../../../components';
 // import Discover from "../../components/Discover";
 // import Assess from "../../components/Assess";
 
@@ -12,9 +12,9 @@ import { CardShowcase } from "../../../../components";
 // import Strategy from "../../components/Strategy";
 // import TimeLine from "../../components/TimeLine";
 // import Asked_Q from "../../components/Asked_Q";
-import Execution_Plan from "uiComponents/Execution_Plan";
+import Execution_Plan from 'uiComponents/Execution_Plan';
 // import HeroSection from "../../components/HeroSection";
-import GlowPanel from "components/GlowPanel";
+import GlowPanel from 'components/GlowPanel';
 import {
   accordionData,
   assessData,
@@ -26,75 +26,75 @@ import {
   problems,
   RankData,
   showcaseItems,
-} from "./data";
-import HeroSection from "@/components/HeroSection";
-import Asked_Q from "@/components/what-we-do/Asked_Q";
-import Assess from "@/components/what-we-do/Assess";
-import Business from "@/components/what-we-do/Business";
-import Discover from "@/components/what-we-do/Discover";
-import Strategy from "@/components/what-we-do/Strategy";
-import TimeLine from "@/components/what-we-do/TimeLine";
+} from './data';
+import HeroSection from '@/components/HeroSection';
+import Asked_Q from '@/components/what-we-do/Asked_Q';
+import Assess from '@/components/what-we-do/Assess';
+import Business from '@/components/what-we-do/Business';
+import Discover from '@/components/what-we-do/Discover';
+import Strategy from '@/components/what-we-do/Strategy';
+import TimeLine from '@/components/what-we-do/TimeLine';
 
 export default function WhatWeDoPage() {
   return (
-    <div className="">
-      <div className="">
+    <div className=''>
+      <div className=''>
         <HeroSection {...heroSectionData} />
       </div>
-      <div className="overflow-hidden ">
-        <section className="my-14 lg:my-24 ">
-          <div className="flex flex-col  items-center justify-center mx-auto  relative z-10">
+      <div className='overflow-hidden'>
+        <section className='my-14 lg:my-24'>
+          <div className='relative z-10 mx-auto flex flex-col items-center justify-center'>
             <BgSquare2 />
-            <div className="flex flex-col gap-6.5  w-full lg:-mt-10 sm:w-1/2 lg:w-1/2 text-center">
+            <div className='flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:-mt-10 lg:w-1/2'>
               {/* Badge */}
               <span>
-                <StrategyBadge text="Who This Is For" />
+                <StrategyBadge text='Who This Is For' />
               </span>
               <MiddleSectionHeads
-                SectionHead="Built for Teams Ready to move beyond AI Experimentation"
-                SectionSubHead=""
-                SectionDescription="Designed for organizations that want to invest in AI strategically, align initiatives with business outcomes, and prioritize the right opportunities before committing resources."
-                headingTag="h2"
-                subHeadingTag="h3"
+                SectionHead='Built for Teams Ready to move beyond AI Experimentation'
+                SectionSubHead=''
+                SectionDescription='Designed for organizations that want to invest in AI strategically, align initiatives with business outcomes, and prioritize the right opportunities before committing resources.'
+                headingTag='h2'
+                subHeadingTag='h3'
               />
             </div>
           </div>
-          <section className="grid grid-cols-1 mt-5 gap-6 md:grid-cols-2 w-[80%] mx-auto ">
+          <section className='mx-auto mt-5 grid w-[80%] grid-cols-1 gap-6 md:grid-cols-2'>
             {problems.map((item, index) => (
               <ProblemCard key={index} title={item.title} />
             ))}
           </section>
         </section>
       </div>
-      <section className=" overflow-hidden">
-        <div className="flex flex-col items-center  mt-10 justify-center mx-auto min-h-[60vh] relative z-10">
+      <section className='overflow-hidden'>
+        <div className='relative z-10 mx-auto mt-10 flex min-h-[60vh] flex-col items-center justify-center'>
           <BgSquare2 />
-          <div className="flex flex-col gap-6.5  w-full sm:w-1/2 lg:w-1/2 text-center">
+          <div className='flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
             {/* Badge */}
             <span>
-              <StrategyBadge text="Our Approach" />
+              <StrategyBadge text='Our Approach' />
             </span>
             <MiddleSectionHeads
-              SectionHead="Diagnose Before You Deploy"
-              SectionDescription="We run a structured Discovery Sprint - a fixed-scope, 3–4 week engagement that maps your workflows, assesses feasibility, and delivers a prioritized AI roadmap."
-              headingTag="h2"
-              subHeadingTag="h3"
+              SectionHead='Diagnose Before You Deploy'
+              SectionDescription='We run a structured Discovery Sprint - a fixed-scope, 3–4 week engagement that maps your workflows, assesses feasibility, and delivers a prioritized AI roadmap.'
+              headingTag='h2'
+              subHeadingTag='h3'
             />
           </div>
-          <section className="w-full  sm:w-[90%] mt-20 mx-auto">
+          <section className='mx-auto mt-20 w-full sm:w-[90%]'>
             <CardShowcase
               showStepBadge
               showDivider={false}
               items={showcaseItems}
-              cardHeight="h-[230px]   max-w-[300px] "
-              gridClassName="gap-y-28"
-              titleClassName=""
-              descriptionClassName=""
+              cardHeight='h-[230px]   max-w-[300px] '
+              gridClassName='gap-y-28'
+              titleClassName=''
+              descriptionClassName=''
             />
           </section>
         </div>
       </section>
-      <div className="">
+      <div className=''>
         <Discover
           badgeText={discoverData.badgeText}
           title={discoverData.title}
@@ -129,44 +129,44 @@ export default function WhatWeDoPage() {
         />
       </div>
       <Business
-        badgeText="What You Walk Away With"
-        sectionHead="A Clear AI Roadmap backed by Business Value"
-        sectionSubHead=""
-        sectionDescription="Leave with a prioritized plan, validated opportunities, and a practical roadmap designed to deliver measurable business outcomes."
+        badgeText='What You Walk Away With'
+        sectionHead='A Clear AI Roadmap backed by Business Value'
+        sectionSubHead=''
+        sectionDescription='Leave with a prioritized plan, validated opportunities, and a practical roadmap designed to deliver measurable business outcomes.'
         data={outcomesData}
-        headingTag="h2"
-        subHeadingTag="h3"
+        headingTag='h2'
+        subHeadingTag='h3'
       />
       <GlowPanel />
       <Strategy
         cardData={notIncludedData}
-        SectionHead={"Strategy before Solutions"}
-        SectionSubHead={""}
+        SectionHead={'Strategy before Solutions'}
+        SectionSubHead={''}
         SectionDescription={
-          "Every recommendation is grounded in business impact and feasibility. We do not start with technology, products, or predetermined solutions."
+          'Every recommendation is grounded in business impact and feasibility. We do not start with technology, products, or predetermined solutions.'
         }
-        StrategyBadgeText={"What This Is Not"}
-        headingTag="h2"
-        subHeadingTag="h3"
+        StrategyBadgeText={'What This Is Not'}
+        headingTag='h2'
+        subHeadingTag='h3'
       />
-      <TimeLine headingTag="h2" subHeadingTag="h3" />
+      <TimeLine headingTag='h2' subHeadingTag='h3' />
       <Asked_Q
         accordionData={accordionData}
-        badgeText={"Everything You Need to Know"}
-        sectionHead={"Frequently Asked Questions"}
-        sectionSubHead=""
+        badgeText={'Everything You Need to Know'}
+        sectionHead={'Frequently Asked Questions'}
+        sectionSubHead=''
         sectionDescription={
-          "Answers to common questions about the Discovery Sprint, engagement process, timelines, and expected outcomes."
+          'Answers to common questions about the Discovery Sprint, engagement process, timelines, and expected outcomes.'
         }
-        headingTag="h2"
-        subHeadingTag="h3"
+        headingTag='h2'
+        subHeadingTag='h3'
       />
       <Execution_Plan
-        badgeText="Start with Strategy, Not Assumptions"
-        title="Turn AI Ambition into an Execution Plan"
-        description="Every successful AI initiative starts with the right decisions. We provide the structure, insight, and direction needed to make them."
-        buttonText="Start with a Discovery Call"
-        buttonLink="/"
+        badgeText='Start with Strategy, Not Assumptions'
+        title='Turn AI Ambition into an Execution Plan'
+        description='Every successful AI initiative starts with the right decisions. We provide the structure, insight, and direction needed to make them.'
+        buttonText='Start with a Discovery Call'
+        buttonLink='/'
         onclick={() => ({})}
       />
     </div>

@@ -1,11 +1,5 @@
-import React from "react";
-import {
-  Card,
-  CardDescription,
-  CardDivider,
-  CardIcon,
-  CardTitle,
-} from "@/components";
+import React from 'react';
+import { Card, CardDescription, CardDivider, CardIcon, CardTitle } from '@/components';
 
 interface PodCardProps {
   icon: React.ReactNode;
@@ -24,43 +18,39 @@ const PodCard: React.FC<PodCardProps> = ({
   teamSize,
   title,
   description,
-  compositionHeading = "Typical Composition",
+  compositionHeading = 'Typical Composition',
   composition,
-  className = "",
+  className = '',
 }) => {
   return (
     <Card className={className}>
       {/* Top row: icon + badge */}
-      <div className="flex items-center justify-between mb-6">
+      <div className='mb-6 flex items-center justify-between'>
         <CardIcon>{icon}</CardIcon>
-        <span className="rounded-md border border-[#36333366] text-xs font-semibold tracking-widest px-3 py-1.5 uppercase">
+        <span className='rounded-md border border-[#36333366] px-3 py-1.5 text-xs font-semibold tracking-widest uppercase'>
           {badgeText}
         </span>
       </div>
 
       {/* Team size */}
-      <p className="text-sm font-medium text-blue-400 tracking-wide mb-2">
-        {teamSize}
-      </p>
+      <p className='mb-2 text-sm font-medium tracking-wide text-blue-400'>{teamSize}</p>
 
       {/* Title */}
-      <CardTitle className="mb-3">{title}</CardTitle>
+      <CardTitle className='mb-3'>{title}</CardTitle>
 
       {/* Description */}
-      <CardDescription className="mb-6 text-description">
-        {description}
-      </CardDescription>
+      <CardDescription className='text-description mb-6'>{description}</CardDescription>
 
-      <CardDivider className="mb-6" />
+      <CardDivider className='mb-6' />
 
       {/* Composition */}
-      <p className=" text-base font-medium mb-4">{compositionHeading}</p>
+      <p className='mb-4 text-base font-medium'>{compositionHeading}</p>
 
-      <ul className="flex flex-col gap-3">
+      <ul className='flex flex-col gap-3'>
         {composition.map((item, index) => (
-          <li key={index} className="flex items-center gap-3">
-            <span className="h-1.5 w-1.5 rounded-full bg-blue-500 shrink-0" />
-            <span className="text-description text-sm">{item}</span>
+          <li key={index} className='flex items-center gap-3'>
+            <span className='h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500' />
+            <span className='text-description text-sm'>{item}</span>
           </li>
         ))}
       </ul>

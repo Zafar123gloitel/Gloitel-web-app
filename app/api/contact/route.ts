@@ -1,5 +1,5 @@
-import FormData from "form-data";
-import Mailgun from "mailgun.js";
+import FormData from 'form-data';
+import Mailgun from 'mailgun.js';
 
 export async function POST(request: Request) {
   try {
@@ -8,45 +8,34 @@ export async function POST(request: Request) {
     const { firstName, lastName, email, country, companyType, message } = body;
 
     // Validate required fields
-    if (
-      !firstName ||
-      !lastName ||
-      !email ||
-      !country ||
-      !companyType ||
-      !message
-    ) {
+    if (!firstName || !lastName || !email || !country || !companyType || !message) {
       return new Response(
         JSON.stringify({
           success: false,
-          message: "All fields are required",
+          message: 'All fields are required',
         }),
         {
           status: 400,
           headers: {
-            "Content-Type": "application/json",
+            'Content-Type': 'application/json',
           },
         },
       );
     }
 
     // Validate env vars
-    if (
-      !process.env.MAILGUN_API_KEY ||
-      !process.env.MAILGUN_DOMAIN ||
-      !process.env.EMAIL_FORWARD
-    ) {
-      console.error("Mailgun environment variables missing");
+    if (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN || !process.env.EMAIL_FORWARD) {
+      console.error('Mailgun environment variables missing');
 
       return new Response(
         JSON.stringify({
           success: false,
-          message: "Email service is not configured",
+          message: 'Email service is not configured',
         }),
         {
           status: 500,
           headers: {
-            "Content-Type": "application/json",
+            'Content-Type': 'application/json',
           },
         },
       );
@@ -56,7 +45,7 @@ export async function POST(request: Request) {
     const mailgun = new Mailgun(FormData);
 
     const mg = mailgun.client({
-      username: "api",
+      username: 'api',
       key: process.env.MAILGUN_API_KEY,
     });
 
@@ -79,33 +68,33 @@ Message:
 ${message}
       `,
 
-      "h:Reply-To": email,
+      'h:Reply-To': email,
     });
 
     return new Response(
       JSON.stringify({
         success: true,
-        message: "Email sent successfully",
+        message: 'Email sent successfully',
       }),
       {
         status: 200,
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
       },
     );
   } catch (error: any) {
-    console.error("MAILGUN ERROR:", error);
+    console.error('MAILGUN ERROR:', error);
 
     return new Response(
       JSON.stringify({
         success: false,
-        message: error?.message || "Failed to send email",
+        message: error?.message || 'Failed to send email',
       }),
       {
         status: 500,
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
       },
     );

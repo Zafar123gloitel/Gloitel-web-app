@@ -88,7 +88,7 @@ export default [
 
     settings: {
       'import/resolver': { typescript: true, node: true },
-      'react': { version: 'detect' },
+      react: { version: 'detect' },
     },
 
     plugins: {
@@ -97,8 +97,8 @@ export default [
 
     rules: {
       'prettier/prettier': ['error', { endOfLine: 'auto' }],
-      'complexity': ['warn', { max: 320 }],
-      'semi': ['error', 'always'],
+      complexity: ['warn', { max: 320 }],
+      semi: ['error', 'always'],
       'no-duplicate-imports': 'error',
       'no-console': 'error',
       'no-debugger': 'error',
@@ -119,6 +119,7 @@ export default [
       'array-bracket-spacing': 'warn',
       'object-curly-spacing': ['warn', 'always'],
       'react/react-in-jsx-scope': 'off',
+      'react/prop-types': 'off',
     },
   },
 ];

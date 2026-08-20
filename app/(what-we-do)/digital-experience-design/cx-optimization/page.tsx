@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
 // import HeroSection from "../../components/HeroSection";
-import { BgSquare2 } from "components/BgSquare";
-import StrategyBadge from "../../../../components/StrategyBadge";
-import { MiddleSectionHeads } from "components/SectionHeads";
-import { CardShowcase } from "../../../../components";
+import { BgSquare2 } from 'components/BgSquare';
+import StrategyBadge from '../../../../components/StrategyBadge';
+import { MiddleSectionHeads } from 'components/SectionHeads';
+import { CardShowcase } from '../../../../components';
 // import Discover from "../../components/Discover";
 // import Assess from "../../components/Assess";
 
@@ -20,48 +20,48 @@ import {
   implementMonitorData,
   instrumentMeasureData,
   optimizationProcessSectionHead,
-} from "./data";
-import AI_Solutions from "uiComponents/AI_Solutions";
-import Execution_Plan from "uiComponents/Execution_Plan";
-import HeroSection from "@/components/HeroSection";
-import Assess from "@/components/what-we-do/Assess";
-import Discover from "@/components/what-we-do/Discover";
+} from './data';
+import AI_Solutions from 'uiComponents/AI_Solutions';
+import Execution_Plan from 'uiComponents/Execution_Plan';
+import HeroSection from '@/components/HeroSection';
+import Assess from '@/components/what-we-do/Assess';
+import Discover from '@/components/what-we-do/Discover';
 
 const page = () => {
   return (
     <div>
       <HeroSection {...cxOptimizationHeroData} />
       <section>
-        <div className="flex flex-col items-center mt-20 justify-center mx-auto min-h-[60vh] relative z-10">
+        <div className='relative z-10 mx-auto mt-20 flex min-h-[60vh] flex-col items-center justify-center'>
           <BgSquare2 />
-          <div className="flex flex-col gap-6.5 -mt-10 w-full sm:w-1/2 lg:w-1/2 text-center">
+          <div className='-mt-10 flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
             {/* Badge */}
             <span>
               <StrategyBadge text={cxCoversSectionHead.badgeText} />
             </span>
             <MiddleSectionHeads
               SectionHead={cxCoversSectionHead.title}
-              SectionSubHead=""
+              SectionSubHead=''
               SectionDescription={cxCoversSectionHead.description}
             />
           </div>
-          <section className=" w-full sm:w-[90%] mt-5 px-6 sm:px-0  mx-auto ">
+          <section className='mx-auto mt-5 w-full px-6 sm:w-[90%] sm:px-0'>
             <CardShowcase
               items={cxCoversData}
               showDivider={true}
               showStepBadge={false}
-              cardClassName="h-[411px] max-w-[350px] gap-y-6 "
-              gridClassName="h-full"
-              titleClassName=""
-              descriptionClassName=""
+              cardClassName='h-[411px] max-w-[350px] gap-y-6 '
+              gridClassName='h-full'
+              titleClassName=''
+              descriptionClassName=''
             />
           </section>
         </div>
       </section>
-      <section className="overflow-hidden py-20 lg:py-20">
-        <div className="flex flex-col items-center justify-center mx-auto min-h-[60vh] relative z-10">
+      <section className='overflow-hidden py-20 lg:py-20'>
+        <div className='relative z-10 mx-auto flex min-h-[60vh] flex-col items-center justify-center'>
           <BgSquare2 />
-          <div className="flex flex-col gap-6.5 -mt-44 w-full sm:w-1/2 lg:w-1/2 text-center">
+          <div className='-mt-44 flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
             <span>
               <StrategyBadge text={optimizationProcessSectionHead.badgeText} />
             </span>
@@ -72,7 +72,7 @@ const page = () => {
           </div>
         </div>
 
-        <section className=" md:w-[90%]  -mt-40 gap-6  mx-auto ">
+        <section className='mx-auto -mt-40 gap-6 md:w-[90%]'>
           <Discover
             badgeText={instrumentMeasureData.badgeText}
             title={instrumentMeasureData.title}
@@ -122,7 +122,7 @@ const page = () => {
           />
         </section>
       </section>
-      <section className="w-full">
+      <section className='w-full'>
         <AI_Solutions
           badge={cxToolsData.badge}
           title={cxToolsData.title}

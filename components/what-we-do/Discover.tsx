@@ -1,10 +1,10 @@
-import Image from "next/image";
+import Image from 'next/image';
 // import StrategyBadge from "../../../components/StrategyBadge";
 // import ProblemCard from "../../../components/ProblemCard";
-import { WhiteButton } from "components/Button";
-import { ArrowRightIcon } from "components/SvgIcon";
-import ProblemCard from "../ProblemCard";
-import StrategyBadge from "../StrategyBadge";
+import { WhiteButton } from 'components/Button';
+import { ArrowRightIcon } from 'components/SvgIcon';
+import ProblemCard from '../ProblemCard';
+import StrategyBadge from '../StrategyBadge';
 
 interface DiscoverProps {
   badgeText: string;
@@ -27,31 +27,29 @@ const Discover = ({
   buttonText,
   buttonLink,
   image,
-  imageAlt = "Section Image",
+  imageAlt = 'Section Image',
 }: DiscoverProps) => {
   return (
-    <section className="discover-section mt-16  md:mt-24.25 overflow-hidden m-auto flex max-w-8xl xl:mx-20 flex-col justify-between gap-33.25 px-6 py-10 sm:px-10 lg:flex-row lg:px-14 lg:py-14">
+    <section className='discover-section max-w-8xl m-auto mt-16 flex flex-col justify-between gap-33.25 overflow-hidden px-6 py-10 sm:px-10 md:mt-24.25 lg:flex-row lg:px-14 lg:py-14 xl:mx-20'>
       {/* Left Content */}
-      <div className="discover-text flex-1">
-        <span className="mb-6 block">
+      <div className='discover-text flex-1'>
+        <span className='mb-6 block'>
           <StrategyBadge text={badgeText} />
         </span>
 
-        <span className="flex gap-5">
-          <h2 className="mb-6 text-5xl sm:text-[48px] text-title ">{title}</h2>
+        <span className='flex gap-5'>
+          <h2 className='text-title mb-6 text-5xl sm:text-[48px]'>{title}</h2>
           {subtitle && (
-            <h3 className="mb-6 text-4xl sm:text-[35px] text-description">
-              {subtitle}
-            </h3>
+            <h3 className='text-description mb-6 text-4xl sm:text-[35px]'>{subtitle}</h3>
           )}
         </span>
 
-        <p className=" leading-4 sm:leading-8 text-md sm:text-[20px] text-description">
+        <p className='text-md text-description leading-4 sm:text-[20px] sm:leading-8'>
           {description}
         </p>
 
         {cardTitle && (
-          <div className="mt-10  inline-block">
+          <div className='mt-10 inline-block'>
             <ProblemCard title={cardTitle} />
           </div>
         )}
@@ -60,24 +58,24 @@ const Discover = ({
             buttonText={buttonText}
             buttonLink={buttonLink}
             icon={<ArrowRightIcon size={20} />}
-            className="mt-4"
+            className='mt-4'
           />
         )}
       </div>
 
       {/* Right Image */}
-      <div className="flex-1 lg:max-w-[50%]">
-        <div className="relative aspect-[4/3] overflow-hidden rounded-[1.4rem] shadow-[0_0_60px_rgba(255,255,255,0.25)]">
+      <div className='flex-1 lg:max-w-[50%]'>
+        <div className='relative aspect-[4/3] overflow-hidden rounded-[1.4rem] shadow-[0_0_60px_rgba(255,255,255,0.25)]'>
           <Image
             src={image}
             alt={imageAlt}
             width={455}
             height={445}
-            className="h-full w-full rounded-[24px] object-contain "
+            className='h-full w-full rounded-[24px] object-contain'
             unoptimized
-            loading="lazy"
+            loading='lazy'
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
+          <div className='absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent' />
         </div>
       </div>
     </section>

@@ -3,7 +3,7 @@
 // import { GlowButton } from "./Button";
 // import { HorizontalDivider, VerticalDivider } from "./SectionDivider";
 // import Image from "next/image";
-"use client";
+'use client';
 // import { aiEngagementSectionHead, aiPilotData, discoverySprintData } from "../(what-we-do)/ai-intelligent-systems/data";
 // import Assess from "../(what-we-do)/components/Assess";
 // import { CardShowcase } from "../../components";
@@ -12,14 +12,14 @@
 // import Discover from "../(what-we-do)/components/Discover";
 // import PurposeCard from "../(what-we-do)/components/PurposeCard";
 // import StrategyBadge from "../../components/StrategyBadge";
-import { BgSquare2 } from "@/components/BgSquare";
-import GlowPanel from "@/components/GlowPanel";
-import { MiddleSectionHeads } from "@/components/SectionHeads";
-import { CardShowcase } from "@/components";
+import { BgSquare2 } from '@/components/BgSquare';
+import GlowPanel from '@/components/GlowPanel';
+import { MiddleSectionHeads } from '@/components/SectionHeads';
+import { CardShowcase } from '@/components';
 // import { businessAnalysisProcessData, businessAnalysisProcessSectionHead } from "@/app/engineering/business-analysis/data";
-import { useRef } from "react";
-import AI_Solutions from "@/uiComponents/AI_Solutions";
-import Execution_Plan from "@/uiComponents/Execution_Plan";
+import { useRef } from 'react';
+import AI_Solutions from '@/uiComponents/AI_Solutions';
+import Execution_Plan from '@/uiComponents/Execution_Plan';
 // import { TestimonialButton } from "../../components/atoms/button/Button";
 // import IconCard from "../../components/card-showcase/IconCard";
 import {
@@ -46,16 +46,16 @@ import {
   useCaseDefinitionData,
   whoThisIsForSectionHead,
   whoThisIsForTimelineData,
-} from "@/app/about/data";
-import GalleryScroll from "@/components/GalleryScroll";
-import HelpCard from "@/components/HelpCard";
-import TestimonialCard from "@/components/TestimonialCard";
-import Assess from "@/components/what-we-do/Assess";
-import Discover from "@/components/what-we-do/Discover";
-import PurposeCard from "@/components/what-we-do/PurposeCard";
-import StrategyBadge from "@/components/StrategyBadge";
-import { TestimonialButton } from "@/components/atoms/button/Button";
-import IconCard from "@/components/card-showcase/IconCard";
+} from '@/app/about/data';
+import GalleryScroll from '@/components/GalleryScroll';
+import HelpCard from '@/components/HelpCard';
+import TestimonialCard from '@/components/TestimonialCard';
+import Assess from '@/components/what-we-do/Assess';
+import Discover from '@/components/what-we-do/Discover';
+import PurposeCard from '@/components/what-we-do/PurposeCard';
+import StrategyBadge from '@/components/StrategyBadge';
+import { TestimonialButton } from '@/components/atoms/button/Button';
+import IconCard from '@/components/card-showcase/IconCard';
 
 // // FOR HOME PAGE
 // export const HomeAboutContent = ({
@@ -324,7 +324,7 @@ import IconCard from "@/components/card-showcase/IconCard";
 --------------------------------------------------------- */
 export const WhoWeAre = () => {
   return (
-    <section id="who-we-are" className="">
+    <section id='who-we-are' className=''>
       <GlowPanel />
       <Assess
         badgeText={aiSystemsSectionHead.badgeText}
@@ -338,12 +338,12 @@ export const WhoWeAre = () => {
         items={aiSystemsData}
         showDivider={false}
         showStepBadge={false}
-        gridClassName={""}
-        cardClassName={""}
-        cardHeight={"h-[263px] w-[302px]"}
-        titleClassName=""
-        descriptionClassName=""
-        iconClassName={""}
+        gridClassName={''}
+        cardClassName={''}
+        cardHeight={'h-[263px] w-[302px]'}
+        titleClassName=''
+        descriptionClassName=''
+        iconClassName={''}
       />
     </section>
   );
@@ -354,30 +354,26 @@ export const WhoWeAre = () => {
 --------------------------------------------------------- */
 export const OurJourney = () => {
   return (
-    <section id="our-journey" className="">
-      <div className="flex flex-col items-center justify-center mx-auto min-h-[60vh] relative z-10">
+    <section id='our-journey' className=''>
+      <div className='relative z-10 mx-auto flex min-h-[60vh] flex-col items-center justify-center'>
         <BgSquare2 />
-        <div className="flex flex-col w-full gap-6.5 -mt-40 sm:w-1/2 lg:w-1/2 text-center">
+        <div className='-mt-40 flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
           <span>
             <StrategyBadge text={whoThisIsForSectionHead.badgeText} />
           </span>
           <MiddleSectionHeads
             SectionHead={whoThisIsForSectionHead.title}
-            SectionSubHead=""
+            SectionSubHead=''
             SectionDescription={whoThisIsForSectionHead.description}
           />
         </div>
       </div>
-      <div className="sm:w-[80%] -mt-10 mx-auto">
-        <div className="relative px-5">
-          <div className="absolute left-10 sm:left-1/2 top-20 bottom-20 z-0 w-[0.5px] -translate-x-1/2 bg-white/50" />
-          <div className="relative flex flex-col">
+      <div className='mx-auto -mt-10 sm:w-[80%]'>
+        <div className='relative px-5'>
+          <div className='absolute top-20 bottom-20 left-10 z-0 w-[0.5px] -translate-x-1/2 bg-white/50 sm:left-1/2' />
+          <div className='relative flex flex-col'>
             {whoThisIsForTimelineData.map((item, index) => (
-              <TimelineCard
-                key={index}
-                item={item}
-                side={index % 2 === 0 ? "left" : "right"}
-              />
+              <TimelineCard key={index} item={item} side={index % 2 === 0 ? 'left' : 'right'} />
             ))}
           </div>
         </div>
@@ -388,11 +384,11 @@ export const OurJourney = () => {
 
 export const OurProcess = () => {
   return (
-    <section id="our-process" className="">
-      <div className="">
-        <div className="flex flex-col mt-20 items-center justify-center mx-auto min-h-[60vh] relative z-10">
+    <section id='our-process' className=''>
+      <div className=''>
+        <div className='relative z-10 mx-auto mt-20 flex min-h-[60vh] flex-col items-center justify-center'>
           <BgSquare2 />
-          <div className="flex flex-col gap-6.5  w-full sm:w-1/2 lg:w-1/2 text-center">
+          <div className='flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
             <span>
               <StrategyBadge text={aiBuildProcessSectionHead.badgeText} />
             </span>
@@ -426,31 +422,31 @@ export const OurProcess = () => {
 
 export const OurServices = () => {
   return (
-    <section id="our-services" className="">
-      <div className="flex flex-col items-center justify-center mx-auto min-h-[60vh] relative z-10">
+    <section id='our-services' className=''>
+      <div className='relative z-10 mx-auto flex min-h-[60vh] flex-col items-center justify-center'>
         <BgSquare2 />
-        <div className="flex flex-col w-full gap-6.5 -mt-40 sm:w-1/2 lg:w-1/2 text-center">
+        <div className='-mt-40 flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
           <span>
             <StrategyBadge text={scalingSolutionsHead.badgeText} />
           </span>
           <MiddleSectionHeads
             SectionHead={scalingSolutionsHead.title}
-            SectionSubHead=""
+            SectionSubHead=''
             sectionIocn={scalingSolutionsHead.icon}
             SectionDescription={scalingSolutionsHead.description}
           />
         </div>
       </div>
 
-      <div className="sm:w-[80%] -mt-10 mx-auto">
-        <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 p-5 ">
-          {scalingSolutions.map((item) => (
+      <div className='mx-auto -mt-10 sm:w-[80%]'>
+        <div className='grid grid-cols-1 gap-4 p-5 xl:grid-cols-2'>
+          {scalingSolutions.map(item => (
             <PurposeCard
               key={item.id}
               icon={item.icon}
               title={item.title}
               description={item.description}
-              className=""
+              className=''
             />
           ))}
         </div>
@@ -461,7 +457,7 @@ export const OurServices = () => {
 
 export const OurTeam = () => {
   return (
-    <section id="our-team" className="">
+    <section id='our-team' className=''>
       <HelpCard
         badgeText={teamCardsSectionHead.badgeText}
         title={teamCardsSectionHead.title}
@@ -476,26 +472,26 @@ export const OurTeam = () => {
 export const OurCulture = () => {
   return (
     <section
-      id="our-culture"
-      className="relative flex flex-col items-center px-4 sm:px-6 lg:px-8 py-12 lg:py-20 overflow-hidden"
+      id='our-culture'
+      className='relative flex flex-col items-center overflow-hidden px-4 py-12 sm:px-6 lg:px-8 lg:py-20'
     >
       <BgSquare2 />
 
       {/* Section Heading */}
-      <div className=" flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2">
+      <div className='flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
         <span>
-          <StrategyBadge text={"How we Help you Scale"} />
+          <StrategyBadge text={'How we Help you Scale'} />
         </span>
 
         <MiddleSectionHeads
-          SectionHead={"Engineering for the Next Stage of Growth"}
+          SectionHead={'Engineering for the Next Stage of Growth'}
           SectionDescription={
-            "From infrastructure and databases to engineering processes, we focus on the areas that matter most for sustainable scale."
+            'From infrastructure and databases to engineering processes, we focus on the areas that matter most for sustainable scale.'
           }
         />
       </div>
 
-      <div className="overflow-x-auto scrollbar-hide mt-12 w-full">
+      <div className='scrollbar-hide mt-12 w-full overflow-x-auto'>
         <GalleryScroll />
       </div>
     </section>
@@ -504,10 +500,10 @@ export const OurCulture = () => {
 
 export const OptimizationProcess = () => {
   return (
-    <section id="optimization-process" className="">
-      <div className="flex flex-col items-center justify-center mx-auto min-h-[60vh] relative z-10">
+    <section id='optimization-process' className=''>
+      <div className='relative z-10 mx-auto flex min-h-[60vh] flex-col items-center justify-center'>
         <BgSquare2 />
-        <div className="flex flex-col gap-6.5 -mt-44 w-full sm:w-1/2 lg:w-1/2 text-center">
+        <div className='-mt-44 flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
           <span>
             <StrategyBadge text={optimizationProcessSectionHead.badgeText} />
           </span>
@@ -518,7 +514,7 @@ export const OptimizationProcess = () => {
         </div>
       </div>
 
-      <div className="sm:w-[95%]  mx-auto flex flex-col gap-16 px-5">
+      <div className='mx-auto flex flex-col gap-16 px-5 sm:w-[95%]'>
         <Discover
           badgeText={instrumentMeasureData.badgeText}
           title={instrumentMeasureData.title}
@@ -569,24 +565,24 @@ export const OptimizationProcess = () => {
 --------------------------------------------------------- */
 export const IndustriesWeServe = () => {
   return (
-    <section id="industries-we-serve">
-      <section className="my-20">
-        <div className="flex flex-col items-center justify-center mx-auto min-h-[60vh] relative z-10">
+    <section id='industries-we-serve'>
+      <section className='my-20'>
+        <div className='relative z-10 mx-auto flex min-h-[60vh] flex-col items-center justify-center'>
           <BgSquare2 />
-          <div className="flex flex-col gap-6.5 -mt-10 w-full mb-52 sm:w-1/2 lg:w-1/2 text-center">
+          <div className='-mt-10 mb-52 flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
             {/* Badge */}
             <span>
               <StrategyBadge text={industriesWeServeSectionHead.badgeText} />
             </span>
             <MiddleSectionHeads
               SectionHead={industriesWeServeSectionHead.title}
-              SectionSubHead=" "
+              SectionSubHead=' '
               SectionDescription={industriesWeServeSectionHead.description}
             />
           </div>
         </div>
 
-        <div className="flex flex-wrap -mt-20 gap-6 justify-center">
+        <div className='-mt-20 flex flex-wrap justify-center gap-6'>
           {industriesWeServeData.map((item, index) => (
             <IconCard
               key={index}
@@ -604,7 +600,7 @@ export const IndustriesWeServe = () => {
 
 export const TechnologyEcosystem = () => {
   return (
-    <section id="technology-ecosystem">
+    <section id='technology-ecosystem'>
       <AI_Solutions
         badge={aiEcosystemData.badge}
         title={aiEcosystemData.title}
@@ -619,8 +615,8 @@ export const TechnologyEcosystem = () => {
 export const ClientTestimonials = () => {
   const testimonialsRef = useRef(null);
 
-  const scrollTestimonials = (direction) => {
-    console.log("first");
+  const scrollTestimonials = direction => {
+    console.log('first');
     if (!testimonialsRef.current) return;
 
     const container = testimonialsRef.current;
@@ -638,65 +634,65 @@ export const ClientTestimonials = () => {
 
     container.scrollTo({
       left:
-        direction === "right"
+        direction === 'right'
           ? container.scrollLeft + scrollAmount
           : container.scrollLeft - scrollAmount,
-      behavior: "smooth",
+      behavior: 'smooth',
     });
   };
 
   return (
     <section
-      id="client-testimonials"
-      className="flex min-h-screen items-center justify-center bg-black px-5 py-20"
+      id='client-testimonials'
+      className='flex min-h-screen items-center justify-center bg-black px-5 py-20'
     >
-      <section className="my-20 w-full">
+      <section className='my-20 w-full'>
         {/* Section Heading */}
-        <div className="relative z-10 mx-auto flex min-h-[60vh] flex-col items-center justify-center">
+        <div className='relative z-10 mx-auto flex min-h-[60vh] flex-col items-center justify-center'>
           <BgSquare2 />
 
-          <div className="-mt-10 mb-52 flex w-full flex-col items-center justify-center gap-6.5 text-center sm:w-1/2 lg:w-1/2">
+          <div className='-mt-10 mb-52 flex w-full flex-col items-center justify-center gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
             <span>
               <StrategyBadge text={clientTestimonialsSectionHead.badgeText} />
             </span>
 
             <MiddleSectionHeads
               SectionHead={clientTestimonialsSectionHead.title}
-              SectionSubHead=""
+              SectionSubHead=''
               SectionDescription={clientTestimonialsSectionHead.description}
             />
           </div>
         </div>
 
         {/* Testimonials */}
-        <div className="relative z-10 -mt-20">
+        <div className='relative z-10 -mt-20'>
           {/* Navigation Buttons */}
-          <div className="mb-8 flex justify-end gap-4 px-5 sm:px-10 lg:px-20 ">
+          <div className='mb-8 flex justify-end gap-4 px-5 sm:px-10 lg:px-20'>
             <TestimonialButton
-              className="h-12 min-w-12"
-              ariaLabel="Previous testimonials"
-              onClick={() => scrollTestimonials("left")}
+              className='h-12 min-w-12'
+              ariaLabel='Previous testimonials'
+              onClick={() => scrollTestimonials('left')}
             />
 
             <TestimonialButton
-              className="h-12 min-w-12"
-              direction="right"
-              ariaLabel="Next testimonials"
-              onClick={() => scrollTestimonials("right")}
+              className='h-12 min-w-12'
+              direction='right'
+              ariaLabel='Next testimonials'
+              onClick={() => scrollTestimonials('right')}
             />
           </div>
 
           {/* Cards Container */}
           <div
             ref={testimonialsRef}
-            className="flex gap-5 overflow-x-auto w-[90%] mx-auto "
+            className='mx-auto flex w-[90%] gap-5 overflow-x-auto'
             style={{
-              scrollbarWidth: "none",
-              msOverflowStyle: "none",
+              scrollbarWidth: 'none',
+              msOverflowStyle: 'none',
             }}
           >
             {clientTestimonialsData.map((testimonial, index) => (
-              <div key={`${testimonial.name}-${index}`} className="  shrink-0 ">
+              <div key={`${testimonial.name}-${index}`} className='shrink-0'>
                 <TestimonialCard
                   name={testimonial.name}
                   designation={testimonial.designation}
@@ -713,7 +709,7 @@ export const ClientTestimonials = () => {
 
 export const ExecutionPlanCTA = () => {
   return (
-    <section id="execution-plan">
+    <section id='execution-plan'>
       <Execution_Plan
         badgeText={executionPlanSectionHead.badgeText}
         title={executionPlanSectionHead.title}

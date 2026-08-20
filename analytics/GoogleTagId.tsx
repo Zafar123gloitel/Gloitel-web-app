@@ -1,12 +1,12 @@
-import Script from "next/script";
-import React from "react";
+import Script from 'next/script';
+import React from 'react';
 
-const GoogleTagId = ({ GTAG }: { GTAG: String }) => {
+const GoogleTagId = ({ GTAG }: { GTAG: string }) => {
   return (
     <>
       <Script
-        id="gtm-script"
-        strategy="afterInteractive"
+        id='gtm-script'
+        strategy='afterInteractive'
         dangerouslySetInnerHTML={{
           __html: `
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -20,9 +20,9 @@ const GoogleTagId = ({ GTAG }: { GTAG: String }) => {
       <noscript>
         <iframe
           src={`https://www.googletagmanager.com/ns.html?id=${GTAG}`}
-          height="0"
-          width="0"
-          style={{ display: "none", visibility: "hidden" }}
+          height='0'
+          width='0'
+          style={{ display: 'none', visibility: 'hidden' }}
         ></iframe>
       </noscript>
     </>

@@ -1,19 +1,19 @@
-"use client";
+'use client';
 
 // import HeroSection from "../../components/HeroSection";
 
-import { MiddleSectionHeads } from "components/SectionHeads";
-import StrategyBadge from "../../../../components/StrategyBadge";
-import { BgSquare2 } from "components/BgSquare";
-import { CardShowcase } from "../../../../components";
+import { MiddleSectionHeads } from 'components/SectionHeads';
+import StrategyBadge from '../../../../components/StrategyBadge';
+import { BgSquare2 } from 'components/BgSquare';
+import { CardShowcase } from '../../../../components';
 // import Discover from "../../components/Discover";
 // import Assess from "../../components/Assess";
 
 // import Strategy from "../../components/Strategy";
-import GlowPanel from "components/GlowPanel";
-import ImageCard from "components/ImageCard";
-import AI_Solutions from "uiComponents/AI_Solutions";
-import Execution_Plan from "uiComponents/Execution_Plan";
+import GlowPanel from 'components/GlowPanel';
+import ImageCard from 'components/ImageCard';
+import AI_Solutions from 'uiComponents/AI_Solutions';
+import Execution_Plan from 'uiComponents/Execution_Plan';
 import {
   aiServicesData,
   aiSolutionsData,
@@ -25,58 +25,58 @@ import {
   executionStepTwo,
   heroSectionDataGenerative,
   Real_World,
-} from "./data";
-import { ArrowRightIcon } from "components/SvgIcon";
-import HeroSection from "@/components/HeroSection";
-import Assess from "@/components/what-we-do/Assess";
-import Discover from "@/components/what-we-do/Discover";
-import Strategy from "@/components/what-we-do/Strategy";
+} from './data';
+import { ArrowRightIcon } from 'components/SvgIcon';
+import HeroSection from '@/components/HeroSection';
+import Assess from '@/components/what-we-do/Assess';
+import Discover from '@/components/what-we-do/Discover';
+import Strategy from '@/components/what-we-do/Strategy';
 
 const page = () => {
   return (
-    <div className="overflow-hidden mt-10">
+    <div className='mt-10 overflow-hidden'>
       <HeroSection {...heroSectionDataGenerative} />
-      <div className="flex flex-col items-center justify-center mx-auto min-h-[60vh] relative z-10">
+      <div className='relative z-10 mx-auto flex min-h-[60vh] flex-col items-center justify-center'>
         <BgSquare2 />
-        <div className="flex flex-col -mt-10 w-full gap-6.5 sm:w-1/2 lg:w-1/2 text-center">
+        <div className='-mt-10 flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
           {/* Badge */}
           <span>
-            <StrategyBadge text="What We Build" />
+            <StrategyBadge text='What We Build' />
           </span>
           <MiddleSectionHeads
-            SectionHead="AI Systems Built for Real Business Workflows."
-            SectionSubHead=""
-            SectionDescription="We design and build production-ready generative AI solutions - from intelligent assistants and document processing systems to RAG platforms, workflow automation, and private LLM deployments."
+            SectionHead='AI Systems Built for Real Business Workflows.'
+            SectionSubHead=''
+            SectionDescription='We design and build production-ready generative AI solutions - from intelligent assistants and document processing systems to RAG platforms, workflow automation, and private LLM deployments.'
           />
         </div>
-        <section className="p-5 sm:p-0  sm:max-w-[90%] mt-20 mx-auto">
+        <section className='mx-auto mt-20 p-5 sm:max-w-[90%] sm:p-0'>
           <CardShowcase
             items={aiServicesData}
             showDivider={true}
             showStepBadge={false}
-            cardHeight="h-[360px] max-w-[411px] "
-            gridClassName="gap-y-6"
-            titleClassName=""
-            descriptionClassName=""
+            cardHeight='h-[360px] max-w-[411px] '
+            gridClassName='gap-y-6'
+            titleClassName=''
+            descriptionClassName=''
           />
         </section>
       </div>
 
-      <div className="flex flex-col mt-20 items-center justify-center mx-auto min-h-[60vh] relative z-10">
+      <div className='relative z-10 mx-auto mt-20 flex min-h-[60vh] flex-col items-center justify-center'>
         <BgSquare2 />
-        <div className="flex flex-col -mt-10 gap-6.5 w-full sm:w-1/2 lg:w-1/2 text-center">
+        <div className='-mt-10 flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
           {/* Badge */}
           <span>
-            <StrategyBadge text="Our Build Process" />
+            <StrategyBadge text='Our Build Process' />
           </span>
           <MiddleSectionHeads
-            SectionHead="How we turn AI Concepts 
-into Production Systems."
-            SectionSubHead=""
-            SectionDescription="From initial discovery and model selection to deployment and ongoing monitoring, we follow a structured process that transforms AI concepts into secure, scalable, and production-ready solutions."
+            SectionHead='How we turn AI Concepts 
+into Production Systems.'
+            SectionSubHead=''
+            SectionDescription='From initial discovery and model selection to deployment and ongoing monitoring, we follow a structured process that transforms AI concepts into secure, scalable, and production-ready solutions.'
           />
         </div>
-        <section className="w-full md:w-[80%] xl:w-[90%] mx-auto">
+        <section className='mx-auto w-full md:w-[80%] xl:w-[90%]'>
           <Discover
             badgeText={executionStepOne.badgeText}
             title={executionStepOne.title}
@@ -123,7 +123,7 @@ into Production Systems."
             imageAlt={executionStepFive.imageAlt}
           />
         </section>
-        <section className="w-full">
+        <section className='w-full'>
           <AI_Solutions
             badge={aiSolutionsData.badge}
             title={aiSolutionsData.title}
@@ -135,34 +135,34 @@ into Production Systems."
         <GlowPanel />
         <Strategy
           cardData={Real_World}
-          SectionHead={"Real-World AI "}
-          SectionSubHead={"Constraints"}
+          SectionHead={'Real-World AI '}
+          SectionSubHead={'Constraints'}
           SectionDescription={
-            "Moving AI from a proof of concept to production introduces challenges around accuracy, security, latency, cost, and reliability. Addressing these constraints requires deliberate architecture, continuous evaluation, and production-grade engineering."
+            'Moving AI from a proof of concept to production introduces challenges around accuracy, security, latency, cost, and reliability. Addressing these constraints requires deliberate architecture, continuous evaluation, and production-grade engineering.'
           }
-          StrategyBadgeText={"Production Challenges"}
+          StrategyBadgeText={'Production Challenges'}
         />
       </div>
-      <div className="flex flex-col items-center mb-10 mt-16 justify-center mx-auto min-h-[60vh] relative z-10">
+      <div className='relative z-10 mx-auto mt-16 mb-10 flex min-h-[60vh] flex-col items-center justify-center'>
         <BgSquare2 />
-        <div className="flex flex-col gap-6.5 -mt-10 w-full sm:w-1/2 lg:w-1/2 text-center">
+        <div className='-mt-10 flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
           {/* Badge */}
           <span>
-            <StrategyBadge text="Case Study Highlights" />
+            <StrategyBadge text='Case Study Highlights' />
           </span>
           <MiddleSectionHeads
-            SectionHead="Real Results from Production AI Deployments."
-            SectionSubHead="  "
-            SectionDescription="Explore how organizations across healthcare, financial services, and e-commerce are using production-ready AI systems to improve efficiency, reduce costs, and accelerate business outcomes."
+            SectionHead='Real Results from Production AI Deployments.'
+            SectionSubHead='  '
+            SectionDescription='Explore how organizations across healthcare, financial services, and e-commerce are using production-ready AI systems to improve efficiency, reduce costs, and accelerate business outcomes.'
           />
         </div>
-        <section className="p-5 mt-20 mx-auto flex flex-wrap justify-center gap-10">
-          {caseStudies.map((card) => (
+        <section className='mx-auto mt-20 flex flex-wrap justify-center gap-10 p-5'>
+          {caseStudies.map(card => (
             <ImageCard
               key={card.id}
-              className={""}
-              cradClass={"w-[25rem] min-h-[500px]"}
-              padding={"px-4"}
+              className={''}
+              cradClass={'w-[25rem] min-h-[500px]'}
+              padding={'px-4'}
               cardtitle={card.title}
               carddescription={card.description}
               buttintext={card.cta}
@@ -174,12 +174,12 @@ into Production Systems."
         </section>
       </div>
       <Execution_Plan
-        badgeText="Production-Ready GenAI starts here"
-        title="From Prototype to Production"
-        description="Turn promising experiments into reliable systems with the guardrails, observability, 
-and engineering needed to scale with confidence."
-        buttonText="Build Your GenAI System with Us"
-        buttonLink="/contact"
+        badgeText='Production-Ready GenAI starts here'
+        title='From Prototype to Production'
+        description='Turn promising experiments into reliable systems with the guardrails, observability, 
+and engineering needed to scale with confidence.'
+        buttonText='Build Your GenAI System with Us'
+        buttonLink='/contact'
         onclick={() => ({})}
       />
     </div>

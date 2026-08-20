@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import {
   automationApproachSectionHead,
@@ -11,60 +11,60 @@ import {
   automationTechStackData,
   processAutomationCTAData,
   PhasedImplementation,
-} from "./data";
+} from './data';
 // import HeroSection from "../../components/HeroSection";
-import { BgSquare2 } from "components/BgSquare";
-import StrategyBadge from "../../../../components/StrategyBadge";
-import { MiddleSectionHeads } from "components/SectionHeads";
+import { BgSquare2 } from 'components/BgSquare';
+import StrategyBadge from '../../../../components/StrategyBadge';
+import { MiddleSectionHeads } from 'components/SectionHeads';
 // import PurposeCard from "../../components/PurposeCard";
 // import Discover from "../../components/Discover";
 // import Assess from "../../components/Assess";
-import AI_Solutions from "uiComponents/AI_Solutions";
-import Execution_Plan from "uiComponents/Execution_Plan";
-import HeroSection from "@/components/HeroSection";
-import Assess from "@/components/what-we-do/Assess";
-import Discover from "@/components/what-we-do/Discover";
-import PurposeCard from "@/components/what-we-do/PurposeCard";
+import AI_Solutions from 'uiComponents/AI_Solutions';
+import Execution_Plan from 'uiComponents/Execution_Plan';
+import HeroSection from '@/components/HeroSection';
+import Assess from '@/components/what-we-do/Assess';
+import Discover from '@/components/what-we-do/Discover';
+import PurposeCard from '@/components/what-we-do/PurposeCard';
 
 const page = () => {
   return (
     <div>
       <HeroSection {...processAutomationHeroData} />
       <section>
-        <div className="flex flex-col items-center justify-center mx-auto min-h-[60vh] relative z-10">
+        <div className='relative z-10 mx-auto flex min-h-[60vh] flex-col items-center justify-center'>
           <BgSquare2 />
-          <div className="flex flex-col w-full gap-6.5 -mt-40 sm:w-1/2 lg:w-1/2 text-center">
+          <div className='-mt-40 flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
             {/* Badge */}
             <span>
               <StrategyBadge text={processCategoriesSectionHead.badgeText} />
             </span>
             <MiddleSectionHeads
               SectionHead={processCategoriesSectionHead.title}
-              SectionSubHead=""
+              SectionSubHead=''
               SectionDescription={processCategoriesSectionHead.description}
             />
           </div>
         </div>
 
-        <div className="sm:w-[80%] -mt-10 mx-auto">
-          <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 p-5 ">
-            {processCategoriesData.map((item) => (
+        <div className='mx-auto -mt-10 sm:w-[80%]'>
+          <div className='grid grid-cols-1 gap-4 p-5 xl:grid-cols-2'>
+            {processCategoriesData.map(item => (
               <PurposeCard
                 key={item.id}
                 icon={item.icon}
                 title={item.title}
                 description={item.description}
-                className=""
+                className=''
               />
             ))}
           </div>
         </div>
       </section>
 
-      <section className="overflow-hidden py-20 lg:py-20">
-        <div className="flex flex-col items-center justify-center mx-auto min-h-[60vh] relative z-10">
+      <section className='overflow-hidden py-20 lg:py-20'>
+        <div className='relative z-10 mx-auto flex min-h-[60vh] flex-col items-center justify-center'>
           <BgSquare2 />
-          <div className="flex flex-col gap-6.5 -mt-44 w-full sm:w-1/2 lg:w-1/2 text-center">
+          <div className='-mt-44 flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
             <span>
               <StrategyBadge text={automationApproachSectionHead.badgeText} />
             </span>
@@ -75,7 +75,7 @@ const page = () => {
           </div>
         </div>
 
-        <section className=" -mt-40 gap-6 md:w-[90%] mx-auto   ">
+        <section className='mx-auto -mt-40 gap-6 md:w-[90%]'>
           <Discover
             badgeText={processInventoryData.badgeText}
             title={processInventoryData.title}
@@ -116,7 +116,7 @@ const page = () => {
           />
         </section>
       </section>
-      <section className="w-full">
+      <section className='w-full'>
         <AI_Solutions
           badge={automationTechStackData.badgeText}
           title={automationTechStackData.title}

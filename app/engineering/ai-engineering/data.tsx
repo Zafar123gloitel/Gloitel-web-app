@@ -9,31 +9,30 @@ import {
   MLPipelinesIcon,
   PromptOpsIcon,
   RAGSystemsIcon,
-} from "components/SvgIcon";
+} from 'components/SvgIcon';
 export const aiEngineeringHeroData = {
-  badgeText: "AI Engineering",
-  title: "AI Engineering That Ships and Stays Shipped",
+  badgeText: 'AI Engineering',
+  title: 'AI Engineering That Ships and Stays Shipped',
   description:
     "Building an AI proof-of-concept takes days. Building one that handles production traffic reliably, costs predictably, and can be debugged when something goes wrong - that's engineering. We've done that latter.",
-  image: "/images/Engineering/ai-engineering-hero.png",
-  imageAlt: "AI engineering",
-  video:
-    "https://res.cloudinary.com/dsqu6pi0d/video/upload/v1762846419/Gloitel/bg_cij8h5.mp4",
+  image: '/images/Engineering/ai-engineering-hero.png',
+  imageAlt: 'AI engineering',
+  video: 'https://res.cloudinary.com/dsqu6pi0d/video/upload/v1762846419/Gloitel/bg_cij8h5.mp4',
   primaryButton: {
-    text: "Talk to Our AI Engineers",
-    href: "/contact",
+    text: 'Talk to Our AI Engineers',
+    href: '/contact',
   },
   secondaryButton: {
-    text: "View AI Work",
-    href: "/about",
+    text: 'View AI Work',
+    href: '/about',
     icon: <HeroArrowRightIcon />,
   },
 };
 export const aiSystemsSectionHead = {
-  badgeText: "What Our AI Engineers Build",
-  title: "AI Systems in Production",
+  badgeText: 'What Our AI Engineers Build',
+  title: 'AI Systems in Production',
   description:
-    "From intelligent retrieval and agent workflows to monitoring and optimization, we engineer AI systems that perform reliably in real-world production environments.",
+    'From intelligent retrieval and agent workflows to monitoring and optimization, we engineer AI systems that perform reliably in real-world production environments.',
 };
 
 export const aiSystemsData = [
@@ -41,152 +40,152 @@ export const aiSystemsData = [
     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     step: 1,
     icon: <RAGSystemsIcon />,
-    title: "RAG Systems",
-    description: "Vector search and document intelligence pipelines.",
+    title: 'RAG Systems',
+    description: 'Vector search and document intelligence pipelines.',
   },
   {
     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     step: 2,
     icon: <LLMFeaturesIcon />,
-    title: "LLM Features",
-    description: "AI capabilities embedded into existing products.",
+    title: 'LLM Features',
+    description: 'AI capabilities embedded into existing products.',
   },
   {
     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     step: 3,
     icon: <HL7FHIRIcon />,
-    title: "Agent Systems",
-    description: "Coordinated agents with tools, memory, and workflows.",
+    title: 'Agent Systems',
+    description: 'Coordinated agents with tools, memory, and workflows.',
   },
   {
     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     step: 4,
     icon: <CustomModelsIcon />,
-    title: "Custom Models",
-    description: "Domain-specific models optimized for specialized tasks.",
+    title: 'Custom Models',
+    description: 'Domain-specific models optimized for specialized tasks.',
   },
   {
     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     step: 5,
     icon: <MLPipelinesIcon />,
-    title: "ML Pipelines",
-    description: "Training, evaluation, deployment, and model operations.",
+    title: 'ML Pipelines',
+    description: 'Training, evaluation, deployment, and model operations.',
   },
   {
     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     step: 6,
     icon: <AIMonitoringIcon />,
-    title: "AI Monitoring",
-    description: "Monitoring performance, costs, and production behavior.",
+    title: 'AI Monitoring',
+    description: 'Monitoring performance, costs, and production behavior.',
   },
   {
     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     step: 7,
     icon: <PromptOpsIcon />,
-    title: "Prompt Ops",
-    description: "Versioning, testing, and optimization of prompts.",
+    title: 'Prompt Ops',
+    description: 'Versioning, testing, and optimization of prompts.',
   },
   {
     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     step: 8,
     icon: <CostOptimizationIcon />,
-    title: "Cost Optimization",
-    description: "Caching, routing, and inference cost reduction.",
+    title: 'Cost Optimization',
+    description: 'Caching, routing, and inference cost reduction.',
   },
 ];
 
 export const aiEcosystemData = {
-  badge: "Production AI Engineering Stack",
-  title: "Built on a Modern AI Ecosystem",
+  badge: 'Production AI Engineering Stack',
+  title: 'Built on a Modern AI Ecosystem',
   description:
-    "From foundation models to observability tools, every layer is chosen for performance, flexibility, and long-term maintainability.",
+    'From foundation models to observability tools, every layer is chosen for performance, flexibility, and long-term maintainability.',
 
   tabs: [
-    "LLMs",
-    "RAG/Orchestration",
-    "Vector DBs",
-    "ML",
-    "MLOps",
-    "Serving",
-    "Observability",
-    "Cloud AI",
+    'LLMs',
+    'RAG/Orchestration',
+    'Vector DBs',
+    'ML',
+    'MLOps',
+    'Serving',
+    'Observability',
+    'Cloud AI',
   ],
 
   technologies: {
     LLMs: [
       {
         id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
-        name: "OpenAI GPT-4o",
-        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960583/Gloitel/icon/openai_wwedph.png",
+        name: 'OpenAI GPT-4o',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960583/Gloitel/icon/openai_wwedph.png',
       },
       {
         id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
-        name: "Claude 3.5 Sonnet",
-        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960642/Gloitel/icon/claude_sszoov.png",
+        name: 'Claude 3.5 Sonnet',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960642/Gloitel/icon/claude_sszoov.png',
       },
       {
         id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
-        name: "Gemini 1.5 Pro",
-        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960682/Gloitel/icon/gemini_b4dcsa.png",
+        name: 'Gemini 1.5 Pro',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960682/Gloitel/icon/gemini_b4dcsa.png',
       },
       {
         id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
-        name: "LLaMA 3",
-        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960576/Gloitel/icon/meta_brzl7j.png",
+        name: 'LLaMA 3',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960576/Gloitel/icon/meta_brzl7j.png',
       },
       {
         id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
-        name: "Mistral",
-        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960577/Gloitel/icon/mistral_bmr5b7.png",
+        name: 'Mistral',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960577/Gloitel/icon/mistral_bmr5b7.png',
       },
     ],
-    "RAG/Orchestration": [],
-    "Vector DBs": [],
+    'RAG/Orchestration': [],
+    'Vector DBs': [],
     ML: [],
     MLOps: [],
     Serving: [],
     Observability: [],
-    "Cloud AI": [],
+    'Cloud AI': [],
   },
 };
 export const aiEngineeringNotData = {
-  badgeText: "What This Is Not",
-  heading: "Strategy before Solutions",
+  badgeText: 'What This Is Not',
+  heading: 'Strategy before Solutions',
   description:
-    "Every recommendation is grounded in business impact and feasibility. We do not start with technology, products, or predetermined solutions.",
+    'Every recommendation is grounded in business impact and feasibility. We do not start with technology, products, or predetermined solutions.',
   items: [
     {
       id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
       icon: <CloseIcon size={27} />,
-      description: "Not a vendor-led engagement where we pre-sell a solution",
+      description: 'Not a vendor-led engagement where we pre-sell a solution',
     },
     {
       id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
       icon: <CloseIcon size={27} />,
-      description: "Not a free strategy workshop with vague outputs",
+      description: 'Not a free strategy workshop with vague outputs',
     },
     {
       id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
       icon: <CloseIcon size={27} />,
-      description: "Not an open-ended consulting retainer",
+      description: 'Not an open-ended consulting retainer',
     },
     {
       id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
       icon: <CloseIcon size={27} />,
-      description: "Not an open-ended consulting retainer",
+      description: 'Not an open-ended consulting retainer',
     },
     {
       id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
       icon: <CloseIcon size={27} />,
-      description: "Not a build-first approach without a validated roadmap",
+      description: 'Not a build-first approach without a validated roadmap',
     },
   ],
 };
 export const aiEngineeringCTAData = {
-  badgeText: "Ready to Build?",
+  badgeText: 'Ready to Build?',
   title: "Let's Build Your Next AI Solution!",
   description:
     "Whether you're launching an AI-powered feature, integrating with LLM systems, or building production AI infrastructure, we can help you move from concept to compliant production-ready systems.",
-  buttonText: "Build Your AI Solution",
-  buttonLink: "/contact",
+  buttonText: 'Build Your AI Solution',
+  buttonLink: '/contact',
 };

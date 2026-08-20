@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { LeftBadge } from "./Badge";
-import Asked_Q from "@/components/what-we-do/Asked_Q";
+import { useState } from 'react';
+import { LeftBadge } from './Badge';
+import Asked_Q from '@/components/what-we-do/Asked_Q';
 
 // export const FaqItem = ({ title, description }) => {
 //   const [isOpen, setIsOpen] = useState(false);
@@ -24,34 +24,34 @@ import Asked_Q from "@/components/what-we-do/Asked_Q";
 export const FAQPage = () => {
   const faqs = [
     {
-      title: "What services does your IT company provide?",
+      title: 'What services does your IT company provide?',
       description:
-        "We offer website development, mobile app development, AI solutions, and IT consulting to help businesses grow digitally.",
+        'We offer website development, mobile app development, AI solutions, and IT consulting to help businesses grow digitally.',
     },
     {
-      title: "Do you provide custom website and app development?",
+      title: 'Do you provide custom website and app development?',
       description:
-        "Yes! We build custom websites and mobile apps tailored to your specific needs and business goals.",
+        'Yes! We build custom websites and mobile apps tailored to your specific needs and business goals.',
     },
     {
-      title: "How does AI enhance your services?",
+      title: 'How does AI enhance your services?',
       description:
-        "We use AI-powered solutions for automation, chatbots, data analysis, and personalized user experiences to improve efficiency and engagement.",
+        'We use AI-powered solutions for automation, chatbots, data analysis, and personalized user experiences to improve efficiency and engagement.',
     },
     {
-      title: "Can you redesign my existing website or app?",
+      title: 'Can you redesign my existing website or app?',
       description:
-        "Absolutely! We can revamp your website or app with modern design, better performance, and enhanced user experience.",
+        'Absolutely! We can revamp your website or app with modern design, better performance, and enhanced user experience.',
     },
     {
-      title: "Do you offer cloud solutions and hosting services?",
+      title: 'Do you offer cloud solutions and hosting services?',
       description:
-        "Yes! We provide cloud hosting, AWS, Azure, and other cloud-based solutions for secure and scalable performance.",
+        'Yes! We provide cloud hosting, AWS, Azure, and other cloud-based solutions for secure and scalable performance.',
     },
     {
-      title: "How do I get started?",
+      title: 'How do I get started?',
       description:
-        "Simply contact us with your project details, and our team will guide you through the process! ",
+        'Simply contact us with your project details, and our team will guide you through the process! ',
     },
   ];
 
@@ -99,14 +99,14 @@ export const FAQPage = () => {
     // </section>
     <>
       <Asked_Q
-            accordionData={faqs}
-            badgeText={"How We Work"}
-            sectionHead={"Frequently Asked Questions"}
-            sectionSubHead=""
-            sectionDescription={
-              " Have questions? Our FAQ section has you covered with quick answers to the most common inquiries."
-            }
-          />
+        accordionData={faqs}
+        badgeText={'How We Work'}
+        sectionHead={'Frequently Asked Questions'}
+        sectionSubHead=''
+        sectionDescription={
+          ' Have questions? Our FAQ section has you covered with quick answers to the most common inquiries.'
+        }
+      />
     </>
   );
 };

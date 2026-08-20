@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export const LeftBadge = ({
   HomeAboutBadge,
@@ -9,12 +9,12 @@ export const LeftBadge = ({
   FaqBadge,
 }) => {
   return (
-    <div className="relative w-fit text-center backdrop-blur-md bg-gray-900/50 px-4 py-2 rounded-lg shadow-lg mb-6 overflow-hidden border-2 border-gray-600/20">
+    <div className='relative mb-6 w-fit overflow-hidden rounded-lg border-2 border-gray-600/20 bg-gray-900/50 px-4 py-2 text-center shadow-lg backdrop-blur-md'>
       {/* Top Blue Glow */}
-      <div className="absolute -top-1 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40%] h-[8px] bg-blue-700/90 blur-[7px] rounded-full pointer-events-none" />
+      <div className='pointer-events-none absolute -top-1 left-1/2 h-[8px] w-[40%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-700/90 blur-[7px]' />
 
-      <h2 className="flex items-center text-xs sm:text-sm text-title font-medium relative z-10">
-        <span className="bg-white w-1.5 h-1.5 rounded-full inline-block mr-2"></span>
+      <h2 className='text-title relative z-10 flex items-center text-xs font-medium sm:text-sm'>
+        <span className='mr-2 inline-block h-1.5 w-1.5 rounded-full bg-white'></span>
         {HomeAboutBadge}
         {AboutBadge}
         {WorkBadge}
@@ -35,11 +35,11 @@ export const CenterBadge = ({
 }) => {
   return (
     <center>
-      <div className="relative w-fit text-center backdrop-blur-md bg-gray-900/50 px-4 py-2 rounded-lg shadow-lg mb-6 overflow-hidden border-2 border-gray-600/20">
+      <div className='relative mb-6 w-fit overflow-hidden rounded-lg border-2 border-gray-600/20 bg-gray-900/50 px-4 py-2 text-center shadow-lg backdrop-blur-md'>
         {/* Top Blue Glow */}
-        <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50%] h-[12px] bg-blue-700/90 blur-[5px] rounded-full pointer-events-none" />
-        <h2 className="flex items-center text-sm sm:text-sm text-title font-normal relative z-10">
-          <span className="bg-white w-1.5 h-1.5 rounded-full inline-block mr-2"></span>
+        <div className='pointer-events-none absolute -top-1.5 left-1/2 h-[12px] w-[50%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-700/90 blur-[5px]' />
+        <h2 className='text-title relative z-10 flex items-center text-sm font-normal sm:text-sm'>
+          <span className='mr-2 inline-block h-1.5 w-1.5 rounded-full bg-white'></span>
           {AboutOurCulture}
           {TechnologyBadge}
           {JoinUsNowBadge}

@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react';
 
 export const HorizontalDivider = () => {
   return (
-    <div className="w-full h-px mx-auto bg-gradient-to-r from-transparent via-white/10 to-transparent my-3 relative z-10"></div>
+    <div className='relative z-10 mx-auto my-3 h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent'></div>
   );
 };
 
 export const VerticalDivider = () => {
   return (
-    <div className="hidden sm:block h-10 w-px bg-gradient-to-b from-transparent via-white/40 to-transparent m-2 relative z-10"></div>
+    <div className='relative z-10 m-2 hidden h-10 w-px bg-gradient-to-b from-transparent via-white/40 to-transparent sm:block'></div>
   );
 };
 ``;

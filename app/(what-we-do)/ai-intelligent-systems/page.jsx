@@ -1,16 +1,16 @@
-"use client";
+'use client';
 
-import { BgSquare2 } from "components/BgSquare";
-import StrategyBadge from "../../../components/StrategyBadge";
-import { MiddleSectionHeads } from "components/SectionHeads";
-import { CardShowcase } from "../../../components";
+import { BgSquare2 } from 'components/BgSquare';
+import StrategyBadge from '../../../components/StrategyBadge';
+import { MiddleSectionHeads } from 'components/SectionHeads';
+import { CardShowcase } from '../../../components';
 // import Discover from "../components/Discover";
 // import Assess from "../components/Assess";
-import GlowPanel from "components/GlowPanel";
+import GlowPanel from 'components/GlowPanel';
 // import Strategy from "../components/Strategy";
-import AI_Solutions from "uiComponents/AI_Solutions";
-import Execution_Plan from "uiComponents/Execution_Plan";
-import { ArrowRightIcon, InfoIcon } from "components/SvgIcon";
+import AI_Solutions from 'uiComponents/AI_Solutions';
+import Execution_Plan from 'uiComponents/Execution_Plan';
+import { ArrowRightIcon, InfoIcon } from 'components/SvgIcon';
 import {
   aiClarityData,
   aiEngagementSectionHead,
@@ -24,12 +24,12 @@ import {
   aiTechStackLandingData,
   discoverySprintData,
   productionScaleData,
-} from "./data";
-import ImageCard from "components/ImageCard";
-import HeroSection from "@/components/what-we-do/HeroSection";
-import Discover from "@/components/what-we-do/Discover";
-import Assess from "@/components/what-we-do/Assess";
-import Strategy from "@/components/what-we-do/Strategy";
+} from './data';
+import ImageCard from 'components/ImageCard';
+import HeroSection from '@/components/what-we-do/HeroSection';
+import Discover from '@/components/what-we-do/Discover';
+import Assess from '@/components/what-we-do/Assess';
+import Strategy from '@/components/what-we-do/Strategy';
 
 const page = () => {
   return (
@@ -46,10 +46,10 @@ const page = () => {
           secondaryButton={aiIntelligentSystemsHeroData.secondaryButton}
         />
       </section>
-      <section className=" overflow-hidden">
-        <div className="flex flex-col items-center  mt-10 justify-center mx-auto min-h-[60vh] relative z-10">
+      <section className='overflow-hidden'>
+        <div className='relative z-10 mx-auto mt-10 flex min-h-[60vh] flex-col items-center justify-center'>
           <BgSquare2 />
-          <div className="flex flex-col gap-6.5  w-full sm:w-1/2 lg:w-1/2 text-center">
+          <div className='flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
             {/* Badge */}
             <span>
               <StrategyBadge text={aiGapSectionHead.badgeText} />
@@ -59,18 +59,18 @@ const page = () => {
               SectionDescription={aiGapSectionHead.description}
             />
           </div>
-          <section className="w-full  sm:w-[90%] mt-20 mx-auto">
+          <section className='mx-auto mt-20 w-full sm:w-[90%]'>
             <CardShowcase
               showStepBadge
               showDivider={false}
               items={aiGapData}
-              cardHeight=" h-[300px] max-w-[300px] "
-              gridClassName="gap-y-28"
-              titleClassName=""
-              descriptionClassName=""
+              cardHeight=' h-[300px] max-w-[300px] '
+              gridClassName='gap-y-28'
+              titleClassName=''
+              descriptionClassName=''
             />
             <div
-              className="max-w-[75%] mx-auto mt-4 rounded-2xl flex items-center gap-3 border border-transparent p-3"
+              className='mx-auto mt-4 flex max-w-[75%] items-center gap-3 rounded-2xl border border-transparent p-3'
               style={{
                 background: `
                 linear-gradient(#080B18, #080B18) padding-box,
@@ -78,10 +78,10 @@ const page = () => {
               `,
               }}
             >
-              <span className="inline-flex h-12 min-w-12 items-center text-2xl text-title bg-[#1447E633] justify-center rounded-full ">
-                <InfoIcon className="h-5 w-5 text-blue-400" />
+              <span className='text-title inline-flex h-12 min-w-12 items-center justify-center rounded-full bg-[#1447E633] text-2xl'>
+                <InfoIcon className='h-5 w-5 text-blue-400' />
               </span>
-              <p className="text-title">
+              <p className='text-title'>
                 {
                   "We diagnose before we build. Engineering starts only after we've defined where AI will create measurable business impact and long-term value."
                 }
@@ -90,10 +90,10 @@ const page = () => {
           </section>
         </div>
       </section>
-      <section className="overflow-hidden py-20 lg:py-20">
-        <div className="flex flex-col items-center justify-center mx-auto min-h-[60vh] relative z-10">
+      <section className='overflow-hidden py-20 lg:py-20'>
+        <div className='relative z-10 mx-auto flex min-h-[60vh] flex-col items-center justify-center'>
           <BgSquare2 />
-          <div className="flex flex-col gap-6.5 -mt-44 w-full sm:w-1/2 lg:w-1/2 text-center">
+          <div className='-mt-44 flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
             <span>
               <StrategyBadge text={aiPracticeAreasSectionHead.badgeText} />
             </span>
@@ -104,13 +104,13 @@ const page = () => {
           </div>
         </div>
 
-        <div className=" -mt-10 flex justify-center items-center flex-wrap gap-6  ">
-          {aiPracticeAreasData.map((item) => (
+        <div className='-mt-10 flex flex-wrap items-center justify-center gap-6'>
+          {aiPracticeAreasData.map(item => (
             <ImageCard
               key={item.id}
-              className={""}
-              cradClass={"w-[25rem] min-h-[500px]"}
-              padding={"px-4"}
+              className={''}
+              cradClass={'w-[25rem] min-h-[500px]'}
+              padding={'px-4'}
               cardtitle={item.title}
               carddescription={item.description}
               buttintext={item.buttonText}
@@ -121,10 +121,10 @@ const page = () => {
           ))}
         </div>
       </section>
-      <div className="">
-        <div className="flex flex-col items-center justify-center mx-auto min-h-[60vh] relative z-10">
+      <div className=''>
+        <div className='relative z-10 mx-auto flex min-h-[60vh] flex-col items-center justify-center'>
           <BgSquare2 />
-          <div className="flex flex-col gap-6.5  w-full sm:w-1/2 lg:w-1/2 text-center">
+          <div className='flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
             <span>
               <StrategyBadge text={aiEngagementSectionHead.badgeText} />
             </span>
@@ -164,7 +164,7 @@ const page = () => {
       <Strategy
         cardData={aiClarityData.items}
         SectionHead={aiClarityData.title}
-        SectionSubHead={""}
+        SectionSubHead={''}
         SectionDescription={aiClarityData.description}
         StrategyBadgeText={aiClarityData.badgeText}
       />
@@ -177,17 +177,17 @@ const page = () => {
           technologies={aiTechStackLandingData.technologies}
         />
       </section>
-      <section className="overflow-hidden py-20 lg:py-20">
-        <div className="flex flex-col items-center justify-center mx-auto min-h-[60vh] relative z-10">
+      <section className='overflow-hidden py-20 lg:py-20'>
+        <div className='relative z-10 mx-auto flex min-h-[60vh] flex-col items-center justify-center'>
           <BgSquare2 />
-          <div className="flex flex-col gap-6.5 -mt-44 w-full sm:w-1/2 lg:w-1/2 text-center">
+          <div className='-mt-44 flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
             <span>
-              <StrategyBadge text={"Our Engagement Model"} />
+              <StrategyBadge text={'Our Engagement Model'} />
             </span>
             <MiddleSectionHeads
-              SectionHead={"From Discovery to Production-Ready AI"}
+              SectionHead={'From Discovery to Production-Ready AI'}
               SectionDescription={
-                "A structured approach that validates opportunities, proves value, and scales successful AI initiatives with confidence."
+                'A structured approach that validates opportunities, proves value, and scales successful AI initiatives with confidence.'
               }
             />
           </div>

@@ -1,8 +1,8 @@
-import Link from "next/link";
-import React from "react";
-import { CenterBadge } from "./Badge";
-import { GlowButton } from "./Button";
-import Execution_Plan from "uiComponents/Execution_Plan";
+import Link from 'next/link';
+import React from 'react';
+import { CenterBadge } from './Badge';
+import { GlowButton } from './Button';
+import Execution_Plan from 'uiComponents/Execution_Plan';
 
 const JoinUsNow = () => {
   return (
@@ -53,16 +53,15 @@ const JoinUsNow = () => {
     //     </div>
     //   </div>
     // </section>
-<>
+    <>
       <Execution_Plan
-        badgeText="Join Us Now"
-        title="Each Project we Undertake is a Unique Opportunity."
-        description=" Ready to take the next step? Join us now and start transforming your vision into reality with expert support."
-        buttonText="Book An Appointment"
-        buttonLink="/contact"
+        badgeText='Join Us Now'
+        title='Each Project we Undertake is a Unique Opportunity.'
+        description=' Ready to take the next step? Join us now and start transforming your vision into reality with expert support.'
+        buttonText='Book An Appointment'
+        buttonLink='/contact'
       />
-</>
-
+    </>
   );
 };
 

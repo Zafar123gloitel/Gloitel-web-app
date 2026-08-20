@@ -1,44 +1,44 @@
-"use client";
-import React, { use } from "react";
-import { FAQPage } from "@/components/Faq";
-import JoinUsNow from "@/components/JoinUsNow";
+'use client';
+import React, { use } from 'react';
+import { FAQPage } from '@/components/Faq';
+import JoinUsNow from '@/components/JoinUsNow';
 import {
   ProjectShowcase,
   ProjectShowcaseFourth,
   ProjectShowcaseSecond,
-} from "@/components/ProjectShowcase";
-import { IntroHead2 } from "uiComponents/Heading";
-import Image from "next/image";
-import projects from "./data.json";
-import { GlowButton } from "@/components/Button";
-import GlowPanel from "@/components/GlowPanel";
-import { usePathname } from "next/navigation";
+} from '@/components/ProjectShowcase';
+import { IntroHead2 } from 'uiComponents/Heading';
+import Image from 'next/image';
+import projects from './data.json';
+import { GlowButton } from '@/components/Button';
+import GlowPanel from '@/components/GlowPanel';
+import { usePathname } from 'next/navigation';
 
 const Portfolio = ({ params }) => {
   const { id } = use(params); // unwrap params safely
 
-  const project = projects.find((p) => p.id === Number(id));
+  const project = projects.find(p => p.id === Number(id));
   if (!project) return <p>Project not found</p>;
 
   // Logical groupings
   const firstSections = [
-    { title: "Business Requirements", points: project.BusinessRequirements },
-    { title: "Challenges", points: project.Challenges },
-    { title: "Our Approach", points: project.OurApproach },
+    { title: 'Business Requirements', points: project.BusinessRequirements },
+    { title: 'Challenges', points: project.Challenges },
+    { title: 'Our Approach', points: project.OurApproach },
   ];
   const secondSections = [
-    { title: "UI/UX Design Process", points: project.DesignProcess },
-    { title: "Planning & Development", points: project.PlanningDevelopment },
+    { title: 'UI/UX Design Process', points: project.DesignProcess },
+    { title: 'Planning & Development', points: project.PlanningDevelopment },
   ];
   const thirdSections = [
-    { title: "Design Process", points: project.ProjectDeliveryResults }, // already an array
+    { title: 'Design Process', points: project.ProjectDeliveryResults }, // already an array
   ];
   const fourthSections = [
     {
       title: `What is ${project.title}`,
       points: Array.isArray(project.what) ? project.what : [project.what],
     },
-    { title: "How it Works", points: project.how }, // project.how is already an array
+    { title: 'How it Works', points: project.how }, // project.how is already an array
   ];
 
   const fifthSections = [
@@ -50,38 +50,38 @@ const Portfolio = ({ params }) => {
   ];
   return (
     <>
-      <section className="relative px-4 sm:px-6 lg:px-8 py-28 lg:py-28 w-full mx-auto overflow-hidden">
+      <section className='relative mx-auto w-full overflow-hidden px-4 py-28 sm:px-6 lg:px-8 lg:py-28'>
         {/* Background video */}
         <video
-          src="https://res.cloudinary.com/dsqu6pi0d/video/upload/v1762846419/Gloitel/bg_cij8h5.mp4"
-          type="video/mp4"
-          className="absolute top-0 left-0 w-full h-full object-cover z-0"
+          src='https://res.cloudinary.com/dsqu6pi0d/video/upload/v1762846419/Gloitel/bg_cij8h5.mp4'
+          type='video/mp4'
+          className='absolute top-0 left-0 z-0 h-full w-full object-cover'
           autoPlay
           muted
           loop
           playsInline
-          unoptimized="true"
+          unoptimized='true'
         />
 
         {/* Main content */}
-        <div className="relative z-10 flex flex-col items-center justify-center max-w-6xl mx-auto pt-10 sm:pt-16 md:pt-20 lg:pt-24">
+        <div className='relative z-10 mx-auto flex max-w-6xl flex-col items-center justify-center pt-10 sm:pt-16 md:pt-20 lg:pt-24'>
           {/* GRID SECTION */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start w-full">
+          <div className='grid w-full grid-cols-1 items-start gap-10 lg:grid-cols-2'>
             {/* LEFT SIDE: Project Overview */}
-            <div className="flex flex-col gap-6">
+            <div className='flex flex-col gap-6'>
               <IntroHead2
-                HomeHeroBadge="CASE STUDY"
-                HomeSubHeroBadge="Project Overview"
+                HomeHeroBadge='CASE STUDY'
+                HomeSubHeroBadge='Project Overview'
                 main={project.name}
                 description={project.description}
               />
 
               {/* Tags */}
-              <div className="flex flex-wrap gap-3 my-4">
+              <div className='my-4 flex flex-wrap gap-3'>
                 {project.tag.map((tag, index) => (
                   <span
                     key={index}
-                    className="bg-blue-900/20 border border-neutral-500/20 rounded-xl backdrop-blur-2xl py-2 px-4 text-sm sm:text-base"
+                    className='rounded-xl border border-neutral-500/20 bg-blue-900/20 px-4 py-2 text-sm backdrop-blur-2xl sm:text-base'
                   >
                     {tag}
                   </span>
@@ -90,46 +90,42 @@ const Portfolio = ({ params }) => {
             </div>
 
             {/* RIGHT SIDE: Info Card */}
-            <div className="flex justify-center lg:justify-end w-full">
-              <div className="relative bg-black/20 backdrop-blur-3xl p-6 sm:p-8 md:p-10 rounded-2xl w-full sm:w-[90%] lg:w-[85%] xl:w-[80%] flex flex-col gap-4 shadow-xl border border-white/10 overflow-hidden">
+            <div className='flex w-full justify-center lg:justify-end'>
+              <div className='relative flex w-full flex-col gap-4 overflow-hidden rounded-2xl border border-white/10 bg-black/20 p-6 shadow-xl backdrop-blur-3xl sm:w-[90%] sm:p-8 md:p-10 lg:w-[85%] xl:w-[80%]'>
                 {/* Project Info */}
                 <div>
                   {[
-                    { label: "Project Type", value: project.projectType },
-                    { label: "Industry", value: project.industry },
-                    { label: "Tech Stack", value: project.techStack },
+                    { label: 'Project Type', value: project.projectType },
+                    { label: 'Industry', value: project.industry },
+                    { label: 'Tech Stack', value: project.techStack },
                   ].map((item, index) => (
-                    <div className="mb-4" key={index}>
-                      <p className="text-gray-400 text-sm sm:text-base mb-1">
-                        {item.label}
-                      </p>
-                      <h3 className="text-title text-sm sm:text-base break-words">
-                        {Array.isArray(item.value)
-                          ? item.value.join(", ")
-                          : item.value}
+                    <div className='mb-4' key={index}>
+                      <p className='mb-1 text-sm text-gray-400 sm:text-base'>{item.label}</p>
+                      <h3 className='text-title text-sm break-words sm:text-base'>
+                        {Array.isArray(item.value) ? item.value.join(', ') : item.value}
                       </h3>
                     </div>
                   ))}
                 </div>
 
                 {/* Background image */}
-                <div className="absolute -bottom-10 -right-10 opacity-70">
+                <div className='absolute -right-10 -bottom-10 opacity-70'>
                   <Image
-                    src="https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762926076/Gloitel/utils/star_fzn7cv.svg"
-                    alt="design"
+                    src='https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762926076/Gloitel/utils/star_fzn7cv.svg'
+                    alt='design'
                     width={180}
                     height={180}
                     unoptimized
-                    loading="lazy"
+                    loading='lazy'
                   />
                 </div>
 
                 {/* Button */}
-                <div className="flex mt-4">
+                <div className='mt-4 flex'>
                   <GlowButton
-                    ButtonText="View Live Website"
+                    ButtonText='View Live Website'
                     Buttonlink={project.liveUrl}
-                    target="_blank"
+                    target='_blank'
                   />
                 </div>
               </div>
@@ -139,32 +135,25 @@ const Portfolio = ({ params }) => {
           {/* IMAGE SECTIONS */}
           {Number(id) >= 1 &&
             Number(id) <= 4 &&
-            [
-              project.imageFir,
-              project.imageSec,
-              project.imageThir,
-              project.imageFor,
-            ].map(
+            [project.imageFir, project.imageSec, project.imageThir, project.imageFor].map(
               (img, idx) =>
                 img && (
-                  <div key={idx} className="mt-10 w-full max-w-6xl">
-                    <div className="relative w-full pt-[56.25%] rounded-2xl overflow-hidden">
+                  <div key={idx} className='mt-10 w-full max-w-6xl'>
+                    <div className='relative w-full overflow-hidden rounded-2xl pt-[56.25%]'>
                       <Image
                         src={img}
                         alt={project.name}
                         fill
-                        className="object-cover rounded-2xl"
+                        className='rounded-2xl object-cover'
                         unoptimized
-                        loading="lazy"
+                        loading='lazy'
                       />
                     </div>
 
                     {/* Only first 4 images for id 1-4 */}
                     {idx === 0 && <ProjectShowcase sections={firstSections} />}
                     {idx === 1 && <ProjectShowcase sections={secondSections} />}
-                    {idx === 2 && (
-                      <ProjectShowcaseSecond sections={thirdSections} />
-                    )}
+                    {idx === 2 && <ProjectShowcaseSecond sections={thirdSections} />}
                   </div>
                 ),
             )}
@@ -180,29 +169,25 @@ const Portfolio = ({ params }) => {
             ].map(
               (img, idx) =>
                 img && (
-                  <div key={idx} className="mt-10 w-full max-w-6xl">
-                    <div className="relative w-full pt-[56.25%] rounded-2xl overflow-hidden">
+                  <div key={idx} className='mt-10 w-full max-w-6xl'>
+                    <div className='relative w-full overflow-hidden rounded-2xl pt-[56.25%]'>
                       <Image
                         src={img}
                         alt={project.name}
                         fill
-                        className="object-cover rounded-2xl"
+                        className='rounded-2xl object-cover'
                         unoptimized
-                        loading="lazy"
+                        loading='lazy'
                       />
                     </div>
 
                     {/* Only render ProjectShowcaseThird for id 5-8 */}
-                    {idx === 0 && (
-                      <ProjectShowcaseFourth sections={fourthSections} />
-                    )}
+                    {idx === 0 && <ProjectShowcaseFourth sections={fourthSections} />}
                     {idx === 1 && (
                       // <ProjectShowcaseThird sections={fifthSections} />
                       <ProjectShowcaseFourth sections={fifthSections} />
                     )}
-                    {idx === 2 && (
-                      <ProjectShowcaseFourth sections={sixthSections} />
-                    )}
+                    {idx === 2 && <ProjectShowcaseFourth sections={sixthSections} />}
                   </div>
                 ),
             )}

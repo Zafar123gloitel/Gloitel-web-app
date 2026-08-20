@@ -1,1 +1,1 @@
-export { default } from "@/components/HeroSection";
+export { default } from '@/components/HeroSection';

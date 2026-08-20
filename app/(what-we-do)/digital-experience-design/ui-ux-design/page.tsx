@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 // import HeroSection from "../../components/HeroSection";
 import {
@@ -14,30 +14,30 @@ import {
   whatWeDesignData,
   whatWeDesignSectionHead,
   wireframingData,
-} from "./data";
-import { BgSquare2 } from "components/BgSquare";
-import StrategyBadge from "../../../../components/StrategyBadge";
-import { MiddleSectionHeads } from "components/SectionHeads";
+} from './data';
+import { BgSquare2 } from 'components/BgSquare';
+import StrategyBadge from '../../../../components/StrategyBadge';
+import { MiddleSectionHeads } from 'components/SectionHeads';
 // import Discover from "../../components/Discover";
 // import Assess from "../../components/Assess";
 // import ImageCard from "../../components/ImageCard";
-import Execution_Plan from "uiComponents/Execution_Plan";
+import Execution_Plan from 'uiComponents/Execution_Plan';
 // import Business from "../../components/Business";
-import ImageCard from "components/ImageCard";
-import { ArrowRightIcon } from "components/SvgIcon";
-import HeroSection from "@/components/HeroSection";
-import Assess from "@/components/what-we-do/Assess";
-import Business from "@/components/what-we-do/Business";
-import Discover from "@/components/what-we-do/Discover";
+import ImageCard from 'components/ImageCard';
+import { ArrowRightIcon } from 'components/SvgIcon';
+import HeroSection from '@/components/HeroSection';
+import Assess from '@/components/what-we-do/Assess';
+import Business from '@/components/what-we-do/Business';
+import Discover from '@/components/what-we-do/Discover';
 
 const page = () => {
   return (
     <div>
       <HeroSection {...uxDesignHeroData} />
-      <section className="overflow-hidden py-20 lg:py-20">
-        <div className="flex flex-col items-center justify-center mx-auto min-h-[60vh] relative z-10">
+      <section className='overflow-hidden py-20 lg:py-20'>
+        <div className='relative z-10 mx-auto flex min-h-[60vh] flex-col items-center justify-center'>
           <BgSquare2 />
-          <div className="flex flex-col gap-6.5 -mt-44 w-full sm:w-1/2 lg:w-1/2 text-center">
+          <div className='-mt-44 flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
             <span>
               <StrategyBadge text={designProcessSectionHead.badgeText} />
             </span>
@@ -48,7 +48,7 @@ const page = () => {
           </div>
         </div>
 
-        <section className=" -mt-40 gap-6  md:w-[90%] mx-auto ">
+        <section className='mx-auto -mt-40 gap-6 md:w-[90%]'>
           <Discover
             badgeText={discoveryResearchData.badgeText}
             title={discoveryResearchData.title}
@@ -107,10 +107,10 @@ const page = () => {
           />
         </section>
       </section>
-      <section className="overflow-hidden py-20 lg:py-20">
-        <div className="flex flex-col items-center justify-center mx-auto min-h-[60vh] relative z-10">
+      <section className='overflow-hidden py-20 lg:py-20'>
+        <div className='relative z-10 mx-auto flex min-h-[60vh] flex-col items-center justify-center'>
           <BgSquare2 />
-          <div className="flex flex-col gap-6.5 -mt-44 w-full sm:w-1/2 lg:w-1/2 text-center">
+          <div className='-mt-44 flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
             <span>
               <StrategyBadge text={whatWeDesignSectionHead.badgeText} />
             </span>
@@ -121,13 +121,13 @@ const page = () => {
           </div>
         </div>
 
-        <div className=" -mt-10 flex justify-center items-center flex-wrap gap-6  ">
-          {whatWeDesignData.map((item) => (
+        <div className='-mt-10 flex flex-wrap items-center justify-center gap-6'>
+          {whatWeDesignData.map(item => (
             <ImageCard
               key={item.id}
-              className={""}
-              cradClass={"w-[25rem] min-h-[550px]"}
-              padding={"px-4"}
+              className={''}
+              cradClass={'w-[25rem] min-h-[550px]'}
+              padding={'px-4'}
               cardtitle={item.title}
               carddescription={item.description}
               buttintext={item.buttonText}
@@ -142,7 +142,7 @@ const page = () => {
       <Business
         badgeText={designStandardsSectionHead.badgeText}
         sectionHead={designStandardsSectionHead.title}
-        sectionSubHead=""
+        sectionSubHead=''
         sectionDescription={designStandardsSectionHead.description}
         data={designStandardsData}
       />

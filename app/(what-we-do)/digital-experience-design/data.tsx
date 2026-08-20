@@ -39,9 +39,9 @@ import {
   UserJourneyMapIcon,
   UserResearchReportIcon,
   WCAGAccessibilityIcon,
-} from "components/SvgIcon";
+} from 'components/SvgIcon';
 
-import { ArchitectureItem } from "uiComponents/ArchitectureCircle";
+import { ArchitectureItem } from 'uiComponents/ArchitectureCircle';
 
 // export const uxResearchHeroData = {
 //   badgeText: "UX Research & Strategy",
@@ -917,192 +917,287 @@ import { ArchitectureItem } from "uiComponents/ArchitectureCircle";
 // };
 
 export const digitalExperienceHeroData = {
-  badgeText: "Digital Experience Design",
-  title: "Experiences That Work as Good as They Look",
+  badgeText: 'Digital Experience Design',
+  title: 'Experiences That Work as Good as They Look',
   description:
     "Design that isn't grounded in user research creates beautiful confusion. Engineering that ignores design creates functional ugliness. We operate at the intersection - where strategy, design, and engineering work together from day one.",
-  image: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787040160/Gloitel/Parent%20pages/Digital_Experience_Design_fygufd.png",
-  imageAlt: "Digital experience design",
-  video:
-    "https://res.cloudinary.com/dsqu6pi0d/video/upload/v1762846419/Gloitel/bg_cij8h5.mp4",
+  image:
+    'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787040160/Gloitel/Parent%20pages/Digital_Experience_Design_fygufd.png',
+  imageAlt: 'Digital experience design',
+  video: 'https://res.cloudinary.com/dsqu6pi0d/video/upload/v1762846419/Gloitel/bg_cij8h5.mp4',
   primaryButton: {
-    text: "Start a Design Engagement",
-    href: "/contact",
+    text: 'Start a Design Engagement',
+    href: '/contact',
   },
   secondaryButton: {
-    text: "View Our Design Work",
-    href: "/about",
-    icon: (
-      <HeroArrowRightIcon />
-    ),
+    text: 'View Our Design Work',
+    href: '/about',
+    icon: <HeroArrowRightIcon />,
   },
 };
 
 export const designGapSectionHead = {
-  badgeText: "The Gap We Close",
-  title: "From Design Handoff to Product Delivery",
+  badgeText: 'The Gap We Close',
+  title: 'From Design Handoff to Product Delivery',
   description:
-    "A collaborative process that keeps design intent, engineering execution, and user experience aligned from start to launch.",
+    'A collaborative process that keeps design intent, engineering execution, and user experience aligned from start to launch.',
 };
 
 export const designGapData = [
   {
     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     step: 1,
-    icon: (
-      <DesignHandoffIcon />
-    ),
-    title: "Design Handoff",
+    icon: <DesignHandoffIcon />,
+    title: 'Design Handoff',
     description:
-      "Design decisions are documented and passed to engineering, often creating interpretation gaps and delayed feedback.",
+      'Design decisions are documented and passed to engineering, often creating interpretation gaps and delayed feedback.',
   },
   {
     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     step: 2,
-    icon: (
-      <AlignmentGapsIcon />
-    ),
-    title: "Alignment Gaps",
+    icon: <AlignmentGapsIcon />,
+    title: 'Alignment Gaps',
     description:
-      "As implementation progresses, design intent can drift, leading to rework and inconsistent product experiences.",
+      'As implementation progresses, design intent can drift, leading to rework and inconsistent product experiences.',
   },
   {
     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
     step: 3,
-    icon: (
-      <IntegratedDeliveryIcon />
-    ),
-    title: "Integrated Delivery",
+    icon: <IntegratedDeliveryIcon />,
+    title: 'Integrated Delivery',
     description:
-      "Design and engineering stay aligned throughout delivery, resulting in faster iteration and stronger outcomes.",
+      'Design and engineering stay aligned throughout delivery, resulting in faster iteration and stronger outcomes.',
   },
 ];
 
 export const designGapNote = {
-  icon: (
-    <InfoIcon className="h-5 w-5 text-blue-400" />
-  ),
-  text: "The best digital experiences are built when design and engineering work together from the beginning, not at handoff.",
+  icon: <InfoIcon className='h-5 w-5 text-blue-400' />,
+  text: 'The best digital experiences are built when design and engineering work together from the beginning, not at handoff.',
 };
 
 export const digitalPracticeSectionHead = {
-  badgeText: "Our Digital Experience Practice",
-  title: "Designed for Every Stage of the Product Journey",
+  badgeText: 'Our Digital Experience Practice',
+  title: 'Designed for Every Stage of the Product Journey',
   description:
-    "From early discovery to optimization, we help shape experiences that balance user needs and business goals.",
+    'From early discovery to optimization, we help shape experiences that balance user needs and business goals.',
 };
 
 export const digitalPracticeData = [
   {
     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
-    image: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787040160/Gloitel/Parent%20pages/UX_Research_Strategy_v3gupe.png",
-    imageAlt: "UX research and strategy",
-    title: "UX Research & Strategy",
+    image:
+      'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787040160/Gloitel/Parent%20pages/UX_Research_Strategy_v3gupe.png',
+    imageAlt: 'UX research and strategy',
+    title: 'UX Research & Strategy',
     description:
-      "Before designing anything, understand the people who will use it. Research-backed experience strategy that grounds every design decision in actual user behavior.",
-    buttonText: "Learn More",
-    buttonLink: "/ux-research-strategy",
+      'Before designing anything, understand the people who will use it. Research-backed experience strategy that grounds every design decision in actual user behavior.',
+    buttonText: 'Learn More',
+    buttonLink: '/ux-research-strategy',
   },
   {
     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
-    image: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787040159/Gloitel/Parent%20pages/UIUX_Design_gw2b9t.png",
-    imageAlt: "UI/UX design",
-    title: "UI/UX Design",
+    image:
+      'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787040159/Gloitel/Parent%20pages/UIUX_Design_gw2b9t.png',
+    imageAlt: 'UI/UX design',
+    title: 'UI/UX Design',
     description:
-      "Design interfaces that balance usability, aesthetics, and technical feasibility. Create wireframes, prototypes, and implementation-ready design specifications.",
-    buttonText: "Learn More",
-    buttonLink: "/ui-ux-design",
+      'Design interfaces that balance usability, aesthetics, and technical feasibility. Create wireframes, prototypes, and implementation-ready design specifications.',
+    buttonText: 'Learn More',
+    buttonLink: '/ui-ux-design',
   },
   {
     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
-    image: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787040159/Gloitel/Parent%20pages/Design_Systems_iwbh73.png",
-    imageAlt: "Design systems",
-    title: "Design Systems",
+    image:
+      'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787040159/Gloitel/Parent%20pages/Design_Systems_iwbh73.png',
+    imageAlt: 'Design systems',
+    title: 'Design Systems',
     description:
-      "Build reusable component libraries and design systems that improve consistency, scalability, and development speed.",
-    buttonText: "Learn More",
-    buttonLink: "/design-systems",
+      'Build reusable component libraries and design systems that improve consistency, scalability, and development speed.',
+    buttonText: 'Learn More',
+    buttonLink: '/design-systems',
   },
   {
     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
-    image: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787040157/Gloitel/Parent%20pages/CX_Optimization_qgjyiw.png",
-    imageAlt: "CX optimization",
-    title: "CX Optimization",
+    image:
+      'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787040157/Gloitel/Parent%20pages/CX_Optimization_qgjyiw.png',
+    imageAlt: 'CX optimization',
+    title: 'CX Optimization',
     description:
-      "Improve digital experiences with conversion optimization, testing, and data-backed UX enhancements.",
-    buttonText: "Learn More",
-    buttonLink: "/cx-optimization",
+      'Improve digital experiences with conversion optimization, testing, and data-backed UX enhancements.',
+    buttonText: 'Learn More',
+    buttonLink: '/cx-optimization',
   },
 ];
 
 export const designToolsData = {
-  badge: "Tools We Work In",
+  badge: 'Tools We Work In',
   title: "Built with the Industry's Leading Design Stack",
   description:
-    "A carefully selected toolkit that supports every stage of the digital experience lifecycle, from discovery to optimization.",
+    'A carefully selected toolkit that supports every stage of the digital experience lifecycle, from discovery to optimization.',
 
-  tabs: ["Design", "Research", "Prototyping", "Design Systems", "Analytics"],
+  tabs: ['Design', 'Research', 'Prototyping', 'Design Systems', 'Analytics'],
 
   technologies: {
     Design: [
-      { id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2), name: "Figma", logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050146/Gloitel/icon/Figma_imkjsh.png" },
-      { id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2), name: "FigJam", logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050169/Gloitel/icon/FigJam_lzeqx9.png" },
-      { id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2), name: "Principle", logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050167/Gloitel/icon/Principle_utmdfx.png" },
-      { id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2), name: "Lottie", logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050166/Gloitel/icon/Lottie_sm0rdc.png" },
-      { id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2), name: "Framer", logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050164/Gloitel/icon/Framer_mmseq3.png" },
+      {
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        name: 'Figma',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050146/Gloitel/icon/Figma_imkjsh.png',
+      },
+      {
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        name: 'FigJam',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050169/Gloitel/icon/FigJam_lzeqx9.png',
+      },
+      {
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        name: 'Principle',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050167/Gloitel/icon/Principle_utmdfx.png',
+      },
+      {
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        name: 'Lottie',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050166/Gloitel/icon/Lottie_sm0rdc.png',
+      },
+      {
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        name: 'Framer',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050164/Gloitel/icon/Framer_mmseq3.png',
+      },
     ],
 
     Research: [
-      { id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2), name: "Hotjar", logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050163/Gloitel/icon/Hotjar_taaewo.png" },
-      { id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2), name: "FullStory", logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050162/Gloitel/icon/FullStory_sktnc7.png" },
-      { id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2), name: "UserTesting", logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050160/Gloitel/icon/UserTesting_mmepjg.png" },
-      { id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2), name: "Maze", logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050159/Gloitel/icon/Maze_n0txti.png" },
-      { id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2), name: "Lookback", logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050157/Gloitel/icon/Lookback_ssc7h8.png" },
+      {
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        name: 'Hotjar',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050163/Gloitel/icon/Hotjar_taaewo.png',
+      },
+      {
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        name: 'FullStory',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050162/Gloitel/icon/FullStory_sktnc7.png',
+      },
+      {
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        name: 'UserTesting',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050160/Gloitel/icon/UserTesting_mmepjg.png',
+      },
+      {
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        name: 'Maze',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050159/Gloitel/icon/Maze_n0txti.png',
+      },
+      {
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        name: 'Lookback',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050157/Gloitel/icon/Lookback_ssc7h8.png',
+      },
     ],
 
     Prototyping: [
-      { id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2), name: "Figma Prototyping", logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050146/Gloitel/icon/Figma_imkjsh.png" },
-      { id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2), name: "Framer", logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050164/Gloitel/icon/Framer_mmseq3.png" },
-      { id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2), name: "Webflow", logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050156/Gloitel/icon/Webflow_eiztfz.png" },
+      {
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        name: 'Figma Prototyping',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050146/Gloitel/icon/Figma_imkjsh.png',
+      },
+      {
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        name: 'Framer',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050164/Gloitel/icon/Framer_mmseq3.png',
+      },
+      {
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        name: 'Webflow',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050156/Gloitel/icon/Webflow_eiztfz.png',
+      },
     ],
 
-    "Design Systems": [
-      { id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2), name: "Storybook", logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050154/Gloitel/icon/Storybook_kpgob6.png" },
-      { id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2), name: "Zeroheight", logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050153/Gloitel/icon/Zeroheight_aasmmv.png" },
-      { id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2), name: "Supernova", logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050152/Gloitel/icon/Supernova_dx0pj8.png" },
+    'Design Systems': [
+      {
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        name: 'Storybook',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050154/Gloitel/icon/Storybook_kpgob6.png',
+      },
+      {
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        name: 'Zeroheight',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050153/Gloitel/icon/Zeroheight_aasmmv.png',
+      },
+      {
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        name: 'Supernova',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050152/Gloitel/icon/Supernova_dx0pj8.png',
+      },
     ],
 
     Analytics: [
-      { id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2), name: "Mixpanel", logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050150/Gloitel/icon/Mixpanel_omeclz.png" },
-      { id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2), name: "Amplitude", logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050149/Gloitel/icon/Amplitude_huuwjv.png" },
-      { id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2), name: "Google Analytics 4", logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050147/Gloitel/icon/Google_Analytics_4_ep9uth.png" },
-      { id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2), name: "PostHog", logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785312783/Gloitel/icon/PostHog_fxlifh.png" },
+      {
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        name: 'Mixpanel',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050150/Gloitel/icon/Mixpanel_omeclz.png',
+      },
+      {
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        name: 'Amplitude',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050149/Gloitel/icon/Amplitude_huuwjv.png',
+      },
+      {
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        name: 'Google Analytics 4',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050147/Gloitel/icon/Google_Analytics_4_ep9uth.png',
+      },
+      {
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        name: 'PostHog',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785312783/Gloitel/icon/PostHog_fxlifh.png',
+      },
     ],
   },
 };
 
 export const designTeamSectionHead = {
-  badgeText: "Design Disciplines in Our Team",
-  title: "A Team Built for End-to End Experience Design",
+  badgeText: 'Design Disciplines in Our Team',
+  title: 'A Team Built for End-to End Experience Design',
   description:
-    "Combining diverse design expertise to solve complex challenges and deliver experiences users love to use.",
+    'Combining diverse design expertise to solve complex challenges and deliver experiences users love to use.',
 };
 
 export const designTeamData = [
-  { id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2), text: "UX Designers" },
-  { id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2), text: "Visual / UI Designers" },
-  { id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2), text: "UX Researchers" },
-  { id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2), text: "Interaction Designers" },
-  { id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2), text: "Design System Architects" },
-  { id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2), text: "Motion Designers" },
-  { id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2), text: "Accessibility Specialists" },
+  {
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    text: 'UX Designers',
+  },
+  {
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    text: 'Visual / UI Designers',
+  },
+  {
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    text: 'UX Researchers',
+  },
+  {
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    text: 'Interaction Designers',
+  },
+  {
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    text: 'Design System Architects',
+  },
+  {
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    text: 'Motion Designers',
+  },
+  {
+    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    text: 'Accessibility Specialists',
+  },
 ];
 
 export const digitalExperienceCTAData = {
-  badgeText: "Ready to Improve Your Product Experience?",
-  title: "From User Research to Product Impact",
+  badgeText: 'Ready to Improve Your Product Experience?',
+  title: 'From User Research to Product Impact',
   description:
-    "Work with a multidisciplinary design team to create experiences that are intuitive, scalable, and built for measurable outcomes.",
-  buttonText: "Talk About Your Design Needs",
-  buttonLink: "/contact",
+    'Work with a multidisciplinary design team to create experiences that are intuitive, scalable, and built for measurable outcomes.',
+  buttonText: 'Talk About Your Design Needs',
+  buttonLink: '/contact',
 };

@@ -329,13 +329,13 @@ import {
   TechnologyEcosystem,
   ClientTestimonials,
   ExecutionPlanCTA,
-} from "@/components/About";
-import EngineeringHeroSection from "@/components/EngineeringHeroSection";
-import { aiEngineeringHeroData } from "./data";
+} from '@/components/About';
+import EngineeringHeroSection from '@/components/EngineeringHeroSection';
+import { aiEngineeringHeroData } from './data';
 
 const page = () => {
   return (
-    <main className="bg-black text-title">
+    <main className='text-title bg-black'>
       <EngineeringHeroSection
         badgeText={aiEngineeringHeroData.badgeText}
         title={aiEngineeringHeroData.title}

@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import React from "react";
+import React from 'react';
 import {
   ecommerceHeroData,
   ecommerceChallengesData,
@@ -9,20 +9,20 @@ import {
   ecommerceSolutionsData,
   ecommerceSolutionsSectionHead,
   ecommerceTechStackData,
-} from "./data";
-import HeroSection from "../../../components/HeroSection";
-import { BgSquare2 } from "components/BgSquare";
-import StrategyBadge from "../../../components/StrategyBadge";
-import { MiddleSectionHeads } from "components/SectionHeads";
-import ProblemCard from "../../../components/ProblemCard";
-import Image from "next/image";
-import { CardShowcase } from "../../../components";
-import Execution_Plan from "uiComponents/Execution_Plan";
-import dynamic from "next/dynamic";
-import { LoadingSection } from "components/LoadingSection";
+} from './data';
+import HeroSection from '../../../components/HeroSection';
+import { BgSquare2 } from 'components/BgSquare';
+import StrategyBadge from '../../../components/StrategyBadge';
+import { MiddleSectionHeads } from 'components/SectionHeads';
+import ProblemCard from '../../../components/ProblemCard';
+import Image from 'next/image';
+import { CardShowcase } from '../../../components';
+import Execution_Plan from 'uiComponents/Execution_Plan';
+import dynamic from 'next/dynamic';
+import { LoadingSection } from 'components/LoadingSection';
 
-const AI_Solutions = dynamic(() => import("uiComponents/AI_Solutions"), {
-  loading: () => <LoadingSection minHeight="min-h-[500px]" />,
+const AI_Solutions = dynamic(() => import('uiComponents/AI_Solutions'), {
+  loading: () => <LoadingSection minHeight='min-h-[500px]' />,
 });
 
 const page = () => {
@@ -30,60 +30,60 @@ const page = () => {
     <div>
       <HeroSection {...ecommerceHeroData} />
       <section>
-        <div className="flex flex-col items-center justify-center mx-auto min-h-[60vh] relative z-10">
+        <div className='relative z-10 mx-auto flex min-h-[60vh] flex-col items-center justify-center'>
           <BgSquare2 />
-          <div className="flex flex-col w-full -mt-40  gap-6.5 sm:w-1/2 lg:w-1/2 text-center">
+          <div className='-mt-40 flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
             {/* Badge */}
             <span>
               <StrategyBadge text={ecommerceChallengesSectionHead.badgeText} />
             </span>
             <MiddleSectionHeads
               SectionHead={ecommerceChallengesSectionHead.title}
-              SectionSubHead=" "
+              SectionSubHead=' '
               SectionDescription={ecommerceChallengesSectionHead.description}
             />
           </div>
         </div>
-        <div className="-mt-20">
-          <div className="relative h-[400px] mb-16 overflow-hidden w-[80%]  mx-auto">
+        <div className='-mt-20'>
+          <div className='relative mx-auto mb-16 h-[400px] w-[80%] overflow-hidden'>
             <Image
               src={ecommerceChallengesSectionHead.image}
               alt={ecommerceChallengesSectionHead.imageAlt}
               fill
-              className="object-cover rounded-2xl h-full w-full  bg-white"
-              loading="lazy"
+              className='h-full w-full rounded-2xl bg-white object-cover'
+              loading='lazy'
             />
           </div>
 
-          <section className="grid grid-cols-1 mb-10  gap-6 md:grid-cols-2 w-[80%] mx-auto ">
+          <section className='mx-auto mb-10 grid w-[80%] grid-cols-1 gap-6 md:grid-cols-2'>
             {ecommerceChallengesData.map((item, index) => (
               <ProblemCard key={index} title={item.text} />
             ))}
           </section>
         </div>
       </section>
-      <div className="flex flex-col mt-24 items-center justify-center mx-auto min-h-[60vh] relative z-10">
+      <div className='relative z-10 mx-auto mt-24 flex min-h-[60vh] flex-col items-center justify-center'>
         <BgSquare2 />
-        <div className="flex flex-col -mt-10 w-full gap-6.5 sm:w-1/2 lg:w-1/2 text-center">
+        <div className='-mt-10 flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
           {/* Badge */}
           <span>
             <StrategyBadge text={ecommerceSolutionsSectionHead.badgeText} />
           </span>
           <MiddleSectionHeads
             SectionHead={ecommerceSolutionsSectionHead.title}
-            SectionSubHead=""
+            SectionSubHead=''
             SectionDescription={ecommerceSolutionsSectionHead.description}
           />
         </div>
-        <section className="p-5 sm:p-0  sm:max-w-[90%] -mt-5 mx-auto">
+        <section className='mx-auto -mt-5 p-5 sm:max-w-[90%] sm:p-0'>
           <CardShowcase
             items={ecommerceSolutionsData}
             showDivider={true}
             showStepBadge={false}
-            cardHeight="h-[411px] max-w-[411px] "
-            gridClassName="gap-y-6"
-            titleClassName=""
-            descriptionClassName=""
+            cardHeight='h-[411px] max-w-[411px] '
+            gridClassName='gap-y-6'
+            titleClassName=''
+            descriptionClassName=''
           />
         </section>
       </div>

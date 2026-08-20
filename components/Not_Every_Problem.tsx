@@ -1,9 +1,9 @@
-import React from "react";
-import { BgSquare2 } from "./BgSquare";
-import StrategyBadge from "@/components/StrategyBadge";
-import { MiddleSectionHeads } from "./SectionHeads";
-import PurposeCard from "@/components/what-we-do/PurposeCard";
-import { BrainCircuit, CircleAlert, Settings } from "lucide-react";
+import React from 'react';
+import { BgSquare2 } from './BgSquare';
+import StrategyBadge from '@/components/StrategyBadge';
+import { MiddleSectionHeads } from './SectionHeads';
+import PurposeCard from '@/components/what-we-do/PurposeCard';
+import { BrainCircuit, CircleAlert, Settings } from 'lucide-react';
 
 interface NotEveryProblemProps {
   badgeText: string;
@@ -26,37 +26,34 @@ const Not_Every_Problem = ({
   bottomText,
 }: NotEveryProblemProps) => {
   return (
-    <div className="my-10">
-      <div className="flex flex-col items-center justify-center mx-auto min-h-[60vh] relative  z-10">
+    <div className='my-10'>
+      <div className='relative z-10 mx-auto flex min-h-[60vh] flex-col items-center justify-center'>
         <BgSquare2 />
-        <div className="flex flex-col gap-6.5  -mt-[10rem]  w-full sm:w-1/2 lg:w-1/2 text-center">
+        <div className='-mt-[10rem] flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
           {/* Badge */}
           <span>
             <StrategyBadge text={badgeText} />
           </span>
-          <MiddleSectionHeads
-            SectionHead={heading}
-            SectionDescription={description}
-          />
+          <MiddleSectionHeads SectionHead={heading} SectionDescription={description} />
         </div>
       </div>
 
-      <div className="flex flex-col lg:flex-row items-center gap-4 max-w-[80%] mx-auto -mt-20 lg:-mt-10">
+      <div className='mx-auto -mt-20 flex max-w-[80%] flex-col items-center gap-4 lg:-mt-10 lg:flex-row'>
         {cards.map((item, index) => (
           <React.Fragment key={item.id}>
             <PurposeCard
               icon={item.icon}
               title={item.title}
               description={item.description}
-              className=""
+              className=''
             />
 
             {index !== cards.length - 1 && (
               <div
                 className={[
-                  "inline-flex h-16 min-w-16 items-center justify-center text-title rounded-full",
-                  "bg-[#1447E633] text-2xl border border-white",
-                ].join(" ")}
+                  'text-title inline-flex h-16 min-w-16 items-center justify-center rounded-full',
+                  'border border-white bg-[#1447E633] text-2xl',
+                ].join(' ')}
               >
                 vs
               </div>
@@ -65,7 +62,7 @@ const Not_Every_Problem = ({
         ))}
       </div>
       <div
-        className="max-w-[75%] mx-auto mt-10 rounded-2xl flex items-center gap-3 border border-transparent p-3"
+        className='mx-auto mt-10 flex max-w-[75%] items-center gap-3 rounded-2xl border border-transparent p-3'
         style={{
           background: `
       linear-gradient(#080B18, #080B18) padding-box,
@@ -73,10 +70,10 @@ const Not_Every_Problem = ({
     `,
         }}
       >
-        <span className="inline-flex h-12 min-w-12 items-center text-2xl bg-[#1447E633] justify-center rounded-full ">
-          <CircleAlert className="h-5 w-5 text-blue-400" />
+        <span className='inline-flex h-12 min-w-12 items-center justify-center rounded-full bg-[#1447E633] text-2xl'>
+          <CircleAlert className='h-5 w-5 text-blue-400' />
         </span>
-        <p className="text-title">{bottomText}</p>
+        <p className='text-title'>{bottomText}</p>
       </div>
     </div>
   );

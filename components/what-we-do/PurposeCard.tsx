@@ -16,8 +16,6 @@
 // }: purposeCardProps) => {
 //   return (
 
-
-
 // <Card className="flex items-center">
 //   <div className="flex w-full items-center justify-center gap-6 px-6 ">
 
@@ -45,12 +43,9 @@
 
 // export default PurposeCard;
 
-
-
-import React from "react";
-import Image from "next/image";
-import { Card, CardIcon } from "@/components";
-
+import React from 'react';
+import Image from 'next/image';
+import { Card, CardIcon } from '@/components';
 
 interface PurposeCardProps {
   icon?: React.ReactNode;
@@ -74,7 +69,7 @@ interface PurposeCardProps {
 const PurposeCard = ({
   icon,
   image,
-  imageAlt = "",
+  imageAlt = '',
   title,
   description,
   className,
@@ -86,57 +81,51 @@ const PurposeCard = ({
 }: PurposeCardProps) => {
   const content = (
     <div>
-      <h3 className="text-[24px] text-title">
-        {title}
-      </h3>
+      <h3 className='text-title text-[24px]'>{title}</h3>
 
-      <p className="mt-2  leading-6 text-description text-[16px]">
-        {description}
-      </p>
+      <p className='text-description mt-2 text-[16px] leading-6'>{description}</p>
     </div>
   );
 
   const imageBlock = image ? (
-    <div className="relative shrink-0 overflow-hidden h-[173px] w-[182px]">
+    <div className='relative h-[173px] w-[182px] shrink-0 overflow-hidden'>
       <Image
         src={image}
         alt={imageAlt}
-        objectFit="cover"
+        objectFit='cover'
         fill
-        className="object-cover"
+        className='object-cover'
         unoptimized
-        loading="lazy"
+        loading='lazy'
       />
     </div>
   ) : null;
 
-  const iconBlock = icon ? (
-    <CardIcon className="h-14 w-14 shrink-0">{icon}</CardIcon>
-  ) : null;
+  const iconBlock = icon ? <CardIcon className='h-14 w-14 shrink-0'>{icon}</CardIcon> : null;
 
   const viewBox = viewText ? (
     <a
       href={viewLink}
-      className="group absolute bottom-5 left-12 inline-flex items-center gap-3 text-[14px] font-normal text-title transition-all duration-300 md:text-[16px]"
+      className='group text-title absolute bottom-5 left-12 inline-flex items-center gap-3 text-[14px] font-normal transition-all duration-300 md:text-[16px]'
     >
       <span>{viewText}</span>
 
       {/* Arrow */}
       <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="transition-transform duration-300 group-hover:translate-x-1"
-        aria-hidden="true"
+        xmlns='http://www.w3.org/2000/svg'
+        width='24'
+        height='24'
+        viewBox='0 0 24 24'
+        fill='none'
+        stroke='currentColor'
+        strokeWidth='1.8'
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        className='transition-transform duration-300 group-hover:translate-x-1'
+        aria-hidden='true'
       >
-        <path d="M5 12h14" />
-        <path d="m13 6 6 6-6 6" />
+        <path d='M5 12h14' />
+        <path d='m13 6 6 6-6 6' />
       </svg>
     </a>
   ) : null;
@@ -144,13 +133,10 @@ const PurposeCard = ({
   const listBox = list ? (
     <>
       {list.length > 0 && (
-        <ul className="w-full shrink-0 space-y-1.5 text-[12px] text-gray-300 md:w-[120px]">
+        <ul className='w-full shrink-0 space-y-1.5 text-[12px] text-gray-300 md:w-[120px]'>
           {list.map((item, index) => (
-            <li
-              key={`${item}-${index}`}
-              className="relative flex items-start gap-2"
-            >
-              <span className="mt-[6px] h-1 w-1 shrink-0 rounded-full bg-white/70" />
+            <li key={`${item}-${index}`} className='relative flex items-start gap-2'>
+              <span className='mt-[6px] h-1 w-1 shrink-0 rounded-full bg-white/70' />
 
               <span>{item}</span>
             </li>
@@ -158,40 +144,40 @@ const PurposeCard = ({
         </ul>
       )}
     </>
-  ) : null
+  ) : null;
 
   const buttonBox = buttonText ? (
     <>
       {buttonText && (
-        <div className="flex shrink-0 flex-col items-start gap-2 md:items-center">
+        <div className='flex shrink-0 flex-col items-start gap-2 md:items-center'>
           {/* Apply Button */}
           {buttonText && (
             <a
               href={buttonLink}
-              className="group inline-flex min-w-[100px] items-center justify-center gap-2 rounded-md bg-blue-600 px-4 py-2 text-[11px] font-medium text-title shadow-[0_0_20px_rgba(37,99,235,0.35)] transition-all duration-300 hover:bg-blue-500 hover:shadow-[0_0_25px_rgba(37,99,235,0.5)]"
+              className='group text-title inline-flex min-w-[100px] items-center justify-center gap-2 rounded-md bg-blue-600 px-4 py-2 text-[11px] font-medium shadow-[0_0_20px_rgba(37,99,235,0.35)] transition-all duration-300 hover:bg-blue-500 hover:shadow-[0_0_25px_rgba(37,99,235,0.5)]'
             >
               <span>{buttonText}</span>
 
               <svg
-                width="13"
-                height="13"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="transition-transform duration-300 group-hover:translate-x-0.5"
+                width='13'
+                height='13'
+                viewBox='0 0 24 24'
+                fill='none'
+                xmlns='http://www.w3.org/2000/svg'
+                className='transition-transform duration-300 group-hover:translate-x-0.5'
               >
                 <path
-                  d="M7 17L17 7"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
+                  d='M7 17L17 7'
+                  stroke='currentColor'
+                  strokeWidth='1.8'
+                  strokeLinecap='round'
                 />
                 <path
-                  d="M8 7H17V16"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+                  d='M8 7H17V16'
+                  stroke='currentColor'
+                  strokeWidth='1.8'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
                 />
               </svg>
             </a>
@@ -201,31 +187,26 @@ const PurposeCard = ({
           {viewText && (
             <a
               href={viewLink}
-              className="group inline-flex items-center gap-2 text-[11px] text-title transition-colors duration-300 hover:text-title"
+              className='group text-title hover:text-title inline-flex items-center gap-2 text-[11px] transition-colors duration-300'
             >
               <span>{viewText}</span>
 
               <svg
-                width="15"
-                height="15"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="transition-transform duration-300 group-hover:translate-x-1"
+                width='15'
+                height='15'
+                viewBox='0 0 24 24'
+                fill='none'
+                xmlns='http://www.w3.org/2000/svg'
+                className='transition-transform duration-300 group-hover:translate-x-1'
               >
-                <path
-                  d="M5 12H19"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                />
+                <path d='M5 12H19' stroke='currentColor' strokeWidth='1.8' strokeLinecap='round' />
 
                 <path
-                  d="M13 6L19 12L13 18"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+                  d='M13 6L19 12L13 18'
+                  stroke='currentColor'
+                  strokeWidth='1.8'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
                 />
               </svg>
             </a>
@@ -235,14 +216,12 @@ const PurposeCard = ({
     </>
   ) : null;
 
-
-
   return (
-    <Card className={`flex items-center ${className ?? ""}`}>
-      <div className="flex flex-col sm:flex-row w-full items-center justify-center gap-6 px-0 sm:px-6">
+    <Card className={`flex items-center ${className ?? ''}`}>
+      <div className='flex w-full flex-col items-center justify-center gap-6 px-0 sm:flex-row sm:px-6'>
         {image ? (
           // Image case: text left, image right
-          <span className="flex flex-col-reverse md:flex-row w-full pb-10 items-center justify-between gap-6">
+          <span className='flex w-full flex-col-reverse items-center justify-between gap-6 pb-10 md:flex-row'>
             {content}
             {imageBlock}
             {viewBox}
@@ -262,5 +241,3 @@ const PurposeCard = ({
 };
 
 export default PurposeCard;
-
-

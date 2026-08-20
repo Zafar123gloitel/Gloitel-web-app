@@ -393,19 +393,18 @@
 
 // export default Navbar;
 
-"use client";
+'use client';
 
-import Link from "next/link";
-import React, { useState, useEffect, } from "react";
-import { usePathname } from "next/navigation";
-import { VerticalDivider } from "./SectionDivider";
-import { GlowButton, HeaderButton } from "./Button";
-import Image from "next/image";
-import { links } from "./NavData";
-import { megaMenus } from "./NavData";
+import Link from 'next/link';
+import React, { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
+import { VerticalDivider } from './SectionDivider';
+import { GlowButton, HeaderButton } from './Button';
+import Image from 'next/image';
+import { links } from './NavData';
+import { megaMenus } from './NavData';
 
-import { useRouter } from "next/navigation";
-
+import { useRouter } from 'next/navigation';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -414,39 +413,36 @@ const Navbar = () => {
   const [mobileOpenMegaMenu, setMobileOpenMegaMenu] = useState(null);
   const pathname = usePathname();
 
-  const router = useRouter()
+  const router = useRouter();
 
-  const getLinkClasses = (href) => {
-    const isActive =
-      pathname === href || (href !== "/" && pathname.startsWith(href));
+  const getLinkClasses = href => {
+    const isActive = pathname === href || (href !== '/' && pathname.startsWith(href));
 
     return isActive
-      ? "text-title translate-y-0 scale-100"
-      : "text-description hover:text-title hover:-translate-y-1 hover:scale-105 transition-all duration-300 ease-out";
+      ? 'text-title translate-y-0 scale-100'
+      : 'text-description hover:text-title hover:-translate-y-1 hover:scale-105 transition-all duration-300 ease-out';
   };
 
-
-  const isMegaMenuActive = (megaMenu) => {
+  const isMegaMenuActive = megaMenu => {
     const menu = megaMenus[megaMenu];
 
     if (!menu) return false;
 
-    return menu.groups.some((group) => {
+    return menu.groups.some(group => {
       // Group route
       if (group.href && pathname.includes(group.href)) {
         return true;
       }
 
       // Child route
-      return group.items?.some((item) => {
-        const itemPath = item.href?.split("#")[0];
+      return group.items?.some(item => {
+        const itemPath = item.href?.split('#')[0];
 
         return itemPath && pathname.includes(itemPath);
       });
     });
   };
   // 🧭 Hide navbar when scrolling down
-
 
   useEffect(() => {
     let lastScroll = 0;
@@ -455,8 +451,8 @@ const Navbar = () => {
       setIsHidden(currentScroll > lastScroll && currentScroll > 50);
       lastScroll = currentScroll;
     };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   useEffect(() => {
@@ -466,62 +462,66 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 bg-black/20  backdrop-blur-md transition-transform duration-300 ${isHidden ? "-translate-y-full" : "translate-y-0"
-        }`}
+      className={`fixed top-0 right-0 left-0 z-50 bg-black/20 backdrop-blur-md transition-transform duration-300 ${
+        isHidden ? '-translate-y-full' : 'translate-y-0'
+      }`}
     >
       <nav
         onMouseLeave={() => setOpenMegaMenu(null)}
-        className=" mx-auto flex items-center justify-between px-4  md:px-10  border-b-1 border-gray-500/20"
+        className='mx-auto flex items-center justify-between border-b-1 border-gray-500/20 px-4 md:px-10'
       >
         {/* 🔹 Header Wrapper */}
-        <div className="flex items-center justify-between w-full px-6 py-4">
+        <div className='flex w-full items-center justify-between px-6 py-4'>
           {/* 🔹 Left Section — Menu + Logo */}
-          <div className="flex items-center gap-6">
+          <div className='flex items-center gap-6'>
             {/* 🔹 Logo */}
-            <Link href="/" className="flex items-center gap-2">
+            <Link href='/' className='flex items-center gap-2'>
               <Image
-                src="https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762927934/Gloitel/logo_xbs2qc.svg"
+                src='https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762927934/Gloitel/logo_xbs2qc.svg'
                 width={120}
                 height={90}
-                alt="Logo"
-                className="object-contain"
+                alt='Logo'
+                className='object-contain'
                 unoptimized
-                loading="lazy"
+                loading='lazy'
               />
             </Link>
             <VerticalDivider />
-            <div className="hidden lg:flex items-center gap-9">
-              {links.map((link) =>
+            <div className='hidden items-center gap-9 lg:flex'>
+              {links.map(link =>
                 link.megaMenu ? (
                   <div
                     key={link.label}
-                    className="relative"
+                    className='relative'
                     onMouseEnter={() => setOpenMegaMenu(link.megaMenu)}
-                  // onMouseLeave={() => setOpenMegaMenu(null)}
+                    // onMouseLeave={() => setOpenMegaMenu(null)}
                   >
                     <button
-                      type="button"
+                      type='button'
                       onClick={link.href ? () => router?.push(link.href) : undefined}
-                      className={`relative z-20 flex items-center gap-1 transition ${link.href ? "cursor-pointer" : ""
-                        } ${isMegaMenuActive(link.megaMenu)
-                          ? "text-title"
-                          : "text-description hover:text-title"
-                        }`}
+                      className={`relative z-20 flex items-center gap-1 transition ${
+                        link.href ? 'cursor-pointer' : ''
+                      } ${
+                        isMegaMenuActive(link.megaMenu)
+                          ? 'text-title'
+                          : 'text-description hover:text-title'
+                      }`}
                     >
                       {link.label}
 
                       <svg
-                        className={`h-4 w-4 transition-transform duration-300 ${openMegaMenu === link.megaMenu ? "rotate-180" : ""
-                          }`}
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
+                        className={`h-4 w-4 transition-transform duration-300 ${
+                          openMegaMenu === link.megaMenu ? 'rotate-180' : ''
+                        }`}
+                        fill='none'
+                        stroke='currentColor'
+                        viewBox='0 0 24 24'
                       >
                         <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
+                          strokeLinecap='round'
+                          strokeLinejoin='round'
                           strokeWidth={2}
-                          d="M19 9l-7 7-7-7"
+                          d='M19 9l-7 7-7-7'
                         />
                       </svg>
                     </button>
@@ -534,53 +534,42 @@ const Navbar = () => {
                       return (
                         <div
                           onMouseLeave={() => setOpenMegaMenu(null)}
-                          className={`fixed left-1/2 top-[89px] -translate-x-1/2 w-full  transition-all duration-100 z-50 ${isOpen
-                            ? "visible opacity-100 translate-y-0"
-                            : "invisible opacity-0 translate-y-4"
-                            }`}
+                          className={`fixed top-[89px] left-1/2 z-50 w-full -translate-x-1/2 transition-all duration-100 ${
+                            isOpen
+                              ? 'visible translate-y-0 opacity-100'
+                              : 'invisible translate-y-4 opacity-0'
+                          }`}
                         >
                           <div
-                            className={`w-full h-80 rounded-b-sm bg-gray-900 opacity-100 p-8 shadow-2xl`}
+                            className={`h-80 w-full rounded-b-sm bg-gray-900 p-8 opacity-100 shadow-2xl`}
                           >
-                            <p className="mb-6 text-blue-400 text-sm font-medium">
-                              {link.label}
-                            </p>
+                            <p className='mb-6 text-sm font-medium text-blue-400'>{link.label}</p>
 
-                            <div
-                              className={`grid ${menu.columns} text-nowrap  gap-10`}
-                            >
+                            <div className={`grid ${menu.columns} gap-10 text-nowrap`}>
                               <div className={`${menu.groupsSpan} grid gap-8`}>
-                                {menu.groups.map((section) => (
+                                {menu.groups.map(section => (
                                   <div key={section.title}>
                                     {section.href ? (
                                       <Link
                                         href={section.href}
-                                        className="mb-5 block font-semibold text-title transition-colors hover:text-blue-400"
+                                        className='text-title mb-5 block font-semibold transition-colors hover:text-blue-400'
                                       >
                                         {section.title}
                                       </Link>
                                     ) : (
-                                      <h4 className="mb-5 text-title font-semibold">
+                                      <h4 className='text-title mb-5 font-semibold'>
                                         {section.title}
                                       </h4>
                                     )}
-                                    <div className="grid grid-flow-col gap-8">
+                                    <div className='grid grid-flow-col gap-8'>
                                       {Array.from(
                                         {
-                                          length: Math.ceil(
-                                            section.items.length / 4,
-                                          ),
+                                          length: Math.ceil(section.items.length / 4),
                                         },
                                         (_, chunkIndex) => (
-                                          <ul
-                                            key={chunkIndex}
-                                            className="space-y-3"
-                                          >
+                                          <ul key={chunkIndex} className='space-y-3'>
                                             {section.items
-                                              .slice(
-                                                chunkIndex * 5,
-                                                chunkIndex * 5 + 5,
-                                              )
+                                              .slice(chunkIndex * 5, chunkIndex * 5 + 5)
                                               .map((item, index) => (
                                                 <li key={index}>
                                                   <Link
@@ -602,15 +591,15 @@ const Navbar = () => {
                                 ))}
                               </div>
 
-                              <div className="flex items-center -mt-6 justify-center ">
-                                <div className="rounded-2xl h-56 w-56 shadow-[0_0_80px_rgba(37,99,235,0.45)]">
+                              <div className='-mt-6 flex items-center justify-center'>
+                                <div className='h-56 w-56 rounded-2xl shadow-[0_0_80px_rgba(37,99,235,0.45)]'>
                                   <Image
                                     src={menu.image}
                                     width={280}
                                     height={220}
-                                    alt="menu"
-                                    className="rounded-2xl h-full w-full drop-shadow-[0_25px_50px_rgba(37,99,235,0.35)]"
-                                    loading="lazy"
+                                    alt='menu'
+                                    className='h-full w-full rounded-2xl drop-shadow-[0_25px_50px_rgba(37,99,235,0.35)]'
+                                    loading='lazy'
                                   />
                                 </div>
                               </div>
@@ -634,44 +623,44 @@ const Navbar = () => {
           </div>
 
           {/* 🔹 Right Section — Button */}
-          <div className="hidden lg:flex items-center">
-            <GlowButton buttonText="Get In Touch" Buttonlink="/contact" />
+          <div className='hidden items-center lg:flex'>
+            <GlowButton buttonText='Get In Touch' Buttonlink='/contact' />
           </div>
         </div>
 
         {/* 🔹 Mobile Toggle Button */}
         <button
           onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
-          className="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-description hover:text-title hover:bg-gray-800/50 transition-all"
+          className='text-description hover:text-title inline-flex items-center justify-center rounded-md p-2 transition-all hover:bg-gray-800/50 lg:hidden'
         >
           {isMobileMenuOpen ? (
             <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+              xmlns='http://www.w3.org/2000/svg'
+              className='h-6 w-6'
+              fill='none'
+              viewBox='0 0 24 24'
+              stroke='currentColor'
             >
               <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M6 18L18 6M6 6l12 12"
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth='2'
+                d='M6 18L18 6M6 6l12 12'
               />
             </svg>
           ) : (
             <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+              xmlns='http://www.w3.org/2000/svg'
+              className='h-6 w-6'
+              fill='none'
+              viewBox='0 0 24 24'
+              stroke='currentColor'
             >
               <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16M4 18h16"
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth='2'
+                d='M4 6h16M4 12h16M4 18h16'
               />
             </svg>
           )}
@@ -680,74 +669,70 @@ const Navbar = () => {
 
       {/* 🔹 Mobile Menu */}
       <div
-        className={`lg:hidden transition-all duration-300 overflow-y-auto bg-black/70 ${isMobileMenuOpen
-          ? "max-h-[760px] opacity-100 py-4"
-          : "max-h-0 opacity-0 py-0"
-          }`}
+        className={`overflow-y-auto bg-black/70 transition-all duration-300 lg:hidden ${
+          isMobileMenuOpen ? 'max-h-[760px] py-4 opacity-100' : 'max-h-0 py-0 opacity-0'
+        }`}
       >
-        <div className="flex flex-col space-y-3 pb-10 px-6">
-          {links.map((link) =>
+        <div className='flex flex-col space-y-3 px-6 pb-10'>
+          {links.map(link =>
             link.megaMenu ? (
-              <div
-                key={link.label}
-                className="rounded-lg border border-white/10 bg-white/5"
-              >
+              <div key={link.label} className='rounded-lg border border-white/10 bg-white/5'>
                 <button
-                  type="button"
+                  type='button'
                   onClick={() => {
-                    router.push(link.href)
+                    router.push(link.href);
                     setMobileOpenMegaMenu(
-                      mobileOpenMegaMenu === link.megaMenu
-                        ? null
-                        : link.megaMenu,
-                    )
-                  }
-                  }
-                  className={`flex w-full items-center justify-between px-4 py-3 text-left  ${isMegaMenuActive(link.megaMenu)
-                    ? "text-title"
-                    : "text-title/60 hover:text-title"
-                    }`}
+                      mobileOpenMegaMenu === link.megaMenu ? null : link.megaMenu,
+                    );
+                  }}
+                  className={`flex w-full items-center justify-between px-4 py-3 text-left ${
+                    isMegaMenuActive(link.megaMenu)
+                      ? 'text-title'
+                      : 'text-title/60 hover:text-title'
+                  }`}
                 >
                   <span>{link.label}</span>
                   <svg
-                    className={`h-4 w-4 transition-transform duration-300 ${mobileOpenMegaMenu === link.megaMenu ? "rotate-180" : ""
-                      }`}
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
+                    className={`h-4 w-4 transition-transform duration-300 ${
+                      mobileOpenMegaMenu === link.megaMenu ? 'rotate-180' : ''
+                    }`}
+                    viewBox='0 0 24 24'
+                    fill='none'
+                    stroke='currentColor'
+                    strokeWidth='2'
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
                   >
-                    <path d="M6 9l6 6 6-6" />
+                    <path d='M6 9l6 6 6-6' />
                   </svg>
                 </button>
 
                 <div
-                  className={`grid overflow-hidden transition-all duration-300 ${mobileOpenMegaMenu === link.megaMenu
-                    ? "grid-rows-[1fr] opacity-100"
-                    : "grid-rows-[0fr] opacity-0"
-                    }`}
+                  className={`grid overflow-hidden transition-all duration-300 ${
+                    mobileOpenMegaMenu === link.megaMenu
+                      ? 'grid-rows-[1fr] opacity-100'
+                      : 'grid-rows-[0fr] opacity-0'
+                  }`}
                 >
-                  <div className="overflow-hidden">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 sm:place-items-center gap-4 border-t border-white/10 px-4 py-3">
-                      {megaMenus[link.megaMenu]?.groups.map((section) => (
-                        <div key={section.title} className="pb-2">
+                  <div className='overflow-hidden'>
+                    <div className='grid grid-cols-1 gap-4 border-t border-white/10 px-4 py-3 sm:grid-cols-2 sm:place-items-center'>
+                      {megaMenus[link.megaMenu]?.groups.map(section => (
+                        <div key={section.title} className='pb-2'>
                           {section.href ? (
                             <Link
                               href={section.href}
-                              className="mb-2 text-sm font-semibold text-blue-400"
+                              className='mb-2 text-sm font-semibold text-blue-400'
                             >
                               {section.title}
                             </Link>
                           ) : (
                             <>
-                              <p className="mb-2 text-sm font-semibold text-blue-400">
+                              <p className='mb-2 text-sm font-semibold text-blue-400'>
                                 {section.title}
                               </p>
                             </>
                           )}
-                          <div className="space-y-2">
+                          <div className='space-y-2'>
                             {section.items.map((item, index) => (
                               <Link
                                 key={`${section.title}-${index}`}
@@ -780,27 +765,27 @@ const Navbar = () => {
                 <span>{link.label}</span>
 
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+                  xmlns='http://www.w3.org/2000/svg'
+                  width='20'
+                  height='20'
+                  viewBox='0 0 24 24'
+                  fill='none'
+                  stroke='currentColor'
+                  strokeWidth='2'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
                 >
-                  <path d="M4 12h16" />
-                  <path d="m14 6 6 6-6 6" />
+                  <path d='M4 12h16' />
+                  <path d='m14 6 6 6-6 6' />
                 </svg>
               </Link>
             ),
           )}
 
-          <div className="pt-3">
+          <div className='pt-3'>
             <HeaderButton
-              buttonText="Get In Touch"
-              buttonLink="/contact"
+              buttonText='Get In Touch'
+              buttonLink='/contact'
               onClick={() => setMobileMenuOpen(false)}
             />
           </div>
