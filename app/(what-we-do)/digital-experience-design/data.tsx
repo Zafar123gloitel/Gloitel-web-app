@@ -39,9 +39,9 @@ import {
   UserJourneyMapIcon,
   UserResearchReportIcon,
   WCAGAccessibilityIcon,
-} from "../../component/SvgIcon";
+} from "components/SvgIcon";
 
-import { ArchitectureItem } from "../../uiComponents/ArchitectureCircle";
+import { ArchitectureItem } from "uiComponents/ArchitectureCircle";
 
 // export const uxResearchHeroData = {
 //   badgeText: "UX Research & Strategy",

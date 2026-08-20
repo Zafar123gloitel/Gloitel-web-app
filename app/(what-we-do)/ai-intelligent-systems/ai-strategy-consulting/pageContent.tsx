@@ -2,20 +2,38 @@
 
 import StrategyBadge from "../../../../components/StrategyBadge";
 import ProblemCard from "../../../../components/ProblemCard";
-import { BgSquare2 } from "../../../component/BgSquare";
-import { MiddleSectionHeads } from "../../../component/SectionHeads";
+import { BgSquare2 } from "components/BgSquare";
+import { MiddleSectionHeads } from "components/SectionHeads";
 import { CardShowcase } from "../../../../components";
-import Discover from "../../components/Discover";
-import Assess from "../../components/Assess";
+// import Discover from "../../components/Discover";
+// import Assess from "../../components/Assess";
 
-import Business from "../../components/Business";
-import Strategy from "../../components/Strategy";
-import TimeLine from "../../components/TimeLine";
-import Asked_Q from "../../components/Asked_Q";
-import Execution_Plan from "../../../uiComponents/Execution_Plan";
-import HeroSection from "../../components/HeroSection";
-import GlowPanel from "../../../component/GlowPanel";
-import { accordionData, assessData, discoverData, enableData, heroSectionData, notIncludedData, outcomesData, problems, RankData, showcaseItems } from "./data";
+// import Business from "../../components/Business";
+// import Strategy from "../../components/Strategy";
+// import TimeLine from "../../components/TimeLine";
+// import Asked_Q from "../../components/Asked_Q";
+import Execution_Plan from "uiComponents/Execution_Plan";
+// import HeroSection from "../../components/HeroSection";
+import GlowPanel from "components/GlowPanel";
+import {
+  accordionData,
+  assessData,
+  discoverData,
+  enableData,
+  heroSectionData,
+  notIncludedData,
+  outcomesData,
+  problems,
+  RankData,
+  showcaseItems,
+} from "./data";
+import HeroSection from "@/components/HeroSection";
+import Asked_Q from "@/components/what-we-do/Asked_Q";
+import Assess from "@/components/what-we-do/Assess";
+import Business from "@/components/what-we-do/Business";
+import Discover from "@/components/what-we-do/Discover";
+import Strategy from "@/components/what-we-do/Strategy";
+import TimeLine from "@/components/what-we-do/TimeLine";
 
 export default function WhatWeDoPage() {
   return (
@@ -36,6 +54,8 @@ export default function WhatWeDoPage() {
                 SectionHead="Built for Teams Ready to move beyond AI Experimentation"
                 SectionSubHead=""
                 SectionDescription="Designed for organizations that want to invest in AI strategically, align initiatives with business outcomes, and prioritize the right opportunities before committing resources."
+                headingTag="h2"
+                subHeadingTag="h3"
               />
             </div>
           </div>
@@ -57,6 +77,8 @@ export default function WhatWeDoPage() {
             <MiddleSectionHeads
               SectionHead="Diagnose Before You Deploy"
               SectionDescription="We run a structured Discovery Sprint - a fixed-scope, 3–4 week engagement that maps your workflows, assesses feasibility, and delivers a prioritized AI roadmap."
+              headingTag="h2"
+              subHeadingTag="h3"
             />
           </div>
           <section className="w-full  sm:w-[90%] mt-20 mx-auto">
@@ -64,10 +86,10 @@ export default function WhatWeDoPage() {
               showStepBadge
               showDivider={false}
               items={showcaseItems}
-              cardHeight="h-[250px]   max-w-[300px] "
+              cardHeight="h-[230px]   max-w-[300px] "
               gridClassName="gap-y-28"
-              titleClassName="text-[28px] leading-8 "
-              descriptionClassName="text-[16px] leading-5 mt-3 text-description "
+              titleClassName=""
+              descriptionClassName=""
             />
           </section>
         </div>
@@ -112,6 +134,8 @@ export default function WhatWeDoPage() {
         sectionSubHead=""
         sectionDescription="Leave with a prioritized plan, validated opportunities, and a practical roadmap designed to deliver measurable business outcomes."
         data={outcomesData}
+        headingTag="h2"
+        subHeadingTag="h3"
       />
       <GlowPanel />
       <Strategy
@@ -122,8 +146,10 @@ export default function WhatWeDoPage() {
           "Every recommendation is grounded in business impact and feasibility. We do not start with technology, products, or predetermined solutions."
         }
         StrategyBadgeText={"What This Is Not"}
+        headingTag="h2"
+        subHeadingTag="h3"
       />
-      <TimeLine />
+      <TimeLine headingTag="h2" subHeadingTag="h3" />
       <Asked_Q
         accordionData={accordionData}
         badgeText={"Everything You Need to Know"}
@@ -132,6 +158,8 @@ export default function WhatWeDoPage() {
         sectionDescription={
           "Answers to common questions about the Discovery Sprint, engagement process, timelines, and expected outcomes."
         }
+        headingTag="h2"
+        subHeadingTag="h3"
       />
       <Execution_Plan
         badgeText="Start with Strategy, Not Assumptions"

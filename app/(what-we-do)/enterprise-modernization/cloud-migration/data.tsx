@@ -1,4 +1,4 @@
-import { CloudIcon, GearInterlockIcon, HeroArrowRightIcon, LightbulbTargetIcon, SettingsGearIcon, SettingsIcon, WorkflowIcon } from "../../../component/SvgIcon";
+import { CloudIcon, GearInterlockIcon, HeroArrowRightIcon, LightbulbTargetIcon, SettingsGearIcon, SettingsIcon, WorkflowIcon } from "components/SvgIcon";
 
 export const cloudMigrationHeroData = {
   badgeText: "Cloud Migration",

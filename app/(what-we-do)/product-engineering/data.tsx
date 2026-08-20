@@ -12,7 +12,7 @@ import {
   ScalableArchitectureIcon,
   TargetIcon,
   UsersIcon,
-} from "../../component/SvgIcon";
+} from "components/SvgIcon";
 
 export const productEngineeringHeroData = {
   badgeText: "Product Engineering",
@@ -42,22 +42,22 @@ export const productStruggleData = {
   items: [
     {
       id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
-      icon: <CloseIcon size={27} className="" />,
+      icon: <CloseIcon size={20} className="" />,
       description: "Built before the core value proposition is validated",
     },
     {
       id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
-      icon: <CloseIcon size={27} className="" />,
+      icon: <CloseIcon size={20} className="" />,
       description: "Architecture built for speed, not scale",
     },
     {
       id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
-      icon: <CloseIcon size={27} className="" />,
+      icon: <CloseIcon size={20} className="" />,
       description: "Scope that expands without a corresponding plan for scale",
     },
     {
       id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
-      icon: <CloseIcon size={27} className="" />,
+      icon: <CloseIcon size={20} className="" />,
       description: "Teams that ship fast but struggle to maintain and scale",
     },
   ],

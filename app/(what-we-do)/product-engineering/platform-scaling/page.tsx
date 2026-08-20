@@ -1,7 +1,6 @@
 "use client";
 
-import React from "react";
-import HeroSection from "../../components/HeroSection";
+// import HeroSection from "../../components/HeroSection";
 import {
   auditPhaseData,
   executionPhaseData,
@@ -12,15 +11,21 @@ import {
   scalingIndicators,
   scalingSolutions,
 } from "./data";
-import Strategy from "../../components/Strategy";
-import { BgSquare2 } from "../../../component/BgSquare";
+// import Strategy from "../../components/Strategy";
+import { BgSquare2 } from "components/BgSquare";
 import StrategyBadge from "../../../../components/StrategyBadge";
-import { MiddleSectionHeads } from "../../../component/SectionHeads";
-import PurposeCard from "../../components/PurposeCard";
-import Execution_Plan from "../../../uiComponents/Execution_Plan";
-import Business from "../../components/Business";
-import Assess from "../../components/Assess";
-import Discover from "../../components/Discover";
+import { MiddleSectionHeads } from "components/SectionHeads";
+// import PurposeCard from "../../components/PurposeCard";
+import Execution_Plan from "uiComponents/Execution_Plan";
+import HeroSection from "@/components/HeroSection";
+import Assess from "@/components/what-we-do/Assess";
+import Business from "@/components/what-we-do/Business";
+import Discover from "@/components/what-we-do/Discover";
+import PurposeCard from "@/components/what-we-do/PurposeCard";
+import Strategy from "@/components/what-we-do/Strategy";
+// import Business from "../../components/Business";
+// import Assess from "../../components/Assess";
+// import Discover from "../../components/Discover";
 
 const page = () => {
   return (

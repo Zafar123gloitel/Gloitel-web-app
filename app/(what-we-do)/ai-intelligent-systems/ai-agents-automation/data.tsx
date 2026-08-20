@@ -1,4 +1,4 @@
-import { CloseIcon, FinanceIcon, HandshakeIcon, HealthcareIcon, LegalIcon, MediaPublishingIcon, RealEstateIcon, RefreshCcwIcon, UsersIcon, WrenchIcon, ZapIcon } from "../../../component/SvgIcon";
+import { CloseIcon, FinanceIcon, HandshakeIcon, HealthcareIcon, LegalIcon, MediaPublishingIcon, RealEstateIcon, RefreshCcwIcon, UsersIcon, WrenchIcon, ZapIcon } from "components/SvgIcon";
 
 export const ai_agents_designed = [
   {

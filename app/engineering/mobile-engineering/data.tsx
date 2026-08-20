@@ -10,8 +10,8 @@ import {
   PilotScopeIcon,
   PrioritizedUseCasesIcon,
   StructuredDataWorkflowsIcon,
-} from "../../component/SvgIcon";
-import { ArchitectureCard } from "../../uiComponents/EngineeringArchitecture";
+} from "components/SvgIcon";
+import { ArchitectureCard } from "uiComponents/EngineeringArchitecture";
 
 export const mobileEngineeringHeroData = {
   badgeText: "Mobile Engineering",

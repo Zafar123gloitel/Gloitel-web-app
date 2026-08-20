@@ -31,14 +31,14 @@ const ProblemCard = ({
             {number}
           </div>
           <div className="relative flex min-h-[86px] ml-20 items-center rounded-2xl border border-white/10 bg-[#080B18] px-8 py-6 text-left transition-all duration-300 group-hover:border-blue-500/30 group-hover:shadow-[0_0_35px_rgba(37,99,235,.18)]">
-            <p className="text-[12px] sm:text-[16px] md:text-[20px]  font-normal leading-relaxed text-description ">
+            <p className="text-[12px] sm:text-[20px] font-normal leading-relaxed text-title ">
               {title}
             </p>
           </div>
         </div>
       ) : (
         <div className="relative flex h-full min-h-[86px] items-center justify-center rounded-2xl border border-white/10 bg-[#080B18] px-8 text-center transition-all duration-300 group-hover:border-blue-500/30 group-hover:shadow-[0_0_35px_rgba(37,99,235,.18)]">
-          <p className=" text[12px] sm:text-[16px] py-2 lg:text-[20px] font-normal leading-relaxed text-description">
+          <p className=" text[12px] sm:text-[20px] py-2  font-normal leading-relaxed text-title">
             {title}
           </p>
         </div>

@@ -9,7 +9,7 @@ import {
   MLPipelinesIcon,
   PromptOpsIcon,
   RAGSystemsIcon,
-} from "../../component/SvgIcon";
+} from "components/SvgIcon";
 export const aiEngineeringHeroData = {
   badgeText: "AI Engineering",
   title: "AI Engineering That Ships and Stays Shipped",

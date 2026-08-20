@@ -1,22 +1,25 @@
 "use client";
 
-import { ArrowRight } from "lucide-react";
-import React from "react";
-import HeroSection from "../../components/HeroSection";
-import The_Engineering from "../../components/The_Engineering";
-import { BgSquare2 } from "../../../component/BgSquare";
+import { BgSquare2 } from "components/BgSquare";
 import StrategyBadge from "../../../../components/StrategyBadge";
-import { MiddleSectionHeads } from "../../../component/SectionHeads";
+import { MiddleSectionHeads } from "components/SectionHeads";
 import { CardShowcase } from "../../../../components";
-import PurposeCard from "../../components/PurposeCard";
-import Business from "../../components/Business";
-import AI_Solutions from "../../../uiComponents/AI_Solutions";
-import Execution_Plan from "../../../uiComponents/Execution_Plan";
-import { ArrowRightIcon } from "../../../component/SvgIcon";
-import { engineeringData, engineeringSectionData, engineeringServicesData ,architecturePatternsData, TechnologiesData, deliverablesData } from "./data";
 
-
-
+import AI_Solutions from "uiComponents/AI_Solutions";
+import Execution_Plan from "uiComponents/Execution_Plan";
+import { ArrowRightIcon } from "components/SvgIcon";
+import {
+  engineeringData,
+  engineeringSectionData,
+  engineeringServicesData,
+  architecturePatternsData,
+  TechnologiesData,
+  deliverablesData,
+} from "./data";
+import HeroSection from "@/components/HeroSection";
+import Business from "@/components/what-we-do/Business";
+import PurposeCard from "@/components/what-we-do/PurposeCard";
+import The_Engineering from "@/components/what-we-do/The_Engineering";
 
 const page = () => {
   return (
@@ -36,7 +39,7 @@ const page = () => {
           secondaryButton={{
             href: "/case-studies",
             text: "Book a Technical Review",
-           icon: <ArrowRightIcon size={20}/>,
+            icon: <ArrowRightIcon size={20} />,
           }}
         />
       </section>
@@ -69,10 +72,10 @@ const page = () => {
               items={engineeringServicesData}
               showDivider={true}
               showStepBadge={false}
-              cardClassName="h-[411px] max-w-[350px] gap-y-6 "
+              cardClassName="h-[370px] max-w-[350px] gap-y-6 "
               gridClassName="h-full"
-              titleClassName="text-[28px] leading-8 "
-              descriptionClassName="text-[16px] leading-6 mt-3 text-description "
+              titleClassName=""
+              descriptionClassName=""
             />
           </section>
         </div>

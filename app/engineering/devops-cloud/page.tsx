@@ -1,11 +1,11 @@
 "use client";
 import { CardShowcase } from "../../../components";
 import StrategyBadge from "../../../components/StrategyBadge";
-import { BgSquare2 } from "../../component/BgSquare";
-import EngineeringHeroSection from "../../component/EngineeringHeroSection";
-import { MiddleSectionHeads } from "../../component/SectionHeads";
-import AI_Solutions from "../../uiComponents/AI_Solutions";
-import Execution_Plan from "../../uiComponents/Execution_Plan";
+import { BgSquare2 } from "components/BgSquare";
+import EngineeringHeroSection from "components/EngineeringHeroSection";
+import { MiddleSectionHeads } from "components/SectionHeads";
+import AI_Solutions from "uiComponents/AI_Solutions";
+import Execution_Plan from "uiComponents/Execution_Plan";
 import { aiEcosystemData, aiSystemsData, aiSystemsSectionHead, devOpsCloudCTAData, devOpsCloudHeroData } from "./data";
 
 export default function Page() {
@@ -39,8 +39,8 @@ export default function Page() {
             items={aiSystemsData}
             cardHeight="h-[300px]   max-w-[350px] "
             gridClassName="gap-y-28"
-            titleClassName="text-[32px] leading-8 "
-            descriptionClassName="text-[18px] leading-7 mt-5  text-description "
+            titleClassName=""
+            descriptionClassName=""
           />
         </section>
       </div>

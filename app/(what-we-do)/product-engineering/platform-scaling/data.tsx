@@ -1,5 +1,5 @@
 
-import { ArrowRightIcon, BarChartIcon, TargetIcon, DiamondStackIcon, RadarIcon, CheckTargetIcon, ClipboardIcon, DatabaseIcon, AnomalyDetectionIcon, CloudIcon, WorkflowIcon1, CodeIcon, DocumentIcon, ChartIcon, ShieldIcon } from '../../../component/SvgIcon';
+import { ArrowRightIcon, BarChartIcon, TargetIcon, DiamondStackIcon, RadarIcon, CheckTargetIcon, ClipboardIcon, DatabaseIcon, AnomalyDetectionIcon, CloudIcon, WorkflowIcon1, CodeIcon, DocumentIcon, ChartIcon, ShieldIcon } from 'components/SvgIcon';
 
 export const platformHeroSection = {
   badgeText: "Platform Scaling",

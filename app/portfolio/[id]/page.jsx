@@ -1,17 +1,17 @@
 "use client";
 import React, { use } from "react";
-import { FAQPage } from "../../component/Faq";
-import JoinUsNow from "../../component/JoinUsNow";
+import { FAQPage } from "@/components/Faq";
+import JoinUsNow from "@/components/JoinUsNow";
 import {
   ProjectShowcase,
   ProjectShowcaseFourth,
   ProjectShowcaseSecond,
-} from "../../component/ProjectShowcase";
-import { IntroHead2 } from "../../uiComponents/Heading";
+} from "@/components/ProjectShowcase";
+import { IntroHead2 } from "uiComponents/Heading";
 import Image from "next/image";
 import projects from "./data.json";
-import { GlowButton } from "../../component/Button";
-import GlowPanel from "../../component/GlowPanel";
+import { GlowButton } from "@/components/Button";
+import GlowPanel from "@/components/GlowPanel";
 import { usePathname } from "next/navigation";
 
 const Portfolio = ({ params }) => {

@@ -1,25 +1,124 @@
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
+import Js from '@eslint/js';
+import tseslint from 'typescript-eslint';
+import tsParser from '@typescript-eslint/parser';
+import pluginReactConfig from 'eslint-plugin-react/configs/recommended.js';
+import { fixupConfigRules } from '@eslint/compat';
+import prettier from 'eslint-config-prettier';
+import prettierPlugin from 'eslint-plugin-prettier';
+// import nextjs from 'eslint-config-next';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+// {
+//   "extends": ["next/core-web-vitals", "next/typescript"]
+// }
 
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
-
-const eslintConfig = [
-  ...compat.extends("next/core-web-vitals"),
+export default [
   {
     ignores: [
-      "node_modules/**",
-      ".next/**",
-      "out/**",
-      "build/**",
-      "next-env.d.ts",
+      'postcss.config.mjs',
+      'next.config.{mjs,js,cjs}',
+      '**/.eslintrc.json',
+      '**/tsconfig-paths-register.d.ts',
+      '**/env.d.ts',
+      '.vscode/*',
+      'eslint.config.{cjs,mjs,js,json}',
+      '**/node_modules',
+      '**/package-lock.json',
+      '**/yarn.lock',
+      '**/pnpm-lock.yaml',
+      '**/.next',
+      '**/.husky',
+      '**/logs',
+      '**/loadtest.mjs',
+      '**/build',
+      '**/dist',
+      '**/tsconfig.tsbuildinfo',
+      '**/logs',
+      '**/*.log',
+      '**/npm-debug.log*',
+      '**/yarn-debug.log*',
+      '**/yarn-error.log*',
+      '**/pnpm-debug.log*',
+      '**/lerna-debug.log*',
+      // # PWA
+      'sw.js',
+      'sw.js.map',
+      'workbox-*.js',
+      'workbox-*.js.map',
+      //# Auto Generated PWA files
+      '**/public/sw.js',
+      '**/public/workbox-*.js',
+      '**/public/worker-*.js',
+      '**/public/sw.js.map',
+      '**/public/workbox-*.js.map',
+      '**/public/worker-*.js.map',
+      '**/test.{js,ts,mjs}',
+      '**/op.{js,ts,mjs}',
+      '**/release.config.{js,ts,mjs}',
     ],
   },
-];
 
-export default eslintConfig;
+  prettier,
+  Js.configs.recommended,
+  ...tseslint.configs.recommended,
+  ...fixupConfigRules(pluginReactConfig),
+
+  {
+    files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
+    languageOptions: {
+      globals: {
+        window: 'readonly',
+        document: 'readonly',
+        navigator: 'readonly',
+        console: 'readonly',
+        process: 'readonly',
+        module: 'readonly',
+        require: 'readonly',
+        __dirname: 'readonly',
+        __filename: 'readonly',
+        Atomics: 'readonly',
+        SharedArrayBuffer: 'readonly',
+      },
+      parser: tsParser,
+      parserOptions: {
+        ecmaFeatures: { jsx: true },
+        sourceType: 'module',
+        project: 'tsconfig.json',
+      },
+    },
+
+    settings: {
+      'import/resolver': { typescript: true, node: true },
+      'react': { version: 'detect' },
+    },
+
+    plugins: {
+      prettier: prettierPlugin,
+    },
+
+    rules: {
+      'prettier/prettier': ['error', { endOfLine: 'auto' }],
+      'complexity': ['warn', { max: 320 }],
+      'semi': ['error', 'always'],
+      'no-duplicate-imports': 'error',
+      'no-console': 'error',
+      'no-debugger': 'error',
+      'no-undef': 'error',
+      'no-var': 'warn',
+      'no-empty-function': 'warn',
+      'no-useless-escape': 'off',
+      'no-unused-vars': 'off',
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+          caughtErrorsIgnorePattern: '^_',
+        },
+      ],
+      'prefer-const': 'warn',
+      'array-bracket-spacing': 'warn',
+      'object-curly-spacing': ['warn', 'always'],
+      'react/react-in-jsx-scope': 'off',
+    },
+  },
+];

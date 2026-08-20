@@ -11,8 +11,8 @@ import {
   PilotScopeIcon,
   PrioritizedUseCasesIcon,
   WCAGComplianceIcon,
-} from "../../component/SvgIcon";
-import { ArchitectureItem } from "../../uiComponents/ArchitectureCircle";
+} from "components/SvgIcon";
+import { ArchitectureItem } from "uiComponents/ArchitectureCircle";
 
 export const fullStackHeroData = {
   badgeText: "Full Stack Engineering",

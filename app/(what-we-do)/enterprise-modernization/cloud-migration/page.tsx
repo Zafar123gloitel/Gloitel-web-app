@@ -1,7 +1,6 @@
 "use client";
 
-import React from "react";
-import HeroSection from "../../components/HeroSection";
+// import HeroSection from "../../components/HeroSection";
 import {
   cloudCoverageData,
   cloudCoverageSectionHead,
@@ -12,14 +11,14 @@ import {
   migrationStrategySectionHead,
   migrationStrategySteps,
 } from "./data";
-import { BgSquare2 } from "../../../component/BgSquare";
+import { BgSquare2 } from "components/BgSquare";
 import StrategyBadge from "../../../../components/StrategyBadge";
-import { MiddleSectionHeads } from "../../../component/SectionHeads";
+import { MiddleSectionHeads } from "components/SectionHeads";
 import { CardShowcase } from "../../../../components";
 import ProblemCard from "../../../../components/ProblemCard";
-import AI_Solutions from "../../../uiComponents/AI_Solutions";
-import Execution_Plan from "../../../uiComponents/Execution_Plan";
-
+import AI_Solutions from "uiComponents/AI_Solutions";
+import Execution_Plan from "uiComponents/Execution_Plan";
+import HeroSection from "@/components/HeroSection";
 
 const page = () => {
   return (
@@ -46,8 +45,8 @@ const page = () => {
             items={migrationApproachData}
             cardHeight="h-[330px]  max-w-[330px] "
             gridClassName="gap-y-28"
-            titleClassName="text-[28px] leading-8 "
-            descriptionClassName="text-[16px] leading-5 mt-3 text-description "
+            titleClassName=""
+            descriptionClassName=""
           />
         </section>
       </section>

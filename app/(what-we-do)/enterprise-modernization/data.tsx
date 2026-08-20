@@ -1,4 +1,4 @@
-// import { AnalyticsIcon, ChecklistIcon, CodeIcon, DatabaseIcon, HeroArrowRightIcon, LinkIcon, MonitorIcon, RefreshCcwIcon, ShieldIcon, WorkflowIcon } from "../../component/SvgIcon";
+// import { AnalyticsIcon, ChecklistIcon, CodeIcon, DatabaseIcon, HeroArrowRightIcon, LinkIcon, MonitorIcon, RefreshCcwIcon, ShieldIcon, WorkflowIcon } from "components/SvgIcon";
 
 /* Non-exported data retained for reference.
 const appModernizationHeroData = {

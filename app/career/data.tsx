@@ -1,4 +1,4 @@
-import { ArchitectureItem } from "../uiComponents/ArchitectureCircle";
+import { ArchitectureItem } from "uiComponents/ArchitectureCircle";
 
 export const heroData = {
     badgeText: "AI Strategy & Consulting",

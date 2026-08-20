@@ -1,6 +1,6 @@
 import React from "react";
-import { FAQPage } from "../component/Faq";
-import JoinUsNow from "../component/JoinUsNow";
+import { FAQPage } from "@/components/Faq";
+import JoinUsNow from "@/components/JoinUsNow";
 const page = () => {
   return (
     <div>

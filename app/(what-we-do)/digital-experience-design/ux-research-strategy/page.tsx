@@ -1,13 +1,11 @@
 "use client";
 
-import React from "react";
-import HeroSection from "../../components/HeroSection";
-import { BgSquare2 } from "../../../component/BgSquare";
+// import HeroSection from "../../components/HeroSection";
+import { BgSquare2 } from "components/BgSquare";
 import StrategyBadge from "../../../../components/StrategyBadge";
-import { MiddleSectionHeads } from "../../../component/SectionHeads";
-import ProblemCard from "../../../../components/ProblemCard";
-import Strategy from "../../components/Strategy";
-import Execution_Plan from "../../../uiComponents/Execution_Plan";
+import { MiddleSectionHeads } from "components/SectionHeads";
+// import Strategy from "../../components/Strategy";
+import Execution_Plan from "uiComponents/Execution_Plan";
 import {
   assumptionsData,
   assumptionsSectionHead,
@@ -18,8 +16,11 @@ import {
   uxResearchCTAData,
   uxResearchHeroData,
 } from "./data";
-import Business from "../../components/Business";
-import ArchitectureCircle from "../../../uiComponents/ArchitectureCircle";
+// import Business from "../../components/Business";
+import ArchitectureCircle from "uiComponents/ArchitectureCircle";
+import HeroSection from "@/components/HeroSection";
+import Business from "@/components/what-we-do/Business";
+import Strategy from "@/components/what-we-do/Strategy";
 
 const page = () => {
   const positions = {
@@ -79,7 +80,6 @@ const page = () => {
         description={uxResearchCTAData.description}
         buttonText={uxResearchCTAData.buttonText}
         buttonLink={uxResearchCTAData.buttonLink}
-        onclick={() => ({})}
       />
     </div>
   );

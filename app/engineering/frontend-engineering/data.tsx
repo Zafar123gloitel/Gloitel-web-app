@@ -3,7 +3,7 @@ import {
   LinkIcon,
   ResilientProcessingIcon,
   VisibilityControlIcon,
-} from "../../component/SvgIcon";
+} from "components/SvgIcon";
 export const frontendEngineeringHeroData = {
   badgeText: "Frontend Engineering",
   title: "AI Engineering That Ships and Stays Shipped", // ⚠️ mismatch - AI Engineering ka title hai

@@ -14,9 +14,9 @@ import {
   UserInterviewsIcon,
   UserJourneyMapIcon,
   UserResearchReportIcon,
-} from "../../../component/SvgIcon";
+} from "components/SvgIcon";
 
-import { ArchitectureItem } from "../../../uiComponents/ArchitectureCircle";
+import { ArchitectureItem } from "uiComponents/ArchitectureCircle";
 
 export const uxResearchHeroData = {
   badgeText: "UX Research & Strategy",
@@ -49,7 +49,7 @@ export const researchMethodsSectionHead = {
 
 export const researchMethodsData: ArchitectureItem[] = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: "user-interviews",
     position: "top",
     icon: (
       <UserInterviewsIcon />
@@ -59,7 +59,7 @@ export const researchMethodsData: ArchitectureItem[] = [
       "1:1 conversations with real users. We recruit, moderate, and synthesize insights from 8-12 interviews to surface meaningful patterns.",
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: "survey-research",
     position: "leftTop",
     icon: (
       <SurveyResearchIcon />
@@ -69,7 +69,7 @@ export const researchMethodsData: ArchitectureItem[] = [
       "Quantitative validation of qualitative insights. Large-sample data that confirms (or challenges) what interviews revealed.",
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: "contextual-inquiry",
     position: "rightTop",
     icon: (
       <ContextualInquiryIcon />
@@ -79,7 +79,7 @@ export const researchMethodsData: ArchitectureItem[] = [
       "Observe users performing real tasks in their actual environment. The gap between what users say and do often reveals the most valuable insights.",
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: "competitive-analysis",
     position: "leftBottom",
     icon: (
       <CompetitiveAnalysisIcon />
@@ -89,7 +89,7 @@ export const researchMethodsData: ArchitectureItem[] = [
       "Systematic review of how competitors solve the same problems. Not to copy but to understand established patterns and identify differentiation opportunities.",
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: "journey-mapping",
     position: "bottom",
     icon: (
       <JourneyMappingIcon />
@@ -99,7 +99,7 @@ export const researchMethodsData: ArchitectureItem[] = [
       "Map the end-to-end user experience - across channels, touchpoints, and time - to identify where value is created and where it's destroyed. Foundation for every product strategy decision.",
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: "usability-testing",
     position: "rightBottom",
     icon: (
       <UsabilityTestingIcon />
@@ -119,49 +119,49 @@ export const deliverablesSectionHead = {
 
 export const deliverablesData = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: "research-report",
     icon: (
       <UserResearchReportIcon />
     ),
     title: "User research report with findings and recommendations",
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: "persona-definitions",
     icon: (
       <ResearchPersonaIcon />
     ),
     title: "Persona definitions grounded in research data",
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: "journey-maps",
     icon: (
       <UserJourneyMapIcon />
     ),
     title: "User journey maps (current state and desired state)",
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: "jobs-to-be-done",
     icon: (
       <JobsToBeDoneIcon />
     ),
     title: "Jobs-to-be-done framework",
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: "experience-audit",
     icon: (
       <ExperienceAuditIcon />
     ),
     title: "Experience audit of existing product",
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: "opportunity-map",
     icon: (
       <OpportunityMapIcon />
     ),
     title: "Opportunity map - prioritized areas for improvement",
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: "research-brief",
     icon: (
       <ResearchDesignBriefIcon />
     ),
@@ -178,35 +178,35 @@ export const assumptionsSectionHead = {
 
 export const assumptionsData = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: "new-product-feedback",
     icon: (
       <ResearchAssumptionInfoIcon />
     ),
     description: "Designing a new product or feature without user feedback",
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: "redesign-not-performing",
     icon: (
       <ResearchAssumptionInfoIcon />
     ),
     description: "Redesigning an existing product that isn't performing well",
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: "enter-new-market",
     icon: (
       <ResearchAssumptionInfoIcon />
     ),
     description: "Entering a new market or user segment",
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: "specialized-users",
     icon: (
       <ResearchAssumptionInfoIcon />
     ),
     description: "Building for specialized users and non-English speakers",
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: "conflicting-opinions",
     icon: (
       <ResearchAssumptionInfoIcon />
     ),

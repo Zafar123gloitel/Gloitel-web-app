@@ -12,14 +12,14 @@ import {
   financeSolutionsSectionHead,
 } from "./data";
 import HeroSection from "../../../components/HeroSection";
-import { BgSquare2 } from "../../component/BgSquare";
+import { BgSquare2 } from "components/BgSquare";
 import StrategyBadge from "../../../components/StrategyBadge";
-import { MiddleSectionHeads } from "../../component/SectionHeads";
+import { MiddleSectionHeads } from "components/SectionHeads";
 import ProblemCard from "../../../components/ProblemCard";
 import Image from "next/image";
 import { CardShowcase } from "../../../components";
-import Execution_Plan from "../../uiComponents/Execution_Plan";
-import ArchitectureCircle from "../../uiComponents/ArchitectureCircle";
+import Execution_Plan from "uiComponents/Execution_Plan";
+import ArchitectureCircle from "uiComponents/ArchitectureCircle";
 
 const page = () => {
   const positions = {
@@ -86,8 +86,8 @@ const page = () => {
             showStepBadge={false}
             cardHeight="h-[411px] max-w-[411px] "
             gridClassName="gap-y-6"
-            titleClassName="text-[28px] leading-8 "
-            descriptionClassName="text-[16px] leading-6 mt-3 text-description "
+            titleClassName=""
+            descriptionClassName=""
           />
         </section>
       </div>
@@ -108,7 +108,7 @@ const page = () => {
         <section className="flex items-center -mt-10">
           <ArchitectureCircle
             data={financeComplianceData}
-            image="/images/hrm.png"
+            image="https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787056266/Gloitel/Industries/Compliance_Standards_We_Work_To22_ak2odb.png"
             positions={positions}
           />
         </section>

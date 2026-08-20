@@ -1,4 +1,4 @@
-import { AnalyticsIcon, CheckIcon, ChecklistIcon, CodeIcon, HeroArrowRightIcon, RefreshCcwIcon, ShieldIcon, WorkflowIcon } from "../../../component/SvgIcon";
+import { AnalyticsIcon, CheckIcon, ChecklistIcon, CodeIcon, HeroArrowRightIcon, RefreshCcwIcon, ShieldIcon, WorkflowIcon } from "components/SvgIcon";
 
 export const microservicesHeroData = {
   badgeText: "Microservices Architecture",

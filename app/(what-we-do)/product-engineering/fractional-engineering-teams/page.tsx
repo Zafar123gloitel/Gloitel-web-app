@@ -1,7 +1,6 @@
 "use client";
 
-import React from "react";
-import HeroSection from "../../components/HeroSection";
+// import HeroSection from "../../components/HeroSection";
 import {
   fractionalTeamHeroData,
   showcaseItems2,
@@ -12,14 +11,18 @@ import {
   scaleReadinessIndicators,
   scaleReadinessSectionHead,
 } from "./data";
-import { BgSquare2 } from "../../../component/BgSquare";
+import { BgSquare2 } from "components/BgSquare";
 import StrategyBadge from "../../../../components/StrategyBadge";
-import { MiddleSectionHeads } from "../../../component/SectionHeads";
-import PodCard from "../../components/PodCard";
+import { MiddleSectionHeads } from "components/SectionHeads";
+// import PodCard from "../../components/PodCard";
 import { CardShowcase } from "../../../../components";
-import Business from "../../components/Business";
-import Strategy from "../../components/Strategy";
-import Execution_Plan from "../../../uiComponents/Execution_Plan";
+// import Business from "../../components/Business";
+// import Strategy from "../../components/Strategy";
+import Execution_Plan from "uiComponents/Execution_Plan";
+import HeroSection from "@/components/HeroSection";
+import Business from "@/components/what-we-do/Business";
+import PodCard from "@/components/what-we-do/PodCard";
+import Strategy from "@/components/what-we-do/Strategy";
 
 const page = () => {
   return (
@@ -47,8 +50,8 @@ const page = () => {
             items={showcaseItems2}
             cardHeight="h-[263px]  max-w-[330px] "
             gridClassName="h-full gap-y-30 "
-            titleClassName="text-[28px] leading-8 "
-            descriptionClassName="text-[16px] xl:text-[18px] leading-6 mt-3 text-description "
+            titleClassName=""
+            descriptionClassName=""
           />
         </section>
       </section>
@@ -103,8 +106,8 @@ const page = () => {
               showStepBadge={false}
               cardClassName="h-[411px] max-w-[350px] gap-y-6 "
               gridClassName="h-full"
-              titleClassName="text-[28px] leading-8 "
-              descriptionClassName="text-[16px] leading-6 mt-3 text-description "
+              titleClassName=""
+              descriptionClassName=""
             />
           </section>
         </div>

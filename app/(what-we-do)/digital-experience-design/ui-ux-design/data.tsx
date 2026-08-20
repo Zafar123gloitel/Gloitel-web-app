@@ -5,7 +5,7 @@ import {
   HeroArrowRightIcon,
   ResponsiveDesignIcon,
   WCAGAccessibilityIcon,
-} from "../../../component/SvgIcon";
+} from "components/SvgIcon";
 
 export const uxDesignHeroData = {
   badgeText: "UI/UX Design",

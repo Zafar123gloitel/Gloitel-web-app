@@ -1,13 +1,13 @@
 "use client";
 
 import React, { useState } from "react";
-import { IntroHead } from "../uiComponents/Heading";
-import { GlowButton } from "../component/Button";
+import { IntroHead } from "uiComponents/Heading";
+import { GlowButton } from "@/components/Button";
 import Image from "next/image";
-import { FAQPage } from "../component/Faq";
-import JoinUsNow from "../component/JoinUsNow";
+import { FAQPage } from "@/components/Faq";
+import JoinUsNow from "@/components/JoinUsNow";
 import Link from "next/link";
-import GlowPanel from "../component/GlowPanel";
+import GlowPanel from "@/components/GlowPanel";
 
 const stages = [
   {
@@ -108,7 +108,7 @@ const CreationPage = () => {
 
           {/* Buttons */}
           <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-4 items-center">
-            <GlowButton ButtonText="Build your Project" Buttonlink="/contact" />
+            <GlowButton buttonText="Build your Project" buttonlink="/contact" />
           </div>
 
           {/* Grid */}

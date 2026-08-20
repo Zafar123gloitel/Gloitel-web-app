@@ -45,7 +45,7 @@ export function StepBadge({ number }: StepBadgeProps) {
       {/* Rotating Border */}
       <div className="relative inline-flex rounded-full  p-[1.5px] overflow-hidden">
         {/* Button */}
-        <div className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full border border-[#FFFFFF4D] bg-[#1447E633] text-3xl font-light text-title shadow-[0_0_35px_rgba(37,99,235,.45)]">
+        <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full border border-[#FFFFFF4D] bg-[#1447E633] text-xl font-light text-title shadow-[0_0_35px_rgba(37,99,235,.45)]">
           {number}
         </div>
       </div>
@@ -58,13 +58,13 @@ export function CardIcon({ children, className = "" }) {
     <div
       className={[
         "relative",
-        "before:pointer-events-none before:absolute before:left-1/2 before:top-0 before:h-px before:w-[20%] before:-translate-x-1/2",
+        "before:pointer-events-none before:absolute before:left-1/2 before:top-0 before:h-px before:w-[40%] before:-translate-x-1/2",
         "before:bg-gradient-to-r before:from-transparent before:via-blue-500 before:to-transparent",
         "after:pointer-events-none after:absolute after:inset-0 after:rounded-[28px]",
         "after:bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.16),transparent_32%),radial-gradient(circle_at_top_right,rgba(96,165,250,0.08),transparent_26%)]",
         "after:opacity-80",
 
-        "inline-flex h-14 w-14 items-center justify-center rounded-full border border-white/10",
+        "inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/20",
         "text-title shadow-[0_12px_28px_rgba(15,23,42,0.24)]",
         "transition-all duration-300 ease-out",
         "group-hover:bg-blue-600 ",
@@ -95,7 +95,7 @@ export function CardDivider({ className = "" }) {
 
 export function CardTitle({
   children,
-  className = "text-[28px] font-normal leading-8 tracking-[-0.04em] text-title text-left",
+  className = "text-[20px] font-normal leading-8 tracking-[-0.04em] text-title text-left",
 }) {
   return (
     <h3 className={["", className].filter(Boolean).join(" ")}>{children}</h3>
@@ -104,7 +104,7 @@ export function CardTitle({
 
 export function CardDescription({
   children,
-  className = "text-[16px]  text-description  leading-7 text-left",
+  className = "text-sm  text-description  leading-6 text-left",
 }) {
   return (
     <p className={["", className].filter(Boolean).join(" ")}>{children}</p>

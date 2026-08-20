@@ -12,16 +12,17 @@ import {
   MedicalDeviceSoftwareIcon,
   PatientEngagementPlatformsIcon,
   SOC2TypeIIIcon,
-} from "../../component/SvgIcon";
+} from "components/SvgIcon";
 
-import type { ArchitectureItem } from "../../uiComponents/ArchitectureCircle";
+import type { ArchitectureItem } from "uiComponents/ArchitectureCircle";
 
 export const healthcareHeroData = {
   badgeText: "Healthcare & Medtech",
   title: "Technology Built for the Stakes of Healthcare",
   description:
     "Healthcare software doesn't just need to work. It needs to be secure, compliant, reliable, and accurate - because the consequences of failure aren't just business issues. We've built for healthcare clients long enough to understand those stakes.",
-  image: "/images/herosectionimage.png",
+  image:
+    "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787056277/Gloitel/Industries/Healthcare_Medtech_icl3ih.png",
   imageAlt: "Healthcare and medtech technology",
   video:
     "https://res.cloudinary.com/dsqu6pi0d/video/upload/v1762846419/Gloitel/bg_cij8h5.mp4",
@@ -41,7 +42,8 @@ export const healthcareChallengesSectionHead = {
   title: "The Challenges Behind Modern Healthcare Systems",
   description:
     "Healthcare technology demands security, compliance, accessibility, and seamless data exchange across every touchpoint.",
-  image: "/images/What-we-do/Rectangle 1.png",
+  image:
+    "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787056270/Gloitel/Industries/Challenges_We_Solve_in_Healthcare_n38tin.png",
   imageAlt: "Healthcare challenges",
 };
 

@@ -1,4 +1,4 @@
-import { SearchIcon, PhoneIcon, LayersIcon, BarChartIcon, CheckTargetIcon, TargetIcon, ArrowRightIcon, AnomalyDetectionIcon, CheckIcon, ChecklistIcon, DiamondStackIcon, PredictiveForecastingIcon, ShieldCheckIcon } from '../../../component/SvgIcon';
+import { SearchIcon, PhoneIcon, LayersIcon, BarChartIcon, CheckTargetIcon, TargetIcon, ArrowRightIcon, AnomalyDetectionIcon, CheckIcon, ChecklistIcon, DiamondStackIcon, PredictiveForecastingIcon, ShieldCheckIcon } from 'components/SvgIcon';
 
 export const heroSectionData = {
   badgeText: "Discovery & Validation",

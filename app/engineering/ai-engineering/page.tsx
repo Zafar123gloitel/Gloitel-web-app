@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import EngineeringHeroSection from "../../component/EngineeringHeroSection";
+import EngineeringHeroSection from "@/components/EngineeringHeroSection";
 import {
   aiEcosystemData,
   aiEngineeringCTAData,
@@ -10,20 +10,15 @@ import {
   aiSystemsData,
   aiSystemsSectionHead,
 } from "./data";
-import { BgSquare2 } from "../../component/BgSquare";
+import { BgSquare2 } from "@/components/BgSquare";
 import StrategyBadge from "../../../components/StrategyBadge";
-import { MiddleSectionHeads } from "../../component/SectionHeads";
-import { CardShowcase } from "../../../components";
-import { showcaseItems } from "../../(what-we-do)/components/showcaseItems ";
-
-import {
-  aiSolutionsData,
-  Real_World,
-} from "../../(what-we-do)/components/data";
-import GlowPanel from "../../component/GlowPanel";
-import Strategy from "../../(what-we-do)/components/Strategy";
-import Execution_Plan from "../../uiComponents/Execution_Plan";
-import AI_Solutions from "../../uiComponents/AI_Solutions";
+import { MiddleSectionHeads } from "@/components/SectionHeads";
+import { CardShowcase } from "@/components";
+import GlowPanel from "@/components/GlowPanel";
+// import Strategy from "../../(what-we-do)/components/Strategy";
+import Execution_Plan from "uiComponents/Execution_Plan";
+import AI_Solutions from "uiComponents/AI_Solutions";
+import Strategy from "@/components/what-we-do/Strategy";
 
 const page = () => {
   return (
@@ -58,8 +53,8 @@ const page = () => {
               items={aiSystemsData}
               cardHeight="h-[300px]   max-w-[350px] "
               gridClassName="gap-y-28"
-              titleClassName="text-[32px] leading-8 "
-              descriptionClassName="text-[18px] leading-7 mt-5  text-description "
+              titleClassName=""
+              descriptionClassName=""
             />
           </section>
         </div>

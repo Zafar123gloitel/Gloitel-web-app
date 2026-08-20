@@ -1,12 +1,12 @@
 "use client";
 
 import StrategyBadge from "../../../components/StrategyBadge";
-import { BgSquare2 } from "../../component/BgSquare";
-import EngineeringHeroSection from "../../component/EngineeringHeroSection";
-import { MiddleSectionHeads } from "../../component/SectionHeads";
-import AI_Solutions from "../../uiComponents/AI_Solutions";
-import ArchitectureCircle from "../../uiComponents/ArchitectureCircle";
-import Execution_Plan from "../../uiComponents/Execution_Plan";
+import { BgSquare2 } from "components/BgSquare";
+import EngineeringHeroSection from "components/EngineeringHeroSection";
+import { MiddleSectionHeads } from "components/SectionHeads";
+import AI_Solutions from "uiComponents/AI_Solutions";
+import ArchitectureCircle from "uiComponents/ArchitectureCircle";
+import Execution_Plan from "uiComponents/Execution_Plan";
 import { aiEcosystemData, aiEngineeringCTAData, fullStackComplianceData, fullStackComplianceSectionHead, iotHeroData } from "./data";
 
 export default function Page() {

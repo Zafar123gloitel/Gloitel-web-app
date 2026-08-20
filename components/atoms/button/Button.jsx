@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import React from "react";
-import { ArrowRightIcon, LeftArrowIcon, RightArrowIcon } from "../../../app/component/SvgIcon";
+import { ArrowRightIcon, LeftArrowIcon, RightArrowIcon } from "../../../components/SvgIcon";
 
 const variantStyles = {
   glow: "border border-blue-500/25 bg-blue-700 rounded-lg text-title shadow-[0_0_24px_rgba(37,99,235,0.55)] hover:bg-blue-600 hover:shadow-[0_0_28px_rgba(37,99,235,0.8)]",
@@ -185,7 +185,7 @@ export function HeroButton({
         variant="muted"
         size="lg"
         fullWidth
-        className="sm:min-w-[180px] rounded-lg"
+        className="sm:min-w-[180px] rounded-lg text-title"
       >
         {SecondHeroButtonText}
       </Button>
@@ -218,5 +218,4 @@ export function TestimonialButton({ direction = "left", onClick, ariaLabel, clas
     </Button>
   );
 }
-
 

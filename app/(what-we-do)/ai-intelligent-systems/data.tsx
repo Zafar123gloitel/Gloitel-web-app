@@ -4,7 +4,7 @@ import {
   CloseIcon,
   HeroArrowRightIcon,
   MisdirectedEffortIcon,
-} from "../../component/SvgIcon";
+} from "components/SvgIcon";
 
 export const aiIntelligentSystemsHeroData = {
   badgeText: "AI & Intelligent Systems",

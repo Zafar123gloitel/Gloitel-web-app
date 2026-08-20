@@ -1,7 +1,6 @@
 "use client";
 
-import React from "react";
-import HeroSection from "../../components/HeroSection";
+// import HeroSection from "../../components/HeroSection";
 import {
   accordionData2,
   coreFeaturesData,
@@ -12,17 +11,20 @@ import {
   weekThreeData,
   weekTwoData,
 } from "./data";
-import { BgSquare2 } from "../../../component/BgSquare";
+import { BgSquare2 } from "components/BgSquare";
 import StrategyBadge from "../../../../components/StrategyBadge";
-import { MiddleSectionHeads } from "../../../component/SectionHeads";
-import Discover from "../../components/Discover";
-import Assess from "../../components/Assess";
+import { MiddleSectionHeads } from "components/SectionHeads";
+// import Discover from "../../components/Discover";
+// import Assess from "../../components/Assess";
 
-import Asked_Q from "../../components/Asked_Q";
-import AI_Solutions from "../../../uiComponents/AI_Solutions";
-import Execution_Plan from "../../../uiComponents/Execution_Plan";
-import ArchitectureCircle from "../../../uiComponents/ArchitectureCircle";
-
+// import Asked_Q from "../../components/Asked_Q";
+import AI_Solutions from "uiComponents/AI_Solutions";
+import Execution_Plan from "uiComponents/Execution_Plan";
+import ArchitectureCircle from "uiComponents/ArchitectureCircle";
+import HeroSection from "@/components/HeroSection";
+import Asked_Q from "@/components/what-we-do/Asked_Q";
+import Assess from "@/components/what-we-do/Assess";
+import Discover from "@/components/what-we-do/Discover";
 
 const page = () => {
   const positions = {

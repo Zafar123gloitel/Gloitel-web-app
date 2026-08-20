@@ -5,8 +5,8 @@ import {
   IoTGDPRIcon,
   IoTSOC2TypeIIIcon,
   WCAGComplianceIcon,
-} from "../../component/SvgIcon";
-import { ArchitectureItem } from "../../uiComponents/ArchitectureCircle";
+} from "components/SvgIcon";
+import { ArchitectureItem } from "uiComponents/ArchitectureCircle";
 
 export const iotHeroData = {
   badgeText: "IoT Engineering",

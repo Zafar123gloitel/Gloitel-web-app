@@ -6,14 +6,15 @@ import {
   LearningManagementSystemsLMSIcon,
   MobileCommerceAppsIcon,
   VideoLearningPlatformsIcon,
-} from "../../component/SvgIcon";
+} from "components/SvgIcon";
 
 export const edtechHeroData = {
   badgeText: "EdTech",
   title: "EdTech Built for Learning Outcomes, Not Just Platform Metrics",
   description:
     "EdTech platforms have a unique challenge: the product has to be engaging enough to keep learners coming back, but the real measure of success is whether people actually learn. We've built for EdTech clients who care about both.",
-  image: "/images/herosectionimage.png",
+  image:
+    "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787056272/Gloitel/Industries/EdTech_q4zsyu.png",
   imageAlt: "EdTech technology",
   video:
     "https://res.cloudinary.com/dsqu6pi0d/video/upload/v1762846419/Gloitel/bg_cij8h5.mp4",
@@ -33,7 +34,8 @@ export const edtechChallengesSectionHead = {
   title: "Modern EdTech Requires more Than Content Delivery",
   description:
     "From content delivery and learner engagement to assessments and personalization, EdTech platforms require technology that can support both scale and meaningful learning outcomes.",
-  image: "/images/Industries/edtech-challenges.png",
+  image:
+    "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787056267/Gloitel/Industries/Challenges_We_Solve_EDTECH_mhqe3x.png",
   imageAlt: "EdTech challenges",
 };
 

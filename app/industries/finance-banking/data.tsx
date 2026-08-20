@@ -13,9 +13,9 @@ import {
   PaymentProcessingIntegrationIcon,
   RBIRegulationsIcon,
   SECFINRAIcon,
-} from "../../component/SvgIcon";
+} from "components/SvgIcon";
 
-import type { ArchitectureItem } from "../../uiComponents/ArchitectureCircle";
+import type { ArchitectureItem } from "uiComponents/ArchitectureCircle";
 
 export const financeBankingData = {
   badgeText: "Finance & Banking",
@@ -42,7 +42,8 @@ export const financeHeroData = {
   title: "Financial Software Built for the Regulatory Reality",
   description:
     "Financial applications carry regulatory risk, fiduciary responsibility, and zero tolerance for data breaches. We've built for fintech clients long enough to know what compliance-first engineering actually looks like in practice - not just in documentation.",
-  image: "/images/herosectionimage.png",
+  image:
+    "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787056276/Gloitel/Industries/Finance_Banking_usxd9u.png",
   imageAlt: "Finance and banking technology",
   video:
     "https://res.cloudinary.com/dsqu6pi0d/video/upload/v1762846419/Gloitel/bg_cij8h5.mp4",
@@ -62,7 +63,8 @@ export const financeChallengesSectionHead = {
   title: "The Challenges Behind Modern Financial Systems",
   description:
     "Building financial software requires balancing compliance, security, performance, and user experience - without compromising trust or scalability.",
-  image: "/images/Industries/finance-challenges.png",
+  image:
+    "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787056269/Gloitel/Industries/Challenges_We_Solve_in_Financial_Services_f5prrg.png",
   imageAlt: "Financial services challenges",
 };
 

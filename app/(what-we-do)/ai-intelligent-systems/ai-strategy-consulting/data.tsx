@@ -1,4 +1,4 @@
-import { BarChartIcon, CalendarIcon, CheckTargetIcon, ClipboardIcon, CloseIcon, DiamondStackIcon, DownloadIcon, FileIcon, LayersIcon, LightbulbGearIcon, NotBuildIcon, RocketIcon, SearchIcon, TargetIcon, UsersIcon } from "../../../component/SvgIcon";
+import { BarChartIcon, CalendarIcon, CheckTargetIcon, ClipboardIcon, CloseIcon, DiamondStackIcon, DownloadIcon, FileIcon, LayersIcon, LightbulbGearIcon, NotBuildIcon, RocketIcon, SearchIcon, TargetIcon, UsersIcon } from "components/SvgIcon";
 
 export const heroSectionData = {
   badgeText: "AI Strategy & Consulting",
@@ -8,7 +8,7 @@ export const heroSectionData = {
   description:
     "Most AI initiatives fail before they begin — not because of bad technology, but because of misdirected effort. We help you decide *where* AI should be applied before a single line of code is written.",
 
-  image: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1786616338/Gloitel/what%20we%20do/heroimage_jryx9d.png",
+  image: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787143140/Gloitel/what%20we%20do/AI_Strategy_Consulting_sldvp7.png",
 
   imageAlt: "AI strategy meeting",
 

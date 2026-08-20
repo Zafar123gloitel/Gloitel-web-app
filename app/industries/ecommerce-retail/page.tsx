@@ -11,17 +11,17 @@ import {
   ecommerceTechStackData,
 } from "./data";
 import HeroSection from "../../../components/HeroSection";
-import { BgSquare2 } from "../../component/BgSquare";
+import { BgSquare2 } from "components/BgSquare";
 import StrategyBadge from "../../../components/StrategyBadge";
-import { MiddleSectionHeads } from "../../component/SectionHeads";
+import { MiddleSectionHeads } from "components/SectionHeads";
 import ProblemCard from "../../../components/ProblemCard";
 import Image from "next/image";
 import { CardShowcase } from "../../../components";
-import Execution_Plan from "../../uiComponents/Execution_Plan";
+import Execution_Plan from "uiComponents/Execution_Plan";
 import dynamic from "next/dynamic";
-import { LoadingSection } from "../../component/LoadingSection";
+import { LoadingSection } from "components/LoadingSection";
 
-const AI_Solutions = dynamic(() => import("../../uiComponents/AI_Solutions"), {
+const AI_Solutions = dynamic(() => import("uiComponents/AI_Solutions"), {
   loading: () => <LoadingSection minHeight="min-h-[500px]" />,
 });
 
@@ -82,8 +82,8 @@ const page = () => {
             showStepBadge={false}
             cardHeight="h-[411px] max-w-[411px] "
             gridClassName="gap-y-6"
-            titleClassName="text-[28px] leading-8 "
-            descriptionClassName="text-[16px] leading-6 mt-3 text-description "
+            titleClassName=""
+            descriptionClassName=""
           />
         </section>
       </div>

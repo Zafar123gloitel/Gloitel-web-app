@@ -1,4 +1,4 @@
-import { ChatbotIcon, ClipboardIcon, CloseIcon, DatabaseIcon, FineTuningIcon, PrivateLLMIcon, RightArrowIcon, WorkflowAutomationIcon } from "../../../component/SvgIcon";
+import { ChatbotIcon, ClipboardIcon, CloseIcon, DatabaseIcon, FineTuningIcon, PrivateLLMIcon, RightArrowIcon, WorkflowAutomationIcon } from "components/SvgIcon";
 
 export const heroSectionDataGenerative = {
   badgeText: "Generative AI & LLMs",
@@ -8,7 +8,7 @@ export const heroSectionDataGenerative = {
   description:
     "Building an LLM prototype takes days. Building one that's accurate, secure, cost-controlled, and production-stable takes a team that's shipped it before.",
 
-  image: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1786616338/Gloitel/what%20we%20do/heroimage_jryx9d.png",
+  image: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787143140/Gloitel/what%20we%20do/AI_Strategy_Consulting_sldvp7.png",
 
   imageAlt: "Generative AI & LLMs",
 

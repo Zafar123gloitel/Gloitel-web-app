@@ -6,14 +6,15 @@ import {
   HeroArrowRightIcon,
   InventoryAndOrderManagementIcon,
   MobileCommerceAppsIcon,
-} from "../../component/SvgIcon";
+} from "components/SvgIcon";
 
 export const ecommerceHeroData = {
   badgeText: "E-Commerce & Retail",
   title: "E-Commerce Technology That Converts, Scales, and Retains",
   description:
     "E-commerce is not just a storefront problem. It's an inventory problem, a logistics problem, a personalization problem, and a trust problem - all at once, all demanding real-time performance. We build for the operational reality of retail, not just the checkout page.",
-  image: "/images/herosectionimage.png",
+  image:
+    "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787056274/Gloitel/Industries/E-Commerce_Retail_lymoqw.png",
   imageAlt: "E-commerce and retail technology",
   video:
     "https://res.cloudinary.com/dsqu6pi0d/video/upload/v1762846419/Gloitel/bg_cij8h5.mp4",
@@ -33,7 +34,8 @@ export const ecommerceChallengesSectionHead = {
   title: "Scaling E-Commerce & Retail Comes With Complex Challenges",
   description:
     "As e-commerce and retail businesses scale, managing inventory, fulfillment, customer experiences, and operational efficiency becomes more challenging. Success depends on technology that connects systems, supports growth, and delivers consistent experiences across every channel.",
-  image: "/images/Industries/ecommerce-challenges.png",
+  image:
+    "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787056269/Gloitel/Industries/Challenges_We_Solve_hhqngd.png",
   imageAlt: "E-commerce and retail challenges",
 };
 

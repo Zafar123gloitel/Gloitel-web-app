@@ -1,44 +1,44 @@
-import { AnomalyDetectionIcon, ChatbotIcon, CheckTargetIcon, NotBuildIcon, PredictiveForecastingIcon, SettingsAlternativeIcon, SettingsIcon, TargetIcon } from "../../../component/SvgIcon";
+import { AnomalyDetectionIcon, ChatbotIcon, CheckTargetIcon, NotBuildIcon, PredictiveForecastingIcon, SettingsAlternativeIcon, SettingsIcon, TargetIcon } from "components/SvgIcon";
 
 export const outcomesData2 = [
   {
     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
-    icon: <PredictiveForecastingIcon/>,
+    icon: <PredictiveForecastingIcon size={30}/>,
     title: "Predictive Forecasting",
     description:
       "Forecast demand, revenue, inventory, and resource utilization with models that support smarter planning decisions. Built for sales forecasting, capacity planning, energy demand prediction, and financial projections.",
   },
   {
     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
-    icon: <AnomalyDetectionIcon/>,
+    icon: <AnomalyDetectionIcon size={30}/>,
     title: "Anomaly Detection",
     description:
       "Detect fraud, defects, equipment failures, and unusual system behavior before they cause business impact. Real-time monitoring helps identify risks early and improve operational reliability.",
   },
   {
     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
-    icon:<TargetIcon/>,
+    icon:<TargetIcon size={35}/>,
     title: "Recommendation Systems",
     description:
       "Deliver personalized recommendations that increase engagement, conversion, and retention. Ideal for product suggestions, content personalization, search ranking, and next-best-action experiences.",
   },
   {
     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
-    icon: <CheckTargetIcon/>,
+    icon: <CheckTargetIcon size={35}/>,
     title: "Classification & Scoring",
     description:
       "Assign categories, risk scores, and priority rankings using explainable machine learning models. Commonly used for lead scoring, churn prediction, customer segmentation, and credit risk assessment.",
   },
   {
     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
-    icon: <ChatbotIcon/>,
+    icon: <ChatbotIcon size={35}/>,
     title: "Natural Language Processing",
     description:
       "Extract meaningful insights from unstructured text through sentiment analysis, entity extraction, and intent classification. Applied to customer feedback, support tickets, reviews, and compliance documents.",
   },
   {
     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
-    icon: <NotBuildIcon/>,
+    icon: <NotBuildIcon size={35}/>,
     title: "Computer Vision",
     description:
       "Analyze images and video using object detection, classification, and visual inspection systems. Used for quality control, retail analytics, medical imaging, and security monitoring.",
@@ -269,14 +269,14 @@ export const notEveryProblemData = {
   cards: [
     {
       id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
-      icon: <SettingsIcon />,
+      icon: <SettingsIcon size={30} />,
       title: "Machine Learning",
       description:
         "Best suited for complex prediction problems, pattern recognition, and decision-making scenarios where data-driven intelligence creates measurable business value.",
     },
     {
       id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
-      icon: <SettingsAlternativeIcon />,
+      icon: <SettingsAlternativeIcon size={30} />,
       title: "Simpler Alternatives",
       description:
         "When business rules are clear and outcomes are predictable, simpler solutions often deliver faster implementation, lower costs, and easier maintenance.",

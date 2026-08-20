@@ -1,4 +1,4 @@
-import { HeroBadge2 } from "../component/HeroBadge";
+import { HeroBadge2 } from "components/HeroBadge";
 
 export default function TermsPage() {
   return (

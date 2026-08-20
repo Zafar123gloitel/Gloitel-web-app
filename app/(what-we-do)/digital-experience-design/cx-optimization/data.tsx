@@ -1,12 +1,5 @@
-import {
-  AccessibilityAuditIcon,
-  ExperimentationIcon,
-  FunnelAnalysisIcon,
-  HeatmapAnalysisIcon,
-  HeroArrowRightIcon,
-  OnboardingOptimizationIcon,
-  PerformanceImpactIcon,
-} from "../../../component/SvgIcon";
+import { HeroArrowRightIcon, FunnelAnalysisIcon, ExperimentationIcon, HeatmapAnalysisIcon, AccessibilityAuditIcon, PerformanceImpactIcon, OnboardingOptimizationIcon } from "../../../../components/SvgIcon";
+
 
 export const cxOptimizationHeroData = {
   badgeText: "CX Optimization",

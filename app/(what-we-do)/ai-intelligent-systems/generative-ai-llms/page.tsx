@@ -1,23 +1,36 @@
 "use client";
 
-import React from "react";
-import HeroSection from "../../components/HeroSection";
+// import HeroSection from "../../components/HeroSection";
 
-import { MiddleSectionHeads } from "../../../component/SectionHeads";
+import { MiddleSectionHeads } from "components/SectionHeads";
 import StrategyBadge from "../../../../components/StrategyBadge";
-import { BgSquare2 } from "../../../component/BgSquare";
+import { BgSquare2 } from "components/BgSquare";
 import { CardShowcase } from "../../../../components";
-import Discover from "../../components/Discover";
-import Assess from "../../components/Assess";
+// import Discover from "../../components/Discover";
+// import Assess from "../../components/Assess";
 
-import Strategy from "../../components/Strategy";
-import GlowPanel from "../../../component/GlowPanel";
-import ImageCard from "../../../component/ImageCard";
-import { ArrowUpIcon } from "lucide-react";
-import AI_Solutions from "../../../uiComponents/AI_Solutions";
-import Execution_Plan from "../../../uiComponents/Execution_Plan";
-import { aiServicesData, aiSolutionsData, caseStudies, executionStepFive, executionStepFour, executionStepOne, executionStepThree, executionStepTwo, heroSectionDataGenerative, Real_World } from "./data";
-import { ArrowRightIcon } from "../../../component/SvgIcon";
+// import Strategy from "../../components/Strategy";
+import GlowPanel from "components/GlowPanel";
+import ImageCard from "components/ImageCard";
+import AI_Solutions from "uiComponents/AI_Solutions";
+import Execution_Plan from "uiComponents/Execution_Plan";
+import {
+  aiServicesData,
+  aiSolutionsData,
+  caseStudies,
+  executionStepFive,
+  executionStepFour,
+  executionStepOne,
+  executionStepThree,
+  executionStepTwo,
+  heroSectionDataGenerative,
+  Real_World,
+} from "./data";
+import { ArrowRightIcon } from "components/SvgIcon";
+import HeroSection from "@/components/HeroSection";
+import Assess from "@/components/what-we-do/Assess";
+import Discover from "@/components/what-we-do/Discover";
+import Strategy from "@/components/what-we-do/Strategy";
 
 const page = () => {
   return (
@@ -41,10 +54,10 @@ const page = () => {
             items={aiServicesData}
             showDivider={true}
             showStepBadge={false}
-            cardHeight="h-[411px] max-w-[411px] "
+            cardHeight="h-[360px] max-w-[411px] "
             gridClassName="gap-y-6"
-            titleClassName="text-[28px] leading-8 "
-            descriptionClassName="text-[16px] leading-6 mt-3 text-description "
+            titleClassName=""
+            descriptionClassName=""
           />
         </section>
       </div>
@@ -143,18 +156,18 @@ into Production Systems."
             SectionDescription="Explore how organizations across healthcare, financial services, and e-commerce are using production-ready AI systems to improve efficiency, reduce costs, and accelerate business outcomes."
           />
         </div>
-        <section className="p-5 mt-20 mx-auto flex flex-wrap justify-center gap-3">
+        <section className="p-5 mt-20 mx-auto flex flex-wrap justify-center gap-10">
           {caseStudies.map((card) => (
             <ImageCard
               key={card.id}
               className={""}
-              cradClass={"w-[25rem] min-h-[550px]"}
+              cradClass={"w-[25rem] min-h-[500px]"}
               padding={"px-4"}
               cardtitle={card.title}
               carddescription={card.description}
               buttintext={card.cta}
               buttonurl={card.href}
-              buttonicon={<ArrowRightIcon/>}
+              buttonicon={<ArrowRightIcon />}
               image={card.image}
             />
           ))}

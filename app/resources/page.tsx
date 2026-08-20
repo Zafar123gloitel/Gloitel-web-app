@@ -3,18 +3,20 @@
 import React from 'react'
 import HeroSection from '../../components/HeroSection'
 import { aiStrategySectionHead, enterpriseModernizationTagsData, integrationStabilityData, resourceCaseStudiesData, resourceCategoriesData, resourcesCTAData, resourcesHeroData, whoThisIsForSectionHead, whoThisIsForSectionHead2 } from './data'
-import Assess from '../(what-we-do)/components/Assess';
+// import Assess from '../(what-we-do)/components/Assess';
 
-import GlowPanel from '../component/GlowPanel';
-import { BgSquare2 } from '../component/BgSquare';
+import GlowPanel from 'components/GlowPanel';
+import { BgSquare2 } from 'components/BgSquare';
 import StrategyBadge from '../../components/StrategyBadge';
 
-import { MiddleSectionHeads } from '../component/SectionHeads';
-import PurposeCard from '../(what-we-do)/components/PurposeCard';
+import { MiddleSectionHeads } from 'components/SectionHeads';
+// import PurposeCard from '../(what-we-do)/components/PurposeCard';
 
-import ImageCard from '../component/ImageCard';
+import ImageCard from 'components/ImageCard';
 import { CardIcon, CardTitle } from '../../components';
-import Execution_Plan from '../uiComponents/Execution_Plan';
+import Execution_Plan from 'uiComponents/Execution_Plan';
+import Assess from '@/components/what-we-do/Assess';
+import PurposeCard from '@/components/what-we-do/PurposeCard';
 
 
 
@@ -104,6 +106,7 @@ const cardPositions = {
                     {resourceCaseStudiesData.map((card) => (
                         <ImageCard
                             key={card.id}
+                            cradClass={""}
                             className={" w-full sm:w-[21rem]"}
                             padding={"px-4"}
                             cardtitle={card.title}

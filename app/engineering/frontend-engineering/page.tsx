@@ -1,13 +1,13 @@
 "use client";
 
-import The_Engineering from "../../(what-we-do)/components/The_Engineering";
+// import The_Engineering from "../../(what-we-do)/components/The_Engineering";
 import ProblemCard from "../../../components/ProblemCard";
 import StrategyBadge from "../../../components/StrategyBadge";
-import { BgSquare2 } from "../../component/BgSquare";
-import EngineeringHeroSection from "../../component/EngineeringHeroSection";
-import { MiddleSectionHeads } from "../../component/SectionHeads";
-import AI_Solutions from "../../uiComponents/AI_Solutions";
-import Execution_Plan from "../../uiComponents/Execution_Plan";
+import { BgSquare2 } from "components/BgSquare";
+import EngineeringHeroSection from "components/EngineeringHeroSection";
+import { MiddleSectionHeads } from "components/SectionHeads";
+import AI_Solutions from "uiComponents/AI_Solutions";
+import Execution_Plan from "uiComponents/Execution_Plan";
 import {
   frontendDeliverablesData,
   frontendDeliverablesSectionHead,
@@ -16,6 +16,7 @@ import {
   frontendEngineeringHeroData,
   frontendTechStackData,
 } from "./data";
+import The_Engineering from "@/components/what-we-do/The_Engineering";
 
 
 

@@ -1,7 +1,6 @@
 "use client";
 
-import React from "react";
-import HeroSection from "../../components/HeroSection";
+// import HeroSection from "../../components/HeroSection";
 import {
   designHandoffData,
   designProcessSectionHead,
@@ -16,16 +15,20 @@ import {
   whatWeDesignSectionHead,
   wireframingData,
 } from "./data";
-import { BgSquare2 } from "../../../component/BgSquare";
+import { BgSquare2 } from "components/BgSquare";
 import StrategyBadge from "../../../../components/StrategyBadge";
-import { MiddleSectionHeads } from "../../../component/SectionHeads";
-import Discover from "../../components/Discover";
-import Assess from "../../components/Assess";
+import { MiddleSectionHeads } from "components/SectionHeads";
+// import Discover from "../../components/Discover";
+// import Assess from "../../components/Assess";
 // import ImageCard from "../../components/ImageCard";
-import Execution_Plan from "../../../uiComponents/Execution_Plan";
-import Business from "../../components/Business";
-import ImageCard from "../../../component/ImageCard";
-import { ArrowRightIcon } from "../../../component/SvgIcon";
+import Execution_Plan from "uiComponents/Execution_Plan";
+// import Business from "../../components/Business";
+import ImageCard from "components/ImageCard";
+import { ArrowRightIcon } from "components/SvgIcon";
+import HeroSection from "@/components/HeroSection";
+import Assess from "@/components/what-we-do/Assess";
+import Business from "@/components/what-we-do/Business";
+import Discover from "@/components/what-we-do/Discover";
 
 const page = () => {
   return (
@@ -120,7 +123,7 @@ const page = () => {
 
         <div className=" -mt-10 flex justify-center items-center flex-wrap gap-6  ">
           {whatWeDesignData.map((item) => (
-              <ImageCard
+            <ImageCard
               key={item.id}
               className={""}
               cradClass={"w-[25rem] min-h-[550px]"}
@@ -129,7 +132,7 @@ const page = () => {
               carddescription={item.description}
               buttintext={item.buttonText}
               buttonurl={item.buttonLink}
-              buttonicon={<ArrowRightIcon/>}
+              buttonicon={<ArrowRightIcon />}
               image={item.image}
             />
           ))}

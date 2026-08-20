@@ -4,7 +4,7 @@ import {
   QAHumanInTheLoopWorkflowsIcon,
   QAMultiAgentSystemsIcon,
   QAToolUsingAgentsIcon,
-} from "../../component/SvgIcon";
+} from "components/SvgIcon";
 export const qaHeroData = {
   badgeText: "QA Engineering",
   title: "AI Engineering That Ships and Stays Shipped",

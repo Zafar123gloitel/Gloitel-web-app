@@ -7,7 +7,7 @@ import {
   DevOpsPromptOpsIcon,
   DevOpsRAGSystemsIcon,
   MLPipelinesIcon,
-} from "../../component/SvgIcon";
+} from "components/SvgIcon";
 export const devOpsCloudHeroData = {
   badgeText: "DevOps & Cloud Engineering",
   title: "AI Engineering That Ships and Stays Shipped",

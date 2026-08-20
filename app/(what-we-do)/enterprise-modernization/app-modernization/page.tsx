@@ -1,13 +1,12 @@
 "use client";
 
-import React from "react";
-import HeroSection from "../../components/HeroSection";
-import { BgSquare2 } from "../../../component/BgSquare";
+// import HeroSection from "../../components/HeroSection";
+import { BgSquare2 } from "components/BgSquare";
 import StrategyBadge from "../../../../components/StrategyBadge";
-import { MiddleSectionHeads } from "../../../component/SectionHeads";
+import { MiddleSectionHeads } from "components/SectionHeads";
 import { CardShowcase } from "../../../../components";
-import Discover from "../../components/Discover";
-import Assess from "../../components/Assess";
+// import Discover from "../../components/Discover";
+// import Assess from "../../components/Assess";
 import {
   applicationConstraintsData,
   appModernizationHeroData,
@@ -21,8 +20,11 @@ import {
   sunsetPhaseData,
   technologiesModernizedData,
 } from "./data";
-import AI_Solutions from "../../../uiComponents/AI_Solutions";
-import Execution_Plan from "../../../uiComponents/Execution_Plan";
+import AI_Solutions from "uiComponents/AI_Solutions";
+import Execution_Plan from "uiComponents/Execution_Plan";
+import HeroSection from "@/components/HeroSection";
+import Assess from "@/components/what-we-do/Assess";
+import Discover from "@/components/what-we-do/Discover";
 
 const page = () => {
   return (
@@ -50,8 +52,8 @@ const page = () => {
               showStepBadge={false}
               cardClassName="h-[411px] max-w-[350px] gap-y-6 "
               gridClassName="h-full"
-              titleClassName="text-[28px] leading-8 "
-              descriptionClassName="text-[16px] leading-6 mt-3 text-description "
+              titleClassName=""
+              descriptionClassName=""
             />
           </section>
         </div>
@@ -77,8 +79,8 @@ const page = () => {
             items={phasedApproachData}
             cardHeight="h-[263px]  max-w-[330px] "
             gridClassName="h-full gap-y-30 "
-            titleClassName="text-[28px] leading-8 "
-            descriptionClassName="text-[16px] xl:text-[18px] leading-6 mt-3 text-description "
+            titleClassName=""
+            descriptionClassName=""
           />
         </section>
       </section>

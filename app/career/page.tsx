@@ -1,5 +1,12 @@
-import React from 'react'
-import { AiAgentsIndustries, AiExecutionServices,  AiRoadmapSection, CareerFinalCta, CareerHero, DiagnoseBeforeDeploy, ProductionReadyAi } from '../component/Career';
+import {
+  AiAgentsIndustries,
+  AiExecutionServices,
+  AiRoadmapSection,
+  CareerFinalCta,
+  CareerHero,
+  DiagnoseBeforeDeploy,
+  ProductionReadyAi,
+} from "@/components/Career";
 
 const page = () => {
   return (
@@ -21,6 +28,6 @@ const page = () => {
       <CareerFinalCta />
     </>
   );
-}
+};
 
-export default page
+export default page;

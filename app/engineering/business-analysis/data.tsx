@@ -3,7 +3,7 @@ import {
   IntegrationAutomationIcon,
   SparkleStarIcon,
   StructuredDataWorkflowsIcon,
-} from "../../component/SvgIcon";
+} from "components/SvgIcon";
 export const businessAnalysisHeroData = {
   badgeText: "Business Analysis",
   title: "AI Engineering That Ships and Stays Shipped",

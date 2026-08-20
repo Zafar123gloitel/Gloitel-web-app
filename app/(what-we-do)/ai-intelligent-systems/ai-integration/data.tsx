@@ -1,4 +1,4 @@
-import { BellIcon, BookIcon, ChartIcon, CircuitIcon, CloudIcon, CodeSearchIcon, DocumentIcon, LinkIcon, PredictiveForecastingIcon, PuzzleIcon, RefreshCcwIcon, TimerIcon, WorkflowIcon, WorkflowIcon1 } from "../../../component/SvgIcon";
+import { BellIcon, BookIcon, ChartIcon, CircuitIcon, CloudIcon, CodeSearchIcon, DocumentIcon, LinkIcon, PredictiveForecastingIcon, PuzzleIcon, RefreshCcwIcon, TimerIcon, WorkflowIcon, WorkflowIcon1 } from "components/SvgIcon";
 
 export const engineeringSectionData = {
   badgeText: "What AI Integration Actually Involves",
@@ -16,7 +16,7 @@ export const engineeringSectionData = {
 export const engineeringData = [
   {
     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
-    icon:<LinkIcon/>,
+    icon:<LinkIcon size={30}/>,
     title: "Integration Stability",
     description:
       "AI systems often fail not because the model is ineffective, but because the surrounding integrations are unreliable. We build stable connections between AI services, applications, and enterprise systems with proper error handling, fallback mechanisms, and operational safeguards.",
@@ -24,7 +24,7 @@ export const engineeringData = [
 
   {
     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
-    icon: <RefreshCcwIcon />,
+    icon: <RefreshCcwIcon size={30} />,
     title: "Resilient Processing",
     description:
       "Production AI requires systems that can recover gracefully from failures. We implement retry logic, queue-based processing, and recovery workflows that ensure temporary disruptions do not impact business operations or user experience.",
@@ -32,7 +32,7 @@ export const engineeringData = [
 
   {
     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
-    icon: <PredictiveForecastingIcon/>,
+    icon: <PredictiveForecastingIcon size={30}/>,
     title: "Visibility & Control",
     description:
       "Without observability, AI systems can degrade silently over time. We provide monitoring, performance tracking, usage analytics, and alerting capabilities that help teams detect issues early and maintain consistent production performance.",

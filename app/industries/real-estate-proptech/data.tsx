@@ -6,7 +6,7 @@ import {
   HeroArrowRightIcon,
   PropertyListingAndMarketplacePlatformsIcon,
   PropertyManagementSoftwareIcon,
-} from "../../component/SvgIcon";
+} from "components/SvgIcon";
 
 export const realEstateProptechData = {
   badgeText: "Real Estate & PropTech",
@@ -32,7 +32,8 @@ export const realEstateHeroData = {
   title: "PropTech That Moves Deals Faster and Properties Better",
   description:
     "Real estate runs on information, relationships, and speed. The firms winning today are those with better data, faster processes, and technology that makes agents more productive - not just ones with a website.",
-  image: "/images/herosectionimage.png",
+  image:
+    "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787056273/Gloitel/Industries/Real_Estate_PropTech_tmgwck.png",
   imageAlt: "Real estate and PropTech technology",
   video:
     "https://res.cloudinary.com/dsqu6pi0d/video/upload/v1762846419/Gloitel/bg_cij8h5.mp4",
@@ -52,7 +53,8 @@ export const realEstateChallengesSectionHead = {
   title: "Scaling Real Estate & PropTech Comes With Complex Challenges",
   description:
     "Managing property data, transactions, tenant operations, and compliance becomes increasingly complex as real estate businesses grow. The right technology helps streamline operations and improve visibility across the ecosystem.",
-  image: "/images/Industries/real-estate-challenges.png",
+  image:
+    "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787056267/Gloitel/Industries/Challenges_We_Solve_rEAL_eSTATE_ad3xra.png",
   imageAlt: "Real estate and PropTech challenges",
 };
 

@@ -1,23 +1,25 @@
 "use client";
 
-import Business from "../../(what-we-do)/components/Business";
-import Strategy from "../../(what-we-do)/components/Strategy";
+// import Business from "../../(what-we-do)/components/Business";
+// import Strategy from "../../(what-we-do)/components/Strategy";
 import StrategyBadge from "../../../components/StrategyBadge";
-import { BgSquare2 } from "../../component/BgSquare";
-import EngineeringHeroSection from "../../component/EngineeringHeroSection";
-import GlowPanel from "../../component/GlowPanel";
-import { MiddleSectionHeads } from "../../component/SectionHeads";
+import { BgSquare2 } from "components/BgSquare";
+import EngineeringHeroSection from "components/EngineeringHeroSection";
+import GlowPanel from "components/GlowPanel";
+import { MiddleSectionHeads } from "components/SectionHeads";
 import {
   financeComplianceData,
   financeComplianceSectionHead,
 } from "../../industries/data";
-import ArchitectureCircle from "../../uiComponents/ArchitectureCircle";
-import Execution_Plan from "../../uiComponents/Execution_Plan";
+import ArchitectureCircle from "uiComponents/ArchitectureCircle";
+import Execution_Plan from "uiComponents/Execution_Plan";
 import {
   aiEngineeringHeroData,
   aiEngineeringNotData,
 } from "../ai-engineering/data";
 import { fullStackComplianceData, fullStackComplianceSectionHead, fullStackHeroData, fullStackRoadmapData, fullStackRoadmapSectionHead, } from "./data";
+import Business from "@/components/what-we-do/Business";
+import Strategy from "@/components/what-we-do/Strategy";
 
 export default function Page() {
   const positions = {

@@ -5,7 +5,7 @@ import {
   HumanInTheLoopWorkflowsIcon,
   MultiAgentSystemsIcon,
   ToolUsingAgentsIcon,
-} from "../../component/SvgIcon";
+} from "components/SvgIcon";
 export const backendEngineeringHeroData = {
   badgeText: "Backend Engineering",
   title: "AI Engineering That Ships and Stays Shipped", // ⚠️ mismatch

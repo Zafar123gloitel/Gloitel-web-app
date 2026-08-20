@@ -1,21 +1,34 @@
 "use client";
 
-import React from "react";
-import HeroSection from "../../components/HeroSection";
-import { BgSquare2 } from "../../../component/BgSquare";
+// import HeroSection from "../../components/HeroSection";
+import { BgSquare2 } from "components/BgSquare";
 import StrategyBadge from "../../../../components/StrategyBadge";
-import { MiddleSectionHeads } from "../../../component/SectionHeads";
+import { MiddleSectionHeads } from "components/SectionHeads";
 import ProblemCard from "../../../../components/ProblemCard";
 import Image from "next/image";
 import { CardShowcase } from "../../../../components";
-import Discover from "../../components/Discover";
-import Assess from "../../components/Assess";
-import GlowPanel from "../../../component/GlowPanel";
-import Strategy from "../../components/Strategy";
+// import Discover from "../../components/Discover";
+// import Assess from "../../components/Assess";
+import GlowPanel from "components/GlowPanel";
+// import Strategy from "../../components/Strategy";
 import IconCard from "../../../../components/card-showcase/IconCard";
-import AI_Solutions from "../../../uiComponents/AI_Solutions";
-import Execution_Plan from "../../../uiComponents/Execution_Plan";
-import { Agent_Projects, ai_agents_designed, aiAgentTechnologyData, ApproachStepFive, ApproachStepFour, ApproachStepOne, ApproachStepThree, ApproachStepTwo, industries } from "./data";
+import AI_Solutions from "uiComponents/AI_Solutions";
+import Execution_Plan from "uiComponents/Execution_Plan";
+import {
+  Agent_Projects,
+  ai_agents_designed,
+  aiAgentTechnologyData,
+  ApproachStepFive,
+  ApproachStepFour,
+  ApproachStepOne,
+  ApproachStepThree,
+  ApproachStepTwo,
+  industries,
+} from "./data";
+import HeroSection from "@/components/HeroSection";
+import Assess from "@/components/what-we-do/Assess";
+import Discover from "@/components/what-we-do/Discover";
+import Strategy from "@/components/what-we-do/Strategy";
 
 const page = () => {
   const problems = [
@@ -127,10 +140,10 @@ achieve outcomes."
               items={ai_agents_designed}
               showDivider={true}
               showStepBadge={false}
-              cardClassName="max-h-[511px] max-w-[350px]  "
+              cardClassName="h-[400px] max-w-[350px]  "
               gridClassName="h-full"
-              titleClassName="text-[28px] "
-              descriptionClassName="text-[16px] leading-6 mt-5 text-description "
+              titleClassName=""
+              descriptionClassName=""
               iconClassName=""
             />
           </section>

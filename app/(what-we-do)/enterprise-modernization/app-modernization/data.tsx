@@ -186,10 +186,98 @@ export const technologiesModernizedData = {
         name: "AngularJS",
         logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785143838/Gloitel/icon/angularjs_omz8pi.png",
       },
+      {
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        name: "Java EE",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785143838/Gloitel/icon/java_c2a3tr.png",
+      },
+      {
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        name: ".NET Framework",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785143837/Gloitel/icon/net_gp9otv.png",
+      },
+      {
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        name: "Classic ASP",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785143838/Gloitel/icon/asp_i5p19a.png",
+      },
+      {
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        name: "Ruby on Rails (old)",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785143840/Gloitel/icon/ruby-on-rails_eaj8r2.png",
+      },
+      {
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        name: "Legacy Node versions",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785143838/Gloitel/icon/node_ewpmtv.png",
+      },
     ],
 
-    To: [],
-    Databases: [],
+    To: [
+      {
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        name: "React/Next.js",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762860000/Gloitel/icon/next_urdukq.webp",
+      },
+      {
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        name: "TypeScript",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785144523/Gloitel/icon/typescript_qce4ug.png",
+      },
+      {
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        name: "Python/FastAPI",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960667/Gloitel/icon/fastApi_bwbwom.png",
+      },
+      {
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        name: ".NET 8",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785144522/Gloitel/icon/.net8_y2lcz8.png",
+      },
+      {
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        name: "Node 20+",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785143838/Gloitel/icon/node_ewpmtv.png",
+      },
+      {
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        name: "Modern Java (Spring Boot 3)",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785144523/Gloitel/icon/modern-java_kvtlpp.png",
+      },
+    ],
+
+    Databases: [
+      {
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        name: "MySQL",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785144985/Gloitel/icon/mysql_ioyrw1.png",
+      },
+      {
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        name: "PostgreSQL",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762860001/Gloitel/icon/postgre_aq8ajb.svg",
+      },
+      {
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        name: "SQL Server",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785144985/Gloitel/icon/sqlserver_opat8t.png",
+      },
+      {
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        name: "PostgreSQL/Azure SQL",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785144986/Gloitel/icon/sql_eegaqv.png",
+      },
+      {
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        name: "Oracle migrations",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785144985/Gloitel/icon/oraclemigrations_pmqdcq.png",
+      },
+      {
+        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        name: "MongoDB upgrades",
+        logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785145218/Gloitel/icon/mongodb_vxcmnq.png",
+      },
+    ],
   },
 };
 
@@ -207,4 +295,4 @@ import {
   RefreshCycleIcon,
   ShieldIcon,
   WorkflowIcon,
-} from "../../../component/SvgIcon";
+} from "components/SvgIcon";

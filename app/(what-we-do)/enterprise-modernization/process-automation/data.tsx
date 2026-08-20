@@ -1,4 +1,4 @@
-import { AnalyticsIcon, DatabaseIcon, DocumentIcon, HeroArrowRightIcon, LinkIcon, MonitorIcon, SearchIcon, SparkleStarIcon, WorkflowAutomationIcon } from "../../../component/SvgIcon";
+import { AnalyticsIcon, DatabaseIcon, DocumentIcon, HeroArrowRightIcon, LinkIcon, MonitorIcon, SearchIcon, SparkleStarIcon, WorkflowAutomationIcon } from "components/SvgIcon";
 
 export const processAutomationHeroData = {
   badgeText: "Process Automation",

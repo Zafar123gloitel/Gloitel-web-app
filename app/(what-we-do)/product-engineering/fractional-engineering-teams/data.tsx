@@ -1,4 +1,4 @@
-import { ArrowRightIcon, UsersIcon, FileIcon, LayersIcon, DiamondStackIcon, CheckTargetIcon, WorkflowAutomationIcon, BarChartIcon, RefreshCcwIcon, MonitorIcon, PredictiveForecastingIcon, RocketIcon, UserCheckIcon, AnalyticsIcon, ChatbotIcon, BadgeCheckIcon, LinkIcon, DocumentCodeIcon, CheckIcon } from '../../../component/SvgIcon';
+import { ArrowRightIcon, UsersIcon, FileIcon, LayersIcon, DiamondStackIcon, CheckTargetIcon, WorkflowAutomationIcon, BarChartIcon, RefreshCcwIcon, MonitorIcon, PredictiveForecastingIcon, RocketIcon, UserCheckIcon, AnalyticsIcon, ChatbotIcon, BadgeCheckIcon, LinkIcon, DocumentCodeIcon, CheckIcon } from 'components/SvgIcon';
 
 export const fractionalTeamHeroData = {
   badgeText: "Fractional Engineering Teams",

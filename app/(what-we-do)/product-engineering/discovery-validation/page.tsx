@@ -1,17 +1,17 @@
 "use client";
 
-import HeroSection from "../../components/HeroSection";
-import Business from "../../components/Business";
-import Discover from "../../components/Discover";
-import Assess from "../../components/Assess";
-import Strategy from "../../components/Strategy";
-import TimeLine from "../../components/TimeLine";
-import Asked_Q from "../../components/Asked_Q";
-import Execution_Plan from "../../../uiComponents/Execution_Plan";
-import GlowPanel from "../../../component/GlowPanel";
-import { BgSquare2 } from "../../../component/BgSquare";
+// import HeroSection from "../../components/HeroSection";
+// import Business from "../../components/Business";
+// import Discover from "../../components/Discover";
+// import Assess from "../../components/Assess";
+// import Strategy from "../../components/Strategy";
+// import TimeLine from "../../components/TimeLine";
+// import Asked_Q from "../../components/Asked_Q";
+import Execution_Plan from "uiComponents/Execution_Plan";
+import GlowPanel from "components/GlowPanel";
+import { BgSquare2 } from "components/BgSquare";
 import StrategyBadge from "../../../../components/StrategyBadge";
-import { MiddleSectionHeads } from "../../../component/SectionHeads";
+import { MiddleSectionHeads } from "components/SectionHeads";
 import ProblemCard from "../../../../components/ProblemCard";
 import {
   heroSectionData,
@@ -25,6 +25,11 @@ import {
   noteveryproduct,
 } from "./data";
 import { CardShowcase } from "../../../../components";
+import HeroSection from "@/components/HeroSection";
+import Assess from "@/components/what-we-do/Assess";
+import Business from "@/components/what-we-do/Business";
+import Discover from "@/components/what-we-do/Discover";
+import Strategy from "@/components/what-we-do/Strategy";
 
 const page = () => {
   return (
@@ -148,8 +153,8 @@ Product Decisions"
             items={noteveryproduct}
             cardHeight="h-[263px]  max-w-[330px] "
             gridClassName="h-full gap-y-30 "
-            titleClassName="text-[28px] leading-8 "
-            descriptionClassName="text-[16px] xl:text-[18px] leading-6 mt-3 text-description "
+            titleClassName=""
+            descriptionClassName=""
           />
         </section>
       </section>

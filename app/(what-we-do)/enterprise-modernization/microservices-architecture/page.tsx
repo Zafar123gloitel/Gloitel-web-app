@@ -1,11 +1,8 @@
 "use client";
 
-import React from "react";
-import { InfoIcon } from "../../../component/SvgIcon";
-import { HeroArrowRightIcon } from "../../../component/SvgIcon";
-import HeroSection from "../../components/HeroSection";
+import { InfoIcon } from "components/SvgIcon";
+// import HeroSection from "../../components/HeroSection";
 import {
-
   buildingBlocksSectionHead,
   decompositionApproachSectionHead,
   domainDrivenDesignData,
@@ -19,15 +16,19 @@ import {
   techStackData,
   microservicesCTAData,
 } from "./data";
-import Strategy from "../../components/Strategy";
-import { BgSquare2 } from "../../../component/BgSquare";
+// import Strategy from "../../components/Strategy";
+import { BgSquare2 } from "components/BgSquare";
 import StrategyBadge from "../../../../components/StrategyBadge";
-import { MiddleSectionHeads } from "../../../component/SectionHeads";
-import Discover from "../../components/Discover";
-import Assess from "../../components/Assess";
+import { MiddleSectionHeads } from "components/SectionHeads";
+// import Discover from "../../components/Discover";
+// import Assess from "../../components/Assess";
 import ProblemCard from "../../../../components/ProblemCard";
-import AI_Solutions from "../../../uiComponents/AI_Solutions";
-import Execution_Plan from "../../../uiComponents/Execution_Plan";
+import AI_Solutions from "uiComponents/AI_Solutions";
+import Execution_Plan from "uiComponents/Execution_Plan";
+import HeroSection from "@/components/HeroSection";
+import Assess from "@/components/what-we-do/Assess";
+import Discover from "@/components/what-we-do/Discover";
+import Strategy from "@/components/what-we-do/Strategy";
 
 const page = () => {
   return (
@@ -54,8 +55,8 @@ const page = () => {
             <InfoIcon className="h-5 w-5 text-blue-400" />
           </span>
           <p className="text-[14px] text-title sm:text-[16px]">
-            If these aren&apos;t your problems, a well-modularized monolith may serve
-            you better.
+            If these aren&apos;t your problems, a well-modularized monolith may
+            serve you better.
           </p>
         </div>
       </section>

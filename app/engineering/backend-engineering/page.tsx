@@ -3,11 +3,11 @@
 
 import { CardShowcase } from "../../../components";
 import StrategyBadge from "../../../components/StrategyBadge";
-import { BgSquare2 } from "../../component/BgSquare";
-import EngineeringHeroSection from "../../component/EngineeringHeroSection";
-import { MiddleSectionHeads } from "../../component/SectionHeads";
-import AI_Solutions from "../../uiComponents/AI_Solutions";
-import Execution_Plan from "../../uiComponents/Execution_Plan";
+import { BgSquare2 } from "components/BgSquare";
+import EngineeringHeroSection from "components/EngineeringHeroSection";
+import { MiddleSectionHeads } from "components/SectionHeads";
+import AI_Solutions from "uiComponents/AI_Solutions";
+import Execution_Plan from "uiComponents/Execution_Plan";
 import {
   backendAgentsData,
   backendAgentsSectionHead,
@@ -59,8 +59,8 @@ export default function Page() {
             showStepBadge={false}
             cardHeight="h-[411px] max-w-[411px] "
             gridClassName="gap-y-6"
-            titleClassName="text-[28px] leading-8 "
-            descriptionClassName="text-[16px] leading-6 mt-3 text-description "
+            titleClassName=""
+            descriptionClassName=""
           />
         </section>
       </div>

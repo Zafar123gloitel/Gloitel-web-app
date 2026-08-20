@@ -11,14 +11,14 @@ import {
   edtechSolutionsData,
 } from "./data";
 import HeroSection from "../../../components/HeroSection";
-import { BgSquare2 } from "../../component/BgSquare";
+import { BgSquare2 } from "components/BgSquare";
 import StrategyBadge from "../../../components/StrategyBadge";
-import { MiddleSectionHeads } from "../../component/SectionHeads";
+import { MiddleSectionHeads } from "components/SectionHeads";
 import ProblemCard from "../../../components/ProblemCard";
 import Image from "next/image";
 import { CardShowcase } from "../../../components";
-import AI_Solutions from "../../uiComponents/AI_Solutions";
-import Execution_Plan from "../../uiComponents/Execution_Plan";
+import AI_Solutions from "uiComponents/AI_Solutions";
+import Execution_Plan from "uiComponents/Execution_Plan";
 
 const page = () => {
   return (
@@ -77,8 +77,8 @@ const page = () => {
             showStepBadge={false}
             cardHeight="h-[411px] max-w-[411px] "
             gridClassName="gap-y-6"
-            titleClassName="text-[28px] leading-8 "
-            descriptionClassName="text-[16px] leading-6 mt-3 text-description "
+            titleClassName=""
+            descriptionClassName=""
           />
         </section>
       </div>

@@ -1,50 +1,45 @@
 "use client";
-import React, { useRef } from "react";
+import { useRef } from "react";
 import dynamic from "next/dynamic";
-import Hero from "./component/Hero";
-import { HomeAboutContent, HomeAboutImg, WhoWeAre } from "./component/About";
-import { LoadingSection } from "./component/LoadingSection";
-import { HorizontalDivider } from "./component/SectionDivider";
-import { LeftSectionHead2, MiddleSectionHeads } from "./component/SectionHeads";
-import { CenterBadge, LeftBadge } from "./component/Badge";
-import { GlowButton, WhiteButton } from "./component/Button";
-import { BgSquare3 } from "./component/BgSquare";
-import ServiceCard from "./component/serviceCard";
-import GlowPanel from "./component/GlowPanel";
+import Hero from "@/components/Hero";
+import { WhoWeAre } from "@/components/About";
+import { LoadingSection } from "@/components/LoadingSection";
 import { useScroll } from "framer-motion";
+import StrategyBadge from "@/components/StrategyBadge";
+import { HorizontalDivider } from "@/components/SectionDivider";
+import { LeftSectionHead2, MiddleSectionHeads } from "@/components/SectionHeads";
+import { WhiteButton } from "@/components";
+import { BgSquare3 } from "@/components/BgSquare";
+import GlowPanel from "@/components/GlowPanel";
+import HowWeWork from "@/components/HowWeWork";
+import { GlowButton } from "@/components/Button";
+import ServiceCard from "@/components/serviceCard";
 
-const Result = dynamic(() => import("./component/Result"), {
+const Result = dynamic(() => import("@/components/Result"), {
   loading: () => <LoadingSection minHeight="min-h-[280px]" />,
 });
 
-const HowWeWork = dynamic(() => import("./component/HowWeWork"), {
-  loading: () => <LoadingSection minHeight="min-h-[520px]" />,
-});
-
-const Technology = dynamic(() => import("./component/Technology"), {
+const Technology = dynamic(() => import("@/components/Technology"), {
   loading: () => <LoadingSection minHeight="min-h-[420px]" />,
 });
 
-const PortfolioCard = dynamic(() => import("./component/PortfolioCard"), {
+const PortfolioCard = dynamic(() => import("@/components/PortfolioCard"), {
   loading: () => <LoadingSection minHeight="min-h-[560px]" />,
 });
 
-const LaunchYourSite = dynamic(() => import("./component/LaunchYourSite"), {
+const LaunchYourSite = dynamic(() => import("@/components/LaunchYourSite"), {
   loading: () => <LoadingSection minHeight="min-h-[260px]" />,
 });
 
-const Testimonial = dynamic(() => import("./component/Testimonial"), {
+const Testimonial = dynamic(() => import("@/components/Testimonial"), {
   loading: () => <LoadingSection minHeight="min-h-[360px]" />,
 });
 
-const FAQPage = dynamic(
-  () => import("./component/Faq").then((mod) => mod.FAQPage),
-  {
-    loading: () => <LoadingSection minHeight="min-h-[420px]" />,
-  },
-);
+const FAQPage = dynamic(() => import("@/components/Faq").then(mod => mod.FAQPage), {
+  loading: () => <LoadingSection minHeight="min-h-[420px]" />,
+});
 
-const JoinUsNow = dynamic(() => import("./component/JoinUsNow"), {
+const JoinUsNow = dynamic(() => import("@/components/JoinUsNow"), {
   loading: () => <LoadingSection minHeight="min-h-[220px]" />,
 });
 
@@ -143,7 +138,7 @@ const HomePage = () => {
         </div>
       </section> */}
 
-       <WhoWeAre/>
+      <WhoWeAre />
 
       <HorizontalDivider />
       <Result />
@@ -158,7 +153,8 @@ const HomePage = () => {
         <div className="flex flex-col gap-10 lg:gap-16 items-start">
           {/* Benefits */}
           <div className="flex flex-col w-full max-w-4xl">
-            <LeftBadge WorkBadge="Gloitel Benefits" />
+            {/* <LeftBadge WorkBadge="Gloitel Benefits" /> */}
+            <StrategyBadge text={"Gloitel Benefits"} />
             <LeftSectionHead2
               SectionHead="Smart Solutions. Tangible Results."
               SectionSubHead="We turn your goals into measurable results."
@@ -203,16 +199,17 @@ const HomePage = () => {
         <BgSquare3 />
         <div className="flex flex-col items-center justify-center max-w-7xl mx-auto relative z-10">
           {/* Header */}
-          <div className="flex flex-col w-full sm:w-3/4 lg:w-1/2 text-center">
-            <CenterBadge TechnologyBadge="Portfolio" />
+          <div className="flex flex-col w-full items-center sm:w-3/4 lg:w-1/2 text-center">
+            {/* <CenterBadge TechnologyBadge="Portfolio" /> */}
+            <StrategyBadge text={"Portfolio"} />
             <MiddleSectionHeads
               SectionHead="Our Selected Projects"
               SectionSubHead="That Propel Your Website!"
               SectionDescription="Explore our curated work, showcasing collaborations with visionary clients across diverse industries."
             />
             <GlowButton
-              ButtonText="View Portfolio"
-              Buttonlink="/creation"
+              buttonText="View Portfolio"
+              buttonlink="/creation"
               className="mt-6 sm:mt-8"
             />
           </div>
@@ -231,7 +228,8 @@ const HomePage = () => {
       <LaunchYourSite />
       <HorizontalDivider />
       <Testimonial />
-      <FAQPage />
+      {/* <FAQPage /> */}
+
       <JoinUsNow />
     </>
   );

@@ -1,17 +1,12 @@
 "use client";
-import Business from "../../(what-we-do)/components/Business";
-import { deliverablesData } from "../../(what-we-do)/components/data";
-import PurposeCard from "../../(what-we-do)/components/PurposeCard";
-import {
-  processCategoriesData,
-  processCategoriesSectionHead,
-} from "../../(what-we-do)/enterprise-modernization/data";
+// import Business from "../../(what-we-do)/components/Business";
+// import PurposeCard from "../../(what-we-do)/components/PurposeCard";
 import StrategyBadge from "../../../components/StrategyBadge";
-import { BgSquare2 } from "../../component/BgSquare";
-import EngineeringHeroSection from "../../component/EngineeringHeroSection";
-import { MiddleSectionHeads } from "../../component/SectionHeads";
-import EngineeringArchitecture from "../../uiComponents/EngineeringArchitecture";
-import Execution_Plan from "../../uiComponents/Execution_Plan";
+import { BgSquare2 } from "components/BgSquare";
+import EngineeringHeroSection from "components/EngineeringHeroSection";
+import { MiddleSectionHeads } from "components/SectionHeads";
+import EngineeringArchitecture from "uiComponents/EngineeringArchitecture";
+import Execution_Plan from "uiComponents/Execution_Plan";
 import {
   architectureData,
   mobileAgentsSectionHead,
@@ -22,6 +17,8 @@ import {
   mobileRoadmapData,
   mobileRoadmapSectionHead,
 } from "./data";
+import PurposeCard from "@/components/what-we-do/PurposeCard";
+import Business from "@/components/what-we-do/Business";
 
 export default function Page() {
   const architecturePositions = {

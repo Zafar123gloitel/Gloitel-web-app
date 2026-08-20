@@ -1,15 +1,9 @@
 "use client";
 
-import React, { useRef } from "react";
-
-import { FAQPage } from "../component/Faq";
-import JoinUsNow from "../component/JoinUsNow";
-
-import ContactForm from "../component/ContactForm";
-import { HeroVideoBg } from "../component/HeroHead";
-import { IntroHead } from "../uiComponents/Heading";
-import GlowPanel from "../component/GlowPanel";
-import { GlowButton } from "../component/Button";
+import { GlowButton } from "@/components";
+import { HeroVideoBg } from "@/components/HeroHead";
+import { IntroHead } from "@/uiComponents/Heading";
+import { useRef } from "react";
 
 const ContactPage = () => {
   const formRef = useRef(null);
@@ -34,7 +28,7 @@ const ContactPage = () => {
               description="Whether you have a question, need assistance,
  or want to start a new project, our team is here to help."
             />
-            <GlowButton ButtonText="Fill The Form Out" Buttonlink={"#form"} />
+            <GlowButton buttonText="Fill The Form Out" buttonlink={"#form"} />
           </div>
           <div ref={formRef} className=" w-full">
             <ContactForm />

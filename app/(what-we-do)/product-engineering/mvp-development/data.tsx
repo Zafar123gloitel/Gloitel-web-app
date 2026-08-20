@@ -1,5 +1,5 @@
-import { ArchitectureItem } from "../../../uiComponents/ArchitectureCircle";
-import { ArrowRightIcon, UsersSecurityIcon, RefreshCcwIcon, DiamondStackIcon, ShieldCheckIcon, PredictiveForecastingIcon, ShieldAlertIcon } from '../../../component/SvgIcon';
+import { ArchitectureItem } from "uiComponents/ArchitectureCircle";
+import { ArrowRightIcon, UsersSecurityIcon, RefreshCcwIcon, DiamondStackIcon, ShieldCheckIcon, PredictiveForecastingIcon, ShieldAlertIcon } from 'components/SvgIcon';
 
 export const mvpheroSection = {
     badgeText: "MVP Development",

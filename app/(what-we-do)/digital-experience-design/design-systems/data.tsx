@@ -10,9 +10,9 @@ import {
   QuarterlyAuditsIcon,
   UsageGuidelinesIcon,
   UserInterviewsIcon,
-} from "../../../component/SvgIcon";
+} from "components/SvgIcon";
 
-import { ArchitectureItem } from "../../../uiComponents/ArchitectureCircle";
+import { ArchitectureItem } from "uiComponents/ArchitectureCircle";
 
 export const designSystemsHeroData = {
   badgeText: "Design Systems",
