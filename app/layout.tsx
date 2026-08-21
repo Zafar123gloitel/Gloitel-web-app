@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar';
 import { configs } from '@/configs';
 import { DM_Sans } from 'next/font/google';
 import { Toaster } from 'react-hot-toast';
+import './globals.css';
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
