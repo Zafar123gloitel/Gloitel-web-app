@@ -6,10 +6,11 @@ import { GlowButton } from './Button';
 import { Blend, Crosshair, Rocket } from 'lucide-react';
 import Image from 'next/image';
 import StrategyBadge from '@/components/StrategyBadge';
+import { ImageCard2 } from '@/uiComponents/ImageCard';
 
 const stages = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: globalThis.crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2),
     title: 'Kickoff',
     stage: 'Stage 1',
     description:
@@ -18,7 +19,7 @@ const stages = [
     icon: <Rocket />,
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: globalThis.crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2),
     title: 'Execution',
     stage: 'Stage 2',
     description:
@@ -27,7 +28,7 @@ const stages = [
     icon: <Crosshair />,
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: globalThis.crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2),
     title: 'Development & Deliver',
     stage: 'Stage 3',
     description:

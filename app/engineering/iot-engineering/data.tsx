@@ -7,6 +7,7 @@ import {
   WCAGComplianceIcon,
 } from 'components/SvgIcon';
 import { ArchitectureItem } from 'uiComponents/ArchitectureCircle';
+const createId = () => globalThis.crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2);
 
 export const iotHeroData = {
   badgeText: 'IoT Engineering',
@@ -36,7 +37,7 @@ export const fullStackComplianceSectionHead = {
 
 export const fullStackComplianceData: ArchitectureItem[] = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     position: 'top',
     icon: <EngineeringHIPAAIcon />,
     title: 'HIPAA',
@@ -44,7 +45,7 @@ export const fullStackComplianceData: ArchitectureItem[] = [
       'Privacy, Security Rule, and Breach Notification compliance for healthcare data protection.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     position: 'leftTop',
     icon: <IoTGDPRIcon />,
     title: 'GDPR',
@@ -52,7 +53,7 @@ export const fullStackComplianceData: ArchitectureItem[] = [
       'Data privacy compliance for healthcare organizations serving patients across the European Union.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     position: 'rightTop',
     icon: <ConnectedSystemsIcon />,
     title: 'HL7 FHIR',
@@ -60,7 +61,7 @@ export const fullStackComplianceData: ArchitectureItem[] = [
       'R4 and R5 API integrations enabling secure and standardized healthcare data exchange.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     position: 'leftBottom',
     icon: <WCAGComplianceIcon />,
     title: 'WCAG 2.1 AA',
@@ -68,7 +69,7 @@ export const fullStackComplianceData: ArchitectureItem[] = [
       'Accessibility standards that ensure patient-facing experiences are inclusive and usable.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     position: 'rightBottom',
     icon: <EngineeringIEC62304Icon />,
     title: 'IEC 62304',
@@ -76,7 +77,7 @@ export const fullStackComplianceData: ArchitectureItem[] = [
       'Medical device software lifecycle processes for safe and compliant product development.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     position: 'bottom',
     icon: <IoTSOC2TypeIIIcon />,
     title: 'SOC 2 Type II',
@@ -105,27 +106,27 @@ export const aiEcosystemData = {
   technologies: {
     LLMs: [
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'OpenAI GPT-4o',
         logo: '',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Claude 3.5 Sonnet',
         logo: '',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Gemini 1.5 Pro',
         logo: '',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'LLaMA 3',
         logo: '',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Mistral',
         logo: '',
       },

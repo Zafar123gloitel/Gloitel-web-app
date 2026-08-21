@@ -1,9 +1,9 @@
+import StrategyBadge from '@/components/StrategyBadge';
+import PurposeCard from '@/components/what-we-do/PurposeCard';
+import { CircleAlert } from 'lucide-react';
 import React from 'react';
 import { BgSquare2 } from './BgSquare';
-import StrategyBadge from '@/components/StrategyBadge';
 import { MiddleSectionHeads } from './SectionHeads';
-import PurposeCard from '@/components/what-we-do/PurposeCard';
-import { BrainCircuit, CircleAlert, Settings } from 'lucide-react';
 
 interface NotEveryProblemProps {
   badgeText: string;

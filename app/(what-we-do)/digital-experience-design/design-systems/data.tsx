@@ -13,6 +13,7 @@ import {
 } from 'components/SvgIcon';
 
 import { ArchitectureItem } from 'uiComponents/ArchitectureCircle';
+const createId = () => globalThis.crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2);
 
 export const designSystemsHeroData = {
   badgeText: 'Design Systems',
@@ -43,7 +44,7 @@ export const designSystemComponentsSectionHead = {
 
 export const designSystemComponentsData: ArchitectureItem[] = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     position: 'top',
     icon: <DesignTokensIcon />,
     title: 'Design Tokens',
@@ -51,7 +52,7 @@ export const designSystemComponentsData: ArchitectureItem[] = [
       'The atomic values that define your visual language - colors, typography, spacing, border radii, shadows, and motion. Stored as variables that propagate from design files into code.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     position: 'leftTop',
     icon: <PatternLibraryIcon />,
     title: 'Pattern Library',
@@ -59,7 +60,7 @@ export const designSystemComponentsData: ArchitectureItem[] = [
       'Higher-level patterns built from components - forms, navigation patterns, empty states, loading states, error states. Solved problems that never need to be solved again.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     position: 'rightTop',
     icon: <FigmaComponentLibraryIcon />,
     title: 'Component Library (Figma)',
@@ -67,7 +68,7 @@ export const designSystemComponentsData: ArchitectureItem[] = [
       'Every reusable UI component documented in Figma - with all variants, states, and interaction behaviors. The single source of truth for designers.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     position: 'leftBottom',
     icon: <UsageGuidelinesIcon />,
     title: 'Usage Guidelines',
@@ -75,7 +76,7 @@ export const designSystemComponentsData: ArchitectureItem[] = [
       "Documentation for when and how to use each component - not just what it looks like. Includes dos/don'ts and accessibility requirements.",
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     position: 'rightBottom',
     icon: <CodeComponentLibraryIcon />,
     title: 'Code Component Library',
@@ -91,14 +92,14 @@ export const foundationDecisionData = {
     'Whether you build from scratch or extend an existing library, the right approach depends on your product needs and long-term priorities.',
   cards: [
     {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      id: createId(),
       icon: <BuildFromScratchIcon />,
       title: 'Build from scratch',
       description:
         'When your brand is distinctive, your product has unique interaction patterns, or you need complete control over accessibility and performance.',
     },
     {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      id: createId(),
       icon: <ExtendExistingLibraryIcon />,
       title: 'Extend an existing library',
       description:
@@ -117,37 +118,37 @@ export const designSystemDeliverablesSectionHead = {
 
 export const designSystemDeliverablesData = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     step: 1,
     text: 'Figma component library with all variants and states',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     step: 2,
     text: 'React / React Native / Flutter component library',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     step: 3,
     text: 'Storybook documentation',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     step: 4,
     text: 'Design token files (CSS variables, Tailwind config, or native tokens)',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     step: 5,
     text: 'Usage guidelines and pattern documentation',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     step: 6,
     text: 'Contribution guide for your team',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     step: 7,
     text: 'Governance process for system updates',
   },
@@ -162,7 +163,7 @@ export const maintenanceSectionHead = {
 
 export const maintenanceData = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     step: 1,
     icon: <UserInterviewsIcon />,
     title: 'Contribution Process',
@@ -170,14 +171,14 @@ export const maintenanceData = [
       'Set up contribution processes so teams can submit new components while maintaining quality standards.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     step: 2,
     icon: <QuarterlyAuditsIcon />,
     title: 'Quarterly Audits',
     description: 'Run quarterly audits to identify drift between design and implementation.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     step: 3,
     icon: <OnCallSupportIcon />,
     title: 'On-Call Support',

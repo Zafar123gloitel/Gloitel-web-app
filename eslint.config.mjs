@@ -65,12 +65,15 @@ export default [
   {
     files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
     languageOptions: {
-      globals: {
-        window: 'readonly',
-        document: 'readonly',
-        navigator: 'readonly',
-        console: 'readonly',
-        process: 'readonly',
+        globals: {
+          window: 'readonly',
+          document: 'readonly',
+          navigator: 'readonly',
+          fetch: 'readonly',
+          requestAnimationFrame: 'readonly',
+          cancelAnimationFrame: 'readonly',
+          console: 'readonly',
+          process: 'readonly',
         module: 'readonly',
         require: 'readonly',
         __dirname: 'readonly',

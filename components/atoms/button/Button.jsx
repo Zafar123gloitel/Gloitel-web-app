@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowRightIcon, LeftArrowIcon, RightArrowIcon } from '../../../components/SvgIcon';
+import { ArrowRightIcon, LeftArrowIcon, RightArrowIcon } from '../../SvgIcon';
 
 const variantStyles = {
   glow: 'border border-blue-500/25 bg-blue-700 rounded-lg text-title shadow-[0_0_24px_rgba(37,99,235,0.55)] hover:bg-blue-600 hover:shadow-[0_0_28px_rgba(37,99,235,0.8)]',

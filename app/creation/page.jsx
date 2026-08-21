@@ -9,9 +9,11 @@ import JoinUsNow from '@/components/JoinUsNow';
 import Link from 'next/link';
 import GlowPanel from '@/components/GlowPanel';
 
+const createId = () => globalThis.crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2);
+
 const stages = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     name: 'CGMMSSY',
     date: 2018,
     tag: 'Web & App Development',
@@ -19,7 +21,7 @@ const stages = [
       'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762867021/Gloitel/portfolio/cgmmssy_oww8hb.svg',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     name: 'PATH IAS ACADEMY',
     date: 2024,
     tag: 'Business',
@@ -27,7 +29,7 @@ const stages = [
       'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762867010/Gloitel/portfolio/pathias_usuts5.webp',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     name: 'HRM TECHNOLOGY',
     date: 2024,
     tag: 'Website',
@@ -35,7 +37,7 @@ const stages = [
       'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762867011/Gloitel/portfolio/hrm_wwb6ki.svg',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     name: 'Experteeth',
     date: 2023,
     tag: 'Website',
@@ -43,7 +45,7 @@ const stages = [
       'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762867007/Gloitel/portfolio/experteeth_zk1kdv.webp',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     name: 'Godhaar',
     date: 2025,
     tag: 'Website & Mobile App',
@@ -51,7 +53,7 @@ const stages = [
       'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762927323/Gloitel/portfolio/godhaar_vljbzt.jpg',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     name: 'Fitbattle',
     date: 2025,
     tag: 'Mobile App & Website',
@@ -59,7 +61,7 @@ const stages = [
       'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762866980/Gloitel/portfolio/fitbattle_esztbn.webp',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     name: 'VIADYAM (HMS)',
     date: 2024,
     tag: 'HMS',
@@ -67,7 +69,7 @@ const stages = [
       'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762866990/Gloitel/portfolio/vidyam_vemacx.webp',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     name: 'STAFFEASE (CRM)',
     date: 2024,
     tag: 'CRM',
@@ -76,7 +78,7 @@ const stages = [
   },
 ];
 const CreationPage = () => {
-  const [activeCard, setActiveCard] = useState(null);
+  const [_activeCard, _setActiveCard] = useState(null);
 
   return (
     <>
@@ -90,7 +92,6 @@ const CreationPage = () => {
           muted
           loop
           playsInline
-          unoptimized='true'
         ></video>
 
         <div className='relative z-10 mx-auto flex min-h-[60vh] flex-col items-center justify-center pt-15 sm:pt-20 md:pt-20 lg:pt-20'>
@@ -101,8 +102,7 @@ const CreationPage = () => {
               HomeSubHeroBadge='Our Homegrown Products'
               main='Check Out Some'
               sub='Extra-Ordinary Work.'
-              description='From startups to established brands, we create 
-              tailored solutions that drive success and make a real impact.'
+              description='From startups to established brands, we create tailored solutions that drive success and make a real impact.'
             />
           </div>
 
@@ -127,7 +127,6 @@ const CreationPage = () => {
                     src={item.image}
                     alt={item.name}
                     className='h-60 w-full rounded-xl object-cover transition-transform duration-500 ease-in-out group-hover:scale-105 sm:h-72 sm:rounded-2xl md:h-80 lg:h-96'
-                    unoptimized
                     loading='lazy'
                   />
 

@@ -6,6 +6,7 @@ import {
   MultiAgentSystemsIcon,
   ToolUsingAgentsIcon,
 } from 'components/SvgIcon';
+const createId = () => globalThis.crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2);
 export const backendEngineeringHeroData = {
   badgeText: 'Backend Engineering',
   title: 'AI Engineering That Ships and Stays Shipped', // ⚠️ mismatch
@@ -42,27 +43,27 @@ export const backendTechStackData = {
   technologies: {
     LLMs: [
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'OpenAI GPT-4o',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960583/Gloitel/icon/openai_wwedph.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Claude 3.5 Sonnet',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960642/Gloitel/icon/claude_sszoov.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Gemini 1.5 Pro',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960682/Gloitel/icon/gemini_b4dcsa.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'LLaMA 3',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960576/Gloitel/icon/meta_brzl7j.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Mistral',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960577/Gloitel/icon/mistral_bmr5b7.png',
       },
@@ -85,35 +86,35 @@ export const backendAgentsSectionHead = {
 
 export const backendAgentsData = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <AgenticWorkflowAutomationIcon />,
     title: 'Agentic Workflow Automation',
     description:
       'Replace manual multi-step processes with agents that handle them end-to-end. Lead qualification, invoice processing, content moderation, compliance checks, research aggregation - automated with full audit trails.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <MultiAgentSystemsIcon />,
     title: 'Multi-Agent Systems',
     description:
       'Orchestrate teams of specialized agents working in parallel. One agent researches, another writes, another reviews. Each agent is optimized for a specific responsibility within the workflow. Complex tasks completed in minutes instead of hours.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <ToolUsingAgentsIcon />,
     title: 'Tool-Using Agents',
     description:
       "Agents integrated with your real business tools - CRMs, ERPs, databases, Slack, email, calendars, file systems. Seamlessly connecting data, workflows, and actions across your organization. They don't just generate text; they take action inside your systems.",
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <HumanInTheLoopWorkflowsIcon />,
     title: 'Human-in-the-Loop Workflows',
     description:
       'Autonomous agents with configurable human oversight gates. The agent handles routine decisions; humans review exceptions. Designed for regulated industries and high-stakes workflows.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <AIPoweredProcessAutomationIcon />,
     title: 'AI-Powered Process Automation',
     description:

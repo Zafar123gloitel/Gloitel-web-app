@@ -1,4 +1,5 @@
 import type { HeroCard } from '../../components/HeroSection';
+const createId = () => globalThis.crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2);
 
 export const resourcesHeroData = {
   badgeText: 'Resources',
@@ -20,25 +21,25 @@ export const resourcesHeroData = {
 
 export const resourceCategoriesData: HeroCard[] = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     position: 'top-left',
     icon: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokewidth="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
     title: 'Blogs & Articles',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     position: 'top-right',
     icon: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokewidth="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v18"/><path d="M3 12h18"/></svg>',
     title: 'Guides & Tutorials',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     position: 'bottom-left',
     icon: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokewidth="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 16 4-5 3 3 5-7"/></svg>',
     title: 'Case Studies',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     position: 'bottom-right',
     icon: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokewidth="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M3 12h18"/><path d="m5 5 14 14"/><path d="m19 5-14 14"/></svg>',
     title: 'Whitepapers & eBooks',
@@ -62,7 +63,7 @@ export const whoThisIsForSectionHead = {
 
 export const integrationStabilityData = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     title: 'Integration Stability',
     description:
       'AI systems often fail not because the model is but because the surrounding integrations are unreliable. We build stable connections between AI.',
@@ -70,7 +71,7 @@ export const integrationStabilityData = [
     buttonLink: '#',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     title: 'Integration Stability',
     description:
       'AI systems often fail not because the model is but because the surrounding integrations are unreliable. We build stable connections between AI.',
@@ -78,7 +79,7 @@ export const integrationStabilityData = [
     buttonLink: '#',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     title: 'Integration Stability',
     description:
       'AI systems often fail not because the model is but because the surrounding integrations are unreliable. We build stable connections between AI.',
@@ -86,7 +87,7 @@ export const integrationStabilityData = [
     buttonLink: '#',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     title: 'Integration Stability',
     description:
       'AI systems often fail not because the model is but because the surrounding integrations are unreliable. We build stable connections between AI.',
@@ -94,7 +95,7 @@ export const integrationStabilityData = [
     buttonLink: '#',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     title: 'Integration Stability',
     description:
       'AI systems often fail not because the model is but because the surrounding integrations are unreliable. We build stable connections between AI.',
@@ -102,7 +103,7 @@ export const integrationStabilityData = [
     buttonLink: '#',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     title: 'Integration Stability',
     description:
       'AI systems often fail not because the model is but because the surrounding integrations are unreliable. We build stable connections between AI.',
@@ -110,7 +111,7 @@ export const integrationStabilityData = [
     buttonLink: '#',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     title: 'Integration Stability',
     description:
       'AI systems often fail not because the model is but because the surrounding integrations are unreliable. We build stable connections between AI.',
@@ -128,7 +129,7 @@ export const whoThisIsForSectionHead2 = {
 
 export const resourceCaseStudiesData = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     image: '/images/Resources/healthcare-client.png',
     imageAlt: 'Healthcare Client',
     title: 'Healthcare Client',
@@ -138,7 +139,7 @@ export const resourceCaseStudiesData = [
     buttonLink: '/case-studies/healthcare-client',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     image: '/images/Resources/financial-services.png',
     imageAlt: 'Financial Services',
     title: 'Financial Services',
@@ -148,7 +149,7 @@ export const resourceCaseStudiesData = [
     buttonLink: '/case-studies/financial-services',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     image: '/images/Resources/e-commerce.png',
     imageAlt: 'E-Commerce',
     title: 'E-Commerce',
@@ -194,28 +195,28 @@ const ArrowIcon = () => (
 
 export const enterpriseModernizationTagsData = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <SearchIcon />,
     icons: <ArrowIcon />,
     label: 'Enterprise Modernization',
     href: '#',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icons: <ArrowIcon />,
     icon: <SearchIcon />,
     label: 'AI Modernization',
     href: '#',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <SearchIcon />,
     icons: <ArrowIcon />,
     label: 'Cloud Modernization',
     href: '#',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <SearchIcon />,
     icons: <ArrowIcon />,
     label: 'Digital Transformation',

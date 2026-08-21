@@ -3,11 +3,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { CardDivider, CardIcon, GlowButton } from '@/components';
-import { links } from './NavData';
-import { megaMenus } from './NavData';
+import { links, megaMenus } from './NavData';
 import { useState, useEffect, useRef } from 'react';
 import { Input } from '@/uiComponents/input';
 import { EmailIcon, LocationIcon, PhoneIcon } from './SvgIcon';
+import { toast } from 'react-hot-toast';
 
 const contact = {
   email: 'gloitel-it@gloitel.in',

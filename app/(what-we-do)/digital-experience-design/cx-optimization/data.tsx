@@ -7,6 +7,7 @@ import {
   PerformanceImpactIcon,
   OnboardingOptimizationIcon,
 } from '../../../../components/SvgIcon';
+const createId = () => globalThis.crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2);
 
 export const cxOptimizationHeroData = {
   badgeText: 'CX Optimization',
@@ -37,42 +38,42 @@ export const cxCoversSectionHead = {
 
 export const cxCoversData = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <FunnelAnalysisIcon />,
     title: 'Funnel Analysis & Conversion Optimization',
     description:
       'Map every step in your key user funnels - signup, activation, purchase, renewal. Identify where users drop off and why. Prioritized fixes with projected impact.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <ExperimentationIcon />,
     title: 'A/B Testing & Experimentation',
     description:
       'Design, implement, and analyze controlled experiments. Test layout changes, copy variations, feature rollouts, and pricing presentation. Statistical rigor, not gut feel.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <HeatmapAnalysisIcon />,
     title: 'Session Recording & Heatmap Analysis',
     description:
       'Analyze real user behavior using session recordings and heatmaps. Find where users click, where they scroll, where they rage-click, and where they abandon.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <AccessibilityAuditIcon />,
     title: 'Accessibility Audit & Remediation',
     description:
       'WCAG 2.1 compliance audit with a prioritized remediation plan. Accessible products reach more users and reduce legal risk.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <PerformanceImpactIcon />,
     title: 'Performance-UX Impact Assessment',
     description:
       'Measure how performance issues (load time, interaction latency) affect user behavior and conversion. Make the business case for performance investment.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <OnboardingOptimizationIcon />,
     title: 'Onboarding Optimization',
     description:
@@ -155,83 +156,83 @@ export const cxToolsData = {
   technologies: {
     Analytics: [
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Mixpanel',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785312782/Gloitel/icon/Mixpanel_v5pw9e.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Amplitude',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785312782/Gloitel/icon/Amplitude_nlbsxg.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Google Analytics 4',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785312782/Gloitel/icon/Google_Analytics_4_csiihb.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'PostHog',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785312783/Gloitel/icon/PostHog_fxlifh.png',
       },
     ],
     'Session Recording': [
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Hotjar',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785312782/Gloitel/icon/Hotjar_ei3k1j.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'FullStory',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785312782/Gloitel/icon/FullStory_e1mekd.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Microsoft Clarity',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785312782/Gloitel/icon/Microsoft_Clarity_a8l3wm.png',
       },
     ],
     'A/B Testing': [
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Optimizely',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785312783/Gloitel/icon/Optimizely_lf2i5p.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'VWO',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785312783/Gloitel/icon/VWO_kqz4nd.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'LaunchDarkly',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785312783/Gloitel/icon/LaunchDarkly_zquuun.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'GrowthBook',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785312783/Gloitel/icon/GrowthBook_kmngex.png',
       },
     ],
     Accessibility: [
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Axe',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785312783/Gloitel/icon/Axe_x4gssd.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'WAVE',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785312783/Gloitel/icon/WAVE_qnwohi.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Lighthouse',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785312782/Gloitel/icon/Lighthouse_xcj1md.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Screen Reader testing',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785312783/Gloitel/icon/Screen_Reader_testing_l767ar.png',
       },

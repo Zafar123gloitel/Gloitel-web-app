@@ -4,6 +4,7 @@ import {
   SparkleStarIcon,
   StructuredDataWorkflowsIcon,
 } from 'components/SvgIcon';
+const createId = () => globalThis.crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2);
 export const businessAnalysisHeroData = {
   badgeText: 'Business Analysis',
   title: 'AI Engineering That Ships and Stays Shipped',
@@ -31,42 +32,42 @@ export const businessAnalysisProcessSectionHead = {
 
 export const businessAnalysisProcessData = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <StructuredDataWorkflowsIcon />,
     title: 'Structured Data Workflows',
     description:
       'Repeatable, rule-based processes with structured inputs. Data entry automation, report generation, data validation, system synchronization, and scheduled jobs.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <DocumentProcessingIcon />,
     title: 'Document Processing',
     description:
       'Extract structured data from documents, classify them, route them, and trigger downstream actions. Handles PDFs, emails, scanned documents, and forms.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <IntegrationAutomationIcon />,
     title: 'Integration Automation',
     description:
       "Connect systems that don't talk to each other. Event-driven integrations that keep data in sync across CRM, ERP, HRIS, and custom applications without manual export/import.",
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <SparkleStarIcon />,
     title: 'AI-Powered Process Automation',
     description:
       'For processes where the inputs are unstructured, the rules are complex, or exceptions are common. AI agents that understand context, handle edge cases, and escalate to humans appropriately.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <SparkleStarIcon />,
     title: 'AI-Powered Process Automation',
     description:
       'For processes where the inputs are unstructured, the rules are complex, or exceptions are common. AI agents that understand context, handle edge cases, and escalate to humans appropriately.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <SparkleStarIcon />,
     title: 'AI-Powered Process Automation',
     description:
@@ -82,32 +83,32 @@ export const businessAnalysisDeliverablesSectionHead = {
 
 export const businessAnalysisDeliverablesData = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     step: 1,
     text: 'Figma component library with all variants and states',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     step: 2,
     text: 'React / React Native / Flutter component library',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     step: 3,
     text: 'Storybook documentation',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     step: 4,
     text: 'Design token files (CSS variables, Tailwind config, or native tokens)',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     step: 5,
     text: 'Usage guidelines and pattern documentation',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     step: 6,
     text: 'Contribution guide for your team',
   },
@@ -133,27 +134,27 @@ export const businessAnalysisEcosystemData = {
   technologies: {
     LLMs: [
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'OpenAI GPT-4o',
         logo: '',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Claude 3.5 Sonnet',
         logo: '',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Gemini 1.5 Pro',
         logo: '',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'LLaMA 3',
         logo: '',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Mistral',
         logo: '',
       },

@@ -10,6 +10,7 @@ import {
   PromptOpsIcon,
   RAGSystemsIcon,
 } from 'components/SvgIcon';
+const createId = () => globalThis.crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2);
 export const aiEngineeringHeroData = {
   badgeText: 'AI Engineering',
   title: 'AI Engineering That Ships and Stays Shipped',
@@ -37,56 +38,56 @@ export const aiSystemsSectionHead = {
 
 export const aiSystemsData = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     step: 1,
     icon: <RAGSystemsIcon />,
     title: 'RAG Systems',
     description: 'Vector search and document intelligence pipelines.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     step: 2,
     icon: <LLMFeaturesIcon />,
     title: 'LLM Features',
     description: 'AI capabilities embedded into existing products.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     step: 3,
     icon: <HL7FHIRIcon />,
     title: 'Agent Systems',
     description: 'Coordinated agents with tools, memory, and workflows.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     step: 4,
     icon: <CustomModelsIcon />,
     title: 'Custom Models',
     description: 'Domain-specific models optimized for specialized tasks.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     step: 5,
     icon: <MLPipelinesIcon />,
     title: 'ML Pipelines',
     description: 'Training, evaluation, deployment, and model operations.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     step: 6,
     icon: <AIMonitoringIcon />,
     title: 'AI Monitoring',
     description: 'Monitoring performance, costs, and production behavior.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     step: 7,
     icon: <PromptOpsIcon />,
     title: 'Prompt Ops',
     description: 'Versioning, testing, and optimization of prompts.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     step: 8,
     icon: <CostOptimizationIcon />,
     title: 'Cost Optimization',
@@ -114,27 +115,27 @@ export const aiEcosystemData = {
   technologies: {
     LLMs: [
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'OpenAI GPT-4o',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960583/Gloitel/icon/openai_wwedph.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Claude 3.5 Sonnet',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960642/Gloitel/icon/claude_sszoov.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Gemini 1.5 Pro',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960682/Gloitel/icon/gemini_b4dcsa.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'LLaMA 3',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960576/Gloitel/icon/meta_brzl7j.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Mistral',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960577/Gloitel/icon/mistral_bmr5b7.png',
       },
@@ -155,27 +156,27 @@ export const aiEngineeringNotData = {
     'Every recommendation is grounded in business impact and feasibility. We do not start with technology, products, or predetermined solutions.',
   items: [
     {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      id: createId(),
       icon: <CloseIcon size={27} />,
       description: 'Not a vendor-led engagement where we pre-sell a solution',
     },
     {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      id: createId(),
       icon: <CloseIcon size={27} />,
       description: 'Not a free strategy workshop with vague outputs',
     },
     {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      id: createId(),
       icon: <CloseIcon size={27} />,
       description: 'Not an open-ended consulting retainer',
     },
     {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      id: createId(),
       icon: <CloseIcon size={27} />,
       description: 'Not an open-ended consulting retainer',
     },
     {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      id: createId(),
       icon: <CloseIcon size={27} />,
       description: 'Not a build-first approach without a validated roadmap',
     },

@@ -27,7 +27,6 @@ const Business = ({
   headingTag = 'h2',
   subHeadingTag = 'h3',
 }: BusinessProps) => {
-  console.log(data, '0000');
   return (
     <div className='mb-10 overflow-hidden'>
       <div className='relative z-10 mx-auto mt-40 flex min-h-[60vh] flex-col items-center justify-center'>

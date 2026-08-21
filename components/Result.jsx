@@ -1,12 +1,9 @@
-import Link from 'next/link';
-import React from 'react';
-import AutoScroll from './AutoScroll';
-import { CenterBadge } from './Badge';
-import { BgSquare1, BgSquare2 } from './BgSquare';
-import { GlowButton } from './Button';
-import { MiddleSectionHeads } from './SectionHeads';
-import GlowPanel from './GlowPanel';
 import StrategyBadge from '@/components/StrategyBadge';
+import AutoScroll from './AutoScroll';
+import { BgSquare2 } from './BgSquare';
+import { GlowButton } from './Button';
+import GlowPanel from './GlowPanel';
+import { MiddleSectionHeads } from './SectionHeads';
 
 const Result = () => {
   return (

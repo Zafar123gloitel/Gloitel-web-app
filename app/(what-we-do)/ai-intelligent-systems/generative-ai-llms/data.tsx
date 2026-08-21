@@ -8,6 +8,7 @@ import {
   RightArrowIcon,
   WorkflowAutomationIcon,
 } from 'components/SvgIcon';
+const createId = () => globalThis.crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2);
 
 export const heroSectionDataGenerative = {
   badgeText: 'Generative AI & LLMs',
@@ -38,28 +39,28 @@ export const heroSectionDataGenerative = {
 
 export const aiServicesData = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <ChatbotIcon />,
     title: 'Custom AI Chatbots & Assistants',
     description:
       'Intelligent conversational interfaces trained on your domain knowledge. Customer support bots, internal knowledge assistants, sales copilots – built with guardrails, citation support, and fallback logic.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <ClipboardIcon />,
     title: 'Document Intelligence & Processing',
     description:
       'Automate document-heavy workflows with LLMs. Contract analysis, invoice extraction, report summarization, regulatory document parsing – structured outputs from unstructured inputs.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <DatabaseIcon />,
     title: 'RAG (Retrieval-Augmented Generation) Systems',
     description:
       'Connect LLMs to your proprietary data with vector search pipelines. Accurate, source-cited responses drawn from your internal knowledge base, documentation, or enterprise data.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <WorkflowAutomationIcon />,
     title: 'LLM-Powered Workflow Automation',
     description:
@@ -67,7 +68,7 @@ export const aiServicesData = [
   },
 
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <FineTuningIcon />,
     title: 'Fine-Tuning & Model Customization',
     description:
@@ -75,7 +76,7 @@ export const aiServicesData = [
   },
 
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <PrivateLLMIcon />,
     title: 'Private LLM Deployment',
     description:
@@ -275,27 +276,27 @@ export const aiSolutionsData = {
 
 export const Real_World = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <CloseIcon size={20} />,
     description: 'Reducing hallucinations in AI outputs.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <CloseIcon size={20} />,
     description: 'Managing costs as AI systems scale.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <CloseIcon size={20} />,
     description: 'Reducing latency across AI workflows.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <CloseIcon size={20} />,
     description: 'Protecting sensitive data and enterprise systems.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <CloseIcon size={20} />,
     description: 'Ensuring reliable performance in production.',
   },
@@ -303,7 +304,7 @@ export const Real_World = [
 
 export const caseStudies = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     title: 'Healthcare Client',
     slug: 'healthcare-client',
     image:
@@ -314,7 +315,7 @@ export const caseStudies = [
     href: '/case-studies/healthcare-client',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     title: 'Financial Services',
     slug: 'financial-services',
     image:
@@ -325,7 +326,7 @@ export const caseStudies = [
     href: '/case-studies/financial-services',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     title: 'E-Commerce',
     slug: 'e-commerce',
     image:

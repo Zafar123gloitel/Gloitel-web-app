@@ -1,13 +1,5 @@
-import {
-  AnalyticsIcon,
-  CheckIcon,
-  ChecklistIcon,
-  CodeIcon,
-  HeroArrowRightIcon,
-  RefreshCcwIcon,
-  ShieldIcon,
-  WorkflowIcon,
-} from 'components/SvgIcon';
+import { CheckIcon, HeroArrowRightIcon } from 'components/SvgIcon';
+const createId = () => globalThis.crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2);
 
 export const microservicesHeroData = {
   badgeText: 'Microservices Architecture',
@@ -38,27 +30,27 @@ export const signalsSectionHead = {
 
 export const signalsData = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <CheckIcon size={25} className='text-white' />,
     description: 'Deployment of one module requires the whole system',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <CheckIcon size={25} className='text-white' />,
     description: 'Different parts of your system have different scaling needs',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <CheckIcon size={25} className='text-white' />,
     description: 'Multiple teams conflicting in the same codebase',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <CheckIcon size={25} className='text-white' />,
     description: 'You need different technologies for different workloads',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <CheckIcon size={25} className='text-white' />,
     description: 'Failure in one area cascades down everything else',
   },
@@ -116,41 +108,41 @@ export const buildingBlocksSectionHead = {
 
 export const buildingBlocksData = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     title:
       'Service boundary definition and domain mapping for clearly defined business capabilities.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     title: 'API contracts between services (REST/GraphQL/gRPC) to ensure consistent communication.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     title: 'Asynchronous communication patterns (event-driven architecture with message queues)',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     title: 'Service discovery and load balancing across distributed environments.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     title: 'Distributed tracing and observability for end-to-end visibility.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     title: 'Circuit breakers and resilience patterns to improve fault tolerance.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     title: 'API gateway design for secure and streamlined access management workflows.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     title:
       'Data isolation strategy - each service owns its data to maintain clear ownership boundaries.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     title: 'Deployment pipeline per service (independent CI/CD) for autonomous deployments.',
   },
 ];
@@ -168,17 +160,17 @@ export const techStackData = {
   technologies: {
     Orchestration: [
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Kubernetes',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960569/Gloitel/icon/Kubernetes_fuqbbd.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'ECS',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785220510/Gloitel/icon/ecs_nkk5pq.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Cloud Run',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785220490/Gloitel/icon/cloudrun_o7vmgs.png',
       },
@@ -186,32 +178,32 @@ export const techStackData = {
 
     Communication: [
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'REST',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960600/Gloitel/icon/RESTAPIs_aldign.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'gRPC',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785230211/Gloitel/icon/grpc_hlwe7c.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'GraphQL',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762860000/Gloitel/icon/graph_v7lrwc.webp',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Apache Kafka',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960567/Gloitel/icon/Kafka_wmgb4v.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'RabbitMQ',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960592/Gloitel/icon/RabbitMQ_om1s1r.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'AWS SQS',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960621/Gloitel/icon/AWS_SQS_ylmsp7.png',
       },
@@ -219,17 +211,17 @@ export const techStackData = {
 
     'Service Mesh': [
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Istio',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785230201/Gloitel/icon/istio_rvnswh.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Linkerd',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785230209/Gloitel/icon/linkerd_qf7orp.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'AWS App Mesh',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785230210/Gloitel/icon/aws_krfgez.png',
         class: '',
@@ -238,22 +230,22 @@ export const techStackData = {
 
     'API Gateway': [
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Kong',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785230201/Gloitel/icon/kong_ii0zff.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'AWS API Gateway',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785230200/Gloitel/icon/aws-api-gateway_cipauu.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'NGINX',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785230200/Gloitel/icon/nginx_etsnvx.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Traefik',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785230200/Gloitel/icon/traefik_lrwp9k.png',
       },
@@ -261,27 +253,27 @@ export const techStackData = {
 
     Observability: [
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Jaeger',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785230867/Gloitel/icon/jaeger_zsjugm.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Zipkin',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785230940/Gloitel/icon/zipkin_neig2a.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'OpenTelemetry',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785230216/Gloitel/icon/opentelemetry_g1tqde.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Grafana',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960688/Gloitel/icon/Grafana_gti3tp.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Prometheus',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785230215/Gloitel/icon/prometheus_hzanpt.png',
       },

@@ -1,7 +1,5 @@
 'use client';
 
-import { BgSquare4 } from './BgSquare';
-
 export default function GlowPanel() {
   return (
     <div className='feature-fade-mask-bottom relative mt-10 w-full'>

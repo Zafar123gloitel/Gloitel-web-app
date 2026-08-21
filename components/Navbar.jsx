@@ -396,15 +396,12 @@
 'use client';
 
 import Link from 'next/link';
-import React, { useState, useEffect } from 'react';
-import { usePathname } from 'next/navigation';
+import { useState, useEffect } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
 import { VerticalDivider } from './SectionDivider';
 import { GlowButton, HeaderButton } from './Button';
 import Image from 'next/image';
-import { links } from './NavData';
-import { megaMenus } from './NavData';
-
-import { useRouter } from 'next/navigation';
+import { links, megaMenus } from './NavData';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);

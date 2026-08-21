@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import React from 'react';
-import { CenterBadge } from './Badge';
 import { BgSquare3 } from './BgSquare';
 import { MiddleSectionHeads } from './SectionHeads';
 import { GlowButton } from './Button';
@@ -8,10 +7,12 @@ import { ArrowUpRight } from 'lucide-react';
 import Image from 'next/image';
 import StrategyBadge from '@/components/StrategyBadge';
 
+const createId = () => globalThis.crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2);
+
 const Technology = () => {
   const stages = [
     {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      id: createId(),
       title: 'Next.js',
       stage: 'Stage 1',
       description:
@@ -19,7 +20,7 @@ const Technology = () => {
       img: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762860000/Gloitel/icon/next_urdukq.webp',
     },
     {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      id: createId(),
       title: 'React Native',
       stage: 'Stage 2',
       description:
@@ -27,7 +28,7 @@ const Technology = () => {
       img: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762860000/Gloitel/icon/react_cfs5vz.webp',
     },
     {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      id: createId(),
       title: 'Node.JS',
       stage: 'Stage 3',
       description:
@@ -35,7 +36,7 @@ const Technology = () => {
       img: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762860000/Gloitel/icon/node_z9ziqo.webp',
     },
     {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      id: createId(),
       title: 'PostgreSQL',
       stage: 'Stage 4',
       description:
@@ -43,7 +44,7 @@ const Technology = () => {
       img: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762860001/Gloitel/icon/postgre_aq8ajb.svg',
     },
     {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      id: createId(),
       title: 'GraphQL',
       stage: 'Stage 5',
       description:
@@ -51,7 +52,7 @@ const Technology = () => {
       img: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762860000/Gloitel/icon/graph_v7lrwc.webp',
     },
     {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      id: createId(),
       title: 'Nest.JS',
       stage: 'Stage 6',
       description:
@@ -129,4 +130,3 @@ const Technology = () => {
 };
 
 export default Technology;
-1;

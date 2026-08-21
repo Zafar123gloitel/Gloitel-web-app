@@ -1,47 +1,12 @@
 import {
-  AccessibilityAuditIcon,
   AlignmentGapsIcon,
-  BuildFromScratchIcon,
-  CodeComponentLibraryIcon,
-  CompetitiveAnalysisIcon,
-  ComponentBasedDesignIcon,
-  ContextualInquiryIcon,
-  DarkModeIcon,
-  DesignEngineeringCollaborationIcon,
   DesignHandoffIcon,
-  DesignTokenSystemIcon,
-  DesignTokensIcon,
-  ExperienceAuditIcon,
-  ExperimentationIcon,
-  ExtendExistingLibraryIcon,
-  FigmaComponentLibraryIcon,
-  FunnelAnalysisIcon,
-  HeatmapAnalysisIcon,
   HeroArrowRightIcon,
   InfoIcon,
   IntegratedDeliveryIcon,
-  JobsToBeDoneIcon,
-  JourneyMappingIcon,
-  OnCallSupportIcon,
-  OnboardingOptimizationIcon,
-  OpportunityMapIcon,
-  PatternLibraryIcon,
-  PerformanceImpactIcon,
-  QuarterlyAuditsIcon,
-  ResearchAssumptionInfoIcon,
-  ResearchDesignBriefIcon,
-  ResearchPersonaIcon,
-  ResponsiveDesignIcon,
-  SurveyResearchIcon,
-  UsabilityTestingIcon,
-  UsageGuidelinesIcon,
-  UserInterviewsIcon,
-  UserJourneyMapIcon,
-  UserResearchReportIcon,
-  WCAGAccessibilityIcon,
 } from 'components/SvgIcon';
 
-import { ArchitectureItem } from 'uiComponents/ArchitectureCircle';
+const createId = () => globalThis.crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2);
 
 // export const uxResearchHeroData = {
 //   badgeText: "UX Research & Strategy",
@@ -74,7 +39,7 @@ import { ArchitectureItem } from 'uiComponents/ArchitectureCircle';
 
 // export const researchMethodsData: ArchitectureItem[] = [
 //   {
-//     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//    id:createId(),
 //     position: "top",
 //     icon: (
 //       <UserInterviewsIcon />
@@ -84,7 +49,7 @@ import { ArchitectureItem } from 'uiComponents/ArchitectureCircle';
 //       "1:1 conversations with real users. We recruit, moderate, and synthesize insights from 8-12 interviews to surface meaningful patterns.",
 //   },
 //   {
-//     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//    id:createId(),
 //     position: "leftTop",
 //     icon: (
 //       <SurveyResearchIcon />
@@ -94,7 +59,7 @@ import { ArchitectureItem } from 'uiComponents/ArchitectureCircle';
 //       "Quantitative validation of qualitative insights. Large-sample data that confirms (or challenges) what interviews revealed.",
 //   },
 //   {
-//     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//    id:createId(),
 //     position: "rightTop",
 //     icon: (
 //       <ContextualInquiryIcon />
@@ -104,7 +69,7 @@ import { ArchitectureItem } from 'uiComponents/ArchitectureCircle';
 //       "Observe users performing real tasks in their actual environment. The gap between what users say and do often reveals the most valuable insights.",
 //   },
 //   {
-//     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//    id:createId(),
 //     position: "leftBottom",
 //     icon: (
 //       <CompetitiveAnalysisIcon />
@@ -114,7 +79,7 @@ import { ArchitectureItem } from 'uiComponents/ArchitectureCircle';
 //       "Systematic review of how competitors solve the same problems. Not to copy but to understand established patterns and identify differentiation opportunities.",
 //   },
 //   {
-//     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//    id:createId(),
 //     position: "bottom",
 //     icon: (
 //       <JourneyMappingIcon />
@@ -124,7 +89,7 @@ import { ArchitectureItem } from 'uiComponents/ArchitectureCircle';
 //       "Map the end-to-end user experience - across channels, touchpoints, and time - to identify where value is created and where it's destroyed. Foundation for every product strategy decision.",
 //   },
 //   {
-//     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//    id:createId(),
 //     position: "rightBottom",
 //     icon: (
 //       <UsabilityTestingIcon />
@@ -144,49 +109,49 @@ import { ArchitectureItem } from 'uiComponents/ArchitectureCircle';
 
 // export const deliverablesData = [
 //   {
-//     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//    id:createId(),
 //     icon: (
 //       <UserResearchReportIcon />
 //     ),
 //     title: "User research report with findings and recommendations",
 //   },
 //   {
-//     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//    id:createId(),
 //     icon: (
 //       <ResearchPersonaIcon />
 //     ),
 //     title: "Persona definitions grounded in research data",
 //   },
 //   {
-//     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//    id:createId(),
 //     icon: (
 //       <UserJourneyMapIcon />
 //     ),
 //     title: "User journey maps (current state and desired state)",
 //   },
 //   {
-//     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//    id:createId(),
 //     icon: (
 //       <JobsToBeDoneIcon />
 //     ),
 //     title: "Jobs-to-be-done framework",
 //   },
 //   {
-//     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//    id:createId(),
 //     icon: (
 //       <ExperienceAuditIcon />
 //     ),
 //     title: "Experience audit of existing product",
 //   },
 //   {
-//     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//    id:createId(),
 //     icon: (
 //       <OpportunityMapIcon />
 //     ),
 //     title: "Opportunity map - prioritized areas for improvement",
 //   },
 //   {
-//     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//    id:createId(),
 //     icon: (
 //       <ResearchDesignBriefIcon />
 //     ),
@@ -203,35 +168,35 @@ import { ArchitectureItem } from 'uiComponents/ArchitectureCircle';
 
 // export const assumptionsData = [
 //   {
-//     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//    id:createId(),
 //     icon: (
 //       <ResearchAssumptionInfoIcon />
 //     ),
 //     description: "Designing a new product or feature without user feedback",
 //   },
 //   {
-//     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//    id:createId(),
 //     icon: (
 //       <ResearchAssumptionInfoIcon />
 //     ),
 //     description: "Redesigning an existing product that isn't performing well",
 //   },
 //   {
-//     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//    id:createId(),
 //     icon: (
 //       <ResearchAssumptionInfoIcon />
 //     ),
 //     description: "Entering a new market or user segment",
 //   },
 //   {
-//     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//    id:createId(),
 //     icon: (
 //       <ResearchAssumptionInfoIcon />
 //     ),
 //     description: "Building for specialized users and non-English speakers",
 //   },
 //   {
-//     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//    id:createId(),
 //     icon: (
 //       <ResearchAssumptionInfoIcon />
 //     ),
@@ -352,7 +317,7 @@ import { ArchitectureItem } from 'uiComponents/ArchitectureCircle';
 
 // export const whatWeDesignData = [
 //   {
-//     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//    id:createId(),
 //     image: "/images/What-we-do/web-applications.png",
 //     imageAlt: "Web applications",
 //     title: "Web Applications",
@@ -362,7 +327,7 @@ import { ArchitectureItem } from 'uiComponents/ArchitectureCircle';
 //     buttonLink: "/",
 //   },
 //   {
-//     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//    id:createId(),
 //     image: "/images/What-we-do/mobile-applications.png",
 //     imageAlt: "Mobile applications",
 //     title: "Mobile Applications",
@@ -372,7 +337,7 @@ import { ArchitectureItem } from 'uiComponents/ArchitectureCircle';
 //     buttonLink: "/",
 //   },
 //   {
-//     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//    id:createId(),
 //     image: "/images/What-we-do/landing-pages-marketing.png",
 //     imageAlt: "Landing pages and marketing sites",
 //     title: "Landing Pages & Marketing Sites",
@@ -382,7 +347,7 @@ import { ArchitectureItem } from 'uiComponents/ArchitectureCircle';
 //     buttonLink: "/",
 //   },
 //   {
-//     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//    id:createId(),
 //     image: "/images/What-we-do/onboarding-flows.png",
 //     imageAlt: "Onboarding flows",
 //     title: "Onboarding Flows",
@@ -392,7 +357,7 @@ import { ArchitectureItem } from 'uiComponents/ArchitectureCircle';
 //     buttonLink: "/",
 //   },
 //   {
-//     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//    id:createId(),
 //     image: "/images/What-we-do/data-dashboards.png",
 //     imageAlt: "Data dashboards",
 //     title: "Data Dashboards",
@@ -412,35 +377,35 @@ import { ArchitectureItem } from 'uiComponents/ArchitectureCircle';
 
 // export const designStandardsData = [
 //   {
-//     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//    id:createId(),
 //     icon: (
 //       <WCAGAccessibilityIcon />
 //     ),
 //     title: "WCAG 2.1 AA accessibility compliance by default",
 //   },
 //   {
-//     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//    id:createId(),
 //     icon: (
 //       <ResponsiveDesignIcon />
 //     ),
 //     title: "Mobile-first responsive design",
 //   },
 //   {
-//     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//    id:createId(),
 //     icon: (
 //       <DesignTokenSystemIcon />
 //     ),
 //     title: "Design token systems for consistent theming",
 //   },
 //   {
-//     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//    id:createId(),
 //     icon: (
 //       <ComponentBasedDesignIcon />
 //     ),
 //     title: "Component-based design matched to the frontend framework",
 //   },
 //   {
-//     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//    id:createId(),
 //     icon: (
 //       <DarkModeIcon />
 //     ),
@@ -488,7 +453,7 @@ import { ArchitectureItem } from 'uiComponents/ArchitectureCircle';
 
 // export const designSystemComponentsData: ArchitectureItem[] = [
 //   {
-//     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//    id:createId(),
 //     position: "top",
 //     icon: (
 //       <DesignTokensIcon />
@@ -498,7 +463,7 @@ import { ArchitectureItem } from 'uiComponents/ArchitectureCircle';
 //       "The atomic values that define your visual language - colors, typography, spacing, border radii, shadows, and motion. Stored as variables that propagate from design files into code.",
 //   },
 //   {
-//     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//    id:createId(),
 //     position: "leftTop",
 //     icon: (
 //       <PatternLibraryIcon />
@@ -508,7 +473,7 @@ import { ArchitectureItem } from 'uiComponents/ArchitectureCircle';
 //       "Higher-level patterns built from components - forms, navigation patterns, empty states, loading states, error states. Solved problems that never need to be solved again.",
 //   },
 //   {
-//     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//    id:createId(),
 //     position: "rightTop",
 //     icon: (
 //       <FigmaComponentLibraryIcon />
@@ -518,7 +483,7 @@ import { ArchitectureItem } from 'uiComponents/ArchitectureCircle';
 //       "Every reusable UI component documented in Figma - with all variants, states, and interaction behaviors. The single source of truth for designers.",
 //   },
 //   {
-//     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//    id:createId(),
 //     position: "leftBottom",
 //     icon: (
 //       <UsageGuidelinesIcon />
@@ -528,7 +493,7 @@ import { ArchitectureItem } from 'uiComponents/ArchitectureCircle';
 //       "Documentation for when and how to use each component - not just what it looks like. Includes dos/don'ts and accessibility requirements.",
 //   },
 //   {
-//     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//    id:createId(),
 //     position: "rightBottom",
 //     icon: (
 //       <CodeComponentLibraryIcon />
@@ -546,7 +511,7 @@ import { ArchitectureItem } from 'uiComponents/ArchitectureCircle';
 //     "Whether you build from scratch or extend an existing library, the right approach depends on your product needs and long-term priorities.",
 //   cards: [
 //     {
-//       id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//      id:createId(),
 //       icon: (
 //         <BuildFromScratchIcon />
 //       ),
@@ -555,7 +520,7 @@ import { ArchitectureItem } from 'uiComponents/ArchitectureCircle';
 //         "When your brand is distinctive, your product has unique interaction patterns, or you need complete control over accessibility and performance.",
 //     },
 //     {
-//       id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//      id:createId(),
 //       icon: (
 //         <ExtendExistingLibraryIcon />
 //       ),
@@ -576,37 +541,37 @@ import { ArchitectureItem } from 'uiComponents/ArchitectureCircle';
 
 // export const designSystemDeliverablesData = [
 //   {
-//     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//    id:createId(),
 //     step: 1,
 //     text: "Figma component library with all variants and states",
 //   },
 //   {
-//     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//    id:createId(),
 //     step: 2,
 //     text: "React / React Native / Flutter component library",
 //   },
 //   {
-//     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//    id:createId(),
 //     step: 3,
 //     text: "Storybook documentation",
 //   },
 //   {
-//     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//    id:createId(),
 //     step: 4,
 //     text: "Design token files (CSS variables, Tailwind config, or native tokens)",
 //   },
 //   {
-//     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//    id:createId(),
 //     step: 5,
 //     text: "Usage guidelines and pattern documentation",
 //   },
 //   {
-//     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//    id:createId(),
 //     step: 6,
 //     text: "Contribution guide for your team",
 //   },
 //   {
-//     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//    id:createId(),
 //     step: 7,
 //     text: "Governance process for system updates",
 //   },
@@ -621,7 +586,7 @@ import { ArchitectureItem } from 'uiComponents/ArchitectureCircle';
 
 // export const maintenanceData = [
 //   {
-//     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//    id:createId(),
 //     step: 1,
 //     icon: (
 //       <UserInterviewsIcon />
@@ -631,7 +596,7 @@ import { ArchitectureItem } from 'uiComponents/ArchitectureCircle';
 //       "Set up contribution processes so teams can submit new components while maintaining quality standards.",
 //   },
 //   {
-//     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//    id:createId(),
 //     step: 2,
 //     icon: (
 //       <QuarterlyAuditsIcon />
@@ -641,7 +606,7 @@ import { ArchitectureItem } from 'uiComponents/ArchitectureCircle';
 //       "Run quarterly audits to identify drift between design and implementation.",
 //   },
 //   {
-//     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//    id:createId(),
 //     step: 3,
 //     icon: (
 //       <OnCallSupportIcon />
@@ -692,7 +657,7 @@ import { ArchitectureItem } from 'uiComponents/ArchitectureCircle';
 
 // export const cxCoversData = [
 //   {
-//     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//    id:createId(),
 //     icon: (
 //       <FunnelAnalysisIcon />
 //     ),
@@ -701,7 +666,7 @@ import { ArchitectureItem } from 'uiComponents/ArchitectureCircle';
 //       "Map every step in your key user funnels - signup, activation, purchase, renewal. Identify where users drop off and why. Prioritized fixes with projected impact.",
 //   },
 //   {
-//     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//    id:createId(),
 //     icon: (
 //       <ExperimentationIcon />
 //     ),
@@ -710,7 +675,7 @@ import { ArchitectureItem } from 'uiComponents/ArchitectureCircle';
 //       "Design, implement, and analyze controlled experiments. Test layout changes, copy variations, feature rollouts, and pricing presentation. Statistical rigor, not gut feel.",
 //   },
 //   {
-//     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//    id:createId(),
 //     icon: (
 //       <HeatmapAnalysisIcon />
 //     ),
@@ -719,7 +684,7 @@ import { ArchitectureItem } from 'uiComponents/ArchitectureCircle';
 //       "Analyze real user behavior using session recordings and heatmaps. Find where users click, where they scroll, where they rage-click, and where they abandon.",
 //   },
 //   {
-//     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//    id:createId(),
 //     icon: (
 //       <AccessibilityAuditIcon />
 //     ),
@@ -728,7 +693,7 @@ import { ArchitectureItem } from 'uiComponents/ArchitectureCircle';
 //       "WCAG 2.1 compliance audit with a prioritized remediation plan. Accessible products reach more users and reduce legal risk.",
 //   },
 //   {
-//     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//    id:createId(),
 //     icon: (
 //       <PerformanceImpactIcon />
 //     ),
@@ -737,7 +702,7 @@ import { ArchitectureItem } from 'uiComponents/ArchitectureCircle';
 //       "Measure how performance issues (load time, interaction latency) affect user behavior and conversion. Make the business case for performance investment.",
 //   },
 //   {
-//     id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//    id:createId(),
 //     icon: (
 //       <OnboardingOptimizationIcon />
 //     ),
@@ -820,22 +785,22 @@ import { ArchitectureItem } from 'uiComponents/ArchitectureCircle';
 //   technologies: {
 //     Analytics: [
 //       {
-//         id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//        id:createId(),
 //         name: "Mixpanel",
 //         logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785312782/Gloitel/icon/Mixpanel_v5pw9e.png",
 //       },
 //       {
-//         id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//        id:createId(),
 //         name: "Amplitude",
 //         logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785312782/Gloitel/icon/Amplitude_nlbsxg.png",
 //       },
 //       {
-//         id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//        id:createId(),
 //         name: "Google Analytics 4",
 //         logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785312782/Gloitel/icon/Google_Analytics_4_csiihb.png",
 //       },
 //       {
-//         id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//        id:createId(),
 //         name: "PostHog",
 //         logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785312783/Gloitel/icon/PostHog_fxlifh.png",
 //       },
@@ -843,17 +808,17 @@ import { ArchitectureItem } from 'uiComponents/ArchitectureCircle';
 
 //     "Session Recording": [
 //       {
-//         id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//        id:createId(),
 //         name: "Hotjar",
 //         logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785312782/Gloitel/icon/Hotjar_ei3k1j.png",
 //       },
 //       {
-//         id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//        id:createId(),
 //         name: "FullStory",
 //         logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785312782/Gloitel/icon/FullStory_e1mekd.png",
 //       },
 //       {
-//         id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//        id:createId(),
 //         name: "Microsoft Clarity",
 //         logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785312782/Gloitel/icon/Microsoft_Clarity_a8l3wm.png",
 //       },
@@ -861,22 +826,22 @@ import { ArchitectureItem } from 'uiComponents/ArchitectureCircle';
 
 //     "A/B Testing": [
 //       {
-//         id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//        id:createId(),
 //         name: "Optimizely",
 //         logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785312783/Gloitel/icon/Optimizely_lf2i5p.png",
 //       },
 //       {
-//         id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//        id:createId(),
 //         name: "VWO",
 //         logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785312783/Gloitel/icon/VWO_kqz4nd.png",
 //       },
 //       {
-//         id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//        id:createId(),
 //         name: "LaunchDarkly",
 //         logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785312783/Gloitel/icon/LaunchDarkly_zquuun.png",
 //       },
 //       {
-//         id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//        id:createId(),
 //         name: "GrowthBook",
 //         logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785312783/Gloitel/icon/GrowthBook_kmngex.png",
 //       },
@@ -884,22 +849,22 @@ import { ArchitectureItem } from 'uiComponents/ArchitectureCircle';
 
 //     Accessibility: [
 //       {
-//         id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//        id:createId(),
 //         name: "Axe",
 //         logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785312783/Gloitel/icon/Axe_x4gssd.png",
 //       },
 //       {
-//         id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//        id:createId(),
 //         name: "WAVE",
 //         logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785312783/Gloitel/icon/WAVE_qnwohi.png",
 //       },
 //       {
-//         id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//        id:createId(),
 //         name: "Lighthouse",
 //         logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785312782/Gloitel/icon/Lighthouse_xcj1md.png",
 //       },
 //       {
-//         id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+//        id:createId(),
 //         name: "Screen Reader testing",
 //         logo: "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785312783/Gloitel/icon/Screen_Reader_testing_l767ar.png",
 //       },
@@ -945,7 +910,7 @@ export const designGapSectionHead = {
 
 export const designGapData = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     step: 1,
     icon: <DesignHandoffIcon />,
     title: 'Design Handoff',
@@ -953,7 +918,7 @@ export const designGapData = [
       'Design decisions are documented and passed to engineering, often creating interpretation gaps and delayed feedback.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     step: 2,
     icon: <AlignmentGapsIcon />,
     title: 'Alignment Gaps',
@@ -961,7 +926,7 @@ export const designGapData = [
       'As implementation progresses, design intent can drift, leading to rework and inconsistent product experiences.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     step: 3,
     icon: <IntegratedDeliveryIcon />,
     title: 'Integrated Delivery',
@@ -984,7 +949,7 @@ export const digitalPracticeSectionHead = {
 
 export const digitalPracticeData = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     image:
       'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787040160/Gloitel/Parent%20pages/UX_Research_Strategy_v3gupe.png',
     imageAlt: 'UX research and strategy',
@@ -995,7 +960,7 @@ export const digitalPracticeData = [
     buttonLink: '/ux-research-strategy',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     image:
       'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787040159/Gloitel/Parent%20pages/UIUX_Design_gw2b9t.png',
     imageAlt: 'UI/UX design',
@@ -1006,7 +971,7 @@ export const digitalPracticeData = [
     buttonLink: '/ui-ux-design',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     image:
       'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787040159/Gloitel/Parent%20pages/Design_Systems_iwbh73.png',
     imageAlt: 'Design systems',
@@ -1017,7 +982,7 @@ export const digitalPracticeData = [
     buttonLink: '/design-systems',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     image:
       'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787040157/Gloitel/Parent%20pages/CX_Optimization_qgjyiw.png',
     imageAlt: 'CX optimization',
@@ -1040,27 +1005,27 @@ export const designToolsData = {
   technologies: {
     Design: [
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Figma',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050146/Gloitel/icon/Figma_imkjsh.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'FigJam',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050169/Gloitel/icon/FigJam_lzeqx9.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Principle',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050167/Gloitel/icon/Principle_utmdfx.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Lottie',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050166/Gloitel/icon/Lottie_sm0rdc.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Framer',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050164/Gloitel/icon/Framer_mmseq3.png',
       },
@@ -1068,27 +1033,27 @@ export const designToolsData = {
 
     Research: [
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Hotjar',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050163/Gloitel/icon/Hotjar_taaewo.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'FullStory',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050162/Gloitel/icon/FullStory_sktnc7.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'UserTesting',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050160/Gloitel/icon/UserTesting_mmepjg.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Maze',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050159/Gloitel/icon/Maze_n0txti.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Lookback',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050157/Gloitel/icon/Lookback_ssc7h8.png',
       },
@@ -1096,17 +1061,17 @@ export const designToolsData = {
 
     Prototyping: [
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Figma Prototyping',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050146/Gloitel/icon/Figma_imkjsh.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Framer',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050164/Gloitel/icon/Framer_mmseq3.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Webflow',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050156/Gloitel/icon/Webflow_eiztfz.png',
       },
@@ -1114,17 +1079,17 @@ export const designToolsData = {
 
     'Design Systems': [
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Storybook',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050154/Gloitel/icon/Storybook_kpgob6.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Zeroheight',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050153/Gloitel/icon/Zeroheight_aasmmv.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Supernova',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050152/Gloitel/icon/Supernova_dx0pj8.png',
       },
@@ -1132,22 +1097,22 @@ export const designToolsData = {
 
     Analytics: [
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Mixpanel',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050150/Gloitel/icon/Mixpanel_omeclz.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Amplitude',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050149/Gloitel/icon/Amplitude_huuwjv.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Google Analytics 4',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050147/Gloitel/icon/Google_Analytics_4_ep9uth.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'PostHog',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785312783/Gloitel/icon/PostHog_fxlifh.png',
       },
@@ -1164,31 +1129,31 @@ export const designTeamSectionHead = {
 
 export const designTeamData = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     text: 'UX Designers',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     text: 'Visual / UI Designers',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     text: 'UX Researchers',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     text: 'Interaction Designers',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     text: 'Design System Architects',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     text: 'Motion Designers',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     text: 'Accessibility Specialists',
   },
 ];

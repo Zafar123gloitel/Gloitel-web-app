@@ -1,7 +1,4 @@
-import Link from 'next/link';
 import React from 'react';
-import { CenterBadge } from './Badge';
-import { GlowButton } from './Button';
 import Execution_Plan from 'uiComponents/Execution_Plan';
 
 const JoinUsNow = () => {

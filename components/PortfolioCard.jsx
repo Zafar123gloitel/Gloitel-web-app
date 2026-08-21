@@ -4,9 +4,9 @@ import Image from 'next/image';
 import styles from './PortfolioCard.module.css';
 import { useTransform, motion } from 'framer-motion';
 import Link from 'next/link';
-import { HorizontalDivider, VerticalDivider } from './SectionDivider';
+import { VerticalDivider } from './SectionDivider';
 
-const PortfolioCard = ({ i, color, scrollProgress }) => {
+const PortfolioCard = ({ i, _color, scrollProgress }) => {
   const portfolio = [
     {
       title: 'CGMMSSY',

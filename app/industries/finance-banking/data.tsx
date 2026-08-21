@@ -14,6 +14,7 @@ import {
   RBIRegulationsIcon,
   SECFINRAIcon,
 } from 'components/SvgIcon';
+const createId = () => globalThis.crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2);
 
 import type { ArchitectureItem } from 'uiComponents/ArchitectureCircle';
 
@@ -68,35 +69,35 @@ export const financeChallengesSectionHead = {
 
 export const financeChallengesData = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     text: 'PCI DSS and SOC 2 compliant payment and data systems with enterprise-grade security and audit controls',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     text: 'Core banking system modernization for improved performance, scalability, and operational efficiency',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     text: 'Open banking API integration (Account Aggregation, Payments) across secure and regulated financial ecosystems',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     text: 'Fraud detection and risk management systems powered by real-time monitoring and analytics',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     text: 'RegTech and compliance automation for streamlined reporting and regulatory workflows',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     text: 'Wealth management and robo-advisory platforms designed for modern investor experiences',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     text: 'Lending and underwriting workflow automation that accelerates approvals and decision-making',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     text: 'Financial reporting and analytics for actionable insights and business visibility',
   },
 ];
@@ -110,42 +111,42 @@ export const financeSolutionsSectionHead = {
 
 export const financeSolutionsData = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <FintechProductDevelopmentIcon />,
     title: 'Fintech Product Development',
     description:
       'Mobile wallets, lending platforms, neobank products, insurance tech applications, and investment platforms. Built on modern, auditable, and secure stacks.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <PaymentProcessingIntegrationIcon />,
     title: 'Payment Processing Integration',
     description:
       'Stripe, Razorpay, Braintree, and custom payment gateway integrations. Tokenization, webhook handling, reconciliation, and dispute management built in.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <OpenBankingIntegrationsIcon />,
     title: 'Open Banking Integrations',
     description:
       'Account aggregation, payment initiation, and financial data platforms using open banking APIs (Plaid, Finbox, Setu, Account Aggregators in India).',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <AIAssistedToolsIcon />,
     title: 'AI-Powered Financial Tools',
     description:
       'Credit scoring models, fraud detection systems, document extraction for KYC/KYB, AI-assisted deal analysis, and automated report generation.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <ComplianceAndRegTechIcon />,
     title: 'Compliance & RegTech',
     description:
       'AML transaction monitoring, KYC/KYB workflow automation, regulatory reporting automation, and audit trail systems that satisfy examiner requirements.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <FinancialDataAndAnalyticsIcon />,
     title: 'Financial Data & Analytics',
     description:
@@ -162,7 +163,7 @@ export const financeComplianceSectionHead = {
 
 export const financeComplianceData: ArchitectureItem[] = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     position: 'top',
     icon: <PCIDSSIcon />,
     title: 'PCI DSS',
@@ -170,14 +171,14 @@ export const financeComplianceData: ArchitectureItem[] = [
       'Level I compliant architectures for secure payment processing and cardholder data protection.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     position: 'leftTop',
     icon: <BaselIIIIVIcon />,
     title: 'Basel III / IV',
     description: 'Capital reporting and risk management considerations for banking environments.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     position: 'rightTop',
     icon: <FinancialSOC2TypeIIIcon />,
     title: 'SOC 2 Type II',
@@ -185,7 +186,7 @@ export const financeComplianceData: ArchitectureItem[] = [
       'Security and availability controls for enterprise-grade financial platforms and services.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     position: 'leftBottom',
     icon: <SECFINRAIcon />,
     title: 'SEC / FINRA',
@@ -193,14 +194,14 @@ export const financeComplianceData: ArchitectureItem[] = [
       'Reporting and governance requirements for regulated financial services organizations.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     position: 'rightBottom',
     icon: <GDPRAndCCPAIcon />,
     title: 'GDPR & CCPA',
     description: 'Privacy engineering practices that support global data protection requirements.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     position: 'bottom',
     icon: <RBIRegulationsIcon />,
     title: 'RBI Regulations',

@@ -1,5 +1,3 @@
-import { label } from 'framer-motion/client';
-
 export const links = [
   { href: '/', label: 'Home' },
 

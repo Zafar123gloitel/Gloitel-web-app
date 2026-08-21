@@ -5,6 +5,7 @@ import {
   HeroArrowRightIcon,
   MisdirectedEffortIcon,
 } from 'components/SvgIcon';
+const createId = () => globalThis.crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2);
 
 export const aiIntelligentSystemsHeroData = {
   badgeText: 'AI & Intelligent Systems',
@@ -35,7 +36,7 @@ export const aiGapSectionHead = {
 
 export const aiGapData = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     step: 1,
     icon: <AIPilotsIcon />,
     title: 'AI Pilots',
@@ -43,7 +44,7 @@ export const aiGapData = [
       "Organizations easily see rich short on AI pilots. Most teams have experience but with AI don't struggle to turn those efforts into meaningful business outcomes.",
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     step: 2,
     icon: <MisdirectedEffortIcon />,
     title: 'Misdirected Effort',
@@ -51,7 +52,7 @@ export const aiGapData = [
       'Most are often built on assumptions, applied to top-impact workflows, or launched without clear prioritization and business alignment.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     step: 3,
     icon: <BusinessImpactIcon />,
     title: 'Business Impact',
@@ -69,7 +70,7 @@ export const aiPracticeAreasSectionHead = {
 
 export const aiPracticeAreasData = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     image:
       'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787051703/Gloitel/Parent%20pages/AI_Strategy_Consulting_h8zint.png',
     imageAlt: 'AI strategy and consulting',
@@ -80,7 +81,7 @@ export const aiPracticeAreasData = [
     buttonLink: '/ai-strategy-consulting',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     image:
       'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787051702/Gloitel/Parent%20pages/Generative_AI_LLMs_d7xdiq.png',
     imageAlt: 'Generative AI and LLMs',
@@ -91,7 +92,7 @@ export const aiPracticeAreasData = [
     buttonLink: '/generative-ai-llms',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     image:
       'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787051701/Gloitel/Parent%20pages/AI_Agents_Automation_j5j53f.png',
     imageAlt: 'AI agents and automation',
@@ -102,7 +103,7 @@ export const aiPracticeAreasData = [
     buttonLink: '/ai-agents-automation',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     image:
       'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787040168/Gloitel/Parent%20pages/ML_Predictive_Analytics_txf2cy.png',
     imageAlt: 'ML and predictive analytics',
@@ -113,7 +114,7 @@ export const aiPracticeAreasData = [
     buttonLink: '/ml-predictive-analytics',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     image:
       'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787040167/Gloitel/Parent%20pages/AI_Integration_lgok00.png',
     imageAlt: 'AI integration',
@@ -174,22 +175,22 @@ export const aiClarityData = {
     'Our approach focused on practical execution over measurable outcomes, and prioritizing this and disagree to succeed beyond the pilot stage.',
   items: [
     {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      id: createId(),
       icon: <CloseIcon />,
       description: "We don't start with a solution & look for problems to justify it",
     },
     {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      id: createId(),
       icon: <CloseIcon />,
       description: 'No open-ended strategy without clear deliverables',
     },
     {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      id: createId(),
       icon: <CloseIcon />,
       description: "We don't build demos that can't reach production",
     },
     {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      id: createId(),
       icon: <CloseIcon />,
       description: "We don't disappear after delivery",
     },
@@ -207,27 +208,27 @@ export const aiTechStackLandingData = {
   technologies: {
     'LLM Providers': [
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'OpenAI',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960583/Gloitel/icon/openai_wwedph.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Anthropic Claude',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960642/Gloitel/icon/claude_sszoov.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Google Gemini',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960682/Gloitel/icon/gemini_b4dcsa.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Meta LLaMA',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960576/Gloitel/icon/meta_brzl7j.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Mistral',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960577/Gloitel/icon/mistral_bmr5b7.png',
       },
@@ -235,27 +236,27 @@ export const aiTechStackLandingData = {
 
     Frameworks: [
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'LangChain',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960570/Gloitel/icon/langChain_kugupr.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'LlamaIndex',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960574/Gloitel/icon/llamaindex_mgxavz.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'CrewAI',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960655/Gloitel/icon/crewai_r8gkaq.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'AutoGen',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960616/Gloitel/icon/autogen_hmeonp.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Haystack',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960566/Gloitel/icon/haystack_o9evlj.png',
       },
@@ -263,27 +264,27 @@ export const aiTechStackLandingData = {
 
     'Vector Databases': [
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Pinecone',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960586/Gloitel/icon/pinecone_bpg10a.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Weaviate',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960614/Gloitel/icon/weaviate_cc0krw.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Qdrant',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960590/Gloitel/icon/qdrant_kyjm65.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'pgvector',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960583/Gloitel/icon/pgvector_ofb3i2.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Chroma',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960637/Gloitel/icon/chroma_txebzp.png',
       },
@@ -291,27 +292,27 @@ export const aiTechStackLandingData = {
 
     'ML Platforms': [
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'AWS SageMaker',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787036467/Gloitel/icon/AWS_SageMaker_g6bbaz.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Google Vertex AI',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960612/Gloitel/icon/vertexAi_axdca5.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Azure ML',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787036467/Gloitel/icon/Azure_ML_qvsmch.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'MLflow',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787036467/Gloitel/icon/MLflow_qjnoph.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Weights & Biases',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787036467/Gloitel/icon/Weights_Biases_irxdxa.png',
       },
@@ -319,27 +320,27 @@ export const aiTechStackLandingData = {
 
     Deployment: [
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Docker',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960661/Gloitel/icon/Docker_aliwyn.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Kubernetes',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960569/Gloitel/icon/Kubernetes_fuqbbd.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'FastAPI',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960667/Gloitel/icon/fastApi_bwbwom.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Ray Serve',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787036467/Gloitel/icon/Ray_Serve_gkh5n2.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Modal',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960579/Gloitel/icon/modal_ndijkk.png',
       },

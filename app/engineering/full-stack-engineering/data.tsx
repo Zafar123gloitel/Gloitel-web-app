@@ -12,6 +12,7 @@ import {
   PrioritizedUseCasesIcon,
   WCAGComplianceIcon,
 } from 'components/SvgIcon';
+const createId = () => globalThis.crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2);
 import { ArchitectureItem } from 'uiComponents/ArchitectureCircle';
 
 export const fullStackHeroData = {
@@ -41,7 +42,7 @@ export const fullStackComplianceSectionHead = {
 
 export const fullStackComplianceData: ArchitectureItem[] = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     position: 'top',
     icon: <EngineeringHIPAAIcon />,
     title: 'HIPAA', // ⚠️ mismatch
@@ -49,7 +50,7 @@ export const fullStackComplianceData: ArchitectureItem[] = [
       'Privacy, Security Rule, and Breach Notification compliance for healthcare data protection.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     position: 'leftTop',
     icon: <FullStackGDPRIcon />,
     title: 'GDPR',
@@ -57,7 +58,7 @@ export const fullStackComplianceData: ArchitectureItem[] = [
       'Data privacy compliance for healthcare organizations serving patients across the European Union.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     position: 'rightTop',
     icon: <ConnectedSystemsIcon />,
     title: 'HL7 FHIR',
@@ -65,7 +66,7 @@ export const fullStackComplianceData: ArchitectureItem[] = [
       'R4 and R5 API integrations enabling secure and standardized healthcare data exchange.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     position: 'leftBottom',
     icon: <WCAGComplianceIcon />,
     title: 'WCAG 2.1 AA',
@@ -73,7 +74,7 @@ export const fullStackComplianceData: ArchitectureItem[] = [
       'Accessibility standards that ensure patient-facing experiences are inclusive and usable.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     position: 'rightBottom',
     icon: <EngineeringIEC62304Icon />,
     title: 'IEC 62304',
@@ -81,7 +82,7 @@ export const fullStackComplianceData: ArchitectureItem[] = [
       'Medical device software lifecycle processes for safe and compliant product development.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     position: 'bottom',
     icon: <FullStackSOC2TypeIIIcon />,
     title: 'SOC 2 Type II',
@@ -98,27 +99,27 @@ export const fullStackRoadmapSectionHead = {
 
 export const fullStackRoadmapData = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <BusinessImpactClarityIcon />,
     title: 'Clarity on where AI will create measurable business impact',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <PrioritizedUseCasesIcon />,
     title: 'A prioritised use case stack ranked by value and feasibility',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <PilotScopeIcon />,
     title: 'Defined pilot scope with expected outcomes and success metrics',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <BusinessRoadmapIcon />,
     title: 'A structured roadmap aligned to business priorities',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <AvoidedBuildsIcon />,
     title: 'A clear view of what *not* to build — equally valuable',
   },

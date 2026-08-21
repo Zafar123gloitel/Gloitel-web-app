@@ -11,7 +11,6 @@ import GlowPanel from '@/components/GlowPanel';
 import { MiddleSectionHeads } from '@/components/SectionHeads';
 import TestimonialCard from '@/components/TestimonialCard';
 import ArchitectureCircle from '@/uiComponents/ArchitectureCircle';
-import { fullStackComplianceData } from '@/app/engineering/full-stack-engineering/data';
 import {
   AiAgentsIndustriesdata,
   AiExecutionServicesdata,
@@ -164,7 +163,6 @@ export const AiAgentsIndustries = () => {
   const testimonialsRef = useRef(null);
 
   const scrollTestimonials = direction => {
-    console.log('first');
     if (!testimonialsRef.current) return;
 
     const container = testimonialsRef.current;

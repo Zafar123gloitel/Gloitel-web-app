@@ -13,6 +13,7 @@ import {
   PatientEngagementPlatformsIcon,
   SOC2TypeIIIcon,
 } from 'components/SvgIcon';
+const createId = () => globalThis.crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2);
 
 import type { ArchitectureItem } from 'uiComponents/ArchitectureCircle';
 
@@ -48,35 +49,35 @@ export const healthcareChallengesSectionHead = {
 
 export const healthcareChallengesData = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     text: 'EHR integration complexity (HL7 FHIR, Epic, Cerner, Athenahealth)',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     text: 'HIPAA-compliant data architecture and audit trails with secure access controls and governance',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     text: 'Patient portal development with accessibility requirements for better patient engagement and experience',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     text: 'Clinical workflow digitization and automation across care coordination and operational processes',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     text: 'Medical device software (FDA/CE considerations) with compliance-focused development and validation',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     text: 'Telehealth platform development for secure virtual care and remote patient interactions',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     text: 'AI-assisted clinical decision support with appropriate oversight and healthcare safeguards',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     text: 'Healthcare analytics and population health tools for data-driven insights and outcome improvement',
   },
 ];
@@ -89,42 +90,42 @@ export const healthcareSolutionsSectionHead = {
 
 export const healthcareSolutionsData = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <PatientEngagementPlatformsIcon />,
     title: 'Patient Engagement Platforms',
     description:
       'Appointment scheduling, patient portals, telehealth interfaces, and post-care communication tools. Designed for patients of all technical literacy levels.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <ClinicalWorkflowApplicationsIcon />,
     title: 'Clinical Workflow Applications',
     description:
       'Digitize intake, documentation, care coordination, and discharge workflows. Reduce administrative burden on clinical staff without disrupting care delivery.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <EHRIntegrationLayerIcon />,
     title: 'EHR Integration Layer',
     description:
       'Connect custom applications to Epic, Cerner, Athenahealth, and other EHR systems via HL7 FHIR APIs. Bidirectional data sync with audit trails.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <AIAssistedToolsIcon />,
     title: 'AI-Assisted Tools',
     description:
       'Clinical note summarization, prior authorization assistance, clinical documentation improvement, and diagnostic support tools - built with appropriate human oversight.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <HealthDataPlatformsIcon />,
     title: 'Health Data Platforms',
     description:
       'Collect, store, and analyze data from wearables, IoT devices, and clinical systems. HIPAA-compliant architecture with role-based access control.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <MedicalDeviceSoftwareIcon />,
     title: 'Medical Device Software',
     description:
@@ -141,7 +142,7 @@ export const healthcareComplianceSectionHead = {
 
 export const healthcareComplianceData: ArchitectureItem[] = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     position: 'top',
     icon: <HIPAAIcon />,
     title: 'HIPAA',
@@ -149,7 +150,7 @@ export const healthcareComplianceData: ArchitectureItem[] = [
       'Privacy, Security Rule, and Breach Notification compliance for healthcare data protection.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     position: 'leftTop',
     icon: <GDPRIcon />,
     title: 'GDPR',
@@ -157,7 +158,7 @@ export const healthcareComplianceData: ArchitectureItem[] = [
       'Data privacy compliance for healthcare organizations serving patients across the European Union.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     position: 'rightTop',
     icon: <HL7FHIRIcon />,
     title: 'HL7 FHIR',
@@ -165,7 +166,7 @@ export const healthcareComplianceData: ArchitectureItem[] = [
       'R4 and R5 API integrations enabling secure and standardized healthcare data exchange.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     position: 'leftBottom',
     icon: <ContextualInquiryIcon />,
     title: 'WCAG 2.1 AA',
@@ -173,7 +174,7 @@ export const healthcareComplianceData: ArchitectureItem[] = [
       'Accessibility standards that ensure patient-facing experiences are inclusive and usable.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     position: 'rightBottom',
     icon: <IEC62304Icon />,
     title: 'IEC 62304',
@@ -181,7 +182,7 @@ export const healthcareComplianceData: ArchitectureItem[] = [
       'Medical device software lifecycle processes for safe and compliant product development.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     position: 'bottom',
     icon: <SOC2TypeIIIcon />,
     title: 'SOC 2 Type II',
@@ -201,22 +202,22 @@ export const healthcareTechStackData = {
   technologies: {
     Integrations: [
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Epic FHIR',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/Gloitel/icon/epic-fhir_xxxxxx.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Cerner',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/Gloitel/icon/cerner_xxxxxx.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'HL7 v2',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/Gloitel/icon/hl7-v2_xxxxxx.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'SMART on FHIR',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/Gloitel/icon/smart-on-fhir_xxxxxx.png',
       },

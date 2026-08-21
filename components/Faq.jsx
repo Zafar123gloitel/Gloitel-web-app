@@ -1,7 +1,5 @@
 'use client';
 
-import { useState } from 'react';
-import { LeftBadge } from './Badge';
 import Asked_Q from '@/components/what-we-do/Asked_Q';
 
 // export const FaqItem = ({ title, description }) => {

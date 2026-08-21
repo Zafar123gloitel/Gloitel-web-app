@@ -2,15 +2,15 @@
 
 import { GlowButton } from '@/components';
 import { HeroVideoBg } from '@/components/HeroHead';
+import { FAQPage } from '@/components/Faq';
+import JoinUsNow from '@/components/JoinUsNow';
+import ContactForm from '@/components/ContactForm';
+import GlowPanel from '@/components/GlowPanel';
 import { IntroHead } from '@/uiComponents/Heading';
 import { useRef } from 'react';
 
 const ContactPage = () => {
   const formRef = useRef(null);
-
-  const scrollToForm = () => {
-    formRef.current?.scrollIntoView({ behavior: 'auto', block: 'center' });
-  };
   return (
     <>
       <section className='relative isolate h-full w-full overflow-hidden py-16 sm:px-6 lg:px-8 lg:py-30'>

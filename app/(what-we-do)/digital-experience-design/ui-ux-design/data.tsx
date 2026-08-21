@@ -6,6 +6,7 @@ import {
   ResponsiveDesignIcon,
   WCAGAccessibilityIcon,
 } from 'components/SvgIcon';
+const createId = () => globalThis.crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2);
 
 export const uxDesignHeroData = {
   badgeText: 'UI/UX Design',
@@ -115,7 +116,7 @@ export const whatWeDesignSectionHead = {
 
 export const whatWeDesignData = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     image:
       'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787033714/Gloitel/Digital%20Experience%20Design/Visual_Design_wvs0ee.png',
     imageAlt: 'Web applications',
@@ -126,7 +127,7 @@ export const whatWeDesignData = [
     buttonLink: '/',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     image:
       'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787033713/Gloitel/Digital%20Experience%20Design/Mobile_Applications_oawhqm.png',
     imageAlt: 'Mobile applications',
@@ -137,7 +138,7 @@ export const whatWeDesignData = [
     buttonLink: '/',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     image:
       'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787033714/Gloitel/Digital%20Experience%20Design/Landing_Pages_Marketing_Sites_xne7l7.png',
     imageAlt: 'Landing pages and marketing sites',
@@ -148,7 +149,7 @@ export const whatWeDesignData = [
     buttonLink: '/',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     image:
       'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787033713/Gloitel/Digital%20Experience%20Design/Onboarding_Flows_uxqycs.png',
     imageAlt: 'Onboarding flows',
@@ -159,7 +160,7 @@ export const whatWeDesignData = [
     buttonLink: '/',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     image:
       'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787033713/Gloitel/Digital%20Experience%20Design/Data_Dashboards_ilx9us.png',
     imageAlt: 'Data dashboards',
@@ -180,27 +181,27 @@ export const designStandardsSectionHead = {
 
 export const designStandardsData = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <WCAGAccessibilityIcon />,
     title: 'WCAG 2.1 AA accessibility compliance by default',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <ResponsiveDesignIcon />,
     title: 'Mobile-first responsive design',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <DesignTokenSystemIcon />,
     title: 'Design token systems for consistent theming',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <ComponentBasedDesignIcon />,
     title: 'Component-based design matched to the frontend framework',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <DarkModeIcon />,
     title: 'Dark mode variants where relevant',
   },

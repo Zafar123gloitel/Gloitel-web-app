@@ -26,8 +26,12 @@
   "include": [
     "**/*.ts",
     "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx",
     "app/_analytics/GoogleAnalytics.jsx",
     "app/component/GalleryScroll.jsx",
+    "components/card.jsx",
+    "data/projects.js",
     "app/privacy_policies/page.jsx",
     "app/resources/data.tsx",
     "next-env.d.ts",

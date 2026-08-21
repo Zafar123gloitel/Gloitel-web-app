@@ -1,14 +1,12 @@
 import {
-  AnalyticsIcon,
-  DatabaseIcon,
   DocumentIcon,
   HeroArrowRightIcon,
   LinkIcon,
-  MonitorIcon,
   SearchIcon,
   SparkleStarIcon,
-  WorkflowAutomationIcon,
 } from 'components/SvgIcon';
+
+const createId = () => globalThis.crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2);
 
 export const processAutomationHeroData = {
   badgeText: 'Process Automation',
@@ -39,28 +37,28 @@ export const processCategoriesSectionHead = {
 
 export const processCategoriesData = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <DocumentIcon size={25} className='text-white' />,
     title: 'Structured Data Workflows',
     description:
       'Repeatable, rule-based processes with structured inputs. Data entry automation, report generation, data validation, system synchronization, and scheduled jobs.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <SearchIcon size={25} className='text-white' />,
     title: 'Document Processing',
     description:
       'Extract structured data from documents, classify them, route them, and trigger downstream actions. Handles PDFs, emails, scanned documents, and forms.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <LinkIcon size={25} className='text-white' />,
     title: 'Integration Automation',
     description:
       "Connect systems that don't talk to each other. Event-driven integrations that keep data in sync across CRM, ERP, HRIS, and custom applications without manual export/import.",
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <SparkleStarIcon size={25} className='text-white' />,
     title: 'AI-Powered Process Automation',
     description:
@@ -131,22 +129,22 @@ export const automationTechStackData = {
   technologies: {
     'Workflow Automation': [
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'n8n',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785235402/Gloitel/icon/n8n_xavhu4.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Apache Airflow',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785144523/Gloitel/icon/node20_dh5p3f.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Prefect',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785235401/Gloitel/icon/Prefect_mvrwp7.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Temporal',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785235401/Gloitel/icon/Temporal_vbpzdd.png',
       },
@@ -154,17 +152,17 @@ export const automationTechStackData = {
 
     'RPA Tools': [
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'UiPath',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785235401/Gloitel/icon/UiPath_vmxwvy.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Automation Anywhere',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785235401/Gloitel/icon/Automation_Anywhere_sgocbh.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Power Automate',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785235401/Gloitel/icon/Power_Automate_rw3zgj.png',
       },
@@ -172,22 +170,22 @@ export const automationTechStackData = {
 
     Integration: [
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'MuleSoft',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785235401/Gloitel/icon/MuleSoft_ojuoj2.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Boomi',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785235401/Gloitel/icon/Boomi_afnhgd.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'AWS Step Functions',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785235401/Gloitel/icon/AWS_Step_Functions_rgqccv.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Zapier',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785235416/Gloitel/icon/Zapier_bfnkkq.png',
       },
@@ -195,17 +193,17 @@ export const automationTechStackData = {
 
     'Document AI': [
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'AWS Textract',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785235416/Gloitel/icon/AWS_Textract_whg1md.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Google Document AI',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785235416/Gloitel/icon/Google_Document_AI_fw5vfo.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Azure Form Recognizer',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785235416/Gloitel/icon/Azure_Form_Recognizer_tfbhx0.png',
       },
@@ -213,22 +211,22 @@ export const automationTechStackData = {
 
     'Custom AI': [
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'LangChain',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960570/Gloitel/icon/langChain_kugupr.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'OpenAI',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960583/Gloitel/icon/openai_wwedph.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Anthropic',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960642/Gloitel/icon/claude_sszoov.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Custom Python pipelines',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960588/Gloitel/icon/python_afmdty.png',
       },

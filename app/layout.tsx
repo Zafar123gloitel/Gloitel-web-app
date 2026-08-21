@@ -1,10 +1,7 @@
-import './globals.css';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import { configs } from '@/configs';
-import GoogleTagManager from '@/analytics/GoogleTagManager';
 import GoogleTagId from '@/analytics/GoogleTagId';
-import CustomCursor from '@/components/CustomCursor';
+import Footer from '@/components/Footer';
+import Navbar from '@/components/Navbar';
+import { configs } from '@/configs';
 import { DM_Sans } from 'next/font/google';
 import { Toaster } from 'react-hot-toast';
 

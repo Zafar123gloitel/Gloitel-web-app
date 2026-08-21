@@ -8,6 +8,7 @@ import {
   DevOpsRAGSystemsIcon,
   MLPipelinesIcon,
 } from 'components/SvgIcon';
+const createId = () => globalThis.crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2);
 export const devOpsCloudHeroData = {
   badgeText: 'DevOps & Cloud Engineering',
   title: 'AI Engineering That Ships and Stays Shipped',
@@ -35,56 +36,56 @@ export const aiSystemsSectionHead = {
 
 export const aiSystemsData = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     step: 1,
     icon: <DevOpsRAGSystemsIcon />,
     title: 'RAG Systems',
     description: 'Vector search and document intelligence pipelines.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     step: 2,
     icon: <DevOpsLLMFeaturesIcon />,
     title: 'LLM Features',
     description: 'AI capabilities embedded into existing products.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     step: 3,
     icon: <ConnectedSystemsIcon />,
     title: 'Agent Systems',
     description: 'Coordinated agents with tools, memory, and workflows.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     step: 4,
     icon: <CustomModelsIcon />,
     title: 'Custom Models',
     description: 'Domain-specific models optimized for specialized tasks.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     step: 5,
     icon: <MLPipelinesIcon />,
     title: 'ML Pipelines',
     description: 'Training, evaluation, deployment, and model operations.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     step: 6,
     icon: <DevOpsAIMonitoringIcon />,
     title: 'AI Monitoring',
     description: 'Monitoring performance, costs, and production behavior.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     step: 7,
     icon: <DevOpsPromptOpsIcon />,
     title: 'Prompt Ops',
     description: 'Versioning, testing, and optimization of prompts.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     step: 8,
     icon: <DevOpsCostOptimizationIcon />,
     title: 'Cost Optimization',
@@ -112,27 +113,27 @@ export const aiEcosystemData = {
   technologies: {
     LLMs: [
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'OpenAI GPT-4o',
         logo: '',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Claude 3.5 Sonnet',
         logo: '',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Gemini 1.5 Pro',
         logo: '',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'LLaMA 3',
         logo: '',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Mistral',
         logo: '',
       },

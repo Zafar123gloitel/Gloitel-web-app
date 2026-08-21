@@ -8,6 +8,7 @@ import {
   PredictiveForecastingIcon,
   ShieldAlertIcon,
 } from 'components/SvgIcon';
+const createId = () => globalThis.crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2);
 
 export const mvpheroSection = {
   badgeText: 'MVP Development',
@@ -79,7 +80,7 @@ export const weekFourData = {
 
 export const coreFeaturesData: ArchitectureItem[] = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     position: 'top',
     title: 'Authentication & User Management',
     description:
@@ -87,7 +88,7 @@ export const coreFeaturesData: ArchitectureItem[] = [
     icon: <UsersSecurityIcon size={25} className='' />,
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     position: 'leftTop',
     title: 'CI/CD Pipeline',
     description:
@@ -95,7 +96,7 @@ export const coreFeaturesData: ArchitectureItem[] = [
     icon: <RefreshCcwIcon size={25} className='' />,
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     position: 'rightTop',
     title: 'Core Feature Set',
     description:
@@ -103,7 +104,7 @@ export const coreFeaturesData: ArchitectureItem[] = [
     icon: <DiamondStackIcon size={25} className='' />,
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     position: 'leftBottom',
     title: 'Basic Security',
     description:
@@ -111,14 +112,14 @@ export const coreFeaturesData: ArchitectureItem[] = [
     icon: <ShieldCheckIcon size={25} className='' />,
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     position: 'bottom',
     title: 'Logging & Monitoring',
     description: 'Track system health, logs, metrics, and application performance in real time.',
     icon: <PredictiveForecastingIcon size={25} className='' />,
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     position: 'rightBottom',
     title: 'Error Handling',
     description:
@@ -145,116 +146,116 @@ export const technologyChoicesData = {
   technologies: {
     'Full-Stack Web': [
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Next.js',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762860000/Gloitel/icon/next_urdukq.webp',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'PostgreSQL',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762860001/Gloitel/icon/postgre_aq8ajb.svg',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Vercel',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960611/Gloitel/icon/vercel_ecvrkl.png',
       },
     ],
     Mobile: [
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'React Native',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762860000/Gloitel/icon/react_cfs5vz.webp',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Flutter',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960672/Gloitel/icon/flutter_lplnyz.png',
       },
     ],
     'Backend APIs': [
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Node.js / NestJS',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960581/Gloitel/icon/nodejs_tpmxcf.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Python / FastAPI',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960588/Gloitel/icon/python_afmdty.png',
       },
     ],
     Auth: [
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Clerk',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960643/Gloitel/icon/clerk_fapefn.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Auth0',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784961896/Gloitel/icon/Auth0_shuxwm.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Supabase Auth',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960667/Gloitel/icon/fastApi_bwbwom.png',
       },
     ],
     Database: [
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'PostgreSQL (default)',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762860001/Gloitel/icon/postgre_aq8ajb.svg',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Firebase',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960671/Gloitel/icon/firebase_cf9k34.png',
       },
     ],
     Payments: [
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Stripe',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960603/Gloitel/icon/stripe_cmfiwd.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Razorpay',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960594/Gloitel/icon/razorpay_cceonz.png',
       },
     ],
     'File Storage': [
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'AWS S3',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960601/Gloitel/icon/S3_n3dent.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Cloudinary',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960649/Gloitel/icon/cloudinary_y3xnvs.png',
       },
     ],
     Deployment: [
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Vercel',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960611/Gloitel/icon/vercel_ecvrkl.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Railway',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960593/Gloitel/icon/railway_wsfpls.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'AWS',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960623/Gloitel/icon/AWS_xpwkkz.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Render',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960597/Gloitel/icon/render_twuslb.png',
       },

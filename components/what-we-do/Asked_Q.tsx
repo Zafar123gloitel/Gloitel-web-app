@@ -1,14 +1,13 @@
 import React from 'react';
 import StrategyBadge from '@/components/StrategyBadge';
 import { LeftSectionHeads } from '@/components/SectionHeads';
-import InfoCard from './InfoCard';
 import Accordion from './AccordionAnimation';
 import GlowPanel from '@/components/GlowPanel';
 
 interface AccordionItem {
   title: string;
   description: string;
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 interface AskedQProps {
@@ -17,7 +16,7 @@ interface AskedQProps {
   sectionSubHead?: string;
   sectionDescription?: string;
   accordionData: AccordionItem[];
-  notIncludedData?: any[];
+  notIncludedData?: unknown[];
   showGlow?: boolean;
   headingTag?: 'h2' | 'h3';
   subHeadingTag?: 'h3' | 'h4';
@@ -29,10 +28,11 @@ const Asked_Q: React.FC<AskedQProps> = ({
   sectionSubHead = '',
   sectionDescription = 'Answers to common questions about the Discovery Sprint, engagement process, timelines, and expected outcomes.',
   accordionData,
-  notIncludedData,
   showGlow = true,
   headingTag = 'h2',
   subHeadingTag = 'h3',
+  // kept for compatibility with older call sites
+  notIncludedData: _notIncludedData,
 }) => {
   if (!accordionData || accordionData.length === 0) {
     return null; // ya koi fallback UI

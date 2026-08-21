@@ -1,12 +1,10 @@
 import {
-  CloudIcon,
   GearInterlockIcon,
   HeroArrowRightIcon,
   LightbulbTargetIcon,
   SettingsGearIcon,
-  SettingsIcon,
-  WorkflowIcon,
 } from 'components/SvgIcon';
+const createId = () => globalThis.crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2);
 
 export const cloudMigrationHeroData = {
   badgeText: 'Cloud Migration',
@@ -68,45 +66,45 @@ export const cloudCoverageSectionHead = {
 
 export const cloudCoverageData = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     title: 'Cloud provider selection and architecture design (AWS vs GCP vs Azure)',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     title: 'Infrastructure-as-code (Terraform, Pulumi) for reproducible environments',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     title: 'Network architecture — VPCs, subnets, security groups, and private connectivity',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     title: 'Database migration — zero-downtime strategies, replication, cutover planning',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     title:
       'Container orchestration – ECS, GKE, AKS, or Kubernetes for scalable and efficient workload management.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     title:
       'CI/CD pipeline migration to modernize deployment workflows and enable faster, more reliable software releases.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     title: 'Security configuration — IAM, secrets management, compliance controls',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     title: 'Cost optimization — right-sizing, reserved instances, spot capacity',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     title: 'Monitoring & observability — CloudWatch, Grafana, Datadog setup',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     title:
       'Disaster recovery & backup configuration to ensure rapid recovery and business continuity.',
   },
@@ -121,32 +119,32 @@ export const migrationStrategySectionHead = {
 
 export const migrationStrategySteps = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     step: 1,
     title: 'Replicate production to cloud environment',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     step: 2,
     title: 'Run in parallel with traffic mirroring',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     step: 3,
     title: 'Validate cloud environment matches production',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     step: 4,
     title: 'Gradual traffic shifting (10% → 25% → 50% → 100%)',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     step: 5,
     title: 'Maintain rollback capability until fully validated',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     step: 6,
     title: 'Decommission old environment',
   },
@@ -165,42 +163,42 @@ export const cloudPlatformsData = {
   technologies: {
     AWS: [
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'EC2',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785220511/Gloitel/icon/ec2_jxd9hn.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'ECS/EKS',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785220510/Gloitel/icon/ecs_nkk5pq.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'RDS',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785220506/Gloitel/icon/rds_qpyrum.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Lambda',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960619/Gloitel/icon/AWS_Lambda_cmuj6h.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'S3',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960601/Gloitel/icon/S3_n3dent.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'CloudFront',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785220504/Gloitel/icon/cloudefront_jciwbv.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Route 53',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785220500/Gloitel/icon/route53_bidt6r.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Secrets Manager',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785220499/Gloitel/icon/secrets-manager_wg7t1w.png',
       },
@@ -208,32 +206,32 @@ export const cloudPlatformsData = {
 
     'Google Cloud': [
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'GKE',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785220490/Gloitel/icon/gke_q0yrnd.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Cloud Run',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785220490/Gloitel/icon/cloudrun_o7vmgs.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Cloud SQL',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785220490/Gloitel/icon/cloudsql_lzoobz.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Pub/Sub',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960685/Gloitel/icon/Google_PubSub_j2vhtu.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'BigQuery',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960635/Gloitel/icon/BigQuery_dgjvnk.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Firebase',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960671/Gloitel/icon/firebase_cf9k34.png',
       },
@@ -241,32 +239,32 @@ export const cloudPlatformsData = {
 
     Azure: [
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'AKS',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785220490/Gloitel/icon/ask_xj5plr.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'App Service',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785220525/Gloitel/icon/app-service_cu5anj.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Azure SQL',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785220524/Gloitel/icon/azure-sql_uvazbj.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Azure OpenAI',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785220519/Gloitel/icon/azure-openai_a7qgyj.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Cosmos DB',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785220519/Gloitel/icon/cosmos-db_zqp3xm.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Event Hub',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785220514/Gloitel/icon/event-hub_uo5mx7.png',
       },

@@ -1,20 +1,19 @@
 import {
+  AnomalyDetectionIcon,
   ArrowRightIcon,
   BarChartIcon,
-  TargetIcon,
-  DiamondStackIcon,
-  RadarIcon,
-  CheckTargetIcon,
-  ClipboardIcon,
-  DatabaseIcon,
-  AnomalyDetectionIcon,
-  CloudIcon,
-  WorkflowIcon1,
-  CodeIcon,
-  DocumentIcon,
   ChartIcon,
+  CloudIcon,
+  CodeIcon,
+  DatabaseIcon,
+  DiamondStackIcon,
+  DocumentIcon,
+  RadarIcon,
   ShieldIcon,
+  TargetIcon,
+  WorkflowIcon1,
 } from 'components/SvgIcon';
+const createId = () => globalThis.crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2);
 
 export const platformHeroSection = {
   badgeText: 'Platform Scaling',
@@ -83,28 +82,28 @@ export const handoffPhaseData = {
 
 export const principlesData = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <BarChartIcon size={25} className='' />,
     title: "Fix the measurement problem first - you can't optimize what you can't observe",
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <TargetIcon size={25} className='' />,
     title: 'Address the bottleneck, not the symptom',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <ChartIcon size={25} className='' />,
     title: 'Migrate incrementally — big-bang rewrites have a terrible success rate',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <ShieldIcon size={25} className='' />,
     title:
       'Write the test before the fix - regression prevention, not just performance improvement',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <DocumentIcon size={25} className='' />,
     title: 'Document decisions, not just code',
   },
@@ -112,32 +111,32 @@ export const principlesData = [
 
 export const scalingIndicators = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <AnomalyDetectionIcon size={25} className='' />,
     description: 'Page load times increasing as your dataset grows',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <AnomalyDetectionIcon size={25} className='' />,
     description: 'Database queries struggling as users grow from 10K to 100K',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <AnomalyDetectionIcon size={25} className='' />,
     description: 'Deployments requiring a weekend and a prayer',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <AnomalyDetectionIcon size={25} className='' />,
     description: 'New features taking 3× longer due to code complexity',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <AnomalyDetectionIcon size={25} className='' />,
     description: 'On-call rotations nobody wants to own',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <AnomalyDetectionIcon size={25} className='' />,
     description: 'Engineering velocity slowing despite team growth',
   },
@@ -145,42 +144,42 @@ export const scalingIndicators = [
 
 export const scalingSolutions = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <RadarIcon size={25} className='' />,
     title: 'Performance Optimization',
     description:
       'Identify and fix the bottlenecks that matter. Database query analysis, index optimization, caching strategy, CDN configuration, and frontend bundle optimization. Instrumented with before/after benchmarks.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <DatabaseIcon size={25} className='' />,
     title: 'Database Architecture & Migration',
     description:
       'Schema redesign, read replica setup, connection pooling, sharding strategy for high-throughput systems, and safe zero-downtime migration execution.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <CloudIcon size={25} className='' />,
     title: 'Infrastructure Redesign',
     description:
       'Move from a single server to horizontally scalable infrastructure. Container orchestration, auto-scaling groups, load balancing, and infrastructure-as-code so your environment is reproducible.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <WorkflowIcon1 size={25} className='' />,
     title: 'API Gateway & Microservices',
     description:
       'When a monolith has outgrown itself, we plan and execute the decomposition — starting with the highest-value, most isolated services, not a full rewrite.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <DiamondStackIcon size={25} className='' />,
     title: 'Caching Layer Design',
     description:
       "Redis/Memcached strategy across application, database, and CDN layers. Proper cache invalidation patterns that don't cause the bugs that give caching its bad reputation.",
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <CodeIcon size={25} className='' />,
     title: 'Caching LEngineering Process Improvementayer Design',
     description:

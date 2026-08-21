@@ -12,14 +12,15 @@
 // import Discover from "../(what-we-do)/components/Discover";
 // import PurposeCard from "../(what-we-do)/components/PurposeCard";
 // import StrategyBadge from "../../components/StrategyBadge";
+import { CardShowcase } from '@/components';
 import { BgSquare2 } from '@/components/BgSquare';
 import GlowPanel from '@/components/GlowPanel';
 import { MiddleSectionHeads } from '@/components/SectionHeads';
-import { CardShowcase } from '@/components';
+import TimelineCard from '@/uiComponents/TimelineCard';
 // import { businessAnalysisProcessData, businessAnalysisProcessSectionHead } from "@/app/engineering/business-analysis/data";
-import { useRef } from 'react';
 import AI_Solutions from '@/uiComponents/AI_Solutions';
 import Execution_Plan from '@/uiComponents/Execution_Plan';
+import { useRef } from 'react';
 // import { TestimonialButton } from "../../components/atoms/button/Button";
 // import IconCard from "../../components/card-showcase/IconCard";
 import {
@@ -49,13 +50,26 @@ import {
 } from '@/app/about/data';
 import GalleryScroll from '@/components/GalleryScroll';
 import HelpCard from '@/components/HelpCard';
+import StrategyBadge from '@/components/StrategyBadge';
 import TestimonialCard from '@/components/TestimonialCard';
+import { TestimonialButton } from '@/components/atoms/button/Button';
+import IconCard from '@/components/card-showcase/IconCard';
 import Assess from '@/components/what-we-do/Assess';
 import Discover from '@/components/what-we-do/Discover';
 import PurposeCard from '@/components/what-we-do/PurposeCard';
-import StrategyBadge from '@/components/StrategyBadge';
-import { TestimonialButton } from '@/components/atoms/button/Button';
-import IconCard from '@/components/card-showcase/IconCard';
+
+const aiEcosystemData = {
+  badge: aiSystemsSectionHead.badgeText,
+  title: aiSystemsSectionHead.title,
+  description: aiSystemsSectionHead.description,
+  tabs: ['AI Systems'],
+  technologies: {
+    'AI Systems': aiSystemsData.map(item => ({
+      name: item.title,
+      logo: '',
+    })),
+  },
+};
 
 // // FOR HOME PAGE
 // export const HomeAboutContent = ({
@@ -616,7 +630,6 @@ export const ClientTestimonials = () => {
   const testimonialsRef = useRef(null);
 
   const scrollTestimonials = direction => {
-    console.log('first');
     if (!testimonialsRef.current) return;
 
     const container = testimonialsRef.current;

@@ -11,9 +11,10 @@ import { LeftSectionHead2, MiddleSectionHeads } from '@/components/SectionHeads'
 import { WhiteButton } from '@/components';
 import { BgSquare3 } from '@/components/BgSquare';
 import GlowPanel from '@/components/GlowPanel';
-import HowWeWork from '@/components/HowWeWork';
+// import HowWeWork from '@/components/HowWeWork';
 import { GlowButton } from '@/components/Button';
 import ServiceCard from '@/components/serviceCard';
+import HowWeWork from '@/components/HowWeWork';
 
 const Result = dynamic(() => import('@/components/Result'), {
   loading: () => <LoadingSection minHeight='min-h-[280px]' />,
@@ -224,7 +225,7 @@ const HomePage = () => {
       <LaunchYourSite />
       <HorizontalDivider />
       <Testimonial />
-      {/* <FAQPage /> */}
+      <FAQPage />
 
       <JoinUsNow />
     </>

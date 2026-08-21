@@ -11,38 +11,39 @@ import {
   WrenchIcon,
   ZapIcon,
 } from 'components/SvgIcon';
+const createId = () => globalThis.crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2);
 
 export const ai_agents_designed = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     title: 'Agentic Workflow Automation',
     icon: <RefreshCcwIcon />,
     description:
       'Replace manual multi-step processes with agents that handle them end-to-end. Lead qualification, invoice processing, content moderation, compliance checks, research aggregation — automated with full audit trails.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     title: 'Multi-Agent Systems',
     icon: <UsersIcon />,
     description:
       'Orchestrate teams of specialized agents working in parallel. One agent researches, another writes, another reviews. Each agent is optimized for a specific responsibility within the workflow. Complex tasks completed in minutes instead of hours.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     title: 'Tool-Using Agents',
     icon: <WrenchIcon />,
     description:
       "Agents integrated with your real business tools – CRMs, ERPs, databases, Slack, email, calendars, file systems. Seamlessly connecting data, workflows, and actions across your organization. They don't just generate text; they take action inside your systems.",
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     title: 'Human-in-the-Loop Workflows',
     icon: <HandshakeIcon />,
     description:
       'Autonomous agents with configurable human oversight gates. The agent handles routine decisions; humans review exceptions. Designed for regulated industries and high-stakes workflows.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     title: 'AI-Powered Process Automation',
     icon: <ZapIcon />,
     description:
@@ -52,27 +53,27 @@ export const ai_agents_designed = [
 
 export const industries = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     name: 'Finance',
     icon: <FinanceIcon />,
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     name: 'Real Estate',
     icon: <RealEstateIcon />,
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     name: 'Healthcare',
     icon: <HealthcareIcon />,
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     name: 'Media & Publishing',
     icon: <MediaPublishingIcon />,
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     name: 'Legal',
     icon: <LegalIcon />,
   },
@@ -251,27 +252,27 @@ export const ApproachStepFive = {
 };
 export const Agent_Projects = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <CloseIcon size={20} />,
     description: 'Reducing hallucinations in AI outputs.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <CloseIcon size={20} />,
     description: 'Managing costs as AI systems scale.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <CloseIcon size={20} />,
     description: 'Reducing latency across AI workflows.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <CloseIcon size={20} />,
     description: 'Protecting sensitive data and enterprise systems.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <CloseIcon size={20} />,
     description: 'Ensuring reliable performance in production.',
   },

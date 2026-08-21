@@ -1,7 +1,6 @@
 import React from 'react';
 import TechScroll from './TechScroll';
 import { GlowButton } from './Button';
-import { CenterBadge } from './Badge';
 import { BgSquare2 } from './BgSquare';
 import { MiddleSectionHeads } from './SectionHeads';
 import StrategyBadge from '@/components/StrategyBadge';

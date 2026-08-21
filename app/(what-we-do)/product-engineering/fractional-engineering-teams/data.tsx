@@ -1,24 +1,22 @@
 import {
+  AnalyticsIcon,
   ArrowRightIcon,
-  UsersIcon,
-  FileIcon,
-  LayersIcon,
-  DiamondStackIcon,
-  CheckTargetIcon,
-  WorkflowAutomationIcon,
+  BadgeCheckIcon,
   BarChartIcon,
-  RefreshCcwIcon,
+  ChatbotIcon,
+  CheckIcon,
+  DiamondStackIcon,
+  DocumentCodeIcon,
+  LinkIcon,
   MonitorIcon,
   PredictiveForecastingIcon,
+  RefreshCcwIcon,
   RocketIcon,
   UserCheckIcon,
-  AnalyticsIcon,
-  ChatbotIcon,
-  BadgeCheckIcon,
-  LinkIcon,
-  DocumentCodeIcon,
-  CheckIcon,
+  UsersIcon,
 } from 'components/SvgIcon';
+
+const createId = () => globalThis.crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2);
 
 export const fractionalTeamHeroData = {
   badgeText: 'Fractional Engineering Teams',
@@ -101,22 +99,22 @@ export const podsData = [
 
 export const integrationPrinciplesData = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <UserCheckIcon size={25} className='' />,
     title: 'Fast onboarding with immediate access to your tools, workflows, and codebase',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <AnalyticsIcon size={25} className='' />,
     title: 'Structured sprint execution aligned with your existing delivery process',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <ChatbotIcon size={25} className='' />,
     title: 'Direct collaboration through shared tools and transparent communication',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <BarChartIcon size={25} className='' />,
     title: 'Continuous reporting with complete visibility into progress and performance',
   },
@@ -131,35 +129,35 @@ export const teamSectionHead = {
 
 export const teamValuesData = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <BadgeCheckIcon size={25} className='' />,
     title: 'Senior engineers by default',
     description:
       'Senior engineers by default, with no bait-and-switch with juniors after the contract is signed, ensuring consistent expertise, stronger technical decision-making, and reliable execution throughout the entire engagement.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <LinkIcon size={25} className='' />,
     title: 'Continuity',
     description:
       'Same people on your project, not a rotating cast, allowing deeper product knowledge, stronger collaboration, faster onboarding, and long-term ownership of technical decisions while maintaining consistency across every stage of development.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <DocumentCodeIcon size={25} className='' />,
     title: 'Code ownership',
     description:
       "Engineers who care about the quality of what they're building and take responsibility for maintaining high engineering standards, clean architecture, and sustainable long-term product growth.",
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <ChatbotIcon size={25} className='' />,
     title: 'Direct communication',
     description:
       'No account management layer between you and the engineers doing the work, enabling faster feedback cycles, clearer communication, quicker decisions, better alignment on priorities, and more effective day-to-day collaboration.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <BarChartIcon size={25} className='' />,
     title: 'Transparent velocity',
     description:
@@ -176,27 +174,27 @@ export const scaleReadinessSectionHead = {
 
 export const scaleReadinessIndicators = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <CheckIcon size={25} className='' />,
     description: "Hiring is slow, but delivery can't wait.",
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <CheckIcon size={25} className='' />,
     description: 'Clear roadmap, limited execution capacity.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <CheckIcon size={25} className='' />,
     description: 'Need expertise beyond in-house capabilities.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <CheckIcon size={25} className='' />,
     description: 'Managing growth between funding rounds.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <CheckIcon size={25} className='' />,
     description: 'Validating direction before hiring.',
   },

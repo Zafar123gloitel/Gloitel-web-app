@@ -1,7 +1,6 @@
 import React from 'react';
 import FeatureScroll from './FeatureScroll';
 import { GlowButton } from './Button';
-import { CenterBadge } from './Badge';
 import { BgSquare3 } from './BgSquare';
 import { MiddleSectionHeads } from './SectionHeads';
 import Link from 'next/link';
@@ -10,10 +9,12 @@ import Image from 'next/image';
 import GlowPanel from './GlowPanel';
 import StrategyBadge from '@/components/StrategyBadge';
 
+const createId = () => globalThis.crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2);
+
 const Testimonial = () => {
   const stages = [
     {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      id: createId(),
       title: 'Reerth (Electronics-based Product)',
       name: 'Staish Kashyap',
       role: 'CEO',
@@ -25,7 +26,7 @@ const Testimonial = () => {
       icon: <Spline />,
     },
     {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      id: createId(),
       title: 'Path ISA (Educational Platform)',
       name: 'Dr. Hamid Khan',
       role: 'Founder',
@@ -37,7 +38,7 @@ const Testimonial = () => {
       icon: <Linkedin />,
     },
     {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      id: createId(),
       title: 'HRM Technologies (IT & Cloud Services)',
       name: 'Rajeshwar Agarwal',
       role: 'Director',
@@ -49,7 +50,7 @@ const Testimonial = () => {
       icon: <Rocket />,
     },
     {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      id: createId(),
       title: 'Experteeth (Dental Services)',
       name: 'Manish Agrawal',
       role: 'Founder',
@@ -61,7 +62,7 @@ const Testimonial = () => {
       icon: <Instagram />,
     },
     {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      id: createId(),
       title: 'Samriddhi Agro (Agriculture Products)',
       name: 'Ritendra Nayak',
       role: 'Owner',
@@ -73,7 +74,7 @@ const Testimonial = () => {
       icon: <WandSparkles />,
     },
     {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      id: createId(),
       title: 'Sapradha (School Sports Management)',
       name: 'Dr. Sowmya Raghubir',
       role: 'Chairman',

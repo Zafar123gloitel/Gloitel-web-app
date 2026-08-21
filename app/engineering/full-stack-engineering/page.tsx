@@ -2,15 +2,16 @@
 
 // import Business from "../../(what-we-do)/components/Business";
 // import Strategy from "../../(what-we-do)/components/Strategy";
-import StrategyBadge from '../../../components/StrategyBadge';
+import Business from '@/components/what-we-do/Business';
+import Strategy from '@/components/what-we-do/Strategy';
 import { BgSquare2 } from 'components/BgSquare';
 import EngineeringHeroSection from 'components/EngineeringHeroSection';
 import GlowPanel from 'components/GlowPanel';
 import { MiddleSectionHeads } from 'components/SectionHeads';
-import { financeComplianceData, financeComplianceSectionHead } from '../../industries/data';
 import ArchitectureCircle from 'uiComponents/ArchitectureCircle';
 import Execution_Plan from 'uiComponents/Execution_Plan';
-import { aiEngineeringHeroData, aiEngineeringNotData } from '../ai-engineering/data';
+import StrategyBadge from '../../../components/StrategyBadge';
+import { aiEngineeringNotData } from '../ai-engineering/data';
 import {
   fullStackComplianceData,
   fullStackComplianceSectionHead,
@@ -18,8 +19,6 @@ import {
   fullStackRoadmapData,
   fullStackRoadmapSectionHead,
 } from './data';
-import Business from '@/components/what-we-do/Business';
-import Strategy from '@/components/what-we-do/Strategy';
 
 export default function Page() {
   const positions = {

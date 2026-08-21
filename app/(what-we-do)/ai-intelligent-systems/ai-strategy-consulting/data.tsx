@@ -16,6 +16,8 @@ import {
   UsersIcon,
 } from 'components/SvgIcon';
 
+const createId = () => globalThis.crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2);
+
 export const heroSectionData = {
   badgeText: 'AI Strategy & Consulting',
 
@@ -127,27 +129,27 @@ export const enableData = {
 };
 export const outcomesData = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <TargetIcon />,
     title: 'Clarity on where AI will create measurable business impact',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <DiamondStackIcon />,
     title: 'A prioritised use case stack ranked by value and feasibility',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <CheckTargetIcon />,
     title: 'Defined pilot scope with expected outcomes and success metrics',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <LightbulbGearIcon />,
     title: 'A structured roadmap aligned to business priorities',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <NotBuildIcon />,
     title: 'A clear view of what *not* to build — equally valuable',
   },
@@ -155,22 +157,22 @@ export const outcomesData = [
 
 export const notIncludedData = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <CloseIcon />,
     description: 'Not a vendor-led engagement where we pre-sell a solution',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <CloseIcon />,
     description: 'Not a free strategy workshop with vague outputs',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <CloseIcon />,
     description: 'Not an open-ended consulting retainer',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <CloseIcon />,
     description: 'Not a build-first approach without a validated roadmap',
   },

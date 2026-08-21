@@ -12,6 +12,7 @@ import {
   StructuredDataWorkflowsIcon,
 } from 'components/SvgIcon';
 import { ArchitectureCard } from 'uiComponents/EngineeringArchitecture';
+const createId = () => globalThis.crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2);
 
 export const mobileEngineeringHeroData = {
   badgeText: 'Mobile Engineering',
@@ -34,7 +35,7 @@ export const mobileEngineeringHeroData = {
 
 export const architectureData: ArchitectureCard[] = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     position: 'leftTop',
     icon: <MobileDiscoveryIcon />,
     title: 'User Interviews',
@@ -43,7 +44,7 @@ export const architectureData: ArchitectureCard[] = [
   },
 
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     position: 'leftBottom',
     icon: <MobileDiscoveryIcon />,
     title: 'Stakeholder Workshops',
@@ -52,7 +53,7 @@ export const architectureData: ArchitectureCard[] = [
   },
 
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     position: 'rightTop',
     icon: <MobileDiscoveryIcon />,
     title: 'Journey Mapping',
@@ -61,7 +62,7 @@ export const architectureData: ArchitectureCard[] = [
   },
 
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     position: 'rightBottom',
     icon: <MobileDiscoveryIcon />,
     title: 'Prototype Validation',
@@ -87,42 +88,42 @@ export const mobileProcessSectionHead = {
 
 export const mobileProcessData = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <StructuredDataWorkflowsIcon />,
     title: 'Structured Data Workflows',
     description:
       'Repeatable, rule-based processes with structured inputs. Data entry automation, report generation, data validation, system synchronization, and scheduled jobs.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <MobileDocumentProcessingIcon />,
     title: 'Document Processing',
     description:
       'Extract structured data from documents, classify them, route them, and trigger downstream actions. Handles PDFs, emails, scanned documents, and forms.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <IntegrationAutomationIcon />,
     title: 'Integration Automation',
     description:
       "Connect systems that don't talk to each other. Event-driven integrations that keep data in sync across CRM, ERP, HRIS, and custom applications without manual export/import.",
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <MobileAIProcessAutomationIcon />,
     title: 'AI-Powered Process Automation',
     description:
       'For processes where the inputs are unstructured, the rules are complex, or exceptions are common. AI agents that understand context, handle edge cases, and escalate to humans appropriately.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <MobileAIProcessAutomationIcon />,
     title: 'AI-Powered Process Automation', // ⚠️ duplicate of item 4
     description:
       'For processes where the inputs are unstructured, the rules are complex, or exceptions are common. AI agents that understand context, handle edge cases, and escalate to humans appropriately.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <MobileAIProcessAutomationIcon />,
     title: 'AI-Powered Process Automation', // ⚠️ duplicate again
     description:
@@ -138,32 +139,32 @@ export const mobileRoadmapSectionHead = {
 
 export const mobileRoadmapData = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <BusinessImpactClarityIcon />,
     title: 'Clarity on where AI will create measurable business impact',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <PrioritizedUseCasesIcon />,
     title: 'A prioritised use case stack ranked by value and feasibility',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <PilotScopeIcon />,
     title: 'Defined pilot scope with expected outcomes and success metrics',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <BusinessRoadmapIcon />,
     title: 'A structured roadmap aligned to business priorities',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <AvoidedBuildsIcon />,
     title: 'A clear view of what *not* to build — equally valuable',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <AvoidedBuildsIcon />,
     title: 'A clear view of what *not* to build — equally valuable', // ⚠️ duplicate of item 5
   },

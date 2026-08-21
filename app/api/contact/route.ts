@@ -25,8 +25,6 @@ export async function POST(request: Request) {
 
     // Validate env vars
     if (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN || !process.env.EMAIL_FORWARD) {
-      console.error('Mailgun environment variables missing');
-
       return new Response(
         JSON.stringify({
           success: false,
@@ -83,13 +81,11 @@ ${message}
         },
       },
     );
-  } catch (error: any) {
-    console.error('MAILGUN ERROR:', error);
-
+  } catch (error) {
     return new Response(
       JSON.stringify({
         success: false,
-        message: error?.message || 'Failed to send email',
+        message: (error as Error)?.message || 'Failed to send email',
       }),
       {
         status: 500,

@@ -24,7 +24,7 @@ const AI_Solutions = ({
   description,
   tabs,
   technologies,
-  icontype = false,
+  icontype: _icontype = false,
 }: AI_SolutionsProps) => {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
   const activeTab = tabs[activeTabIndex];

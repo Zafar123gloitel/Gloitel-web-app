@@ -15,7 +15,6 @@ const Hero = () => {
         muted
         loop
         playsInline
-        unoptimized='true'
       />
       <div className='absolute top-20 right-0 z-30 hidden h-full items-center justify-end overflow-hidden 2xl:flex'>
         <video
@@ -26,7 +25,6 @@ const Hero = () => {
           muted
           loop
           playsInline
-          unoptimized='true'
         />
       </div>
 

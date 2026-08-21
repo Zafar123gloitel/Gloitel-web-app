@@ -1,4 +1,5 @@
 import { ArchitectureItem } from 'uiComponents/ArchitectureCircle';
+const createId = () => globalThis.crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2);
 
 export const heroData = {
   badgeText: 'AI Strategy & Consulting',
@@ -35,7 +36,7 @@ export const aiRoadmapData = {
 
   features: [
     {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      id: createId(),
       title: 'R&D Systems',
       description: 'Build a strong foundation for AI experimentation and innovation.',
       icon: (
@@ -57,7 +58,7 @@ export const aiRoadmapData = {
     },
 
     {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      id: createId(),
       title: 'LLM features',
       description:
         'Identify and implement high-value capabilities powered by large language models.',
@@ -82,7 +83,7 @@ export const aiRoadmapData = {
     },
 
     {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      id: createId(),
       title: 'Agent Systems',
       description: 'Design intelligent agents that automate workflows and business processes.',
       icon: (
@@ -109,7 +110,7 @@ export const aiRoadmapData = {
     },
 
     {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      id: createId(),
       title: 'Custom Models',
       description: 'Evaluate and build specialized models for unique business requirements.',
       icon: (
@@ -143,7 +144,7 @@ export const AiExecutionServicesdata = {
 
   services: [
     {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      id: createId(),
 
       title: 'Ui/Ux Designer',
 
@@ -187,7 +188,7 @@ export const AiExecutionServicesdata = {
     },
 
     {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      id: createId(),
 
       title: 'Ui/Ux Designer',
 
@@ -226,7 +227,7 @@ export const AiExecutionServicesdata = {
       ),
     },
     {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      id: createId(),
 
       title: 'Ui/Ux Designer',
 
@@ -270,7 +271,7 @@ export const AiExecutionServicesdata = {
     },
 
     {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      id: createId(),
 
       title: 'Ui/Ux Designer',
 
@@ -309,7 +310,7 @@ export const AiExecutionServicesdata = {
       ),
     },
     {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      id: createId(),
 
       title: 'Ui/Ux Designer',
 
@@ -353,7 +354,7 @@ export const AiExecutionServicesdata = {
     },
 
     {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      id: createId(),
 
       title: 'Ui/Ux Designer',
 
@@ -392,7 +393,7 @@ export const AiExecutionServicesdata = {
       ),
     },
     {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      id: createId(),
 
       title: 'Ui/Ux Designer',
 
@@ -436,7 +437,7 @@ export const AiExecutionServicesdata = {
     },
 
     {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      id: createId(),
 
       title: 'Ui/Ux Designer',
 
@@ -487,28 +488,28 @@ export const diagnoseBeforeDeployData = {
 
   steps: [
     {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      id: createId(),
       number: 1,
       title: 'Discover',
       description: 'Understand your business, technology, data, and AI opportunities.',
       icon: 'search',
     },
     {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      id: createId(),
       number: 2,
       title: 'Assess',
       description: 'Evaluate current capabilities, challenges, and AI readiness.',
       icon: 'assessment',
     },
     {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      id: createId(),
       number: 3,
       title: 'Plan',
       description: 'Prioritize opportunities and define the right implementation approach.',
       icon: 'plan',
     },
     {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      id: createId(),
       number: 4,
       title: 'Validate',
       description: 'Validate the roadmap against business goals and technical feasibility.',
@@ -527,7 +528,7 @@ export const AiAgentsIndustriesdata = {
 
   testimonials: [
     {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      id: createId(),
       name: 'Durgesh Sahu',
       designation: 'Founder and Director',
       description:
@@ -536,7 +537,7 @@ export const AiAgentsIndustriesdata = {
     },
 
     {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      id: createId(),
       name: 'Durgesh Sahu',
       designation: 'Founder and Director',
       description:
@@ -545,7 +546,7 @@ export const AiAgentsIndustriesdata = {
     },
 
     {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      id: createId(),
       name: 'Durgesh Sahu',
       designation: 'Founder and Director',
       description:
@@ -554,7 +555,7 @@ export const AiAgentsIndustriesdata = {
     },
 
     {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      id: createId(),
       name: 'Durgesh Sahu',
       designation: 'Founder and Director',
       description:
@@ -578,7 +579,7 @@ export const aiInfrastructureSectionHead = {
 
 export const aiInfrastructureData: ArchitectureItem[] = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     position: 'top',
     icon: (
       <svg
@@ -609,7 +610,7 @@ export const aiInfrastructureData: ArchitectureItem[] = [
   },
 
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     position: 'rightTop',
     icon: (
       <svg
@@ -635,7 +636,7 @@ export const aiInfrastructureData: ArchitectureItem[] = [
   },
 
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     position: 'rightBottom',
     icon: (
       <svg
@@ -663,7 +664,7 @@ export const aiInfrastructureData: ArchitectureItem[] = [
   },
 
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     position: 'bottom',
     icon: (
       <svg
@@ -686,7 +687,7 @@ export const aiInfrastructureData: ArchitectureItem[] = [
   },
 
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     position: 'leftBottom',
     icon: (
       <svg
@@ -721,7 +722,7 @@ export const aiInfrastructureData: ArchitectureItem[] = [
   },
 
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     position: 'leftTop',
     icon: (
       <svg

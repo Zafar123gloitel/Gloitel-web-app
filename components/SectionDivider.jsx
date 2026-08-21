@@ -11,4 +11,3 @@ export const VerticalDivider = () => {
     <div className='relative z-10 m-2 hidden h-10 w-px bg-gradient-to-b from-transparent via-white/40 to-transparent sm:block'></div>
   );
 };
-``;

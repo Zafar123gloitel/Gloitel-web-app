@@ -1,8 +1,5 @@
 import React from 'react';
 import { LeftSectionHeads } from 'components/SectionHeads';
-import Image from 'next/image';
-import { LeftBadge } from 'components/Badge';
-import HowWeWork from 'components/HowWeWork';
 import StrategyBadge from '@/components/StrategyBadge';
 import InfoCard from './InfoCard';
 

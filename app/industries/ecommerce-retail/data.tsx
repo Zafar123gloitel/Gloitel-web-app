@@ -7,6 +7,7 @@ import {
   InventoryAndOrderManagementIcon,
   MobileCommerceAppsIcon,
 } from 'components/SvgIcon';
+const createId = () => globalThis.crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2);
 
 export const ecommerceHeroData = {
   badgeText: 'E-Commerce & Retail',
@@ -40,31 +41,31 @@ export const ecommerceChallengesSectionHead = {
 
 export const ecommerceChallengesData = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     text: 'Custom storefront development beyond what platforms like Shopify handle',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     text: 'ERP, warehouse, and 3PL integrations for omnichannel operations',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     text: 'AI-powered product recommendations and search personalization',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     text: 'Performance at scale - flash sales, peak traffic, seasonal surges',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     text: 'Customer retention analytics and loyalty program engineering',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     text: 'Multi-vendor marketplace platforms with streamlined vendor management and scalable marketplace operations',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     text: 'Mobile commerce and app-based shopping experiences optimized for engagement and conversions',
   },
 ];
@@ -78,42 +79,42 @@ export const ecommerceSolutionsSectionHead = {
 
 export const ecommerceSolutionsData = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <CustomECommercePlatformsIcon />,
     title: 'Custom E-Commerce Platforms',
     description:
       'Headless commerce architectures using Shopify, Medusa, or custom backends. High-performance storefronts with Next.js, advanced filtering, lightning-fast search, and conversion-optimized checkout flows.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <AIAssistedToolsIcon />,
     title: 'AI-Powered Personalization',
     description:
       'Recommendation engines, personalized search ranking, dynamic pricing, and customer segmentation models that increase average order value and repeat purchase rate.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <ClinicalWorkflowApplicationsIcon />,
     title: 'Marketplace Platforms',
     description:
       'Multi-vendor marketplace development - seller onboarding, product catalog management, commission and payout systems, vendor analytics, and dispute resolution.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <InventoryAndOrderManagementIcon />,
     title: 'Inventory & Order Management',
     description:
       'Real-time inventory sync across channels, warehouse management integrations, order routing logic, returns management, and fulfillment tracking.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <MobileCommerceAppsIcon />,
     title: 'Mobile Commerce Apps',
     description:
       'React Native or Flutter shopping apps with push notification campaigns, in-app checkout, loyalty programs, and AR try-on features.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <FinancialDataAndAnalyticsIcon />,
     title: 'Retail Analytics Platforms',
     description:
@@ -140,17 +141,17 @@ export const ecommerceTechStackData = {
   technologies: {
     Storefront: [
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Next.js',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762860000/Gloitel/icon/next_urdukq.webp',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Remix',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/Gloitel/icon/remix_xxxxxx.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Shopify Hydrogen',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/Gloitel/icon/shopify-hydrogen_xxxxxx.png',
       },

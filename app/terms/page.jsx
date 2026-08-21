@@ -13,7 +13,6 @@ export default function TermsPage() {
           muted
           loop
           playsInline
-          unoptimized='true'
         ></video>
         <div className='text-title relative z-10 mx-auto max-w-4xl px-6 py-16'>
           {/* Container */}

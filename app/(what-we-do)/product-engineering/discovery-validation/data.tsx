@@ -1,18 +1,17 @@
 import {
-  SearchIcon,
-  PhoneIcon,
-  LayersIcon,
-  BarChartIcon,
-  CheckTargetIcon,
-  TargetIcon,
-  ArrowRightIcon,
   AnomalyDetectionIcon,
+  ArrowRightIcon,
   CheckIcon,
   ChecklistIcon,
   DiamondStackIcon,
+  PhoneIcon,
   PredictiveForecastingIcon,
+  SearchIcon,
   ShieldCheckIcon,
+  TargetIcon,
 } from 'components/SvgIcon';
+
+const createId = () => globalThis.crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2);
 
 export const heroSectionData = {
   badgeText: 'Discovery & Validation',
@@ -99,37 +98,37 @@ export const enablePhaseData = {
 
 export const outcomesData = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <SearchIcon size={25} className='' />,
     title: 'User research report (interviews, journey maps, pain point analysis)',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <TargetIcon size={25} className='' />,
     title: 'Validated problem statement and solution hypothesis',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <ChecklistIcon size={25} className='' />,
     title: 'MVP scope definition with prioritized feature list (MoSCoW)',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <PhoneIcon size={25} className='' />,
     title: 'Clickable prototype for the core user flow',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <DiamondStackIcon size={25} className='' />,
     title: 'Technical architecture recommendation',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <PredictiveForecastingIcon size={25} className='' />,
     title: 'Build effort estimate and team requirements',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <ShieldCheckIcon size={25} className='' />,
     title: 'Go/no-go recommendation with reasoning',
   },
@@ -137,27 +136,27 @@ export const outcomesData = [
 
 export const strategyCards = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <AnomalyDetectionIcon />,
     description: "You have an idea but haven't talked to enough real users",
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <AnomalyDetectionIcon />,
     description: 'Your team disagrees on what to build',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <AnomalyDetectionIcon />,
     description: "You're planning to rebuild or pivot an existing product",
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <AnomalyDetectionIcon />,
     description: 'You need to justify investment before committing a team',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <AnomalyDetectionIcon />,
     description: "You've been building but aren't seeing the outcomes expected",
   },

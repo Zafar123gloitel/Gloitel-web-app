@@ -14,6 +14,7 @@ import {
   WorkflowIcon,
   WorkflowIcon1,
 } from 'components/SvgIcon';
+const createId = () => globalThis.crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2);
 
 export const engineeringSectionData = {
   badgeText: 'What AI Integration Actually Involves',
@@ -28,7 +29,7 @@ export const engineeringSectionData = {
 
 export const engineeringData = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <LinkIcon size={30} />,
     title: 'Integration Stability',
     description:
@@ -36,7 +37,7 @@ export const engineeringData = [
   },
 
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <RefreshCcwIcon size={30} />,
     title: 'Resilient Processing',
     description:
@@ -44,7 +45,7 @@ export const engineeringData = [
   },
 
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <PredictiveForecastingIcon size={30} />,
     title: 'Visibility & Control',
     description:
@@ -53,7 +54,7 @@ export const engineeringData = [
 ];
 export const engineeringServicesData = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <LinkIcon />,
     title: 'Third-Party AI API Integration',
     description:
@@ -61,7 +62,7 @@ export const engineeringServicesData = [
   },
 
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <CloudIcon />,
     title: 'Model Serving Infrastructure',
     description:
@@ -69,7 +70,7 @@ export const engineeringServicesData = [
   },
 
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <WorkflowIcon />,
     title: 'Data Pipeline Engineering for AI',
     description:
@@ -77,7 +78,7 @@ export const engineeringServicesData = [
   },
 
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <PredictiveForecastingIcon />,
     title: 'AI Monitoring & Observability',
     description:
@@ -85,7 +86,7 @@ export const engineeringServicesData = [
   },
 
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <PuzzleIcon size={30} />,
     title: 'Legacy System AI Augmentation',
     description:
@@ -93,7 +94,7 @@ export const engineeringServicesData = [
   },
 
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <WorkflowIcon1 />,
     title: 'Enterprise AI Platform Setup',
     description:
@@ -103,28 +104,28 @@ export const engineeringServicesData = [
 
 export const architecturePatternsData = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <TimerIcon />,
     title: 'Synchronous API Pattern',
     description:
       'User-facing features where AI generates a response in real time. Optimized for latency with streaming support and graceful fallback.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <WorkflowIcon1 />,
     title: 'Async Pipeline Pattern',
     description:
       'Background AI processing—document ingestion, batch enrichment, async summarization. Queue-based with retry logic and dead letter handling.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <CodeSearchIcon />,
     title: 'Retrieval-Augmented Pattern',
     description:
       'RAG systems where AI responses are grounded in retrieved documents. Vector search + LLM inference + citation extraction, built as a unified service.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <CircuitIcon />,
     title: 'Event-Driven Pattern',
     description:
@@ -293,31 +294,31 @@ export const TechnologiesData = {
 
 export const deliverablesData = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <DocumentIcon />,
     title: 'Documented API contracts for every AI integration',
   },
 
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <BookIcon />,
     title: 'Runbooks for common failure scenarios',
   },
 
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <ChartIcon />,
     title: 'Cost dashboards with per-feature AI spend breakdown',
   },
 
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <TimerIcon />,
     title: 'Model version control and rollback procedures',
   },
 
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <BellIcon />,
     title: 'Monitoring alerts configured and tested before handoff',
   },

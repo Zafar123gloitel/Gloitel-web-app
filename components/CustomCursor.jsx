@@ -22,7 +22,7 @@ export default function CustomCursor() {
         x: prev.x + (mouse.x - prev.x) * smooth,
         y: prev.y + (mouse.y - prev.y) * smooth,
       }));
-      raf = requestAnimationFrame(follow);
+      raf = globalThis.requestAnimationFrame(follow);
     };
     follow();
 
@@ -38,7 +38,7 @@ export default function CustomCursor() {
     });
 
     return () => {
-      cancelAnimationFrame(raf);
+      globalThis.cancelAnimationFrame(raf);
       window.removeEventListener('mousemove', handleMove);
       els.forEach(el => {
         el.removeEventListener('mouseenter', enter);

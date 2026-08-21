@@ -33,7 +33,7 @@ const ContactForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    https: try {
+    try {
       // Send to Google Sheets API (no-cors required for Google Apps Script)
 
       const formData1 = new FormData();
@@ -46,8 +46,7 @@ const ContactForm = () => {
       formData1.append('companyType', formData.companyType);
       formData1.append('message', formData.message);
 
-      console.log('Sending data to Google Sheets...', formData1);
-      const sheetsResponse = await fetch(
+      await fetch(
         'https://script.google.com/macros/s/AKfycbyZIi7rXRJpXo9w7TBJ7W2HrvlePb_ats__aLx3aqbDo1aarKHeNVFMzLkde1vbXfYW/exec',
         {
           method: 'POST',
@@ -60,14 +59,11 @@ const ContactForm = () => {
       );
 
       // With no-cors, we can't read the response, but if no error thrown, assume success
-      console.log('Data sent to Google Sheets (no-cors mode)');
-
       toast.success('Message sent successfully!');
 
       // Redirect to thank you page
       router.push('/thank-you');
-    } catch (error) {
-      console.error('Submission error:', error);
+    } catch (_error) {
       toast.error('Failed to submit form');
     } finally {
       setIsSubmitting(false);

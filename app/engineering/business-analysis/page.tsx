@@ -2,26 +2,14 @@
 
 // import Business from "../../(what-we-do)/components/Business";
 // import PurposeCard from "../../(what-we-do)/components/PurposeCard";
-import ProblemCard from '../../../components/ProblemCard';
-import StrategyBadge from '../../../components/StrategyBadge';
+import PurposeCard from '@/components/what-we-do/PurposeCard';
 import { BgSquare2 } from 'components/BgSquare';
 import EngineeringHeroSection from 'components/EngineeringHeroSection';
 import { MiddleSectionHeads } from 'components/SectionHeads';
 import AI_Solutions from 'uiComponents/AI_Solutions';
 import Execution_Plan from 'uiComponents/Execution_Plan';
-import {
-  frontendDeliverablesData,
-  frontendDeliverablesSectionHead,
-} from '../frontend-engineering/data';
-import { fullStackHeroData } from '../full-stack-engineering/data';
-import {
-  mobileEngineeringCTAData,
-  mobileProcessData,
-  mobileProcessSectionHead,
-  mobileRoadmapData,
-  mobileRoadmapSectionHead,
-} from '../mobile-engineering/data';
-import { aiEcosystemData } from '../qa-engineering/data';
+import ProblemCard from '../../../components/ProblemCard';
+import StrategyBadge from '../../../components/StrategyBadge';
 import {
   businessAnalysisCTAData,
   businessAnalysisDeliverablesData,
@@ -31,7 +19,6 @@ import {
   businessAnalysisProcessData,
   businessAnalysisProcessSectionHead,
 } from './data';
-import PurposeCard from '@/components/what-we-do/PurposeCard';
 
 export default function Page() {
   return (

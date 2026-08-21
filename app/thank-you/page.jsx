@@ -1,9 +1,5 @@
 import Link from 'next/link';
 import { HeroVideoBg } from 'components/HeroHead';
-import { IntroHead } from 'uiComponents/Heading';
-import { GlowButton } from 'components/Button';
-import GlowPanel from 'components/GlowPanel';
-import { HeroBadge } from 'components/HeroBadge';
 
 export default function ThankYouPage() {
   return (

@@ -4,7 +4,7 @@ import React from 'react';
 import { Card, CardDescription, CardTitle } from '@/components';
 
 const ImageCard = ({
-  className = '',
+  className: _className = '',
   cradClass,
   padding = '',
   cardtitle = 'Healthcare Client ',

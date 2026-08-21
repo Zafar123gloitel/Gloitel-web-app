@@ -1,3 +1,5 @@
+const createId = () => globalThis.crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2);
+
 export const aiEngineeringHeroData = {
   badgeText: 'AI Engineering',
   title: 'AI Engineering That Ships and Stays Shipped',
@@ -43,7 +45,7 @@ export const aiSystemsSectionHead = {
 
 export const aiSystemsData = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: (
       <svg
         xmlns='http://www.w3.org/2000/svg'
@@ -64,7 +66,7 @@ export const aiSystemsData = [
     description: 'Vector search and document intelligence pipelines.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: (
       <svg
         xmlns='http://www.w3.org/2000/svg'
@@ -87,7 +89,7 @@ export const aiSystemsData = [
     description: 'AI capabilities embedded into existing products.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: (
       <svg
         xmlns='http://www.w3.org/2000/svg'
@@ -111,7 +113,7 @@ export const aiSystemsData = [
     description: 'Coordinated agents with tools, memory, and workflows.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: (
       <svg
         xmlns='http://www.w3.org/2000/svg'
@@ -143,7 +145,7 @@ export const whoThisIsForSectionHead = {
 
 export const whoThisIsForTimelineData = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     side: 'left',
     year: '2016',
     icon: (
@@ -168,7 +170,7 @@ export const whoThisIsForTimelineData = [
       'AI systems often fail not because the model is but because the surrounding integrations are unreliable.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     side: 'right',
     year: '2016',
     icon: (
@@ -193,7 +195,7 @@ export const whoThisIsForTimelineData = [
       'AI systems often fail not because the model is but because the surrounding integrations are unreliable.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     side: 'left',
     year: '2016',
     icon: (
@@ -218,7 +220,7 @@ export const whoThisIsForTimelineData = [
       'AI systems often fail not because the model is but because the surrounding integrations are unreliable.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     side: 'right',
     year: '2016',
     icon: (
@@ -243,7 +245,7 @@ export const whoThisIsForTimelineData = [
       'AI systems often fail not because the model is but because the surrounding integrations are unreliable.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     side: 'left',
     year: '2016',
     icon: (
@@ -268,7 +270,7 @@ export const whoThisIsForTimelineData = [
       'AI systems often fail not because the model is but because the surrounding integrations are unreliable.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     side: 'right',
     year: '2016',
     icon: (
@@ -293,7 +295,7 @@ export const whoThisIsForTimelineData = [
       'AI systems often fail not because the model is but because the surrounding integrations are unreliable.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     side: 'left',
     year: '2016',
     icon: (
@@ -318,7 +320,7 @@ export const whoThisIsForTimelineData = [
       'AI systems often fail not because the model is but because the surrounding integrations are unreliable.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     side: 'right',
     year: '2016',
     icon: (
@@ -343,7 +345,7 @@ export const whoThisIsForTimelineData = [
       'AI systems often fail not because the model is but because the surrounding integrations are unreliable.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     side: 'left',
     year: '2016',
     icon: (
@@ -368,7 +370,7 @@ export const whoThisIsForTimelineData = [
       'AI systems often fail not because the model is but because the surrounding integrations are unreliable.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     side: 'right',
     year: '2016',
     icon: (
@@ -440,7 +442,7 @@ export const scalingSolutionsHead = {
 
 export const scalingSolutions = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: (
       <svg
         xmlns='http://www.w3.org/2000/svg'
@@ -464,7 +466,7 @@ export const scalingSolutions = [
       'Identify and fix the bottlenecks that matter. Database query analysis, index optimization, caching strategy, CDN configuration, and frontend bundle optimization. Instrumented with before/after benchmarks.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: (
       <svg
         xmlns='http://www.w3.org/2000/svg'
@@ -487,7 +489,7 @@ export const scalingSolutions = [
       'Schema redesign, read replica setup, connection pooling, sharding strategy for high-throughput systems, and safe zero-downtime migration execution.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: (
       <svg
         xmlns='http://www.w3.org/2000/svg'
@@ -508,7 +510,7 @@ export const scalingSolutions = [
       'Move from a single server to horizontally scalable infrastructure. Container orchestration, auto-scaling groups, load balancing, and infrastructure-as-code so your environment is reproducible.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: (
       <svg
         xmlns='http://www.w3.org/2000/svg'
@@ -555,7 +557,7 @@ export const teamCardsTabs = [
 export const teamCardsData = {
   LLMs: [
     {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      id: createId(),
       image:
         'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960583/Gloitel/icon/openai_wwedph.png',
       imageAlt: 'OpenAI GPT-4o',
@@ -565,13 +567,13 @@ export const teamCardsData = {
         'Advanced multimodal AI model for building intelligent and production-ready applications.',
       icons: [
         {
-          id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+          id: createId(),
           type: 'linkedin',
         },
       ],
     },
     {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      id: createId(),
       image:
         'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960642/Gloitel/icon/claude_sszoov.png',
       imageAlt: 'Claude 3.5 Sonnet',
@@ -581,13 +583,13 @@ export const teamCardsData = {
         'Powerful language model designed for reasoning, coding, analysis, and enterprise AI workloads.',
       icons: [
         {
-          id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+          id: createId(),
           type: 'linkedin',
         },
       ],
     },
     {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      id: createId(),
       image:
         'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960682/Gloitel/icon/gemini_b4dcsa.png',
       imageAlt: 'Gemini 1.5 Pro',
@@ -597,7 +599,7 @@ export const teamCardsData = {
         'Multimodal AI model built for long-context reasoning and complex enterprise use cases.',
       icons: [
         {
-          id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+          id: createId(),
           type: 'linkedin',
         },
       ],
@@ -616,7 +618,7 @@ export const teamCardsData = {
         'Advanced multimodal AI model for building intelligent and production-ready applications.',
       icons: [
         {
-          id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+          id: createId(),
           type: 'linkedin',
         },
       ],
@@ -632,7 +634,7 @@ export const teamCardsData = {
         'Powerful language model designed for reasoning, coding, analysis, and enterprise AI workloads.',
       icons: [
         {
-          id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+          id: createId(),
           type: 'linkedin',
         },
       ],
@@ -648,7 +650,7 @@ export const teamCardsData = {
         'Multimodal AI model built for long-context reasoning and complex enterprise use cases.',
       icons: [
         {
-          id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+          id: createId(),
           type: 'linkedin',
         },
       ],
@@ -667,7 +669,7 @@ export const teamCardsData = {
         'Advanced multimodal AI model for building intelligent and production-ready applications.',
       icons: [
         {
-          id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+          id: createId(),
           type: 'linkedin',
         },
       ],
@@ -683,7 +685,7 @@ export const teamCardsData = {
         'Powerful language model designed for reasoning, coding, analysis, and enterprise AI workloads.',
       icons: [
         {
-          id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+          id: createId(),
           type: 'linkedin',
         },
       ],
@@ -699,7 +701,7 @@ export const teamCardsData = {
         'Multimodal AI model built for long-context reasoning and complex enterprise use cases.',
       icons: [
         {
-          id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+          id: createId(),
           type: 'linkedin',
         },
       ],
@@ -718,7 +720,7 @@ export const teamCardsData = {
         'Advanced multimodal AI model for building intelligent and production-ready applications.',
       icons: [
         {
-          id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+          id: createId(),
           type: 'linkedin',
         },
       ],
@@ -734,7 +736,7 @@ export const teamCardsData = {
         'Powerful language model designed for reasoning, coding, analysis, and enterprise AI workloads.',
       icons: [
         {
-          id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+          id: createId(),
           type: 'linkedin',
         },
       ],
@@ -750,7 +752,7 @@ export const teamCardsData = {
         'Multimodal AI model built for long-context reasoning and complex enterprise use cases.',
       icons: [
         {
-          id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+          id: createId(),
           type: 'linkedin',
         },
       ],

@@ -4,7 +4,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ReactNode } from 'react';
 import StrategyBadge from './StrategyBadge';
-import { CardIcon } from './atoms/card';
 
 export interface HeroCard {
   id: string;

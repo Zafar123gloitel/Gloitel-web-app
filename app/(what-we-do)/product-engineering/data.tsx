@@ -1,18 +1,16 @@
 import {
   AccessibilityAuditIcon,
   ArrowRightIcon,
-  BarChartIcon,
   BusinessImpactIcon,
   CTOFounderIcon,
   CheckTargetIcon,
   CloseIcon,
-  FileIcon,
   InfoIcon,
   LayersIcon,
   ScalableArchitectureIcon,
-  TargetIcon,
   UsersIcon,
 } from 'components/SvgIcon';
+const createId = () => globalThis.crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2);
 
 export const productEngineeringHeroData = {
   badgeText: 'Product Engineering',
@@ -41,22 +39,22 @@ export const productStruggleData = {
     'Many products fail not because of the idea, but because critical decisions are made without validation, scalability, or long-term maintainability in mind.',
   items: [
     {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      id: createId(),
       icon: <CloseIcon size={20} className='' />,
       description: 'Built before the core value proposition is validated',
     },
     {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      id: createId(),
       icon: <CloseIcon size={20} className='' />,
       description: 'Architecture built for speed, not scale',
     },
     {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      id: createId(),
       icon: <CloseIcon size={20} className='' />,
       description: 'Scope that expands without a corresponding plan for scale',
     },
     {
-      id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+      id: createId(),
       icon: <CloseIcon size={20} className='' />,
       description: 'Teams that ship fast but struggle to maintain and scale',
     },
@@ -77,7 +75,7 @@ export const productPracticeSectionHead = {
 
 export const productPracticeData = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     image:
       'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787040163/Gloitel/Parent%20pages/Discovery_Validation_gkixpq.png',
     imageAlt: 'Discovery and validation',
@@ -88,7 +86,7 @@ export const productPracticeData = [
     buttonLink: '/discovery-validation',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     image:
       'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787040162/Gloitel/Parent%20pages/MVP_Development_vjohrg.png',
     imageAlt: 'MVP development',
@@ -99,7 +97,7 @@ export const productPracticeData = [
     buttonLink: '/mvp-development',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     image:
       'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787040161/Gloitel/Parent%20pages/Platform_Scaling_qclafh.png',
     imageAlt: 'Platform scaling',
@@ -110,7 +108,7 @@ export const productPracticeData = [
     buttonLink: '/platform-scaling',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     image:
       'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787040160/Gloitel/Parent%20pages/Fractional_Engineering_Teams_phigqs.png',
     imageAlt: 'Fractional engineering teams',
@@ -131,27 +129,27 @@ export const productionGradeSectionHead = {
 
 export const productionGradeData = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <CheckTargetIcon size={39} className='' />,
     title: 'Catch regressions early with automated testing across critical workflows',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <BusinessImpactIcon size={39} className='' />,
     title: 'Monitor performance and issues with logging, metrics, and alerts',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <AccessibilityAuditIcon size={39} className='' />,
     title: 'Protect users and systems through secure development practices',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <CTOFounderIcon size={35} className='' />,
     title: 'Build clean, understandable code that teams can extend confidently',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     icon: <ScalableArchitectureIcon />,
     title: 'Design architectures that support growth without major rewrites',
   },
@@ -168,32 +166,32 @@ export const productTechStackData = {
   technologies: {
     Frontend: [
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'React',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960596/Gloitel/icon/react-native_urnuf4.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Next.js',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762860000/Gloitel/icon/next_urdukq.webp',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'React Native',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762860000/Gloitel/icon/react_cfs5vz.webp',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Flutter',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960672/Gloitel/icon/flutter_lplnyz.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Vue.js',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787039287/Gloitel/icon/Vue_geiip7.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'TypeScript',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960523/Gloitel/icon/typescript_qce4ug.png',
       },
@@ -201,32 +199,32 @@ export const productTechStackData = {
 
     Backend: [
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Node.js',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960581/Gloitel/icon/nodejs_tpmxcf.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Python',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960588/Gloitel/icon/python_afmdty.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Go',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787039286/Gloitel/icon/Go_nqicwd.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'NestJS',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787039285/Gloitel/icon/NestJS_xaqzkv.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'FastAPI',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960667/Gloitel/icon/fastApi_bwbwom.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Django',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787039284/Gloitel/icon/Django_ezsw8r.png',
       },
@@ -234,27 +232,27 @@ export const productTechStackData = {
 
     Databases: [
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'PostgreSQL',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960587/Gloitel/icon/PostgreSQL_fmo3yl.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'MongoDB',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787039284/Gloitel/icon/MongoDB_y5bh5v.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Redis',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960597/Gloitel/icon/Redis_ppexpj.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Firebase',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960671/Gloitel/icon/firebase_cf9k34.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'DynamoDB',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787039283/Gloitel/icon/DynamoDB_q5kcjb.png',
       },
@@ -262,27 +260,27 @@ export const productTechStackData = {
 
     Cloud: [
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'AWS',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960623/Gloitel/icon/AWS_xpwkkz.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Google Cloud',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960680/Gloitel/icon/GCP_knskhn.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Azure',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960628/Gloitel/icon/azure_lfqjy0.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Vercel',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960611/Gloitel/icon/vercel_ecvrkl.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Supabase',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960605/Gloitel/icon/supabase-auth_wags6y.png',
       },
@@ -290,27 +288,27 @@ export const productTechStackData = {
 
     DevOps: [
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Docker',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960661/Gloitel/icon/Docker_aliwyn.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Kubernetes',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960569/Gloitel/icon/Kubernetes_fuqbbd.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'GitHub Actions',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787039282/Gloitel/icon/GitHub_Actions_k5gpzk.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Terraform',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960607/Gloitel/icon/Terraform_aiqade.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'CI/CD pipelines',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787039281/Gloitel/icon/pipelines_breci6.png',
       },
@@ -318,27 +316,27 @@ export const productTechStackData = {
 
     Testing: [
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Jest',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787039281/Gloitel/icon/Jest_pnlmv9.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Cypress',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787039281/Gloitel/icon/Cypress_ofw9sp.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Playwright',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787039281/Gloitel/icon/Pytest_zp00vb.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Pytest',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787039281/Gloitel/icon/Pytest_zp00vb.png',
       },
       {
-        id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+        id: createId(),
         name: 'Vitest',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787039280/Gloitel/icon/Vitest_j3tuc8.png',
       },
@@ -355,28 +353,28 @@ export const productAudienceSectionHead = {
 
 export const productAudienceData = [
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     step: 1,
     icon: <UsersIcon size={36} className='' />,
     title: 'First Product',
     description: 'Validate product ideas early before investing heavily in development.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     step: 2,
     icon: <LayersIcon size={36} className='' />,
     title: 'Growth Stage',
     description: 'Strengthen systems and infrastructure as product adoption increases.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     step: 3,
     icon: <CheckTargetIcon size={36} className='' />,
     title: 'Enterprise Teams',
     description: 'Launch new digital initiatives alongside internal teams.',
   },
   {
-    id: crypto.randomUUID?.() ?? Math.random().toString(36).slice(2),
+    id: createId(),
     step: 4,
     icon: <CTOFounderIcon />,
     title: 'CTOs & Founders',

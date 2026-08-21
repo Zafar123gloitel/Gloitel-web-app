@@ -544,7 +544,7 @@ export function RightArrowIcon({ size = 22, className = '' }: IconProps) {
     </svg>
   );
 }
-export function ChatbotIcon({ size = 26, className = '' }: IconProps) {
+export function ChatbotIcon({ size: _size = 26, className: _className = '' }: IconProps) {
   return (
     <svg xmlns='http://www.w3.org/2000/svg' width='25' height='25' viewBox='0 0 45 45' fill='none'>
       <path
@@ -554,7 +554,7 @@ export function ChatbotIcon({ size = 26, className = '' }: IconProps) {
     </svg>
   );
 }
-export function DatabaseIcon({ size = 26, className = '' }: IconProps) {
+export function DatabaseIcon({ size: _size = 26, className: _className = '' }: IconProps) {
   return (
     <svg xmlns='http://www.w3.org/2000/svg' width='25' height='25' viewBox='0 0 51 51' fill='none'>
       <path
@@ -934,12 +934,12 @@ export function PredictiveForecastingIcon({ size = 26, className = '' }: IconPro
     </svg>
   );
 }
-export function AnomalyDetectionIcon({ size = 26, className = '' }: IconProps) {
+export function AnomalyDetectionIcon({ size: _size = 26, className: _className = '' }: IconProps) {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
-      width={size}
-      height={size}
+      width={_size}
+      height={_size}
       viewBox='0 0 46 46'
       fill='none'
     >
