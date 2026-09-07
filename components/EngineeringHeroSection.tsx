@@ -81,12 +81,13 @@ const EngineeringHeroSection = ({
       </div>
 
       {/* Hero Image */}
-      <div className='relative mx-auto mt-12 mb-16 h-[400px] w-[80%] overflow-hidden rounded-2xl bg-white'>
+      <div className='relative mx-auto mt-12 mb-16 w-[80%] overflow-hidden rounded-2xl bg-white'>
         <Image
           src={image}
           alt={imageAlt}
-          fill
-          className='rounded-2xl object-cover'
+          width={1200}
+          height={675}
+          className='h-auto w-full rounded-2xl object-contain'
           unoptimized
           loading='lazy'
         />

@@ -1,4 +1,3 @@
-import React from 'react';
 import StrategyBadge from '@/components/StrategyBadge';
 import { GlowButton } from '@/components';
 

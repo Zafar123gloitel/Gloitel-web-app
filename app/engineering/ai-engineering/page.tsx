@@ -1,6 +1,5 @@
 'use client';
 
-import React from 'react';
 import EngineeringHeroSection from '@/components/EngineeringHeroSection';
 import {
   aiEcosystemData,

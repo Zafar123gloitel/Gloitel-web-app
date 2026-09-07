@@ -1,85 +1,189 @@
-import {
-  HeroArrowRightIcon,
-  LinkIcon,
-  ResilientProcessingIcon,
-  VisibilityControlIcon,
-} from 'components/SvgIcon';
+import { HeroArrowRightIcon, NextIcon, ReactIcon, VisibilityControlIcon } from 'components/SvgIcon';
 const createId = () => globalThis.crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2);
 export const frontendEngineeringHeroData = {
   badgeText: 'Frontend Engineering',
-  title: 'AI Engineering That Ships and Stays Shipped', // ⚠️ mismatch - AI Engineering ka title hai
+  title: 'Frontend That Performs, Looks Great, and Holds Up Under Development', // ⚠️ mismatch - AI Engineering ka title hai
   description:
-    "Building an AI proof-of-concept takes days. Building one that handles production traffic reliably, costs predictably, and can be debugged when something goes wrong - that's engineering. We've done that latter.", // ⚠️ mismatch
-  image: '/images/Engineering/frontend-engineering-hero.png',
+    "Good frontend engineering is not just about making things look right. It's about page speed that Google measures and users feel, accessibility that doesn't require a retrofit, type safety that prevents runtime errors, and component architectures that don't become spaghetti at 10,000 lines of code.", // ⚠️ mismatch
+  image:
+    'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788757672/Gloitel/Product%20Engineering/Frontend_Engineering_rlpdrj.png',
   imageAlt: 'Frontend engineering',
   video: 'https://res.cloudinary.com/dsqu6pi0d/video/upload/v1762846419/Gloitel/bg_cij8h5.mp4',
   primaryButton: {
-    text: 'Talk to Our AI Engineers', // ⚠️ mismatch
+    text: 'Talk to Our Frontend Team', // ⚠️ mismatch
     href: '/contact',
   },
   secondaryButton: {
-    text: 'View AI Work', // ⚠️ mismatch
+    text: 'See Frontend Work', // ⚠️ mismatch
     href: '/about',
     icon: <HeroArrowRightIcon />,
   },
 };
 export const frontendTechStackData = {
-  badge: 'Production AI Engineering Stack', // ⚠️ mismatch
-  title: 'Built on a Modern AI Ecosystem', // ⚠️ mismatch
+  badge: 'Technologies We Build With',
+  title: 'Modern Tools for Meaningful Products',
   description:
-    'From foundation models to observability tools, every layer is chosen for performance, flexibility, and long-term maintainability.', // ⚠️ mismatch
-  tabs: [
-    'LLMs',
-    'RAG/Orchestration',
-    'Vector DBs',
-    'ML',
-    'MLOps',
-    'Serving',
-    'Observability',
-    'Cloud AI',
-  ],
+    'FA modern frontend technology stack featuring trusted frameworks, languages, styling tools, state management, testing, component systems, and build tools used to create scalable, high-performance digital products.',
+  tabs: ['Frameworks', 'Language', 'Styling', 'State', 'Testing', 'Component Systems', 'Build'],
   technologies: {
-    LLMs: [
+    Frameworks: [
       {
         id: createId(),
-        name: 'OpenAI GPT-4o',
-        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960583/Gloitel/icon/openai_wwedph.png',
+        name: 'React',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762860000/Gloitel/icon/react_cfs5vz.webp',
       },
       {
         id: createId(),
-        name: 'Claude 3.5 Sonnet',
-        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960642/Gloitel/icon/claude_sszoov.png',
+        name: 'Next.js (App Router)',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762860000/Gloitel/icon/next_urdukq.webp',
       },
       {
         id: createId(),
-        name: 'Gemini 1.5 Pro',
-        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960682/Gloitel/icon/gemini_b4dcsa.png',
+        name: 'Vue 3',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787039287/Gloitel/icon/Vue_geiip7.png',
       },
       {
         id: createId(),
-        name: 'LLaMA 3',
-        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960576/Gloitel/icon/meta_brzl7j.png',
+        name: 'Nuxt',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788773525/Gloitel/icon/Nuxt_ggun9s.png',
       },
       {
         id: createId(),
-        name: 'Mistral',
-        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960577/Gloitel/icon/mistral_bmr5b7.png',
+        name: 'Remix',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788773559/Gloitel/icon/Radix_UI_r3bzwr.png',
+      },
+      {
+        id: createId(),
+        name: 'Astro',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788775231/Gloitel/icon/images_qyqemw.jpg',
       },
     ],
-    'RAG/Orchestration': [],
-    'Vector DBs': [],
-    ML: [],
-    MLOps: [],
-    Serving: [],
-    Observability: [],
-    'Cloud AI': [],
+    Language: [
+      {
+        id: createId(),
+        name: 'TypeScript',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788773776/Gloitel/icon/TypeScript_dbrcbm.png',
+      },
+    ],
+    Styling: [
+      {
+        id: createId(),
+        name: 'Tailwind CSS',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788773903/Gloitel/icon/Tailwind_CSS_kljal3.png',
+      },
+      {
+        id: createId(),
+        name: 'CSS Modules',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788774036/Gloitel/icon/CSS_Modules_py4jlj.png',
+      },
+
+      {
+        id: createId(),
+        name: 'Styled Components',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788774199/Gloitel/icon/Styled_Components_ijaipf.png',
+      },
+      {
+        id: createId(),
+        name: 'Vanilla Extract',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788774674/Gloitel/icon/Vanilla_Extract_sco4eo.png',
+      },
+    ],
+    State: [
+      {
+        id: createId(),
+        name: 'Zustand',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788775567/Gloitel/icon/images_btb1ve.jpg',
+      },
+      {
+        id: createId(),
+        name: 'Redux Toolkit',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788775616/Gloitel/icon/redux-logo-11609374482s00xntsq98_h8wbgp.png',
+      },
+      {
+        id: createId(),
+        name: 'Jotai',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788775718/Gloitel/icon/jotai-1669122435-logotic-brand_nyc48i.svg',
+      },
+      {
+        id: createId(),
+        name: 'TanStack Query',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788776396/Gloitel/icon/celtic-trinity-knot-triangular-symmetric-irish-sign-symbol-of-eternal-life-illustration-on-black-background-vector_slnwho.jpg',
+      },
+    ],
+    Testing: [
+      {
+        id: createId(),
+        name: 'Vitest',
+        logo: '',
+      },
+      {
+        id: createId(),
+        name: 'Jest',
+        logo: '',
+      },
+      {
+        id: createId(),
+        name: 'React Testing Library',
+        logo: '',
+      },
+      {
+        id: createId(),
+        name: 'Cypress',
+        logo: '',
+      },
+      {
+        id: createId(),
+        name: 'Playwright',
+        logo: '',
+      },
+    ],
+    'Component Systems': [
+      {
+        id: createId(),
+        name: 'Radix UI',
+        logo: '',
+      },
+      {
+        id: createId(),
+        name: 'shadcn/ui',
+        logo: '',
+      },
+
+      {
+        id: createId(),
+        name: 'Headless UI',
+        logo: '',
+      },
+      {
+        id: createId(),
+        name: 'Storybook',
+        logo: '',
+      },
+    ],
+    Build: [
+      {
+        id: createId(),
+        name: 'Vite',
+        logo: '',
+      },
+      {
+        id: createId(),
+        name: 'Turbopack',
+        logo: '',
+      },
+      {
+        id: createId(),
+        name: 'esbuild',
+        logo: '',
+      },
+    ],
   },
 };
 export const frontendDeliverablesSectionHead = {
-  badgeText: 'Design System Deliverables', // ⚠️ mismatch
-  title: 'More Than Components, A Complete System', // ⚠️ mismatch
+  badgeText: 'Engineering Standards', // ⚠️ mismatch
+  title: 'Frontend Engineering Standards We Work To', // ⚠️ mismatch
   description:
-    'We provide the tools, documentation, and frameworks required to keep your design system effective over time.',
+    "Good frontend quality shouldn't depend on a final audit. We define the standards before development begins and enforce them throughout implementation.",
 };
 
 export const frontendDeliverablesData = [
@@ -115,39 +219,39 @@ export const frontendDeliverablesData = [
   },
 ];
 export const frontendEngineeringDeepDiveData = {
-  badgeText: 'What AI Integration Actually Involves', // ⚠️ mismatch
-  heading: 'The Engineering behind Production AI Systems.', // ⚠️ mismatch
+  badgeText: 'Specializations', // ⚠️ mismatch
+  heading: 'The Engineering Behind Production Frontends', // ⚠️ mismatch
   description:
-    'Successful AI integration requires more than connecting a model to an application. We build the infrastructure, recovery mechanisms, and monitoring layers that keep AI systems stable, observable, and production-ready.', // ⚠️ mismatch
+    'Modern frontend engineering extends beyond individual screens and components. We specialize in the architecture, rendering strategies, cross-platform systems, and performance work required to keep products maintainable as they grow.', // ⚠️ mismatch
   cards: [
     {
       id: createId(),
-      icon: <LinkIcon size={28} />,
-      title: 'Integration Stability',
+      icon: <ReactIcon size={28} />,
+      title: 'React Native & Cross-Platform',
       description:
-        'AI systems often fail not because the model is ineffective, but because the surrounding integrations are unreliable. We build stable connections between AI services, applications, and enterprise systems with proper error handling, fallback mechanisms, and operational safeguards.',
+        'Web engineers who also build mobile, ensuring consistent component logic and shared business logic across platforms.',
     },
     {
       id: createId(),
-      icon: <ResilientProcessingIcon />,
-      title: 'Resilient Processing',
+      icon: <NextIcon />,
+      title: 'Next.js & Server Components',
       description:
-        'Production AI requires systems that can recover gracefully from failures. We implement retry logic, queue-based processing, and recovery workflows that ensure temporary disruptions do not impact business operations or user experience.',
+        'Full understanding of SSR, SSG, ISR, and the App Router mental model. We use Server Components where they belong and Client Components where they must.',
     },
     {
       id: createId(),
       icon: <VisibilityControlIcon />,
-      title: 'Visibility & Control',
+      title: 'Performance Engineering',
       description:
-        'Without observability, AI systems can degrade silently over time. We provide monitoring, performance tracking, usage analytics, and alerting capabilities that help teams detect issues early and maintain consistent production performance.',
+        'Core Web Vitals optimization, image optimization, lazy loading strategies, critical CSS, and bundle splitting for performance-critical products.',
     },
   ],
 };
 export const frontendEngineeringCTAData = {
   badgeText: 'Ready to Build?',
-  title: "Let's Build Your Next Healthcare Solution!", // ⚠️ mismatch — copy-paste bug repeats yahan bhi
+  title: 'Build a Frontend Your Users—and Engineers—Will Love', // ⚠️ mismatch — copy-paste bug repeats yahan bhi
   description:
-    "Whether you're launching a digital health platform, integrating with EHR systems, or building AI-powered healthcare tools, we can help you move from concept to compliant production-ready software.",
-  buttonText: 'Build Your Healthcare Solution', // ⚠️ mismatch
+    "Whether you're launching a new product, modernizing an existing frontend, or improving performance and accessibility, we'll build a frontend that's fast for users and maintainable for your engineering team.",
+  buttonText: 'Build Your Frontend with Us', // ⚠️ mismatch
   buttonLink: '/contact',
 };

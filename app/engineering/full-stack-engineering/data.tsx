@@ -1,126 +1,156 @@
 import {
-  AvoidedBuildsIcon,
   BusinessImpactClarityIcon,
   BusinessRoadmapIcon,
-  ConnectedSystemsIcon,
-  EngineeringHIPAAIcon,
-  EngineeringIEC62304Icon,
-  FullStackGDPRIcon,
-  FullStackSOC2TypeIIIcon,
   HeroArrowRightIcon,
+  PostgreSQLIcon,
+  PrismaIcon,
   PilotScopeIcon,
   PrioritizedUseCasesIcon,
-  WCAGComplianceIcon,
+  TailwindCSSIcon,
+  VercelAWSIcon,
+  AvoidedBuildsIcon,
+  ReactIcon,
+  CodeIcon,
 } from 'components/SvgIcon';
-const createId = () => globalThis.crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2);
 import { ArchitectureItem } from 'uiComponents/ArchitectureCircle';
+const createId = () => globalThis.crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2);
 
 export const fullStackHeroData = {
   badgeText: 'Full Stack Engineering',
-  title: 'AI Engineering That Ships and Stays Shipped', // ⚠️ mismatch
+  title: 'Teams That Own the Full Feature, Not Just a Layer', // ⚠️ mismatch
   description:
-    "Building an AI proof-of-concept takes days. Building one that handles production traffic reliably, costs predictably, and can be debugged when something goes wrong - that's engineering. We've done that latter.", // ⚠️ mismatch
-  image: '/images/Engineering/full-stack-hero.png',
+    'Full-stack engineering teams reduce the coordination overhead of separate frontend and backend teams. When one engineer or a small pod can take a feature from database to UI, things ship faster and stay integrated.', // ⚠️ mismatch
+  image:
+    'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788757671/Gloitel/Product%20Engineering/Full_Stack_Engineering_lhx3r2.png',
   imageAlt: 'Full stack engineering',
   video: 'https://res.cloudinary.com/dsqu6pi0d/video/upload/v1762846419/Gloitel/bg_cij8h5.mp4',
   primaryButton: {
-    text: 'Talk to Our AI Engineers', // ⚠️ mismatch
+    text: 'Build Your Full Stack Team', // ⚠️ mismatch
     href: '/contact',
   },
   secondaryButton: {
-    text: 'View AI Work', // ⚠️ mismatch
+    text: 'View Our Work', // ⚠️ mismatch
     href: '/about',
     icon: <HeroArrowRightIcon />,
   },
 };
 export const fullStackComplianceSectionHead = {
-  badgeText: 'Compliance & Standards We Work To', // ⚠️ mismatch
-  title: 'Built on Healthcare Standards from Day One', // ⚠️ mismatch
+  badgeText: 'Our Full Stack Approach', // ⚠️ mismatch
+  title: 'One Stack. End-to-End Ownership', // ⚠️ mismatch
   description:
-    'Every solution is designed with security, privacy, accessibility, and regulatory compliance at its core - ensuring healthcare systems remain reliable, trusted, and audit-ready.', // ⚠️ mismatch
+    'We use modern, TypeScript-first architectures that reduce context switching, share types across layers, and keep frontend and backend development closely integrated.', // ⚠️ mismatch
 };
 
 export const fullStackComplianceData: ArchitectureItem[] = [
   {
     id: createId(),
     position: 'top',
-    icon: <EngineeringHIPAAIcon />,
-    title: 'HIPAA', // ⚠️ mismatch
-    description:
-      'Privacy, Security Rule, and Breach Notification compliance for healthcare data protection.',
+    icon: <ReactIcon size={35} />,
+    title: 'Next.js + TypeScript',
+    description: 'Type-safe frontend and server-side application development.',
   },
   {
     id: createId(),
     position: 'leftTop',
-    icon: <FullStackGDPRIcon />,
-    title: 'GDPR',
-    description:
-      'Data privacy compliance for healthcare organizations serving patients across the European Union.',
+    icon: <PostgreSQLIcon />,
+    title: 'PostgreSQL',
+    description: 'Reliable relational data models built for production workloads.',
   },
   {
     id: createId(),
     position: 'rightTop',
-    icon: <ConnectedSystemsIcon />,
-    title: 'HL7 FHIR',
-    description:
-      'R4 and R5 API integrations enabling secure and standardized healthcare data exchange.',
+    icon: <CodeIcon />,
+    title: 'Shared Types & Validation',
+    description: 'Database-to-UI type safety and shared validation reduce integration bugs.',
   },
   {
     id: createId(),
     position: 'leftBottom',
-    icon: <WCAGComplianceIcon />,
-    title: 'WCAG 2.1 AA',
-    description:
-      'Accessibility standards that ensure patient-facing experiences are inclusive and usable.',
+    icon: <PrismaIcon />,
+    title: 'Prisma',
+    description: 'Type-safe database access with schemas shared across the application.',
   },
   {
     id: createId(),
     position: 'rightBottom',
-    icon: <EngineeringIEC62304Icon />,
-    title: 'IEC 62304',
-    description:
-      'Medical device software lifecycle processes for safe and compliant product development.',
+    icon: <VercelAWSIcon />,
+    title: 'Vercel / AWS',
+    description: 'Production deployment and cloud infrastructure that scales with the product.',
   },
   {
     id: createId(),
     position: 'bottom',
-    icon: <FullStackSOC2TypeIIIcon />,
-    title: 'SOC 2 Type II',
-    description:
-      'Security, availability, and confidentiality controls for enterprise-grade healthcare platforms.',
+    icon: <TailwindCSSIcon />,
+    title: 'Tailwind CSS',
+    description: 'Consistent, maintainable UI development without unnecessary styling overhead.',
   },
 ];
 export const fullStackRoadmapSectionHead = {
-  badgeText: 'What You Walk Away With', // ⚠️ mismatch
-  title: 'A Clear AI Roadmap backed by Business Value', // ⚠️ mismatch
+  badgeText: 'What We Build', // ⚠️ mismatch
+  title: 'Complete Products, Not Disconnected Layers', // ⚠️ mismatch
   description:
-    'Leave with a prioritized plan, validated opportunities, and a practical roadmap designed to deliver measurable business outcomes.', // ⚠️ mismatch
+    'Our full-stack teams own features across data, backend services, interfaces, integrations, and deployment—reducing handoffs and keeping implementation decisions connected.', // ⚠️ mismatch
 };
 
 export const fullStackRoadmapData = [
   {
     id: createId(),
     icon: <BusinessImpactClarityIcon />,
-    title: 'Clarity on where AI will create measurable business impact',
+    title: 'SaaS Products : End-to-end SaaS products from database to customer interface.',
   },
   {
     id: createId(),
     icon: <PrioritizedUseCasesIcon />,
-    title: 'A prioritised use case stack ranked by value and feasibility',
+    title: 'Internal Tools : Admin dashboards and operational tools built around real workflows.',
   },
   {
     id: createId(),
     icon: <PilotScopeIcon />,
-    title: 'Defined pilot scope with expected outcomes and success metrics',
+    title:
+      'API-First Platforms : Backend platforms paired with responsive consumer-facing applications.',
   },
   {
     id: createId(),
     icon: <BusinessRoadmapIcon />,
-    title: 'A structured roadmap aligned to business priorities',
+    title:
+      'B2B Enterprise Products : Business applications with complex workflows and data models.',
   },
   {
     id: createId(),
     icon: <AvoidedBuildsIcon />,
-    title: 'A clear view of what *not* to build — equally valuable',
+    title: 'Consumer Applications : Integrated products spanning web and mobile experiences.',
   },
 ];
+
+export const WenToSpecializeData = {
+  badgeText: 'When to Specialize',
+  heading: "Full Stack Isn't Always the Right Answer",
+  description:
+    'Full-stack teams trade some depth for breadth. When a product requires deep specialization, dedicated frontend or backend engineers can be the better engineering decision.',
+  items: [
+    {
+      id: createId(),
+      title: 'Performance-Critical Frontends',
+      description:
+        'Highly optimized interfaces may require dedicated frontend performance expertise.',
+    },
+    {
+      id: createId(),
+      title: 'Complex Real-Time Systems',
+      description:
+        'High-throughput or low-latency architectures often benefit from specialized backend engineers.',
+    },
+    {
+      id: createId(),
+      title: 'Security-Critical Backends',
+      description:
+        'Sensitive systems can require deeper security and infrastructure specialization.',
+    },
+    {
+      id: createId(),
+      title: 'Deep Platform Requirements',
+      description:
+        'Products with highly specialized native, infrastructure, or domain requirements may need dedicated experts.',
+    },
+  ],
+};

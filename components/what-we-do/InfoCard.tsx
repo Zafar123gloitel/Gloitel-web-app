@@ -1,12 +1,14 @@
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
+import { CardTitle } from '../atoms/card';
 
 interface InfoCardProps {
-  icon: ReactNode;
+  icon?: ReactNode;
+  title?: string;
   description: string;
   className?: string;
 }
 
-const InfoCard = ({ icon, description, className = '' }: InfoCardProps) => {
+const InfoCard = ({ icon, title, description, className = '' }: InfoCardProps) => {
   return (
     <article
       className={[
@@ -34,30 +36,35 @@ const InfoCard = ({ icon, description, className = '' }: InfoCardProps) => {
         className,
       ].join(' ')}
     >
-      <div className='bg-surface-card relative z-10 min-h-[86px] items-center gap-5 rounded-2xl px-8 py-5'>
+      <div className='bg-surface-card relative z-10 flex min-h-[86px] flex-col gap-5 rounded-2xl px-8 py-5'>
         {/* Icon */}
-        <div
-          className={[
-            'relative',
-            'before:pointer-events-none before:absolute before:top-0 before:left-1/2 before:h-px before:w-[20%] before:-translate-x-1/2',
-            'before:bg-gradient-to-r before:from-transparent before:via-blue-500 before:to-transparent',
-            'after:pointer-events-none after:absolute after:inset-0 after:rounded-[28px]',
-            'after:bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.16),transparent_32%),radial-gradient(circle_at_top_right,rgba(96,165,250,0.08),transparent_26%)]',
-            'after:opacity-80',
+        {icon && (
+          <div
+            className={[
+              'relative',
+              'before:pointer-events-none before:absolute before:top-0 before:left-1/2 before:h-px before:w-[20%] before:-translate-x-1/2',
+              'before:bg-gradient-to-r before:from-transparent before:via-blue-500 before:to-transparent',
+              'after:pointer-events-none after:absolute after:inset-0 after:rounded-[28px]',
+              'after:bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.16),transparent_32%),radial-gradient(circle_at_top_right,rgba(96,165,250,0.08),transparent_26%)]',
+              'after:opacity-80',
 
-            'inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 text-[35px]',
-            'text-title shadow-[0_12px_28px_rgba(15,23,42,0.24)]',
-            'transition-all duration-300 ease-out',
-            'group-hover:bg-red-600',
-            'group-hover:before:via-red-500',
-            'group-hover:scale-[1.04]',
-          ].join(' ')}
-        >
-          {icon}
-        </div>
+              'inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 text-[35px]',
+              'text-title shadow-[0_12px_28px_rgba(15,23,42,0.24)]',
+              'transition-all duration-300 ease-out',
+              'group-hover:bg-red-600',
+              'group-hover:before:via-red-500',
+              'group-hover:scale-[1.04]',
+            ].join(' ')}
+          >
+            {icon}
+          </div>
+        )}
+
+        {/* Title */}
+        {title && <CardTitle className='text-title text-[24px] leading-8'>{title}</CardTitle>}
 
         {/* Description */}
-        <p className='text-description mt-5 text-[18px] leading-[33px]'>{description}</p>
+        <p className='text-description text-[18px] leading-[33px]'>{description}</p>
       </div>
     </article>
   );

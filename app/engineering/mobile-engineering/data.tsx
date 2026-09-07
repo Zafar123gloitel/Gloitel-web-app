@@ -1,33 +1,29 @@
 import {
-  AvoidedBuildsIcon,
-  BusinessImpactClarityIcon,
-  BusinessRoadmapIcon,
+  AndroidIcon,
+  AppleIcon,
+  FlutterIcon,
   HeroArrowRightIcon,
-  IntegrationAutomationIcon,
-  MobileAIProcessAutomationIcon,
-  MobileDiscoveryIcon,
-  MobileDocumentProcessingIcon,
-  PilotScopeIcon,
-  PrioritizedUseCasesIcon,
-  StructuredDataWorkflowsIcon,
+  MobileIcon,
+  ReactIcon,
 } from 'components/SvgIcon';
 import { ArchitectureCard } from 'uiComponents/EngineeringArchitecture';
 const createId = () => globalThis.crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2);
 
 export const mobileEngineeringHeroData = {
   badgeText: 'Mobile Engineering',
-  title: 'AI Engineering That Ships and Stays Shipped', // ⚠️ mismatch
+  title: 'Mobile Apps That Work on Real Devices, Not Just the Demo Phone',
   description:
-    "Building an AI proof-of-concept takes days. Building one that handles production traffic reliably, costs predictably, and can be debugged when something goes wrong - that's engineering. We've done that latter.", // ⚠️ mismatch
-  image: '/images/Engineering/mobile-engineering-hero.png',
+    'Mobile engineering is harder than it looks in screenshots. Real users have older devices, poor network conditions, background notifications, and battery optimization that can break your carefully designed experience. We build for users, not just the simulator.',
+  image:
+    'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788757672/Gloitel/Product%20Engineering/Mobile_Engineering_pot5xi.png',
   imageAlt: 'Mobile engineering',
   video: 'https://res.cloudinary.com/dsqu6pi0d/video/upload/v1762846419/Gloitel/bg_cij8h5.mp4',
   primaryButton: {
-    text: 'Talk to Our AI Engineers', // ⚠️ mismatch
+    text: 'Talk to our Mobile Team',
     href: '/contact',
   },
   secondaryButton: {
-    text: 'View AI Work', // ⚠️ mismatch
+    text: 'See Mobile Portfolio',
     href: '/about',
     icon: <HeroArrowRightIcon />,
   },
@@ -37,144 +33,144 @@ export const architectureData: ArchitectureCard[] = [
   {
     id: createId(),
     position: 'leftTop',
-    icon: <MobileDiscoveryIcon />,
-    title: 'User Interviews',
+    icon: <ReactIcon size={35} />,
+    title: 'React Native',
     description:
-      '1:1 conversations with real users. We recruit, moderate, and synthesize insights from 8–12 interviews to surface meaningful patterns.',
+      'Cross-platform development with a shared codebase, native modules where performance demands it, and Expo for simpler apps and faster iteration.',
   },
 
   {
     id: createId(),
     position: 'leftBottom',
-    icon: <MobileDiscoveryIcon />,
-    title: 'Stakeholder Workshops',
+    icon: <FlutterIcon size={35} />,
+    title: 'Flutter',
     description:
-      'Collaborative workshops to align business goals, user needs, and technical feasibility before development begins.',
+      'Dart-based cross-platform development with excellent animation performance and consistent UI across platforms. A strong choice for highly visual products.',
   },
 
   {
     id: createId(),
     position: 'rightTop',
-    icon: <MobileDiscoveryIcon />,
-    title: 'Journey Mapping',
+    icon: <AppleIcon size={35} />,
+    title: 'iOS Native',
     description:
-      'Visualize end-to-end user experiences to uncover pain points, opportunities, and high-impact improvements.',
+      "Swift-first applications built for Apple's ecosystem. Full access to native APIs, Core ML, hardware capabilities, background modes, and widgets.",
   },
 
   {
     id: createId(),
     position: 'rightBottom',
-    icon: <MobileDiscoveryIcon />,
-    title: 'Prototype Validation',
+    icon: <AndroidIcon size={35} />,
+    title: 'Native Android',
     description:
-      'Test interactive prototypes with users, validate assumptions, and refine experiences before implementation.',
+      'Kotlin-first apps with Jetpack Compose and modern Android capabilities. Built for device fragmentation, background processing, and Play Store requirements.',
   },
 ];
 export const mobileAgentsSectionHead = {
-  badgeText: 'What We Build', // ⚠️ mismatch
-  title: 'AI Agents Designed for Real Business Workflows', // ⚠️ mismatch
+  badgeText: 'Mobile Platforms',
+  title: 'Native When It Matters. Cross-Platform When It Makes Sense.',
   description:
-    'We design and deploy AI agents that automate workflows, coordinate tools, make decisions, and execute complex tasks across business operations.', // ⚠️ mismatch
+    'We choose the mobile architecture around your product requirements—not around a preferred framework.',
   image: '/images/Engineering/mobile-phone-mockup.png',
   imageAlt: 'Mobile app on phone',
 };
 
 export const mobileProcessSectionHead = {
-  badgeText: 'Process Categories We Automate', // ⚠️ mismatch
-  title: 'The Right Automation for Every Process', // ⚠️ mismatch
+  badgeText: 'Mobile Engineering Practices',
+  title: 'Built for Everything That Happens After Install',
   description:
-    'We assess how work moves through your organization and design automation strategies that improve efficiency, reduce errors, and adapt to operational complexity.', // ⚠️ mismatch
+    'A production mobile app has to survive unreliable networks, background restrictions, device limitations, and continuous updates—not just look good on a simulator.',
 };
 
 export const mobileProcessData = [
   {
     id: createId(),
-    icon: <StructuredDataWorkflowsIcon />,
-    title: 'Structured Data Workflows',
+    icon: <MobileIcon />,
+    title: 'Offline-First Architecture',
     description:
-      'Repeatable, rule-based processes with structured inputs. Data entry automation, report generation, data validation, system synchronization, and scheduled jobs.',
+      'Apps continue working without connectivity and synchronize data reliably when the network recovers.',
   },
   {
     id: createId(),
-    icon: <MobileDocumentProcessingIcon />,
-    title: 'Document Processing',
+    icon: <MobileIcon />,
+    title: 'Push Notification Engineering',
     description:
-      'Extract structured data from documents, classify them, route them, and trigger downstream actions. Handles PDFs, emails, scanned documents, and forms.',
+      'FCM and APNs integration with proper background handling, deep linking, notification grouping, and delivery behavior.',
   },
   {
     id: createId(),
-    icon: <IntegrationAutomationIcon />,
-    title: 'Integration Automation',
+    icon: <MobileIcon />,
+    title: 'App Performance Profiling',
     description:
-      "Connect systems that don't talk to each other. Event-driven integrations that keep data in sync across CRM, ERP, HRIS, and custom applications without manual export/import.",
+      'Frame-rate monitoring, memory-leak detection, startup-time optimization, and device-level performance profiling.',
   },
   {
     id: createId(),
-    icon: <MobileAIProcessAutomationIcon />,
-    title: 'AI-Powered Process Automation',
+    icon: <MobileIcon />,
+    title: 'CI/CD for Mobile',
     description:
-      'For processes where the inputs are unstructured, the rules are complex, or exceptions are common. AI agents that understand context, handle edge cases, and escalate to humans appropriately.',
+      'Automated build, testing, signing, and distribution pipelines using Fastlane, EAS Build, and Bitrise.',
   },
   {
     id: createId(),
-    icon: <MobileAIProcessAutomationIcon />,
-    title: 'AI-Powered Process Automation', // ⚠️ duplicate of item 4
+    icon: <MobileIcon />,
+    title: 'App Store Optimization',
     description:
-      'For processes where the inputs are unstructured, the rules are complex, or exceptions are common. AI agents that understand context, handle edge cases, and escalate to humans appropriately.',
+      'Screenshot preparation, metadata release management, and deployment workflows for the Apple App Store and Google Play.',
   },
   {
     id: createId(),
-    icon: <MobileAIProcessAutomationIcon />,
-    title: 'AI-Powered Process Automation', // ⚠️ duplicate again
+    icon: <MobileIcon />,
+    title: 'Over-the-Air Updates',
     description:
-      'For processes where the inputs are unstructured, the rules are complex, or exceptions are common. AI agents that understand context, handle edge cases, and escalate to humans appropriately.',
+      'CodePush and EAS Update workflows for safely delivering eligible JavaScript updates without waiting for another store review.',
   },
 ];
 export const mobileRoadmapSectionHead = {
-  badgeText: 'What You Walk Away With', // ⚠️ mismatch
-  title: 'A Clear AI Roadmap backed by Business Value', // ⚠️ mismatch
+  badgeText: 'What You Walk Away With',
+  title: 'A Clear AI Roadmap backed by Business Value',
   description:
-    'Leave with a prioritized plan, validated opportunities, and a practical roadmap designed to deliver measurable business outcomes.', // ⚠️ mismatch
+    'Leave with a prioritized plan, validated opportunities, and a practical roadmap designed to deliver measurable business outcomes.',
 };
 
 export const mobileRoadmapData = [
   {
     id: createId(),
-    icon: <BusinessImpactClarityIcon />,
-    title: 'Clarity on where AI will create measurable business impact',
+    stape: 1,
+    title: 'Consumer Applications: Consumer apps scaled to 1M+ downloads.',
   },
   {
     id: createId(),
-    icon: <PrioritizedUseCasesIcon />,
-    title: 'A prioritised use case stack ranked by value and feasibility',
+    stape: 2,
+    title: 'Healthcare Applications: Secure mobile apps with HIPAA-compliant storage.',
   },
   {
     id: createId(),
-    icon: <PilotScopeIcon />,
-    title: 'Defined pilot scope with expected outcomes and success metrics',
+    stape: 3,
+    title: 'Fintech Applications: Fintech apps with biometrics and secure transactions.',
   },
   {
     id: createId(),
-    icon: <BusinessRoadmapIcon />,
-    title: 'A structured roadmap aligned to business priorities',
+    stape: 4,
+    title: 'EdTech Applications: Learning apps with offline video and playback.',
   },
   {
     id: createId(),
-    icon: <AvoidedBuildsIcon />,
-    title: 'A clear view of what *not* to build — equally valuable',
+    stape: 5,
+    title: 'IoT Companion Applications: IoT apps with BLE and Wi-Fi device pairing.',
   },
   {
     id: createId(),
-    icon: <AvoidedBuildsIcon />,
-    title: 'A clear view of what *not* to build — equally valuable', // ⚠️ duplicate of item 5
+    stape: 6,
+    title: 'On-Demand Applications: Service apps with real-time location tracking.',
   },
 ];
 
 export const mobileEngineeringCTAData = {
   badgeText: 'Ready to Build?',
-  title: "Let's Build Your Next Healthcare Solution!", // ⚠️ mismatch — same copy-paste bug as before
+  title: 'Build a Mobile App That Works Beyond the Demo',
   description:
-    "Whether you're launching a digital health platform, integrating with EHR systems, or building AI-powered healthcare tools, we can help you move from concept to compliant production-ready software.",
-  buttonText: 'Build Your Healthcare Solution', // ⚠️ mismatch
+    'From your first release to millions of installs, we build mobile products engineered for real devices, real networks, and real operational realities.',
+  buttonText: 'Build Your Mobile App',
   buttonLink: '/contact',
 };

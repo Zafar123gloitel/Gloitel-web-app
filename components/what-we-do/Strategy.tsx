@@ -1,7 +1,6 @@
-import React from 'react';
 import { LeftSectionHeads } from 'components/SectionHeads';
 import StrategyBadge from '@/components/StrategyBadge';
-import InfoCard from './InfoCard';
+import { Card, CardDescription, CardIcon, CardTitle } from '../atoms/card';
 
 const Strategy = ({
   cardData,
@@ -32,7 +31,11 @@ const Strategy = ({
         </div>
         <div className='flex flex-row flex-wrap justify-center gap-4 lg:justify-end'>
           {cardData.map(item => (
-            <InfoCard key={item.id} icon={item.icon} description={item.description} />
+            <Card key={item.id} className='w-[20rem]'>
+              {item.icon && <CardIcon>{item.icon}</CardIcon>}
+              {item.title && <CardTitle className='mb-5 text-3xl'>{item.title}</CardTitle>}
+              <CardDescription>{item.description}</CardDescription>
+            </Card>
           ))}
         </div>
       </div>

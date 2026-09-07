@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useRouter, useSearchParams, usePathname } from 'next/navigation';
 import StrategyBadge from '@/components/StrategyBadge';
 import IconCard from '@/components/card-showcase/IconCard';
 
@@ -18,6 +19,8 @@ interface AI_SolutionsProps {
   technologies: Record<string, Technology[]>;
 }
 
+const QUERY_KEY = 'tab'; // URL me ?tab=1 aise dikhega
+
 const AI_Solutions = ({
   badge,
   title,
@@ -26,12 +29,45 @@ const AI_Solutions = ({
   technologies,
   icontype: _icontype = false,
 }: AI_SolutionsProps) => {
-  const [activeTabIndex, setActiveTabIndex] = useState(0);
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  // URL se initial value nikal lo
+  const getInitialIndex = () => {
+    const tabParam = searchParams.get(QUERY_KEY);
+    if (tabParam !== null) {
+      const parsedIndex = parseInt(tabParam, 10);
+      if (!Number.isNaN(parsedIndex) && parsedIndex >= 0 && parsedIndex < tabs.length) {
+        return parsedIndex;
+      }
+    }
+    return 0;
+  };
+
+  const [activeTabIndex, setActiveTabIndex] = useState(getInitialIndex);
+
+  // Agar URL change ho (back/forward button se) to state bhi sync ho
+  useEffect(() => {
+    const tabParam = searchParams.get(QUERY_KEY);
+    if (tabParam !== null) {
+      const parsedIndex = parseInt(tabParam, 10);
+      if (!Number.isNaN(parsedIndex) && parsedIndex >= 0 && parsedIndex < tabs.length) {
+        setActiveTabIndex(parsedIndex);
+      }
+    }
+  }, [searchParams]);
+
   const activeTab = tabs[activeTabIndex];
   const hasMoreThanFiveTabs = tabs.length > 5;
 
   const handleTabClick = (index: number) => {
     setActiveTabIndex(index);
+
+    // URL update karo bina page reload kiye
+    const params = new URLSearchParams(searchParams.toString());
+    params.set(QUERY_KEY, index.toString());
+    router.push(`${pathname}?${params.toString()}`, { scroll: false });
   };
 
   return (

@@ -55,10 +55,10 @@ export default function Page() {
             items={backendAgentsData}
             showDivider={true}
             showStepBadge={false}
-            cardHeight='h-[411px] max-w-[411px] '
+            cardHeight='h-[311px] max-w-[411px] '
             gridClassName='gap-y-6'
-            titleClassName=''
-            descriptionClassName=''
+            titleClassName='text-[28px]'
+            descriptionClassName='text-[16px]'
           />
         </section>
       </div>

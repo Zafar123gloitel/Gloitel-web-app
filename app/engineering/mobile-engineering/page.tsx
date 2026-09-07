@@ -18,7 +18,8 @@ import {
   mobileRoadmapSectionHead,
 } from './data';
 import PurposeCard from '@/components/what-we-do/PurposeCard';
-import Business from '@/components/what-we-do/Business';
+import ProblemCard from '@/components/ProblemCard';
+import { frontendDeliverablesData } from '../frontend-engineering/data';
 
 export default function Page() {
   const architecturePositions = {
@@ -80,13 +81,32 @@ export default function Page() {
         </div>
       </section>
       <section>
-        <Business
-          badgeText={mobileRoadmapSectionHead.badgeText}
-          sectionHead={mobileRoadmapSectionHead.title}
-          sectionSubHead=''
-          sectionDescription={mobileRoadmapSectionHead.description}
-          data={mobileRoadmapData}
-        />
+        <section className='overflow-hidden py-12 lg:py-20'>
+          <div className='relative z-10 mx-auto flex min-h-[60vh] flex-col items-center justify-center'>
+            <BgSquare2 />
+            <div className='-mt-44 flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
+              <span>
+                <StrategyBadge text={mobileRoadmapSectionHead.badgeText} />
+              </span>
+              <MiddleSectionHeads
+                SectionHead={mobileRoadmapSectionHead.title}
+                SectionDescription={mobileRoadmapSectionHead.description}
+              />
+            </div>
+          </div>
+
+          <section className='-mt-20 grid w-full grid-cols-1 gap-6 px-10 sm:mx-auto md:w-[80%]'>
+            {mobileRoadmapData.map((item, index) => (
+              <ProblemCard
+                key={index}
+                title={item.title}
+                step
+                number={index + 1}
+                isLast={index === frontendDeliverablesData.length - 1}
+              />
+            ))}
+          </section>
+        </section>
       </section>
 
       <section>
