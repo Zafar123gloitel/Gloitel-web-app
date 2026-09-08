@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import React from 'react';
 
 interface TestimonialCardProps {
   name?: string;
@@ -21,7 +20,7 @@ const TestimonialCard = ({
       {/* Outer Purple Border */}
       <div className='relative rounded-none p-[2px] shadow-[0_0_18px_rgba(147,51,234,0.18)]'>
         {/* Inner Card */}
-        <div className='relative min-h-[315px] overflow-hidden rounded-[18px] border border-white/10 bg-[#05050d] px-7 py-7'>
+        <div className='relative min-h-[325px] overflow-hidden rounded-[18px] border border-white/10 bg-[#05050d] px-7 py-7'>
           {/* Subtle top/right glow */}
           <div className='pointer-events-none absolute -top-20 -right-20 h-40 w-40 rounded-full bg-purple-600/10 blur-3xl' />
 
@@ -33,6 +32,8 @@ const TestimonialCard = ({
                 <Image
                   src={avatar}
                   alt={name}
+                  width={50}
+                  height={50}
                   className='h-full w-full rounded-full object-cover'
                   loading='lazy'
                 />
@@ -43,9 +44,9 @@ const TestimonialCard = ({
 
             {/* Name + Designation */}
             <div>
-              <h3 className='text-title text-[14px] font-medium'>{name}</h3>
+              <h3 className='text-title text-[20px] font-medium'>{name}</h3>
 
-              <p className='mt-1 text-[10px] text-[#2563eb]'>{designation}</p>
+              <p className='mt-1 text-[14px] text-[#2563eb]'>{designation}</p>
             </div>
           </div>
 
@@ -53,7 +54,7 @@ const TestimonialCard = ({
           <div className='my-7 h-px w-full bg-white/[0.07]' />
 
           {/* Testimonial */}
-          <p className='text-description text-[11px] leading-[1.65] font-normal'>{description}</p>
+          <p className='text-description text-[16px] leading-[1.65] font-normal'>{description}</p>
         </div>
       </div>
     </div>

@@ -2,7 +2,7 @@ interface StepBadgeProps {
   number: number;
 }
 
-export function Card({ children, className = '', padding = 'p-5 sm:p-6' }) {
+export function Card({ children, className = '', padding = 'p-5 sm:p-6 w-full' }) {
   return (
     <article
       className={[

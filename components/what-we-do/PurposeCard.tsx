@@ -45,6 +45,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Card, CardIcon } from '@/components';
 
 interface PurposeCardProps {
@@ -104,8 +105,8 @@ const PurposeCard = ({
   const iconBlock = icon ? <CardIcon className='h-14 w-14 shrink-0'>{icon}</CardIcon> : null;
 
   const viewBox = viewText ? (
-    <a
-      href={viewLink}
+    <Link
+      href={viewLink || '#'}
       className='group text-title absolute bottom-5 left-12 inline-flex items-center gap-3 text-[14px] font-normal transition-all duration-300 md:text-[16px]'
     >
       <span>{viewText}</span>
@@ -127,7 +128,7 @@ const PurposeCard = ({
         <path d='M5 12h14' />
         <path d='m13 6 6 6-6 6' />
       </svg>
-    </a>
+    </Link>
   ) : null;
 
   const listBox = list ? (
@@ -152,8 +153,8 @@ const PurposeCard = ({
         <div className='flex shrink-0 flex-col items-start gap-2 md:items-center'>
           {/* Apply Button */}
           {buttonText && (
-            <a
-              href={buttonLink}
+            <Link
+              href={buttonLink || '#'}
               className='group text-title inline-flex min-w-[100px] items-center justify-center gap-2 rounded-md bg-blue-600 px-4 py-2 text-[11px] font-medium shadow-[0_0_20px_rgba(37,99,235,0.35)] transition-all duration-300 hover:bg-blue-500 hover:shadow-[0_0_25px_rgba(37,99,235,0.5)]'
             >
               <span>{buttonText}</span>
@@ -180,13 +181,13 @@ const PurposeCard = ({
                   strokeLinejoin='round'
                 />
               </svg>
-            </a>
+            </Link>
           )}
 
           {/* View Details */}
           {viewText && (
-            <a
-              href={viewLink}
+            <Link
+              href={viewLink || '#'}
               className='group text-title hover:text-title inline-flex items-center gap-2 text-[11px] transition-colors duration-300'
             >
               <span>{viewText}</span>
@@ -209,7 +210,7 @@ const PurposeCard = ({
                   strokeLinejoin='round'
                 />
               </svg>
-            </a>
+            </Link>
           )}
         </div>
       )}
@@ -217,8 +218,8 @@ const PurposeCard = ({
   ) : null;
 
   return (
-    <Card className={`flex items-center ${className ?? ''}`}>
-      <div className='flex w-full flex-col items-center justify-center gap-6 px-0 sm:flex-row sm:px-6'>
+    <Card className={`flex w-full items-center ${className ?? ''}`}>
+      <div className='flex w-full flex-col items-center justify-between gap-6 px-0 sm:flex-row sm:px-6'>
         {image ? (
           // Image case: text left, image right
           <span className='flex w-full flex-col-reverse items-center justify-between gap-6 pb-10 md:flex-row'>

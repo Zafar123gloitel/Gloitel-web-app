@@ -144,7 +144,7 @@ export const DiagnoseBeforeDeploy = () => {
           </div>
           <section className='mx-auto mt-20 w-full sm:w-[90%]'>
             <CardShowcase
-              showStepBadge
+              showStepBadge={false}
               showDivider={false}
               items={diagnoseBeforeDeployData.steps}
               cardHeight='h-[300px]   max-w-[300px] '
@@ -240,6 +240,7 @@ export const AiAgentsIndustries = () => {
               <div key={`${testimonial.name}-${index}`} className='shrink-0'>
                 <TestimonialCard
                   name={testimonial.name}
+                  avatar={testimonial.image}
                   designation={testimonial.designation}
                   description={testimonial.description}
                 />
@@ -279,7 +280,7 @@ export const ProductionReadyAi = () => {
       <section className='mb-10 flex items-center'>
         <ArchitectureCircle
           data={aiInfrastructureData}
-          image='/images/hrm.png'
+          image='https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788869131/Gloitel/Career/Cae1_r6f6us.png'
           positions={positions}
         />
       </section>
@@ -296,7 +297,7 @@ export const CareerFinalCta = () => {
         description={CareerFinalCtadata.description}
         buttonText={CareerFinalCtadata.buttonText}
         buttonLink={CareerFinalCtadata.buttonLink}
-        onclick={() => ({})}
+        secondaryButton={CareerFinalCtadata.secondaryButton}
       />
     </section>
   );

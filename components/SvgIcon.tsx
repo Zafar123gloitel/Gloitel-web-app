@@ -4933,3 +4933,52 @@ export function TailwindCSSIcon({ size = 36, className = '' }: IconProps) {
     </svg>
   );
 }
+export const StayCuriousIcon = () => (
+  <svg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'>
+    <defs>
+      <filter id='glow-curious' x='-80%' y='-80%' width='260%' height='260%'>
+        <feGaussianBlur stdDeviation='1.6' result='blur' />
+        <feMerge>
+          <feMergeNode in='blur' />
+          <feMergeNode in='SourceGraphic' />
+        </feMerge>
+      </filter>
+    </defs>
+    <g filter='url(#glow-curious)' stroke='currentColor' strokeLinecap='round'>
+      <line x1='20' y1='1' x2='20' y2='4' strokeWidth='1.8' />
+      <line x1='8.5' y1='4.5' x2='10.3' y2='6.7' strokeWidth='1.6' />
+      <line x1='31.5' y1='4.5' x2='29.7' y2='6.7' strokeWidth='1.6' />
+      <line x1='2' y1='15' x2='5' y2='15.5' strokeWidth='1.6' />
+      <line x1='38' y1='15' x2='35' y2='15.5' strokeWidth='1.6' />
+      <line x1='4.5' y1='25' x2='7' y2='23.5' strokeWidth='1.4' />
+      <line x1='35.5' y1='25' x2='33' y2='23.5' strokeWidth='1.4' />
+    </g>
+
+    <g filter='url(#glow-curious)'>
+      <path
+        d='M20 6c-6 0-10 4.2-10 9.5 0 3.2 1.7 5.3 3.2 7 .9 1 1.8 1.9 1.8 3v1.5h10v-1.5c0-1.1.9-2 1.8-3 1.5-1.7 3.2-3.8 3.2-7C30 10.2 26 6 20 6z'
+        stroke='currentColor'
+        strokeWidth='2'
+        strokeLinejoin='round'
+      />
+      <line
+        x1='16'
+        y1='30'
+        x2='24'
+        y2='30'
+        stroke='currentColor'
+        strokeWidth='2'
+        strokeLinecap='round'
+      />
+      <line
+        x1='17'
+        y1='33'
+        x2='23'
+        y2='33'
+        stroke='currentColor'
+        strokeWidth='2'
+        strokeLinecap='round'
+      />
+    </g>
+  </svg>
+);

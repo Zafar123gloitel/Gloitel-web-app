@@ -6,7 +6,7 @@ interface CardShowcaseProps {
     step?: number;
     title: string;
     description: string;
-    icon: React.ReactNode;
+    icon?: React.ReactNode;
   }[];
   showDivider?: boolean;
   showStepBadge?: boolean;
@@ -45,8 +45,11 @@ export function CardShowcase({
 
           <Card className={cardClassName}>
             <div className='flex h-full flex-col'>
-              <CardIcon className={iconClassName}>{item.icon}</CardIcon>
-
+              {item.icon ? (
+                <CardIcon className={iconClassName}>{item.icon}</CardIcon>
+              ) : (
+                <StepBadge number={item.step ?? index + 1} />
+              )}
               <div className='mt-8 flex flex-1 flex-col'>
                 {showDivider && <CardDivider className='mb-8' />}
 
