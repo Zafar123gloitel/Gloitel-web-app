@@ -497,7 +497,7 @@ const Navbar = () => {
                       type='button'
                       onClick={link.href ? () => router?.push(link.href) : undefined}
                       className={`relative z-20 flex items-center gap-1 transition ${
-                        link.href ? 'cursor-pointer' : ''
+                        link.href ? ' cursor-pointer' : ''
                       } ${
                         isMegaMenuActive(link.megaMenu)
                           ? 'text-title'
@@ -683,9 +683,7 @@ const Navbar = () => {
                     );
                   }}
                   className={`flex w-full items-center justify-between px-4 py-3 text-left ${
-                    isMegaMenuActive(link.megaMenu)
-                      ? 'text-title'
-                      : 'text-title/60 hover:text-title'
+                    isMegaMenuActive(link.megaMenu) ? 'text-title' : 'text-title hover:text-title'
                   }`}
                 >
                   <span>{link.label}</span>

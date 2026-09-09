@@ -21,7 +21,7 @@ export function Card({ children, className = '', padding = 'p-5 sm:p-6 w-full' }
         .filter(Boolean)
         .join(' ')}
     >
-      <div className={[padding, 'relative z-10'].filter(Boolean).join(' ')}>{children}</div>
+      <div className={[padding, 'z-10'].filter(Boolean).join(' ')}>{children}</div>
     </article>
   );
 }

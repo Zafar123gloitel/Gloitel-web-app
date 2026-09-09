@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { IntroHead } from 'uiComponents/Heading';
 import { GlowButton } from '@/components/Button';
 import Image from 'next/image';
@@ -9,9 +9,18 @@ import JoinUsNow from '@/components/JoinUsNow';
 import Link from 'next/link';
 import GlowPanel from '@/components/GlowPanel';
 
-const createId = () => globalThis.crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2);
+const createId = (): string =>
+  globalThis.crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2);
 
-const stages = [
+type Stage = {
+  id: string;
+  name: string;
+  date: number;
+  tag: string;
+  image: string;
+};
+
+const stages: Stage[] = [
   {
     id: createId(),
     name: 'CGMMSSY',
@@ -77,8 +86,9 @@ const stages = [
       'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762866991/Gloitel/portfolio/staffease_d4vmhj.webp',
   },
 ];
+
 const CreationPage = () => {
-  const [_activeCard, _setActiveCard] = useState(null);
+  const [_activeCard, _setActiveCard] = useState<string | null>(null);
 
   return (
     <>
@@ -86,13 +96,12 @@ const CreationPage = () => {
         {/* Background Video */}
         <video
           src='https://res.cloudinary.com/dsqu6pi0d/video/upload/v1762846419/Gloitel/bg_cij8h5.mp4'
-          type='video/mp4'
           className='absolute top-0 left-0 z-0 h-full w-full object-cover'
           autoPlay
           muted
           loop
           playsInline
-        ></video>
+        />
 
         <div className='relative z-10 mx-auto flex min-h-[60vh] flex-col items-center justify-center pt-15 sm:pt-20 md:pt-20 lg:pt-20'>
           {/* Intro */}
@@ -108,12 +117,12 @@ const CreationPage = () => {
 
           {/* Buttons */}
           <div className='mt-6 flex flex-col items-center gap-4 sm:mt-8 sm:flex-row'>
-            <GlowButton buttonText='Build your Project' buttonlink='/contact' />
+            <GlowButton onClick={() => {}} buttonText='Build your Project' buttonLink='/contact' />
           </div>
 
           {/* Grid */}
           <div className='mt-12 grid w-2/3 grid-cols-1 gap-4 sm:w-full sm:grid-cols-1 sm:gap-6 md:grid-cols-2 lg:w-6xl lg:px-10'>
-            {stages.map(item => (
+            {stages.map((item: Stage) => (
               <Link
                 key={item.id}
                 href={`/portfolio/${item.id}`}

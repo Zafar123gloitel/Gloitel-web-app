@@ -1,7 +1,7 @@
 import StrategyBadge from '@/components/StrategyBadge';
 import { GlowButton } from '@/components';
 import Link from 'next/link';
-import { ArrowRightIcon } from 'lucide-react';
+import { Link as LinkIcon } from 'lucide-react';
 import type { ReactNode } from 'react';
 
 interface ExecutionPlanProps {
@@ -26,7 +26,7 @@ const Execution_Plan = ({
   description,
   buttonText,
   buttonLink,
-  secondaryButton = { text: '', href: '', icon: <ArrowRightIcon size={20} /> },
+  secondaryButton = { text: '', href: '', icon: <LinkIcon size={16} /> },
   onclick,
   videoUrl = 'https://res.cloudinary.com/dsqu6pi0d/video/upload/v1762846419/Gloitel/bg_cij8h5.mp4',
   className = '',
@@ -59,21 +59,20 @@ const Execution_Plan = ({
                 {description}
               </p>
 
-              <div className='mt-8 flex flex-col gap-5 sm:flex-row sm:justify-center'>
+              <div className='mt-8'>
                 <GlowButton
                   buttonText={buttonText}
                   buttonLink={buttonLink}
                   onClick={onclick}
                   target='_self'
                 />
-                {secondaryButton && (
+                {secondaryButton.href && (
                   <Link
                     href={secondaryButton.href || '#'}
                     className='text-title inline-flex items-center justify-center gap-2 rounded-md border border-white/10 bg-white/10 px-5 py-3 text-sm transition hover:border-white/20 hover:bg-white/15'
                   >
                     {secondaryButton.text}
-                    {/* {secondaryButton.icon} */}
-                    <ArrowRightIcon size={20} />
+                    {secondaryButton.icon}
                   </Link>
                 )}
               </div>

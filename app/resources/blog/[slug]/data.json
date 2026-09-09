@@ -1,0 +1,167 @@
+{
+  "blogs": [
+    {
+      "slug": "ai-intelligent-systems",
+      "category": "AI & Integration",
+      "readTime": "8 Min Read",
+      "title": "Key considerations for introducing AI solutions from prototyping to production",
+      "description": "Scaling machine learning workflows beyond experimental notebooks requires solid infrastructure, observability, and disciplined engineering.",
+      "author": "Amit Chandra",
+      "authorRole": "Principal AI Architect",
+      "authorImage": "https://your-cdn/amit-chandra.png",
+      "date": "May 12, 2026",
+      "image": "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785498265/Gloitel/what-we-do/healthcare-client_tmogav.png",
+      "href": "/resources/blog/ai-intelligent-systems",
+      "intro": "Building a working prototype is the easy part. Turning that prototype into a system that real users depend on every day, without breaking, drifting, or bleeding money, is where most AI initiatives actually stall. Here is what separates teams that ship reliable AI from teams that stay stuck in the demo stage.",
+      "sections": [
+        {
+          "heading": "1. Treat the Prototype as a Hypothesis, Not a Deliverable",
+          "body": "A notebook that produces the right answer on a curated dataset only tells you that the underlying idea has merit. It does not tell you how the model behaves on messy, real-world inputs, under load, or six months after deployment when user behaviour has shifted. Before committing engineering resources to productionization, teams should explicitly separate \"did the idea work\" from \"is this ready to ship,\" and treat the second question as a completely fresh evaluation."
+        },
+        {
+          "heading": "2. Redesign the Data Pipeline for Production Realities",
+          "body": "Prototype data is almost always cleaner than production data. Once a model moves into a live environment, it inherits every quirk of the systems feeding it: late-arriving records, schema changes, duplicate events, and inconsistent formatting from upstream services. Production-grade pipelines need to account for this from day one.",
+          "list": [
+            "Automated schema validation and versioning at ingestion",
+            "Clear handling rules for missing, malformed, or duplicate records",
+            "Data lineage tracking so every prediction can be traced back to its inputs",
+            "Monitoring for silent data quality degradation, not just outright failures"
+          ],
+          "image": "https://your-cdn/ai-pipeline-diagram.png"
+        },
+        {
+          "heading": "3. Expand the Definition of \"Performance\"",
+          "body": "Model accuracy is only one input into whether a system is production-ready. Latency under real traffic, cost per inference at scale, failure and fallback behaviour, and how gracefully the system degrades under partial outages all matter just as much. Teams that only optimise for accuracy in isolation frequently discover, after launch, that the system is too slow, too expensive, or too brittle to run continuously."
+        },
+        {
+          "heading": "4. Build for Drift, Not Just Launch Day",
+          "body": "Every model that touches real-world data will drift as user behaviour, market conditions, or upstream systems change. Production AI needs scheduled retraining triggers, drift detection on both inputs and outputs, and a human-in-the-loop review process for edge cases the model was never trained to handle. Without this, accuracy quietly erodes and nobody notices until a business metric moves."
+        },
+        {
+          "heading": "5. Bake Security and Governance Into the Architecture",
+          "body": "AI systems introduce risks that traditional software often does not: prompt injection, data leakage through model outputs, and compliance obligations tied to the data used for training or inference. Access controls, audit logging, and human review checkpoints for high-stakes decisions should be part of the architecture from the first design review, not a checklist added right before launch."
+        },
+        {
+          "heading": "6. Roll Out in Controlled Stages",
+          "body": "Flipping a switch from prototype to full production is one of the most common causes of AI incidents. A staged approach — shadow mode, canary releases to a small percentage of traffic, feature flags that allow instant rollback — lets teams catch failures while the blast radius is still small, and builds confidence with stakeholders before a full rollout."
+        },
+        {
+          "heading": "7. Instrument Everything and Close the Feedback Loop",
+          "body": "Launch is the start of the system's lifecycle, not the finish line. Dashboards for latency, error rates, model confidence, and business KPIs should exist before launch, not be built reactively after something breaks. Equally important is a structured way for end users and reviewers to flag bad outputs, feeding directly into the next retraining or fine-tuning cycle."
+        }
+      ],
+      "keyTakeaway": "Moving AI from prototype to production is fundamentally a systems engineering problem, not a modelling problem. The organisations that succeed treat data pipelines, observability, security, and deployment strategy as first-class parts of the design — not afterthoughts bolted on once a demo impresses stakeholders."
+    },
+    {
+      "slug": "cloud",
+      "category": "Cloud",
+      "readTime": "11 Min Read",
+      "title": "Cloud Architecture Best Practices for High Availability & Highly Scalable Applications",
+      "description": "Architecture patterns for resilient, well-tested, and cost-efficient cloud platforms.",
+      "author": "Rohit Verma",
+      "authorRole": "Cloud Solutions Architect",
+      "authorImage": "https://your-cdn/rohit-verma.png",
+      "date": "May 03, 2026",
+      "image": "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785498263/Gloitel/what-we-do/financial-services_oba4c7.png",
+      "href": "/resources/blog/cloud",
+      "intro": "Traffic spikes, regional outages, and unpredictable growth are not edge cases — they are the normal operating conditions of any application running at scale. The difference between an architecture that absorbs these events gracefully and one that goes down comes down to a set of well-understood design principles applied consistently.",
+      "sections": [
+        {
+          "heading": "1. Design for Failure, Not Just Success",
+          "body": "Every component in a distributed system will eventually fail — a node, a zone, a dependency, or a network link. Resilient architecture starts from the assumption that failure is inevitable and asks how the system should behave when it happens, rather than hoping it won't. This mindset shift changes almost every downstream decision, from how services communicate to how state is stored."
+        },
+        {
+          "heading": "2. Eliminate Single Points of Failure",
+          "body": "High availability begins with redundancy at every layer: multiple availability zones for compute, replicated data stores, redundant load balancers, and multi-region failover for mission-critical services. A system is only as available as its least redundant component, so architecture reviews should specifically hunt for the one dependency that, if it went down, would take everything else with it.",
+          "list": [
+            "Multi-AZ deployment for compute and databases as a baseline, not an upgrade",
+            "Active-active or active-passive multi-region setups for critical workloads",
+            "Redundant network paths and DNS failover configured and tested in advance",
+            "No shared dependency that can silently become a single point of failure"
+          ],
+          "image": "https://your-cdn/multi-az-architecture-diagram.png"
+        },
+        {
+          "heading": "3. Scale Horizontally by Default",
+          "body": "Vertical scaling has hard ceilings and creates a single large blast radius when things go wrong. Horizontally scalable architectures — stateless services behind load balancers, auto-scaling groups tied to real demand signals, and partitioned data stores — let capacity grow with traffic instead of being provisioned for a worst case that may never arrive, while also making individual instance failure far less consequential."
+        },
+        {
+          "heading": "4. Decouple Services With Asynchronous Communication",
+          "body": "Tightly coupled synchronous calls between services mean that a slowdown in one component cascades into slowdowns everywhere. Message queues, event streams, and pub/sub patterns let services process work independently, absorb bursts without falling over, and keep functioning even when a downstream dependency is temporarily degraded."
+        },
+        {
+          "heading": "5. Build in Circuit Breakers, Timeouts, and Retries",
+          "body": "Without protective patterns, a struggling dependency can trigger a cascading failure across an entire system as retries pile up and threads block waiting for responses that never come. Circuit breakers stop calls to a failing service before it takes down its callers, sensible timeouts prevent indefinite waits, and retry logic with exponential backoff and jitter avoids turning a brief hiccup into a thundering-herd outage."
+        },
+        {
+          "heading": "6. Automate Infrastructure and Keep It Reproducible",
+          "body": "Manually configured infrastructure is difficult to audit, easy to drift, and slow to recover from disaster. Infrastructure as code — with every environment defined, versioned, and reviewed like application code — makes it possible to reproduce an entire environment from scratch, roll back a bad change instantly, and eliminate the \"it works on this one server\" class of production incident."
+        },
+        {
+          "heading": "7. Instrument for Observability, Not Just Monitoring",
+          "body": "Uptime dashboards tell you that something is wrong; observability tells you why. Structured logging, distributed tracing across service boundaries, and metrics tied to business-relevant SLIs and SLOs let teams diagnose issues in minutes instead of hours, and give early warning before a slow degradation becomes a full outage."
+        },
+        {
+          "heading": "8. Optimise Cost Alongside Scalability",
+          "body": "Scalable does not have to mean expensive. Right-sizing compute, using spot or reserved capacity for predictable workloads, caching aggressively at every layer, and tearing down unused environments keep cloud spend proportional to actual usage, and prevent architecture decisions from being reversed later purely on cost grounds."
+        },
+        {
+          "heading": "9. Test Resilience Before an Incident Does",
+          "body": "Disaster recovery plans and failover procedures that have never been tested tend to fail exactly when they are needed most. Regular chaos engineering exercises, failover drills, and load testing under realistic traffic patterns turn resilience from a document into a proven, muscle-memory capability across the team."
+        }
+      ],
+      "keyTakeaway": "High availability and scalability are not properties you add at the end — they are architectural decisions made from the first design diagram onward. Redundancy, decoupling, automation, and observability, applied consistently, are what allow an application to absorb growth and failure alike without breaking."
+    },
+    {
+      "slug": "engineering",
+      "category": "Engineering",
+      "readTime": "6 Min Read",
+      "title": "Clean Code Isn't Enough: Writing Large-Scale Systems That Are Easy to Change",
+      "description": "How to craft maintainable architecture that adapts cleanly as product requirements evolve.",
+      "author": "Smrity Jaiswal",
+      "authorRole": "Senior Software Engineer",
+      "authorImage": "https://your-cdn/smrity-jaiswal.png",
+      "date": "Mar 24, 2026",
+      "image": "https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788869098/Gloitel/Resource%20F/Blogs_Articles_h7tdgp.png",
+      "href": "/resources/blog/engineering",
+      "intro": "Code that reads well in a single file is not the same as a system that stays maintainable after two years, ten engineers, and a hundred feature requests. At scale, the real measure of quality is not how clean any one function looks — it is how easily the system as a whole can absorb change.",
+      "sections": [
+        {
+          "heading": "1. Clean Code Solves a Local Problem",
+          "body": "Good naming, small functions, and clear formatting make an individual file easier to read. But readability at the line level says nothing about whether a change to one module will unexpectedly break three others. Large systems fail not because the code inside a function is messy, but because the boundaries between modules are unclear or too tightly coupled."
+        },
+        {
+          "heading": "2. Optimise for Boundaries, Not Just Functions",
+          "body": "The most valuable design decisions in a large codebase happen at the seams: where does one module end and another begin, what is the contract between them, and how much does one need to know about the internals of the other. Well-drawn boundaries let a team change the internals of a module confidently, knowing the rest of the system only depends on its public contract.",
+          "list": [
+            "Explicit, minimal interfaces between modules and services",
+            "No module reaching into another's internal state or private data",
+            "Shared contracts versioned deliberately, not changed silently"
+          ],
+          "image": "https://your-cdn/module-boundaries-diagram.png"
+        },
+        {
+          "heading": "3. Make Change the Design Criterion, Not Elegance",
+          "body": "It is tempting to judge architecture by how elegant a diagram looks on day one. A more useful question is: when the business requirement inevitably changes six months from now, how many files does an engineer have to touch, and how confident can they be that they haven't broken something unrelated? Systems designed around anticipated axes of change age far better than systems designed purely for conceptual purity."
+        },
+        {
+          "heading": "4. Keep Dependencies Pointing in One Direction",
+          "body": "Circular or tangled dependencies between modules are one of the most reliable predictors of a codebase becoming hard to change. When dependencies flow in a single, well-understood direction — core domain logic depending on nothing, infrastructure depending on the domain, never the reverse — a change in one layer cannot ripple unpredictably through unrelated parts of the system."
+        },
+        {
+          "heading": "5. Invest in Tests That Enable Change, Not Just Catch Bugs",
+          "body": "A test suite's real value in a large system is the confidence it gives engineers to refactor without fear. Tests tightly coupled to implementation details punish every internal change and get deleted or ignored over time. Tests written against observable behaviour and public contracts, on the other hand, keep paying off years after they were written."
+        },
+        {
+          "heading": "6. Document Decisions, Not Just Code",
+          "body": "Code explains what a system does today; it rarely explains why it was built that way. Lightweight architecture decision records — a short note on the problem, the options considered, and why one was chosen — save future engineers from re-litigating settled debates or, worse, undoing a deliberate trade-off because the reasoning behind it was never written down."
+        },
+        {
+          "heading": "7. Refactor Continuously, in Small Increments",
+          "body": "Large-scale rewrites are risky, slow, and often abandoned halfway through. Systems that stay easy to change are the ones where refactoring happens constantly in small, low-risk increments alongside feature work, rather than being deferred until the codebase is unworkable and a full rewrite feels like the only option."
+        }
+      ],
+      "keyTakeaway": "Clean code is necessary but not sufficient. The systems that stay maintainable at scale are the ones designed around clear boundaries, one-directional dependencies, and tests that support change — with a team that treats refactoring as ongoing maintenance, not a future emergency."
+    }
+  ]
+}

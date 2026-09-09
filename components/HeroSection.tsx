@@ -43,11 +43,9 @@ const HeroSection = ({
   video,
   primaryButton,
   secondaryButton,
-  heroCards,
-  cardPositions,
 }: HeroSectionProps) => {
   return (
-    <section className='font-dmSans relative isolate overflow-hidden px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20'>
+    <section className='font-dmSans relative isolate w-full overflow-hidden px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20'>
       <video
         className='absolute top-0 left-0 h-full w-full object-cover'
         autoPlay
@@ -75,7 +73,7 @@ const HeroSection = ({
               <div className='mt-8 flex flex-col gap-3 sm:flex-row'>
                 <Link
                   href={primaryButton.href || '#'}
-                  className='inline-flex items-center justify-center rounded-md bg-white px-5 py-3 text-sm text-black transition hover:bg-blue-100'
+                  className='inline-flex items-center justify-center gap-2 rounded-md bg-white px-5 py-3 text-sm text-black transition hover:bg-blue-100'
                 >
                   {primaryButton.text}
                   {primaryButton.icon}
@@ -91,50 +89,11 @@ const HeroSection = ({
               </div>
             </div>
 
-            {/* <div className="relative w-full overflow-hidden rounded-[1.4rem]">
-              <div className="aspect-[4/3] w-full overflow-hidden rounded-[1.4rem]">
-                <Image
-                  src={image || ""}
-                  alt={imageAlt}
-                  fill
-                  className="object-cover"
-                  unoptimized
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
+            <div className='relative w-full overflow-hidden rounded-[1.4rem]'>
+              <div className='aspect-[4/3] w-full overflow-hidden rounded-[1.4rem]'>
+                <Image src={image || ''} alt={imageAlt} fill className='object-cover' unoptimized />
+                <div className='absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent' />
               </div>
-            </div> */}
-
-            <div className='relative z-20 aspect-[4/3] w-full overflow-hidden rounded-[1.4rem]'>
-              <Image
-                src={image || ''}
-                alt={imageAlt}
-                fill
-                className='object-cover'
-                unoptimized
-                loading='lazy'
-              />
-
-              {/* Image Overlay */}
-              <div className='absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10' />
-
-              {/* Floating Cards */}
-              {heroCards?.map(card => (
-                <div
-                  key={card.id}
-                  className={`absolute z-20 ${cardPositions[card.position]} rounded-xl border border-[#1447E6] bg-transparent px-4 py-3 backdrop-blur-sm`}
-                >
-                  <div className='flex flex-col items-center justify-center gap-5 text-[#1447E6]'>
-                    {/* <CardIcon  type={card.icon} /> */}
-                    <span
-                      dangerouslySetInnerHTML={{
-                        __html: card.icon,
-                      }}
-                    />
-
-                    <span className='text-title text-sm font-medium'>{card.title}</span>
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
         </div>

@@ -312,7 +312,7 @@ export const caseStudies = [
     description:
       'Developed a private LLM for clinical documentation summarization, reducing physician admin time per consultation. Zero PHI data leaves the VPC.',
     cta: 'View Case Study',
-    href: '/case-studies/healthcare-client',
+    href: '/content',
   },
   {
     id: createId(),
@@ -323,7 +323,7 @@ export const caseStudies = [
     description:
       'Built a RAG-powered compliance assistant over 1000+ regulatory documents. Query response time under 2 seconds. Cited sources on every answer.',
     cta: 'View Case Study',
-    href: '/case-studies/financial-services',
+    href: '/content',
   },
   {
     id: createId(),
@@ -334,6 +334,6 @@ export const caseStudies = [
     description:
       'LLM-powered product description generator that reduced content creation time by over 90% while maintaining brand consistency.',
     cta: 'View Case Study',
-    href: '/case-studies/e-commerce',
+    href: '/content',
   },
 ];
