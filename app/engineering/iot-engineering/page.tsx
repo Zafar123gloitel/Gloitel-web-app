@@ -51,7 +51,7 @@ export default function Page() {
       <section className='-mt-40 mb-10 flex items-center'>
         <ArchitectureCircle
           data={fullStackComplianceData}
-          image='/images/hrm.png'
+          image='https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788757671/Gloitel/Product%20Engineering/What_Our_IoT_Engineers_Build_sk40ef.png'
           positions={positions}
         />
       </section>

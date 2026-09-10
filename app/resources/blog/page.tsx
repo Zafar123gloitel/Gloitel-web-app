@@ -1,21 +1,29 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRightIcon, SearchIcon } from '@/components/SvgIcon';
 import { GlowButton } from '@/components';
 
-const articles = [
+// Simple unique id generator — call karo, ye ek unique string return karega
+let idCounter = 0;
+function createId(prefix: string = 'article'): string {
+  idCounter += 1;
+  return `${prefix}-${Date.now()}-${idCounter}`;
+}
+
+const articlesRaw = [
   {
     category: 'AI & Integration',
     readTime: '8 Min Read',
     title: 'Key considerations for introducing AI solutions from prototyping to production',
     description:
       'Scaling machine learning workflows beyond experimental notebooks requires solid infrastructure, observability, and disciplined engineering.',
-    author: 'Amit Chandran',
+    author: 'Zafaryab Khann',
     authorRole: 'Principal AI Architect',
-    authorImage: 'https://your-cdn/amit-chandran.png',
+    authorImage:
+      'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788869255/Gloitel/Profile%20G/ChatGPT_Image_Jun_9_2026_07_06_16_PM_iabgqm.png',
     date: 'May 12, 2026',
     image:
       'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785498265/Gloitel/what-we-do/healthcare-client_tmogav.png',
@@ -27,9 +35,10 @@ const articles = [
     title: 'Cloud Architecture Best Practices for High Availability & Highly Scalable Applications',
     description:
       'Architecture patterns for resilient, well-tested, and cost-efficient cloud platforms.',
-    author: 'Rohit Verma',
+    author: 'Manish Sahu',
     authorRole: 'Cloud Solutions Architect',
-    authorImage: 'https://your-cdn/rohit-verma.png',
+    authorImage:
+      'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788869255/Gloitel/Profile%20G/ChatGPT_Image_Jun_9_2026_07_02_32_PM_eguhmv.png',
     date: 'May 03, 2026',
     image:
       'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785498263/Gloitel/what-we-do/financial-services_oba4c7.png',
@@ -41,15 +50,112 @@ const articles = [
     title: 'Clean Code Isn’t Enough: Writing Large-Scale Systems That Are Easy to Change',
     description:
       'How to craft maintainable architecture that adapts cleanly as product requirements evolve.',
-    author: 'Smrity Jaiswal',
+    author: 'Yashwant Sonkar',
     authorRole: 'Senior Software Engineer',
-    authorImage: 'https://your-cdn/smrity-jaiswal.png',
+    authorImage:
+      'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788869258/Gloitel/Profile%20G/ChatGPT_Image_Jun_9_2026_06_55_13_PM_a2hint.png',
+    date: 'Mar 24, 2026',
+    image:
+      'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788869098/Gloitel/Resource%20F/Blogs_Articles_h7tdgp.png',
+    href: '/resources/blog/engineering',
+  },
+  {
+    category: 'AI & Integration',
+    readTime: '8 Min Read',
+    title: 'Key considerations for introducing AI solutions from prototyping to production',
+    description:
+      'Scaling machine learning workflows beyond experimental notebooks requires solid infrastructure, observability, and disciplined engineering.',
+    author: 'Zafaryab Khann',
+    authorRole: 'Principal AI Architect',
+    authorImage:
+      'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788869255/Gloitel/Profile%20G/ChatGPT_Image_Jun_9_2026_07_06_16_PM_iabgqm.png',
+    date: 'May 12, 2026',
+    image:
+      'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785498265/Gloitel/what-we-do/healthcare-client_tmogav.png',
+    href: '/resources/blog/ai-intelligent-systems',
+  },
+  {
+    category: 'Cloud',
+    readTime: '11 Min Read',
+    title: 'Cloud Architecture Best Practices for High Availability & Highly Scalable Applications',
+    description:
+      'Architecture patterns for resilient, well-tested, and cost-efficient cloud platforms.',
+    author: 'Manish Sahu',
+    authorRole: 'Cloud Solutions Architect',
+    authorImage:
+      'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788869255/Gloitel/Profile%20G/ChatGPT_Image_Jun_9_2026_07_02_32_PM_eguhmv.png',
+    date: 'May 03, 2026',
+    image:
+      'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785498263/Gloitel/what-we-do/financial-services_oba4c7.png',
+    href: '/resources/blog/cloud',
+  },
+  {
+    category: 'Engineering',
+    readTime: '6 Min Read',
+    title: 'Clean Code Isn’t Enough: Writing Large-Scale Systems That Are Easy to Change',
+    description:
+      'How to craft maintainable architecture that adapts cleanly as product requirements evolve.',
+    author: 'Yashwant Sonkar',
+    authorRole: 'Senior Software Engineer',
+    authorImage:
+      'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788869258/Gloitel/Profile%20G/ChatGPT_Image_Jun_9_2026_06_55_13_PM_a2hint.png',
+    date: 'Mar 24, 2026',
+    image:
+      'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788869098/Gloitel/Resource%20F/Blogs_Articles_h7tdgp.png',
+    href: '/resources/blog/engineering',
+  },
+  {
+    category: 'AI & Integration',
+    readTime: '8 Min Read',
+    title: 'Key considerations for introducing AI solutions from prototyping to production',
+    description:
+      'Scaling machine learning workflows beyond experimental notebooks requires solid infrastructure, observability, and disciplined engineering.',
+    author: 'Zafaryab Khann',
+    authorRole: 'Principal AI Architect',
+    authorImage:
+      'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788869255/Gloitel/Profile%20G/ChatGPT_Image_Jun_9_2026_07_06_16_PM_iabgqm.png',
+    date: 'May 12, 2026',
+    image:
+      'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785498265/Gloitel/what-we-do/healthcare-client_tmogav.png',
+    href: '/resources/blog/ai-intelligent-systems',
+  },
+  {
+    category: 'Cloud',
+    readTime: '11 Min Read',
+    title: 'Cloud Architecture Best Practices for High Availability & Highly Scalable Applications',
+    description:
+      'Architecture patterns for resilient, well-tested, and cost-efficient cloud platforms.',
+    author: 'Manish Sahu',
+    authorRole: 'Cloud Solutions Architect',
+    authorImage:
+      'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788869255/Gloitel/Profile%20G/ChatGPT_Image_Jun_9_2026_07_02_32_PM_eguhmv.png',
+    date: 'May 03, 2026',
+    image:
+      'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785498263/Gloitel/what-we-do/financial-services_oba4c7.png',
+    href: '/resources/blog/cloud',
+  },
+  {
+    category: 'Engineering',
+    readTime: '6 Min Read',
+    title: 'Clean Code Isn’t Enough: Writing Large-Scale Systems That Are Easy to Change',
+    description:
+      'How to craft maintainable architecture that adapts cleanly as product requirements evolve.',
+    author: 'Yashwant Sonkar',
+    authorRole: 'Senior Software Engineer',
+    authorImage:
+      'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788869258/Gloitel/Profile%20G/ChatGPT_Image_Jun_9_2026_06_55_13_PM_a2hint.png',
     date: 'Mar 24, 2026',
     image:
       'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788869098/Gloitel/Resource%20F/Blogs_Articles_h7tdgp.png',
     href: '/resources/blog/engineering',
   },
 ];
+
+// Har article ko ek unique id assign kar diya
+const articles = articlesRaw.map(article => ({
+  id: createId('article'),
+  ...article,
+}));
 
 const topics = [
   'AI & Intelligent Systems',
@@ -60,12 +166,66 @@ const topics = [
   'Design',
 ];
 
+const PAGE_SIZE_OPTIONS = [4, 6, 8];
+
+// Page number list ke beech mein ellipsis ("...") dikhane ke liye helper
+function getPageNumbers(current: number, total: number): (number | 'ellipsis')[] {
+  const delta = 1;
+  const pages: (number | 'ellipsis')[] = [];
+
+  for (let i = 1; i <= total; i++) {
+    if (i === 1 || i === total || (i >= current - delta && i <= current + delta)) {
+      pages.push(i);
+    } else if (pages[pages.length - 1] !== 'ellipsis') {
+      pages.push('ellipsis');
+    }
+  }
+
+  return pages;
+}
+
 export default function ContentPage() {
   const [query, setQuery] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
+  const [pageSize, setPageSize] = useState(PAGE_SIZE_OPTIONS[0]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
+    setCurrentPage(1); // search karte waqt page 1 pe reset
   };
+
+  const handlePageSizeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setPageSize(Number(e.target.value));
+    setCurrentPage(1); // page size badalne par page 1 pe reset
+  };
+
+  const filteredArticles = useMemo(() => {
+    if (!query.trim()) return articles;
+    const q = query.toLowerCase();
+    return articles.filter(
+      article =>
+        article.title.toLowerCase().includes(q) ||
+        article.description.toLowerCase().includes(q) ||
+        article.category.toLowerCase().includes(q),
+    );
+  }, [query]);
+
+  const totalResults = filteredArticles.length;
+  const totalPages = Math.max(1, Math.ceil(totalResults / pageSize));
+
+  const paginatedArticles = useMemo(() => {
+    const start = (currentPage - 1) * pageSize;
+    return filteredArticles.slice(start, start + pageSize);
+  }, [filteredArticles, currentPage, pageSize]);
+
+  const rangeStart = totalResults === 0 ? 0 : (currentPage - 1) * pageSize + 1;
+  const rangeEnd = Math.min(currentPage * pageSize, totalResults);
+
+  const goToPage = (page: number) => {
+    if (page < 1 || page > totalPages) return;
+    setCurrentPage(page);
+  };
+
   return (
     <main className='min-h-screen bg-black px-5 pt-28 pb-20 text-white sm:px-8 lg:px-12'>
       <div className='mx-auto max-w-6xl'>
@@ -102,9 +262,9 @@ export default function ContentPage() {
           <section>
             <h2 className='mb-6 text-lg font-medium'>Latest Publications</h2>
             <div className='space-y-1'>
-              {articles.map(article => (
+              {paginatedArticles.map(article => (
                 <Link
-                  key={article.title}
+                  key={article.id}
                   href={article.href}
                   className='group flex gap-5 border-b border-white/10 py-5'
                 >
@@ -152,7 +312,103 @@ export default function ContentPage() {
                   </div>
                 </Link>
               ))}
+
+              {paginatedArticles.length === 0 && (
+                <p className='py-10 text-center text-sm text-gray-500'>
+                  No articles match your search.
+                </p>
+              )}
             </div>
+
+            {/* Pagination footer: results info + page size + page controls */}
+            {totalResults > 0 && (
+              <div className='mt-8 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 sm:flex-row'>
+                <div className='flex items-center gap-3 text-xs text-gray-500'>
+                  <span>
+                    Showing <span className='text-gray-300'>{rangeStart}</span>–
+                    <span className='text-gray-300'>{rangeEnd}</span> of{' '}
+                    <span className='text-gray-300'>{totalResults}</span>
+                  </span>
+                  <span className='hidden h-3 w-px bg-white/10 sm:block' />
+                  <label className='hidden items-center gap-1.5 sm:flex'>
+                    Per page
+                    <select
+                      value={pageSize}
+                      onChange={handlePageSizeChange}
+                      className='rounded-md border border-white/10 bg-[#110E18] px-2 py-1 text-xs text-gray-300 focus:border-white/25 focus:outline-none'
+                    >
+                      {PAGE_SIZE_OPTIONS.map(size => (
+                        <option key={size} value={size}>
+                          {size}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+                </div>
+
+                {totalPages > 1 && (
+                  <div className='flex items-center gap-1.5'>
+                    <button
+                      onClick={() => goToPage(currentPage - 1)}
+                      disabled={currentPage === 1}
+                      aria-label='Previous page'
+                      className='flex h-8 w-8 items-center justify-center rounded-md border border-white/10 text-gray-300 transition hover:border-white/25 hover:text-white disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:border-white/10'
+                    >
+                      <svg width='14' height='14' viewBox='0 0 16 16' fill='none'>
+                        <path
+                          d='M10 12.5 5.5 8 10 3.5'
+                          stroke='currentColor'
+                          strokeWidth='1.5'
+                          strokeLinecap='round'
+                          strokeLinejoin='round'
+                        />
+                      </svg>
+                    </button>
+
+                    {getPageNumbers(currentPage, totalPages).map((page, idx) =>
+                      page === 'ellipsis' ? (
+                        <span
+                          key={`ellipsis-${idx}`}
+                          className='flex h-8 w-8 items-center justify-center text-xs text-gray-600'
+                        >
+                          …
+                        </span>
+                      ) : (
+                        <button
+                          key={page}
+                          onClick={() => goToPage(page)}
+                          aria-current={page === currentPage ? 'page' : undefined}
+                          className={`flex h-8 w-8 items-center justify-center rounded-md text-xs font-medium transition ${
+                            page === currentPage
+                              ? 'bg-blue-500 text-white'
+                              : 'border border-white/10 text-gray-300 hover:border-white/25 hover:text-white'
+                          }`}
+                        >
+                          {page}
+                        </button>
+                      ),
+                    )}
+
+                    <button
+                      onClick={() => goToPage(currentPage + 1)}
+                      disabled={currentPage === totalPages}
+                      aria-label='Next page'
+                      className='flex h-8 w-8 items-center justify-center rounded-md border border-white/10 text-gray-300 transition hover:border-white/25 hover:text-white disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:border-white/10'
+                    >
+                      <svg width='14' height='14' viewBox='0 0 16 16' fill='none'>
+                        <path
+                          d='M6 3.5 10.5 8 6 12.5'
+                          stroke='currentColor'
+                          strokeWidth='1.5'
+                          strokeLinecap='round'
+                          strokeLinejoin='round'
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                )}
+              </div>
+            )}
           </section>
 
           <aside>

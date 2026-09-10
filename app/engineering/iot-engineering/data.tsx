@@ -1,4 +1,5 @@
 import {
+  ArrowRightIcon,
   ConnectedSystemsIcon,
   EngineeringHIPAAIcon,
   EngineeringIEC62304Icon,
@@ -11,28 +12,29 @@ const createId = () => globalThis.crypto?.randomUUID?.() ?? Math.random().toStri
 
 export const iotHeroData = {
   badgeText: 'IoT Engineering',
-  title: 'AI Engineering That Ships and Stays Shipped',
+  title: 'IoT Engineering: From Device to Dashboard',
   description:
-    "Building an AI proof-of-concept takes days. Building one that handles production traffic reliably, costs predictably, and can be debugged when something goes wrong – that's engineering. We've done the latter.",
-  image: '/images/Engineering/backend-engineering-hero.png',
+    "IoT projects fail at the edges — literally. Firmware that doesn't survive a dropped connection. A platform that can't handle the actual message volume. A mobile app that makes device pairing a 10-step nightmare. We've seen all of these and design to avoid them.",
+  image:
+    'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788757671/Gloitel/Product%20Engineering/IoT_Engineering_xlp2pd.png',
   imageAlt: '',
   video: '',
   primaryButton: {
-    text: 'Talk to Our AI Engineers',
-    href: '',
+    text: 'Talk to Our IoT Team',
+    href: '/about',
   },
   secondaryButton: {
-    text: 'View AI Work',
-    href: '',
-    icon: '',
+    text: 'IoT Case Studies',
+    href: '/about',
+    icon: <ArrowRightIcon />,
   },
 };
 
 export const fullStackComplianceSectionHead = {
-  badgeText: 'Compliance & Standards We Work To',
-  title: 'Built on Healthcare Standards from Day One',
+  badgeText: 'What Our IoT Engineers Build',
+  title: 'Connected Systems From Edge to Cloud',
   description:
-    'Every solution is designed with security, privacy, accessibility, and regulatory compliance at its core – ensuring healthcare systems remain reliable, trusted, and audit-ready.',
+    'We engineer the complete IoT stack—from embedded firmware and device connectivity to scalable cloud platforms, companion apps, and real-time analytics.',
 };
 
 export const fullStackComplianceData: ArchitectureItem[] = [
@@ -40,71 +42,62 @@ export const fullStackComplianceData: ArchitectureItem[] = [
     id: createId(),
     position: 'top',
     icon: <EngineeringHIPAAIcon />,
-    title: 'HIPAA',
+    title: 'Device Firmware',
     description:
-      'Privacy, Security Rule, and Breach Notification compliance for healthcare data protection.',
+      'ARM Cortex, ESP32, and STM32 firmware with RTOS support, OTA updates, and power optimization.',
   },
   {
     id: createId(),
     position: 'leftTop',
     icon: <IoTGDPRIcon />,
-    title: 'GDPR',
+    title: 'Cloud Backend',
     description:
-      'Data privacy compliance for healthcare organizations serving patients across the European Union.',
+      'Scalable ingestion, time-series storage, rules engines, device registries, and alert management',
   },
   {
     id: createId(),
     position: 'rightTop',
     icon: <ConnectedSystemsIcon />,
-    title: 'HL7 FHIR',
+    title: 'Device Management',
     description:
-      'R4 and R5 API integrations enabling secure and standardized healthcare data exchange.',
+      'Provisioning, OTA updates, configuration, fleet health monitoring, and device analytics.',
   },
   {
     id: createId(),
     position: 'leftBottom',
     icon: <WCAGComplianceIcon />,
-    title: 'WCAG 2.1 AA',
+    title: 'Mobile Apps',
     description:
-      'Accessibility standards that ensure patient-facing experiences are inclusive and usable.',
+      'BLE and Wi-Fi pairing, device configuration, telemetry dashboards, and notifications.',
   },
   {
     id: createId(),
     position: 'rightBottom',
     icon: <EngineeringIEC62304Icon />,
-    title: 'IEC 62304',
+    title: 'Edge Computing',
     description:
-      'Medical device software lifecycle processes for safe and compliant product development.',
+      'Local processing, intelligent filtering, and on-device ML inference before cloud transmission.',
   },
   {
     id: createId(),
     position: 'bottom',
     icon: <IoTSOC2TypeIIIcon />,
-    title: 'SOC 2 Type II',
+    title: 'Analytics',
     description:
-      'Security, availability, and confidentiality controls for enterprise-grade healthcare platforms.',
+      'Real-time telemetry, historical analytics, anomaly detection, alerts, and fleet intelligence.',
   },
 ];
 
 export const aiEcosystemData = {
-  badge: 'Production AI Engineering Stack',
-  title: 'Built on a Modern AI Ecosystem',
+  badge: 'IoT Engineering Stack',
+  title: 'Protocols & Technologies We Build With',
   description:
-    'From foundation models to observability tools, every layer is chosen for performance, flexibility, and long-term maintainability.',
+    'From low-power device connectivity to cloud ingestion and edge intelligence, we select technologies around reliability, scale, power constraints, and maintainability.',
 
-  tabs: [
-    'LLMs',
-    'RAG/Orchestration',
-    'Vector DBs',
-    'ML',
-    'MLOps',
-    'Serving',
-    'Observability',
-    'Cloud AI',
-  ],
+  tabs: ['Connectivity', 'Platforms', 'Firmware', 'Time Series', 'Edge', 'AI'],
 
   technologies: {
-    LLMs: [
+    Connectivity: [
       {
         id: createId(),
         name: 'OpenAI GPT-4o',
@@ -131,13 +124,11 @@ export const aiEcosystemData = {
         logo: '',
       },
     ],
-    'RAG/Orchestration': [],
-    'Vector DBs': [],
-    ML: [],
-    MLOps: [],
-    Serving: [],
-    Observability: [],
-    'Cloud AI': [],
+    Platforms: [],
+    Firmware: [],
+    'Time Series': [],
+    Edge: [],
+    AI: [],
   },
 };
 

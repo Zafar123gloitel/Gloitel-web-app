@@ -20,10 +20,10 @@ export const frontendEngineeringHeroData = {
   },
 };
 export const frontendTechStackData = {
-  badge: 'Technologies We Build With',
-  title: 'Modern Tools for Meaningful Products',
+  badge: 'Frontend Technologies & Stack ',
+  title: 'Technologies We Build With',
   description:
-    'FA modern frontend technology stack featuring trusted frameworks, languages, styling tools, state management, testing, component systems, and build tools used to create scalable, high-performance digital products.',
+    'From foundation models to observability tools, every layer is chosen for performance, flexibility, and long-term maintainability.',
   tabs: ['Frameworks', 'Language', 'Styling', 'State', 'Testing', 'Component Systems', 'Build'],
   technologies: {
     Frameworks: [
@@ -114,67 +114,67 @@ export const frontendTechStackData = {
       {
         id: createId(),
         name: 'Vitest',
-        logo: '',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1787039280/Gloitel/icon/Vitest_j3tuc8.png',
       },
       {
         id: createId(),
         name: 'Jest',
-        logo: '',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787039281/Gloitel/icon/Jest_pnlmv9.png',
       },
       {
         id: createId(),
         name: 'React Testing Library',
-        logo: '',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789040251/Gloitel/icon/octopus-128x128_e2xaai.png',
       },
       {
         id: createId(),
         name: 'Cypress',
-        logo: '',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787039281/Gloitel/icon/Cypress_ofw9sp.png',
       },
       {
         id: createId(),
         name: 'Playwright',
-        logo: '',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787039281/Gloitel/icon/Playwright_zzr0s2.png',
       },
     ],
     'Component Systems': [
       {
         id: createId(),
         name: 'Radix UI',
-        logo: '',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788773559/Gloitel/icon/Radix_UI_r3bzwr.png',
       },
       {
         id: createId(),
         name: 'shadcn/ui',
-        logo: '',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789040589/Gloitel/icon/shadcn-ui-logo-png_seeklogo-519786_ts2spy.png',
       },
 
       {
         id: createId(),
         name: 'Headless UI',
-        logo: '',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789040674/Gloitel/icon/headless-ui-logo-png_seeklogo-434970_swq7nu.png',
       },
       {
         id: createId(),
         name: 'Storybook',
-        logo: '',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050154/Gloitel/icon/Storybook_kpgob6.png',
       },
     ],
     Build: [
       {
         id: createId(),
         name: 'Vite',
-        logo: '',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787039280/Gloitel/icon/Vitest_j3tuc8.png',
       },
       {
         id: createId(),
         name: 'Turbopack',
-        logo: '',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789040912/Gloitel/icon/images_irhmjr.jpg',
       },
       {
         id: createId(),
         name: 'esbuild',
-        logo: '',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789040960/Gloitel/icon/images_nq6w0w.png',
       },
     ],
   },
@@ -233,14 +233,14 @@ export const frontendEngineeringDeepDiveData = {
     },
     {
       id: createId(),
-      icon: <NextIcon />,
+      icon: <NextIcon size={30} />,
       title: 'Next.js & Server Components',
       description:
         'Full understanding of SSR, SSG, ISR, and the App Router mental model. We use Server Components where they belong and Client Components where they must.',
     },
     {
       id: createId(),
-      icon: <VisibilityControlIcon />,
+      icon: <VisibilityControlIcon size={28} />,
       title: 'Performance Engineering',
       description:
         'Core Web Vitals optimization, image optimization, lazy loading strategies, critical CSS, and bundle splitting for performance-critical products.',

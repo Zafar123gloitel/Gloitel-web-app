@@ -1,13 +1,13 @@
 import {
   AIMonitoringIcon,
+  ChatbotIcon,
   CostOptimizationIcon,
   CustomModelsIcon,
   HL7FHIRIcon,
   HeroArrowRightIcon,
-  LLMFeaturesIcon,
   MLPipelinesIcon,
   PromptOpsIcon,
-  RAGSystemsIcon,
+  SearchIcon,
 } from 'components/SvgIcon';
 const createId = () => globalThis.crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2);
 export const aiEngineeringHeroData = {
@@ -41,14 +41,14 @@ export const aiSystemsData = [
   {
     id: createId(),
     step: 1,
-    icon: <RAGSystemsIcon />,
+    icon: <SearchIcon />,
     title: 'RAG Systems',
     description: 'Vector search and document intelligence pipelines.',
   },
   {
     id: createId(),
     step: 2,
-    icon: <LLMFeaturesIcon />,
+    icon: <ChatbotIcon />,
     title: 'LLM Features',
     description: 'AI capabilities embedded into existing products.',
   },

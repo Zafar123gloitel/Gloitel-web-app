@@ -14,9 +14,9 @@ interface AI_SolutionsProps {
   badge: string;
   title: string;
   description: string;
-  tabs: string[];
+  tabs?: string[];
   icontype?: boolean;
-  technologies: Record<string, Technology[]>;
+  technologies: Record<string, Technology[]> | Technology[];
 }
 
 const QUERY_KEY = 'tab'; // URL me ?tab=1 aise dikhega
@@ -25,7 +25,7 @@ const AI_Solutions = ({
   badge,
   title,
   description,
-  tabs,
+  tabs = [],
   technologies,
   icontype: _icontype = false,
 }: AI_SolutionsProps) => {
@@ -91,7 +91,7 @@ const AI_Solutions = ({
                 : 'mx-auto w-[90%] max-w-6xl overflow-x-auto lg:w-auto lg:max-w-none lg:justify-center lg:overflow-visible'
             }`}
           >
-            {tabs.map((tab, index) => (
+            {tabs?.map((tab, index) => (
               <button
                 key={tab}
                 type='button'
@@ -114,28 +114,50 @@ const AI_Solutions = ({
             className='flex p-5 transition-transform duration-1000 ease-out sm:p-0'
             style={{ transform: `translateX(-${activeTabIndex * 100}%)` }}
           >
-            {tabs.map(tab => (
-              <div key={tab} className='min-w-full shrink-0'>
+            {tabs && tabs.length > 0 ? (
+              tabs.map(tab => (
+                <div key={tab} className='min-w-full shrink-0'>
+                  <div className='flex flex-wrap items-center justify-center gap-5'>
+                    {technologies[tab]?.map((item, index) => (
+                      <IconCard key={index} name={item.name} icontype={false} logo={item.logo} />
+                    ))}
+                  </div>
+                </div>
+              ))
+            ) : (
+              <div className='min-w-full shrink-0'>
                 <div className='flex flex-wrap items-center justify-center gap-5'>
-                  {technologies[tab]?.map((item, index) => (
-                    <IconCard key={index} name={item.name} icontype={false} logo={item.logo} />
-                  ))}
+                  {Array.isArray(technologies) &&
+                    technologies?.map((item, index) => (
+                      <IconCard key={index} name={item.name} icontype={false} logo={item.logo} />
+                    ))}
                 </div>
               </div>
-            ))}
+            )}
           </div>
         </div>
         {/* mobile screen */}
-        <div className='bg-surface-2 mt-14 rounded-3xl border-white/10 p-4 lg:hidden'>
-          <div
-            key={activeTab}
-            className='animate-fadeIn grid grid-cols-2 justify-items-center gap-4 sm:grid-cols-3'
-          >
-            {technologies[activeTab]?.map((item, index) => (
-              <IconCard key={index} name={item.name} icontype={false} logo={item.logo} />
-            ))}
+        {activeTab && activeTab.length > 0 ? (
+          <div className='bg-surface-2 mt-14 rounded-3xl border-white/10 p-4 lg:hidden'>
+            <div
+              key={activeTab}
+              className='animate-fadeIn grid grid-cols-2 justify-items-center gap-4 sm:grid-cols-3'
+            >
+              {technologies[activeTab]?.map((item, index) => (
+                <IconCard key={index} name={item.name} icontype={false} logo={item.logo} />
+              ))}
+            </div>
           </div>
-        </div>
+        ) : (
+          <div className='bg-surface-2 mt-14 rounded-3xl border-white/10 p-4 lg:hidden'>
+            <div className='animate-fadeIn grid grid-cols-2 justify-items-center gap-4 sm:grid-cols-3'>
+              {Array.isArray(technologies) &&
+                technologies?.map((item, index) => (
+                  <IconCard key={index} name={item.name} icontype={false} logo={item.logo} />
+                ))}
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

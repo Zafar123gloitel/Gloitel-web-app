@@ -49,22 +49,22 @@ export const backendTechStackData = {
       {
         id: createId(),
         name: 'Node.js (TypeScript)',
-        logo: '',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762860000/Gloitel/icon/node_z9ziqo.webp',
       },
       {
         id: createId(),
         name: 'Python',
-        logo: '',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960588/Gloitel/icon/python_afmdty.png',
       },
       {
         id: createId(),
         name: 'Go',
-        logo: '',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787039286/Gloitel/icon/Go_nqicwd.png',
       },
       {
         id: createId(),
         name: 'Java (Spring Boot)',
-        logo: '',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785143838/Gloitel/icon/java_c2a3tr.png',
       },
     ],
 
@@ -72,32 +72,32 @@ export const backendTechStackData = {
       {
         id: createId(),
         name: 'NestJS',
-        logo: '',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787039285/Gloitel/icon/NestJS_xaqzkv.png',
       },
       {
         id: createId(),
         name: 'FastAPI',
-        logo: '',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960667/Gloitel/icon/fastApi_bwbwom.png',
       },
       {
         id: createId(),
         name: 'Django',
-        logo: '',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787039284/Gloitel/icon/Django_ezsw8r.png',
       },
       {
         id: createId(),
         name: 'Express',
-        logo: '',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789042540/Gloitel/icon/images_qc95ww.png',
       },
       {
         id: createId(),
         name: 'Gin',
-        logo: '',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789043429/Gloitel/icon/gin-logo-png_seeklogo-446934_qfyiig.png',
       },
       {
         id: createId(),
         name: 'Fiber',
-        logo: '',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789043812/Gloitel/icon/62ea745ef161d413e7e5acd4_fiber-intext-min_brq7ma.png',
       },
     ],
 
@@ -105,32 +105,32 @@ export const backendTechStackData = {
       {
         id: createId(),
         name: 'PostgreSQL',
-        logo: '',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960587/Gloitel/icon/PostgreSQL_fmo3yl.png',
       },
       {
         id: createId(),
         name: 'MongoDB',
-        logo: '',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787039284/Gloitel/icon/MongoDB_y5bh5v.png',
       },
       {
         id: createId(),
         name: 'Redis',
-        logo: '',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960597/Gloitel/icon/Redis_ppexpj.png',
       },
       {
         id: createId(),
         name: 'MySQL',
-        logo: '',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785144985/Gloitel/icon/mysql_ioyrw1.png',
       },
       {
         id: createId(),
         name: 'DynamoDB',
-        logo: '',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787039283/Gloitel/icon/DynamoDB_q5kcjb.png',
       },
       {
         id: createId(),
         name: 'Cassandra',
-        logo: '',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789044216/Gloitel/icon/Apache-cassandra-icon_opbnif.png',
       },
     ],
 
@@ -138,27 +138,27 @@ export const backendTechStackData = {
       {
         id: createId(),
         name: 'Kafka',
-        logo: '',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960567/Gloitel/icon/Kafka_wmgb4v.png',
       },
       {
         id: createId(),
         name: 'RabbitMQ',
-        logo: '',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960592/Gloitel/icon/RabbitMQ_om1s1r.png',
       },
       {
         id: createId(),
         name: 'AWS SQS',
-        logo: '',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960621/Gloitel/icon/AWS_SQS_ylmsp7.png',
       },
       {
         id: createId(),
         name: 'Google Pub/Sub',
-        logo: '',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960685/Gloitel/icon/Google_PubSub_j2vhtu.png',
       },
       {
         id: createId(),
         name: 'Bull',
-        logo: '',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789044526/Gloitel/icon/images_yfehmr.jpg',
       },
     ],
 
@@ -166,17 +166,17 @@ export const backendTechStackData = {
       {
         id: createId(),
         name: 'Elasticsearch',
-        logo: '',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789044696/Gloitel/icon/images_hiutsq.png',
       },
       {
         id: createId(),
         name: 'Typesense',
-        logo: '',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789044807/Gloitel/icon/typesense-icon-nh5fn3oxftvecskfbhbi_zwjhpq.webp',
       },
       {
         id: createId(),
         name: 'Algolia',
-        logo: '',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789045035/Gloitel/icon/Algolia_ipsy0v.webp',
       },
     ],
 

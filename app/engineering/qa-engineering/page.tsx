@@ -45,7 +45,7 @@ export default function Page() {
               showStepBadge={false}
               showDivider={false}
               items={aiAgentsData}
-              cardHeight='h-[450px]   max-w-[350px] '
+              cardHeight='h-[300px]   max-w-[350px] '
               gridClassName='gap-y-28'
               titleClassName=''
               descriptionClassName=''

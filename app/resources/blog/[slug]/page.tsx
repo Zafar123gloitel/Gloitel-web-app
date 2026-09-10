@@ -21,7 +21,7 @@ export default function BlogDetailsPage({ params }: { params: { slug: string } }
             Resources
           </Link>
           <span className='shrink-0 text-white/30'>›</span>
-          <Link href='/content' className='shrink-0 transition hover:text-white'>
+          <Link href='/resources/blog' className='shrink-0 transition hover:text-white'>
             Articles
           </Link>
           <span className='shrink-0 text-white/30'>›</span>
@@ -31,7 +31,7 @@ export default function BlogDetailsPage({ params }: { params: { slug: string } }
         </nav>
 
         {/* Hero image */}
-        <div className='relative aspect-2/1 overflow-hidden rounded-2xl border border-white/10'>
+        <div className='relative aspect-[20/9] overflow-hidden rounded-2xl border border-white/10 shadow-lg shadow-black/40'>
           <Image
             src={blog.image}
             alt={blog.title}
@@ -40,6 +40,7 @@ export default function BlogDetailsPage({ params }: { params: { slug: string } }
             unoptimized
             className='object-cover'
           />
+          <div className='absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent' />
         </div>
 
         {/* Author · Category · Date row */}
@@ -101,7 +102,7 @@ export default function BlogDetailsPage({ params }: { params: { slug: string } }
                 </ul>
               )}
               {section?.image && (
-                <div className='not-prose relative my-6 aspect-2/1 overflow-hidden rounded-xl border border-white/10'>
+                <div className='not-prose relative my-6 aspect-2/1 w-full max-w-xl overflow-hidden rounded-xl border border-white/10'>
                   <Image
                     src={section?.image}
                     alt={section.heading}

@@ -93,7 +93,7 @@ export default function Page() {
           badge={businessAnalysisEcosystemData.badge}
           title={businessAnalysisEcosystemData.title}
           description={businessAnalysisEcosystemData.description}
-          tabs={businessAnalysisEcosystemData.tabs}
+          // tabs={businessAnalysisEcosystemData.tabs}
           technologies={businessAnalysisEcosystemData.technologies}
         />
       </section>

@@ -1,4 +1,5 @@
 import {
+  ArrowRightIcon,
   QAAIPoweredProcessAutomationIcon,
   QAAgenticWorkflowAutomationIcon,
   QAHumanInTheLoopWorkflowsIcon,
@@ -8,94 +9,86 @@ import {
 const createId = () => globalThis.crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2);
 export const qaHeroData = {
   badgeText: 'QA Engineering',
-  title: 'AI Engineering That Ships and Stays Shipped',
+  title: 'Quality Built In, Not Bolted On',
   description:
-    "Building an AI proof-of-concept takes days. Building one that handles production traffic reliably, costs predictably, and can be debugged when something goes wrong – that's engineering. We've done the latter.",
-  image: '/images/Engineering/backend-engineering-hero.png',
+    "QA that happens at the end of a sprint finds bugs when they're expensive to fix. QA that's embedded in the development process prevents them. We do the latter — working with engineers from requirement definition through deployment.",
+  image:
+    'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788757672/Gloitel/Product%20Engineering/QA_Engineering_tb1o38.png',
   imageAlt: '',
   video: '',
   primaryButton: {
-    text: 'Talk to Our AI Engineers',
+    text: 'Talk to Our QA Team',
     href: '',
   },
   secondaryButton: {
-    text: 'View AI Work',
+    text: 'Quality Assessment',
     href: '',
-    icon: '',
+    icon: <ArrowRightIcon />,
   },
 };
 
 export const aiAgentsSectionHead = {
-  badgeText: 'What We Build',
-  title: 'AI Agents Designed for Real Business Workflows',
+  badgeText: 'What We Test',
+  title: 'Quality Engineering Across Every Layer of Your Product',
   description:
-    'We design and deploy AI agents that automate workflows, coordinate tools, make decisions, and execute complex tasks across business operations.',
+    'From exploratory testing to automated regression and production-scale performance validation, we build quality into the development lifecycle—not just the release checklist',
 };
 
 export const aiAgentsData = [
   {
     id: createId(),
-    icon: <QAAgenticWorkflowAutomationIcon />,
-    title: 'Agentic Workflow Automation',
+    icon: <QAAgenticWorkflowAutomationIcon size={30} />,
+    title: 'Manual Testing',
     description:
-      'Replace manual multi-step processes with agents that handle them end-to-end. Lead qualification, invoice processing, content moderation, compliance checks, research aggregation — automated with full audit trails.',
+      'Exploratory, regression, accessibility, and usability testing that finds issues beyond the written specification.',
   },
   {
     id: createId(),
-    icon: <QAMultiAgentSystemsIcon />,
-    title: 'Multi-Agent Systems',
+    icon: <QAMultiAgentSystemsIcon size={30} />,
+    title: 'Test Automation',
     description:
-      'Orchestrate teams of specialized agents working in parallel. One agent researches, another writes, another reviews. Each agent is optimized for a specific responsibility within the workflow. Complex tasks completed in minutes instead of hours.',
+      'Maintainable automated suites for frontend, backend, and mobile using Cypress, Playwright, Jest, Pytest, Appium, and Detox.',
   },
   {
     id: createId(),
-    icon: <QAToolUsingAgentsIcon />,
-    title: 'Tool-Using Agents',
+    icon: <QAToolUsingAgentsIcon size={30} />,
+    title: 'Performance Testing',
     description:
-      "Agents integrated with your real business tools – CRMs, ERPs, databases, Slack, email, calendars, file systems. Seamlessly connecting data, workflows, and actions across your organization. They don't just generate text; they take action inside your systems.",
+      'Load and stress testing with measurable response-time and capacity thresholds before production traffic arrives.',
   },
   {
     id: createId(),
-    icon: <QAHumanInTheLoopWorkflowsIcon />,
-    title: 'Human-in-the-Loop Workflows',
+    icon: <QAHumanInTheLoopWorkflowsIcon size={30} />,
+    title: 'Security Testing',
     description:
-      'Autonomous agents with configurable human oversight gates. The agent handles routine decisions; humans review exceptions. Designed for regulated industries and high-stakes workflows.',
+      'OWASP testing, dependency auditing, SAST, vulnerability scanning, and penetration-test coordination integrated into delivery.',
   },
   {
     id: createId(),
-    icon: <QAAIPoweredProcessAutomationIcon />,
-    title: 'AI-Powered Process Automation',
+    icon: <QAAIPoweredProcessAutomationIcon size={25} />,
+    title: 'API Testing',
     description:
-      "Next-generation RPA where agents handle unstructured inputs that rule-based bots can't. Document processing, email triage, form filling, data entry – with understanding, not just pattern matching.",
+      'Automated REST and GraphQL validation using Postman/Newman, Pact contract testing, and schema verification.',
   },
   {
     id: createId(),
-    icon: <QAAIPoweredProcessAutomationIcon />,
-    title: 'AI-Powered Process Automation',
+    icon: <QAAIPoweredProcessAutomationIcon size={25} />,
+    title: 'AI System Testing',
     description:
-      "Next-generation RPA where agents handle unstructured inputs that rule-based bots can't. Document processing, email triage, form filling, data entry – with understanding, not just pattern matching.",
+      'LLM evaluation for accuracy, hallucinations, prompt regressions, output quality, and performance benchmarks.',
   },
 ];
 
 export const aiEcosystemData = {
-  badge: 'Production AI Engineering Stack',
-  title: 'Built on a Modern AI Ecosystem',
+  badge: 'QA Engineering Stack',
+  title: 'Technologies We Test With',
   description:
-    'From foundation models to observability tools, every layer is chosen for performance, flexibility, and long-term maintainability.',
+    'Our QA stack covers browser experiences, APIs, mobile applications, performance, and security—giving teams consistent quality signals throughout development.',
 
-  tabs: [
-    'LLMs',
-    'RAG/Orchestration',
-    'Vector DBs',
-    'ML',
-    'MLOps',
-    'Serving',
-    'Observability',
-    'Cloud AI',
-  ],
+  tabs: ['Frontend', 'Backend', 'Mobile', 'Performance', 'Security'],
 
   technologies: {
-    LLMs: [
+    Frontend: [
       {
         id: createId(),
         name: 'OpenAI GPT-4o',
@@ -122,13 +115,114 @@ export const aiEcosystemData = {
         logo: '',
       },
     ],
-    'RAG/Orchestration': [],
-    'Vector DBs': [],
-    ML: [],
-    MLOps: [],
-    Serving: [],
-    Observability: [],
-    'Cloud AI': [],
+    Backend: [
+      {
+        id: createId(),
+        name: 'OpenAI GPT-4o',
+        logo: '',
+      },
+      {
+        id: createId(),
+        name: 'Claude 3.5 Sonnet',
+        logo: '',
+      },
+      {
+        id: createId(),
+        name: 'Gemini 1.5 Pro',
+        logo: '',
+      },
+      {
+        id: createId(),
+        name: 'LLaMA 3',
+        logo: '',
+      },
+      {
+        id: createId(),
+        name: 'Mistral',
+        logo: '',
+      },
+    ],
+    Mobile: [
+      {
+        id: createId(),
+        name: 'OpenAI GPT-4o',
+        logo: '',
+      },
+      {
+        id: createId(),
+        name: 'Claude 3.5 Sonnet',
+        logo: '',
+      },
+      {
+        id: createId(),
+        name: 'Gemini 1.5 Pro',
+        logo: '',
+      },
+      {
+        id: createId(),
+        name: 'LLaMA 3',
+        logo: '',
+      },
+      {
+        id: createId(),
+        name: 'Mistral',
+        logo: '',
+      },
+    ],
+    Performance: [
+      {
+        id: createId(),
+        name: 'OpenAI GPT-4o',
+        logo: '',
+      },
+      {
+        id: createId(),
+        name: 'Claude 3.5 Sonnet',
+        logo: '',
+      },
+      {
+        id: createId(),
+        name: 'Gemini 1.5 Pro',
+        logo: '',
+      },
+      {
+        id: createId(),
+        name: 'LLaMA 3',
+        logo: '',
+      },
+      {
+        id: createId(),
+        name: 'Mistral',
+        logo: '',
+      },
+    ],
+    Security: [
+      {
+        id: createId(),
+        name: 'OpenAI GPT-4o',
+        logo: '',
+      },
+      {
+        id: createId(),
+        name: 'Claude 3.5 Sonnet',
+        logo: '',
+      },
+      {
+        id: createId(),
+        name: 'Gemini 1.5 Pro',
+        logo: '',
+      },
+      {
+        id: createId(),
+        name: 'LLaMA 3',
+        logo: '',
+      },
+      {
+        id: createId(),
+        name: 'Mistral',
+        logo: '',
+      },
+    ],
   },
 };
 
