@@ -115,33 +115,41 @@ export const businessAnalysisEcosystemData = {
   description:
     'From requirements and backlog management to process mapping and collaborative workshops, we work in the tools your product and engineering teams already use.',
 
-  // tabs: [],
-
   technologies: [
     {
       id: createId(),
-      name: 'OpenAI GPT-4o',
-      logo: '',
+      name: 'Jira',
+      logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789131280/Gloitel/icon/Jira_wqfv5y.svg',
     },
     {
       id: createId(),
-      name: 'Claude 3.5 Sonnet',
-      logo: '',
+      name: 'Confluence',
+      logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789131346/Gloitel/icon/Confluence_pruyvn.svg',
     },
     {
       id: createId(),
-      name: 'Gemini 1.5 Pro',
-      logo: '',
+      name: 'Notion',
+      logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789131468/Gloitel/icon/Notion_app_logo_fyxgew.png',
     },
     {
       id: createId(),
-      name: 'LLaMA 3',
-      logo: '',
+      name: 'Miro',
+      logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789131552/Gloitel/icon/images_saj26j.png',
     },
     {
       id: createId(),
-      name: 'Mistral',
-      logo: '',
+      name: 'Lucidchart',
+      logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789131702/Gloitel/icon/images_qdfkaf.jpg',
+    },
+    {
+      id: createId(),
+      name: 'Figma/FigJam',
+      logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789131743/Gloitel/icon/Figma_fnrj6g.svg',
+    },
+    {
+      id: createId(),
+      name: 'Monday.com',
+      logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789131864/Gloitel/icon/monday_rzxxn5.svg',
     },
   ],
 };

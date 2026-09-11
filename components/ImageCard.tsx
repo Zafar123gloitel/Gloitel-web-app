@@ -3,8 +3,9 @@ import Link from 'next/link';
 import { Card, CardDescription, CardTitle } from '@/components';
 
 const ImageCard = ({
-  className: _className = '',
+  className = '',
   cradClass,
+  padding = 'p-5 sm:p-6',
   cardtitle = 'Healthcare Client ',
   carddescription = 'Deployed a private LLM for clinical documentation summarization. 70% reduction in admin time per consultation. Zero PHI data leaves the VPC.',
   buttintext = 'View Case Study ',
@@ -13,10 +14,10 @@ const ImageCard = ({
   image = '',
 }) => {
   return (
-    <div className='h-full'>
-      {' '}
+    <div className={['h-full', className].filter(Boolean).join(' ')}>
       <Card
         className={['relative flex h-full flex-col pb-10', cradClass].filter(Boolean).join(' ')}
+        padding={padding}
       >
         <div>
           <div className=' '>

@@ -184,27 +184,27 @@ export const backendTechStackData = {
       {
         id: createId(),
         name: 'JWT',
-        logo: '',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789103011/Gloitel/icon/jwt-icon-aqjx58uyj3lrxtborzgyg_kawfog.webp',
       },
       {
         id: createId(),
         name: 'OAuth 2.0 / OIDC',
-        logo: '',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789103314/Gloitel/icon/Oauth_logo.svg_koobyp.webp',
       },
       {
         id: createId(),
         name: 'Clerk',
-        logo: '',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960643/Gloitel/icon/clerk_fapefn.png',
       },
       {
         id: createId(),
         name: 'Auth0',
-        logo: '',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784961896/Gloitel/icon/Auth0_shuxwm.png',
       },
       {
         id: createId(),
         name: 'Keycloak',
-        logo: '',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789103591/Gloitel/icon/Keycloak_Logo_pcu69n.png',
       },
     ],
 
@@ -212,22 +212,22 @@ export const backendTechStackData = {
       {
         id: createId(),
         name: 'REST',
-        logo: '',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960600/Gloitel/icon/RESTAPIs_aldign.png',
       },
       {
         id: createId(),
         name: 'GraphQL (Apollo, Strawberry)',
-        logo: '',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762860000/Gloitel/icon/graph_v7lrwc.webp',
       },
       {
         id: createId(),
         name: 'gRPC',
-        logo: '',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785230211/Gloitel/icon/grpc_hlwe7c.png',
       },
       {
         id: createId(),
         name: 'WebSocket',
-        logo: '',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789105084/Gloitel/icon/130129149_wgt483.png',
       },
     ],
   },

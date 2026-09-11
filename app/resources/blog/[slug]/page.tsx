@@ -3,14 +3,15 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import data from '../[slug]/data.json';
 
-export default function BlogDetailsPage({ params }: { params: { slug: string } }) {
-  const blog = data.blogs.find(b => b.slug === params.slug);
+export default async function BlogDetailsPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const blog = data.blogs.find(b => b.slug === slug);
 
   if (!blog) {
     notFound();
   }
 
-  const relatedArticles = data.blogs.filter(b => b.slug !== params.slug).slice(0, 3);
+  const relatedArticles = data.blogs.filter(b => b.slug !== slug).slice(0, 3);
 
   return (
     <main className='min-h-screen bg-black px-5 pt-28 pb-24 text-white sm:px-8 lg:px-12'>

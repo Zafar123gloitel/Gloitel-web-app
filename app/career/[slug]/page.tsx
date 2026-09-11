@@ -4,8 +4,9 @@ import { MiddleSectionHeads } from '@/components/SectionHeads';
 import CareerApplicationForm from '@/components/career/CareerApplicationForm';
 import { jobDetailsData } from './data';
 
-export default function CareerDetailPage({ params }: { params: { slug: string } }) {
-  const job = jobDetailsData[params.slug];
+export default async function CareerDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const job = jobDetailsData[slug];
   const BriefcaseIcon = () => (
     <svg width='14' height='14' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
       <rect x='3' y='7' width='18' height='13' rx='2' stroke='currentColor' strokeWidth='1.5' />

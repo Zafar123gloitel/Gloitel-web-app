@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { Suspense, useState, useEffect } from 'react';
 import { useRouter, useSearchParams, usePathname } from 'next/navigation';
 import StrategyBadge from '@/components/StrategyBadge';
 import IconCard from '@/components/card-showcase/IconCard';
@@ -19,9 +19,9 @@ interface AI_SolutionsProps {
   technologies: Record<string, Technology[]> | Technology[];
 }
 
-const QUERY_KEY = 'tab'; // URL me ?tab=1 aise dikhega
+const QUERY_KEY = 'tab';
 
-const AI_Solutions = ({
+const AI_SolutionsContent = ({
   badge,
   title,
   description,
@@ -33,11 +33,10 @@ const AI_Solutions = ({
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
-  // URL se initial value nikal lo
   const getInitialIndex = () => {
     const tabParam = searchParams.get(QUERY_KEY);
     if (tabParam !== null) {
-      const parsedIndex = parseInt(tabParam, 10);
+      const parsedIndex = Number.parseInt(tabParam, 10);
       if (!Number.isNaN(parsedIndex) && parsedIndex >= 0 && parsedIndex < tabs.length) {
         return parsedIndex;
       }
@@ -47,24 +46,21 @@ const AI_Solutions = ({
 
   const [activeTabIndex, setActiveTabIndex] = useState(getInitialIndex);
 
-  // Agar URL change ho (back/forward button se) to state bhi sync ho
   useEffect(() => {
     const tabParam = searchParams.get(QUERY_KEY);
     if (tabParam !== null) {
-      const parsedIndex = parseInt(tabParam, 10);
+      const parsedIndex = Number.parseInt(tabParam, 10);
       if (!Number.isNaN(parsedIndex) && parsedIndex >= 0 && parsedIndex < tabs.length) {
         setActiveTabIndex(parsedIndex);
       }
     }
-  }, [searchParams]);
+  }, [searchParams, tabs.length]);
 
   const activeTab = tabs[activeTabIndex];
   const hasMoreThanFiveTabs = tabs.length > 5;
 
   const handleTabClick = (index: number) => {
     setActiveTabIndex(index);
-
-    // URL update karo bina page reload kiye
     const params = new URLSearchParams(searchParams.toString());
     params.set(QUERY_KEY, index.toString());
     router.push(`${pathname}?${params.toString()}`, { scroll: false });
@@ -73,7 +69,6 @@ const AI_Solutions = ({
   return (
     <section className='bg-surface-1 py-24'>
       <div className='max-w-8xl mx-auto px-6'>
-        {/* Heading */}
         <div className='text-center'>
           <StrategyBadge text={badge} />
 
@@ -82,7 +77,6 @@ const AI_Solutions = ({
           <p className='text-description mx-auto mt-6 max-w-3xl text-lg leading-8'>{description}</p>
         </div>
 
-        {/* Tabs */}
         <div className='mt-14 flex justify-center'>
           <div
             className={`flex [scrollbar-width:none] gap-4 pb-4 [&::-webkit-scrollbar]:hidden ${
@@ -108,7 +102,6 @@ const AI_Solutions = ({
           </div>
         </div>
 
-        {/* Cards */}
         <div className='bg-surface-2 px-auto mt-14 hidden overflow-hidden rounded-3xl border-white/10 py-12 lg:block'>
           <div
             className='flex p-5 transition-transform duration-1000 ease-out sm:p-0'
@@ -136,7 +129,7 @@ const AI_Solutions = ({
             )}
           </div>
         </div>
-        {/* mobile screen */}
+
         {activeTab && activeTab.length > 0 ? (
           <div className='bg-surface-2 mt-14 rounded-3xl border-white/10 p-4 lg:hidden'>
             <div
@@ -160,6 +153,26 @@ const AI_Solutions = ({
         )}
       </div>
     </section>
+  );
+};
+
+const AI_Solutions = (props: AI_SolutionsProps) => {
+  return (
+    <Suspense
+      fallback={
+        <section className='bg-surface-1 py-24'>
+          <div className='max-w-8xl mx-auto px-6'>
+            <div className='text-center'>
+              <div className='mx-auto h-10 w-28 animate-pulse rounded-full bg-white/10' />
+              <div className='mx-auto mt-8 h-12 w-72 animate-pulse rounded-lg bg-white/10' />
+              <div className='mx-auto mt-6 h-5 w-full max-w-3xl animate-pulse rounded bg-white/10' />
+            </div>
+          </div>
+        </section>
+      }
+    >
+      <AI_SolutionsContent {...props} />
+    </Suspense>
   );
 };
 

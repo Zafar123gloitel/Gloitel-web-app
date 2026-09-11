@@ -1,10 +1,11 @@
 import {
+  AISystemTesting,
+  APITesting,
   ArrowRightIcon,
-  QAAIPoweredProcessAutomationIcon,
-  QAAgenticWorkflowAutomationIcon,
-  QAHumanInTheLoopWorkflowsIcon,
-  QAMultiAgentSystemsIcon,
-  QAToolUsingAgentsIcon,
+  ManualTesting,
+  PerformanceTesting,
+  ShieldCheckIcon,
+  TestAutomation,
 } from 'components/SvgIcon';
 const createId = () => globalThis.crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2);
 export const qaHeroData = {
@@ -37,42 +38,42 @@ export const aiAgentsSectionHead = {
 export const aiAgentsData = [
   {
     id: createId(),
-    icon: <QAAgenticWorkflowAutomationIcon size={30} />,
+    icon: <ManualTesting size={25} />,
     title: 'Manual Testing',
     description:
       'Exploratory, regression, accessibility, and usability testing that finds issues beyond the written specification.',
   },
   {
     id: createId(),
-    icon: <QAMultiAgentSystemsIcon size={30} />,
+    icon: <TestAutomation size={25} />,
     title: 'Test Automation',
     description:
       'Maintainable automated suites for frontend, backend, and mobile using Cypress, Playwright, Jest, Pytest, Appium, and Detox.',
   },
   {
     id: createId(),
-    icon: <QAToolUsingAgentsIcon size={30} />,
+    icon: <PerformanceTesting size={25} />,
     title: 'Performance Testing',
     description:
       'Load and stress testing with measurable response-time and capacity thresholds before production traffic arrives.',
   },
   {
     id: createId(),
-    icon: <QAHumanInTheLoopWorkflowsIcon size={30} />,
+    icon: <ShieldCheckIcon size={30} />,
     title: 'Security Testing',
     description:
       'OWASP testing, dependency auditing, SAST, vulnerability scanning, and penetration-test coordination integrated into delivery.',
   },
   {
     id: createId(),
-    icon: <QAAIPoweredProcessAutomationIcon size={25} />,
+    icon: <APITesting size={25} />,
     title: 'API Testing',
     description:
       'Automated REST and GraphQL validation using Postman/Newman, Pact contract testing, and schema verification.',
   },
   {
     id: createId(),
-    icon: <QAAIPoweredProcessAutomationIcon size={25} />,
+    icon: <AISystemTesting size={25} />,
     title: 'AI System Testing',
     description:
       'LLM evaluation for accuracy, hallucinations, prompt regressions, output quality, and performance benchmarks.',
@@ -91,136 +92,111 @@ export const aiEcosystemData = {
     Frontend: [
       {
         id: createId(),
-        name: 'OpenAI GPT-4o',
-        logo: '',
+        name: 'Cypress',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787039281/Gloitel/icon/Cypress_ofw9sp.png',
       },
       {
         id: createId(),
-        name: 'Claude 3.5 Sonnet',
-        logo: '',
+        name: 'Playwright',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787039281/Gloitel/icon/Playwright_zzr0s2.png',
       },
       {
         id: createId(),
-        name: 'Gemini 1.5 Pro',
-        logo: '',
+        name: 'React Testing Library',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789040251/Gloitel/icon/octopus-128x128_e2xaai.png',
       },
       {
         id: createId(),
-        name: 'LLaMA 3',
-        logo: '',
-      },
-      {
-        id: createId(),
-        name: 'Mistral',
-        logo: '',
+        name: 'Storybook Interaction Tests',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787050154/Gloitel/icon/Storybook_kpgob6.png',
       },
     ],
     Backend: [
       {
         id: createId(),
-        name: 'OpenAI GPT-4o',
-        logo: '',
+        name: 'Jest',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787039281/Gloitel/icon/Jest_pnlmv9.png',
       },
       {
         id: createId(),
-        name: 'Claude 3.5 Sonnet',
-        logo: '',
+        name: 'Pytest',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789121196/Gloitel/icon/pytest_pwex1y.svg',
       },
       {
         id: createId(),
-        name: 'Gemini 1.5 Pro',
-        logo: '',
+        name: 'Supertest',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789121302/Gloitel/icon/Reach_zt01ms.svg',
       },
       {
         id: createId(),
-        name: 'LLaMA 3',
-        logo: '',
-      },
-      {
-        id: createId(),
-        name: 'Mistral',
-        logo: '',
+        name: 'Newman',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789121530/Gloitel/icon/Postman_fxkwxo.svg',
       },
     ],
     Mobile: [
       {
         id: createId(),
-        name: 'OpenAI GPT-4o',
-        logo: '',
+        name: 'Appium',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789121741/Gloitel/icon/Titanium-SDK_m9w8up.svg',
       },
       {
         id: createId(),
-        name: 'Claude 3.5 Sonnet',
-        logo: '',
+        name: 'Detox',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789122293/Gloitel/icon/logo_ruhpbf.png',
       },
       {
         id: createId(),
-        name: 'Gemini 1.5 Pro',
-        logo: '',
+        name: 'XCTest',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789122449/Gloitel/icon/user_interface_testing_c4xa9e.png',
       },
       {
         id: createId(),
-        name: 'LLaMA 3',
-        logo: '',
-      },
-      {
-        id: createId(),
-        name: 'Mistral',
-        logo: '',
+        name: 'Espresso',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789122561/Gloitel/icon/espresso_l3lwnj.png',
       },
     ],
     Performance: [
       {
         id: createId(),
-        name: 'OpenAI GPT-4o',
-        logo: '',
+        name: 'k6',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789122681/Gloitel/icon/K6-load-testing-tool-logo-icon-min_d1dls3.png',
       },
       {
         id: createId(),
-        name: 'Claude 3.5 Sonnet',
-        logo: '',
+        name: 'Locust',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789122759/Gloitel/icon/2641063_whxppn.png',
       },
       {
         id: createId(),
-        name: 'Gemini 1.5 Pro',
-        logo: '',
+        name: 'JMeter',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789122925/Gloitel/icon/Apache-JMeter_ohfrde.png',
       },
       {
         id: createId(),
-        name: 'LLaMA 3',
-        logo: '',
-      },
-      {
-        id: createId(),
-        name: 'Mistral',
-        logo: '',
+        name: 'Artillery',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789123029/Gloitel/icon/12608521_jjjgh4.png',
       },
     ],
     Security: [
       {
         id: createId(),
-        name: 'OpenAI GPT-4o',
-        logo: '',
+        name: 'OWASP ZAP',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789123333/Gloitel/icon/OWASP_ZAP_logo.svg_jqmgk7.webp',
       },
       {
         id: createId(),
-        name: 'Claude 3.5 Sonnet',
-        logo: '',
+        name: 'Snyk',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789123498/Gloitel/icon/snyk-argj9w9zgahaf04t4nlky_iylz6g.webp',
       },
       {
         id: createId(),
-        name: 'Gemini 1.5 Pro',
-        logo: '',
+        name: 'SonarQube',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789123528/Gloitel/icon/SonarQube_dni4gi.svg',
       },
       {
         id: createId(),
-        name: 'LLaMA 3',
-        logo: '',
-      },
-      {
-        id: createId(),
-        name: 'Mistral',
-        logo: '',
+        name: 'Semgrep',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789123573/Gloitel/icon/29760937_stqgdo.png',
       },
     ],
   },
