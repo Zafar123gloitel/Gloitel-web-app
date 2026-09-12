@@ -739,6 +739,7 @@ import { GlowButton } from './Button';
 import { HorizontalDivider, VerticalDivider } from './SectionDivider';
 import Image from 'next/image';
 import StrategyBadge from './StrategyBadge';
+import IconCard from './card-showcase/IconCard';
 
 // FOR HOME PAGE
 export const HomeAboutContent = ({
@@ -984,3 +985,54 @@ export const AboutAboutImg2 = ({ ImgLink }) => {
     </>
   );
 };
+
+export default function TeamSection({ teamSectionData }) {
+  const tabs = teamSectionData.tabs;
+  const membersByTab = teamSectionData.members;
+
+  return (
+    <section className='bg-surface-1 py-24'>
+      <div className='max-w-8xl mx-auto px-6'>
+        {/* Header */}
+        <div className='text-center'>
+          <StrategyBadge text={teamSectionData.badge} />
+          <h2 className='text-title mt-8 text-5xl font-medium'>{teamSectionData.title}</h2>
+          <p className='text-description mx-auto mt-6 max-w-3xl text-lg leading-8'>
+            {teamSectionData.description}
+          </p>
+        </div>
+
+        {/* Har tab -> uska naam + uska content, dono center aligned */}
+        <div className='mt-14 flex flex-col gap-14'>
+          {tabs.map(tab => {
+            const members = membersByTab[tab] || [];
+            if (members.length === 0) return null;
+
+            return (
+              <div key={tab} className='flex flex-col items-center gap-6'>
+                {/* Tab ka naam */}
+                <h3 className='text-title text-2xl font-medium'>{tab}</h3>
+
+                {/* Us tab ka content box */}
+                <div className='bg-surface-2 w-full overflow-hidden rounded-3xl border border-white/10 px-6 py-12'>
+                  <div className='flex w-full flex-wrap justify-center gap-5'>
+                    {members.map(item => (
+                      <IconCard
+                        key={item.id}
+                        name={item.name}
+                        designation={item.designation}
+                        icontype={false}
+                        logo={item.logo}
+                        size={20}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
