@@ -9,17 +9,26 @@ interface IconCardProps {
   icontype?: boolean;
   Icon?: ReactNode;
   icon?: ReactNode;
+  size?: number; // Tailwind spacing unit (14 => 3.5rem => 56px)
 }
 
-const IconCard = ({ name, designation, logo, icontype = true, Icon, icon }: IconCardProps) => {
+const IconCard = ({
+  name,
+  designation,
+  logo,
+  icontype = true,
+  Icon,
+  icon,
+  size = 14, // default agar pass nahi hua
+}: IconCardProps) => {
   const iconNode = Icon || icon;
+  const sizePx = size * 4; // Tailwind: 1 unit = 0.25rem = 4px
+
   return (
     <div
       className={[
         'group relative overflow-hidden rounded-[10px] border border-white/10',
-
         'bg-[linear-gradient(114deg, rgba(28, 57, 142, 0.40) 0%, rgba(55, 42, 172, 0.20) 50%, rgba(55, 42, 172, 0.00) 100%)]',
-
         'shadow-[0_22px_40px_rgba(15,23,42,0.22)] transition-all duration-300 ease-out',
         'hover:border-blue-500/80',
 
@@ -66,18 +75,24 @@ const IconCard = ({ name, designation, logo, icontype = true, Icon, icon }: Icon
             )}
           </div>
         ) : (
-          <div className='flex h-16 w-16 items-center justify-center overflow-hidden rounded-full bg-white transition-all duration-700 group-hover:scale-110'>
+          <div
+            style={{ height: sizePx, width: sizePx }}
+            className='flex items-center justify-center overflow-hidden rounded-full transition-all duration-700 group-hover:scale-110'
+          >
             {typeof logo === 'string' && logo.trim().length > 0 ? (
               <Image
-                height={64}
-                width={64}
+                height={sizePx}
+                width={sizePx}
                 src={logo}
                 alt={name}
-                className='h-full w-full object-contain'
+                className='h-full w-full object-cover'
                 loading='lazy'
               />
             ) : (
-              <div className='h-10 w-10 rounded-full bg-slate-200' />
+              <div
+                style={{ height: sizePx, width: sizePx }}
+                className='rounded-full bg-slate-200'
+              />
             )}
           </div>
         )}
