@@ -21,13 +21,11 @@ export const links = [
   {
     href: '/about',
     label: 'About us',
-    megaMenu: 'about',
   },
 
   {
     href: '/career',
     label: 'Career',
-    megaMenu: 'career',
   },
   {
     href: '/resources',
@@ -214,108 +212,108 @@ export const megaMenus = {
     ],
   },
 
-  about: {
-    width: 'w-[1150px]',
-    columns: 'grid-cols-5',
-    groupsSpan: 'col-span-4 grid-cols-4',
-    image: '/images/megananu.png',
-    groups: [
-      {
-        title: 'Company',
-        items: [
-          { label: 'Who We Are', href: '/about#who-we-are' },
-          { label: 'Our Journey', href: '/about#our-journey' },
-          { label: 'Mission & Vision', href: '/about#mission-vision' },
-          { label: 'What We Believe', href: '/about#what-we-believe' },
-        ],
-      },
-      {
-        title: 'Expertise',
-        items: [
-          { label: 'Our Expertise', href: '/about#our-expertise' },
-          { label: 'Work Celebrate', href: '/about#work-celebrate' },
-          {
-            label: 'Industries We Serve',
-            href: '/about#industries-we-serve',
-          },
-          {
-            label: 'Technology Ecosystem',
-            href: '/about#technology-ecosystem',
-          },
-        ],
-      },
-      {
-        title: 'People',
-        items: [
-          { label: 'Our Team', href: '/about#our-team' },
-          { label: 'Our Culture', href: '/about#our-culture' },
-          {
-            label: 'Client Testimonials',
-            href: '/about#client-testimonials',
-          },
-        ],
-      },
-    ],
-  },
+  // about: {
+  //   width: 'w-[1150px]',
+  //   columns: 'grid-cols-5',
+  //   groupsSpan: 'col-span-4 grid-cols-4',
+  //   image: '/images/megananu.png',
+  //   groups: [
+  //     {
+  //       title: 'Company',
+  //       items: [
+  //         { label: 'Who We Are', href: '/about#who-we-are' },
+  //         { label: 'Our Journey', href: '/about#our-journey' },
+  //         { label: 'Mission & Vision', href: '/about#mission-vision' },
+  //         { label: 'What We Believe', href: '/about#what-we-believe' },
+  //       ],
+  //     },
+  //     {
+  //       title: 'Expertise',
+  //       items: [
+  //         { label: 'Our Expertise', href: '/about#our-expertise' },
+  //         { label: 'Work Celebrate', href: '/about#work-celebrate' },
+  //         {
+  //           label: 'Industries We Serve',
+  //           href: '/about#industries-we-serve',
+  //         },
+  //         {
+  //           label: 'Technology Ecosystem',
+  //           href: '/about#technology-ecosystem',
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       title: 'People',
+  //       items: [
+  //         { label: 'Our Team', href: '/about#our-team' },
+  //         { label: 'Our Culture', href: '/about#our-culture' },
+  //         {
+  //           label: 'Client Testimonials',
+  //           href: '/about#client-testimonials',
+  //         },
+  //       ],
+  //     },
+  //   ],
+  // },
 
-  career: {
-    width: 'w-[1150px]',
-    columns: 'grid-cols-5',
-    groupsSpan: 'col-span-4 grid-cols-4',
-    image: '/images/megananu.png',
-    groups: [
-      {
-        title: 'Why Gloitel',
-        items: [
-          {
-            label: 'Why Join Gloitel',
-            href: '/career#why-join-gloitel',
-          },
-          {
-            label: 'Benefits & Perks',
-            href: '/career#benefits-perks',
-          },
-        ],
-      },
-      {
-        title: 'Opportunities',
-        items: [
-          {
-            label: 'Open Opportunities',
-            href: '/career#open-opportunities',
-          },
-          {
-            label: 'Internships',
-            href: '/career#internships',
-          },
-        ],
-      },
-      {
-        title: 'Hiring',
-        items: [
-          {
-            label: 'Our Hiring Process',
-            href: '/career#our-hiring-process',
-          },
-          {
-            label: 'Employee Stories',
-            href: '/career#employee-stories',
-          },
-        ],
-      },
-      {
-        title: 'Apply',
-        items: [
-          {
-            label: 'View Open Positions',
-            href: '/career#view-open-positions',
-          },
-          {
-            label: 'Apply Now',
-            href: '/career#apply-now',
-          },
-        ],
-      },
-    ],
-  },
+  // career: {
+  //   width: 'w-[1150px]',
+  //   columns: 'grid-cols-5',
+  //   groupsSpan: 'col-span-4 grid-cols-4',
+  //   image: '/images/megananu.png',
+  //   groups: [
+  //     {
+  //       title: 'Why Gloitel',
+  //       items: [
+  //         {
+  //           label: 'Why Join Gloitel',
+  //           href: '/career#why-join-gloitel',
+  //         },
+  //         {
+  //           label: 'Benefits & Perks',
+  //           href: '/career#benefits-perks',
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       title: 'Opportunities',
+  //       items: [
+  //         {
+  //           label: 'Open Opportunities',
+  //           href: '/career#open-opportunities',
+  //         },
+  //         {
+  //           label: 'Internships',
+  //           href: '/career#internships',
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       title: 'Hiring',
+  //       items: [
+  //         {
+  //           label: 'Our Hiring Process',
+  //           href: '/career#our-hiring-process',
+  //         },
+  //         {
+  //           label: 'Employee Stories',
+  //           href: '/career#employee-stories',
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       title: 'Apply',
+  //       items: [
+  //         {
+  //           label: 'View Open Positions',
+  //           href: '/career#view-open-positions',
+  //         },
+  //         {
+  //           label: 'Apply Now',
+  //           href: '/career#apply-now',
+  //         },
+  //       ],
+  //     },
+  //   ],
+  // },
 };

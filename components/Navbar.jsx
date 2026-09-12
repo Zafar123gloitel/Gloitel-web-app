@@ -472,7 +472,7 @@ const Navbar = () => {
           {/* 🔹 Left Section — Menu + Logo */}
           <div className='flex items-center gap-6'>
             {/* 🔹 Logo */}
-            <Link href='/' className='flex items-center gap-2'>
+            <Link href='/' className='flex w-32 items-center gap-2'>
               <Image
                 src='https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762927934/Gloitel/logo_xbs2qc.svg'
                 width={120}
@@ -538,66 +538,68 @@ const Navbar = () => {
                           }`}
                         >
                           <div
-                            className={`h-80 w-full rounded-b-sm bg-gray-900 p-8 opacity-100 shadow-2xl`}
+                            className={`h-80 rounded-b-sm bg-gray-900 p-8 opacity-100 shadow-2xl`}
                           >
-                            <p className='mb-6 text-sm font-medium text-blue-400'>{link.label}</p>
+                            <div className='mx-auto w-[80%]'>
+                              <p className='mb-6 text-sm font-medium text-blue-400'>{link.label}</p>
 
-                            <div className={`grid ${menu.columns} gap-10 text-nowrap`}>
-                              <div className={`${menu.groupsSpan} grid gap-8`}>
-                                {menu.groups.map(section => (
-                                  <div key={section.title}>
-                                    {section.href ? (
-                                      <Link
-                                        href={section.href}
-                                        className='text-title mb-5 block font-semibold transition-colors hover:text-blue-400'
-                                      >
-                                        {section.title}
-                                      </Link>
-                                    ) : (
-                                      <h4 className='text-title mb-5 font-semibold'>
-                                        {section.title}
-                                      </h4>
-                                    )}
-                                    <div className='grid grid-flow-col gap-8'>
-                                      {Array.from(
-                                        {
-                                          length: Math.ceil(section.items.length / 4),
-                                        },
-                                        (_, chunkIndex) => (
-                                          <ul key={chunkIndex} className='space-y-3'>
-                                            {section.items
-                                              .slice(chunkIndex * 5, chunkIndex * 5 + 5)
-                                              .map((item, index) => (
-                                                <li key={index}>
-                                                  <Link
-                                                    href={item.href}
-                                                    className={`flex items-center gap-2 text-sm ${getLinkClasses(
-                                                      item.href,
-                                                    )}`}
-                                                    onClick={() => setOpenMegaMenu(null)}
-                                                  >
-                                                    {item.label}
-                                                  </Link>
-                                                </li>
-                                              ))}
-                                          </ul>
-                                        ),
+                              <div className={`grid ${menu.columns} gap-10 text-nowrap`}>
+                                <div className={`${menu.groupsSpan} grid gap-8`}>
+                                  {menu.groups.map(section => (
+                                    <div key={section.title}>
+                                      {section.href ? (
+                                        <Link
+                                          href={section.href}
+                                          className='text-title mb-5 block font-semibold transition-colors hover:text-blue-400'
+                                        >
+                                          {section.title}
+                                        </Link>
+                                      ) : (
+                                        <h4 className='text-title mb-5 font-semibold'>
+                                          {section.title}
+                                        </h4>
                                       )}
+                                      <div className='grid grid-flow-col gap-8'>
+                                        {Array.from(
+                                          {
+                                            length: Math.ceil(section.items.length / 4),
+                                          },
+                                          (_, chunkIndex) => (
+                                            <ul key={chunkIndex} className='space-y-3'>
+                                              {section.items
+                                                .slice(chunkIndex * 5, chunkIndex * 5 + 5)
+                                                .map((item, index) => (
+                                                  <li key={index}>
+                                                    <Link
+                                                      href={item.href}
+                                                      className={`flex items-center gap-2 text-sm ${getLinkClasses(
+                                                        item.href,
+                                                      )}`}
+                                                      onClick={() => setOpenMegaMenu(null)}
+                                                    >
+                                                      {item.label}
+                                                    </Link>
+                                                  </li>
+                                                ))}
+                                            </ul>
+                                          ),
+                                        )}
+                                      </div>
                                     </div>
-                                  </div>
-                                ))}
-                              </div>
+                                  ))}
+                                </div>
 
-                              <div className='-mt-6 flex items-center justify-center'>
-                                <div className='h-56 w-56 rounded-2xl shadow-[0_0_80px_rgba(37,99,235,0.45)]'>
-                                  <Image
-                                    src={menu.image}
-                                    width={280}
-                                    height={220}
-                                    alt='menu'
-                                    className='h-full w-full rounded-2xl drop-shadow-[0_25px_50px_rgba(37,99,235,0.35)]'
-                                    loading='lazy'
-                                  />
+                                <div className='-mt-6 flex items-center justify-center'>
+                                  <div className='h-56 w-56 rounded-2xl shadow-[0_0_80px_rgba(37,99,235,0.45)]'>
+                                    <Image
+                                      src={menu.image}
+                                      width={280}
+                                      height={220}
+                                      alt='menu'
+                                      className='h-full w-full rounded-2xl drop-shadow-[0_25px_50px_rgba(37,99,235,0.35)]'
+                                      loading='lazy'
+                                    />
+                                  </div>
                                 </div>
                               </div>
                             </div>

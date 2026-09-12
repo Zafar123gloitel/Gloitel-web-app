@@ -109,10 +109,16 @@ const AI_SolutionsContent = ({
           >
             {tabs && tabs.length > 0 ? (
               tabs.map(tab => (
-                <div key={tab} className='min-w-full shrink-0'>
+                <div key={tab} className='w-full shrink-0'>
                   <div className='flex flex-wrap items-center justify-center gap-5'>
                     {technologies[tab]?.map((item, index) => (
-                      <IconCard key={index} name={item.name} icontype={false} logo={item.logo} />
+                      <IconCard
+                        key={index}
+                        name={item.name}
+                        designation={item.designation}
+                        icontype={false}
+                        logo={item.logo}
+                      />
                     ))}
                   </div>
                 </div>

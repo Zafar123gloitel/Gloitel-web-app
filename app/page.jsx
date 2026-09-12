@@ -2,7 +2,6 @@
 import { useRef } from 'react';
 import dynamic from 'next/dynamic';
 import Hero from '@/components/Hero';
-import { WhoWeAre } from '@/components/About';
 import { LoadingSection } from '@/components/LoadingSection';
 import { useScroll } from 'framer-motion';
 import StrategyBadge from '@/components/StrategyBadge';
@@ -15,6 +14,7 @@ import GlowPanel from '@/components/GlowPanel';
 import { GlowButton } from '@/components/Button';
 import ServiceCard from '@/components/serviceCard';
 import HowWeWork from '@/components/HowWeWork';
+import { HomeAboutContent, HomeAboutImg } from '@/components/About';
 
 const Result = dynamic(() => import('@/components/Result'), {
   loading: () => <LoadingSection minHeight='min-h-[280px]' />,
@@ -111,34 +111,32 @@ const HomePage = () => {
       <Hero />
 
       {/* About Section */}
-      {/* <section className="relative isolate px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
-        <div className="mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-         
-          <div className="order-1 md:order-2">
+      <section className='relative isolate px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-24'>
+        <div className='mx-auto grid max-w-6xl grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-16'>
+          <div className='order-1 md:order-2'>
             <HomeAboutContent
-              HomeAboutBadge="About Gloitel"
-              homeAboutHeading="Building Stronger Brands"
-              HomeAboutSubHeading="Creating Impressions"
-              HomeAboutDescription="Gloitel is a leading IT company offering website development, mobile apps, and AI solutions. We create innovative, scalable, and smart digital experiences for businesses."
+              HomeAboutBadge='About Gloitel'
+              homeAboutHeading='Building Stronger Brands'
+              HomeAboutSubHeading='Creating Impressions'
+              HomeAboutDescription='Gloitel is a leading IT company offering website development, mobile apps, and AI solutions. We create innovative, scalable, and smart digital experiences for businesses.'
               HomeAboutFeatures={[
-                { title: "Web & App Development" },
-                { title: "AI-Powered Solutions" },
-                { title: "Custom IT Services" },
+                { title: 'Web & App Development' },
+                { title: 'AI-Powered Solutions' },
+                { title: 'Custom IT Services' },
               ]}
-              ButtonText="View About Gloitel"
-              Buttonlink="/about"
-              HomeAboutTexts="Trusted by 50+ agencies for excellence."
+              ButtonText='View About Gloitel'
+              Buttonlink='/about'
+              HomeAboutTexts='Trusted by 50+ agencies for excellence.'
             />
           </div>
 
-         
-          <div className="order-2 md:order-1">
-            <HomeAboutImg ImgLink="https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762928286/Gloitel/aboutgloitel_h4ba1t.webp" />
+          <div className='order-2 md:order-1'>
+            <HomeAboutImg ImgLink='https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762928286/Gloitel/aboutgloitel_h4ba1t.webp' />
           </div>
         </div>
-      </section> */}
+      </section>
 
-      <WhoWeAre />
+      {/* <WhoWeAre /> */}
 
       <HorizontalDivider />
       <Result />

@@ -4,13 +4,14 @@ import React, { ReactNode } from 'react';
 
 interface IconCardProps {
   name: string;
+  designation?: string;
   logo?: string;
   icontype?: boolean;
   Icon?: ReactNode;
   icon?: ReactNode;
 }
 
-const IconCard = ({ name, logo, icontype = true, Icon, icon }: IconCardProps) => {
+const IconCard = ({ name, designation, logo, icontype = true, Icon, icon }: IconCardProps) => {
   const iconNode = Icon || icon;
   return (
     <div
@@ -82,6 +83,7 @@ const IconCard = ({ name, logo, icontype = true, Icon, icon }: IconCardProps) =>
         )}
 
         <h3 className='text-title mt-8 text-center text-lg'>{name}</h3>
+        {designation && <p className='text-xs text-[#00F1BD]'>{designation}</p>}
       </div>
     </div>
   );

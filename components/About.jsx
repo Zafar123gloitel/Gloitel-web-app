@@ -3,7 +3,7 @@
 // import { GlowButton } from "./Button";
 // import { HorizontalDivider, VerticalDivider } from "./SectionDivider";
 // import Image from "next/image";
-'use client';
+// 'use client';
 // import { aiEngagementSectionHead, aiPilotData, discoverySprintData } from "../(what-we-do)/ai-intelligent-systems/data";
 // import Assess from "../(what-we-do)/components/Assess";
 // import { CardShowcase } from "../../components";
@@ -12,64 +12,64 @@
 // import Discover from "../(what-we-do)/components/Discover";
 // import PurposeCard from "../(what-we-do)/components/PurposeCard";
 // import StrategyBadge from "../../components/StrategyBadge";
-import { CardShowcase } from '@/components';
-import { BgSquare2 } from '@/components/BgSquare';
-import GlowPanel from '@/components/GlowPanel';
-import { MiddleSectionHeads } from '@/components/SectionHeads';
-import TimelineCard from '@/uiComponents/TimelineCard';
-// import { businessAnalysisProcessData, businessAnalysisProcessSectionHead } from "@/app/engineering/business-analysis/data";
-import AI_Solutions from '@/uiComponents/AI_Solutions';
-import Execution_Plan from '@/uiComponents/Execution_Plan';
-import { useRef } from 'react';
+// import { CardShowcase } from '@/components';
+// import { BgSquare2 } from '@/components/BgSquare';
+// import GlowPanel from '@/components/GlowPanel';
+// import { MiddleSectionHeads } from '@/components/SectionHeads';
+// import TimelineCard from '@/uiComponents/TimelineCard';
+// // import { businessAnalysisProcessData, businessAnalysisProcessSectionHead } from "@/app/engineering/business-analysis/data";
+// import AI_Solutions from '@/uiComponents/AI_Solutions';
+// import Execution_Plan from '@/uiComponents/Execution_Plan';
+// import { useRef } from 'react';
 // import { TestimonialButton } from "../../components/atoms/button/Button";
 // import IconCard from "../../components/card-showcase/IconCard";
-import {
-  aiBuildProcessSectionHead,
-  aiSystemsData,
-  aiSystemsSectionHead,
-  clientTestimonialsData,
-  clientTestimonialsSectionHead,
-  designTestData,
-  executionPlanSectionHead,
-  hypothesizeData,
-  identifyOpportunitiesData,
-  implementMonitorData,
-  industriesWeServeData,
-  industriesWeServeSectionHead,
-  instrumentMeasureData,
-  modelSelectionData,
-  optimizationProcessSectionHead,
-  scalingSolutions,
-  scalingSolutionsHead,
-  teamCardsData,
-  teamCardsSectionHead,
-  teamCardsTabs,
-  useCaseDefinitionData,
-  whoThisIsForSectionHead,
-  whoThisIsForTimelineData,
-} from '@/app/about/data';
-import GalleryScroll from '@/components/GalleryScroll';
-import HelpCard from '@/components/HelpCard';
-import StrategyBadge from '@/components/StrategyBadge';
-import TestimonialCard from '@/components/TestimonialCard';
-import { TestimonialButton } from '@/components/atoms/button/Button';
-import IconCard from '@/components/card-showcase/IconCard';
-import Assess from '@/components/what-we-do/Assess';
-import Discover from '@/components/what-we-do/Discover';
-import PurposeCard from '@/components/what-we-do/PurposeCard';
+// import {
+//   aiBuildProcessSectionHead,
+//   aiSystemsData,
+//   aiSystemsSectionHead,
+//   clientTestimonialsData,
+//   clientTestimonialsSectionHead,
+//   designTestData,
+//   executionPlanSectionHead,
+//   hypothesizeData,
+//   identifyOpportunitiesData,
+//   implementMonitorData,
+//   industriesWeServeData,
+//   industriesWeServeSectionHead,
+//   instrumentMeasureData,
+//   modelSelectionData,
+//   optimizationProcessSectionHead,
+//   scalingSolutions,
+//   scalingSolutionsHead,
+//   teamCardsData,
+//   teamCardsSectionHead,
+//   teamCardsTabs,
+//   useCaseDefinitionData,
+//   whoThisIsForSectionHead,
+//   whoThisIsForTimelineData,
+// } from '@/app/about/data';
+// import GalleryScroll from '@/components/GalleryScroll';
+// import HelpCard from '@/components/HelpCard';
+// import StrategyBadge from '@/components/StrategyBadge';
+// import TestimonialCard from '@/components/TestimonialCard';
+// import { TestimonialButton } from '@/components/atoms/button/Button';
+// import IconCard from '@/components/card-showcase/IconCard';
+// import Assess from '@/components/what-we-do/Assess';
+// import Discover from '@/components/what-we-do/Discover';
+// import PurposeCard from '@/components/what-we-do/PurposeCard';
 
-const aiEcosystemData = {
-  badge: aiSystemsSectionHead.badgeText,
-  title: aiSystemsSectionHead.title,
-  description: aiSystemsSectionHead.description,
-  tabs: ['AI Systems'],
-  technologies: {
-    'AI Systems': aiSystemsData.map(item => ({
-      name: item.title,
-      logo: '',
-    })),
-  },
-};
+// const aiEcosystemData = {
+//   badge: aiSystemsSectionHead.badgeText,
+//   title: aiSystemsSectionHead.title,
+//   description: aiSystemsSectionHead.description,
+//   tabs: ['AI Systems'],
+//   technologies: {
+//     'AI Systems': aiSystemsData.map(item => ({
+//       name: item.title,
+//       logo: '',
+//     })),
+//   },
+// };
 
 // // FOR HOME PAGE
 // export const HomeAboutContent = ({
@@ -336,401 +336,651 @@ const aiEcosystemData = {
 /* ---------------------------------------------------------
    FIX #1: id="who-we-are" -> Roadmap intro section (image #2)
 --------------------------------------------------------- */
-export const WhoWeAre = () => {
+// export const WhoWeAre = () => {
+//   return (
+//     <section id='who-we-are' className=''>
+//       <GlowPanel />
+//       <Assess
+//         badgeText={aiSystemsSectionHead.badgeText}
+//         title={aiSystemsSectionHead.title}
+//         description={aiSystemsSectionHead.description}
+//         image={aiSystemsSectionHead.image}
+//         imageAlt={aiSystemsSectionHead.imageAlt}
+//       />
+
+//       <CardShowcase
+//         items={aiSystemsData}
+//         showDivider={false}
+//         showStepBadge={false}
+//         gridClassName={''}
+//         cardClassName={''}
+//         cardHeight={'h-[263px] w-[302px]'}
+//         titleClassName=''
+//         descriptionClassName=''
+//         iconClassName={''}
+//       />
+//     </section>
+//   );
+// };
+
+// /* ---------------------------------------------------------
+//    id="our-journey" -> Timeline section (image #3) - already correct
+// --------------------------------------------------------- */
+// export const OurJourney = () => {
+//   return (
+//     <section id='our-journey' className=''>
+//       <div className='relative z-10 mx-auto flex min-h-[60vh] flex-col items-center justify-center'>
+//         <BgSquare2 />
+//         <div className='-mt-40 flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
+//           <span>
+//             <StrategyBadge text={whoThisIsForSectionHead.badgeText} />
+//           </span>
+//           <MiddleSectionHeads
+//             SectionHead={whoThisIsForSectionHead.title}
+//             SectionSubHead=''
+//             SectionDescription={whoThisIsForSectionHead.description}
+//           />
+//         </div>
+//       </div>
+//       <div className='mx-auto -mt-10 sm:w-[80%]'>
+//         <div className='relative px-5'>
+//           <div className='absolute top-20 bottom-20 left-10 z-0 w-[0.5px] -translate-x-1/2 bg-white/50 sm:left-1/2' />
+//           <div className='relative flex flex-col'>
+//             {whoThisIsForTimelineData.map((item, index) => (
+//               <TimelineCard key={index} item={item} side={index % 2 === 0 ? 'left' : 'right'} />
+//             ))}
+//           </div>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export const OurProcess = () => {
+//   return (
+//     <section id='our-process' className=''>
+//       <div className=''>
+//         <div className='relative z-10 mx-auto mt-20 flex min-h-[60vh] flex-col items-center justify-center'>
+//           <BgSquare2 />
+//           <div className='flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
+//             <span>
+//               <StrategyBadge text={aiBuildProcessSectionHead.badgeText} />
+//             </span>
+//             <MiddleSectionHeads
+//               SectionHead={aiBuildProcessSectionHead.title}
+//               SectionDescription={aiBuildProcessSectionHead.description}
+//             />
+//           </div>
+
+//           <Discover
+//             badgeText={useCaseDefinitionData.badgeText}
+//             title={useCaseDefinitionData.title}
+//             description={useCaseDefinitionData.description}
+//             cardTitle={useCaseDefinitionData.cardTitle}
+//             image={useCaseDefinitionData.image}
+//             imageAlt={useCaseDefinitionData.imageAlt}
+//           />
+//           <Assess
+//             badgeText={modelSelectionData.badgeText}
+//             title={modelSelectionData.title}
+//             description={modelSelectionData.description}
+//             cardTitle={modelSelectionData.cardTitle}
+//             image={modelSelectionData.image}
+//             imageAlt={modelSelectionData.imageAlt}
+//           />
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export const OurServices = () => {
+//   return (
+//     <section id='our-services' className=''>
+//       <div className='relative z-10 mx-auto flex min-h-[60vh] flex-col items-center justify-center'>
+//         <BgSquare2 />
+//         <div className='-mt-40 flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
+//           <span>
+//             <StrategyBadge text={scalingSolutionsHead.badgeText} />
+//           </span>
+//           <MiddleSectionHeads
+//             SectionHead={scalingSolutionsHead.title}
+//             SectionSubHead=''
+//             sectionIocn={scalingSolutionsHead.icon}
+//             SectionDescription={scalingSolutionsHead.description}
+//           />
+//         </div>
+//       </div>
+
+//       <div className='mx-auto -mt-10 sm:w-[80%]'>
+//         <div className='grid grid-cols-1 gap-4 p-5 xl:grid-cols-2'>
+//           {scalingSolutions.map(item => (
+//             <PurposeCard
+//               key={item.id}
+//               icon={item.icon}
+//               title={item.title}
+//               description={item.description}
+//               className=''
+//             />
+//           ))}
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export const OurTeam = () => {
+//   return (
+//     <section id='our-team' className=''>
+//       <HelpCard
+//         badgeText={teamCardsSectionHead.badgeText}
+//         title={teamCardsSectionHead.title}
+//         description={teamCardsSectionHead.description}
+//         data={teamCardsData}
+//         tabs={teamCardsTabs}
+//       />
+//     </section>
+//   );
+// };
+
+// export const OurCulture = () => {
+//   return (
+//     <section
+//       id='our-culture'
+//       className='relative flex flex-col items-center overflow-hidden px-4 py-12 sm:px-6 lg:px-8 lg:py-20'
+//     >
+//       <BgSquare2 />
+
+//       {/* Section Heading */}
+//       <div className='flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
+//         <span>
+//           <StrategyBadge text={'How we Help you Scale'} />
+//         </span>
+
+//         <MiddleSectionHeads
+//           SectionHead={'Engineering for the Next Stage of Growth'}
+//           SectionDescription={
+//             'From infrastructure and databases to engineering processes, we focus on the areas that matter most for sustainable scale.'
+//           }
+//         />
+//       </div>
+
+//       <div className='scrollbar-hide mt-12 w-full overflow-x-auto'>
+//         <GalleryScroll />
+//       </div>
+//     </section>
+//   );
+// };
+
+// export const OptimizationProcess = () => {
+//   return (
+//     <section id='optimization-process' className=''>
+//       <div className='relative z-10 mx-auto flex min-h-[60vh] flex-col items-center justify-center'>
+//         <BgSquare2 />
+//         <div className='-mt-44 flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
+//           <span>
+//             <StrategyBadge text={optimizationProcessSectionHead.badgeText} />
+//           </span>
+//           <MiddleSectionHeads
+//             SectionHead={optimizationProcessSectionHead.title}
+//             SectionDescription={optimizationProcessSectionHead.description}
+//           />
+//         </div>
+//       </div>
+
+//       <div className='mx-auto flex flex-col gap-16 px-5 sm:w-[95%]'>
+//         <Discover
+//           badgeText={instrumentMeasureData.badgeText}
+//           title={instrumentMeasureData.title}
+//           description={instrumentMeasureData.description}
+//           cardTitle={instrumentMeasureData.cardTitle}
+//           image={instrumentMeasureData.image}
+//           imageAlt={instrumentMeasureData.imageAlt}
+//         />
+//         <Assess
+//           badgeText={identifyOpportunitiesData.badgeText}
+//           title={identifyOpportunitiesData.title}
+//           description={identifyOpportunitiesData.description}
+//           cardTitle={identifyOpportunitiesData.cardTitle}
+//           image={identifyOpportunitiesData.image}
+//           imageAlt={identifyOpportunitiesData.imageAlt}
+//         />
+//         <Discover
+//           badgeText={hypothesizeData.badgeText}
+//           title={hypothesizeData.title}
+//           description={hypothesizeData.description}
+//           cardTitle={hypothesizeData.cardTitle}
+//           image={hypothesizeData.image}
+//           imageAlt={hypothesizeData.imageAlt}
+//         />
+//         <Assess
+//           badgeText={designTestData.badgeText}
+//           title={designTestData.title}
+//           description={designTestData.description}
+//           cardTitle={designTestData.cardTitle}
+//           image={designTestData.image}
+//           imageAlt={designTestData.imageAlt}
+//         />
+//         <Discover
+//           badgeText={implementMonitorData.badgeText}
+//           title={implementMonitorData.title}
+//           description={implementMonitorData.description}
+//           cardTitle={implementMonitorData.cardTitle}
+//           image={implementMonitorData.image}
+//           imageAlt={implementMonitorData.imageAlt}
+//         />
+//       </div>
+//     </section>
+//   );
+// };
+
+// /* ---------------------------------------------------------
+//    id="industries-we-serve" - already correct
+// --------------------------------------------------------- */
+// export const IndustriesWeServe = () => {
+//   return (
+//     <section id='industries-we-serve'>
+//       <section className='my-20'>
+//         <div className='relative z-10 mx-auto flex min-h-[60vh] flex-col items-center justify-center'>
+//           <BgSquare2 />
+//           <div className='-mt-10 mb-52 flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
+//             {/* Badge */}
+//             <span>
+//               <StrategyBadge text={industriesWeServeSectionHead.badgeText} />
+//             </span>
+//             <MiddleSectionHeads
+//               SectionHead={industriesWeServeSectionHead.title}
+//               SectionSubHead=' '
+//               SectionDescription={industriesWeServeSectionHead.description}
+//             />
+//           </div>
+//         </div>
+
+//         <div className='-mt-20 flex flex-wrap justify-center gap-6'>
+//           {industriesWeServeData.map((item, index) => (
+//             <IconCard
+//               key={index}
+//               name={item.title}
+//               // logo={item.logo}
+//               icontype={true}
+//               Icon={item.icon}
+//             />
+//           ))}
+//         </div>
+//       </section>
+//     </section>
+//   );
+// };
+
+// export const TechnologyEcosystem = () => {
+//   return (
+//     <section id='technology-ecosystem'>
+//       <AI_Solutions
+//         badge={aiEcosystemData.badge}
+//         title={aiEcosystemData.title}
+//         description={aiEcosystemData.description}
+//         tabs={aiEcosystemData.tabs}
+//         technologies={aiEcosystemData.technologies}
+//       />
+//     </section>
+//   );
+// };
+
+// export const ClientTestimonials = () => {
+//   const testimonialsRef = useRef(null);
+
+//   const scrollTestimonials = direction => {
+//     if (!testimonialsRef.current) return;
+
+//     const container = testimonialsRef.current;
+
+//     // First card ko find karo
+//     const firstCard = container.firstElementChild;
+
+//     if (!firstCard) return;
+
+//     // Card width + gap
+//     const cardWidth = firstCard.getBoundingClientRect().width;
+//     const gap = 24;
+
+//     const scrollAmount = cardWidth + gap;
+
+//     container.scrollTo({
+//       left:
+//         direction === 'right'
+//           ? container.scrollLeft + scrollAmount
+//           : container.scrollLeft - scrollAmount,
+//       behavior: 'smooth',
+//     });
+//   };
+
+//   return (
+//     <section
+//       id='client-testimonials'
+//       className='flex min-h-screen items-center justify-center bg-black px-5 py-20'
+//     >
+//       <section className='my-20 w-full'>
+//         {/* Section Heading */}
+//         <div className='relative z-10 mx-auto flex min-h-[60vh] flex-col items-center justify-center'>
+//           <BgSquare2 />
+
+//           <div className='-mt-10 mb-52 flex w-full flex-col items-center justify-center gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
+//             <span>
+//               <StrategyBadge text={clientTestimonialsSectionHead.badgeText} />
+//             </span>
+
+//             <MiddleSectionHeads
+//               SectionHead={clientTestimonialsSectionHead.title}
+//               SectionSubHead=''
+//               SectionDescription={clientTestimonialsSectionHead.description}
+//             />
+//           </div>
+//         </div>
+
+//         {/* Testimonials */}
+//         <div className='relative z-10 -mt-20'>
+//           {/* Navigation Buttons */}
+//           <div className='mb-8 flex justify-end gap-4 px-5 sm:px-10 lg:px-20'>
+//             <TestimonialButton
+//               className='h-12 min-w-12'
+//               ariaLabel='Previous testimonials'
+//               onClick={() => scrollTestimonials('left')}
+//             />
+
+//             <TestimonialButton
+//               className='h-12 min-w-12'
+//               direction='right'
+//               ariaLabel='Next testimonials'
+//               onClick={() => scrollTestimonials('right')}
+//             />
+//           </div>
+
+//           {/* Cards Container */}
+//           <div
+//             ref={testimonialsRef}
+//             className='mx-auto flex w-[90%] gap-5 overflow-x-auto'
+//             style={{
+//               scrollbarWidth: 'none',
+//               msOverflowStyle: 'none',
+//             }}
+//           >
+//             {clientTestimonialsData.map((testimonial, index) => (
+//               <div key={`${testimonial.name}-${index}`} className='shrink-0'>
+//                 <TestimonialCard
+//                   name={testimonial.name}
+//                   designation={testimonial.designation}
+//                   description={testimonial.description}
+//                 />
+//               </div>
+//             ))}
+//           </div>
+//         </div>
+//       </section>
+//     </section>
+//   );
+// };
+
+// export const ExecutionPlanCTA = () => {
+//   return (
+//     <section id='execution-plan'>
+//       <Execution_Plan
+//         badgeText={executionPlanSectionHead.badgeText}
+//         title={executionPlanSectionHead.title}
+//         description={executionPlanSectionHead.description}
+//         buttonText={executionPlanSectionHead.buttonText}
+//         buttonLink={executionPlanSectionHead.buttonLink}
+//         onclick={() => ({})}
+//       />
+//     </section>
+//   );
+// };
+
+import { GlowButton } from './Button';
+import { HorizontalDivider, VerticalDivider } from './SectionDivider';
+import Image from 'next/image';
+import StrategyBadge from './StrategyBadge';
+
+// FOR HOME PAGE
+export const HomeAboutContent = ({
+  Buttonlink,
+  ButtonText,
+  HomeAboutBadge,
+  homeAboutHeading,
+  HomeAboutSubHeading,
+  HomeAboutDescription,
+  // children,
+  HomeAboutFeatures = [], // array of { icon, title }
+  HomeAboutTexts,
+}) => {
   return (
-    <section id='who-we-are' className=''>
-      <GlowPanel />
-      <Assess
-        badgeText={aiSystemsSectionHead.badgeText}
-        title={aiSystemsSectionHead.title}
-        description={aiSystemsSectionHead.description}
-        image={aiSystemsSectionHead.image}
-        imageAlt={aiSystemsSectionHead.imageAlt}
+    <div className='flex flex-col'>
+      <HomeAboutContentHead
+        HomeAboutBadge={HomeAboutBadge}
+        homeAboutHeading={homeAboutHeading}
+        HomeAboutSubHeading={HomeAboutSubHeading}
+        HomeAboutDescription={HomeAboutDescription}
+        HomeAboutTexts={HomeAboutTexts}
       />
 
-      <CardShowcase
-        items={aiSystemsData}
-        showDivider={false}
-        showStepBadge={false}
-        gridClassName={''}
-        cardClassName={''}
-        cardHeight={'h-[263px] w-[302px]'}
-        titleClassName=''
-        descriptionClassName=''
-        iconClassName={''}
-      />
-    </section>
-  );
-};
-
-/* ---------------------------------------------------------
-   id="our-journey" -> Timeline section (image #3) - already correct
---------------------------------------------------------- */
-export const OurJourney = () => {
-  return (
-    <section id='our-journey' className=''>
-      <div className='relative z-10 mx-auto flex min-h-[60vh] flex-col items-center justify-center'>
-        <BgSquare2 />
-        <div className='-mt-40 flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
-          <span>
-            <StrategyBadge text={whoThisIsForSectionHead.badgeText} />
-          </span>
-          <MiddleSectionHeads
-            SectionHead={whoThisIsForSectionHead.title}
-            SectionSubHead=''
-            SectionDescription={whoThisIsForSectionHead.description}
-          />
-        </div>
-      </div>
-      <div className='mx-auto -mt-10 sm:w-[80%]'>
-        <div className='relative px-5'>
-          <div className='absolute top-20 bottom-20 left-10 z-0 w-[0.5px] -translate-x-1/2 bg-white/50 sm:left-1/2' />
-          <div className='relative flex flex-col'>
-            {whoThisIsForTimelineData.map((item, index) => (
-              <TimelineCard key={index} item={item} side={index % 2 === 0 ? 'left' : 'right'} />
+      {/* {children}
+      {/* Features List */}
+      {HomeAboutFeatures.length > 0 && (
+        <dl className='mt-6 space-y-5 text-gray-400 sm:mt-8'>
+          {HomeAboutFeatures.map((feature, i) => (
+            <div key={i} className='relative'>
+              <dt className='lg:text-md flex items-center gap-4 text-sm sm:text-base'>
+                <span className='left-1 h-5 w-5 text-indigo-400'>
+                  <svg
+                    className='h-6 w-6'
+                    viewBox='0 0 24 24'
+                    fill='none'
+                    xmlns='http://www.w3.org/2000/svg'
+                  >
+                    <path
+                      d='M21.5609 10.7386L20.2009 9.15859C19.9409 8.85859 19.7309 8.29859 19.7309 7.89859V6.19859C19.7309 5.13859 18.8609 4.26859 17.8009 4.26859H16.1009C15.7109 4.26859 15.1409 4.05859 14.8409 3.79859L13.2609 2.43859C12.5709 1.84859 11.4409 1.84859 10.7409 2.43859L9.17086 3.80859C8.87086 4.05859 8.30086 4.26859 7.91086 4.26859H6.18086C5.12086 4.26859 4.25086 5.13859 4.25086 6.19859V7.90859C4.25086 8.29859 4.04086 8.85859 3.79086 9.15859L2.44086 10.7486C1.86086 11.4386 1.86086 12.5586 2.44086 13.2486L3.79086 14.8386C4.04086 15.1386 4.25086 15.6986 4.25086 16.0886V17.7986C4.25086 18.8586 5.12086 19.7286 6.18086 19.7286H7.91086C8.30086 19.7286 8.87086 19.9386 9.17086 20.1986L10.7509 21.5586C11.4409 22.1486 12.5709 22.1486 13.2709 21.5586L14.8509 20.1986C15.1509 19.9386 15.7109 19.7286 16.1109 19.7286H17.8109C18.8709 19.7286 19.7409 18.8586 19.7409 17.7986V16.0986C19.7409 15.7086 19.9509 15.1386 20.2109 14.8386L21.5709 13.2586C22.1509 12.5686 22.1509 11.4286 21.5609 10.7386ZM16.1609 10.1086L11.3309 14.9386C11.1909 15.0786 11.0009 15.1586 10.8009 15.1586C10.6009 15.1586 10.4109 15.0786 10.2709 14.9386L7.85086 12.5186C7.56086 12.2286 7.56086 11.7486 7.85086 11.4586C8.14086 11.1686 8.62086 11.1686 8.91086 11.4586L10.8009 13.3486L15.1009 9.04859C15.3909 8.75859 15.8709 8.75859 16.1609 9.04859C16.4509 9.33859 16.4509 9.81859 16.1609 10.1086Z'
+                      fill='#1F51FF'
+                    />
+                  </svg>
+                </span>
+                {feature.title}
+              </dt>
+            </div>
+          ))}
+        </dl>
+      )}
+      {/* Buttons & Badge */}
+      <div className='mt-6 flex flex-col-reverse items-start gap-4 sm:mt-8 sm:flex-row-reverse sm:items-center md:flex-row'>
+        <GlowButton ButtonText={ButtonText} Buttonlink={Buttonlink} />
+        <VerticalDivider />
+        <div className='ml-0 gap-1 sm:ml-0 md:ml-5'>
+          <div className='flex flex-row gap-1'>
+            {[1, 2, 3, 4, 5].map(i => (
+              <svg
+                key={i}
+                fill='#FFFFFF'
+                className='h-4 w-4'
+                viewBox='0 0 36 36'
+                xmlns='http://www.w3.org/2000/svg'
+              >
+                <path
+                  className='clr-i-solid clr-i-solid-path-1'
+                  d='M34,16.78a2.22,2.22,0,0,0-1.29-4l-9-.34a.23.23,0,0,1-.2-.15L20.4,3.89a2.22,2.22,0,0,0-4.17,0l-3.1,8.43a.23.23,0,0,1-.2.15l-9,.34a2.22,2.22,0,0,0-1.29,4l7.06,5.55a.23.23,0,0,1,.08.24L7.35,31.21a2.22,2.22,0,0,0,3.38,2.45l7.46-5a.22.22,0,0,1,.25,0l7.46,5a2.2,2.2,0,0,0,2.55,0,2.2,2.2,0,0,0,.83-2.4l-2.45-8.64a.22.22,0,0,1,.08-.24Z'
+                ></path>
+              </svg>
             ))}
           </div>
+          <span className='text-xs text-gray-400 sm:text-sm'>{HomeAboutTexts}</span>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
-export const OurProcess = () => {
+export const HomeAboutContentHead = ({
+  HomeAboutBadge,
+  homeAboutHeading,
+  HomeAboutSubHeading,
+  HomeAboutDescription,
+}) => {
   return (
-    <section id='our-process' className=''>
-      <div className=''>
-        <div className='relative z-10 mx-auto mt-20 flex min-h-[60vh] flex-col items-center justify-center'>
-          <BgSquare2 />
-          <div className='flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
-            <span>
-              <StrategyBadge text={aiBuildProcessSectionHead.badgeText} />
-            </span>
-            <MiddleSectionHeads
-              SectionHead={aiBuildProcessSectionHead.title}
-              SectionDescription={aiBuildProcessSectionHead.description}
-            />
-          </div>
-
-          <Discover
-            badgeText={useCaseDefinitionData.badgeText}
-            title={useCaseDefinitionData.title}
-            description={useCaseDefinitionData.description}
-            cardTitle={useCaseDefinitionData.cardTitle}
-            image={useCaseDefinitionData.image}
-            imageAlt={useCaseDefinitionData.imageAlt}
-          />
-          <Assess
-            badgeText={modelSelectionData.badgeText}
-            title={modelSelectionData.title}
-            description={modelSelectionData.description}
-            cardTitle={modelSelectionData.cardTitle}
-            image={modelSelectionData.image}
-            imageAlt={modelSelectionData.imageAlt}
-          />
-        </div>
-      </div>
-    </section>
+    <div className='flex w-xl flex-col'>
+      {/* Badge */}
+      {/* <LeftBadge HomeAboutBadge={HomeAboutBadge} /> */}
+      <StrategyBadge text={HomeAboutBadge} />
+      {/* Headings */}
+      <h3 className='text-3xl text-white sm:text-3xl lg:text-5xl'>{homeAboutHeading}</h3>
+      <h3 className='mt-2 text-3xl text-gray-400 sm:text-3xl lg:text-5xl'>{HomeAboutSubHeading}</h3>
+      <p className='mt-8 text-base text-gray-400 sm:text-sm lg:text-base'>{HomeAboutDescription}</p>
+    </div>
   );
 };
 
-export const OurServices = () => {
+export const HomeAboutImg = ({ ImgLink }) => {
   return (
-    <section id='our-services' className=''>
-      <div className='relative z-10 mx-auto flex min-h-[60vh] flex-col items-center justify-center'>
-        <BgSquare2 />
-        <div className='-mt-40 flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
-          <span>
-            <StrategyBadge text={scalingSolutionsHead.badgeText} />
-          </span>
-          <MiddleSectionHeads
-            SectionHead={scalingSolutionsHead.title}
-            SectionSubHead=''
-            sectionIocn={scalingSolutionsHead.icon}
-            SectionDescription={scalingSolutionsHead.description}
+    <>
+      <div className='relative flex justify-center lg:justify-start'>
+        <div className='pointer-events-none absolute bottom-0 h-[50px] w-[40%] translate-x-0 rounded-full bg-blue-700 blur-[30px] sm:bottom-0 sm:w-[40%] md:bottom-0 md:w-[50%] md:translate-x-0 lg:bottom-0 lg:w-[50%] lg:translate-x-30' />
+        <div className='h-auto w-full rounded-3xl bg-gray-950/70 from-gray-950/90 to-black/80 p-3 ring-1 ring-white/5 backdrop-blur-md sm:w-4/5 md:h-1/2 md:w-full lg:w-full'>
+          <Image
+            width={1920}
+            height={1080}
+            src={ImgLink}
+            alt='About section'
+            className='h-full w-full rounded-3xl shadow-2xl ring-1 ring-white/5'
+            unoptimized
           />
         </div>
       </div>
-
-      <div className='mx-auto -mt-10 sm:w-[80%]'>
-        <div className='grid grid-cols-1 gap-4 p-5 xl:grid-cols-2'>
-          {scalingSolutions.map(item => (
-            <PurposeCard
-              key={item.id}
-              icon={item.icon}
-              title={item.title}
-              description={item.description}
-              className=''
-            />
-          ))}
-        </div>
-      </div>
-    </section>
+    </>
   );
 };
 
-export const OurTeam = () => {
+// FOR ABOUT PAGE
+export const AboutAboutContent = ({
+  // ABOUT FIRST HEADING AND SUB HEADING
+  AboutBadge,
+  AboutHeading,
+  AboutSubHeading,
+  AboutContents1 = [], // array of { title, text }
+  AboutContents2 = [], // array of { title, text }
+  ButtonText,
+  Buttonlink,
+  HomeAboutTexts,
+  // ABOUT SECOND HEADING AND SUB HEADING
+}) => {
   return (
-    <section id='our-team' className=''>
-      <HelpCard
-        badgeText={teamCardsSectionHead.badgeText}
-        title={teamCardsSectionHead.title}
-        description={teamCardsSectionHead.description}
-        data={teamCardsData}
-        tabs={teamCardsTabs}
+    <div className='flex flex-col'>
+      <AboutAboutContentHead
+        // ABOUT FIRST HEADING AND SUB HEADING
+        AboutBadge={AboutBadge}
+        AboutHeading={AboutHeading}
+        AboutSubHeading={AboutSubHeading}
       />
-    </section>
-  );
-};
-
-export const OurCulture = () => {
-  return (
-    <section
-      id='our-culture'
-      className='relative flex flex-col items-center overflow-hidden px-4 py-12 sm:px-6 lg:px-8 lg:py-20'
-    >
-      <BgSquare2 />
-
-      {/* Section Heading */}
-      <div className='flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
-        <span>
-          <StrategyBadge text={'How we Help you Scale'} />
-        </span>
-
-        <MiddleSectionHeads
-          SectionHead={'Engineering for the Next Stage of Growth'}
-          SectionDescription={
-            'From infrastructure and databases to engineering processes, we focus on the areas that matter most for sustainable scale.'
-          }
-        />
-      </div>
-
-      <div className='scrollbar-hide mt-12 w-full overflow-x-auto'>
-        <GalleryScroll />
-      </div>
-    </section>
-  );
-};
-
-export const OptimizationProcess = () => {
-  return (
-    <section id='optimization-process' className=''>
-      <div className='relative z-10 mx-auto flex min-h-[60vh] flex-col items-center justify-center'>
-        <BgSquare2 />
-        <div className='-mt-44 flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
-          <span>
-            <StrategyBadge text={optimizationProcessSectionHead.badgeText} />
-          </span>
-          <MiddleSectionHeads
-            SectionHead={optimizationProcessSectionHead.title}
-            SectionDescription={optimizationProcessSectionHead.description}
-          />
+      <HorizontalDivider />
+      {/* Dynamic Content Blocks */}
+      {AboutContents1.map((content, i) => (
+        <div key={i} className='mt-4 w-lg sm:mt-6'>
+          {content.title && (
+            <p className='mb-2 text-sm leading-relaxed text-white sm:text-base lg:text-lg'>
+              {content.title}
+            </p>
+          )}
+          {content.text && (
+            <p className='text-sm leading-relaxed text-gray-400 sm:text-sm lg:text-[15px]'>
+              {content.text}
+            </p>
+          )}
         </div>
-      </div>
-
-      <div className='mx-auto flex flex-col gap-16 px-5 sm:w-[95%]'>
-        <Discover
-          badgeText={instrumentMeasureData.badgeText}
-          title={instrumentMeasureData.title}
-          description={instrumentMeasureData.description}
-          cardTitle={instrumentMeasureData.cardTitle}
-          image={instrumentMeasureData.image}
-          imageAlt={instrumentMeasureData.imageAlt}
-        />
-        <Assess
-          badgeText={identifyOpportunitiesData.badgeText}
-          title={identifyOpportunitiesData.title}
-          description={identifyOpportunitiesData.description}
-          cardTitle={identifyOpportunitiesData.cardTitle}
-          image={identifyOpportunitiesData.image}
-          imageAlt={identifyOpportunitiesData.imageAlt}
-        />
-        <Discover
-          badgeText={hypothesizeData.badgeText}
-          title={hypothesizeData.title}
-          description={hypothesizeData.description}
-          cardTitle={hypothesizeData.cardTitle}
-          image={hypothesizeData.image}
-          imageAlt={hypothesizeData.imageAlt}
-        />
-        <Assess
-          badgeText={designTestData.badgeText}
-          title={designTestData.title}
-          description={designTestData.description}
-          cardTitle={designTestData.cardTitle}
-          image={designTestData.image}
-          imageAlt={designTestData.imageAlt}
-        />
-        <Discover
-          badgeText={implementMonitorData.badgeText}
-          title={implementMonitorData.title}
-          description={implementMonitorData.description}
-          cardTitle={implementMonitorData.cardTitle}
-          image={implementMonitorData.image}
-          imageAlt={implementMonitorData.imageAlt}
-        />
-      </div>
-    </section>
-  );
-};
-
-/* ---------------------------------------------------------
-   id="industries-we-serve" - already correct
---------------------------------------------------------- */
-export const IndustriesWeServe = () => {
-  return (
-    <section id='industries-we-serve'>
-      <section className='my-20'>
-        <div className='relative z-10 mx-auto flex min-h-[60vh] flex-col items-center justify-center'>
-          <BgSquare2 />
-          <div className='-mt-10 mb-52 flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
-            {/* Badge */}
-            <span>
-              <StrategyBadge text={industriesWeServeSectionHead.badgeText} />
-            </span>
-            <MiddleSectionHeads
-              SectionHead={industriesWeServeSectionHead.title}
-              SectionSubHead=' '
-              SectionDescription={industriesWeServeSectionHead.description}
-            />
-          </div>
+      ))}
+      {AboutContents2.map((content, i) => (
+        <div key={i} className='mt-4 w-lg sm:mt-6'>
+          {content.title && (
+            <p className='mb-2 text-sm leading-relaxed text-white sm:text-base lg:text-lg'>
+              {content.title}
+            </p>
+          )}
+          {content.text && (
+            <p className='text-sm leading-relaxed text-gray-400 sm:text-sm lg:text-[15px]'>
+              {content.text}
+            </p>
+          )}
         </div>
+      ))}
 
-        <div className='-mt-20 flex flex-wrap justify-center gap-6'>
-          {industriesWeServeData.map((item, index) => (
-            <IconCard
-              key={index}
-              name={item.title}
-              // logo={item.logo}
-              icontype={true}
-              Icon={item.icon}
-            />
-          ))}
-        </div>
-      </section>
-    </section>
-  );
-};
-
-export const TechnologyEcosystem = () => {
-  return (
-    <section id='technology-ecosystem'>
-      <AI_Solutions
-        badge={aiEcosystemData.badge}
-        title={aiEcosystemData.title}
-        description={aiEcosystemData.description}
-        tabs={aiEcosystemData.tabs}
-        technologies={aiEcosystemData.technologies}
-      />
-    </section>
-  );
-};
-
-export const ClientTestimonials = () => {
-  const testimonialsRef = useRef(null);
-
-  const scrollTestimonials = direction => {
-    if (!testimonialsRef.current) return;
-
-    const container = testimonialsRef.current;
-
-    // First card ko find karo
-    const firstCard = container.firstElementChild;
-
-    if (!firstCard) return;
-
-    // Card width + gap
-    const cardWidth = firstCard.getBoundingClientRect().width;
-    const gap = 24;
-
-    const scrollAmount = cardWidth + gap;
-
-    container.scrollTo({
-      left:
-        direction === 'right'
-          ? container.scrollLeft + scrollAmount
-          : container.scrollLeft - scrollAmount,
-      behavior: 'smooth',
-    });
-  };
-
-  return (
-    <section
-      id='client-testimonials'
-      className='flex min-h-screen items-center justify-center bg-black px-5 py-20'
-    >
-      <section className='my-20 w-full'>
-        {/* Section Heading */}
-        <div className='relative z-10 mx-auto flex min-h-[60vh] flex-col items-center justify-center'>
-          <BgSquare2 />
-
-          <div className='-mt-10 mb-52 flex w-full flex-col items-center justify-center gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
-            <span>
-              <StrategyBadge text={clientTestimonialsSectionHead.badgeText} />
-            </span>
-
-            <MiddleSectionHeads
-              SectionHead={clientTestimonialsSectionHead.title}
-              SectionSubHead=''
-              SectionDescription={clientTestimonialsSectionHead.description}
-            />
-          </div>
-        </div>
-
-        {/* Testimonials */}
-        <div className='relative z-10 -mt-20'>
-          {/* Navigation Buttons */}
-          <div className='mb-8 flex justify-end gap-4 px-5 sm:px-10 lg:px-20'>
-            <TestimonialButton
-              className='h-12 min-w-12'
-              ariaLabel='Previous testimonials'
-              onClick={() => scrollTestimonials('left')}
-            />
-
-            <TestimonialButton
-              className='h-12 min-w-12'
-              direction='right'
-              ariaLabel='Next testimonials'
-              onClick={() => scrollTestimonials('right')}
-            />
-          </div>
-
-          {/* Cards Container */}
-          <div
-            ref={testimonialsRef}
-            className='mx-auto flex w-[90%] gap-5 overflow-x-auto'
-            style={{
-              scrollbarWidth: 'none',
-              msOverflowStyle: 'none',
-            }}
-          >
-            {clientTestimonialsData.map((testimonial, index) => (
-              <div key={`${testimonial.name}-${index}`} className='shrink-0'>
-                <TestimonialCard
-                  name={testimonial.name}
-                  designation={testimonial.designation}
-                  description={testimonial.description}
-                />
-              </div>
+      {/* Buttons & Badge */}
+      <div className='mt-6 flex flex-col items-start gap-4 sm:mt-8 sm:flex-row sm:items-center'>
+        <GlowButton buttonText={ButtonText} buttonlink={Buttonlink} />
+        <VerticalDivider />
+        <div className='ml-5 gap-1'>
+          <div className='flex flex-row gap-1'>
+            {[1, 2, 3, 4, 5].map(i => (
+              <svg
+                key={i}
+                fill='#FFFFFF'
+                className='h-4 w-4'
+                viewBox='0 0 36 36'
+                xmlns='http://www.w3.org/2000/svg'
+              >
+                <path
+                  className='clr-i-solid clr-i-solid-path-1'
+                  d='M34,16.78a2.22,2.22,0,0,0-1.29-4l-9-.34a.23.23,0,0,1-.2-.15L20.4,3.89a2.22,2.22,0,0,0-4.17,0l-3.1,8.43a.23.23,0,0,1-.2.15l-9,.34a2.22,2.22,0,0,0-1.29,4l7.06,5.55a.23.23,0,0,1,.08.24L7.35,31.21a2.22,2.22,0,0,0,3.38,2.45l7.46-5a.22.22,0,0,1,.25,0l7.46,5a2.2,2.2,0,0,0,2.55,0,2.2,2.2,0,0,0,.83-2.4l-2.45-8.64a.22.22,0,0,1,.08-.24Z'
+                ></path>
+              </svg>
             ))}
           </div>
+
+          <span className='text-xs text-gray-400 sm:text-sm'>{HomeAboutTexts}</span>
         </div>
-      </section>
-    </section>
+      </div>
+    </div>
   );
 };
 
-export const ExecutionPlanCTA = () => {
+export const AboutAboutContentHead = ({ AboutBadge, AboutHeading, AboutSubHeading }) => {
   return (
-    <section id='execution-plan'>
-      <Execution_Plan
-        badgeText={executionPlanSectionHead.badgeText}
-        title={executionPlanSectionHead.title}
-        description={executionPlanSectionHead.description}
-        buttonText={executionPlanSectionHead.buttonText}
-        buttonLink={executionPlanSectionHead.buttonLink}
-        onclick={() => ({})}
-      />
-    </section>
+    <div className='flex flex-col'>
+      {/* Badge */}
+      <StrategyBadge text={AboutBadge} />
+      {/* Headings */}
+      <h3 className='text-2xl text-white sm:text-3xl lg:text-5xl'>{AboutHeading}</h3>
+      <h3 className='mt-2 text-2xl text-gray-400 sm:text-3xl lg:text-5xl'>{AboutSubHeading}</h3>
+    </div>
+  );
+};
+
+export const AboutAboutImg1 = ({ ImgLink }) => {
+  return (
+    <>
+      <div className='flex justify-center lg:justify-start'>
+        <div className='w-full rounded-3xl bg-gray-950/70 from-gray-950/90 to-black/80 p-3 ring-1 ring-white/5 backdrop-blur-md sm:w-4/5 lg:w-lg'>
+          <Image
+            width={1920}
+            height={1080}
+            src={ImgLink}
+            alt='About section'
+            className='h-auto w-full rounded-3xl shadow-2xl ring-1 ring-white/5'
+            unoptimized
+          />
+        </div>
+      </div>
+    </>
+  );
+};
+export const AboutAboutImg2 = ({ ImgLink }) => {
+  return (
+    <>
+      <div className='flex justify-center lg:justify-start'>
+        <div className='w-full rounded-3xl bg-gray-950/70 from-gray-950/90 to-black/80 p-3 ring-1 ring-white/5 backdrop-blur-md sm:w-4/5 lg:w-lg'>
+          <Image
+            width={1920}
+            height={1080}
+            src={ImgLink}
+            alt='About section'
+            className='h-auto w-full rounded-3xl shadow-2xl ring-1 ring-white/5'
+            unoptimized
+          />
+        </div>
+      </div>
+    </>
   );
 };
