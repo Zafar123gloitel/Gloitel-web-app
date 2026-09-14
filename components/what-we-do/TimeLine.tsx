@@ -1,9 +1,8 @@
-import React from 'react';
 import { BgSquare2 } from 'components/BgSquare';
 import StrategyBadge from '@/components/StrategyBadge';
 import { MiddleSectionHeads } from 'components/SectionHeads';
 import { CardShowcase } from '@/components';
-import { EngagementData } from '@/app/(what-we-do)/ai-intelligent-systems/ai-strategy-consulting/data';
+import { EngagementData } from '@/app/(website)/(what-we-do)/ai-intelligent-systems/ai-strategy-consulting/data';
 
 interface TimeLineProps {
   headingTag?: 'h2' | 'h3';

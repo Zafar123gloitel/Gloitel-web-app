@@ -11,7 +11,7 @@ import { toast } from 'react-hot-toast';
 
 const contact = {
   email: 'gloitel-it@gloitel.in',
-  phones: ['+91 97112 03424', '+91 81098 10339'],
+  phones: ['+91 97112 03424', '+91 8051403274'],
   addressLines: [
     '477/4, Muskan Residency road, Lalpur,',
     'Pachpedi Naka, Raipur, Chhattisgarh',
