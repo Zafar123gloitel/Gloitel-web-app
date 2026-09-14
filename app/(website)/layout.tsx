@@ -1,7 +1,9 @@
 import GoogleTagId from '@/analytics/GoogleTagId';
+import Footer from '@/components/Footer';
+import Navbar from '@/components/Navbar';
 import { configs } from '@/configs';
 import { DM_Sans } from 'next/font/google';
-import './globals.css';
+import { Toaster } from 'react-hot-toast';
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -30,10 +32,17 @@ export default function RootLayout({ children }) {
       </head>
       <body className={`${dmSans.variable} antialiased`}>
         <section className='w-full overflow-x-hidden'>
+          {/* <CustomCursor /> */}
+          <Navbar />
           {children}
+          <Footer />
+          {/* {nodeEnv === production && <GoogleTagManager GTM_ID={google.tagId} />} */}
+
           <script async src='https://apis.google.com/js/platform.js'></script>
           {/* <GoogleTagManager GTM_ID={google.tagId} /> */}
           <GoogleTagId GTAG={google.gtmId} />
+          {/* <GoogleAdsTag adsId={google.analyticsId} /> */}
+          <Toaster position='bottom-right' />
         </section>
       </body>
     </html>

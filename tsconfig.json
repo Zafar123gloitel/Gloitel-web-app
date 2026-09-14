@@ -33,7 +33,7 @@
     "components/card.jsx",
     "data/projects.js",
     "app/privacy_policies/page.jsx",
-    "app/resources/data.tsx",
+    "app/(website)/resources/data.tsx",
     "next-env.d.ts",
     ".next/types/**/*.ts"
   ],

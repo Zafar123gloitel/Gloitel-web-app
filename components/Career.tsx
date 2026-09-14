@@ -20,7 +20,7 @@ import {
   CareerFinalCtadata,
   diagnoseBeforeDeployData,
   heroData,
-} from '@/app/career/data';
+} from '@/app/(website)/career/data';
 import Execution_Plan from '@/uiComponents/Execution_Plan';
 import { TestimonialButton } from '@/components/atoms/button/Button';
 
