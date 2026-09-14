@@ -231,7 +231,7 @@ export const teamSectionData = {
       {
         id: 'tm-033',
         name: 'Prince Dewangan',
-        designation: 'Helpdesk Executive',
+        designation: 'Digital Marketing',
         logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789363499/Gloitel/Profile%20G/Prince2_bid3wd.png',
       },
       {
