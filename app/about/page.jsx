@@ -367,7 +367,7 @@
 
 import { useState } from 'react';
 
-import { AboutAboutContent, AboutAboutImg1, AboutAboutImg2 } from '@/components/About';
+import TeamSection, { AboutAboutContent, AboutAboutImg1, AboutAboutImg2 } from '@/components/About';
 import { IntroHead } from '@/uiComponents/Heading';
 import Link from 'next/link';
 import { HorizontalDivider } from '@/components/SectionDivider';
@@ -379,7 +379,6 @@ import GlowPanel from '@/components/GlowPanel';
 import { FAQPage } from '@/components/Faq';
 import JoinUsNow from '@/components/JoinUsNow';
 import StrategyBadge from '@/components/StrategyBadge';
-import AI_Solutions from '@/uiComponents/AI_Solutions';
 import { teamSectionData } from './data';
 
 const AboutPage = () => {
@@ -611,7 +610,7 @@ const AboutPage = () => {
           </div>
         </div>
       </section> */}
-      <section className='w-full'>
+      {/* <section className='w-full'>
         <AI_Solutions
           badge={teamSectionData.badge}
           title={teamSectionData.title}
@@ -619,7 +618,8 @@ const AboutPage = () => {
           tabs={teamSectionData.tabs}
           technologies={teamSectionData.members}
         />
-      </section>
+      </section> */}
+      <TeamSection teamSectionData={teamSectionData} />
 
       <HorizontalDivider />
       {/* Culture Section */}
