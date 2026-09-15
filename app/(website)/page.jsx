@@ -167,7 +167,7 @@ const HomePage = () => {
                   {text.title}
                 </span>
               ))}
-              <WhiteButton ButtonText='Contact Now' Buttonlink='/contact' />
+              <WhiteButton buttonText='Contact Now' buttonlink='/contact' />
             </div>
           </div>
           {/* Services */}

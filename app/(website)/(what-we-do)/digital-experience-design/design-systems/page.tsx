@@ -102,12 +102,12 @@ const page = () => {
               />
             </div>
           </div>
-          <section className='mx-auto -mt-20 w-full sm:w-[90%]'>
+          <section className='mx-auto -mt-20 w-full max-w-[1140px]'>
             <CardShowcase
               showStepBadge
               showDivider={false}
               items={maintenanceData}
-              cardHeight='h-[330px]  max-w-[330px] '
+              cardHeight='h-[330px] mx-auto  max-w-[330px] '
               gridClassName='gap-y-28'
               titleClassName=''
               descriptionClassName=''

@@ -32,7 +32,7 @@ export const heroSectionDataGenerative = {
 
   secondaryButton: {
     text: "See What We've Built",
-    href: '/about',
+    href: '/contact',
     icon: <RightArrowIcon size={20} />,
   },
 };

@@ -157,7 +157,7 @@ export default function Footer() {
 
           <div className='mb-6'>
             <h3 className='font-medium'>Gloitel Consulting Pvt. Ltd.</h3>
-            <p className='text-description text-sm'>
+            <p className='text-white\ text-sm'>
               Delivering end-to-end services across design, engineering, AI, cloud, software
               development, and digital marketing.
             </p>
@@ -165,7 +165,7 @@ export default function Footer() {
 
           <div className='flex flex-col gap-5 overflow-hidden rounded-xl'>
             <span className='text-title mr-4 font-semibold'>Follow Us:</span>
-            <ul className='text-description flex space-y-3 text-sm sm:text-base'>
+            <ul className='text-white\ flex space-y-3 text-sm sm:text-base'>
               {SocialMediaIcons.map((item, index) => (
                 <li key={index}>
                   <Link href={item.link} target='_blank' rel='noopener noreferrer'>
@@ -181,7 +181,7 @@ export default function Footer() {
         <div ref={menuRef} className='relative ml-10 gap-5'>
           <CardDivider className='absolute top-30 -left-48 rotate-90 sm:-left-40 lg:-left-30 2xl:-left-44' />
           <h2 className='text-title mb-4 font-semibold'>Navigation Links</h2>
-          <div className='text-description flex flex-col items-start gap-3 text-sm sm:text-base'>
+          <div className='text-white\ flex flex-col items-start gap-3 text-sm sm:text-base'>
             {links
               .filter(link => link.megaMenu)
               .map(link => (
@@ -205,7 +205,7 @@ export default function Footer() {
 
                   {(activeGroup === group.title ||
                     (!activeGroup && megaMenus[activeMenu].groups[0].title === group.title)) && (
-                    <div className='text-description mt-2 flex flex-col gap-2 text-sm sm:text-base'>
+                    <div className='text-white\ mt-2 flex flex-col gap-2 text-sm sm:text-base'>
                       {group.items.map(item => (
                         <Link key={item.href} href={item.href}>
                           {item.label}
@@ -223,7 +223,7 @@ export default function Footer() {
         <div className='min-w-0'>
           <h2 className='text-title text-sm font-semibold tracking-wide'>Contact us</h2>
 
-          <ul className='text-description mt-6 space-y-5 text-sm'>
+          <ul className='text-white\ mt-6 space-y-5 text-sm'>
             {/* Email */}
             <li className='flex min-w-0 items-start gap-3'>
               <EmailIcon />
@@ -276,7 +276,7 @@ export default function Footer() {
         {/* Newsletter */}
         <div className='min-w-0'>
           <h2 className='text-title text-sm font-semibold tracking-wide'>Newsletter</h2>
-          <p className='text-description mt-6 text-sm leading-relaxed'>
+          <p className='text-white\ mt-6 text-sm leading-relaxed'>
             Subscribe to receive the latest insights, technology updates, industry trends, and
             company news.
           </p>
@@ -299,7 +299,7 @@ export default function Footer() {
               value={email}
               onChange={event => setEmail(event.target.value)}
               placeholder='Enter your email'
-              className='border-footer-border bg-footer-surface text-title placeholder:text-description focus-visible:ring-primary/40 h-11 min-w-0 flex-1 rounded-full text-sm'
+              className='border-footer-border bg-footer-surface text-title placeholder:text-white\ focus-visible:ring-primary/40 h-11 min-w-0 flex-1 rounded-full text-sm'
             />
             <GlowButton
               type='submit'
@@ -307,7 +307,7 @@ export default function Footer() {
               buttonText='Subscribe'
             />
           </form>
-          <p className='text-description/80 mt-4 text-xs leading-relaxed'>
+          <p className='text-white\/80 mt-4 text-xs leading-relaxed'>
             Receive curated technology insights and important updates while we ensure your inbox
             stays free from unnecessary spam.
           </p>
@@ -353,10 +353,15 @@ export default function Footer() {
       </div>
 
       {/* Bottom Section */}
-      <div className='text-description flex flex-col items-center justify-between gap-4 border-t border-gray-700 pt-6 text-xs sm:text-sm md:flex-row'>
-        <p className='text-center md:text-left'>
-          © Gloitel. All rights reserved | CIN: U74110DL2016PTC309781
-        </p>
+      <div className='text-white\ flex flex-col items-center justify-between gap-4 border-t border-gray-700 pt-6 text-xs sm:text-sm md:flex-row'>
+        <span className=''>
+          <p className='text-center md:text-left'>
+            © Gloitel. All rights reserved | CIN: U74110DL2016PTC309781
+          </p>
+          <span className='text-gray-400'>
+            Designed & Developed by <span className='font-medium text-white'>Gloitel</span>
+          </span>
+        </span>
         <div className='flex space-x-6'>
           <Link href='/terms'>Terms & Conditions</Link>
           <Link href='/privacy'>Privacy Policy</Link>

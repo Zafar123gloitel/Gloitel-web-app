@@ -1,4 +1,3 @@
-import React from 'react';
 import { CardIcon } from '@/components';
 
 export const MiddleSectionHeads = ({
@@ -21,7 +20,7 @@ export const MiddleSectionHeads = ({
 
       {/* Section Sub Head */}
       {SectionSubHead && (
-        <SubHeadingTag className='text-3xl leading-15.75 font-medium text-gray-400 sm:text-3xl md:text-3xl xl:text-[48px]'>
+        <SubHeadingTag className='text-3xl leading-15.75 font-medium text-white sm:text-3xl md:text-3xl xl:text-[48px]'>
           {SectionSubHead}
         </SubHeadingTag>
       )}
@@ -30,7 +29,7 @@ export const MiddleSectionHeads = ({
 
       {/* Description */}
       <div className='mt-4 w-full sm:mt-6.5 sm:w-11/12 md:w-10/12 lg:w-[35vw]'>
-        <p className='md:text-md text-sm leading-6 text-gray-400 sm:text-base lg:text-[16px]'>
+        <p className='md:text-md text-sm leading-6 text-white sm:text-base lg:text-[16px]'>
           {SectionDescription}
         </p>
       </div>
@@ -63,7 +62,7 @@ export const LeftSectionHeads = ({
       )}
 
       {/* Description */}
-      <p className='lg:text-md mt-4 text-sm leading-relaxed text-gray-400 sm:mt-6 sm:text-base'>
+      <p className='lg:text-md mt-4 text-sm leading-relaxed text-white sm:mt-6 sm:text-base'>
         {SectionDescription}
       </p>
     </div>

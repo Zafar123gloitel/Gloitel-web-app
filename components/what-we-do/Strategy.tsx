@@ -33,10 +33,10 @@ const Strategy = ({
           {cardData.map(item => (
             <Card key={item.id} className='w-[20rem]'>
               {item.icon && <CardIcon>{item.icon}</CardIcon>}
-              {item.title && (
-                <CardTitle className='text-title mb-5 text-3xl'>{item.title}</CardTitle>
-              )}
-              <CardDescription>{item.description}</CardDescription>
+              {item.title && <CardTitle className='text-title text-3xl'>{item.title}</CardTitle>}
+              <CardDescription className='mt-5 text-left text-sm leading-6 text-white'>
+                {item.description}
+              </CardDescription>
             </Card>
           ))}
         </div>

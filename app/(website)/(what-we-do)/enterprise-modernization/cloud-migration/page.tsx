@@ -38,12 +38,12 @@ const page = () => {
             />
           </div>
         </div>
-        <section className='mx-auto -mt-20 w-full sm:w-[90%]'>
+        <section className='mx-auto -mt-20 w-full sm:w-[80%]'>
           <CardShowcase
             showStepBadge
             showDivider={false}
             items={migrationApproachData}
-            cardHeight='h-[330px]  max-w-[330px] '
+            cardHeight='h-[330px] mx-auto max-w-[330px] '
             gridClassName='gap-y-28'
             titleClassName=''
             descriptionClassName=''
@@ -53,7 +53,7 @@ const page = () => {
       <section className='overflow-hidden py-12 lg:py-20'>
         <div className='relative z-10 mx-auto flex min-h-[60vh] flex-col items-center justify-center'>
           <BgSquare2 />
-          <div className='-mt-44 flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
+          <div className='mt-10 flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
             <span>
               <StrategyBadge text={cloudCoverageSectionHead.badgeText} />
             </span>
@@ -62,18 +62,17 @@ const page = () => {
               SectionDescription={cloudCoverageSectionHead.description}
             />
           </div>
+          <section className='mx-auto grid w-[80%] grid-cols-1 gap-6 md:grid-cols-2'>
+            {cloudCoverageData.map((item, index) => (
+              <ProblemCard key={index} title={item.title} />
+            ))}
+          </section>
         </div>
-
-        <section className='mx-auto -mt-20 grid w-[80%] grid-cols-1 gap-6 md:grid-cols-2'>
-          {cloudCoverageData.map((item, index) => (
-            <ProblemCard key={index} title={item.title} />
-          ))}
-        </section>
       </section>
       <section className='overflow-hidden py-12 lg:py-20'>
         <div className='relative z-10 mx-auto flex min-h-[60vh] flex-col items-center justify-center'>
           <BgSquare2 />
-          <div className='-mt-44 flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
+          <div className='flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
             <span>
               <StrategyBadge text={migrationStrategySectionHead.badgeText} />
             </span>
@@ -82,19 +81,18 @@ const page = () => {
               SectionDescription={migrationStrategySectionHead.description}
             />
           </div>
+          <section className='mt-10 grid w-full grid-cols-1 gap-6 px-10 sm:mx-auto md:w-[80%]'>
+            {migrationStrategySteps.map((item, index) => (
+              <ProblemCard
+                key={index}
+                title={item.title}
+                step
+                number={index + 1}
+                isLast={index === migrationStrategySteps.length - 1}
+              />
+            ))}
+          </section>
         </div>
-
-        <section className='-mt-20 grid w-full grid-cols-1 gap-6 px-10 sm:mx-auto md:w-[80%]'>
-          {migrationStrategySteps.map((item, index) => (
-            <ProblemCard
-              key={index}
-              title={item.title}
-              step
-              number={index + 1}
-              isLast={index === migrationStrategySteps.length - 1}
-            />
-          ))}
-        </section>
       </section>
       <section className='w-full'>
         <AI_Solutions

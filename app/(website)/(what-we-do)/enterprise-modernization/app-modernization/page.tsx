@@ -45,12 +45,12 @@ const page = () => {
               SectionDescription={constraintsSectionHead.description}
             />
           </div>
-          <section className='mx-auto mt-5 w-full px-6 sm:w-[90%] sm:px-0'>
+          <section className='mx-auto mt-5 w-full px-6 sm:w-[80%] sm:px-0'>
             <CardShowcase
               items={applicationConstraintsData}
               showDivider={true}
               showStepBadge={false}
-              cardClassName='h-[411px] max-w-[350px] gap-y-6 '
+              cardClassName='h-[411px]  max-w-[350px] gap-y-6 '
               gridClassName='h-full'
               titleClassName=''
               descriptionClassName=''
@@ -77,8 +77,9 @@ const page = () => {
             showStepBadge
             showDivider={false}
             items={phasedApproachData}
-            cardHeight='h-[263px]  max-w-[330px] '
+            cardHeight='h-[263px] mx-auto  max-w-[330px] '
             gridClassName='h-full gap-y-30 '
+            columns={{ md: 2, lg: 4 }}
             titleClassName=''
             descriptionClassName=''
           />

@@ -7,7 +7,7 @@ export default function ServiceCard({ image, title, description, buttons = [], b
   return (
     <div className='flex flex-col justify-between rounded-3xl border-2 border-gray-400/10 from-blue-900/20 via-indigo-800/20 to-transparent p-6 pb-10 shadow-[0_0_40px_rgba(0,0,0,0.6)] transition'>
       {/* Image */}
-      <div className='relative h-64 w-full overflow-hidden rounded-2xl'>
+      <div className='relative h-64 w-full overflow-hidden rounded-2xl duration-500 hover:h-[200px]'>
         <Image
           src={image}
           alt={title}

@@ -32,7 +32,7 @@ const Business = ({
       <div className='relative z-10 mx-auto mt-40 flex min-h-[60vh] flex-col items-center justify-center'>
         <BgSquare2 />
 
-        <div className='-mt-44 flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
+        <div className='flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
           <span>
             <StrategyBadge text={badgeText} />
           </span>
@@ -45,12 +45,11 @@ const Business = ({
             subHeadingTag={subHeadingTag}
           />
         </div>
-      </div>
-
-      <div className='mx-auto -mt-10 grid w-full grid-cols-1 gap-5 px-10 md:w-[85%]'>
-        {data.map(item => (
-          <BusinessCard key={item.id} icon={item.icon} title={item.title} className='' />
-        ))}
+        <div className='xl:max-w-[1200px]: mx-auto mt-10 grid w-full grid-cols-1 gap-5 px-10 md:w-[85%]'>
+          {data.map(item => (
+            <BusinessCard key={item.id} icon={item.icon} title={item.title} className='' />
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -37,7 +37,7 @@ const page = () => {
             text: 'Discuss Your Integration Needs',
           }}
           secondaryButton={{
-            href: '/case-studies',
+            href: '/contact',
             text: 'Book a Technical Review',
             icon: <ArrowRightIcon size={20} />,
           }}
@@ -67,12 +67,12 @@ const page = () => {
               SectionDescription='From API connectivity and model serving to monitoring, data pipelines, and enterprise platform setup, we build the engineering layer that enables AI systems to operate effectively within real-world business environments.'
             />
           </div>
-          <section className='mx-auto mt-5 w-full px-6 sm:w-[90%] sm:px-0'>
+          <section className='mx-auto mt-5 w-full px-6 sm:w-[80%] sm:px-0'>
             <CardShowcase
               items={engineeringServicesData}
               showDivider={true}
               showStepBadge={false}
-              cardClassName='h-[370px] max-w-[350px] gap-y-6 '
+              cardClassName='h-[370px] mx-auto  gap-y-6 '
               gridClassName='h-full'
               titleClassName=''
               descriptionClassName=''
@@ -83,7 +83,7 @@ const page = () => {
       <section>
         <div className='relative z-10 mx-auto mt-20 flex min-h-[60vh] flex-col items-center justify-center'>
           <BgSquare2 />
-          <div className='-mt-40 flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
+          <div className='flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
             {/* Badge */}
             <span>
               <StrategyBadge text='Common Integration Patterns' />
@@ -94,19 +94,18 @@ const page = () => {
               SectionDescription='From real-time AI experiences to event-driven automation and retrieval-based systems, we design architectures that align with how your applications and business processes operate.'
             />
           </div>
-        </div>
-
-        <div className='mx-auto -mt-20 mb-10 w-full px-6 sm:w-[80%] sm:px-0'>
-          <div className='grid grid-cols-1 gap-4 lg:grid-cols-2'>
-            {architecturePatternsData.map(item => (
-              <PurposeCard
-                key={item.id}
-                icon={item.icon}
-                title={item.title}
-                description={item.description}
-                className=''
-              />
-            ))}
+          <div className='mx-auto mt-10 mb-10 w-full px-6 sm:w-[80%] sm:px-0'>
+            <div className='grid grid-cols-1 gap-10 lg:grid-cols-2'>
+              {architecturePatternsData.map(item => (
+                <PurposeCard
+                  key={item.id}
+                  icon={item.icon}
+                  title={item.title}
+                  description={item.description}
+                  className=''
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>

@@ -92,7 +92,7 @@ export function CardTitle({
 
 export function CardDescription({
   children,
-  className = 'text-sm  text-description  leading-6 text-left',
+  className = 'text-sm  text-white  leading-6 text-left',
 }) {
   return <p className={['', className].filter(Boolean).join(' ')}>{children}</p>;
 }

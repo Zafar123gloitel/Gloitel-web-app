@@ -42,7 +42,7 @@ const page = () => {
             text: 'Discuss Your Prediction Challenge',
           }}
           secondaryButton={{
-            href: '/case-studies',
+            href: '/contact',
             text: 'Explore ML Case Studies',
             icon: <ArrowRightIcon size={20} />,
           }}
@@ -66,7 +66,7 @@ complex datasets.'
         </div>
 
         <div className='mx-auto -mt-10 sm:w-[80%]'>
-          <div className='grid grid-cols-1 gap-4 p-5 xl:grid-cols-2'>
+          <div className='grid grid-cols-1 gap-10 p-5 xl:grid-cols-2'>
             {outcomesData2.map(item => (
               <PurposeCard
                 key={item.id}

@@ -85,7 +85,7 @@ const IconCard = ({
                 width={sizePx}
                 src={logo}
                 alt={name}
-                className='h-full w-full object-cover'
+                className='h-full w-full bg-white object-cover'
                 loading='lazy'
               />
             ) : (

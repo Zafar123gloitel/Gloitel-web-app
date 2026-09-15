@@ -74,7 +74,7 @@ const AI_SolutionsContent = ({
 
           <h2 className='text-title mt-8 text-5xl font-medium'>{title}</h2>
 
-          <p className='text-description mx-auto mt-6 max-w-3xl text-lg leading-8'>{description}</p>
+          <p className='mx-auto mt-6 max-w-3xl text-lg leading-8 text-white'>{description}</p>
         </div>
 
         <div className='mt-14 flex justify-center'>
@@ -93,7 +93,7 @@ const AI_SolutionsContent = ({
                 className={`shrink-0 rounded-lg border px-5 py-2.5 text-sm whitespace-nowrap transition-all duration-300 ${
                   activeTabIndex === index
                     ? 'text-title border-blue-500 bg-blue-600 shadow-[0_0_20px_rgba(37,99,235,.35)]'
-                    : 'text-description border-white/15 bg-transparent hover:border-blue-500'
+                    : 'border-white/15 bg-transparent text-white hover:border-blue-500'
                 }`}
               >
                 {tab}

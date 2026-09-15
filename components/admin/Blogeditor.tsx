@@ -327,7 +327,7 @@ export default function BlogEditor({ mode, initialData }: BlogEditorProps) {
                         update('authorName', e.target.value);
                         update('authorImage', author?.image ?? '');
                       }}
-                      className={selectClass}
+                      className={`border-none ${selectClass}`}
                     >
                       {AUTHORS.map(author => (
                         <option key={author.name} value={author.name}>
