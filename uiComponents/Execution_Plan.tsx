@@ -55,7 +55,7 @@ const Execution_Plan = ({
                 {title}
               </h2>
 
-              <p className='text-description text-t mt-6 text-[16px] leading-7 sm:text-base xl:text-[20px]'>
+              <p className='text-t mt-6 text-[16px] leading-7 text-white sm:text-base xl:text-[20px]'>
                 {description}
               </p>
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import FeatureScroll from './FeatureScroll';
 import { GlowButton } from './Button';
 import { BgSquare3 } from './BgSquare';
@@ -148,7 +147,7 @@ const Testimonial = () => {
                     </div>
                   </div>
                   {/* Right column: Icon */}
-                  <div className='text-description group-hover:text-title h-6 w-6 transition-colors duration-300'>
+                  <div className='group-hover:text-title h-6 w-6 text-white transition-colors duration-300'>
                     {item.icon}
                   </div>
                 </div>

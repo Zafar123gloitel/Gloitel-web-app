@@ -417,7 +417,7 @@ const Navbar = () => {
 
     return isActive
       ? 'text-title translate-y-0 scale-100'
-      : 'text-description hover:text-title hover:-translate-y-1 hover:scale-105 transition-all duration-300 ease-out';
+      : 'text-white hover:text-title hover:-translate-y-1 hover:scale-105 transition-all duration-300 ease-out';
   };
 
   const isMegaMenuActive = megaMenu => {
@@ -501,7 +501,7 @@ const Navbar = () => {
                       } ${
                         isMegaMenuActive(link.megaMenu)
                           ? 'text-title'
-                          : 'text-description hover:text-title'
+                          : 'hover:text-title text-white'
                       }`}
                     >
                       {link.label}
@@ -630,7 +630,7 @@ const Navbar = () => {
         {/* 🔹 Mobile Toggle Button */}
         <button
           onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
-          className='text-description hover:text-title inline-flex items-center justify-center rounded-md p-2 transition-all hover:bg-gray-800/50 lg:hidden'
+          className='hover:text-title inline-flex items-center justify-center rounded-md p-2 text-white transition-all hover:bg-gray-800/50 lg:hidden'
         >
           {isMobileMenuOpen ? (
             <svg

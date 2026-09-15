@@ -39,7 +39,7 @@ const ComingSoon = () => {
         </h1>
 
         {/* Description */}
-        <p className='text-description mx-auto mt-6 max-w-xl text-sm leading-7 sm:text-base'>
+        <p className='mx-auto mt-6 max-w-xl text-sm leading-7 text-white sm:text-base'>
           We’re building something exciting behind the scenes. This page is currently under
           development and will be available soon.
         </p>
@@ -50,7 +50,7 @@ const ComingSoon = () => {
         </div>
 
         {/* Bottom Text */}
-        <p className='text-description mt-6 text-xs tracking-[0.25em] uppercase'>Stay tuned</p>
+        <p className='mt-6 text-xs tracking-[0.25em] text-white uppercase'>Stay tuned</p>
       </div>
     </section>
   );
