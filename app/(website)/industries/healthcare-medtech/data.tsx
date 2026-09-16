@@ -193,7 +193,9 @@ export const healthcareComplianceData: ArchitectureItem[] = [
 
 export const healthcareTechStackData = {
   badge: 'Healthcare Technology Stack',
+
   title: 'Purpose-Built Technologies for Healthcare Innovation',
+
   description:
     'We combine healthcare-specific integrations, secure cloud infrastructure, and advanced AI capabilities to build solutions that meet the demands of modern care delivery.',
 
@@ -204,27 +206,83 @@ export const healthcareTechStackData = {
       {
         id: createId(),
         name: 'Epic FHIR',
-        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/Gloitel/icon/epic-fhir_xxxxxx.png',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789541990/Gloitel/icon/images_r80tus.png',
       },
       {
         id: createId(),
         name: 'Cerner',
-        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/Gloitel/icon/cerner_xxxxxx.png',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789542157/Gloitel/icon/logo-cerner-400x495_ouckq4.jpg',
       },
       {
         id: createId(),
         name: 'HL7 v2',
-        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/Gloitel/icon/hl7-v2_xxxxxx.png',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789542637/Gloitel/icon/1693600301667_sz42fp.png',
       },
       {
         id: createId(),
         name: 'SMART on FHIR',
-        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/Gloitel/icon/smart-on-fhir_xxxxxx.png',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789542883/Gloitel/icon/7401080_usmboz.png',
       },
     ],
-    Cloud: [],
-    AI: [],
-    Security: [],
+
+    Cloud: [
+      {
+        id: createId(),
+        name: 'AWS HealthLake',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960623/Gloitel/icon/AWS_xpwkkz.png',
+      },
+      {
+        id: createId(),
+        name: 'Google Cloud Healthcare API',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960680/Gloitel/icon/GCP_knskhn.png',
+      },
+      {
+        id: createId(),
+        name: 'Azure Health Data Services',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960628/Gloitel/icon/azure_lfqjy0.png',
+      },
+    ],
+
+    AI: [
+      {
+        id: createId(),
+        name: 'OpenAI',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960583/Gloitel/icon/openai_wwedph.png',
+      },
+      {
+        id: createId(),
+        name: 'Anthropic (with BAA)',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789543707/Gloitel/icon/anthropic-icon-tdvkiqisswbrmtkiygb0ia_sqdzo4.webp',
+      },
+      {
+        id: createId(),
+        name: 'AWS Bedrock',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960623/Gloitel/icon/AWS_xpwkkz.png',
+      },
+      {
+        id: createId(),
+        name: 'Nuance',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789543837/Gloitel/icon/NUAN-f0630393_aexgd8.png',
+      },
+    ],
+
+    Security: [
+      {
+        id: createId(),
+        name: 'Vault',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789114769/Gloitel/icon/Microsoft.VisualStudio.Services.Icons_mdg45d.png',
+      },
+      {
+        id: createId(),
+        name: 'AWS KMS',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789543990/Gloitel/icon/6_aws-kms.62bf270314_k34z1g.jpg',
+      },
+      {
+        id: createId(),
+        name: 'HIPAA-eligible Infrastructure',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789544221/Gloitel/icon/download_zchtnt.jpg',
+      },
+    ],
   },
 };
 
