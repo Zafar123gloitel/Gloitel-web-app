@@ -44,17 +44,20 @@ export const AiRoadmapSection = () => {
         imageAlt={aiRoadmapData.imageAlt}
       />
 
-      <CardShowcase
-        items={aiRoadmapData.features}
-        showDivider={false}
-        showStepBadge={false}
-        gridClassName={''}
-        cardClassName={''}
-        cardHeight={'h-[263px] w-[302px]'}
-        titleClassName=''
-        descriptionClassName=''
-        iconClassName={''}
-      />
+      <div className='mx-auto max-w-[1400px]'>
+        <CardShowcase
+          items={aiRoadmapData.features}
+          showDivider={false}
+          showStepBadge={false}
+          gridClassName={''}
+          cardClassName={''}
+          cardHeight={'h-[263px] mx-auto w-[302px]'}
+          titleClassName=''
+          columns={{ base: 1, lg: 2, xl: 4 }}
+          descriptionClassName=''
+          iconClassName={''}
+        />
+      </div>
     </section>
   );
 };
@@ -97,7 +100,7 @@ export const AiExecutionServices = () => {
           {' '}
           <a
             href={'/career'}
-            className='group text-description hover:text-title inline-flex items-center gap-2 text-[11px] transition-colors duration-300'
+            className='group hover:text-title inline-flex items-center gap-2 text-[11px] text-white transition-colors duration-300'
           >
             <span className='text-xl'>{'View all open positions'}</span>
 
@@ -142,13 +145,14 @@ export const DiagnoseBeforeDeploy = () => {
               SectionDescription={diagnoseBeforeDeployData.description}
             />
           </div>
-          <section className='mx-auto mt-20 w-full sm:w-[90%]'>
+          <section className='mx-auto mt-20 w-full sm:w-[80%]'>
             <CardShowcase
               showStepBadge={false}
               showDivider={false}
               items={diagnoseBeforeDeployData.steps}
               cardHeight='h-[300px]   max-w-[300px] '
               gridClassName='gap-y-28'
+              columns={{ base: 1, lg: 2, xl: 4 }}
               titleClassName=''
               descriptionClassName=''
             />

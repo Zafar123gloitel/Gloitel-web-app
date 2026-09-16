@@ -38,7 +38,7 @@ const page = () => {
             />
           </div>
         </div>
-        <section className='mx-auto -mt-20 w-full sm:w-[80%]'>
+        <section className='mx-auto -mt-20 w-full max-w-[1100px]'>
           <CardShowcase
             showStepBadge
             showDivider={false}

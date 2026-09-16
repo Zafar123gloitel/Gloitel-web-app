@@ -73,7 +73,7 @@ const Accordion = ({ data, className = '' }: AccordionProps) => {
           <div key={index} className='group mt-4 rounded-lg border-2 border-white/10 p-6'>
             <button
               onClick={() => toggleAccordion(index)}
-              className='text-description flex w-full items-center justify-between text-left'
+              className='flex w-full items-center justify-between text-left text-white'
             >
               <div className='flex items-center gap-6'>
                 <h3 className='text-title text-[16px] font-medium'>{item.title}</h3>
@@ -91,7 +91,7 @@ const Accordion = ({ data, className = '' }: AccordionProps) => {
               transition={{ duration: 0.35 }}
               className='overflow-hidden'
             >
-              <p className='text-description py-4 pr-12 text-sm'>{item.description}</p>
+              <p className='py-4 pr-12 text-sm text-white'>{item.description}</p>
             </motion.div>
           </div>
         );

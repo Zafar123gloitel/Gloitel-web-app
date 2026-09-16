@@ -39,7 +39,7 @@ const PodCard: React.FC<PodCardProps> = ({
       <CardTitle className='mb-3'>{title}</CardTitle>
 
       {/* Description */}
-      <CardDescription className='text-description mb-6'>{description}</CardDescription>
+      <CardDescription className='mb-6 text-white'>{description}</CardDescription>
 
       <CardDivider className='mb-6' />
 
@@ -50,7 +50,7 @@ const PodCard: React.FC<PodCardProps> = ({
         {composition.map((item, index) => (
           <li key={index} className='flex items-center gap-3'>
             <span className='h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500' />
-            <span className='text-description text-sm'>{item}</span>
+            <span className='text-sm text-white'>{item}</span>
           </li>
         ))}
       </ul>

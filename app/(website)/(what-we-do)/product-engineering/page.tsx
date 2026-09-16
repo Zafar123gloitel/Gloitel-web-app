@@ -132,7 +132,7 @@ const page = () => {
               SectionDescription={productAudienceSectionHead.description}
             />
           </div>
-          <section className='mx-auto mt-20 w-full sm:w-[80%]'>
+          <section className='mx-auto mt-20 w-full max-w-[1300px]'>
             <CardShowcase
               showStepBadge
               showDivider={false}

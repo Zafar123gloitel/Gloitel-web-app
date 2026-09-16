@@ -39,13 +39,14 @@ export default function Page() {
               SectionDescription={aiSystemsSectionHead.description}
             />
           </div>
-          <section className='mx-auto mt-20 w-full sm:w-[90%]'>
+          <section className='mx-auto mt-20 w-full max-w-[1600px]'>
             <CardShowcase
               showStepBadge
               showDivider={false}
               items={aiSystemsData}
-              cardHeight='h-[300px]   max-w-[350px] '
+              cardHeight='h-[300px] mx-auto  max-w-[350px] '
               gridClassName='gap-y-28'
+              columns={{ base: 1, lg: 2, xl: 4 }}
               titleClassName=''
               descriptionClassName=''
             />

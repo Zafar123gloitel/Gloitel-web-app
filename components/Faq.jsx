@@ -14,7 +14,7 @@ import Asked_Q from '@/components/what-we-do/Asked_Q';
 //         <span>{title}</span>
 //         <span className="text-2xl">{isOpen ? "−" : "+"}</span>
 //       </button>
-//       {isOpen && <p className="px-7 pb-7 text-description">{description}</p>}
+//       {isOpen && <p className="px-7 pb-7 text-white">{description}</p>}
 //     </div>
 //   );
 // };
@@ -73,7 +73,7 @@ export const FAQPage = () => {
 
     //         {/* Description */}
     //         <div>
-    //           <p className="mt-4 sm:mt-6 text-base sm:text-md text-description max-w-2xl">
+    //           <p className="mt-4 sm:mt-6 text-base sm:text-md text-white max-w-2xl">
     //             Have questions? Our FAQ section has you covered with quick
     //             answers to the most common inquiries.
     //           </p>
