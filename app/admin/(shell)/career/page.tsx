@@ -1,14 +1,16 @@
 'use client';
 
 import CareerTable, { type JobListing } from '@/components/admin/CareerTable';
+import { useAdminSearch } from '@/components/admin/AdminSearchContext';
 import { Plus } from 'lucide-react';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 const STORAGE_KEY = 'admin_jobs';
 
 export default function CareerPage() {
   const [jobs, setJobs] = useState<JobListing[]>([]);
+  const { search } = useAdminSearch();
 
   useEffect(() => {
     try {
@@ -25,6 +27,17 @@ export default function CareerPage() {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
   }
 
+  const filteredJobs = useMemo(() => {
+    if (!search.trim()) return jobs;
+    const query = search.toLowerCase();
+    return jobs.filter(
+      job =>
+        job.title.toLowerCase().includes(query) ||
+        job.department.toLowerCase().includes(query) ||
+        job.location.toLowerCase().includes(query),
+    );
+  }, [jobs, search]);
+
   return (
     <div className='space-y-6'>
       {/* Header row */}
@@ -32,7 +45,7 @@ export default function CareerPage() {
         <div>
           <h2 className='text-lg font-bold text-white'>Job Listings</h2>
           <p className='mt-0.5 text-sm text-[#969696]'>
-            {jobs.length} listing{jobs.length !== 1 ? 's' : ''} total
+            {filteredJobs.length} listing{filteredJobs.length !== 1 ? 's' : ''} total
           </p>
         </div>
         <Link
@@ -45,7 +58,7 @@ export default function CareerPage() {
       </div>
 
       {/* Table */}
-      <CareerTable jobs={jobs} onDelete={handleDelete} />
+      <CareerTable jobs={filteredJobs} onDelete={handleDelete} />
     </div>
   );
 }

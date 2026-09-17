@@ -638,7 +638,7 @@ const AboutPage = () => {
           />
         </div>
 
-        <div className='scrollbar-hide mt-12 w-full overflow-x-auto'>
+        <div className='custom-scrollbar mt-12 w-full overflow-x-auto'>
           <GalleryScroll />
         </div>
         {/* <GlowPanel /> */}

@@ -2,13 +2,14 @@
 
 import { logout } from '@/lib/adminAuth';
 import { BookOpen, Briefcase, ChevronLeft, LayoutDashboard, LogOut, Menu } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useState } from 'react';
 
 const navItems = [
   { label: 'Dashboard', href: '/admin/dashboard', icon: LayoutDashboard },
-  { label: 'Blog', href: '/admin/blog', icon: BookOpen },
+  { label: 'All Articles', href: '/admin/blog', icon: BookOpen },
   { label: 'Career', href: '/admin/career', icon: Briefcase },
 ];
 
@@ -26,18 +27,23 @@ export default function AdminSidebar() {
     <>
       {/* Sidebar */}
       <aside
-        className={`flex h-screen flex-col border-r border-white/10 bg-[#0f0f0f] transition-all duration-300 ${
+        className={`flex h-screen flex-col border-r border-white/10 bg-[#05091E] transition-all duration-300 ${
           collapsed ? 'w-16' : 'w-64'
         } sticky top-0`}
       >
         {/* Logo + Toggle */}
         <div className='flex items-center justify-between border-b border-white/10 px-4 py-5'>
           {!collapsed && (
-            <Link href='/admin/dashboard' className='flex items-center gap-2'>
-              <div className='flex h-8 w-8 items-center justify-center rounded-lg bg-[#1447e6]'>
-                <span className='text-xs font-bold text-white'>G</span>
-              </div>
-              <span className='text-sm font-semibold text-white'>Gloitel Admin</span>
+            <Link href='/admin/dashboard' className='flex w-32 items-center gap-2'>
+              <Image
+                src='https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762927934/Gloitel/logo_xbs2qc.svg'
+                width={120}
+                height={90}
+                alt='Logo'
+                className='object-contain'
+                unoptimized
+                loading='lazy'
+              />
             </Link>
           )}
           {collapsed && (

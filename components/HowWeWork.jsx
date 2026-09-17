@@ -123,7 +123,7 @@ const HowWeWork = () => {
                   {/* Conditionally render button only for the third card */}
                   {item.ButtonText && item.ButtonTextLink && (
                     <div className='mt-4 flex justify-start'>
-                      <GlowButton ButtonText={item.ButtonText} ButtonLink={item.ButtonTextLink} />
+                      <GlowButton buttonText={item.ButtonText} buttonLink={item.ButtonTextLink} />
                     </div>
                   )}
                   {item.ButtonText && item.ButtonTextLink && (

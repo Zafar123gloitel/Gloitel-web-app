@@ -22,7 +22,7 @@ export const aiIntelligentSystemsHeroData = {
   },
   secondaryButton: {
     text: 'View AI Case Studies',
-    href: '/about',
+    href: '/contact',
     icon: <HeroArrowRightIcon />,
   },
 };

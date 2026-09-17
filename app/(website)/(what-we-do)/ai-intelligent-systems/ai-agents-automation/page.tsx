@@ -5,7 +5,6 @@ import { BgSquare2 } from 'components/BgSquare';
 import StrategyBadge from '@/components/StrategyBadge';
 import { MiddleSectionHeads } from 'components/SectionHeads';
 import ProblemCard from '@/components/ProblemCard';
-import Image from 'next/image';
 import { CardShowcase } from '@/components';
 // import Discover from "../../components/Discover";
 // import Assess from "../../components/Assess";
@@ -29,6 +28,7 @@ import HeroSection from '@/components/HeroSection';
 import Assess from '@/components/what-we-do/Assess';
 import Discover from '@/components/what-we-do/Discover';
 import Strategy from '@/components/what-we-do/Strategy';
+import { ImageCard2 } from '@/uiComponents/ImageCard';
 
 const page = () => {
   const problems = [
@@ -61,7 +61,7 @@ const page = () => {
             text: 'Discuss Your Automation Use Case',
           }}
           secondaryButton={{
-            href: '/case-studies',
+            href: '/contact',
             text: 'Explore Agentic AI',
             icon: (
               <svg
@@ -101,13 +101,12 @@ achieve outcomes.'
             />
           </div>
         </div>
-        <div className='relative mx-auto mb-16 h-[400px] w-[80%] overflow-hidden'>
-          <Image
-            src='https://res.cloudinary.com/dsqu6pi0d/image/upload/v1786613039/Gloitel/what%20we%20do/How_AI_Agents_Work_zed02c.png'
+        <div className='relative mx-auto mb-16 h-[500px] w-[80%] overflow-hidden'>
+          <ImageCard2
+            HowWeWorkImg={
+              'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1786613039/Gloitel/what%20we%20do/How_AI_Agents_Work_zed02c.png'
+            }
             alt='Problem'
-            fill
-            className='h-full w-full rounded-2xl bg-white object-cover'
-            loading='lazy'
           />
         </div>
 
@@ -137,6 +136,7 @@ achieve outcomes.'
               showDivider={true}
               showStepBadge={false}
               cardClassName='h-[400px] max-w-[350px]  '
+              columns={{ base: 1, sm: 2, lg: 4 }}
               gridClassName='h-full'
               titleClassName=''
               descriptionClassName=''

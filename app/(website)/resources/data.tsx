@@ -65,7 +65,7 @@ export const resourceCaseStudiesData = [
     title: 'Key considerations for introducing AI solutions from prototyping to production',
     description:
       'Scaling machine learning workflows beyond experimental notebooks requires solid infrastructure, observability, and disciplined engineering.',
-    author: 'Amit Chandra',
+    author: 'Amit Charde',
     date: 'May 12, 2026',
     image:
       'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788869099/Gloitel/Resource%20F/Product_Engineering_kt38p0.png',

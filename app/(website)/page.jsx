@@ -167,7 +167,7 @@ const HomePage = () => {
                   {text.title}
                 </span>
               ))}
-              <WhiteButton ButtonText='Contact Now' Buttonlink='/contact' />
+              <WhiteButton buttonText='Contact Now' buttonlink='/contact' />
             </div>
           </div>
           {/* Services */}
@@ -213,7 +213,7 @@ const HomePage = () => {
 
           <div
             ref={listRef}
-            className='hide-scrollbar portfolio-fade-bottom relative h-180 w-full overflow-scroll'
+            className='custom-scrollbar portfolio-fade-bottom relative h-180 w-full overflow-scroll'
           >
             <PortfolioCard scrollProgress={scrollYProgress} />
           </div>

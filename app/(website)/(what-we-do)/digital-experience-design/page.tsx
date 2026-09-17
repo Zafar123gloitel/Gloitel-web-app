@@ -51,13 +51,14 @@ const page = () => {
               SectionDescription={designGapSectionHead.description}
             />
           </div>
-          <section className='mx-auto mt-20 w-full sm:w-[90%]'>
+          <section className='mx-auto mt-20 w-full max-w-[1040px] sm:w-[80%]'>
             <CardShowcase
               showStepBadge
               showDivider={false}
               items={designGapData}
-              cardHeight='h-[290px]   max-w-[300px] '
+              cardHeight='h-[290px] mx-auto  max-w-[300px] '
               gridClassName='gap-y-28'
+              columns={{ base: 1, md: 2, lg: 3 }}
               titleClassName=''
               descriptionClassName=''
             />

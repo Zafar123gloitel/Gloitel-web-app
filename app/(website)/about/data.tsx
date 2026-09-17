@@ -127,7 +127,7 @@ export const teamSectionData = {
         id: 'tm-017',
         name: 'Shivdeep Mishra',
         designation: 'Frontend Developer',
-        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789205071/Gloitel/Profile%20G/Sachin_f1ehto.png',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789554834/Gloitel/Profile%20G/WhatsApp_Image_2026-09-16_at_4.02.46_PM_jtzgae.jpg',
       },
       {
         id: 'tm-018',
@@ -231,8 +231,8 @@ export const teamSectionData = {
       {
         id: 'tm-033',
         name: 'Prince Dewangan',
-        designation: 'Helpdesk Executive',
-        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789363499/Gloitel/Profile%20G/Prince2_bid3wd.png',
+        designation: 'Digital Marketing',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789554833/Gloitel/Profile%20G/WhatsApp_Image_2026-09-16_at_2.53.01_PM_s5erge.jpg',
       },
       {
         id: 'tm-034',

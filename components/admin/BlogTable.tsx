@@ -80,7 +80,7 @@ export default function BlogTable({ posts, onDelete }: BlogTableProps) {
 
   return (
     <div className='overflow-hidden rounded-xl border border-white/10 bg-[#0f0f0f]'>
-      <div className='overflow-x-auto'>
+      <div className='custom-scrollbar overflow-x-auto'>
         <table className='w-full'>
           <thead>
             <tr className='border-b border-white/10 bg-white/5'>
@@ -96,10 +96,10 @@ export default function BlogTable({ posts, onDelete }: BlogTableProps) {
               <th className='px-4 py-3 text-left text-xs font-medium tracking-wider text-[#969696] uppercase'>
                 Status
               </th>
-              <th className='hidden px-4 py-3 text-left text-xs font-medium tracking-wider text-[#969696] uppercase sm:table-cell'>
+              <th className='hidden px-4 py-3 text-left text-xs font-medium tracking-wider text-nowrap text-[#969696] uppercase sm:table-cell'>
                 Publish Date
               </th>
-              <th className='hidden px-4 py-3 text-left text-xs font-medium tracking-wider text-[#969696] uppercase xl:table-cell'>
+              <th className='hidden px-4 py-3 text-left text-xs font-medium tracking-wider text-nowrap text-[#969696] uppercase xl:table-cell'>
                 Updated At
               </th>
               <th className='px-4 py-3 text-right text-xs font-medium tracking-wider text-[#969696] uppercase'>
@@ -149,7 +149,9 @@ export default function BlogTable({ posts, onDelete }: BlogTableProps) {
                         />
                       )}
                     </div>
-                    <span className='text-sm text-[#cccccc]'>{post.author?.name ?? '—'}</span>
+                    <span className='text-sm text-nowrap text-[#cccccc]'>
+                      {post.author?.name ?? '—'}
+                    </span>
                   </div>
                 </td>
                 <td className='px-4 py-4'>
@@ -160,10 +162,10 @@ export default function BlogTable({ posts, onDelete }: BlogTableProps) {
                     {post.status}
                   </span>
                 </td>
-                <td className='hidden px-4 py-4 text-xs text-[#969696] sm:table-cell'>
+                <td className='hidden px-4 py-4 text-xs text-nowrap text-[#969696] sm:table-cell'>
                   {formatDate(post.publishDate)}
                 </td>
-                <td className='hidden px-4 py-4 text-xs text-[#969696] xl:table-cell'>
+                <td className='hidden px-4 py-4 text-xs text-nowrap text-[#969696] xl:table-cell'>
                   {formatDate(post.updatedAt)}
                 </td>
                 <td className='px-4 py-4'>

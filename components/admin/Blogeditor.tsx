@@ -1,6 +1,7 @@
 'use client';
 
 import type { BlogPost } from '@/components/admin/BlogTable';
+import BlogPreview from './BlogPreview';
 import {
   ArrowLeft,
   Bold,
@@ -38,7 +39,7 @@ const AUTHORS = [
       'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789205065/Gloitel/Profile%20G/WhatsApp_Image_2026-09-12_at_1.44.35_PM_c6sfqc.jpg',
   },
   {
-    name: 'Amit Chandran',
+    name: 'Amit Charde',
     image:
       'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789205067/Gloitel/Profile%20G/Amit_kjiavd.png',
   },
@@ -72,6 +73,7 @@ export default function BlogEditor({ mode, initialData }: BlogEditorProps) {
   const contentRef = useRef<HTMLTextAreaElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [saving, setSaving] = useState(false);
+  const [showPreview, setShowPreview] = useState(false);
 
   const [form, setForm] = useState({
     title: initialData?.title ?? '',
@@ -110,6 +112,81 @@ export default function BlogEditor({ mode, initialData }: BlogEditorProps) {
     }));
   }
 
+  function handleFormatChange(e: React.ChangeEvent<HTMLSelectElement>) {
+    const format = e.target.value;
+    const ta = contentRef.current;
+
+    if (!ta) return;
+
+    const { selectionStart, selectionEnd, value } = ta;
+    const selected = value.slice(selectionStart, selectionEnd);
+
+    // Agar text select hai, usko heading banao
+    if (selected.trim()) {
+      const lines = selected.split('\n');
+
+      const prefixMap: Record<string, string> = {
+        paragraph: '',
+        h1: '# ',
+        h2: '## ',
+        h3: '### ',
+      };
+
+      const prefix = prefixMap[format] ?? '';
+
+      const formatted = lines
+        .map(line => {
+          // Existing heading prefixes remove karo
+          const cleanLine = line.replace(/^#{1,6}\s+/, '');
+          return prefix + cleanLine;
+        })
+        .join('\n');
+
+      const newValue = value.slice(0, selectionStart) + formatted + value.slice(selectionEnd);
+
+      update('content', newValue);
+
+      requestAnimationFrame(() => {
+        ta.focus();
+        ta.setSelectionRange(selectionStart, selectionStart + formatted.length);
+      });
+
+      return;
+    }
+
+    // Agar text select nahi hai, current line par heading lagao
+    const lineStart = value.lastIndexOf('\n', selectionStart - 1) + 1;
+    const lineEnd = value.indexOf('\n', selectionStart);
+
+    const actualLineEnd = lineEnd === -1 ? value.length : lineEnd;
+    const currentLine = value.slice(lineStart, actualLineEnd);
+
+    // Existing heading remove karo
+    const cleanLine = currentLine.replace(/^#{1,6}\s+/, '');
+
+    const prefixMap: Record<string, string> = {
+      paragraph: '',
+      h1: '# ',
+      h2: '## ',
+      h3: '### ',
+    };
+
+    const prefix = prefixMap[format] ?? '';
+    const formattedLine = prefix + cleanLine;
+
+    const newValue = value.slice(0, lineStart) + formattedLine + value.slice(actualLineEnd);
+
+    update('content', newValue);
+
+    requestAnimationFrame(() => {
+      ta.focus();
+
+      const newPosition = lineStart + formattedLine.length;
+
+      ta.setSelectionRange(newPosition, newPosition);
+    });
+  }
+
   // ---- Editor toolbar helpers (plain-text/markdown based) ----
   function wrapSelection(before: string, after: string = before) {
     const ta = contentRef.current;
@@ -126,6 +203,54 @@ export default function BlogEditor({ mode, initialData }: BlogEditorProps) {
         selectionStart + before.length + selected.length,
       );
     });
+  }
+
+  function prefixSelectedLines(prefix: string, ordered = false) {
+    const ta = contentRef.current;
+    if (!ta) return;
+
+    const { selectionStart, selectionEnd, value } = ta;
+
+    // Selection se poori lines nikalo
+    const lineStart = value.lastIndexOf('\n', selectionStart - 1) + 1;
+
+    const nextNewLine = value.indexOf('\n', selectionEnd);
+    const lineEnd = nextNewLine === -1 ? value.length : nextNewLine;
+
+    const selectedBlock = value.slice(lineStart, lineEnd);
+
+    const lines = selectedBlock.split('\n');
+
+    const formatted = lines
+      .map((line, index) => {
+        // Existing list prefix remove
+        const cleanLine = line.replace(/^\s*(?:[-*+]|\d+\.)\s+/, '');
+
+        if (!cleanLine.trim()) return cleanLine;
+
+        if (ordered) {
+          return `${index + 1}. ${cleanLine}`;
+        }
+
+        return `${prefix}${cleanLine}`;
+      })
+      .join('\n');
+
+    const newValue = value.slice(0, lineStart) + formatted + value.slice(lineEnd);
+
+    update('content', newValue);
+
+    requestAnimationFrame(() => {
+      ta.focus();
+
+      ta.setSelectionRange(lineStart, lineStart + formatted.length);
+    });
+  }
+  function addBulletList() {
+    prefixSelectedLines('- ');
+  }
+  function addOrderedList() {
+    prefixSelectedLines('', true);
   }
 
   function prefixLine(prefix: string) {
@@ -231,9 +356,9 @@ export default function BlogEditor({ mode, initialData }: BlogEditorProps) {
   }
 
   const inputClass =
-    'w-full rounded-lg border border-white/10 bg-white/5 px-4 py-2.5 text-sm text-white transition-all outline-none placeholder:text-[#969696]/50 focus:border-[#1447e6]/50 focus:ring-1 focus:ring-[#1447e6]/30';
+    'w-full rounded-lg border border-white/10 bg-black px-4 py-2.5 text-sm text-white transition-all outline-none placeholder:text-[#969696]/50 focus:border-[#1447e6]/50 focus:ring-1 focus:ring-[#1447e6]/30';
   const selectClass =
-    'w-full rounded-lg border border-white/10 bg-[#0f0f0f] px-3 py-2 text-sm text-white outline-none focus:border-[#1447e6]/50 ';
+    'w-full rounded-lg border  border-white/10 bg-[#0f0f0f]  px-3 py-2 text-sm text-white outline-none focus:border-[#1447e6]/50 ';
 
   return (
     <div className='space-y-6'>
@@ -265,7 +390,7 @@ export default function BlogEditor({ mode, initialData }: BlogEditorProps) {
         <div className='grid grid-cols-1 gap-6 lg:grid-cols-3'>
           {/* Main column */}
           <div className='space-y-5 lg:col-span-2'>
-            <div className='space-y-5 rounded-xl border border-white/10 bg-[#111111] p-6'>
+            <div className='space-y-5 rounded-xl border border-white/10 bg-[#080C25] p-6'>
               {/* Title */}
               <div>
                 <div className='mb-2 flex items-center justify-between'>
@@ -286,30 +411,32 @@ export default function BlogEditor({ mode, initialData }: BlogEditorProps) {
 
               {/* Category + Author */}
               <div className='grid grid-cols-1 gap-4 sm:grid-cols-2'>
-                <div>
+                <div className=''>
                   <label className='mb-2 block text-xs font-medium text-[#969696]'>
                     Category <span className='text-red-400'>*</span>
                   </label>
-                  <select
-                    value={form.category}
-                    onChange={e => update('category', e.target.value)}
-                    required
-                    className={selectClass}
-                  >
-                    <option value=''>Select a category</option>
-                    {CATEGORIES.map(c => (
-                      <option key={c} value={c}>
-                        {c}
-                      </option>
-                    ))}
-                  </select>
+                  <div className='flex h-14 items-center gap-2 rounded-lg border border-white/10 bg-[#0f0f0f] px-3'>
+                    <select
+                      value={form.category}
+                      onChange={e => update('category', e.target.value)}
+                      required
+                      className={`h-full flex-1 border-none ${selectClass}`}
+                    >
+                      <option value=''>Select a category</option>
+                      {CATEGORIES.map(c => (
+                        <option key={c} value={c}>
+                          {c}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
                 </div>
 
                 <div>
                   <label className='mb-2 block text-xs font-medium text-[#969696]'>
                     Author <span className='text-red-400'>*</span>
                   </label>
-                  <div className='flex items-center gap-2 rounded-lg border border-white/10 bg-[#0f0f0f] px-3 py-2'>
+                  <div className='flex h-14 items-center gap-2 rounded-lg border border-white/10 bg-[#0f0f0f] px-3'>
                     <div className='flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10'>
                       <Image
                         src={form?.authorImage}
@@ -327,7 +454,7 @@ export default function BlogEditor({ mode, initialData }: BlogEditorProps) {
                         update('authorName', e.target.value);
                         update('authorImage', author?.image ?? '');
                       }}
-                      className={selectClass}
+                      className={`h-full flex-1 border-none ${selectClass}`}
                     >
                       {AUTHORS.map(author => (
                         <option key={author.name} value={author.name}>
@@ -342,30 +469,85 @@ export default function BlogEditor({ mode, initialData }: BlogEditorProps) {
               {/* Toolbar + editor */}
               <div>
                 <div className='flex flex-wrap items-center gap-1 rounded-t-lg border border-b-0 border-white/10 bg-[#0f0f0f] px-2 py-2'>
-                  <select className='mr-1 rounded-md border border-white/10 bg-white/5 px-2 py-1 text-xs text-white'>
-                    <option>Paragraph</option>
-                    <option>Heading 1</option>
-                    <option>Heading 2</option>
-                    <option>Heading 3</option>
+                  <select
+                    defaultValue='paragraph'
+                    onChange={handleFormatChange}
+                    className='mr-1 rounded-md border border-white/10 bg-white/5 px-2 py-1 text-xs text-white'
+                  >
+                    <option value='paragraph' className='bg-black'>
+                      Paragraph
+                    </option>
+
+                    <option value='h1' className='bg-black'>
+                      Heading 1
+                    </option>
+
+                    <option value='h2' className='bg-black'>
+                      Heading 2
+                    </option>
+
+                    <option value='h3' className='bg-black'>
+                      Heading 3
+                    </option>
                   </select>
+
                   {[
-                    { icon: Bold, onClick: () => wrapSelection('**') },
-                    { icon: Italic, onClick: () => wrapSelection('_') },
-                    { icon: Underline, onClick: () => wrapSelection('<u>', '</u>') },
-                    { icon: List, onClick: () => prefixLine('- ') },
-                    { icon: ListOrdered, onClick: () => prefixLine('1. ') },
-                    { icon: AlignLeft, onClick: undefined },
-                    { icon: AlignCenter, onClick: undefined },
-                    { icon: Quote, onClick: () => prefixLine('> ') },
-                    { icon: Link2, onClick: () => wrapSelection('[', '](url)') },
-                    { icon: ImageIcon, onClick: () => insertBlock('\n![alt text](image-url)\n') },
-                    { icon: Code, onClick: () => wrapSelection('`') },
+                    {
+                      icon: Bold,
+                      onClick: () => wrapSelection('**'),
+                    },
+                    {
+                      icon: Italic,
+                      onClick: () => wrapSelection('*'),
+                    },
+                    {
+                      icon: Underline,
+                      onClick: () => wrapSelection('<u>', '</u>'),
+                    },
+                    {
+                      icon: List,
+                      onClick: addBulletList,
+                    },
+                    {
+                      icon: ListOrdered,
+                      onClick: addOrderedList,
+                    },
+                    {
+                      icon: AlignLeft,
+                      onClick: undefined,
+                    },
+                    {
+                      icon: AlignCenter,
+                      onClick: undefined,
+                    },
+                    {
+                      icon: Quote,
+                      onClick: () => prefixLine('> '),
+                    },
+                    {
+                      icon: Link2,
+                      onClick: () => wrapSelection('[', '](url)'),
+                    },
+                    {
+                      icon: ImageIcon,
+                      onClick: () => insertBlock('\n![alt text](image-url)\n'),
+                    },
+                    {
+                      icon: Code,
+                      onClick: () => insertBlock('\n```\ncode here\n```\n'),
+                    },
                     {
                       icon: TableIcon,
                       onClick: () => insertBlock('\n| Col 1 | Col 2 |\n| --- | --- |\n| a | b |\n'),
                     },
-                    { icon: Video, onClick: () => insertBlock('\n[video](video-url)\n') },
-                    { icon: MoreHorizontal, onClick: undefined },
+                    {
+                      icon: Video,
+                      onClick: () => insertBlock('\n[video](video-url)\n'),
+                    },
+                    {
+                      icon: MoreHorizontal,
+                      onClick: undefined,
+                    },
                   ].map(({ icon: Icon, onClick }, i) => (
                     <button
                       key={i}
@@ -386,7 +568,7 @@ export default function BlogEditor({ mode, initialData }: BlogEditorProps) {
                   required
                   rows={12}
                   placeholder='Start writing your article here...'
-                  className='w-full resize-none rounded-b-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none placeholder:text-[#969696]/50 focus:border-[#1447e6]/50'
+                  className='w-full resize-none rounded-b-lg border border-white/10 bg-black px-4 py-3 text-sm text-white outline-none placeholder:text-[#969696]/50 focus:border-[#1447e6]/50'
                 />
                 <div className='flex items-center justify-between px-1 pt-2 text-xs text-[#6b6b6b]'>
                   <span>{wordCount} words</span>
@@ -396,7 +578,7 @@ export default function BlogEditor({ mode, initialData }: BlogEditorProps) {
             </div>
 
             {/* URL Slug */}
-            <div className='rounded-xl border border-white/10 bg-[#111111] p-6'>
+            <div className='rounded-xl border border-white/10 bg-[#080C25] p-6'>
               <div className='mb-2 flex items-center justify-between'>
                 <label className='text-xs font-medium text-[#969696]'>
                   URL Slug <span className='text-red-400'>*</span>
@@ -412,13 +594,13 @@ export default function BlogEditor({ mode, initialData }: BlogEditorProps) {
                   onChange={e => update('slug', slugify(e.target.value).slice(0, 100))}
                   required
                   placeholder='enter-url-slug...'
-                  className='flex-1 bg-transparent px-3 py-2.5 text-sm text-white outline-none placeholder:text-[#969696]/50'
+                  className='flex-1 bg-black px-3 py-2.5 text-sm text-white outline-none placeholder:text-[#969696]/50'
                 />
               </div>
             </div>
 
             {/* Excerpt */}
-            <div className='rounded-xl border border-white/10 bg-[#111111] p-6'>
+            <div className='rounded-xl border border-white/10 bg-[#080C25] p-6'>
               <label className='mb-2 block text-xs font-medium text-[#969696]'>
                 Excerpt / Short Description <span className='text-red-400'>*</span>
               </label>
@@ -436,7 +618,7 @@ export default function BlogEditor({ mode, initialData }: BlogEditorProps) {
           {/* Sidebar */}
           <div className='space-y-5'>
             {/* Publish */}
-            <div className='rounded-xl border border-white/10 bg-[#111111] p-5'>
+            <div className='rounded-xl border border-white/10 bg-[#080C25] p-5'>
               <div className='mb-4 flex items-center gap-2'>
                 <Calendar size={16} className='text-[#1447e6]' />
                 <h3 className='text-sm font-semibold text-white'>Publish</h3>
@@ -506,7 +688,7 @@ export default function BlogEditor({ mode, initialData }: BlogEditorProps) {
             </div>
 
             {/* Featured Image */}
-            <div className='rounded-xl border border-white/10 bg-[#111111] p-5'>
+            <div className='rounded-xl border border-white/10 bg-[#080C25] p-5'>
               <div className='mb-4 flex items-center gap-2'>
                 <ImageIcon size={16} className='text-[#1447e6]' />
                 <h3 className='text-sm font-semibold text-white'>Featured Image</h3>
@@ -555,19 +737,20 @@ export default function BlogEditor({ mode, initialData }: BlogEditorProps) {
         </div>
 
         {/* Bottom action bar */}
-        <div className='flex items-center justify-end gap-3 rounded-xl border border-white/10 bg-[#111111] p-4'>
+        <div className='flex items-center justify-end gap-3 rounded-xl border border-white/10 bg-[#080C25] p-4'>
           <button
             type='button'
             onClick={handleSaveDraft}
             disabled={saving}
-            className='rounded-lg border border-white/10 bg-white/5 px-4 py-2.5 text-sm font-medium text-white transition-all hover:bg-white/10 disabled:opacity-60'
+            className='rounded-lg border border-white/10 bg-white/5 px-10 py-2.5 text-sm font-medium text-white transition-all hover:bg-white/10 disabled:opacity-60'
           >
             Save as Draft
           </button>
           <button
             type='button'
+            onClick={() => setShowPreview(true)}
             disabled={saving}
-            className='flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-4 py-2.5 text-sm font-medium text-white transition-all hover:bg-white/10 disabled:opacity-60'
+            className='flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-10 py-2.5 text-sm font-medium text-white transition-all hover:bg-white/10 disabled:opacity-60'
           >
             <Eye size={15} />
             Preview
@@ -575,7 +758,7 @@ export default function BlogEditor({ mode, initialData }: BlogEditorProps) {
           <button
             type='submit'
             disabled={saving}
-            className='flex items-center gap-2 rounded-lg bg-[#1447e6] px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-[#1447e6]/80 disabled:opacity-60'
+            className='flex items-center gap-2 rounded-lg bg-[#1447e6] px-10 py-2.5 text-sm font-semibold text-white transition-all hover:bg-[#1447e6]/80 disabled:opacity-60'
           >
             {saving ? (
               <>
@@ -591,6 +774,13 @@ export default function BlogEditor({ mode, initialData }: BlogEditorProps) {
           </button>
         </div>
       </form>
+
+      <BlogPreview
+        isOpen={showPreview}
+        onClose={() => setShowPreview(false)}
+        note='This preview includes unsaved changes.'
+        data={form}
+      />
     </div>
   );
 }

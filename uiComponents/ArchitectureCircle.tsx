@@ -79,7 +79,7 @@
 //             {item.title}
 //           </h3>
 
-//           <p className="text-description text-sm leading-7">{item.description}</p>
+//           <p className="text-white text-sm leading-7">{item.description}</p>
 //         </div>
 //       ))}
 //     </section>
@@ -123,7 +123,7 @@ interface ArchitectureCircleProps {
 
 export default function ArchitectureCircle({ data, image, positions }: ArchitectureCircleProps) {
   return (
-    <section className='relative w-full'>
+    <section className='relative mx-auto w-full max-w-[1840px]'>
       {/* ---------------- Mobile & Tablet ---------------- */}
       <div className='flex flex-col items-center px-5 py-10 lg:hidden'>
         {/* Center Image */}
@@ -161,7 +161,7 @@ export default function ArchitectureCircle({ data, image, positions }: Architect
 
               <h3 className='text-title mt-4 mb-3 text-2xl font-semibold'>{item.title}</h3>
 
-              <p className='text-description text-sm leading-7'>{item.description}</p>
+              <p className='text-sm leading-7 text-white'>{item.description}</p>
             </div>
           ))}
         </div>
@@ -225,7 +225,7 @@ export default function ArchitectureCircle({ data, image, positions }: Architect
 
             <h3 className='text-title mt-4 mb-3 text-2xl font-semibold'>{item.title}</h3>
 
-            <p className='text-description text-sm leading-6'>{item.description}</p>
+            <p className='text-sm leading-6 text-white'>{item.description}</p>
           </div>
         ))}
       </div>

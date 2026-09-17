@@ -1,4 +1,3 @@
-import React from 'react';
 import TechScroll from './TechScroll';
 import { GlowButton } from './Button';
 import { BgSquare2 } from './BgSquare';
@@ -26,7 +25,7 @@ const LaunchYourSite = () => {
         </div>
 
         {/* AutoScroll */}
-        <div className='scrollbar-hide mt-12 w-full overflow-x-auto'>
+        <div className='custom-scrollbar mt-12 w-full overflow-x-auto'>
           <TechScroll />
         </div>
       </div>

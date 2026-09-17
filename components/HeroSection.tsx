@@ -1,9 +1,9 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { ReactNode } from 'react';
 import StrategyBadge from './StrategyBadge';
+import { ImageCard2 } from '@/uiComponents/ImageCard';
 
 export interface HeroCard {
   id: string;
@@ -66,7 +66,7 @@ const HeroSection = ({
                 {title}
               </h1>
 
-              <p className='text-description mt-6 max-w-xl text-sm text-[16px] leading-7 sm:text-base'>
+              <p className='mt-6 max-w-xl text-sm text-[16px] leading-7 text-white sm:text-base'>
                 {description}
               </p>
 
@@ -89,11 +89,12 @@ const HeroSection = ({
               </div>
             </div>
 
-            <div className='relative w-full overflow-hidden rounded-[1.4rem]'>
-              <div className='aspect-[4/3] w-full overflow-hidden rounded-[1.4rem]'>
+            <div className='relative aspect-[4/3] overflow-hidden rounded-[1.4rem]'>
+              {/* <div className='aspect-[4/3] w-full overflow-hidden rounded-[1.4rem]'>
                 <Image src={image || ''} alt={imageAlt} fill className='object-cover' unoptimized />
                 <div className='absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent' />
-              </div>
+              </div> */}
+              <ImageCard2 HowWeWorkImg={image || ''} alt={imageAlt} />
             </div>
           </div>
         </div>

@@ -54,7 +54,7 @@ const TestimonialCard = ({
           <div className='my-7 h-px w-full bg-white/[0.07]' />
 
           {/* Testimonial */}
-          <p className='text-description text-[16px] leading-[1.65] font-normal'>{description}</p>
+          <p className='text-[16px] leading-[1.65] font-normal text-white'>{description}</p>
         </div>
       </div>
     </div>

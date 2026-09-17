@@ -77,7 +77,7 @@ export default function EngineeringArchitecture({
           <Card className='h-[350px] w-[350px]'>
             <CardIcon className=''>{item.icon}</CardIcon>
             <CardTitle className='text-title mt-4 text-4xl leading-[1.25]'>{item.title}</CardTitle>
-            <CardDescription className='text-description mt-5 leading-6'>
+            <CardDescription className='mt-5 leading-6 text-white'>
               {item.description}
             </CardDescription>
           </Card>

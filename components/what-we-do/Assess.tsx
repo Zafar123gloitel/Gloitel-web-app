@@ -1,10 +1,10 @@
-import Image from 'next/image';
 // import StrategyBadge from "../../../components/StrategyBadge";
 // import ProblemCard from "../../../components/ProblemCard";
 import { WhiteButton } from 'components/Button';
 import { ArrowRightIcon } from 'components/SvgIcon';
 import ProblemCard from '../ProblemCard';
 import StrategyBadge from '../StrategyBadge';
+import { ImageCard2 } from '@/uiComponents/ImageCard';
 
 interface AssessProps {
   badgeText: string;
@@ -39,14 +39,10 @@ const Assess = ({
 
         <span className='flex gap-5'>
           <h2 className='text-title mb-6 text-5xl sm:text-[48px]'>{title}</h2>
-          {subtitle && (
-            <h3 className='text-description mb-6 text-4xl sm:text-[35px]'>{subtitle}</h3>
-          )}
+          {subtitle && <h3 className='mb-6 text-4xl text-white sm:text-[35px]'>{subtitle}</h3>}
         </span>
 
-        <p className='text-md text-description leading-5 sm:text-[20px] sm:leading-8'>
-          {description}
-        </p>
+        <p className='text-md leading-5 text-white sm:text-[20px] sm:leading-8'>{description}</p>
 
         {cardTitle && (
           <div className='mt-10 inline-block'>
@@ -66,16 +62,7 @@ const Assess = ({
       {/* Image */}
       <div className='flex-1 lg:max-w-[50%]'>
         <div className='relative aspect-[4/3] overflow-hidden rounded-[1.4rem] shadow-[0_0_60px_rgba(255,255,255,0.25)]'>
-          <Image
-            src={image}
-            alt={imageAlt}
-            width={455}
-            height={445}
-            className='h-full w-full rounded-[24px] object-cover'
-            unoptimized
-            loading='lazy'
-          />
-          <div className='absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent' />
+          <ImageCard2 HowWeWorkImg={image} alt={imageAlt} />
         </div>
       </div>
     </section>

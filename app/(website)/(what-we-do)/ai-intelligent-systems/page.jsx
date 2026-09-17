@@ -59,12 +59,12 @@ const page = () => {
               SectionDescription={aiGapSectionHead.description}
             />
           </div>
-          <section className='mx-auto mt-20 w-full sm:w-[90%]'>
+          <section className='mx-auto mt-20 w-full sm:w-[80%]'>
             <CardShowcase
               showStepBadge
               showDivider={false}
               items={aiGapData}
-              cardHeight=' h-[300px] max-w-[300px] '
+              cardHeight=''
               gridClassName='gap-y-28'
               titleClassName=''
               descriptionClassName=''
