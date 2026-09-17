@@ -78,7 +78,7 @@ const HelpCard = ({ badgeText, title, description, tabs, data }: HelpCardProps) 
 
       {/* ================= TABS ================= */}
       <div className='relative mt-14 flex w-full justify-center px-4'>
-        <div className='flex w-[90%] max-w-6xl [scrollbar-width:none] gap-4 overflow-x-auto pb-4 [&::-webkit-scrollbar]:hidden'>
+        <div className='custom-scrollbar flex w-[90%] max-w-6xl gap-4 overflow-x-auto pb-4'>
           {tabs.map((tab, index) => (
             <button
               key={tab}

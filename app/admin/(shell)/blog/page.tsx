@@ -1,6 +1,7 @@
 'use client';
 
 import BlogTable, { type BlogPost } from '@/components/admin/BlogTable';
+import { useAdminSearch } from '@/components/admin/AdminSearchContext';
 import { BookOpen, Edit2, Clock, CheckCircle2, Plus } from 'lucide-react';
 import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
@@ -38,7 +39,7 @@ function StatCard({
 
 export default function BlogPage() {
   const [posts, setPosts] = useState<BlogPost[]>([]);
-  const [search, setSearch] = useState('');
+  const { search } = useAdminSearch();
 
   useEffect(() => {
     try {
@@ -75,29 +76,6 @@ export default function BlogPage() {
 
   return (
     <div className='space-y-6'>
-      {/* Search bar */}
-      <div className='relative max-w-md'>
-        <input
-          value={search}
-          onChange={e => setSearch(e.target.value)}
-          placeholder='Search articles...'
-          className='w-full rounded-lg border border-white/10 bg-[#111111] py-2.5 pr-4 pl-10 text-sm text-white placeholder-[#6b6b6b] outline-none focus:border-[#1447e6]/50'
-        />
-        <svg
-          className='pointer-events-none absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-[#6b6b6b]'
-          fill='none'
-          viewBox='0 0 24 24'
-          stroke='currentColor'
-        >
-          <path
-            strokeLinecap='round'
-            strokeLinejoin='round'
-            strokeWidth={2}
-            d='M21 21l-4.35-4.35m0 0A7.5 7.5 0 104.5 4.5a7.5 7.5 0 0012.15 12.15z'
-          />
-        </svg>
-      </div>
-
       {/* Header row */}
       <div className='flex items-center justify-between'>
         <div>

@@ -81,8 +81,8 @@ const AI_SolutionsContent = ({
           <div
             className={`flex [scrollbar-width:none] gap-4 pb-4 [&::-webkit-scrollbar]:hidden ${
               hasMoreThanFiveTabs
-                ? 'mx-auto w-[90%] max-w-6xl overflow-x-auto'
-                : 'mx-auto w-[90%] max-w-6xl overflow-x-auto lg:w-auto lg:max-w-none lg:justify-center lg:overflow-visible'
+                ? 'custom-scrollbar mx-auto w-[90%] max-w-6xl overflow-x-auto'
+                : 'custom-scrollbar mx-auto w-[90%] max-w-6xl overflow-x-auto lg:w-auto lg:max-w-none lg:justify-center lg:overflow-visible'
             }`}
           >
             {tabs?.map((tab, index) => (

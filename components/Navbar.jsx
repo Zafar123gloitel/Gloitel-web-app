@@ -668,7 +668,7 @@ const Navbar = () => {
 
       {/* 🔹 Mobile Menu */}
       <div
-        className={`overflow-y-auto bg-black/70 transition-all duration-300 lg:hidden ${
+        className={`custom-scrollbar overflow-y-auto bg-black/70 transition-all duration-300 lg:hidden ${
           isMobileMenuOpen ? 'max-h-[760px] py-4 opacity-100' : 'max-h-0 py-0 opacity-0'
         }`}
       >

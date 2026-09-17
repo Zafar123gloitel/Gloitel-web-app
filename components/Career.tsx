@@ -234,7 +234,7 @@ export const AiAgentsIndustries = () => {
           {/* Cards Container */}
           <div
             ref={testimonialsRef}
-            className='mx-auto flex w-[90%] gap-5 overflow-x-auto'
+            className='custom-scrollbar mx-auto flex w-[90%] gap-5 overflow-x-auto'
             style={{
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
