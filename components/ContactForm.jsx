@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { HorizontalDivider } from './SectionDivider';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -32,39 +32,20 @@ const ContactForm = () => {
   const handleSubmit = async e => {
     e.preventDefault();
     setIsSubmitting(true);
-
     try {
-      // Send to Google Sheets API (no-cors required for Google Apps Script)
-
-      const formData1 = new FormData();
-
-      // Map fields exactly as Apps Script expects
-      formData1.append('firstName', formData.firstName);
-      formData1.append('lastName', formData.lastName);
-      formData1.append('email', formData.email);
-      formData1.append('country', formData.country);
-      formData1.append('companyType', formData.companyType);
-      formData1.append('message', formData.message);
-
-      await fetch(
-        'https://script.google.com/macros/s/AKfycbyZIi7rXRJpXo9w7TBJ7W2HrvlePb_ats__aLx3aqbDo1aarKHeNVFMzLkde1vbXfYW/exec',
-        {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: formData1,
-        },
-      );
-
-      // With no-cors, we can't read the response, but if no error thrown, assume success
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      const result = await response.json();
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || 'Failed to submit form');
+      }
       toast.success('Message sent successfully!');
-
-      // Redirect to thank you page
       router.push('/thank-you');
-    } catch (_error) {
-      toast.error('Failed to submit form');
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : 'Failed to submit form');
     } finally {
       setIsSubmitting(false);
     }
@@ -76,7 +57,7 @@ const ContactForm = () => {
         {/* Contact Form */}
         <div className='relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-r from-gray-950/90 to-black/80 p-3 shadow-lg sm:p-2 lg:col-span-3'>
           <div className='rounded-3xl border border-white/10 bg-black/70 p-6 shadow-lg sm:p-10 lg:col-span-3'>
-            <form className='space-y-6' onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className='space-y-6'>
               <div className='grid grid-cols-1 gap-6 sm:grid-cols-2'>
                 <div>
                   <label className='text-title mb-2 block text-sm font-medium'>First name*</label>

@@ -29,9 +29,26 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useMemo, useRef, useState } from 'react';
 
-const STORAGE_KEY = 'admin_blogs';
-const SITE_PREFIX = 'gloitel.com/resources/articles/';
 const CATEGORIES = ['Technology', 'Design', 'Business', 'Engineering', 'Marketing', 'General'];
+const INDUSTRIES = [
+  'Healthcare & MedTech',
+  'Finance & Banking',
+  'Real Estate & PropTech',
+  'Retail & E-commerce',
+  'Education',
+  'Travel & Hospitality',
+  'Technology',
+  'Other',
+];
+const SERVICES = [
+  'Product Engineering',
+  'AI & Intelligent Systems',
+  'Digital Experience Design',
+  'Enterprise Modernization',
+  'Cloud & DevOps',
+  'Data Engineering',
+  'Quality Engineering',
+];
 const AUTHORS = [
   {
     name: 'Shubham Sahu',
@@ -66,22 +83,41 @@ const statusDot: Record<BlogPost['status'], string> = {
 interface BlogEditorProps {
   mode: 'create' | 'edit';
   initialData?: BlogPost;
+  contentType?: 'article' | 'case-study';
 }
 
-export default function BlogEditor({ mode, initialData }: BlogEditorProps) {
+export default function BlogEditor({
+  mode,
+  initialData,
+  contentType = 'article',
+}: BlogEditorProps) {
   const router = useRouter();
+  const isCaseStudy = contentType === 'case-study';
+  const contentLabel = isCaseStudy ? 'Case Study' : 'Article';
+  const sectionLabel = isCaseStudy ? 'Case Studies' : 'Blog / Articles';
+  const basePath = isCaseStudy ? '/admin/case-studies' : '/admin/blog';
+  const storageKey = isCaseStudy ? 'admin_case_studies' : 'admin_blogs';
+  const sitePrefix = isCaseStudy
+    ? 'gloitel.com/resources/case-studies/'
+    : 'gloitel.com/resources/articles/';
   const contentRef = useRef<HTMLTextAreaElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [saving, setSaving] = useState(false);
+  const savingRef = useRef(false);
+  const [saveError, setSaveError] = useState('');
   const [showPreview, setShowPreview] = useState(false);
 
   const [form, setForm] = useState({
     title: initialData?.title ?? '',
+    Description: initialData?.Description ?? '',
     slug: initialData?.slug ?? '',
     excerpt: initialData?.excerpt ?? '',
     content: initialData?.content ?? '',
     thumbnail: initialData?.thumbnail ?? '',
     category: initialData?.category ?? '',
+    industry: initialData?.industry ?? '',
+    service: initialData?.service ?? '',
+    liveWebsiteLink: initialData?.liveWebsiteLink ?? '',
     authorName: initialData?.author?.name ?? AUTHORS[0].name,
     authorImage: initialData?.author?.image ?? AUTHORS[0].image,
     status: initialData?.status ?? ('draft' as BlogPost['status']),
@@ -99,8 +135,9 @@ export default function BlogEditor({ mode, initialData }: BlogEditorProps) {
     return v
       .toLowerCase()
       .replace(/[^a-z0-9\s-]/g, '')
-      .replace(/\s+/g, '-')
-      .slice(0, 60);
+      .replace(/[\s-]+/g, '-')
+      .slice(0, 60)
+      .replace(/^-|-$/g, '');
   }
 
   function handleTitleChange(value: string) {
@@ -302,46 +339,81 @@ export default function BlogEditor({ mode, initialData }: BlogEditorProps) {
   const readMins = Math.max(1, Math.ceil(wordCount / 200));
 
   async function persist(status: BlogPost['status']) {
+    if (savingRef.current) return;
+    savingRef.current = true;
     setSaving(true);
-    await new Promise(r => setTimeout(r, 400));
-
-    const now = new Date().toISOString();
-    const resolvedPublishDate =
-      status === 'scheduled' && form.publishDate ? new Date(form.publishDate).toISOString() : now;
-
-    const post: BlogPost = {
-      id: initialData?.id ?? Date.now().toString(),
-      title: form.title,
-      slug: form.slug,
-      excerpt: form.excerpt,
-      content: form.content,
-      thumbnail: form.thumbnail || undefined,
-      category: form.category,
-      author: {
-        name: form.authorName,
-        image: form.authorImage,
-      },
-      status,
-      publishDate: resolvedPublishDate,
-      updatedAt: now,
-      allowComments: initialData?.allowComments ?? true,
-      featured: initialData?.featured ?? false,
-      seo: initialData?.seo,
-      social: initialData?.social,
-      schema: initialData?.schema,
-      settings: initialData?.settings,
-    };
+    setSaveError('');
 
     try {
-      const existing: BlogPost[] = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? '[]');
-      const updated =
-        mode === 'edit' ? existing.map(p => (p.id === post.id ? post : p)) : [post, ...existing];
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
-    } catch {
-      // ignore storage errors
-    }
+      if (
+        status === 'scheduled' &&
+        (!form.publishDate || Number.isNaN(new Date(form.publishDate).getTime()))
+      ) {
+        throw new Error('Please select a valid publish date.');
+      }
+      const now = new Date().toISOString();
+      const resolvedPublishDate =
+        status === 'scheduled'
+          ? new Date(form.publishDate).toISOString()
+          : initialData?.status === 'published' && status === 'published'
+            ? initialData.publishDate
+            : now;
 
-    router.push('/admin/blog');
+      const post: BlogPost = {
+        id: initialData?.id ?? Date.now().toString(),
+        title: form.title,
+        slug: form.slug,
+        excerpt: form.excerpt,
+        content: form.content,
+        Description: form.Description,
+        thumbnail: form.thumbnail,
+        category: form.category,
+        author: isCaseStudy
+          ? undefined
+          : {
+              name: form.authorName,
+              image: form.authorImage,
+            },
+        industry: isCaseStudy ? form.industry : undefined,
+        service: isCaseStudy ? form.service : undefined,
+        liveWebsiteLink: isCaseStudy ? form.liveWebsiteLink : undefined,
+        status,
+        publishDate: resolvedPublishDate,
+        updatedAt: now,
+        allowComments: initialData?.allowComments ?? true,
+        featured: initialData?.featured ?? false,
+        seo: initialData?.seo,
+        social: initialData?.social,
+        schema: initialData?.schema,
+        settings: initialData?.settings,
+      };
+
+      if (isCaseStudy) {
+        const existing: BlogPost[] = JSON.parse(localStorage.getItem(storageKey) ?? '[]');
+        const updated =
+          mode === 'edit' ? existing.map(p => (p.id === post.id ? post : p)) : [post, ...existing];
+        localStorage.setItem(storageKey, JSON.stringify(updated));
+      } else {
+        const response = await fetch(
+          mode === 'edit' ? `/api/blog/${initialData.id}` : '/api/blog',
+          {
+            method: mode === 'edit' ? 'PUT' : 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(post),
+          },
+        );
+        const result = await response.json().catch(() => null);
+        if (!response.ok || !result?.success) {
+          throw new Error(result?.message || 'Could not save the article. Please try again.');
+        }
+      }
+      router.push(basePath);
+    } catch (error) {
+      setSaveError(error instanceof Error ? error.message : 'Could not save. Please try again.');
+    } finally {
+      savingRef.current = false;
+      setSaving(false);
+    }
   }
 
   function handleSubmit(e: React.FormEvent) {
@@ -356,35 +428,45 @@ export default function BlogEditor({ mode, initialData }: BlogEditorProps) {
   }
 
   const inputClass =
-    'w-full rounded-lg border border-white/10 bg-black px-4 py-2.5 text-sm text-white transition-all outline-none placeholder:text-[#969696]/50 focus:border-[#1447e6]/50 focus:ring-1 focus:ring-[#1447e6]/30';
+    'w-full rounded-lg border border-white/10 bg-black px-4 py-4 text-sm text-white transition-all outline-none placeholder:text-[#969696]/50 focus:border-[#1447e6]/50 focus:ring-1 focus:ring-[#1447e6]/30';
   const selectClass =
-    'w-full rounded-lg border  border-white/10 bg-[#0f0f0f]  px-3 py-2 text-sm text-white outline-none focus:border-[#1447e6]/50 ';
+    'w-full rounded-lg border  border-white/10 bg-black  px-3 py-2 text-sm text-white outline-none focus:border-[#1447e6]/50 ';
 
   return (
     <div className='space-y-6'>
       {/* Breadcrumb */}
       <div className='flex items-center gap-3'>
         <Link
-          href='/admin/blog'
+          href={basePath}
           className='flex h-8 w-8 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-[#969696] transition-colors hover:text-white'
         >
           <ArrowLeft size={16} />
         </Link>
         <div className='flex items-center gap-1.5 text-sm text-[#969696]'>
-          <span>Blog / Articles</span>
+          <span>{sectionLabel}</span>
           <span>›</span>
-          <span className='text-white'>{mode === 'edit' ? 'Edit Article' : 'Create Article'}</span>
+          <span className='text-white'>
+            {mode === 'edit' ? `Edit ${contentLabel}` : `Create ${contentLabel}`}
+          </span>
         </div>
       </div>
 
       <div>
         <h1 className='text-2xl font-bold text-white'>
-          {mode === 'edit' ? 'Edit Article' : 'Create Article'}
+          {mode === 'edit' ? `Edit ${contentLabel}` : `Create ${contentLabel}`}
         </h1>
         <p className='mt-0.5 text-sm text-[#969696]'>
-          Write, optimize, and publish content that informs and inspires.
+          {isCaseStudy
+            ? 'Document outcomes, solutions, and measurable client impact.'
+            : 'Write, optimize, and publish content that informs and inspires.'}
         </p>
       </div>
+
+      {saveError && (
+        <p role='alert' className='text-sm text-red-400'>
+          {saveError}
+        </p>
+      )}
 
       <form onSubmit={handleSubmit} className='space-y-6'>
         <div className='grid grid-cols-1 gap-6 lg:grid-cols-3'>
@@ -395,7 +477,7 @@ export default function BlogEditor({ mode, initialData }: BlogEditorProps) {
               <div>
                 <div className='mb-2 flex items-center justify-between'>
                   <label className='text-xs font-medium text-[#969696]'>
-                    Article Title <span className='text-red-400'>*</span>
+                    {contentLabel} Title <span className='text-red-400'>*</span>
                   </label>
                   <span className='text-xs text-[#6b6b6b]'>{form.title.length} / 100</span>
                 </div>
@@ -404,18 +486,40 @@ export default function BlogEditor({ mode, initialData }: BlogEditorProps) {
                   onChange={e => handleTitleChange(e.target.value)}
                   maxLength={100}
                   required
-                  placeholder='Enter a compelling article title...'
+                  placeholder={`Enter a compelling ${contentLabel.toLowerCase()} title...`}
                   className={inputClass}
                 />
+                {isCaseStudy && (
+                  <>
+                    <div className='mt-3 mb-2 flex items-center justify-between'>
+                      <label className='text-xs font-medium text-[#969696]'>
+                        Case Study Description <span className='text-red-400'>*</span>
+                      </label>
+                      <span className='text-xs text-[#6b6b6b]'>
+                        {form.Description.length} / 500
+                      </span>
+                    </div>
+                    <input
+                      value={form.Description}
+                      onChange={e => update('Description', e.target.value)}
+                      maxLength={100}
+                      required
+                      placeholder={`Enter a compelling ${contentLabel.toLowerCase()} title...`}
+                      className={inputClass}
+                    />
+                  </>
+                )}
               </div>
 
-              {/* Category + Author */}
-              <div className='grid grid-cols-1 gap-4 sm:grid-cols-2'>
+              {/* Content classification fields vary by resource type. */}
+              <div
+                className={`grid grid-cols-1 gap-4 ${isCaseStudy ? 'sm:grid-cols-4' : 'sm:grid-cols-2'}`}
+              >
                 <div className=''>
                   <label className='mb-2 block text-xs font-medium text-[#969696]'>
                     Category <span className='text-red-400'>*</span>
                   </label>
-                  <div className='flex h-14 items-center gap-2 rounded-lg border border-white/10 bg-[#0f0f0f] px-3'>
+                  <div className='flex h-14 items-center gap-2 rounded-lg border border-white/10 bg-black px-3'>
                     <select
                       value={form.category}
                       onChange={e => update('category', e.target.value)}
@@ -432,38 +536,97 @@ export default function BlogEditor({ mode, initialData }: BlogEditorProps) {
                   </div>
                 </div>
 
-                <div>
-                  <label className='mb-2 block text-xs font-medium text-[#969696]'>
-                    Author <span className='text-red-400'>*</span>
-                  </label>
-                  <div className='flex h-14 items-center gap-2 rounded-lg border border-white/10 bg-[#0f0f0f] px-3'>
-                    <div className='flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10'>
-                      <Image
-                        src={form?.authorImage}
-                        alt={form.authorName}
-                        height={50}
-                        width={50}
-                        className='border0 h-10 rounded-full object-cover'
+                {isCaseStudy ? (
+                  <>
+                    <div>
+                      <label className='mb-2 block text-xs font-medium text-[#969696]'>
+                        Industry <span className='text-red-400'>*</span>
+                      </label>
+                      <div className='flex h-14 items-center rounded-lg border border-white/10 bg-black px-3'>
+                        <select
+                          value={form.industry}
+                          onChange={e => update('industry', e.target.value)}
+                          required
+                          className={`h-full flex-1 border-none ${selectClass}`}
+                        >
+                          <option value=''>Select an industry</option>
+                          {INDUSTRIES.map(industry => (
+                            <option key={industry} value={industry}>
+                              {industry}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className='mb-2 block text-xs font-medium text-[#969696]'>
+                        Service <span className='text-red-400'>*</span>
+                      </label>
+                      <div className='flex h-14 items-center rounded-lg border border-white/10 bg-black px-3'>
+                        <select
+                          value={form.service}
+                          onChange={e => update('service', e.target.value)}
+                          required
+                          className={`h-full flex-1 border-none ${selectClass}`}
+                        >
+                          <option value=''>Select a service</option>
+                          {SERVICES.map(service => (
+                            <option key={service} value={service}>
+                              {service}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                    </div>
+                    <div className=''>
+                      <label className='mb-2 block text-xs font-medium text-[#969696]'>
+                        Live Website Link
+                      </label>
+                      <input
+                        type='url'
+                        value={form.liveWebsiteLink}
+                        onChange={e => update('liveWebsiteLink', e.target.value)}
+                        placeholder='https://example.com'
+                        className={inputClass}
                       />
                     </div>
-                    <select
-                      value={form.authorName}
-                      onChange={e => {
-                        const author = AUTHORS.find(a => a.name === e.target.value);
+                  </>
+                ) : (
+                  <div>
+                    <label className='mb-2 block text-xs font-medium text-[#969696]'>
+                      Author <span className='text-red-400'>*</span>
+                    </label>
+                    <div className='flex h-14 items-center gap-2 rounded-lg border border-white/10 bg-[#0f0f0f] px-3'>
+                      <div className='flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10'>
+                        <Image
+                          src={form.authorImage}
+                          alt={form.authorName}
+                          height={50}
+                          width={50}
+                          className='border0 h-10 rounded-full object-cover'
+                        />
+                      </div>
+                      <select
+                        value={form.authorName}
+                        onChange={e => {
+                          const author = AUTHORS.find(a => a.name === e.target.value);
 
-                        update('authorName', e.target.value);
-                        update('authorImage', author?.image ?? '');
-                      }}
-                      className={`h-full flex-1 border-none ${selectClass}`}
-                    >
-                      {AUTHORS.map(author => (
-                        <option key={author.name} value={author.name}>
-                          {author.name}
-                        </option>
-                      ))}
-                    </select>
+                          update('authorName', e.target.value);
+                          update('authorImage', author?.image ?? '');
+                        }}
+                        required
+                        className={`h-full flex-1 border-none ${selectClass}`}
+                      >
+                        {AUTHORS.map(author => (
+                          <option key={author.name} value={author.name}>
+                            {author.name}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
 
               {/* Toolbar + editor */}
@@ -567,7 +730,7 @@ export default function BlogEditor({ mode, initialData }: BlogEditorProps) {
                   onChange={e => update('content', e.target.value)}
                   required
                   rows={12}
-                  placeholder='Start writing your article here...'
+                  placeholder={`Start writing your ${contentLabel.toLowerCase()} here...`}
                   className='w-full resize-none rounded-b-lg border border-white/10 bg-black px-4 py-3 text-sm text-white outline-none placeholder:text-[#969696]/50 focus:border-[#1447e6]/50'
                 />
                 <div className='flex items-center justify-between px-1 pt-2 text-xs text-[#6b6b6b]'>
@@ -587,7 +750,7 @@ export default function BlogEditor({ mode, initialData }: BlogEditorProps) {
               </div>
               <div className='flex items-center overflow-hidden rounded-lg border border-white/10 bg-white/5'>
                 <span className='shrink-0 border-r border-white/10 bg-white/5 px-3 py-2.5 text-xs text-[#969696]'>
-                  {SITE_PREFIX}
+                  {sitePrefix}
                 </span>
                 <input
                   value={form.slug}
@@ -609,7 +772,7 @@ export default function BlogEditor({ mode, initialData }: BlogEditorProps) {
                 onChange={e => update('excerpt', e.target.value)}
                 required
                 rows={3}
-                placeholder='Write a short summary of your article (will be used in listings and meta description)...'
+                placeholder={`Write a short summary of your ${contentLabel.toLowerCase()} (used in listings and meta description)...`}
                 className={`${inputClass} resize-none`}
               />
             </div>
@@ -640,12 +803,12 @@ export default function BlogEditor({ mode, initialData }: BlogEditorProps) {
                     >
                       <option value='published'>Published</option>
                       <option value='draft'>Drafted</option>
-                      <option value='scheduled'>Scheduled</option>
+                      {/* <option value='scheduled'>Scheduled</option> */}
                     </select>
                   </div>
                 </div>
 
-                <div>
+                {/* <div>
                   <label className='mb-2 block text-xs text-[#969696]'>Publish Date</label>
                   <div className='space-y-2'>
                     <label className='flex items-center gap-2 text-sm text-[#cccccc]'>
@@ -683,7 +846,7 @@ export default function BlogEditor({ mode, initialData }: BlogEditorProps) {
                       className={`${selectClass} pl-8 disabled:opacity-50`}
                     />
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
 
@@ -779,6 +942,7 @@ export default function BlogEditor({ mode, initialData }: BlogEditorProps) {
         isOpen={showPreview}
         onClose={() => setShowPreview(false)}
         note='This preview includes unsaved changes.'
+        contentLabel={contentLabel}
         data={form}
       />
     </div>

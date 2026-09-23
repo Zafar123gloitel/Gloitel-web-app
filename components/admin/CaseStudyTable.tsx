@@ -5,50 +5,9 @@ import Link from 'next/link';
 import { Edit2, Trash2 } from 'lucide-react';
 
 import DataTable, { TableColumn } from './DataTable';
+import type { BlogPost } from './BlogTable';
 
-export interface BlogPost {
-  id: string;
-  title: string;
-  slug: string;
-  excerpt: string;
-  content: string;
-  thumbnail?: string;
-  Description: string;
-  imageAlt?: string;
-  category: string;
-  industry?: string;
-  service?: string;
-  liveWebsiteLink?: string;
-  author?: {
-    name: string;
-    image?: string;
-  };
-  status: 'draft' | 'published' | 'scheduled';
-  publishDate: string;
-  updatedAt: string;
-  allowComments: boolean;
-  featured: boolean;
-  seo?: {
-    metaTitle?: string;
-    metaDescription?: string;
-    keywords?: string;
-  };
-  social?: {
-    ogTitle?: string;
-    ogDescription?: string;
-    ogImage?: string;
-  };
-  schema?: {
-    type?: string;
-    customJsonLd?: string;
-  };
-  settings?: {
-    canonicalUrl?: string;
-    noIndex?: boolean;
-  };
-}
-
-interface BlogTableProps {
+interface CaseStudyTableProps {
   posts: BlogPost[];
   onDelete: (id: string) => void;
   basePath?: string;
@@ -85,7 +44,11 @@ function formatDate(date?: string) {
   });
 }
 
-export default function BlogTable({ posts, onDelete, basePath = '/admin/blog' }: BlogTableProps) {
+export default function CaseStudyTable({
+  posts,
+  onDelete,
+  basePath = '/admin/case-studies',
+}: CaseStudyTableProps) {
   const columns: TableColumn<BlogPost>[] = [
     {
       key: 'title',
@@ -122,20 +85,14 @@ export default function BlogTable({ posts, onDelete, basePath = '/admin/blog' }:
     },
 
     {
-      key: 'author',
-      label: 'Author',
+      key: 'industry',
+      label: 'Industry',
       className: 'hidden lg:table-cell',
       headerClassName: 'hidden lg:table-cell',
       render: post => (
-        <div className='flex items-center gap-2'>
-          <div className='relative h-6 w-6 shrink-0 overflow-hidden rounded-full bg-white/10'>
-            {post.author?.image && (
-              <Image src={post.author.image} alt='' fill className='object-cover' sizes='24px' />
-            )}
-          </div>
-
-          <span className='text-sm text-nowrap text-[#cccccc]'>{post.author?.name ?? '—'}</span>
-        </div>
+        <span className='rounded-md bg-[#0ea5e9]/10 px-2.5 py-1 text-xs font-medium text-[#5cc7ff]'>
+          {post.industry || '—'}
+        </span>
       ),
     },
 
@@ -147,7 +104,6 @@ export default function BlogTable({ posts, onDelete, basePath = '/admin/blog' }:
           className={`inline-flex items-center gap-1.5 text-xs font-medium capitalize ${statusStyles[post.status].text}`}
         >
           <span className={`h-1.5 w-1.5 rounded-full ${statusStyles[post.status].dot}`} />
-
           {post.status}
         </span>
       ),
@@ -158,7 +114,9 @@ export default function BlogTable({ posts, onDelete, basePath = '/admin/blog' }:
       label: 'Publish Date',
       className: 'hidden sm:table-cell text-nowrap',
       headerClassName: 'hidden sm:table-cell text-nowrap',
-      render: post => <span className='text-title text-sm'>{formatDate(post.publishDate)}</span>,
+      render: post => (
+        <span className='text-sm text-[#d9d9d9]'>{formatDate(post.publishDate)}</span>
+      ),
     },
 
     {
@@ -166,7 +124,7 @@ export default function BlogTable({ posts, onDelete, basePath = '/admin/blog' }:
       label: 'Updated At',
       className: 'hidden xl:table-cell text-nowrap',
       headerClassName: 'hidden xl:table-cell text-nowrap',
-      render: post => <span className='text-title text-sm'>{formatDate(post.updatedAt)}</span>,
+      render: post => <span className='text-sm text-[#d9d9d9]'>{formatDate(post.updatedAt)}</span>,
     },
 
     {
@@ -196,6 +154,6 @@ export default function BlogTable({ posts, onDelete, basePath = '/admin/blog' }:
   ];
 
   return (
-    <DataTable columns={columns} data={posts} rowKey='id' emptyMessage='No blog posts found' />
+    <DataTable columns={columns} data={posts} rowKey='id' emptyMessage='No case studies found' />
   );
 }

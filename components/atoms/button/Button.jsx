@@ -42,6 +42,7 @@ export function Button({
   disabled = false,
   className = '',
   ariaLabel,
+  type = 'button',
 }) {
   const styles = [
     baseStyles,
@@ -65,7 +66,7 @@ export function Button({
   if (!href || disabled) {
     return (
       <button
-        type='button'
+        type={type}
         aria-label={ariaLabel}
         disabled={disabled}
         onClick={onClick}

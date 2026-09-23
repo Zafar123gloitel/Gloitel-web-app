@@ -128,6 +128,30 @@ body {
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: #3b82f6;
 }
+
+/* Keep the main website scrollbar visible and consistent with its scrollable panels. */
+html:has(.website-scrollbar) {
+  scrollbar-width: thin;
+  scrollbar-color: #2563eb transparent;
+}
+
+html:has(.website-scrollbar)::-webkit-scrollbar {
+  width: 6px;
+}
+
+html:has(.website-scrollbar)::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html:has(.website-scrollbar)::-webkit-scrollbar-thumb {
+  background: #2563eb;
+  border-radius: 9999px;
+}
+
+html:has(.website-scrollbar)::-webkit-scrollbar-thumb:hover {
+  background: #3b82f6;
+}
+
 .feature-fade-mask-bottom {
   -webkit-mask-image: linear-gradient(
     to top,

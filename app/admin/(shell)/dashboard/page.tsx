@@ -1,5 +1,6 @@
 'use client';
 
+import JobApplicationsTable, { type JobApplication } from '@/components/admin/JobApplicationsTable';
 import StatsCard from '@/components/admin/StatsCard';
 import { ArrowRight, BookOpen, Briefcase, Clock, Users } from 'lucide-react';
 import Link from 'next/link';
@@ -8,16 +9,37 @@ import { useEffect, useState } from 'react';
 export default function DashboardPage() {
   const [blogCount, setBlogCount] = useState(0);
   const [careerCount, setCareerCount] = useState(0);
+  const [applicationsCount, setApplicationsCount] = useState(0);
+  const [recentApplications, setRecentApplications] = useState<JobApplication[]>([]);
 
   useEffect(() => {
     try {
       const blogs = JSON.parse(localStorage.getItem('admin_blogs') ?? '[]');
       const jobs = JSON.parse(localStorage.getItem('admin_jobs') ?? '[]');
-      setBlogCount(blogs.length);
-      setCareerCount(jobs.length);
+      setBlogCount(Array.isArray(blogs) ? blogs.length : 0);
+      setCareerCount(Array.isArray(jobs) ? jobs.length : 0);
     } catch {
       // ignore
     }
+
+    async function loadRecentApplications() {
+      try {
+        const response = await fetch('/api/career/apply?page=1&limit=5', { cache: 'no-store' });
+        const result = await response.json();
+
+        if (!response.ok || !result?.success) {
+          return;
+        }
+
+        setApplicationsCount(result.pagination?.total ?? 0);
+        setRecentApplications(result.data ?? []);
+      } catch {
+        setApplicationsCount(0);
+        setRecentApplications([]);
+      }
+    }
+
+    void loadRecentApplications();
   }, []);
 
   const quickActions = [
@@ -32,6 +54,12 @@ export default function DashboardPage() {
       href: '/admin/career/new',
       icon: Briefcase,
       color: '#7c3aed',
+    },
+    {
+      label: 'View Applications',
+      href: '/admin/job-applications',
+      icon: Users,
+      color: '#14b8a6',
     },
   ];
 
@@ -80,10 +108,10 @@ export default function DashboardPage() {
             color='#7c3aed'
           />
           <StatsCard
-            title='Visitors'
-            value='—'
+            title='Applications'
+            value={applicationsCount}
             icon={Users}
-            description='Analytics coming soon'
+            description='Total applicants'
             color='#059669'
           />
           <StatsCard
@@ -104,7 +132,7 @@ export default function DashboardPage() {
         <h3 className='mb-4 text-xs font-semibold tracking-wider text-[#969696] uppercase'>
           Manage Content
         </h3>
-        <div className='grid grid-cols-1 gap-4 md:grid-cols-2'>
+        <div className='grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3'>
           {/* Blog card */}
           <div className='flex items-center justify-between rounded-xl border border-white/10 bg-[#111111] p-5 transition-all hover:border-white/20'>
             <div className='flex items-center gap-4'>
@@ -146,8 +174,38 @@ export default function DashboardPage() {
               View all <ArrowRight size={12} />
             </Link>
           </div>
+
+          {/* Applications card */}
+          <div className='flex items-center justify-between rounded-xl border border-white/10 bg-[#111111] p-5 transition-all hover:border-white/20'>
+            <div className='flex items-center gap-4'>
+              <div className='flex h-10 w-10 items-center justify-center rounded-xl bg-[#14b8a6]/15'>
+                <Users size={18} className='text-[#14b8a6]' />
+              </div>
+              <div>
+                <p className='text-sm font-semibold text-white'>Applications</p>
+                <p className='text-xs text-[#969696]'>
+                  {applicationsCount} applicant{applicationsCount !== 1 ? 's' : ''}
+                </p>
+              </div>
+            </div>
+            <Link
+              href='/admin/job-applications'
+              className='flex items-center gap-1.5 rounded-lg bg-white/5 px-3 py-1.5 text-xs font-medium text-white transition-colors hover:bg-white/10'
+            >
+              View all <ArrowRight size={12} />
+            </Link>
+          </div>
         </div>
       </div>
+
+      {recentApplications.length > 0 && (
+        <div>
+          <h3 className='mb-4 text-xs font-semibold tracking-wider text-[#969696] uppercase'>
+            Recent Job Applications
+          </h3>
+          <JobApplicationsTable applications={recentApplications} />
+        </div>
+      )}
     </div>
   );
 }

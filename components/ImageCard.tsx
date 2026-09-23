@@ -2,6 +2,19 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Card, CardDescription, CardTitle } from '@/components';
 
+interface ImageCardProps {
+  className?: string;
+  cradClass?: string;
+  padding?: string;
+  cardtitle?: string;
+  carddescription?: string;
+  buttintext?: string;
+  category?: string; // optional
+  buttonurl?: string;
+  buttonicon?: React.ReactNode;
+  image?: string;
+}
+
 const ImageCard = ({
   className = '',
   cradClass,
@@ -9,10 +22,11 @@ const ImageCard = ({
   cardtitle = 'Healthcare Client ',
   carddescription = 'Deployed a private LLM for clinical documentation summarization. 70% reduction in admin time per consultation. Zero PHI data leaves the VPC.',
   buttintext = 'View Case Study ',
+  category,
   buttonurl = '/',
   buttonicon,
   image = '',
-}) => {
+}: ImageCardProps) => {
   return (
     <div className={['group h-full', className].filter(Boolean).join(' ')}>
       <Card
@@ -46,6 +60,11 @@ const ImageCard = ({
             </div>
           </div>
         </div>
+        {category && (
+          <span className='mb-2 inline-block rounded-full border border-white/15 bg-white/[0.04] px-3 py-1 text-[11px] font-medium text-gray-300'>
+            {category}
+          </span>
+        )}
 
         <CardTitle className='text-title pb-2 text-[20px] transition-colors duration-300 group-hover:text-blue-400'>
           {cardtitle}

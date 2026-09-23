@@ -10,6 +10,8 @@ export default function AdminHeader() {
   const pathname = usePathname();
   const { search, setSearch } = useAdminSearch();
   const isCareerPage = pathname.startsWith('/admin/career');
+  const isApplicationsPage = pathname.startsWith('/admin/job-applications');
+  const isCaseStudiesPage = pathname.startsWith('/admin/case-studies');
 
   useEffect(() => {
     setSearch('');
@@ -24,7 +26,15 @@ export default function AdminHeader() {
           type='text'
           value={search}
           onChange={event => setSearch(event.target.value)}
-          placeholder={isCareerPage ? 'Search jobs...' : 'Search articles...'}
+          placeholder={
+            isApplicationsPage
+              ? 'Search applications...'
+              : isCaseStudiesPage
+                ? 'Search case studies...'
+                : isCareerPage
+                  ? 'Search jobs...'
+                  : 'Search articles...'
+          }
           className='w-full bg-transparent text-sm text-white outline-none placeholder:text-[#969696]'
         />
       </div>

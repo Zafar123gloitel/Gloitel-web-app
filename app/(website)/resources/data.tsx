@@ -23,7 +23,7 @@ export const resourcesHeroData = {
   },
   secondaryButton: {
     text: 'Explore Case Studies',
-    href: '/content',
+    href: '/resources/case-studies',
     icon: <ArrowRightIcon />,
   },
 };
@@ -47,7 +47,7 @@ export const aiStrategySectionHead = [
     description:
       'Real client challenges, implementation strategies, measurable outcomes, and engineering learnings.',
     text: 'Explore Case Study',
-    href: '/content',
+    href: '/resources/case-studies/healthcare-ai-transformation',
   },
 ];
 export const BlogeForSectionHead2 = {

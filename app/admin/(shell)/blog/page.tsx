@@ -2,11 +2,9 @@
 
 import BlogTable, { type BlogPost } from '@/components/admin/BlogTable';
 import { useAdminSearch } from '@/components/admin/AdminSearchContext';
-import { BookOpen, Edit2, Clock, CheckCircle2, Plus } from 'lucide-react';
+import { BookOpen, Edit2, CheckCircle2, Plus } from 'lucide-react';
 import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
-
-const STORAGE_KEY = 'admin_blogs';
 
 function StatCard({
   icon,
@@ -40,20 +38,56 @@ function StatCard({
 export default function BlogPage() {
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const { search } = useAdminSearch();
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
+  const [retry, setRetry] = useState(0);
 
   useEffect(() => {
-    try {
-      const stored = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? '[]');
-      setPosts(stored);
-    } catch {
-      setPosts([]);
+    const controller = new AbortController();
+    setLoading(true);
+    setError('');
+    async function load() {
+      try {
+        const posts: BlogPost[] = [];
+        let page = 1;
+        let totalPages = 1;
+        do {
+          const response = await fetch(`/api/blog?page=${page}&limit=100`, {
+            cache: 'no-store',
+            signal: controller.signal,
+          });
+          const result = await response.json().catch(() => null);
+          if (!response.ok || !result?.success || !Array.isArray(result.data)) {
+            throw new Error(result?.message || 'Could not load articles. Please try again.');
+          }
+          posts.push(...result.data);
+          totalPages = result.pagination.totalPages;
+          page++;
+        } while (page <= totalPages);
+        if (!controller.signal.aborted) setPosts(posts);
+      } catch (error) {
+        if (!controller.signal.aborted)
+          setError(error instanceof Error ? error.message : 'Could not load articles.');
+      } finally {
+        if (!controller.signal.aborted) setLoading(false);
+      }
     }
-  }, []);
+    void load();
+    return () => controller.abort();
+  }, [retry]);
 
-  function handleDelete(id: string) {
-    const updated = posts.filter(p => p.id !== id);
-    setPosts(updated);
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
+  async function handleDelete(id: string) {
+    setError('');
+    try {
+      const response = await fetch(`/api/blog/${id}`, { method: 'DELETE' });
+      const result = await response.json().catch(() => null);
+      if (!response.ok || !result?.success) {
+        throw new Error(result?.message || 'Could not delete the article.');
+      }
+      setPosts(current => current.filter(post => post.id !== id));
+    } catch (error) {
+      setError(error instanceof Error ? error.message : 'Could not delete the article.');
+    }
   }
 
   const filteredPosts = useMemo(() => {
@@ -100,7 +134,6 @@ export default function BlogPage() {
           icon={<BookOpen size={18} className='text-white' />}
           label='Total Articles'
           value={stats.total}
-          trend='12%'
           iconBg='bg-teal-500/20'
         />
         <StatCard
@@ -109,12 +142,12 @@ export default function BlogPage() {
           value={stats.drafts}
           iconBg='bg-purple-500/20'
         />
-        <StatCard
+        {/* <StatCard
           icon={<Clock size={18} className='text-white' />}
           label='Scheduled'
           value={stats.scheduled}
           iconBg='bg-white/10'
-        />
+        /> */}
         <StatCard
           icon={<CheckCircle2 size={18} className='text-white' />}
           label='Published'
@@ -124,7 +157,21 @@ export default function BlogPage() {
       </div>
 
       {/* Table */}
-      <BlogTable posts={filteredPosts} onDelete={handleDelete} />
+      {error && (
+        <div role='alert' className='space-y-2 text-sm text-red-400'>
+          <p>{error}</p>
+          <button onClick={() => setRetry(value => value + 1)} className='text-[#5b8def]'>
+            Reload articles
+          </button>
+        </div>
+      )}
+      {loading ? (
+        <p role='status' className='text-sm text-[#969696]'>
+          Loading articles...
+        </p>
+      ) : (
+        <BlogTable posts={filteredPosts} onDelete={handleDelete} />
+      )}
     </div>
   );
 }

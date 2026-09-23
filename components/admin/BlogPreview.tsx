@@ -11,6 +11,9 @@ export interface BlogPreviewData {
   content?: string;
   thumbnail?: string;
   category?: string;
+  industry?: string;
+  service?: string;
+  liveWebsiteLink?: string;
   authorName?: string;
   authorImage?: string;
   publishDate?: string;
@@ -21,6 +24,7 @@ interface BlogPreviewProps {
   onClose: () => void;
   data: BlogPreviewData;
   note?: string;
+  contentLabel?: string;
 }
 
 function formatDate(date?: string) {
@@ -39,7 +43,13 @@ function formatDate(date?: string) {
   });
 }
 
-export default function BlogPreview({ isOpen, onClose, data, note }: BlogPreviewProps) {
+export default function BlogPreview({
+  isOpen,
+  onClose,
+  data,
+  note,
+  contentLabel = 'Article',
+}: BlogPreviewProps) {
   if (!isOpen) return null;
 
   const wordCount = data.content?.trim() ? data.content.trim().split(/\s+/).length : 0;
@@ -53,7 +63,7 @@ export default function BlogPreview({ isOpen, onClose, data, note }: BlogPreview
         <div className='flex items-center justify-between border-b border-white/10 px-6 py-4'>
           <div>
             <p className='text-xs font-medium tracking-wider text-[#5b8def] uppercase'>
-              Article Preview
+              {contentLabel} Preview
             </p>
 
             {note && <p className='mt-1 text-xs text-[#969696]'>{note}</p>}
@@ -88,6 +98,10 @@ export default function BlogPreview({ isOpen, onClose, data, note }: BlogPreview
               </span>
             )}
 
+            {data.industry && <span>{data.industry}</span>}
+
+            {data.service && <span>{data.service}</span>}
+
             <span>{formatDate(data.publishDate)}</span>
 
             <span>{readMins} min read</span>
@@ -95,7 +109,7 @@ export default function BlogPreview({ isOpen, onClose, data, note }: BlogPreview
 
           {/* Title */}
           <h1 className='max-w-3xl text-3xl leading-tight font-bold text-white sm:text-5xl'>
-            {data.title || 'Untitled article'}
+            {data.title || `Untitled ${contentLabel.toLowerCase()}`}
           </h1>
 
           {/* Excerpt */}
@@ -103,20 +117,38 @@ export default function BlogPreview({ isOpen, onClose, data, note }: BlogPreview
             <p className='mt-5 max-w-2xl text-lg leading-8 text-[#b3b3b3]'>{data.excerpt}</p>
           )}
 
-          {/* Author */}
-          <div className='mt-6 flex items-center gap-3 border-b border-white/10 pb-8'>
-            {data.authorImage && (
-              <img src={data.authorImage} alt='' className='h-10 w-10 rounded-full object-cover' />
-            )}
-
-            <div>
-              <p className='text-sm font-medium text-white'>
-                {data.authorName || 'Unknown author'}
-              </p>
-
-              <p className='text-xs text-[#969696]'>Author</p>
+          {contentLabel === 'Case Study' ? (
+            <div className='mt-6 border-b border-white/10 pb-8'>
+              {data.liveWebsiteLink && (
+                <a
+                  href={data.liveWebsiteLink}
+                  target='_blank'
+                  rel='noreferrer'
+                  className='inline-flex rounded-lg bg-[#1447e6] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#1447e6]/80'
+                >
+                  Visit Live Website
+                </a>
+              )}
             </div>
-          </div>
+          ) : (
+            <div className='mt-6 flex items-center gap-3 border-b border-white/10 pb-8'>
+              {data.authorImage && (
+                <img
+                  src={data.authorImage}
+                  alt=''
+                  className='h-10 w-10 rounded-full object-cover'
+                />
+              )}
+
+              <div>
+                <p className='text-sm font-medium text-white'>
+                  {data.authorName || 'Unknown author'}
+                </p>
+
+                <p className='text-xs text-[#969696]'>Author</p>
+              </div>
+            </div>
+          )}
 
           {/* Content */}
           <div className='mt-8 max-w-none text-[#d0d0d0]'>

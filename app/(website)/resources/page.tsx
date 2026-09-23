@@ -90,7 +90,7 @@ const page = () => {
               key={card.id}
               cradClass={''}
               className={'w-full'}
-
+              buttintext={'Read Article'}
               cardtitle={card.title}
               carddescription={card.description}
               buttonurl={card.href}
@@ -122,7 +122,6 @@ const page = () => {
               className='group relative cursor-pointer overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-r from-gray-950/90 to-black/80 p-2 shadow-lg sm:rounded-3xl sm:p-3'
             >
               <span className='cursor-hover block'>
-     
                 <Image
                   width={1920}
                   height={1080}
@@ -132,7 +131,6 @@ const page = () => {
                   loading='lazy'
                 />
 
-       
                 <div className='absolute inset-x-0 bottom-0 m-3 flex items-center justify-between rounded-lg bg-gradient-to-r from-blue-950 to-black p-2 sm:m-5 sm:rounded-xl sm:p-4'>
                   <div>
                     <h3 className='sm:text-md text-title mb-0.5 text-sm font-semibold sm:mb-1'>
@@ -144,7 +142,6 @@ const page = () => {
                   </p>
                 </div>
 
-            
                 <div className='absolute top-0 right-0 m-2 transition-all duration-500 ease-out group-hover:translate-y-0 group-hover:opacity-100 sm:m-4'>
                   <div className='text-title rounded-md bg-[radial-gradient(circle_at_center,_rgba(0,0,80,0.9),_rgba(0,0,0,1))] px-2 py-1 text-xs font-medium shadow-lg sm:rounded-lg sm:px-4 sm:py-2 sm:text-sm'>
                     {item.tag}
