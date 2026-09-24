@@ -2,46 +2,15 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { MiddleSectionHeads } from '@/components/SectionHeads';
 import CareerApplicationForm from '@/components/career/CareerApplicationForm';
-import { jobDetailsData } from './data';
+import { getJobs, jobId } from '@/lib/jobs';
+
+export const dynamic = 'force-dynamic';
 
 export default async function CareerDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const job = jobDetailsData[slug];
-  const BriefcaseIcon = () => (
-    <svg width='14' height='14' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
-      <rect x='3' y='7' width='18' height='13' rx='2' stroke='currentColor' strokeWidth='1.5' />
-      <path d='M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2' stroke='currentColor' strokeWidth='1.5' />
-      <path d='M3 12h18' stroke='currentColor' strokeWidth='1.5' />
-    </svg>
-  );
-
-  const ClockIcon = () => (
-    <svg width='14' height='14' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
-      <circle cx='12' cy='12' r='9' stroke='currentColor' strokeWidth='1.5' />
-      <path d='M12 7v5l3.5 2' stroke='currentColor' strokeWidth='1.5' strokeLinecap='round' />
-    </svg>
-  );
-
-  const LocationIcon = () => (
-    <svg width='14' height='14' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
-      <path
-        d='M12 21s7-6.5 7-11.5A7 7 0 0 0 5 9.5C5 14.5 12 21 12 21Z'
-        stroke='currentColor'
-        strokeWidth='1.5'
-      />
-      <circle cx='12' cy='9.5' r='2.2' fill='currentColor' />
-    </svg>
-  );
-
-  const iconMap = {
-    briefcase: BriefcaseIcon,
-    clock: ClockIcon,
-    location: LocationIcon,
-  };
-
-  if (!job) {
-    notFound();
-  }
+  if (!/^[a-f\d]{24}$/i.test(slug)) notFound();
+  const job = await (await getJobs()).findOne({ _id: jobId(slug), status: 'active' });
+  if (!job) notFound();
 
   return (
     <main className='relative mt-20 overflow-hidden px-4 py-10 sm:px-6 lg:px-8'>
@@ -66,73 +35,23 @@ export default async function CareerDetailPage({ params }: { params: Promise<{ s
             <span className='text-white/30'>›</span>
             <span className='text-white/85'>{job.title}</span>
           </div>
-
-          <MiddleSectionHeads SectionHead={job.title} SectionDescription={job.tagline} />
-
-          <div className='mt-6 flex flex-wrap items-center justify-center gap-3 text-sm'>
-            {job.tags.map(item => {
-              const IconComponent = iconMap[item.icon];
-              return (
-                <span
-                  key={item.label}
-                  className='flex items-center gap-1.5 rounded-full border border-blue-500/40 bg-blue-500/5 px-4 py-1.5 text-blue-300'
-                >
-                  <span className='text-blue-400'>
-                    <IconComponent />
-                  </span>
-                  {item.label}
-                </span>
-              );
-            })}
+          <MiddleSectionHeads SectionHead={job.title} SectionDescription={job.department} />
+          <div className='mt-6 flex flex-wrap justify-center gap-3 text-sm'>
+            {[job.department, job.type.replace('-', ' '), job.location].map(label => (
+              <span
+                key={label}
+                className='rounded-full border border-blue-500/40 bg-blue-500/5 px-4 py-1.5 text-blue-300'
+              >
+                {label}
+              </span>
+            ))}
           </div>
         </div>
-
         <div className='mt-12 grid gap-8 lg:grid-cols-[1.15fr_0.85fr]'>
-          <article className='space-y-10'>
-            <section className='p-6'>
-              <h2 className='text-2xl font-semibold text-white'>Job Description</h2>
-              <p className='mt-4 leading-7 text-white/65'>{job.jobDescription}</p>
-            </section>
-
-            <section className='p-6'>
-              <h2 className='text-2xl font-semibold text-white'>Key Responsibilities</h2>
-              <ul className='mt-5 space-y-3 text-white/70'>
-                {job.keyResponsibilities.map(item => (
-                  <li key={item} className='flex gap-3'>
-                    <span className='mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500' />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </section>
-
-            <section className='p-6'>
-              <h2 className='text-2xl font-semibold text-white'>Skills & Experience</h2>
-              <ul className='mt-5 space-y-3 text-white/70'>
-                {job.skillsExperience.map(item => (
-                  <li key={item} className='flex gap-3'>
-                    <span className='mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500' />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </section>
-
-            <section className='p-6'>
-              <h2 className='text-2xl font-semibold text-white'>
-                Preferred Qualifications (Optional)
-              </h2>
-              <ul className='mt-5 space-y-3 text-white/70'>
-                {job.preferredQualifications.map(item => (
-                  <li key={item} className='flex gap-3'>
-                    <span className='mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500' />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </section>
+          <article className='p-6'>
+            <h2 className='text-2xl font-semibold text-white'>Job Description</h2>
+            <p className='mt-4 leading-7 whitespace-pre-wrap text-white/65'>{job.description}</p>
           </article>
-
           <aside className='lg:sticky lg:top-8 lg:self-start'>
             <div className='rounded-[28px] border border-white/10 bg-[#090d1a]/95 p-5 shadow-[0_0_60px_rgba(0,0,0,0.45)] sm:p-8'>
               <h2 className='text-2xl font-semibold text-white'>Apply for This Position</h2>
@@ -141,7 +60,7 @@ export default async function CareerDetailPage({ params }: { params: Promise<{ s
                 in touch if your profile matches the opportunity.
               </p>
               <div className='mt-6'>
-                <CareerApplicationForm compact={true} />
+                <CareerApplicationForm compact={true} jobId={slug} />
               </div>
             </div>
           </aside>

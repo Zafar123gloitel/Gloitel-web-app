@@ -1,193 +1,103 @@
 'use client';
 
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRightIcon, SearchIcon } from '@/components/SvgIcon';
-import { GlowButton } from '@/components';
+import { getBlogPageNumbers, getBlogPagination } from '@/lib/blogPagination';
 
-// Simple unique id generator — call karo, ye ek unique string return karega
-let idCounter = 0;
-function createId(prefix: string = 'article'): string {
-  idCounter += 1;
-  return `${prefix}-${Date.now()}-${idCounter}`;
+type Article = {
+  id: string;
+  category: string;
+  readTime: string;
+  title: string;
+  description: string;
+  author: string;
+  authorRole: string;
+  authorImage: string;
+  date: string;
+  publishDate?: string;
+  image: string;
+  href: string;
+};
+
+type ApiBlog = {
+  id: string;
+  slug: string;
+  title: string;
+  excerpt?: string;
+  Description?: string;
+  content?: string;
+  category?: string;
+  thumbnail?: string;
+  publishDate?: string;
+  author?: { name?: string; image?: string };
+};
+
+const fallbackImage =
+  'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788869098/Gloitel/Resource%20F/Blogs_Articles_h7tdgp.png';
+const fallbackAuthorImage =
+  'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788869255/Gloitel/Profile%20G/ChatGPT_Image_Jun_9_2026_07_06_16_PM_iabgqm.png';
+
+function toArticle(blog: ApiBlog): Article {
+  const wordCount = (blog.content ?? '').trim().split(/\s+/).filter(Boolean).length;
+  return {
+    id: blog.id,
+    category: blog.category || '',
+    readTime: `${Math.max(1, Math.ceil(wordCount / 200))} Min Read`,
+    title: blog.title,
+    description: blog.excerpt || blog.Description || '',
+    author: blog.author?.name || 'Gloitel',
+    authorRole: 'Author',
+    authorImage: blog.author?.image || fallbackAuthorImage,
+    date: blog.publishDate
+      ? new Date(blog.publishDate).toLocaleDateString('en-US', {
+          month: 'short',
+          day: '2-digit',
+          year: 'numeric',
+        })
+      : '',
+    publishDate: blog.publishDate,
+    image: blog.thumbnail || fallbackImage,
+    href: `/resources/blog/${blog.slug}`,
+  };
 }
-
-const articlesRaw = [
-  {
-    category: 'AI & Integration',
-    readTime: '8 Min Read',
-    title: 'Key considerations for introducing AI solutions from prototyping to production',
-    description:
-      'Scaling machine learning workflows beyond experimental notebooks requires solid infrastructure, observability, and disciplined engineering.',
-    author: 'Zafaryab Khann',
-    authorRole: 'Principal AI Architect',
-    authorImage:
-      'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788869255/Gloitel/Profile%20G/ChatGPT_Image_Jun_9_2026_07_06_16_PM_iabgqm.png',
-    date: 'May 12, 2026',
-    image:
-      'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785498265/Gloitel/what-we-do/healthcare-client_tmogav.png',
-    href: '/resources/blog/ai-intelligent-systems',
-  },
-  {
-    category: 'Cloud',
-    readTime: '11 Min Read',
-    title: 'Cloud Architecture Best Practices for High Availability & Highly Scalable Applications',
-    description:
-      'Architecture patterns for resilient, well-tested, and cost-efficient cloud platforms.',
-    author: 'Manish Sahu',
-    authorRole: 'Cloud Solutions Architect',
-    authorImage:
-      'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788869255/Gloitel/Profile%20G/ChatGPT_Image_Jun_9_2026_07_02_32_PM_eguhmv.png',
-    date: 'May 03, 2026',
-    image:
-      'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785498263/Gloitel/what-we-do/financial-services_oba4c7.png',
-    href: '/resources/blog/cloud',
-  },
-  {
-    category: 'Engineering',
-    readTime: '6 Min Read',
-    title: 'Clean Code Isn’t Enough: Writing Large-Scale Systems That Are Easy to Change',
-    description:
-      'How to craft maintainable architecture that adapts cleanly as product requirements evolve.',
-    author: 'Yashwant Sonkar',
-    authorRole: 'Senior Software Engineer',
-    authorImage:
-      'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788869258/Gloitel/Profile%20G/ChatGPT_Image_Jun_9_2026_06_55_13_PM_a2hint.png',
-    date: 'Mar 24, 2026',
-    image:
-      'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788869098/Gloitel/Resource%20F/Blogs_Articles_h7tdgp.png',
-    href: '/resources/blog/engineering',
-  },
-  {
-    category: 'AI & Integration',
-    readTime: '8 Min Read',
-    title: 'Key considerations for introducing AI solutions from prototyping to production',
-    description:
-      'Scaling machine learning workflows beyond experimental notebooks requires solid infrastructure, observability, and disciplined engineering.',
-    author: 'Zafaryab Khann',
-    authorRole: 'Principal AI Architect',
-    authorImage:
-      'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788869255/Gloitel/Profile%20G/ChatGPT_Image_Jun_9_2026_07_06_16_PM_iabgqm.png',
-    date: 'May 12, 2026',
-    image:
-      'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785498265/Gloitel/what-we-do/healthcare-client_tmogav.png',
-    href: '/resources/blog/ai-intelligent-systems',
-  },
-  {
-    category: 'Cloud',
-    readTime: '11 Min Read',
-    title: 'Cloud Architecture Best Practices for High Availability & Highly Scalable Applications',
-    description:
-      'Architecture patterns for resilient, well-tested, and cost-efficient cloud platforms.',
-    author: 'Manish Sahu',
-    authorRole: 'Cloud Solutions Architect',
-    authorImage:
-      'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788869255/Gloitel/Profile%20G/ChatGPT_Image_Jun_9_2026_07_02_32_PM_eguhmv.png',
-    date: 'May 03, 2026',
-    image:
-      'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785498263/Gloitel/what-we-do/financial-services_oba4c7.png',
-    href: '/resources/blog/cloud',
-  },
-  {
-    category: 'Engineering',
-    readTime: '6 Min Read',
-    title: 'Clean Code Isn’t Enough: Writing Large-Scale Systems That Are Easy to Change',
-    description:
-      'How to craft maintainable architecture that adapts cleanly as product requirements evolve.',
-    author: 'Yashwant Sonkar',
-    authorRole: 'Senior Software Engineer',
-    authorImage:
-      'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788869258/Gloitel/Profile%20G/ChatGPT_Image_Jun_9_2026_06_55_13_PM_a2hint.png',
-    date: 'Mar 24, 2026',
-    image:
-      'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788869098/Gloitel/Resource%20F/Blogs_Articles_h7tdgp.png',
-    href: '/resources/blog/engineering',
-  },
-  {
-    category: 'AI & Integration',
-    readTime: '8 Min Read',
-    title: 'Key considerations for introducing AI solutions from prototyping to production',
-    description:
-      'Scaling machine learning workflows beyond experimental notebooks requires solid infrastructure, observability, and disciplined engineering.',
-    author: 'Zafaryab Khann',
-    authorRole: 'Principal AI Architect',
-    authorImage:
-      'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788869255/Gloitel/Profile%20G/ChatGPT_Image_Jun_9_2026_07_06_16_PM_iabgqm.png',
-    date: 'May 12, 2026',
-    image:
-      'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785498265/Gloitel/what-we-do/healthcare-client_tmogav.png',
-    href: '/resources/blog/ai-intelligent-systems',
-  },
-  {
-    category: 'Cloud',
-    readTime: '11 Min Read',
-    title: 'Cloud Architecture Best Practices for High Availability & Highly Scalable Applications',
-    description:
-      'Architecture patterns for resilient, well-tested, and cost-efficient cloud platforms.',
-    author: 'Manish Sahu',
-    authorRole: 'Cloud Solutions Architect',
-    authorImage:
-      'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788869255/Gloitel/Profile%20G/ChatGPT_Image_Jun_9_2026_07_02_32_PM_eguhmv.png',
-    date: 'May 03, 2026',
-    image:
-      'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785498263/Gloitel/what-we-do/financial-services_oba4c7.png',
-    href: '/resources/blog/cloud',
-  },
-  {
-    category: 'Engineering',
-    readTime: '6 Min Read',
-    title: 'Clean Code Isn’t Enough: Writing Large-Scale Systems That Are Easy to Change',
-    description:
-      'How to craft maintainable architecture that adapts cleanly as product requirements evolve.',
-    author: 'Yashwant Sonkar',
-    authorRole: 'Senior Software Engineer',
-    authorImage:
-      'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788869258/Gloitel/Profile%20G/ChatGPT_Image_Jun_9_2026_06_55_13_PM_a2hint.png',
-    date: 'Mar 24, 2026',
-    image:
-      'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788869098/Gloitel/Resource%20F/Blogs_Articles_h7tdgp.png',
-    href: '/resources/blog/engineering',
-  },
-];
-
-// Har article ko ek unique id assign kar diya
-const articles = articlesRaw.map(article => ({
-  id: createId('article'),
-  ...article,
-}));
-
-const topics = [
-  'AI & Intelligent Systems',
-  'Engineering',
-  'Architecture',
-  'Cloud',
-  'DevOps',
-  'Design',
-];
 
 const PAGE_SIZE_OPTIONS = [4, 6, 8];
 
-// Page number list ke beech mein ellipsis ("...") dikhane ke liye helper
-function getPageNumbers(current: number, total: number): (number | 'ellipsis')[] {
-  const delta = 1;
-  const pages: (number | 'ellipsis')[] = [];
-
-  for (let i = 1; i <= total; i++) {
-    if (i === 1 || i === total || (i >= current - delta && i <= current + delta)) {
-      pages.push(i);
-    } else if (pages[pages.length - 1] !== 'ellipsis') {
-      pages.push('ellipsis');
-    }
-  }
-
-  return pages;
-}
-
 export default function ContentPage() {
+  const [articles, setArticles] = useState<Article[]>([]);
   const [query, setQuery] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(PAGE_SIZE_OPTIONS[0]);
+
+  useEffect(() => {
+    const controller = new AbortController();
+    async function loadArticles() {
+      try {
+        const blogs: ApiBlog[] = [];
+        let page = 1;
+        let totalPages = 1;
+        do {
+          const response = await fetch(`/api/blog?page=${page}&limit=100`, {
+            cache: 'no-store',
+            signal: controller.signal,
+          });
+          const result = await response.json();
+          if (!response.ok || !result?.success || !Array.isArray(result.data))
+            throw new Error('Could not load blogs');
+          blogs.push(...result.data);
+          totalPages = result.pagination?.totalPages ?? 1;
+          page += 1;
+        } while (page <= totalPages);
+        if (!controller.signal.aborted) setArticles(blogs.map(toArticle));
+      } catch {
+        if (!controller.signal.aborted) setArticles([]);
+      }
+    }
+    void loadArticles();
+    return () => controller.abort();
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
@@ -208,21 +118,49 @@ export default function ContentPage() {
         article.description.toLowerCase().includes(q) ||
         article.category.toLowerCase().includes(q),
     );
-  }, [query]);
+  }, [articles, query]);
+
+  const popularTopics = useMemo(() => {
+    const topicCount = new Map<string, number>();
+
+    articles.forEach(article => {
+      const category = article.category?.trim();
+      if (!category) return;
+
+      topicCount.set(category, (topicCount.get(category) || 0) + 1);
+    });
+
+    return Array.from(topicCount.entries())
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 6);
+  }, [articles]);
+
+  const featuredArticle = useMemo(() => {
+    if (!articles.length) return null;
+
+    return articles.reduce((latest, article) => {
+      const latestDate = Date.parse(latest.publishDate ?? '') || 0;
+      const articleDate = Date.parse(article.publishDate ?? '') || 0;
+      return articleDate > latestDate ? article : latest;
+    });
+  }, [articles]);
 
   const totalResults = filteredArticles.length;
-  const totalPages = Math.max(1, Math.ceil(totalResults / pageSize));
+  const {
+    totalPages,
+    currentPage: visiblePage,
+    startIndex,
+    rangeStart,
+    rangeEnd,
+  } = getBlogPagination(totalResults, pageSize, currentPage);
 
-  const paginatedArticles = useMemo(() => {
-    const start = (currentPage - 1) * pageSize;
-    return filteredArticles.slice(start, start + pageSize);
-  }, [filteredArticles, currentPage, pageSize]);
-
-  const rangeStart = totalResults === 0 ? 0 : (currentPage - 1) * pageSize + 1;
-  const rangeEnd = Math.min(currentPage * pageSize, totalResults);
+  const paginatedArticles = useMemo(
+    () => filteredArticles.slice(startIndex, startIndex + pageSize),
+    [filteredArticles, startIndex, pageSize],
+  );
 
   const goToPage = (page: number) => {
-    if (page < 1 || page > totalPages) return;
+    if (!Number.isInteger(page) || page < 1 || page > totalPages) return;
     setCurrentPage(page);
   };
 
@@ -349,8 +287,8 @@ export default function ContentPage() {
                 {totalPages > 1 && (
                   <div className='flex items-center gap-1.5'>
                     <button
-                      onClick={() => goToPage(currentPage - 1)}
-                      disabled={currentPage === 1}
+                      onClick={() => goToPage(visiblePage - 1)}
+                      disabled={visiblePage === 1}
                       aria-label='Previous page'
                       className='flex h-8 w-8 items-center justify-center rounded-md border border-white/10 text-gray-300 transition hover:border-white/25 hover:text-white disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:border-white/10'
                     >
@@ -365,7 +303,7 @@ export default function ContentPage() {
                       </svg>
                     </button>
 
-                    {getPageNumbers(currentPage, totalPages).map((page, idx) =>
+                    {getBlogPageNumbers(visiblePage, totalPages).map((page, idx) =>
                       page === 'ellipsis' ? (
                         <span
                           key={`ellipsis-${idx}`}
@@ -377,9 +315,9 @@ export default function ContentPage() {
                         <button
                           key={page}
                           onClick={() => goToPage(page)}
-                          aria-current={page === currentPage ? 'page' : undefined}
+                          aria-current={page === visiblePage ? 'page' : undefined}
                           className={`flex h-8 w-8 items-center justify-center rounded-md text-xs font-medium transition ${
-                            page === currentPage
+                            page === visiblePage
                               ? 'bg-blue-500 text-white'
                               : 'border border-white/10 text-gray-300 hover:border-white/25 hover:text-white'
                           }`}
@@ -390,8 +328,8 @@ export default function ContentPage() {
                     )}
 
                     <button
-                      onClick={() => goToPage(currentPage + 1)}
-                      disabled={currentPage === totalPages}
+                      onClick={() => goToPage(visiblePage + 1)}
+                      disabled={visiblePage === totalPages}
                       aria-label='Next page'
                       className='flex h-8 w-8 items-center justify-center rounded-md border border-white/10 text-gray-300 transition hover:border-white/25 hover:text-white disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:border-white/10'
                     >
@@ -414,10 +352,15 @@ export default function ContentPage() {
           <aside>
             <h2 className='mb-5 text-sm font-medium'>Popular Topics</h2>
             <div className='space-y-2'>
-              {topics.map((topic, index) => (
-                <div
+              {popularTopics.map(([topic, count]) => (
+                <button
+                  type='button'
                   key={topic}
-                  className='flex items-center rounded-md border border-white/10 bg-[#110E18] px-3 py-3 text-xs text-gray-300'
+                  onClick={() => {
+                    setQuery(topic);
+                    setCurrentPage(1);
+                  }}
+                  className='flex w-full items-center rounded-md border border-white/10 bg-[#110E18] px-3 py-3 text-left text-xs text-gray-300'
                 >
                   <span className='mr-3 text-blue-400'>
                     <svg
@@ -444,55 +387,36 @@ export default function ContentPage() {
                   </span>
                   {topic}
                   <span className='text-title ml-auto flex h-5 w-8 items-center justify-center rounded-full bg-gray-600 text-[10px]'>
-                    {26 - index * 3}
+                    {count}
                   </span>
-                </div>
+                </button>
               ))}
             </div>
-            <div className='mt-7 rounded-xl border border-white/10 bg-[#110E18] p-5'>
-              <p className='mb-4 text-[10px] text-blue-400 uppercase'>Featured post</p>
-              <div className='relative h-40 w-full shrink-0 overflow-hidden rounded-md'>
-                <Image
-                  src='https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785498265/Gloitel/what-we-do/healthcare-client_tmogav.png'
-                  alt=''
-                  fill
-                  unoptimized
-                  className='object-cover transition duration-500 group-hover:scale-105'
-                />
-              </div>
+            {featuredArticle && (
+              <div className='mt-7 rounded-xl border border-white/10 bg-[#110E18] p-5'>
+                <p className='mb-4 text-[10px] text-blue-400 uppercase'>Featured post</p>
+                <div className='relative h-40 w-full shrink-0 overflow-hidden rounded-md'>
+                  <Image
+                    src={featuredArticle.image}
+                    alt={featuredArticle.title}
+                    fill
+                    unoptimized
+                    className='object-cover transition duration-500 group-hover:scale-105'
+                  />
+                </div>
 
-              <h3 className='mt-3 text-sm leading-5 font-medium'>
-                When Should You Modernize a Legacy System?
-              </h3>
-              <p className='mt-2 text-xs leading-5 text-gray-500'>
-                Practical signals that tell you exactly when to update, redesign, or retire your
-                legacy platform.
-              </p>
-              <Link
-                href='/content'
-                className='mt-4 inline-flex items-center gap-2 text-xs text-blue-400'
-              >
-                Read Article <ArrowRightIcon />
-              </Link>
-            </div>
-            <div className='mt-7 rounded-xl border border-white/10 bg-[#110E18] p-5'>
-              <h3 className='mt-3 text-sm leading-5 font-medium'>Stay Updated</h3>
-              <p className='mt-2 text-xs leading-5 text-gray-500'>
-                Get the latest engineering insights, guidelines, and manuals delivered straight to
-                your inbox.
-              </p>
-              <input
-                type='text'
-                placeholder={'Enter your email'}
-                className='text-title mt-2 w-full border border-dashed border-blue-500 bg-transparent p-2 text-left text-sm placeholder:text-sm placeholder:text-gray-500 focus:outline-none'
-              />
-              <GlowButton
-                className='mt-2 w-full'
-                buttonText={'Subscribe'}
-                buttonLink=''
-                onClick={() => {}}
-              />
-            </div>
+                <h3 className='mt-3 text-sm leading-5 font-medium'>{featuredArticle.title}</h3>
+                <p className='mt-2 text-xs leading-5 text-gray-500'>
+                  {featuredArticle.description}
+                </p>
+                <Link
+                  href={featuredArticle.href}
+                  className='mt-4 inline-flex items-center gap-2 text-xs text-blue-400'
+                >
+                  Read Article <ArrowRightIcon />
+                </Link>
+              </div>
+            )}
           </aside>
         </div>
       </div>

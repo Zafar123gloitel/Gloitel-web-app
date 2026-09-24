@@ -18,16 +18,13 @@ export default function AdminLoginPage() {
     setError('');
     setLoading(true);
 
-    // Simulate async
-    await new Promise(r => setTimeout(r, 600));
-
-    const success = login(email.trim(), password);
-    if (success) {
-      router.push('/admin/dashboard');
-    } else {
-      setError('Invalid email or password. Please try again.');
+    try {
+      await login(email.trim(), password);
+      router.replace('/admin/dashboard');
+    } catch (error) {
+      setError(error instanceof Error ? error.message : 'Login failed. Please try again.');
+      setLoading(false);
     }
-    setLoading(false);
   }
 
   return (
@@ -121,16 +118,6 @@ export default function AdminLoginPage() {
               )}
             </button>
           </form>
-
-          {/* Hint */}
-          <div className='mt-6 rounded-lg border border-white/5 bg-white/[0.03] p-3'>
-            <p className='text-center text-xs text-[#969696]'>
-              Demo credentials:&nbsp;
-              <span className='font-mono text-white'>admin@gloitel.com</span>
-              &nbsp;/&nbsp;
-              <span className='font-mono text-white'>admin123</span>
-            </p>
-          </div>
         </div>
       </div>
     </div>

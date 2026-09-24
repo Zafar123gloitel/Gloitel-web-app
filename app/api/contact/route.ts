@@ -1,3 +1,4 @@
+import { requireAuth } from '@/lib/auth';
 import { MongoClient } from 'mongodb';
 
 const collectionName = 'contact_submissions';
@@ -11,9 +12,50 @@ function getMongoClient() {
     throw new Error('MONGODB_URI is not configured');
   }
 
-  clientPromise ??= new MongoClient(uri).connect();
+  clientPromise ??= new MongoClient(uri).connect().catch(error => {
+    clientPromise = undefined;
+    throw error;
+  });
 
   return clientPromise;
+}
+
+export const runtime = 'nodejs';
+
+export async function GET(request: Request) {
+  try {
+    const unauthorized = await requireAuth(request);
+    if (unauthorized) return unauthorized;
+
+    const params = new URL(request.url).searchParams;
+    const positiveInteger = (value: string | null, fallback: number, max: number) => {
+      const parsed = Number(value);
+      return Number.isInteger(parsed) && parsed > 0 ? Math.min(parsed, max) : fallback;
+    };
+    const page = positiveInteger(params.get('page'), 1, 100000);
+    const limit = positiveInteger(params.get('limit'), 20, 100);
+    const collection = (await getMongoClient()).db().collection(collectionName);
+    const [contacts, total] = await Promise.all([
+      collection
+        .find({})
+        .sort({ createdAt: -1, _id: -1 })
+        .skip((page - 1) * limit)
+        .limit(limit)
+        .toArray(),
+      collection.countDocuments(),
+    ]);
+
+    return Response.json({
+      success: true,
+      data: contacts.map(({ _id, ...contact }) => ({ ...contact, id: _id.toString() })),
+      pagination: { page, limit, total, totalPages: Math.ceil(total / limit) },
+    });
+  } catch {
+    return Response.json(
+      { success: false, message: 'Failed to retrieve contacts' },
+      { status: 500 },
+    );
+  }
 }
 
 export async function POST(request: Request) {

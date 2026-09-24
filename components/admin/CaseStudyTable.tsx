@@ -78,7 +78,7 @@ export default function CaseStudyTable({
       className: 'hidden md:table-cell',
       headerClassName: 'hidden md:table-cell',
       render: post => (
-        <span className='rounded-md bg-[#1447e6]/15 px-2.5 py-1 text-xs font-medium text-[#5b8def]'>
+        <span className='rounded-md bg-[#1447e6]/15 px-2.5 py-1 text-xs font-medium text-nowrap text-[#5b8def]'>
           {post.category || '—'}
         </span>
       ),
@@ -90,7 +90,7 @@ export default function CaseStudyTable({
       className: 'hidden lg:table-cell',
       headerClassName: 'hidden lg:table-cell',
       render: post => (
-        <span className='rounded-md bg-[#0ea5e9]/10 px-2.5 py-1 text-xs font-medium text-[#5cc7ff]'>
+        <span className='rounded-md bg-[#0ea5e9]/10 px-2.5 py-1 text-xs font-medium text-nowrap text-[#5cc7ff]'>
           {post.industry || '—'}
         </span>
       ),

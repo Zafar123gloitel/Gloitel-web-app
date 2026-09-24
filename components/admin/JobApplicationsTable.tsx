@@ -1,6 +1,8 @@
 'use client';
 
-import { Download, Inbox } from 'lucide-react';
+import { Download, Eye, Inbox } from 'lucide-react';
+import Link from 'next/link';
+import DataTable, { type TableColumn } from './DataTable';
 
 export interface JobApplication {
   _id: string;
@@ -11,6 +13,12 @@ export interface JobApplication {
   linkedin?: string;
   message?: string;
   status: string;
+  jobId?: string;
+  jobDetail?: {
+    title: string;
+    department: string;
+    type: string;
+  } | null;
   createdAt?: string;
   creaetdAt?: string;
   resume?: {
@@ -23,7 +31,6 @@ export interface JobApplication {
 
 function formatDate(date?: string) {
   if (!date) return '—';
-
   return new Date(date).toLocaleDateString('en-IN', {
     day: '2-digit',
     month: 'short',
@@ -44,84 +51,134 @@ export default function JobApplicationsTable({ applications }: { applications: J
     );
   }
 
+  const columns: TableColumn<JobApplication>[] = [
+    {
+      key: 'fullName',
+      label: 'Applicant',
+      render: application => (
+        <div>
+          <p className='text-sm font-medium text-white'>{application.fullName}</p>
+          {application.linkedin && (
+            <a
+              href={application.linkedin}
+              target='_blank'
+              rel='noreferrer'
+              className='mt-1 block max-w-48 truncate text-xs text-[#5b8def] hover:underline'
+              onClick={e => e.stopPropagation()}
+            >
+              LinkedIn / Portfolio
+            </a>
+          )}
+        </div>
+      ),
+    },
+    {
+      key: 'email',
+      label: 'Contact',
+      render: application => (
+        <div>
+          <a
+            href={`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
+              application.email,
+            )}&su=${encodeURIComponent('Regarding your job application')}`}
+            target='_blank'
+            rel='noopener noreferrer'
+            className='block text-sm text-[#cccccc] hover:text-white'
+            onClick={e => e.stopPropagation()}
+          >
+            {application.email}
+          </a>
+          <a
+            href={`tel:${application.phone}`}
+            className='mt-1 block text-xs text-[#969696] hover:text-white'
+            onClick={e => e.stopPropagation()}
+          >
+            {application.phone}
+          </a>
+        </div>
+      ),
+    },
+    {
+      key: 'jobDetail',
+      label: 'Applied Role',
+      render: application =>
+        application.jobDetail ? (
+          <div>
+            <p className='text-sm font-medium text-white'>{application.jobDetail.title}</p>
+            <p className='mt-0.5 text-xs text-[#969696]'>
+              {application.jobDetail.department} &middot;{' '}
+              <span className='capitalize'>{application.jobDetail.type.replace('-', ' ')}</span>
+            </p>
+          </div>
+        ) : (
+          <span className='text-xs text-[#555555]'>Not specified</span>
+        ),
+    },
+    {
+      key: 'location',
+      label: 'Location',
+      className: 'text-sm text-[#cccccc]',
+      render: application => application.location,
+    },
+    {
+      key: 'resume',
+      label: 'Resume',
+      render: application =>
+        application.resume?.url ? (
+          <a
+            href={application.resume.url}
+            target='_blank'
+            rel='noreferrer'
+            className='inline-flex items-center gap-1.5 rounded-lg bg-[#1447e6]/15 px-2.5 py-1.5 text-xs font-medium text-[#5b8def] hover:bg-[#1447e6]/25'
+            onClick={e => e.stopPropagation()}
+          >
+            <Download size={13} />
+            {application.resume.fileName || 'View resume'}
+          </a>
+        ) : (
+          <span className='text-xs text-[#666666]'>Unavailable</span>
+        ),
+    },
+    {
+      key: 'status',
+      label: 'Status',
+      render: application => (
+        <span className='inline-flex items-center gap-1.5 rounded-full bg-green-500/15 px-2.5 py-1 text-xs font-medium text-green-400 capitalize'>
+          <span className='h-1.5 w-1.5 rounded-full bg-green-400' />
+          {application.status || 'new'}
+        </span>
+      ),
+    },
+    {
+      key: 'createdAt',
+      label: 'Applied On',
+      className: 'text-sm text-nowrap text-[#969696]',
+      render: application => formatDate(application.createdAt || application.creaetdAt),
+    },
+    {
+      key: '_id',
+      label: '',
+      render: application => (
+        <Link
+          href={`/admin/job-applications/${application._id}`}
+          className='inline-flex items-center gap-1 rounded-lg border border-white/10 px-2.5 py-1.5 text-xs text-[#969696] transition hover:border-white/20 hover:text-white'
+          onClick={e => e.stopPropagation()}
+        >
+          <Eye size={13} />
+          View
+        </Link>
+      ),
+    },
+  ];
+
   return (
-    <div className='overflow-hidden rounded-xl border border-white/10 bg-[#0f0f0f]'>
-      <div className='custom-scrollbar overflow-x-auto'>
-        <table className='w-full min-w-[900px]'>
-          <thead>
-            <tr className='border-b border-white/10 bg-white/5'>
-              {['Applicant', 'Contact', 'Location', 'Resume', 'Status', 'Applied On'].map(
-                heading => (
-                  <th
-                    key={heading}
-                    className='px-4 py-3 text-left text-xs font-medium tracking-wider text-nowrap text-[#969696] uppercase'
-                  >
-                    {heading}
-                  </th>
-                ),
-              )}
-            </tr>
-          </thead>
-          <tbody className='divide-y divide-white/5'>
-            {applications.map(application => (
-              <tr key={application._id} className='transition-colors hover:bg-white/[0.03]'>
-                <td className='px-4 py-4'>
-                  <p className='text-sm font-medium text-white'>{application.fullName}</p>
-                  {application.linkedin && (
-                    <a
-                      href={application.linkedin}
-                      target='_blank'
-                      rel='noreferrer'
-                      className='mt-1 block max-w-48 truncate text-xs text-[#5b8def] hover:underline'
-                    >
-                      LinkedIn / Portfolio
-                    </a>
-                  )}
-                </td>
-                <td className='px-4 py-4'>
-                  <a
-                    href={`mailto:${application.email}`}
-                    className='block text-sm text-[#cccccc] hover:text-white'
-                  >
-                    {application.email}
-                  </a>
-                  <a
-                    href={`tel:${application.phone}`}
-                    className='mt-1 block text-xs text-[#969696] hover:text-white'
-                  >
-                    {application.phone}
-                  </a>
-                </td>
-                <td className='px-4 py-4 text-sm text-[#cccccc]'>{application.location}</td>
-                <td className='px-4 py-4'>
-                  {application.resume?.url ? (
-                    <a
-                      href={application.resume.url}
-                      target='_blank'
-                      rel='noreferrer'
-                      className='inline-flex items-center gap-1.5 rounded-lg bg-[#1447e6]/15 px-2.5 py-1.5 text-xs font-medium text-[#5b8def] transition-colors hover:bg-[#1447e6]/25'
-                    >
-                      <Download size={13} />
-                      {application.resume.fileName || 'View resume'}
-                    </a>
-                  ) : (
-                    <span className='text-xs text-[#666666]'>Unavailable</span>
-                  )}
-                </td>
-                <td className='px-4 py-4'>
-                  <span className='inline-flex items-center gap-1.5 rounded-full bg-green-500/15 px-2.5 py-1 text-xs font-medium text-green-400 capitalize'>
-                    <span className='h-1.5 w-1.5 rounded-full bg-green-400' />
-                    {application.status || 'new'}
-                  </span>
-                </td>
-                <td className='px-4 py-4 text-sm text-nowrap text-[#969696]'>
-                  {formatDate(application.createdAt || application.creaetdAt)}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </div>
+    <DataTable
+      columns={columns}
+      data={applications}
+      rowKey='_id'
+      tableClassName='min-w-[1050px]'
+      pagination={false}
+      emptyMessage='No applications found'
+    />
   );
 }

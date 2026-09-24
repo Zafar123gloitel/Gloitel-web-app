@@ -1,4 +1,5 @@
-import { MongoClient } from 'mongodb';
+import { requireAuth } from '@/lib/auth';
+import { MongoClient, ObjectId } from 'mongodb';
 
 import { CloudinaryService } from '@/lib/cloudinary';
 
@@ -56,9 +57,10 @@ function getPaginationValue(value: string | null, fallback: number, maximum: num
 
 /**
  * Returns job applications in reverse chronological order together with pagination metadata.
- * Server-side administrator authentication should protect this endpoint before production use.
  */
 export async function GET(request: Request) {
+  const unauthorized = await requireAuth(request);
+  if (unauthorized) return unauthorized;
   try {
     const { searchParams } = new URL(request.url);
     const page = getPaginationValue(searchParams.get('page'), 1, 100000);
@@ -77,12 +79,52 @@ export async function GET(request: Request) {
       collection.countDocuments(),
     ]);
 
+    // Collect unique valid jobIds — jobId is stored as an ObjectId in MongoDB,
+    // so we extract the hex string via .toHexString() (for ObjectId instances)
+    // or check if it's already a plain hex string (legacy / manual entries).
+    const getJobIdHex = (raw: unknown): string | null => {
+      if (!raw) return null;
+      // MongoDB ObjectId instance
+      if (raw instanceof ObjectId) return raw.toHexString();
+      // Plain 24-char hex string
+      if (typeof raw === 'string' && /^[a-f\d]{24}$/i.test(raw)) return raw;
+      return null;
+    };
+
+    const uniqueJobIdHexes = [
+      ...new Set(
+        applications.map(a => getJobIdHex(a.jobId)).filter((id): id is string => id !== null),
+      ),
+    ];
+
+    const jobsMap = new Map<string, { title: string; department: string; type: string }>();
+    if (uniqueJobIdHexes.length > 0) {
+      const jobObjectIds = uniqueJobIdHexes.map(id => new ObjectId(id));
+      const jobs = await client
+        .db()
+        .collection('jobs')
+        .find({ _id: { $in: jobObjectIds } }, { projection: { title: 1, department: 1, type: 1 } })
+        .toArray();
+      for (const job of jobs) {
+        jobsMap.set(job._id.toHexString(), {
+          title: job.title as string,
+          department: job.department as string,
+          type: job.type as string,
+        });
+      }
+    }
+
     return Response.json({
       success: true,
-      data: applications.map(application => ({
-        ...application,
-        _id: application._id.toString(),
-      })),
+      data: applications.map(application => {
+        const hexId = getJobIdHex(application.jobId);
+        const jobDetail = hexId ? (jobsMap.get(hexId) ?? null) : null;
+        return {
+          ...application,
+          _id: application._id.toString(),
+          jobDetail,
+        };
+      }),
       pagination: {
         page,
         limit,
@@ -113,6 +155,10 @@ export async function POST(request: Request) {
     const location = getTextField(formData, 'location');
     const linkedin = getTextField(formData, 'linkedin');
     const message = getTextField(formData, 'message');
+    const jobIdRaw = getTextField(formData, 'jobId');
+    // Validate jobId only when provided — it must be a valid 24-char hex ObjectId
+    const jobId =
+      jobIdRaw && /^[a-f\d]{24}$/i.test(jobIdRaw) ? new ObjectId(jobIdRaw) : undefined;
     const resume = formData.get('resume');
 
     if (!fullName || !email || !phone || !location) {
@@ -178,6 +224,7 @@ export async function POST(request: Request) {
         location,
         linkedin,
         message,
+        ...(jobId ? { jobId } : {}),
         resume: {
           url: cloudinaryResult.secure_url,
           publicId: cloudinaryResult.public_id,

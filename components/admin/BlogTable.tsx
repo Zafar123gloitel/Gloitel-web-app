@@ -2,9 +2,11 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { Edit2, Trash2 } from 'lucide-react';
+import { Edit2, Eye, Trash2 } from 'lucide-react';
+import { useState } from 'react';
 
 import DataTable, { TableColumn } from './DataTable';
+import BlogPreview from './BlogPreview';
 
 export interface BlogPost {
   id: string;
@@ -86,6 +88,8 @@ function formatDate(date?: string) {
 }
 
 export default function BlogTable({ posts, onDelete, basePath = '/admin/blog' }: BlogTableProps) {
+  const [previewId, setPreviewId] = useState<string | null>(null);
+  const previewPost = posts.find(post => post.id === previewId);
   const columns: TableColumn<BlogPost>[] = [
     {
       key: 'title',
@@ -176,6 +180,15 @@ export default function BlogTable({ posts, onDelete, basePath = '/admin/blog' }:
       headerClassName: 'text-right',
       render: post => (
         <div className='flex items-center justify-end gap-2'>
+          <button
+            type='button'
+            onClick={() => setPreviewId(post.id)}
+            aria-label={`Preview ${post.title}`}
+            title='Preview article'
+            className='cursor-pointer rounded-lg p-1.5 text-[#969696] transition-colors hover:bg-white/5 hover:text-white'
+          >
+            <Eye size={14} />
+          </button>
           <Link
             href={`${basePath}/${post.id}`}
             className='cursor-pointer rounded-lg p-1.5 text-[#969696] transition-colors hover:bg-white/5 hover:text-white'
@@ -196,6 +209,19 @@ export default function BlogTable({ posts, onDelete, basePath = '/admin/blog' }:
   ];
 
   return (
-    <DataTable columns={columns} data={posts} rowKey='id' emptyMessage='No blog posts found' />
+    <>
+      <DataTable columns={columns} data={posts} rowKey='id' emptyMessage='No blog posts found' />
+      {previewPost && (
+        <BlogPreview
+          isOpen
+          onClose={() => setPreviewId(null)}
+          data={{
+            ...previewPost,
+            authorName: previewPost.author?.name,
+            authorImage: previewPost.author?.image,
+          }}
+        />
+      )}
+    </>
   );
 }

@@ -1,3 +1,4 @@
+import { getJobs } from '@/lib/jobs';
 import {
   AiAgentsIndustries,
   AiExecutionServices,
@@ -8,7 +9,10 @@ import {
   ProductionReadyAi,
 } from '@/components/Career';
 
-const page = () => {
+export const dynamic = 'force-dynamic';
+
+const page = async () => {
+  const jobs = await (await getJobs()).find({ status: 'active' }).sort({ createdAt: -1 }).toArray();
   return (
     <>
       <CareerHero />
@@ -17,7 +21,16 @@ const page = () => {
 
       {/* <AiRoadmapCapabilities /> */}
 
-      <AiExecutionServices />
+      <AiExecutionServices
+        jobs={jobs.map(job => ({
+          id: job._id.toHexString(),
+          title: job.title,
+          department: job.department,
+          location: job.location,
+          type: job.type,
+          description: job.description,
+        }))}
+      />
 
       <DiagnoseBeforeDeploy />
 

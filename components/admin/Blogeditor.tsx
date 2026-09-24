@@ -19,8 +19,6 @@ import {
   Video,
   MoreHorizontal,
   Calendar,
-  UploadCloud,
-  X,
   Eye,
   Send,
 } from 'lucide-react';
@@ -28,6 +26,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useMemo, useRef, useState } from 'react';
+import { ImageUploadCard } from '@/uiComponents/ImageUploadCard';
 
 const CATEGORIES = ['Technology', 'Design', 'Business', 'Engineering', 'Marketing', 'General'];
 const INDUSTRIES = [
@@ -96,7 +95,6 @@ export default function BlogEditor({
   const contentLabel = isCaseStudy ? 'Case Study' : 'Article';
   const sectionLabel = isCaseStudy ? 'Case Studies' : 'Blog / Articles';
   const basePath = isCaseStudy ? '/admin/case-studies' : '/admin/blog';
-  const storageKey = isCaseStudy ? 'admin_case_studies' : 'admin_blogs';
   const sitePrefix = isCaseStudy
     ? 'gloitel.com/resources/case-studies/'
     : 'gloitel.com/resources/articles/';
@@ -388,24 +386,17 @@ export default function BlogEditor({
         settings: initialData?.settings,
       };
 
-      if (isCaseStudy) {
-        const existing: BlogPost[] = JSON.parse(localStorage.getItem(storageKey) ?? '[]');
-        const updated =
-          mode === 'edit' ? existing.map(p => (p.id === post.id ? post : p)) : [post, ...existing];
-        localStorage.setItem(storageKey, JSON.stringify(updated));
-      } else {
-        const response = await fetch(
-          mode === 'edit' ? `/api/blog/${initialData.id}` : '/api/blog',
-          {
-            method: mode === 'edit' ? 'PUT' : 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(post),
-          },
+      const endpoint = isCaseStudy ? '/api/case-studies' : '/api/blog';
+      const response = await fetch(mode === 'edit' ? `${endpoint}/${initialData?.id}` : endpoint, {
+        method: mode === 'edit' ? 'PUT' : 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(post),
+      });
+      const result = await response.json().catch(() => null);
+      if (!response.ok || !result?.success) {
+        throw new Error(
+          result?.message || `Could not save the ${contentLabel.toLowerCase()}. Please try again.`,
         );
-        const result = await response.json().catch(() => null);
-        if (!response.ok || !result?.success) {
-          throw new Error(result?.message || 'Could not save the article. Please try again.');
-        }
       }
       router.push(basePath);
     } catch (error) {
@@ -426,6 +417,18 @@ export default function BlogEditor({
   function handleSaveDraft() {
     persist('draft');
   }
+  const handleImage = (field: 'thumbnail' | 'banner', file: File) => {
+    if (!['image/png', 'image/jpeg', 'image/webp'].includes(file.type)) {
+      return;
+    }
+    if (file.size > 5 * 1024 * 1024) {
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = () => update(field, reader.result as string);
+    reader.readAsDataURL(file);
+  };
 
   const inputClass =
     'w-full rounded-lg border border-white/10 bg-black px-4 py-4 text-sm text-white transition-all outline-none placeholder:text-[#969696]/50 focus:border-[#1447e6]/50 focus:ring-1 focus:ring-[#1447e6]/30';
@@ -502,7 +505,7 @@ export default function BlogEditor({
                     <input
                       value={form.Description}
                       onChange={e => update('Description', e.target.value)}
-                      maxLength={100}
+                      maxLength={500}
                       required
                       placeholder={`Enter a compelling ${contentLabel.toLowerCase()} title...`}
                       className={inputClass}
@@ -527,6 +530,9 @@ export default function BlogEditor({
                       className={`h-full flex-1 border-none ${selectClass}`}
                     >
                       <option value=''>Select a category</option>
+                      {isCaseStudy && form.category && !CATEGORIES.includes(form.category) && (
+                        <option value={form.category}>{form.category}</option>
+                      )}
                       {CATEGORIES.map(c => (
                         <option key={c} value={c}>
                           {c}
@@ -550,6 +556,9 @@ export default function BlogEditor({
                           className={`h-full flex-1 border-none ${selectClass}`}
                         >
                           <option value=''>Select an industry</option>
+                          {form.industry && !INDUSTRIES.includes(form.industry) && (
+                            <option value={form.industry}>{form.industry}</option>
+                          )}
                           {INDUSTRIES.map(industry => (
                             <option key={industry} value={industry}>
                               {industry}
@@ -571,6 +580,9 @@ export default function BlogEditor({
                           className={`h-full flex-1 border-none ${selectClass}`}
                         >
                           <option value=''>Select a service</option>
+                          {form.service && !SERVICES.includes(form.service) && (
+                            <option value={form.service}>{form.service}</option>
+                          )}
                           {SERVICES.map(service => (
                             <option key={service} value={service}>
                               {service}
@@ -851,51 +863,22 @@ export default function BlogEditor({
             </div>
 
             {/* Featured Image */}
-            <div className='rounded-xl border border-white/10 bg-[#080C25] p-5'>
-              <div className='mb-4 flex items-center gap-2'>
-                <ImageIcon size={16} className='text-[#1447e6]' />
-                <h3 className='text-sm font-semibold text-white'>Featured Image</h3>
-              </div>
+            <ImageUploadCard
+              title='Thumbnail'
+              hint='Recommended size: 600 x 400 px'
+              value={form.thumbnail}
+              onFile={file => handleImage('thumbnail', file)}
+              onRemove={() => update('thumbnail', '')}
+            />
 
-              <input
-                ref={fileInputRef}
-                type='file'
-                accept='image/png,image/jpeg,image/webp'
-                onChange={handleImageUpload}
-                className='hidden'
-              />
-
-              <button
-                type='button'
-                onClick={() => fileInputRef.current?.click()}
-                onDragOver={e => e.preventDefault()}
-                onDrop={handleDrop}
-                className='mb-3 flex w-full flex-col items-center justify-center rounded-lg border border-dashed border-white/15 bg-white/5 py-6 text-center transition-colors hover:bg-white/10'
-              >
-                <div className='mb-2 flex h-9 w-9 items-center justify-center rounded-full bg-[#1447e6]'>
-                  <UploadCloud size={16} className='text-white' />
-                </div>
-                <span className='text-sm font-medium text-white'>
-                  Click to upload{' '}
-                  <span className='font-normal text-[#969696]'>or drag and drop</span>
-                </span>
-                <span className='mt-1 text-[11px] text-[#6b6b6b]'>PNG, JPG, WEBP (Max 5MB)</span>
-                <span className='text-[11px] text-[#6b6b6b]'>Recommended size: 1200 x 630 px</span>
-              </button>
-
-              {form.thumbnail && (
-                <div className='relative overflow-hidden rounded-lg border border-white/10'>
-                  <img src={form.thumbnail} alt='' className='h-32 w-full object-cover' />
-                  <button
-                    type='button'
-                    onClick={() => update('thumbnail', '')}
-                    className='absolute top-2 right-2 flex h-6 w-6 items-center justify-center rounded-full bg-black/70 text-white transition-colors hover:bg-black'
-                  >
-                    <X size={13} />
-                  </button>
-                </div>
-              )}
-            </div>
+            <ImageUploadCard
+              title='Banner Image'
+              hint='Recommended size: 1200 x 630 px'
+              value={form?.banner}
+              onFile={file => handleImage('banner', file)}
+              onRemove={() => update('banner', '')}
+              previewClassName='h-40'
+            />
           </div>
         </div>
 

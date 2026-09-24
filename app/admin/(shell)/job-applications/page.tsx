@@ -72,6 +72,8 @@ export default function JobApplicationsPage() {
         application.phone,
         application.location,
         application.status,
+        application.jobDetail?.title,
+        application.jobDetail?.department,
       ].some(value => value?.toLowerCase().includes(query)),
     );
   }, [applications, search]);

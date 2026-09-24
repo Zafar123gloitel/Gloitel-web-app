@@ -7,7 +7,8 @@ the blog in `data`, with MongoDB's ID exposed as `id` for the existing editor.
 | Method      | URL                         | Purpose                                         |
 | ----------- | --------------------------- | ----------------------------------------------- |
 | POST        | `/api/blog`                 | Create a blog                                   |
-| GET         | `/api/blog?page=1&limit=20` | List blogs, including drafts, with pagination   |
+| GET         | `/api/blog?page=1&limit=20` | Public published blogs with pagination          |
+| GET         | `/api/blog?scope=all`       | Admin list, including drafts and scheduled      |
 | GET         | `/api/blog/:id`             | Get one blog                                    |
 | PATCH / PUT | `/api/blog/:id`             | Update supplied fields; preserve omitted fields |
 | DELETE      | `/api/blog/:id`             | Delete a blog                                   |
@@ -45,9 +46,6 @@ to Cloudinary. Send an empty string to remove the thumbnail.
 Errors: `400` invalid fields/JSON/ID, `404` missing blog, `409` duplicate slug,
 `500` database failure. Error bodies contain `success: false` and `message`.
 
-Admin blog create, edit, listing and delete actions use these routes. Existing localStorage
-blogs are not automatically migrated. Case studies still use their separate localStorage flow.
-The current admin login is client-only: these endpoints have no server authentication.
-Add server-side administrator authentication before exposing them publicly.
+Admin blog create, edit, listing and delete actions use these routes. Mutations and `GET ?scope=all` require the admin session cookie set by `/api/auth/login`; public GET lists only published blogs. Existing localStorage blogs are not automatically migrated. Case studies still use their separate localStorage flow.
 
 Run offline API checks with `node --test tests/blog-api.test.js`.

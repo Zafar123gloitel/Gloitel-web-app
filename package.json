@@ -7,6 +7,7 @@
   },
   "scripts": {
     "dev": "next dev",
+    "admin:create": "bash scripts/create-admin.sh",
     "build": "next build",
     "start": "next start",
     "prepare": "husky",
@@ -15,7 +16,8 @@
     "format": "prettier --write .",
     "format-check": "prettier --check .",
     "lint-staged": "lint-staged --concurrent false",
-    "pretty-quick": "pnpx pretty-quick --staged"
+    "pretty-quick": "pnpx pretty-quick --staged",
+    "case-studies:seed": "node scripts/seed-case-studies.js"
   },
   "dependencies": {
     "@studio-freight/lenis": "^1.0.42",

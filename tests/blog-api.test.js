@@ -101,10 +101,14 @@ test('create, read, update, duplicate slug, delete and error responses', async (
     async deleteOne({ _id }) {
       return { deletedCount: Number(rows.delete(String(_id))) };
     },
-    async countDocuments() {
-      return rows.size;
+    async countDocuments(filter = {}) {
+      return [...rows.values()].filter(row => !filter.status || row.status === filter.status)
+        .length;
     },
-    find() {
+    find(filter = {}) {
+      const selected = [...rows.values()].filter(
+        row => !filter.status || row.status === filter.status,
+      );
       return {
         sort() {
           return this;
@@ -116,32 +120,66 @@ test('create, read, update, duplicate slug, delete and error responses', async (
           return this;
         },
         async toArray() {
-          return [...rows.values()];
+          return selected;
         },
       };
     },
   };
-  const deps = { '@/lib/blogs': { ...helpers, getBlogs: async () => collection } };
+  const deps = {
+    '@/lib/blogs': { ...helpers, getBlogs: async () => collection },
+    '@/lib/auth': {
+      requireAuth: async request =>
+        request.headers.get('cookie') === 'gloitel_admin_session=test-admin'
+          ? null
+          : Response.json(
+              { success: false, message: 'Valid admin session required' },
+              { status: 401 },
+            ),
+    },
+  };
   const root = load('app/api/blog/route.ts', deps);
   const item = load('app/api/blog/[id]/route.ts', deps);
   const request = body =>
-    new Request('http://localhost/api/blog', { method: 'POST', body: JSON.stringify(body) });
+    new Request('http://localhost/api/blog', {
+      method: 'POST',
+      headers: { cookie: 'gloitel_admin_session=test-admin' },
+      body: JSON.stringify(body),
+    });
+  assert.equal(
+    (
+      await root.POST(
+        new Request('http://localhost/api/blog', { method: 'POST', body: JSON.stringify(valid) }),
+      )
+    ).status,
+    401,
+  );
   const created = await root.POST(request(valid));
   assert.equal(created.status, 201);
   const { data } = await created.json();
   const context = { params: Promise.resolve({ id: data.id }) };
   assert.equal((await root.POST(request(valid))).status, 409);
+  const publicDraftList = await (await root.GET(new Request('http://localhost/api/blog'))).json();
+  assert.equal(publicDraftList.pagination.total, 0);
+  assert.equal((await root.GET(new Request('http://localhost/api/blog?scope=all'))).status, 401);
   assert.equal((await item.GET(request({}), context)).status, 200);
   const updated = await item.PATCH(request({ title: 'Updated', status: 'published' }), context);
   assert.equal(updated.status, 200);
   assert.equal((await updated.json()).data.content, valid.content);
   assert.equal((await item.PUT(request({ content: '' }), context)).status, 400);
   const listing = await (
-    await root.GET(new Request('http://localhost/api/blog?page=0&limit=999'))
+    await root.GET(
+      new Request('http://localhost/api/blog?scope=all&page=0&limit=999', {
+        headers: { cookie: 'gloitel_admin_session=test-admin' },
+      }),
+    )
   ).json();
   assert.equal(listing.pagination.page, 1);
   assert.equal(listing.pagination.limit, 100);
   assert.equal(listing.pagination.total, 1);
+  const publicPublishedList = await (
+    await root.GET(new Request('http://localhost/api/blog'))
+  ).json();
+  assert.equal(publicPublishedList.data.length, 1);
   assert.equal((await item.DELETE(request({}), context)).status, 200);
   assert.equal((await item.GET(request({}), context)).status, 404);
   assert.equal((await item.PATCH(request({ title: 'Missing' }), context)).status, 404);
@@ -151,11 +189,19 @@ test('create, read, update, duplicate slug, delete and error responses', async (
     400,
   );
   assert.equal(
-    (await root.POST(new Request('http://localhost/api/blog', { method: 'POST', body: '{' })))
-      .status,
+    (
+      await root.POST(
+        new Request('http://localhost/api/blog', {
+          method: 'POST',
+          headers: { cookie: 'gloitel_admin_session=test-admin' },
+          body: '{',
+        }),
+      )
+    ).status,
     400,
   );
   const failing = load('app/api/blog/route.ts', {
+    '@/lib/auth': deps['@/lib/auth'],
     '@/lib/blogs': {
       ...helpers,
       getBlogs: async () => {

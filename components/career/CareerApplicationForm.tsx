@@ -48,7 +48,13 @@ const UploadCloudIcon = () => (
   </svg>
 );
 
-export default function CareerApplicationForm({ compact = false }: { compact?: boolean }) {
+export default function CareerApplicationForm({
+  compact = false,
+  jobId,
+}: {
+  compact?: boolean;
+  jobId?: string;
+}) {
   const [formData, setFormData] = useState<FormState>(initialState);
   const [resume, setResume] = useState<File | null>(null);
   const [fileError, setFileError] = useState('');
@@ -149,6 +155,7 @@ export default function CareerApplicationForm({ compact = false }: { compact?: b
       payload.append('linkedin', formData.linkedin);
       payload.append('message', formData.message);
       payload.append('resume', resume);
+      if (jobId) payload.append('jobId', jobId);
 
       const response = await fetch('/api/career/apply', {
         method: 'POST',

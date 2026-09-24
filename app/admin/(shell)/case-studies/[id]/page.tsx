@@ -5,47 +5,59 @@ import type { BlogPost } from '@/components/admin/BlogTable';
 import { useParams, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
-const STORAGE_KEY = 'admin_case_studies';
-
 export default function CaseStudyEditorPage() {
   const params = useParams<{ id: string }>();
   const router = useRouter();
   const isNew = params.id === 'new';
   const [caseStudy, setCaseStudy] = useState<BlogPost | null>(null);
   const [isLoading, setIsLoading] = useState(!isNew);
-  const [notFound, setNotFound] = useState(false);
+  const [error, setError] = useState('');
+  const [retry, setRetry] = useState(0);
 
   useEffect(() => {
     if (isNew) return;
-
-    try {
-      const caseStudies: BlogPost[] = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? '[]');
-      const storedCaseStudy = caseStudies.find(item => item.id === params.id) ?? null;
-
-      if (storedCaseStudy) {
-        setCaseStudy(storedCaseStudy);
-      } else {
-        setNotFound(true);
+    const controller = new AbortController();
+    setIsLoading(true);
+    setError('');
+    setCaseStudy(null);
+    async function load() {
+      try {
+        const response = await fetch(`/api/case-studies/${params.id}`, {
+          cache: 'no-store',
+          signal: controller.signal,
+        });
+        const result = await response.json().catch(() => null);
+        if (!response.ok || !result?.success || !result.data)
+          throw new Error(result?.message || 'Could not load the case study.');
+        if (!controller.signal.aborted) setCaseStudy(result.data);
+      } catch (error) {
+        if (!controller.signal.aborted)
+          setError(error instanceof Error ? error.message : 'Could not load the case study.');
+      } finally {
+        if (!controller.signal.aborted) setIsLoading(false);
       }
-    } catch {
-      setNotFound(true);
-    } finally {
-      setIsLoading(false);
     }
-  }, [isNew, params.id]);
+    void load();
+    return () => controller.abort();
+  }, [isNew, params.id, retry]);
 
   if (isNew) {
     return <BlogEditor mode='create' contentType='case-study' />;
   }
 
-  if (isLoading) {
+  if (isLoading || (caseStudy && caseStudy.id !== params.id)) {
     return <p className='text-sm text-[#969696]'>Loading...</p>;
   }
 
-  if (notFound || !caseStudy) {
+  if (error || !caseStudy) {
     return (
       <div className='space-y-3 text-center'>
-        <p className='text-sm text-white'>Case study not found.</p>
+        <p role='alert' className='text-sm text-white'>
+          {error || 'Case study not found.'}
+        </p>
+        <button onClick={() => setRetry(value => value + 1)} className='text-sm text-[#5b8def]'>
+          Try again
+        </button>
         <button
           type='button'
           onClick={() => router.push('/admin/case-studies')}
@@ -57,5 +69,7 @@ export default function CaseStudyEditorPage() {
     );
   }
 
-  return <BlogEditor mode='edit' initialData={caseStudy} contentType='case-study' />;
+  return (
+    <BlogEditor key={caseStudy.id} mode='edit' initialData={caseStudy} contentType='case-study' />
+  );
 }

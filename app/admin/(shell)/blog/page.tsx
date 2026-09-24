@@ -52,7 +52,7 @@ export default function BlogPage() {
         let page = 1;
         let totalPages = 1;
         do {
-          const response = await fetch(`/api/blog?page=${page}&limit=100`, {
+          const response = await fetch(`/api/blog?scope=all&page=${page}&limit=100`, {
             cache: 'no-store',
             signal: controller.signal,
           });
@@ -79,7 +79,9 @@ export default function BlogPage() {
   async function handleDelete(id: string) {
     setError('');
     try {
-      const response = await fetch(`/api/blog/${id}`, { method: 'DELETE' });
+      const response = await fetch(`/api/blog/${id}`, {
+        method: 'DELETE',
+      });
       const result = await response.json().catch(() => null);
       if (!response.ok || !result?.success) {
         throw new Error(result?.message || 'Could not delete the article.');

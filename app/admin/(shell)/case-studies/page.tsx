@@ -7,8 +7,6 @@ import { BookOpen, CheckCircle2, Edit2, Plus } from 'lucide-react';
 import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
 
-const STORAGE_KEY = 'admin_case_studies';
-
 function StatCard({
   icon,
   label,
@@ -36,19 +34,54 @@ function StatCard({
 export default function CaseStudiesPage() {
   const [caseStudies, setCaseStudies] = useState<BlogPost[]>([]);
   const { search } = useAdminSearch();
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
+  const [retry, setRetry] = useState(0);
 
   useEffect(() => {
-    try {
-      setCaseStudies(JSON.parse(localStorage.getItem(STORAGE_KEY) ?? '[]'));
-    } catch {
-      setCaseStudies([]);
+    const controller = new AbortController();
+    setLoading(true);
+    setError('');
+    async function load() {
+      try {
+        const studies: BlogPost[] = [];
+        let page = 1;
+        let totalPages = 1;
+        do {
+          const response = await fetch(`/api/case-studies?scope=all&page=${page}&limit=100`, {
+            cache: 'no-store',
+            signal: controller.signal,
+          });
+          const result = await response.json().catch(() => null);
+          if (!response.ok || !result?.success || !Array.isArray(result.data))
+            throw new Error(result?.message || 'Could not load case studies.');
+          studies.push(...result.data);
+          totalPages = result.pagination.totalPages;
+          page++;
+        } while (page <= totalPages);
+        if (!controller.signal.aborted) setCaseStudies(studies);
+      } catch (error) {
+        if (!controller.signal.aborted)
+          setError(error instanceof Error ? error.message : 'Could not load case studies.');
+      } finally {
+        if (!controller.signal.aborted) setLoading(false);
+      }
     }
-  }, []);
+    void load();
+    return () => controller.abort();
+  }, [retry]);
 
-  function handleDelete(id: string) {
-    const updatedCaseStudies = caseStudies.filter(caseStudy => caseStudy.id !== id);
-    setCaseStudies(updatedCaseStudies);
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedCaseStudies));
+  async function handleDelete(id: string) {
+    setError('');
+    try {
+      const response = await fetch(`/api/case-studies/${id}`, { method: 'DELETE' });
+      const result = await response.json().catch(() => null);
+      if (!response.ok || !result?.success)
+        throw new Error(result?.message || 'Could not delete the case study.');
+      setCaseStudies(current => current.filter(study => study.id !== id));
+    } catch (error) {
+      setError(error instanceof Error ? error.message : 'Could not delete the case study.');
+    }
   }
 
   const filteredCaseStudies = useMemo(() => {
@@ -117,11 +150,25 @@ export default function CaseStudiesPage() {
         />
       </div>
 
-      <CaseStudyTable
-        posts={filteredCaseStudies}
-        onDelete={handleDelete}
-        basePath='/admin/case-studies'
-      />
+      {error && (
+        <div role='alert' className='space-y-2 text-sm text-red-400'>
+          <p>{error}</p>
+          <button onClick={() => setRetry(value => value + 1)} className='text-[#5b8def]'>
+            Reload case studies
+          </button>
+        </div>
+      )}
+      {loading ? (
+        <p role='status' className='text-sm text-[#969696]'>
+          Loading case studies...
+        </p>
+      ) : (
+        <CaseStudyTable
+          posts={filteredCaseStudies}
+          onDelete={handleDelete}
+          basePath='/admin/case-studies'
+        />
+      )}
     </div>
   );
 }

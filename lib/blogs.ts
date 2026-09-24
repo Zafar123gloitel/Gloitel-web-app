@@ -176,7 +176,8 @@ export function blogError(error: unknown) {
     return Response.json(
       {
         success: false,
-        message: error instanceof SyntaxError ? 'Invalid JSON body' : error.message,
+        message:
+          error instanceof SyntaxError ? 'Invalid JSON body' : (error as BlogInputError).message,
       },
       { status: 400 },
     );

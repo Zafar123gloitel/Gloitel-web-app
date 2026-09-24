@@ -1,3 +1,4 @@
+import { requireAuth } from '@/lib/auth';
 import { blogError, blogId, getBlogs, serializeBlog, validateBlog } from '@/lib/blogs';
 
 export const runtime = 'nodejs';
@@ -6,7 +7,9 @@ type Context = { params: Promise<{ id: string }> };
 const notFound = () =>
   Response.json({ success: false, message: 'Blog not found' }, { status: 404 });
 
-export async function GET(_request: Request, context: Context) {
+export async function GET(request: Request, context: Context) {
+  const unauthorized = await requireAuth(request);
+  if (unauthorized) return unauthorized;
   try {
     const _id = blogId((await context.params).id);
     const blog = await (await getBlogs()).findOne({ _id });
@@ -18,6 +21,8 @@ export async function GET(_request: Request, context: Context) {
 
 /** Both update methods accept editor fields; omitted fields remain unchanged. */
 export async function PATCH(request: Request, context: Context) {
+  const unauthorized = await requireAuth(request);
+  if (unauthorized) return unauthorized;
   try {
     const _id = blogId((await context.params).id);
     const changes = validateBlog(await request.json(), true);
@@ -44,7 +49,9 @@ export async function PATCH(request: Request, context: Context) {
 
 export const PUT = PATCH;
 
-export async function DELETE(_request: Request, context: Context) {
+export async function DELETE(request: Request, context: Context) {
+  const unauthorized = await requireAuth(request);
+  if (unauthorized) return unauthorized;
   try {
     const _id = blogId((await context.params).id);
     const { deletedCount } = await (await getBlogs()).deleteOne({ _id });

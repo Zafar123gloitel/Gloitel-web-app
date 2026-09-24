@@ -2,16 +2,75 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import data from './data.json';
+import { getBlogs } from '@/lib/blogs';
+import BlogContentMarkdown from '@/components/BlogContentMarkdown';
+
+export const dynamic = 'force-dynamic';
+
+type BlogDetail = {
+  slug: string;
+  title: string;
+  category: string;
+  readTime: string;
+  author: string;
+  authorRole: string;
+  authorImage: string;
+  date: string;
+  image: string;
+  href: string;
+  intro: string;
+  sections: { heading: string; body: string; list?: string[]; image?: string }[];
+  keyTakeaway: string;
+};
+
+const fallbackImage =
+  'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788869098/Gloitel/Resource%20F/Blogs_Articles_h7tdgp.png';
+const fallbackAuthorImage =
+  'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788869255/Gloitel/Profile%20G/ChatGPT_Image_Jun_9_2026_07_06_16_PM_iabgqm.png';
 
 export default async function BlogDetailsPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const blog = data.blogs.find(b => b.slug === slug);
+  const collection = await getBlogs();
+  const dbBlog = await collection.findOne({ slug, status: 'published' });
+  const blog: BlogDetail | undefined = dbBlog
+    ? {
+        slug: String(dbBlog.slug),
+        title: String(dbBlog.title),
+        category: String(dbBlog.category || 'Blog'),
+        readTime: `${Math.max(
+          1,
+          Math.ceil(
+            String(dbBlog.content || '')
+              .trim()
+              .split(/\s+/)
+              .filter(Boolean).length / 200,
+          ),
+        )} Min Read`,
+        author: String((dbBlog.author as { name?: string } | undefined)?.name || 'Gloitel'),
+        authorRole: 'Author',
+        authorImage: String(
+          (dbBlog.author as { image?: string } | undefined)?.image || fallbackAuthorImage,
+        ),
+        date: dbBlog.publishDate
+          ? new Date(String(dbBlog.publishDate)).toLocaleDateString('en-US', {
+              month: 'short',
+              day: '2-digit',
+              year: 'numeric',
+            })
+          : '',
+        image: String(dbBlog.thumbnail || fallbackImage),
+        href: `/resources/blog/${slug}`,
+        intro: String(dbBlog.excerpt || dbBlog.Description || ''),
+        sections: [{ heading: '', body: String(dbBlog.content || '') }],
+        keyTakeaway: String(dbBlog.excerpt || ''),
+      }
+    : (data.blogs.find(b => b.slug === slug) as BlogDetail | undefined);
 
   if (!blog) {
     notFound();
   }
 
-  const relatedArticles = data.blogs.filter(b => b.slug !== slug).slice(0, 3);
+  const relatedArticles = dbBlog ? [] : data.blogs.filter(b => b.slug !== slug).slice(0, 3);
 
   return (
     <main className='min-h-screen bg-black px-5 pt-28 pb-24 text-white sm:px-8 lg:px-12'>
@@ -86,41 +145,53 @@ export default async function BlogDetailsPage({ params }: { params: Promise<{ sl
         <p className='mt-5 max-w-4xl text-sm leading-6 text-gray-400'>{blog.intro}</p>
 
         {/* Body */}
-        <div className='prose prose-invert prose-headings:font-medium prose-headings:text-white prose-p:text-sm prose-p:leading-6 prose-p:text-gray-400 prose-li:text-sm prose-li:text-gray-400 mt-10 max-w-4xl'>
-          {blog.sections.map((section, index) => (
-            <div key={index}>
-              <h2 className='mt-7 max-w-4xl text-xl leading-tight font-medium sm:text-2xl'>
-                {section.heading}
-              </h2>
-              <p className='mt-5 max-w-4xl text-sm leading-6 text-gray-400'>{section.body}</p>
-              {section.list && (
-                <ul className='list-disc space-y-2 pl-5 marker:text-blue-400'>
-                  {section.list.map((item, itemIndex) => (
-                    <li key={itemIndex} className='pl-1'>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              )}
-              {section?.image && (
-                <div className='not-prose relative my-6 aspect-2/1 w-full max-w-xl overflow-hidden rounded-xl border border-white/10'>
-                  <Image
-                    src={section?.image}
-                    alt={section.heading}
-                    fill
-                    unoptimized
-                    className='object-cover'
-                  />
-                </div>
-              )}
-            </div>
-          ))}
+        {dbBlog ? (
+          <div className='mt-10 max-w-4xl'>
+            <BlogContentMarkdown content={String(dbBlog.content || '')} />
+          </div>
+        ) : (
+          <div className='prose prose-invert prose-headings:font-medium prose-headings:text-white prose-p:text-sm prose-p:leading-6 prose-p:text-gray-400 prose-li:text-sm prose-li:text-gray-400 mt-10 max-w-4xl'>
+            {blog.sections.map((section, index) => (
+              <div key={index}>
+                {section.heading && (
+                  <h2 className='mt-7 max-w-4xl text-xl leading-tight font-medium sm:text-2xl'>
+                    {section.heading}
+                  </h2>
+                )}
+                <p className='mt-5 max-w-4xl text-sm leading-6 text-gray-400'>{section.body}</p>
+                {section.list && (
+                  <ul className='list-disc space-y-2 pl-5 marker:text-blue-400'>
+                    {section.list.map((item, itemIndex) => (
+                      <li key={itemIndex} className='pl-1'>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                {section?.image && (
+                  <div className='not-prose relative my-6 aspect-2/1 w-full max-w-xl overflow-hidden rounded-xl border border-white/10'>
+                    <Image
+                      src={section?.image}
+                      alt={section.heading}
+                      fill
+                      unoptimized
+                      className='object-cover'
+                    />
+                  </div>
+                )}
+              </div>
+            ))}
 
-          <h2 className='mt-7 max-w-4xl text-xl leading-tight font-medium sm:text-2xl'>
-            Key Takeaway
-          </h2>
-          <p className='mt-5 max-w-4xl text-sm leading-6 text-gray-400'>{blog.keyTakeaway}</p>
-        </div>
+            {blog.keyTakeaway && (
+              <>
+                <h2 className='mt-7 max-w-4xl text-xl leading-tight font-medium sm:text-2xl'>
+                  Key Takeaway
+                </h2>
+                <p className='mt-5 max-w-4xl text-sm leading-6 text-gray-400'>{blog.keyTakeaway}</p>
+              </>
+            )}
+          </div>
+        )}
 
         {/* Related articles */}
         {relatedArticles.length > 0 && (

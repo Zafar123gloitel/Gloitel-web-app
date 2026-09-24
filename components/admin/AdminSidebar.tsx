@@ -11,6 +11,7 @@ import {
   ClipboardList,
   LayoutDashboard,
   LogOut,
+  Mail,
   Menu,
 } from 'lucide-react';
 import Image from 'next/image';
@@ -43,9 +44,13 @@ export default function AdminSidebar() {
   const [resourcesOpen, setResourcesOpen] = useState(isResourceRoute);
   const [careerOpen, setCareerOpen] = useState(isCareerRoute);
 
-  function handleLogout() {
-    logout();
-    router.push('/admin/login');
+  async function handleLogout() {
+    try {
+      await logout();
+      router.replace('/admin/login');
+    } catch {
+      // Keep the admin screen visible if the server could not clear the session.
+    }
   }
 
   return (
@@ -228,6 +233,24 @@ export default function AdminSidebar() {
               })}
             </div>
           )}
+
+          <Link
+            href='/admin/contacts'
+            className={`flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors ${
+              pathname?.startsWith('/admin/contacts')
+                ? 'bg-[#1447e6]/20 text-white'
+                : 'text-[#969696] hover:bg-white/5 hover:text-white'
+            } ${collapsed ? 'justify-center' : ''}`}
+            title={collapsed ? 'Contacts' : ''}
+          >
+            <Mail
+              size={18}
+              className={
+                pathname?.startsWith('/admin/contacts') ? 'text-[#1447e6]' : 'text-current'
+              }
+            />
+            {!collapsed && <span>Contacts</span>}
+          </Link>
 
           {collapsed && (
             <div className='space-y-1'>

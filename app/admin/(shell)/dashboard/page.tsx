@@ -2,7 +2,7 @@
 
 import JobApplicationsTable, { type JobApplication } from '@/components/admin/JobApplicationsTable';
 import StatsCard from '@/components/admin/StatsCard';
-import { ArrowRight, BookOpen, Briefcase, Clock, Users } from 'lucide-react';
+import { ArrowRight, BookOpen, Briefcase, Clock, Mail, Users } from 'lucide-react';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
@@ -10,21 +10,22 @@ export default function DashboardPage() {
   const [blogCount, setBlogCount] = useState(0);
   const [careerCount, setCareerCount] = useState(0);
   const [applicationsCount, setApplicationsCount] = useState(0);
+  const [contactsCount, setContactsCount] = useState(0);
   const [recentApplications, setRecentApplications] = useState<JobApplication[]>([]);
 
   useEffect(() => {
     try {
       const blogs = JSON.parse(localStorage.getItem('admin_blogs') ?? '[]');
-      const jobs = JSON.parse(localStorage.getItem('admin_jobs') ?? '[]');
       setBlogCount(Array.isArray(blogs) ? blogs.length : 0);
-      setCareerCount(Array.isArray(jobs) ? jobs.length : 0);
     } catch {
       // ignore
     }
 
     async function loadRecentApplications() {
       try {
-        const response = await fetch('/api/career/apply?page=1&limit=5', { cache: 'no-store' });
+        const response = await fetch('/api/career/apply?page=1&limit=5', {
+          cache: 'no-store',
+        });
         const result = await response.json();
 
         if (!response.ok || !result?.success) {
@@ -39,7 +40,31 @@ export default function DashboardPage() {
       }
     }
 
+    async function loadContactsCount() {
+      try {
+        const response = await fetch('/api/contact?page=1&limit=1', { cache: 'no-store' });
+        const result = await response.json();
+        if (response.ok && result?.success) {
+          setContactsCount(result.pagination?.total ?? 0);
+        }
+      } catch {
+        setContactsCount(0);
+      }
+    }
+
+    async function loadJobsCount() {
+      try {
+        const response = await fetch('/api/jobs?scope=all&page=1&limit=1', { cache: 'no-store' });
+        const result = await response.json();
+        if (response.ok && result?.success) setCareerCount(result.pagination?.total ?? 0);
+      } catch {
+        setCareerCount(0);
+      }
+    }
+
+    void loadJobsCount();
     void loadRecentApplications();
+    void loadContactsCount();
   }, []);
 
   const quickActions = [
@@ -169,6 +194,27 @@ export default function DashboardPage() {
             </div>
             <Link
               href='/admin/career'
+              className='flex items-center gap-1.5 rounded-lg bg-white/5 px-3 py-1.5 text-xs font-medium text-white transition-colors hover:bg-white/10'
+            >
+              View all <ArrowRight size={12} />
+            </Link>
+          </div>
+
+          {/* Contacts card */}
+          <div className='flex items-center justify-between rounded-xl border border-white/10 bg-[#111111] p-5 transition-all hover:border-white/20'>
+            <div className='flex items-center gap-4'>
+              <div className='flex h-10 w-10 items-center justify-center rounded-xl bg-[#d97706]/15'>
+                <Mail size={18} className='text-[#d97706]' />
+              </div>
+              <div>
+                <p className='text-sm font-semibold text-white'>Contacts</p>
+                <p className='text-xs text-[#969696]'>
+                  {contactsCount} submission{contactsCount !== 1 ? 's' : ''}
+                </p>
+              </div>
+            </div>
+            <Link
+              href='/admin/contacts'
               className='flex items-center gap-1.5 rounded-lg bg-white/5 px-3 py-1.5 text-xs font-medium text-white transition-colors hover:bg-white/10'
             >
               View all <ArrowRight size={12} />

@@ -3,116 +3,86 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRightIcon, SearchIcon } from '@/components/SvgIcon';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Execution_Plan from '@/uiComponents/Execution_Plan';
 import { resourcesCTAData } from '../data';
 
-const caseStudies = [
-  {
-    id: 'experteeth-dental-clinic',
-    category: 'Healthcare',
-    title: 'Experteeth Dental Clinic',
-    description:
-      'A modern dental website designed to improve patient trust, treatment discovery, and appointment booking.',
-    image:
-      'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788869099/Gloitel/Resource%20F/Case_Studies_aueuxl.png',
-    href: '/resources/case-studies/experteeth-dental-clinic',
-  },
-  {
-    id: 'pathshala-academy',
-    category: 'Education',
-    title: 'Pathshala Academy',
-    description:
-      'A comprehensive learning platform to simplify class management and enhance student engagement.',
-    image:
-      'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785498263/Gloitel/what-we-do/financial-services_oba4c7.png',
-    href: '/resources/case-studies/pathshala-academy',
-  },
-  {
-    id: 'gloitel-care',
-    category: 'Healthcare',
-    title: 'Gloitel Care',
-    description:
-      'A centralized healthcare management platform designed to streamline Mobile Medical Unit operations.',
-    image:
-      'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788869098/Gloitel/Resource%20F/Blogs_Articles_h7tdgp.png',
-    href: '/resources/case-studies/gloitel-care',
-  },
-  {
-    id: 'nashamukti',
-    category: 'Mobile App',
-    title: 'NashaMukti',
-    description:
-      'A productivity platform to help teams manage tasks, collaborate, and deliver projects faster.',
-    image:
-      'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788869099/Gloitel/Resource%20F/Case_Studies_aueuxl.png',
-    href: '/resources/case-studies/nashamukti',
-  },
-  {
-    id: 'bookmyq',
-    category: 'SaaS',
-    title: 'BookMyQ',
-    description:
-      'A comprehensive, highly scalable B2B SaaS platform that streamlines complex appointment scheduling, resource allocation, and daily operations.',
-    image:
-      'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785498263/Gloitel/what-we-do/financial-services_oba4c7.png',
-    href: '/resources/case-studies/bookmyq',
-  },
-  {
-    id: 'smart-attendance',
-    category: 'Enterprise',
-    title: 'Smart Attendance',
-    description:
-      'A comprehensive, geo-aware attendance and HR management platform built to streamline workforce operations.',
-    image:
-      'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788869098/Gloitel/Resource%20F/Blogs_Articles_h7tdgp.png',
-    href: '/resources/case-studies/smart-attendance',
-  },
-  {
-    id: 'smart-task',
-    category: 'SaaS',
-    title: 'Smart Task',
-    description:
-      'A comprehensive, Apple-inspired business management and employee collaboration platform.',
-    image:
-      'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788869099/Gloitel/Resource%20F/Case_Studies_aueuxl.png',
-    href: '/resources/case-studies/smart-task',
-  },
-  {
-    id: 'gloitel-smart-tracking',
-    category: 'SaaS',
-    title: 'Gloitel Smart Tracking',
-    description:
-      'A comprehensive real-time fleet and workforce tracking platform that delivers actionable insights and operational visibility.',
-    image:
-      'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785498263/Gloitel/what-we-do/financial-services_oba4c7.png',
-    href: '/resources/case-studies/gloitel-smart-tracking',
-  },
-  {
-    id: 'skillmentor',
-    category: 'Education',
-    title: 'SkillMentor',
-    description:
-      'An online learning platform focused on career growth with expert-led courses and certifications.',
-    image:
-      'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788869098/Gloitel/Resource%20F/Blogs_Articles_h7tdgp.png',
-    href: '/resources/case-studies/skillmentor',
-  },
-];
+type CaseStudyCard = {
+  id: string;
+  category: string;
+  title: string;
+  description: string;
+  image: string;
+  href: string;
+};
 
-const FILTERS = [
-  'All Projects',
-  'Healthcare',
-  'Education',
-  'Enterprise',
-  'SaaS',
-  'Mobile App',
-  'Web Platform',
-];
+const fallbackImage =
+  'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788869099/Gloitel/Resource%20F/Case_Studies_aueuxl.png';
 
 export default function CaseStudiesPage() {
+  const [caseStudies, setCaseStudies] = useState<CaseStudyCard[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
+  const [retry, setRetry] = useState(0);
   const [query, setQuery] = useState('');
   const [activeFilter, setActiveFilter] = useState('All Projects');
+
+  useEffect(() => {
+    const controller = new AbortController();
+    setLoading(true);
+    setError('');
+    async function load() {
+      try {
+        const studies: CaseStudyCard[] = [];
+        let page = 1;
+        let totalPages = 1;
+        do {
+          const response = await fetch(`/api/case-studies?page=${page}&limit=100`, {
+            cache: 'no-store',
+            signal: controller.signal,
+          });
+          const result = await response.json().catch(() => null);
+          if (!response.ok || !result?.success || !Array.isArray(result.data))
+            throw new Error(result?.message || 'Could not load case studies.');
+          studies.push(
+            ...result.data.map(
+              (study: {
+                id: string;
+                slug: string;
+                category?: string;
+                title: string;
+                excerpt?: string;
+                Description?: string;
+                thumbnail?: string;
+              }) => ({
+                id: study.id,
+                category: study.category || '',
+                title: study.title,
+                description: study.excerpt || study.Description || '',
+                image: study.thumbnail || fallbackImage,
+                href: `/resources/case-studies/${study.slug}`,
+              }),
+            ),
+          );
+          totalPages = result.pagination.totalPages;
+          page++;
+        } while (page <= totalPages);
+        if (!controller.signal.aborted) setCaseStudies(studies);
+      } catch (error) {
+        if (!controller.signal.aborted)
+          setError(error instanceof Error ? error.message : 'Could not load case studies.');
+      } finally {
+        if (!controller.signal.aborted) setLoading(false);
+      }
+    }
+    void load();
+    return () => controller.abort();
+  }, [retry]);
+
+  const filters = useMemo(
+    () => ['All Projects', ...new Set(caseStudies.map(study => study.category).filter(Boolean))],
+    [caseStudies],
+  );
 
   const filteredCaseStudies = useMemo(() => {
     let items = caseStudies;
@@ -132,7 +102,7 @@ export default function CaseStudiesPage() {
     }
 
     return items;
-  }, [query, activeFilter]);
+  }, [caseStudies, query, activeFilter]);
 
   return (
     <main className='relative min-h-screen text-white'>
@@ -188,7 +158,7 @@ export default function CaseStudiesPage() {
 
         {/* Filter pills */}
         <div className='mx-auto mt-8 flex max-w-4xl flex-wrap items-center justify-center gap-3'>
-          {FILTERS.map(filter => {
+          {filters.map(filter => {
             const active = filter === activeFilter;
             return (
               <button
@@ -210,8 +180,21 @@ export default function CaseStudiesPage() {
 
       {/* Grid */}
       <section className='relative mx-auto max-w-6xl px-5 pb-20 sm:px-8 lg:px-12'>
+        {error && (
+          <div role='alert' className='mb-6 text-sm text-red-400'>
+            {error}{' '}
+            <button onClick={() => setRetry(value => value + 1)} className='text-[#5b8def]'>
+              Try again
+            </button>
+          </div>
+        )}
+        {loading && (
+          <p role='status' className='mb-6 text-sm text-gray-400'>
+            Loading case studies...
+          </p>
+        )}
         <div className='grid gap-6 md:grid-cols-2 xl:grid-cols-3'>
-          {filteredCaseStudies.length > 0 ? (
+          {!loading && filteredCaseStudies.length > 0 ? (
             filteredCaseStudies.map(item => (
               <Link
                 key={item.id}
@@ -242,11 +225,11 @@ export default function CaseStudiesPage() {
                 </div>
               </Link>
             ))
-          ) : (
+          ) : !loading && !error ? (
             <div className='col-span-full rounded-2xl border border-dashed border-white/10 bg-white/[0.02] px-6 py-12 text-center text-gray-400'>
               No case studies found for this search.
             </div>
-          )}
+          ) : null}
         </div>
       </section>
 
