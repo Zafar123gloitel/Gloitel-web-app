@@ -1,31 +1,18 @@
-// Admin authentication helper
-// Simple localStorage-based auth for demo admin panel
-
-export const ADMIN_CREDENTIALS = {
-  email: 'admin@gloitel.com',
-  password: 'admin123',
-};
-
-const TOKEN_KEY = 'gloitel_admin_token';
-const TOKEN_VALUE = 'gloitel_admin_authenticated';
-
-export function login(email: string, password: string): boolean {
-  if (email === ADMIN_CREDENTIALS.email && password === ADMIN_CREDENTIALS.password) {
-    if (typeof window !== 'undefined') {
-      localStorage.setItem(TOKEN_KEY, TOKEN_VALUE);
-    }
-    return true;
-  }
-  return false;
+export async function login(email: string, password: string): Promise<void> {
+  const response = await fetch('/api/auth/login', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email, password }),
+  });
+  const result = await response.json().catch(() => null);
+  if (response.status === 401 || response.status === 403)
+    throw new Error('Invalid admin email or password.');
+  if (!response.ok) throw new Error('Login is unavailable. Please try again.');
+  if (result?.data?.user?.role !== 'admin')
+    throw new Error('This account does not have admin access.');
 }
 
-export function logout(): void {
-  if (typeof window !== 'undefined') {
-    localStorage.removeItem(TOKEN_KEY);
-  }
-}
-
-export function isAuthenticated(): boolean {
-  if (typeof window === 'undefined') return false;
-  return localStorage.getItem(TOKEN_KEY) === TOKEN_VALUE;
+export async function logout(): Promise<void> {
+  const response = await fetch('/api/auth/logout', { method: 'POST' });
+  if (!response.ok) throw new Error('Could not log out. Please try again.');
 }

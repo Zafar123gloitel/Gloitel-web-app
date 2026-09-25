@@ -26,13 +26,14 @@ const TimeLine = ({ headingTag = 'h2', subHeadingTag = 'h3' }: TimeLineProps) =>
             subHeadingTag={subHeadingTag}
           />
         </div>
-        <section className='mx-auto mt-10 w-full sm:w-[90%]'>
+        <section className='mx-auto mt-10 w-full max-w-[1300px] sm:w-[80%]'>
           <CardShowcase
             showStepBadge={false}
             showDivider={false}
             items={EngagementData}
-            cardHeight='h-[210px]   max-w-[300px] '
+            cardHeight='h-[210px] mx-auto  max-w-[300px] '
             gridClassName='gap-y-6'
+            columns={{ base: 1, md: 2, lg: 4 }}
             titleClassName=''
             descriptionClassName=''
           />

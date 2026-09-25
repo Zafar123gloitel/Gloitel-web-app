@@ -43,7 +43,7 @@
 
 // export default PurposeCard;
 
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Card, CardIcon } from '@/components';
@@ -80,11 +80,33 @@ const PurposeCard = ({
   buttonLink,
   buttonText,
 }: PurposeCardProps) => {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [tilt, setTilt] = useState({ x: 0, y: 0 });
+
+  function handleMouseMove(e: React.MouseEvent<HTMLDivElement>) {
+    const card = cardRef.current;
+    if (!card) return;
+
+    const rect = card.getBoundingClientRect();
+    const px = (e.clientX - rect.left) / rect.width;
+    const py = (e.clientY - rect.top) / rect.height;
+
+    const maxTilt = 20; // degrees
+
+    const rotateY = (px - 0.5) * 2 * maxTilt;
+    const rotateX = (0.5 - py) * 2 * maxTilt;
+
+    setTilt({ x: rotateX, y: rotateY });
+  }
+
+  function handleMouseLeave() {
+    setTilt({ x: 0, y: 0 });
+  }
   const content = (
     <div>
       <h3 className='text-title text-[24px]'>{title}</h3>
 
-      <p className='text-description mt-2 text-[16px] leading-6'>{description}</p>
+      <p className='mt-2 text-[16px] leading-6 text-white'>{description}</p>
     </div>
   );
 
@@ -218,26 +240,43 @@ const PurposeCard = ({
   ) : null;
 
   return (
-    <Card className={`flex w-full items-center ${className ?? ''}`}>
-      <div className='flex w-full flex-col items-center justify-between gap-6 px-0 sm:flex-row sm:px-6'>
-        {image ? (
-          // Image case: text left, image right
-          <span className='flex w-full flex-col-reverse items-center justify-between gap-6 pb-10 md:flex-row'>
-            {content}
-            {imageBlock}
-            {viewBox}
-          </span>
-        ) : (
-          // Icon case: icon left, text right
-          <>
-            {iconBlock}
-            {content}
-            {listBox}
-            {buttonBox}
-          </>
-        )}
-      </div>
-    </Card>
+    <div
+      ref={cardRef}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      className='group/card relative h-full'
+      style={{
+        transform: `rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) scale3d(1.02, 1.02, 1.02)`,
+        transformStyle: 'preserve-3d',
+        transition: 'transform 150ms ease-out',
+      }}
+    >
+      {/* Ambient glow behind the card */}
+      <div className='pointer-events-none absolute -inset-1 rounded-2xl bg-blue-600/20 opacity-0 blur-xl transition-opacity duration-500 group-hover/card:opacity-100' />
+
+      <Card
+        className={`relative flex w-full items-center border border-white/5 shadow-[0_0_0_rgba(37,99,235,0)] transition-shadow duration-500 group-hover/card:border-blue-500/30 group-hover/card:shadow-[0_0_35px_rgba(37,99,235,0.25)] ${className ?? ''}`}
+      >
+        <div className='flex h-full w-full flex-col items-center justify-between gap-6 px-0 sm:flex-row sm:px-6'>
+          {image ? (
+            // Image case: text left, image right
+            <span className='flex w-full flex-col-reverse items-center justify-between gap-6 pb-10 md:flex-row'>
+              {content}
+              {imageBlock}
+              {viewBox}
+            </span>
+          ) : (
+            // Icon case: icon left, text right
+            <>
+              {iconBlock}
+              {content}
+              {listBox}
+              {buttonBox}
+            </>
+          )}
+        </div>
+      </Card>
+    </div>
   );
 };
 

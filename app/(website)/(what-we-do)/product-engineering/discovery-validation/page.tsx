@@ -39,7 +39,7 @@ const page = () => {
       <section className='overflow-hidden py-12 lg:py-20'>
         <div className='relative z-10 mx-auto flex min-h-[60vh] flex-col items-center justify-center'>
           <BgSquare2 />
-          <div className='-mt-44 flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
+          <div className='flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
             <span>
               <StrategyBadge text='What Discovery Actually Delivers' />
             </span>
@@ -48,18 +48,17 @@ const page = () => {
               SectionDescription='These outputs provide the clarity needed to align teams, define scope, and make confident product decisions.'
             />
           </div>
+          <section className='mx-auto mt-10 grid w-[80%] grid-cols-1 gap-6 md:grid-cols-2'>
+            {whoThisIsForData.map((item, index) => (
+              <ProblemCard key={index} title={item.title} />
+            ))}
+          </section>
         </div>
-
-        <section className='mx-auto -mt-20 grid w-[80%] grid-cols-1 gap-6 md:grid-cols-2'>
-          {whoThisIsForData.map((item, index) => (
-            <ProblemCard key={index} title={item.title} />
-          ))}
-        </section>
       </section>
       <section className='overflow-hidden py-12 lg:py-20'>
         <div className='relative z-10 mx-auto flex min-h-[60vh] flex-col items-center justify-center'>
           <BgSquare2 />
-          <div className='-mt-44 flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
+          <div className='flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
             <span>
               <StrategyBadge text='The Discovery Process' />
             </span>
@@ -68,49 +67,48 @@ const page = () => {
               SectionDescription='Follow a structured four-week discovery process that transforms research, user insights, and assumptions into clear product decisions, MVP priorities, and an actionable roadmap.'
             />
           </div>
+          <section className='mx-auto mt-10 gap-6 md:w-[80%] xl:w-[90%]'>
+            <Discover
+              badgeText={discoverPhaseData.badgeText}
+              title={discoverPhaseData.title}
+              description={discoverPhaseData.description}
+              buttonText={discoverPhaseData.buttonText}
+              buttonLink={discoverPhaseData.buttonLink}
+              image={discoverPhaseData.image}
+              imageAlt={discoverPhaseData.imageAlt}
+            />
+
+            <Assess
+              badgeText={assessPhaseData.badgeText}
+              title={assessPhaseData.title}
+              description={assessPhaseData.description}
+              buttonText={discoverPhaseData.buttonText}
+              buttonLink={discoverPhaseData.buttonLink}
+              image={assessPhaseData.image}
+              imageAlt={assessPhaseData.imageAlt}
+            />
+
+            <Discover
+              badgeText={prioritizePhaseData.badgeText}
+              title={prioritizePhaseData.title}
+              description={prioritizePhaseData.description}
+              buttonText={discoverPhaseData.buttonText}
+              buttonLink={discoverPhaseData.buttonLink}
+              image={prioritizePhaseData.image}
+              imageAlt={prioritizePhaseData.imageAlt}
+            />
+
+            <Assess
+              badgeText={enablePhaseData.badgeText}
+              title={enablePhaseData.title}
+              description={enablePhaseData.description}
+              buttonText={discoverPhaseData.buttonText}
+              buttonLink={discoverPhaseData.buttonLink}
+              image={enablePhaseData.image}
+              imageAlt={enablePhaseData.imageAlt}
+            />
+          </section>
         </div>
-
-        <section className='mx-auto -mt-40 gap-6 md:w-[80%] xl:w-[90%]'>
-          <Discover
-            badgeText={discoverPhaseData.badgeText}
-            title={discoverPhaseData.title}
-            description={discoverPhaseData.description}
-            buttonText={discoverPhaseData.buttonText}
-            buttonLink={discoverPhaseData.buttonLink}
-            image={discoverPhaseData.image}
-            imageAlt={discoverPhaseData.imageAlt}
-          />
-
-          <Assess
-            badgeText={assessPhaseData.badgeText}
-            title={assessPhaseData.title}
-            description={assessPhaseData.description}
-            buttonText={discoverPhaseData.buttonText}
-            buttonLink={discoverPhaseData.buttonLink}
-            image={assessPhaseData.image}
-            imageAlt={assessPhaseData.imageAlt}
-          />
-
-          <Discover
-            badgeText={prioritizePhaseData.badgeText}
-            title={prioritizePhaseData.title}
-            description={prioritizePhaseData.description}
-            buttonText={discoverPhaseData.buttonText}
-            buttonLink={discoverPhaseData.buttonLink}
-            image={prioritizePhaseData.image}
-            imageAlt={prioritizePhaseData.imageAlt}
-          />
-
-          <Assess
-            badgeText={enablePhaseData.badgeText}
-            title={enablePhaseData.title}
-            description={enablePhaseData.description}
-            buttonText={discoverPhaseData.buttonText}
-            buttonLink={discoverPhaseData.buttonLink}
-            image={enablePhaseData.image}
-            imageAlt={enablePhaseData.imageAlt}
-          />
-        </section>
       </section>
 
       <Business
@@ -146,12 +144,12 @@ Product Decisions'
             />
           </div>
         </div>
-        <section className='mx-auto -mt-20 w-full sm:w-[90%]'>
+        <section className='mx-auto -mt-20 w-full max-w-[1100px]'>
           <CardShowcase
             showStepBadge
             showDivider={false}
             items={noteveryproduct}
-            cardHeight='h-[263px]  max-w-[330px] '
+            cardHeight='h-[263px] mx-auto max-w-[330px] '
             gridClassName='h-full gap-y-30 '
             titleClassName=''
             descriptionClassName=''

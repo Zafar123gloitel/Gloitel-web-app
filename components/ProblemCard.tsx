@@ -1,3 +1,5 @@
+import { useRef, useState } from 'react';
+
 interface ProblemCardProps {
   title: string;
   step?: boolean;
@@ -25,6 +27,28 @@ const renderTitle = (title: string) => {
 };
 
 const ProblemCard = ({ title, step = false, number = 1, isLast = false }: ProblemCardProps) => {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [tilt, setTilt] = useState({ x: 0, y: 0 });
+
+  function handleMouseMove(e: React.MouseEvent<HTMLDivElement>) {
+    const card = cardRef.current;
+    if (!card) return;
+
+    const rect = card.getBoundingClientRect();
+    const px = (e.clientX - rect.left) / rect.width;
+    const py = (e.clientY - rect.top) / rect.height;
+
+    const maxTilt = 20; // degrees
+
+    const rotateY = (px - 0.5) * 2 * maxTilt;
+    const rotateX = (0.5 - py) * 2 * maxTilt;
+
+    setTilt({ x: rotateX, y: rotateY });
+  }
+
+  function handleMouseLeave() {
+    setTilt({ x: 0, y: 0 });
+  }
   return (
     <div className={`group relative overflow-visible rounded-2xl p-[1px] ${step ? '' : ''}`}>
       {/* Blue top glow */}
@@ -40,17 +64,41 @@ const ProblemCard = ({ title, step = false, number = 1, isLast = false }: Proble
           <div className='text-title absolute top-1/2 left-0 z-10 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-[#FFFFFF4D] bg-[#1447E633] text-3xl font-light shadow-[0_0_35px_rgba(37,99,235,.45)]'>
             {number}
           </div>
-          <div className='relative ml-20 flex min-h-[86px] items-center rounded-2xl border border-white/10 bg-[#080B18] px-8 py-6 text-left transition-all duration-300 group-hover:border-blue-500/30 group-hover:shadow-[0_0_35px_rgba(37,99,235,.18)]'>
-            <p className='text-title text-[12px] leading-relaxed font-normal sm:text-[20px]'>
-              {renderTitle(title)}
-            </p>
+          <div
+            ref={cardRef}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            className='group/card relative h-full'
+            style={{
+              transform: `rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) scale3d(1.02, 1.02, 1.02)`,
+              transformStyle: 'preserve-3d',
+              transition: 'transform 150ms ease-out',
+            }}
+          >
+            <div className='relative ml-20 flex min-h-[86px] items-center rounded-2xl border border-white/10 bg-[#080B18] px-8 py-6 text-left transition-all duration-300 group-hover:border-blue-500/30 group-hover:shadow-[0_0_35px_rgba(37,99,235,.18)]'>
+              <p className='text-title text-[12px] leading-relaxed font-normal sm:text-[20px]'>
+                {renderTitle(title)}
+              </p>
+            </div>
           </div>
         </div>
       ) : (
-        <div className='relative flex h-full min-h-[86px] items-center justify-center rounded-2xl border border-white/10 bg-[#080B18] px-8 text-center transition-all duration-300 group-hover:border-blue-500/30 group-hover:shadow-[0_0_35px_rgba(37,99,235,.18)]'>
-          <p className='text[12px] text-title py-2 leading-relaxed font-normal sm:text-[20px]'>
-            {renderTitle(title)}
-          </p>
+        <div
+          ref={cardRef}
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+          className='group/card relative h-full'
+          style={{
+            transform: `rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) scale3d(1.02, 1.02, 1.02)`,
+            transformStyle: 'preserve-3d',
+            transition: 'transform 150ms ease-out',
+          }}
+        >
+          <div className='relative flex h-full min-h-[86px] items-center justify-center rounded-2xl border border-white/10 bg-[#080B18] px-8 text-center transition-all duration-300 group-hover:border-blue-500/30 group-hover:shadow-[0_0_35px_rgba(37,99,235,.18)]'>
+            <p className='text[12px] text-title py-2 leading-relaxed font-normal sm:text-[20px]'>
+              {renderTitle(title)}
+            </p>
+          </div>
         </div>
       )}
     </div>

@@ -127,36 +127,108 @@ export const edtechTechStackData = {
   title: 'Technologies Powering Modern EdTech Platforms',
   description:
     'Building engaging and scalable learning experiences requires a strong technology foundation. We leverage modern learning frameworks, cloud infrastructure, AI capabilities, and mobile technologies to create secure, accessible, and high-performing educational platforms.',
-
   tabs: ['Video Delivery', 'LMS Integration', 'AI', 'Mobile', 'Backend'],
-
   technologies: {
     'Video Delivery': [
       {
         id: createId(),
         name: 'AWS CloudFront',
-        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/Gloitel/icon/aws-cloudfront_xxxxxx.png',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960623/Gloitel/icon/AWS_xpwkkz.png',
       },
       {
         id: createId(),
         name: 'Mux',
-        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/Gloitel/icon/mux_xxxxxx.png',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789551229/Gloitel/icon/images_rnhbta.jpg',
       },
       {
         id: createId(),
         name: 'Vimeo API',
-        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/Gloitel/icon/vimeo-api_xxxxxx.png',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789551383/Gloitel/icon/vimeo_xnpppk.jpg',
       },
       {
         id: createId(),
         name: 'HLS streaming',
-        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/Gloitel/icon/hls-streaming_xxxxxx.png',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789551454/Gloitel/icon/hls-84jhbvvqqk3d9roq3yg8he_kfqwjd.webp',
       },
     ],
-    'LMS Integration': [],
-    AI: [],
-    Mobile: [],
-    Backend: [],
+    'LMS Integration': [
+      {
+        id: createId(),
+        name: 'LTI 1.3',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789551650/Gloitel/icon/images_cvguwp.png',
+      },
+      {
+        id: createId(),
+        name: 'xAPI (TinCan)',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789552501/Gloitel/icon/174566091_ckmdfu.png',
+      },
+      {
+        id: createId(),
+        name: 'SCORM',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1785220490/Gloitel/icon/cloudsql_lzoobz.png',
+      },
+      {
+        id: createId(),
+        name: 'Canvas',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789552700/Gloitel/icon/canvas-student_ezv8ry.jpg',
+      },
+      {
+        id: createId(),
+        name: 'Moodle',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789552748/Gloitel/icon/moodle_original_logo_icon_146420_flr8cl.webp',
+      },
+    ],
+    AI: [
+      {
+        id: createId(),
+        name: 'OpenAI',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960583/Gloitel/icon/openai_wwedph.png',
+      },
+      {
+        id: createId(),
+        name: 'LangChain (Tutoring Systems)',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960570/Gloitel/icon/langChain_kugupr.png',
+      },
+      {
+        id: createId(),
+        name: 'Whisper (Transcription)',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960583/Gloitel/icon/openai_wwedph.png',
+      },
+    ],
+    Mobile: [
+      {
+        id: createId(),
+        name: 'React Native',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762860000/Gloitel/icon/react_cfs5vz.webp',
+      },
+      {
+        id: createId(),
+        name: 'Flutter',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960672/Gloitel/icon/flutter_lplnyz.png',
+      },
+    ],
+    Backend: [
+      {
+        id: createId(),
+        name: 'Node.js',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762860000/Gloitel/icon/node_z9ziqo.webp',
+      },
+      {
+        id: createId(),
+        name: 'Python',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960588/Gloitel/icon/python_afmdty.png',
+      },
+      {
+        id: createId(),
+        name: 'Django',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787039284/Gloitel/icon/Django_ezsw8r.png',
+      },
+      {
+        id: createId(),
+        name: 'PostgreSQL',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960587/Gloitel/icon/PostgreSQL_fmo3yl.png',
+      },
+    ],
   },
 };
 

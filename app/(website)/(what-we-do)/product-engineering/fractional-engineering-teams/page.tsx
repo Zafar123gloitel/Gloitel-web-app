@@ -43,14 +43,15 @@ const page = () => {
             />
           </div>
         </div>
-        <section className='mx-auto -mt-20 w-full sm:w-[90%]'>
+        <section className='mx-auto -mt-20 w-full max-w-[1400px]'>
           <CardShowcase
             showStepBadge
             showDivider={false}
             items={showcaseItems2}
-            cardHeight='h-[263px]  max-w-[330px] '
+            cardHeight='h-[263px] mx-auto  max-w-[330px] '
             gridClassName='h-full gap-y-30 '
             titleClassName=''
+            columns={{ md: 2, lg: 4 }}
             descriptionClassName=''
           />
         </section>
@@ -99,12 +100,12 @@ const page = () => {
               SectionDescription={teamSectionHead.description}
             />
           </div>
-          <section className='mx-auto mt-5 w-full px-6 sm:w-[90%] sm:px-0'>
+          <section className='mx-auto mt-5 w-full max-w-[1200px] px-6 sm:px-0'>
             <CardShowcase
               items={teamValuesData}
               showDivider={true}
               showStepBadge={false}
-              cardClassName='h-[411px] max-w-[350px] gap-y-6 '
+              cardClassName='h-[411px] max-auto max-w-[350px] gap-y-6 '
               gridClassName='h-full'
               titleClassName=''
               descriptionClassName=''

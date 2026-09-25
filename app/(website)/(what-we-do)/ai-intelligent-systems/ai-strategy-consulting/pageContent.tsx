@@ -81,13 +81,14 @@ export default function WhatWeDoPage() {
               subHeadingTag='h3'
             />
           </div>
-          <section className='mx-auto mt-20 w-full sm:w-[90%]'>
+          <section className='mx-auto mt-20 w-full sm:w-[80%]'>
             <CardShowcase
               showStepBadge
               showDivider={false}
               items={showcaseItems}
               cardHeight='h-[230px]   max-w-[300px] '
               gridClassName='gap-y-28'
+              columns={{ base: 1, sm: 2, lg: 4 }}
               titleClassName=''
               descriptionClassName=''
             />

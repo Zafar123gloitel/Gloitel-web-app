@@ -1,11 +1,11 @@
 'use client';
 
 import BlogTable, { type BlogPost } from '@/components/admin/BlogTable';
-import { BookOpen, Edit2, Clock, CheckCircle2, Plus } from 'lucide-react';
+import PageLoader from '@/components/PageLoader';
+import { useAdminSearch } from '@/components/admin/AdminSearchContext';
+import { BookOpen, Edit2, CheckCircle2, Plus } from 'lucide-react';
 import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
-
-const STORAGE_KEY = 'admin_blogs';
 
 function StatCard({
   icon,
@@ -38,21 +38,59 @@ function StatCard({
 
 export default function BlogPage() {
   const [posts, setPosts] = useState<BlogPost[]>([]);
-  const [search, setSearch] = useState('');
+  const { search } = useAdminSearch();
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
+  const [retry, setRetry] = useState(0);
 
   useEffect(() => {
-    try {
-      const stored = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? '[]');
-      setPosts(stored);
-    } catch {
-      setPosts([]);
+    const controller = new AbortController();
+    setLoading(true);
+    setError('');
+    async function load() {
+      try {
+        const posts: BlogPost[] = [];
+        let page = 1;
+        let totalPages = 1;
+        do {
+          const response = await fetch(`/api/blog?scope=all&page=${page}&limit=100`, {
+            cache: 'no-store',
+            signal: controller.signal,
+          });
+          const result = await response.json().catch(() => null);
+          if (!response.ok || !result?.success || !Array.isArray(result.data)) {
+            throw new Error(result?.message || 'Could not load articles. Please try again.');
+          }
+          posts.push(...result.data);
+          totalPages = result.pagination.totalPages;
+          page++;
+        } while (page <= totalPages);
+        if (!controller.signal.aborted) setPosts(posts);
+      } catch (error) {
+        if (!controller.signal.aborted)
+          setError(error instanceof Error ? error.message : 'Could not load articles.');
+      } finally {
+        if (!controller.signal.aborted) setLoading(false);
+      }
     }
-  }, []);
+    void load();
+    return () => controller.abort();
+  }, [retry]);
 
-  function handleDelete(id: string) {
-    const updated = posts.filter(p => p.id !== id);
-    setPosts(updated);
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
+  async function handleDelete(id: string) {
+    setError('');
+    try {
+      const response = await fetch(`/api/blog/${id}`, {
+        method: 'DELETE',
+      });
+      const result = await response.json().catch(() => null);
+      if (!response.ok || !result?.success) {
+        throw new Error(result?.message || 'Could not delete the article.');
+      }
+      setPosts(current => current.filter(post => post.id !== id));
+    } catch (error) {
+      setError(error instanceof Error ? error.message : 'Could not delete the article.');
+    }
   }
 
   const filteredPosts = useMemo(() => {
@@ -75,29 +113,6 @@ export default function BlogPage() {
 
   return (
     <div className='space-y-6'>
-      {/* Search bar */}
-      <div className='relative max-w-md'>
-        <input
-          value={search}
-          onChange={e => setSearch(e.target.value)}
-          placeholder='Search articles...'
-          className='w-full rounded-lg border border-white/10 bg-[#111111] py-2.5 pr-4 pl-10 text-sm text-white placeholder-[#6b6b6b] outline-none focus:border-[#1447e6]/50'
-        />
-        <svg
-          className='pointer-events-none absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-[#6b6b6b]'
-          fill='none'
-          viewBox='0 0 24 24'
-          stroke='currentColor'
-        >
-          <path
-            strokeLinecap='round'
-            strokeLinejoin='round'
-            strokeWidth={2}
-            d='M21 21l-4.35-4.35m0 0A7.5 7.5 0 104.5 4.5a7.5 7.5 0 0012.15 12.15z'
-          />
-        </svg>
-      </div>
-
       {/* Header row */}
       <div className='flex items-center justify-between'>
         <div>
@@ -122,7 +137,6 @@ export default function BlogPage() {
           icon={<BookOpen size={18} className='text-white' />}
           label='Total Articles'
           value={stats.total}
-          trend='12%'
           iconBg='bg-teal-500/20'
         />
         <StatCard
@@ -131,12 +145,12 @@ export default function BlogPage() {
           value={stats.drafts}
           iconBg='bg-purple-500/20'
         />
-        <StatCard
+        {/* <StatCard
           icon={<Clock size={18} className='text-white' />}
           label='Scheduled'
           value={stats.scheduled}
           iconBg='bg-white/10'
-        />
+        /> */}
         <StatCard
           icon={<CheckCircle2 size={18} className='text-white' />}
           label='Published'
@@ -146,7 +160,15 @@ export default function BlogPage() {
       </div>
 
       {/* Table */}
-      <BlogTable posts={filteredPosts} onDelete={handleDelete} />
+      {error && (
+        <div role='alert' className='space-y-2 text-sm text-red-400'>
+          <p>{error}</p>
+          <button onClick={() => setRetry(value => value + 1)} className='text-[#5b8def]'>
+            Reload articles
+          </button>
+        </div>
+      )}
+      {loading ? <PageLoader /> : <BlogTable posts={filteredPosts} onDelete={handleDelete} />}
     </div>
   );
 }

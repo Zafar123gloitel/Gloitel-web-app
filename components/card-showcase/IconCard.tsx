@@ -19,7 +19,7 @@ const IconCard = ({
   icontype = true,
   Icon,
   icon,
-  size = 14, // default agar pass nahi hua
+  size = 20, // default agar pass nahi hua
 }: IconCardProps) => {
   const iconNode = Icon || icon;
   const sizePx = size * 4; // Tailwind: 1 unit = 0.25rem = 4px
@@ -85,7 +85,7 @@ const IconCard = ({
                 width={sizePx}
                 src={logo}
                 alt={name}
-                className='h-full w-full object-cover'
+                className='h-full w-full bg-white object-contain'
                 loading='lazy'
               />
             ) : (

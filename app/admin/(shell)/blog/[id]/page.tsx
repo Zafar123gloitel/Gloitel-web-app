@@ -1,11 +1,10 @@
 'use client';
 
 import BlogEditor from '@/components/admin/Blogeditor';
+import PageLoader from '@/components/PageLoader';
 import type { BlogPost } from '@/components/admin/BlogTable';
 import { useParams, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
-
-const STORAGE_KEY = 'admin_blogs';
 
 export default function BlogEditorPage() {
   const params = useParams<{ id: string }>();
@@ -14,38 +13,54 @@ export default function BlogEditorPage() {
 
   const [post, setPost] = useState<BlogPost | null>(null);
   const [loading, setLoading] = useState(!isNew);
-  const [notFound, setNotFound] = useState(false);
+  const [error, setError] = useState('');
+  const [retry, setRetry] = useState(0);
 
   useEffect(() => {
-    if (isNew) return; // create mode, nothing to load
-
-    try {
-      const posts: BlogPost[] = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? '[]');
-      const found = posts.find(p => p.id === params.id) ?? null;
-      if (!found) {
-        setNotFound(true);
-      } else {
-        setPost(found);
+    if (isNew) return;
+    const controller = new AbortController();
+    setLoading(true);
+    setError('');
+    setPost(null);
+    async function load() {
+      try {
+        const response = await fetch(`/api/blog/${params.id}`, {
+          cache: 'no-store',
+          signal: controller.signal,
+        });
+        const result = await response.json().catch(() => null);
+        if (!response.ok || !result?.success || !result.data) {
+          throw new Error(result?.message || 'Could not load the article. Please try again.');
+        }
+        if (!controller.signal.aborted) setPost(result.data);
+      } catch (error) {
+        if (!controller.signal.aborted)
+          setError(error instanceof Error ? error.message : 'Could not load the article.');
+      } finally {
+        if (!controller.signal.aborted) setLoading(false);
       }
-    } catch {
-      setNotFound(true);
-    } finally {
-      setLoading(false);
     }
-  }, [isNew, params.id]);
+    void load();
+    return () => controller.abort();
+  }, [isNew, params.id, retry]);
 
   if (isNew) {
-    return <BlogEditor mode='create' />;
+    return <BlogEditor key='new' mode='create' />;
   }
 
-  if (loading) {
-    return <p className='text-sm text-[#969696]'>Loading...</p>;
+  if (loading || (post && post.id !== params.id)) {
+    return <PageLoader />;
   }
 
-  if (notFound || !post) {
+  if (error || !post) {
     return (
       <div className='space-y-3 text-center'>
-        <p className='text-sm text-white'>Post not found.</p>
+        <p role='alert' className='text-sm text-white'>
+          {error || 'Post not found.'}
+        </p>
+        <button onClick={() => setRetry(value => value + 1)} className='text-sm text-[#5b8def]'>
+          Try again
+        </button>
         <button
           onClick={() => router.push('/admin/blog')}
           className='text-sm font-medium text-[#5b8def] hover:underline'
@@ -56,5 +71,5 @@ export default function BlogEditorPage() {
     );
   }
 
-  return <BlogEditor mode='edit' initialData={post} />;
+  return <BlogEditor key={post.id} mode='edit' initialData={post} />;
 }

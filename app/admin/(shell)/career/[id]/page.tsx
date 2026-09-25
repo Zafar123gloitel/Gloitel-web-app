@@ -7,8 +7,6 @@ import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
-const STORAGE_KEY = 'admin_jobs';
-
 const DEPARTMENTS = ['Engineering', 'Design', 'Marketing', 'Sales', 'Operations', 'HR', 'Finance'];
 
 const JOB_TYPES: JobListing['type'][] = ['full-time', 'part-time', 'contract', 'internship'];
@@ -27,37 +25,32 @@ export default function NewCareerPage() {
     department: DEPARTMENTS[0],
     location: '',
     type: 'full-time' as JobListing['type'],
-    status: 'active' as 'active' | 'closed',
+    status: 'active' as 'active' | 'inactive',
     description: '',
   });
 
-  // --------------------------------------------------
-  // Existing job ko ID ke basis par load karna
-  // --------------------------------------------------
+  const [error, setError] = useState('');
 
   useEffect(() => {
     if (!id) return;
-
-    try {
-      const existing: JobListing[] = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? '[]');
-
-      const job = existing.find(item => item.id === id);
-
-      if (!job) {
-        return;
-      }
-
-      setForm({
-        title: job.title,
-        department: job.department,
-        location: job.location,
-        type: job.type,
-        status: job.status,
-        description: job.description,
-      });
-    } catch {
-      // ignore
-    }
+    fetch(`/api/jobs/${id}`, { cache: 'no-store' })
+      .then(async response => {
+        const result = await response.json();
+        if (!response.ok || !result?.success)
+          throw new Error(result?.message || 'Could not load job');
+        const job: JobListing = result.data;
+        setForm({
+          title: job.title,
+          department: job.department,
+          location: job.location,
+          type: job.type,
+          status: job.status,
+          description: job.description,
+        });
+      })
+      .catch(requestError =>
+        setError(requestError instanceof Error ? requestError.message : 'Could not load job'),
+      );
   }, [id]);
 
   // --------------------------------------------------
@@ -84,45 +77,22 @@ export default function NewCareerPage() {
 
     setSaving(true);
 
-    await new Promise(r => setTimeout(r, 400));
-
+    setError('');
     try {
-      const existing: JobListing[] = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? '[]');
-
-      // ---------------------------------------------
-      // ID hai => UPDATE
-      // ---------------------------------------------
-
-      if (id) {
-        const updatedJobs = existing.map(job =>
-          job.id === id
-            ? {
-                ...job,
-                ...form,
-              }
-            : job,
-        );
-
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedJobs));
-      }
-
-      // ---------------------------------------------
-      // ID nahi hai => CREATE NEW JOB
-      // ---------------------------------------------
-      else {
-        const newJob: JobListing = {
-          id: Date.now().toString(),
-          createdAt: new Date().toISOString(),
-          ...form,
-        };
-
-        localStorage.setItem(STORAGE_KEY, JSON.stringify([newJob, ...existing]));
-      }
-    } catch {
-      // ignore
+      const response = await fetch(id ? `/api/jobs/${id}` : '/api/jobs', {
+        method: id ? 'PUT' : 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      const result = await response.json();
+      if (!response.ok || !result?.success)
+        throw new Error(result?.message || 'Could not save job');
+      router.push('/admin/career');
+    } catch (requestError) {
+      setError(requestError instanceof Error ? requestError.message : 'Could not save job');
+    } finally {
+      setSaving(false);
     }
-
-    router.push('/admin/career');
   }
 
   return (
@@ -150,6 +120,12 @@ export default function NewCareerPage() {
             : 'Fill in the details for the job opening'}
         </p>
       </div>
+
+      {error && (
+        <p className='rounded-lg border border-red-500/20 bg-red-500/10 p-3 text-sm text-red-400'>
+          {error}
+        </p>
+      )}
 
       {/* Form */}
 
@@ -240,7 +216,7 @@ export default function NewCareerPage() {
                 className='w-full rounded-lg border border-white/10 bg-[#0f0f0f] px-4 py-2.5 text-sm text-white transition-all outline-none focus:border-[#1447e6]/50 focus:ring-1 focus:ring-[#1447e6]/30'
               >
                 <option value='active'>Active</option>
-                <option value='closed'>Closed</option>
+                <option value='inactive'>Inactive</option>
               </select>
             </div>
           </div>

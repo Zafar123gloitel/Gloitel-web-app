@@ -64,7 +64,7 @@ const InfoCard = ({ icon, title, description, className = '' }: InfoCardProps) =
         {title && <CardTitle className='text-title text-[24px] leading-8'>{title}</CardTitle>}
 
         {/* Description */}
-        <p className='text-description text-[18px] leading-[33px]'>{description}</p>
+        <p className='text-[18px] leading-[33px] text-white'>{description}</p>
       </div>
     </article>
   );

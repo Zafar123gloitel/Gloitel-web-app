@@ -50,7 +50,7 @@ const page = () => {
               showStepBadge
               showDivider={false}
               items={aiSystemsData}
-              cardHeight='h-[300px]   max-w-[350px] '
+              cardHeight='h-[300px] mx-auto  max-w-[350px] '
               gridClassName='gap-y-28'
               titleClassName=''
               descriptionClassName=''

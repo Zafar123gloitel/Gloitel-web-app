@@ -23,7 +23,7 @@ export const resourcesHeroData = {
   },
   secondaryButton: {
     text: 'Explore Case Studies',
-    href: '/content',
+    href: '/resources/case-studies',
     icon: <ArrowRightIcon />,
   },
 };
@@ -47,7 +47,7 @@ export const aiStrategySectionHead = [
     description:
       'Real client challenges, implementation strategies, measurable outcomes, and engineering learnings.',
     text: 'Explore Case Study',
-    href: '/content',
+    href: '/resources/case-studies/healthcare-ai-transformation',
   },
 ];
 export const BlogeForSectionHead2 = {
@@ -65,7 +65,7 @@ export const resourceCaseStudiesData = [
     title: 'Key considerations for introducing AI solutions from prototyping to production',
     description:
       'Scaling machine learning workflows beyond experimental notebooks requires solid infrastructure, observability, and disciplined engineering.',
-    author: 'Amit Chandra',
+    author: 'Amit Charde',
     date: 'May 12, 2026',
     image:
       'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788869099/Gloitel/Resource%20F/Product_Engineering_kt38p0.png',

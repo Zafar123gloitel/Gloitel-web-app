@@ -1,4 +1,3 @@
-import React from 'react';
 import FeatureScroll from './FeatureScroll';
 import { HeroButton } from './Button';
 import { HomeHeroHeading } from './HeroHead';
@@ -44,10 +43,10 @@ const Hero = () => {
         {/* Buttons */}
         <div className='flex w-full flex-col justify-center sm:w-auto sm:flex-row sm:justify-start'>
           <HeroButton
-            FirstHeroButtonText='Connect With Us1'
+            FirstHeroButtonText='Connect With Us'
             FirstHeroButtonLink='/contact'
             SecondHeroButtonText='What is Gloitel?'
-            SecondHeroButtonLink='/about'
+            SecondHeroButtonLink='/ai-intelligent-systems'
           />
         </div>
 

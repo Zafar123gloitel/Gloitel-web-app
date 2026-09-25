@@ -124,7 +124,9 @@ export const ecommerceSolutionsData = [
 
 export const ecommerceTechStackData = {
   badge: 'Technology Stack',
+
   title: 'Scalable Technologies for Modern E-Commerce & Retail',
+
   description:
     'From storefront frameworks and commerce platforms to payment gateways, logistics integrations, and AI-powered capabilities, we use proven technologies that enable businesses to deliver fast, reliable, and personalized shopping experiences at scale.',
 
@@ -148,22 +150,140 @@ export const ecommerceTechStackData = {
       {
         id: createId(),
         name: 'Remix',
-        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/Gloitel/icon/remix_xxxxxx.png',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789545493/Gloitel/icon/000000_yiibls.svg',
       },
       {
         id: createId(),
         name: 'Shopify Hydrogen',
-        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/Gloitel/icon/shopify-hydrogen_xxxxxx.png',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789545605/Gloitel/icon/shopify_hhrsro.svg',
       },
     ],
-    'Commerce Platforms': [],
-    Search: [],
-    Payments: [],
-    'ERP Integration': [],
-    Logistics: [],
-    AI: [],
+
+    'Commerce Platforms': [
+      {
+        id: createId(),
+        name: 'Shopify Plus',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789545605/Gloitel/icon/shopify_hhrsro.svg',
+      },
+      {
+        id: createId(),
+        name: 'Medusa.js',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789545683/Gloitel/icon/medusa_etugxv.svg',
+      },
+      {
+        id: createId(),
+        name: 'WooCommerce',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789545784/Gloitel/icon/woocommerce_pxzppf.svg',
+      },
+      {
+        id: createId(),
+        name: 'Custom',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789545840/Gloitel/icon/littlelink-custom_d8svfq.svg',
+      },
+    ],
+
+    Search: [
+      {
+        id: createId(),
+        name: 'Algolia',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789545959/Gloitel/icon/000000_ypvxj4.svg',
+      },
+      {
+        id: createId(),
+        name: 'Elasticsearch',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789546041/Gloitel/icon/elasticsearch_hzlqpd.svg',
+      },
+      {
+        id: createId(),
+        name: 'Typesense',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789546199/Gloitel/icon/typesense_hvsu4e.svg',
+      },
+    ],
+
+    Payments: [
+      {
+        id: createId(),
+        name: 'Stripe',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789546371/Gloitel/icon/stripe_rza5we.svg',
+      },
+      {
+        id: createId(),
+        name: 'Razorpay',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960594/Gloitel/icon/razorpay_cceonz.png',
+      },
+      {
+        id: createId(),
+        name: 'PayPal',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789549484/Gloitel/icon/paypal_abowqh.svg',
+      },
+      {
+        id: createId(),
+        name: 'Klarna',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789549583/Gloitel/icon/klarna_p79cgu.png',
+      },
+    ],
+
+    'ERP Integration': [
+      {
+        id: createId(),
+        name: 'SAP',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789549787/Gloitel/icon/SAP_2011_logo.svg_nv4ztm.webp',
+      },
+      {
+        id: createId(),
+        name: 'NetSuite',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789549843/Gloitel/icon/images_exnsif.png',
+      },
+      {
+        id: createId(),
+        name: 'Odoo',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789549890/Gloitel/icon/0e1VRdG0x282As3Icsr9X-20251216-152000_kgdpih.webp',
+      },
+    ],
+
+    Logistics: [
+      {
+        id: createId(),
+        name: 'Shiprocket',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789549930/Gloitel/icon/images_md4jtz.png',
+      },
+      {
+        id: createId(),
+        name: 'FedEx',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789550038/Gloitel/icon/fedex_ch6uai.svg',
+      },
+      {
+        id: createId(),
+        name: 'DHL',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789550082/Gloitel/icon/dhl_grzib1.svg',
+      },
+      {
+        id: createId(),
+        name: 'ShipStation',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789550147/Gloitel/icon/images_bz2vnr.png',
+      },
+    ],
+
+    AI: [
+      {
+        id: createId(),
+        name: 'Product Recommendation Engines',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1784960682/Gloitel/icon/gemini_b4dcsa.png',
+      },
+      {
+        id: createId(),
+        name: 'Visual Search',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789550602/Gloitel/icon/visual-search_kaj147.svg',
+      },
+      {
+        id: createId(),
+        name: 'Dynamic Pricing',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789550900/Gloitel/icon/istockphoto-1491754746-612x612_co09g9.jpg',
+      },
+    ],
   },
 };
+
 export const ecommerceCTAData = {
   badgeText: 'Ready to Modernize your E-Commerce & Retail Ecosystem?',
   title: 'Engineering the Next Generation of E-com & Retail Experiences',

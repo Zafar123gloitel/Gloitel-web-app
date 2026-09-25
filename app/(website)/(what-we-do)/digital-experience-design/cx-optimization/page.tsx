@@ -45,12 +45,12 @@ const page = () => {
               SectionDescription={cxCoversSectionHead.description}
             />
           </div>
-          <section className='mx-auto mt-5 w-full px-6 sm:w-[90%] sm:px-0'>
+          <section className='mx-auto mt-5 w-full max-w-[1140px] px-6 sm:px-0'>
             <CardShowcase
               items={cxCoversData}
               showDivider={true}
               showStepBadge={false}
-              cardClassName='h-[411px] max-w-[350px] gap-y-6 '
+              cardClassName='h-[411px] mx-auto max-w-[350px] gap-y-6 '
               gridClassName='h-full'
               titleClassName=''
               descriptionClassName=''

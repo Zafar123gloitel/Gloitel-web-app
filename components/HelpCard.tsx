@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
 
 import { BgSquare2 } from './BgSquare';
@@ -78,7 +78,7 @@ const HelpCard = ({ badgeText, title, description, tabs, data }: HelpCardProps) 
 
       {/* ================= TABS ================= */}
       <div className='relative mt-14 flex w-full justify-center px-4'>
-        <div className='flex w-[90%] max-w-6xl [scrollbar-width:none] gap-4 overflow-x-auto pb-4 [&::-webkit-scrollbar]:hidden'>
+        <div className='custom-scrollbar flex w-[90%] max-w-6xl gap-4 overflow-x-auto pb-4'>
           {tabs.map((tab, index) => (
             <button
               key={tab}
@@ -87,7 +87,7 @@ const HelpCard = ({ badgeText, title, description, tabs, data }: HelpCardProps) 
               className={`shrink-0 rounded-lg border px-5 py-2.5 text-sm whitespace-nowrap transition-all duration-300 ${
                 activeTabIndex === index
                   ? 'text-title border-blue-500 bg-blue-600 shadow-[0_0_20px_rgba(37,99,235,.35)]'
-                  : 'text-description border-white/15 bg-transparent hover:border-blue-500'
+                  : 'border-white/15 bg-transparent text-white hover:border-blue-500'
               } `}
             >
               {tab}

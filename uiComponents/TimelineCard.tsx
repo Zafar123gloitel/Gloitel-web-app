@@ -41,7 +41,7 @@
 //                     {item.year}
 //                   </CardTitle>
 
-//                   <CardDescription className="mt-3 text-sm text-description leading-5">
+//                   <CardDescription className="mt-3 text-sm text-white leading-5">
 //                     {item.description}
 //                   </CardDescription>
 //                 </div>
@@ -82,7 +82,7 @@
 //                     {item.year}
 //                   </CardTitle>
 
-//                   <CardDescription className="mt-3 text-sm text-description leading-5">
+//                   <CardDescription className="mt-3 text-sm text-white leading-5">
 //                     {item.description}
 //                   </CardDescription>
 //                 </div>
@@ -133,7 +133,7 @@ const TimelineCard = ({ item, side }: TimelineCardProps) => {
                   <div>
                     <CardTitle className='mt-2 text-lg leading-tight'>{item.year}</CardTitle>
 
-                    <CardDescription className='text-description mt-3 text-sm leading-5'>
+                    <CardDescription className='mt-3 text-sm leading-5 text-white'>
                       {item.description}
                     </CardDescription>
                   </div>
@@ -162,7 +162,7 @@ const TimelineCard = ({ item, side }: TimelineCardProps) => {
                   <div>
                     <CardTitle className='mt-2 text-lg leading-tight'>{item.year}</CardTitle>
 
-                    <CardDescription className='text-description mt-3 text-sm leading-5'>
+                    <CardDescription className='mt-3 text-sm leading-5 text-white'>
                       {item.description}
                     </CardDescription>
                   </div>
@@ -194,7 +194,7 @@ const TimelineCard = ({ item, side }: TimelineCardProps) => {
               <div className='min-w-0'>
                 <CardTitle className='text-base leading-tight'>{item.year}</CardTitle>
 
-                <CardDescription className='text-description mt-2 text-sm leading-5'>
+                <CardDescription className='mt-2 text-sm leading-5 text-white'>
                   {item.description}
                 </CardDescription>
               </div>

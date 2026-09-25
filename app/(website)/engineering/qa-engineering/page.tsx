@@ -40,12 +40,12 @@ export default function Page() {
               SectionDescription={aiAgentsSectionHead.description}
             />
           </div>
-          <section className='mx-auto mt-20 w-full sm:w-[90%]'>
+          <section className='mx-auto mt-20 w-full max-w-[1200px]'>
             <CardShowcase
               showStepBadge={false}
               showDivider={false}
               items={aiAgentsData}
-              cardHeight='h-[300px]   max-w-[350px] '
+              cardHeight='h-[300px] mx-auto  max-w-[350px] '
               gridClassName='gap-y-28'
               titleClassName=''
               descriptionClassName=''

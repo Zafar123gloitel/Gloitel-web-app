@@ -236,7 +236,7 @@ export const aiEcosystemData = {
       {
         id: createId(),
         name: 'Doppler',
-        logo: '',
+        logo: 'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1789538009/Gloitel/icon/doppler-20-04_sosi3k.svg',
       },
     ],
   },

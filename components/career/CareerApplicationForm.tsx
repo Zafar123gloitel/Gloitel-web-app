@@ -1,6 +1,7 @@
 'use client';
 
 import { ArrowRightIcon } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 import { useRef, useState, type ChangeEvent, type DragEvent, type FormEvent } from 'react';
 
 type FormState = {
@@ -47,7 +48,13 @@ const UploadCloudIcon = () => (
   </svg>
 );
 
-export default function CareerApplicationForm({ compact = false }: { compact?: boolean }) {
+export default function CareerApplicationForm({
+  compact = false,
+  jobId,
+}: {
+  compact?: boolean;
+  jobId?: string;
+}) {
   const [formData, setFormData] = useState<FormState>(initialState);
   const [resume, setResume] = useState<File | null>(null);
   const [fileError, setFileError] = useState('');
@@ -56,6 +63,7 @@ export default function CareerApplicationForm({ compact = false }: { compact?: b
   const [submitError, setSubmitError] = useState('');
 
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const router = useRouter();
 
   const handleChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = event.target;
@@ -136,6 +144,7 @@ export default function CareerApplicationForm({ compact = false }: { compact?: b
 
     setIsSubmitting(true);
     setSubmitError('');
+    setSubmitSuccess(false);
 
     try {
       const payload = new FormData();
@@ -146,25 +155,32 @@ export default function CareerApplicationForm({ compact = false }: { compact?: b
       payload.append('linkedin', formData.linkedin);
       payload.append('message', formData.message);
       payload.append('resume', resume);
+      if (jobId) payload.append('jobId', jobId);
 
       const response = await fetch('/api/career/apply', {
         method: 'POST',
         body: payload,
       });
 
+      const result = (await response.json()) as { message?: string };
+
       if (!response.ok) {
-        throw new Error('Submission failed');
+        throw new Error(result.message || 'Submission failed');
       }
 
       setSubmitSuccess(true);
       setFormData(initialState);
       setResume(null);
+      setFileError('');
+      router.push('/career');
 
       if (fileInputRef.current) {
         fileInputRef.current.value = '';
       }
-    } catch {
-      setSubmitError('Something went wrong. Please try again.');
+    } catch (error) {
+      setSubmitError(
+        error instanceof Error ? error.message : 'Something went wrong. Please try again.',
+      );
     } finally {
       setIsSubmitting(false);
     }
