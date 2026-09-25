@@ -157,8 +157,7 @@ export async function POST(request: Request) {
     const message = getTextField(formData, 'message');
     const jobIdRaw = getTextField(formData, 'jobId');
     // Validate jobId only when provided — it must be a valid 24-char hex ObjectId
-    const jobId =
-      jobIdRaw && /^[a-f\d]{24}$/i.test(jobIdRaw) ? new ObjectId(jobIdRaw) : undefined;
+    const jobId = jobIdRaw && /^[a-f\d]{24}$/i.test(jobIdRaw) ? new ObjectId(jobIdRaw) : undefined;
     const resume = formData.get('resume');
 
     if (!fullName || !email || !phone || !location) {

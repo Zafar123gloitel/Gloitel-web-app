@@ -94,7 +94,7 @@ export function Button({
 export function GlowButton({
   buttonText,
   buttonLink = '#',
-  onClick,
+  onClick = undefined,
   target = '_self',
   className = '',
 }) {

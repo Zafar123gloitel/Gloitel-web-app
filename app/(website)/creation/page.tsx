@@ -117,7 +117,7 @@ const CreationPage = () => {
 
           {/* Buttons */}
           <div className='mt-6 flex flex-col items-center gap-4 sm:mt-8 sm:flex-row'>
-            <GlowButton onClick={() => {}} buttonText='Build your Project' buttonLink='/contact' />
+            <GlowButton buttonText='Build your Project' buttonLink='/contact' />
           </div>
 
           {/* Grid */}
