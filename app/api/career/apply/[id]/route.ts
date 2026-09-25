@@ -37,10 +37,7 @@ export async function GET(request: Request, context: Context) {
       .findOne({ _id: new ObjectId(id) }, { projection: { 'resume.data': 0 } });
 
     if (!application) {
-      return Response.json(
-        { success: false, message: 'Application not found' },
-        { status: 404 },
-      );
+      return Response.json({ success: false, message: 'Application not found' }, { status: 404 });
     }
 
     // If the application has a jobId, fetch the related job details
@@ -49,10 +46,7 @@ export async function GET(request: Request, context: Context) {
       const job = await client
         .db()
         .collection('jobs')
-        .findOne(
-          { _id: application.jobId },
-          { projection: { title: 1, department: 1, type: 1 } },
-        );
+        .findOne({ _id: application.jobId }, { projection: { title: 1, department: 1, type: 1 } });
       if (job) {
         jobDetail = {
           title: job.title as string,
