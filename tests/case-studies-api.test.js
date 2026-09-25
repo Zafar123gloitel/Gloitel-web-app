@@ -22,7 +22,14 @@ function load(file, overrides = {}) {
   return module.exports;
 }
 
-const helpers = load('lib/caseStudies.ts');
+const cloudinaryMock = {
+  CloudinaryService: {
+    uploadMedia: async () => ({
+      secure_url: 'https://res.cloudinary.com/test/image/upload/case-study-thumbnail.png',
+    }),
+  },
+};
+const helpers = load('lib/caseStudies.ts', { '@/lib/cloudinary': cloudinaryMock });
 const valid = {
   title: 'Healthcare platform',
   Description: 'A client transformation',
@@ -33,6 +40,7 @@ const valid = {
   industry: 'Healthcare & MedTech',
   service: 'Product Engineering',
   thumbnail: 'data:image/png;base64,aGVsbG8=',
+  banner: 'data:image/jpeg;base64,aGVsbG8=',
 };
 
 function matches(row, filter) {
@@ -122,6 +130,7 @@ test('authenticated CRUD, published visibility, search, pagination and errors', 
               { status: 401 },
             ),
     },
+    '@/lib/cloudinary': cloudinaryMock,
   };
   const root = load('app/api/case-studies/route.ts', deps);
   const item = load('app/api/case-studies/[id]/route.ts', deps);
@@ -135,6 +144,14 @@ test('authenticated CRUD, published visibility, search, pagination and errors', 
   const created = await root.POST(request('/api/case-studies', 'POST', valid));
   assert.equal(created.status, 201);
   const { data } = await created.json();
+  assert.equal(
+    data.thumbnail,
+    'https://res.cloudinary.com/test/image/upload/case-study-thumbnail.png',
+  );
+  assert.equal(
+    data.banner,
+    'https://res.cloudinary.com/test/image/upload/case-study-thumbnail.png',
+  );
   const context = { params: Promise.resolve({ id: data.id }) };
   assert.equal((await root.POST(request('/api/case-studies', 'POST', valid))).status, 409);
   assert.equal(

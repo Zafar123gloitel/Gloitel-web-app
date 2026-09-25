@@ -4,6 +4,7 @@ import { Suspense, useState, useEffect } from 'react';
 import { useRouter, useSearchParams, usePathname } from 'next/navigation';
 import StrategyBadge from '@/components/StrategyBadge';
 import IconCard from '@/components/card-showcase/IconCard';
+import PageLoader from '@/components/PageLoader';
 
 interface Technology {
   name: string;
@@ -164,19 +165,7 @@ const AI_SolutionsContent = ({
 
 const AI_Solutions = (props: AI_SolutionsProps) => {
   return (
-    <Suspense
-      fallback={
-        <section className='bg-surface-1 py-24'>
-          <div className='max-w-8xl mx-auto px-6'>
-            <div className='text-center'>
-              <div className='mx-auto h-10 w-28 animate-pulse rounded-full bg-white/10' />
-              <div className='mx-auto mt-8 h-12 w-72 animate-pulse rounded-lg bg-white/10' />
-              <div className='mx-auto mt-6 h-5 w-full max-w-3xl animate-pulse rounded bg-white/10' />
-            </div>
-          </div>
-        </section>
-      }
-    >
+    <Suspense fallback={<PageLoader className='bg-surface-1 py-24' />}>
       <AI_SolutionsContent {...props} />
     </Suspense>
   );

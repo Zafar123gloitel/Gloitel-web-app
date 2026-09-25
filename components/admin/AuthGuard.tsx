@@ -2,6 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import PageLoader from '@/components/PageLoader';
 
 export default function AuthGuard({ children }: { children: React.ReactNode }) {
   const router = useRouter();
@@ -20,11 +21,7 @@ export default function AuthGuard({ children }: { children: React.ReactNode }) {
   }, [router]);
 
   if (!checked) {
-    return (
-      <div className='flex h-screen items-center justify-center bg-[#0a0a0a]'>
-        <div className='h-8 w-8 animate-spin rounded-full border-2 border-white/10 border-t-[#1447e6]' />
-      </div>
-    );
+    return <PageLoader className='h-screen bg-[#0a0a0a]' />;
   }
 
   if (!authed) return null;

@@ -4,6 +4,7 @@ import {
   caseStudyId,
   getCaseStudies,
   serializeCaseStudy,
+  uploadCaseStudyImage,
   validateCaseStudy,
   type CaseStudyDocument,
 } from '@/lib/caseStudies';
@@ -34,6 +35,8 @@ export async function PUT(request: Request, context: Context) {
   try {
     const _id = caseStudyId((await context.params).id);
     const changes = validateCaseStudy(await request.json(), true);
+    for (const field of ['thumbnail', 'banner'] as const)
+      if (changes[field]) changes[field] = await uploadCaseStudyImage(changes[field], field);
     const collection = await getCaseStudies();
     const existing = await collection.findOne({ _id });
     if (!existing) return notFound();

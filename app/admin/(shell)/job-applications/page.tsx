@@ -2,6 +2,7 @@
 
 import { useAdminSearch } from '@/components/admin/AdminSearchContext';
 import JobApplicationsTable, { type JobApplication } from '@/components/admin/JobApplicationsTable';
+import PageLoader from '@/components/PageLoader';
 import { ChevronLeft, ChevronRight, RefreshCw } from 'lucide-react';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
@@ -110,9 +111,7 @@ export default function JobApplicationsPage() {
           </button>
         </div>
       ) : isLoading ? (
-        <div className='flex min-h-64 items-center justify-center rounded-xl border border-white/10 bg-[#0f0f0f]'>
-          <RefreshCw size={22} className='animate-spin text-[#5b8def]' />
-        </div>
+        <PageLoader className='rounded-xl border border-white/10 bg-[#0f0f0f]' />
       ) : (
         <JobApplicationsTable applications={filteredApplications} />
       )}

@@ -15,6 +15,7 @@ export interface BlogPost {
   excerpt: string;
   content: string;
   thumbnail?: string;
+  banner?: string;
   Description: string;
   imageAlt?: string;
   category: string;

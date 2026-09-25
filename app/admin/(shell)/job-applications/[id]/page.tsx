@@ -1,6 +1,7 @@
 'use client';
 
 import type { JobApplication } from '@/components/admin/JobApplicationsTable';
+import PageLoader from '@/components/PageLoader';
 
 import {
   ArrowLeft,
@@ -91,11 +92,7 @@ export default function JobApplicationDetailPage({ params }: { params: Promise<{
         Back to Applications
       </Link>
 
-      {isLoading && (
-        <div className='flex min-h-64 items-center justify-center rounded-xl border border-white/10 bg-[#0f0f0f]'>
-          <span className='h-6 w-6 animate-spin rounded-full border-2 border-white/20 border-t-[#5b8def]' />
-        </div>
-      )}
+      {isLoading && <PageLoader className='rounded-xl border border-white/10 bg-[#0f0f0f]' />}
 
       {error && !isLoading && (
         <div className='rounded-xl border border-red-500/20 bg-red-500/10 px-4 py-4 text-sm text-red-400'>
@@ -124,7 +121,7 @@ export default function JobApplicationDetailPage({ params }: { params: Promise<{
           {/* Applied Role Card */}
           {application.jobDetail ? (
             <div className='rounded-xl border border-[#1447e6]/30 bg-[#1447e6]/8 p-5'>
-              <p className='mb-3 text-xs font-semibold uppercase tracking-wider text-[#5b8def]'>
+              <p className='mb-3 text-xs font-semibold tracking-wider text-[#5b8def] uppercase'>
                 Applied Role
               </p>
               <div className='grid grid-cols-1 gap-4 sm:grid-cols-3'>
@@ -161,7 +158,7 @@ export default function JobApplicationDetailPage({ params }: { params: Promise<{
 
           {/* Details grid */}
           <div className='rounded-xl border border-white/10 bg-[#111111] p-6'>
-            <p className='mb-4 text-xs font-semibold uppercase tracking-wider text-[#969696]'>
+            <p className='mb-4 text-xs font-semibold tracking-wider text-[#969696] uppercase'>
               Applicant Details
             </p>
             <div className='grid grid-cols-1 gap-5 sm:grid-cols-2'>
@@ -239,7 +236,7 @@ export default function JobApplicationDetailPage({ params }: { params: Promise<{
 
           {/* Resume */}
           <div className='rounded-xl border border-white/10 bg-[#111111] p-6'>
-            <p className='mb-4 text-xs font-semibold uppercase tracking-wider text-[#969696]'>
+            <p className='mb-4 text-xs font-semibold tracking-wider text-[#969696] uppercase'>
               Resume
             </p>
             {application.resume?.url ? (
@@ -273,11 +270,11 @@ export default function JobApplicationDetailPage({ params }: { params: Promise<{
             <div className='rounded-xl border border-white/10 bg-[#111111] p-6'>
               <div className='mb-3 flex items-center gap-2'>
                 <MessageSquare size={15} className='text-[#5b8def]' />
-                <p className='text-xs font-semibold uppercase tracking-wider text-[#969696]'>
+                <p className='text-xs font-semibold tracking-wider text-[#969696] uppercase'>
                   Cover Message
                 </p>
               </div>
-              <p className='whitespace-pre-wrap text-sm leading-relaxed text-[#cccccc]'>
+              <p className='text-sm leading-relaxed whitespace-pre-wrap text-[#cccccc]'>
                 {application.message}
               </p>
             </div>

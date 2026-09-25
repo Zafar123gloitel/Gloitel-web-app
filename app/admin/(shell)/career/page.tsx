@@ -1,6 +1,7 @@
 'use client';
 
 import CareerTable, { type JobListing } from '@/components/admin/CareerTable';
+import PageLoader from '@/components/PageLoader';
 import { useAdminSearch } from '@/components/admin/AdminSearchContext';
 import { Briefcase, ClipboardList, Plus } from 'lucide-react';
 import Link from 'next/link';
@@ -216,7 +217,7 @@ export default function CareerPage() {
         </p>
       )}
       {loading ? (
-        <p className='text-sm text-[#969696]'>Loading jobs...</p>
+        <PageLoader />
       ) : (
         <CareerTable
           jobs={filteredJobs}

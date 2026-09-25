@@ -1,5 +1,12 @@
 import { requireAuth } from '@/lib/auth';
-import { blogError, blogId, getBlogs, serializeBlog, validateBlog } from '@/lib/blogs';
+import {
+  blogError,
+  blogId,
+  getBlogs,
+  serializeBlog,
+  uploadBlogImage,
+  validateBlog,
+} from '@/lib/blogs';
 
 export const runtime = 'nodejs';
 
@@ -26,6 +33,9 @@ export async function PATCH(request: Request, context: Context) {
   try {
     const _id = blogId((await context.params).id);
     const changes = validateBlog(await request.json(), true);
+    for (const field of ['thumbnail', 'banner'] as const)
+      if (typeof changes[field] === 'string')
+        changes[field] = await uploadBlogImage(changes[field], field);
     const collection = await getBlogs();
     const existing = await collection.findOne({ _id });
     if (!existing) return notFound();

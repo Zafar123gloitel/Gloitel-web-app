@@ -1,6 +1,7 @@
 'use client';
 
 import BlogEditor from '@/components/admin/Blogeditor';
+import PageLoader from '@/components/PageLoader';
 import type { BlogPost } from '@/components/admin/BlogTable';
 import { useParams, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
@@ -46,7 +47,7 @@ export default function CaseStudyEditorPage() {
   }
 
   if (isLoading || (caseStudy && caseStudy.id !== params.id)) {
-    return <p className='text-sm text-[#969696]'>Loading...</p>;
+    return <PageLoader />;
   }
 
   if (error || !caseStudy) {

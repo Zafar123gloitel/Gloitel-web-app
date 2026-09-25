@@ -99,7 +99,6 @@ export default function BlogEditor({
     ? 'gloitel.com/resources/case-studies/'
     : 'gloitel.com/resources/articles/';
   const contentRef = useRef<HTMLTextAreaElement>(null);
-  const fileInputRef = useRef<HTMLInputElement>(null);
   const [saving, setSaving] = useState(false);
   const savingRef = useRef(false);
   const [saveError, setSaveError] = useState('');
@@ -112,6 +111,7 @@ export default function BlogEditor({
     excerpt: initialData?.excerpt ?? '',
     content: initialData?.content ?? '',
     thumbnail: initialData?.thumbnail ?? '',
+    banner: initialData?.banner ?? '',
     category: initialData?.category ?? '',
     industry: initialData?.industry ?? '',
     service: initialData?.service ?? '',
@@ -313,23 +313,6 @@ export default function BlogEditor({
     });
   }
 
-  function handleImageUpload(e: React.ChangeEvent<HTMLInputElement>) {
-    const file = e.target.files?.[0];
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onload = () => update('thumbnail', reader.result as string);
-    reader.readAsDataURL(file);
-  }
-
-  function handleDrop(e: React.DragEvent<HTMLButtonElement>) {
-    e.preventDefault();
-    const file = e.dataTransfer.files?.[0];
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onload = () => update('thumbnail', reader.result as string);
-    reader.readAsDataURL(file);
-  }
-
   const wordCount = useMemo(
     () => (form.content.trim() ? form.content.trim().split(/\s+/).length : 0),
     [form.content],
@@ -365,6 +348,7 @@ export default function BlogEditor({
         content: form.content,
         Description: form.Description,
         thumbnail: form.thumbnail,
+        banner: form.banner,
         category: form.category,
         author: isCaseStudy
           ? undefined
@@ -870,11 +854,10 @@ export default function BlogEditor({
               onFile={file => handleImage('thumbnail', file)}
               onRemove={() => update('thumbnail', '')}
             />
-
             <ImageUploadCard
               title='Banner Image'
               hint='Recommended size: 1200 x 630 px'
-              value={form?.banner}
+              value={form.banner}
               onFile={file => handleImage('banner', file)}
               onRemove={() => update('banner', '')}
               previewClassName='h-40'

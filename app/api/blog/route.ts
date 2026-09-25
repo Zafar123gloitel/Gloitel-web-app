@@ -1,5 +1,5 @@
 import { requireAuth } from '@/lib/auth';
-import { blogError, getBlogs, serializeBlog, validateBlog } from '@/lib/blogs';
+import { blogError, getBlogs, serializeBlog, uploadBlogImage, validateBlog } from '@/lib/blogs';
 
 export const runtime = 'nodejs';
 
@@ -8,6 +8,9 @@ export async function POST(request: Request) {
   if (unauthorized) return unauthorized;
   try {
     const fields = validateBlog(await request.json());
+    for (const field of ['thumbnail', 'banner'] as const)
+      if (typeof fields[field] === 'string')
+        fields[field] = await uploadBlogImage(fields[field], field);
     const now = new Date().toISOString();
     const blog = { ...fields, createdAt: now, updatedAt: now };
     const collection = await getBlogs();

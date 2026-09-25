@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRightIcon, SearchIcon } from '@/components/SvgIcon';
+import PageLoader from '@/components/PageLoader';
 import { useEffect, useMemo, useState } from 'react';
 import Execution_Plan from '@/uiComponents/Execution_Plan';
 import { resourcesCTAData } from '../data';
@@ -188,11 +189,7 @@ export default function CaseStudiesPage() {
             </button>
           </div>
         )}
-        {loading && (
-          <p role='status' className='mb-6 text-sm text-gray-400'>
-            Loading case studies...
-          </p>
-        )}
+        {loading && <PageLoader className='mb-6 min-h-64' />}
         <div className='grid gap-6 md:grid-cols-2 xl:grid-cols-3'>
           {!loading && filteredCaseStudies.length > 0 ? (
             filteredCaseStudies.map(item => (

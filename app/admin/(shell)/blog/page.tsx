@@ -1,6 +1,7 @@
 'use client';
 
 import BlogTable, { type BlogPost } from '@/components/admin/BlogTable';
+import PageLoader from '@/components/PageLoader';
 import { useAdminSearch } from '@/components/admin/AdminSearchContext';
 import { BookOpen, Edit2, CheckCircle2, Plus } from 'lucide-react';
 import Link from 'next/link';
@@ -167,13 +168,7 @@ export default function BlogPage() {
           </button>
         </div>
       )}
-      {loading ? (
-        <p role='status' className='text-sm text-[#969696]'>
-          Loading articles...
-        </p>
-      ) : (
-        <BlogTable posts={filteredPosts} onDelete={handleDelete} />
-      )}
+      {loading ? <PageLoader /> : <BlogTable posts={filteredPosts} onDelete={handleDelete} />}
     </div>
   );
 }

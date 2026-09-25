@@ -1,76 +1,90 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import data from './data.json';
 import { getBlogs } from '@/lib/blogs';
 import BlogContentMarkdown from '@/components/BlogContentMarkdown';
 
 export const dynamic = 'force-dynamic';
-
-type BlogDetail = {
-  slug: string;
-  title: string;
-  category: string;
-  readTime: string;
-  author: string;
-  authorRole: string;
-  authorImage: string;
-  date: string;
-  image: string;
-  href: string;
-  intro: string;
-  sections: { heading: string; body: string; list?: string[]; image?: string }[];
-  keyTakeaway: string;
-};
 
 const fallbackImage =
   'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788869098/Gloitel/Resource%20F/Blogs_Articles_h7tdgp.png';
 const fallbackAuthorImage =
   'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788869255/Gloitel/Profile%20G/ChatGPT_Image_Jun_9_2026_07_06_16_PM_iabgqm.png';
 
+type RelatedArticle = {
+  slug: string;
+  title: string;
+  category: string;
+  image: string;
+  date: string;
+  readTime: string;
+  href: string;
+};
+
 export default async function BlogDetailsPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const collection = await getBlogs();
   const dbBlog = await collection.findOne({ slug, status: 'published' });
-  const blog: BlogDetail | undefined = dbBlog
-    ? {
-        slug: String(dbBlog.slug),
-        title: String(dbBlog.title),
-        category: String(dbBlog.category || 'Blog'),
-        readTime: `${Math.max(
-          1,
-          Math.ceil(
-            String(dbBlog.content || '')
-              .trim()
-              .split(/\s+/)
-              .filter(Boolean).length / 200,
-          ),
-        )} Min Read`,
-        author: String((dbBlog.author as { name?: string } | undefined)?.name || 'Gloitel'),
-        authorRole: 'Author',
-        authorImage: String(
-          (dbBlog.author as { image?: string } | undefined)?.image || fallbackAuthorImage,
-        ),
-        date: dbBlog.publishDate
-          ? new Date(String(dbBlog.publishDate)).toLocaleDateString('en-US', {
-              month: 'short',
-              day: '2-digit',
-              year: 'numeric',
-            })
-          : '',
-        image: String(dbBlog.thumbnail || fallbackImage),
-        href: `/resources/blog/${slug}`,
-        intro: String(dbBlog.excerpt || dbBlog.Description || ''),
-        sections: [{ heading: '', body: String(dbBlog.content || '') }],
-        keyTakeaway: String(dbBlog.excerpt || ''),
-      }
-    : (data.blogs.find(b => b.slug === slug) as BlogDetail | undefined);
 
-  if (!blog) {
+  if (!dbBlog) {
     notFound();
   }
 
-  const relatedArticles = dbBlog ? [] : data.blogs.filter(b => b.slug !== slug).slice(0, 3);
+  const wordCount = String(dbBlog.content || '')
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean).length;
+
+  const blog = {
+    slug: String(dbBlog.slug),
+    title: String(dbBlog.title),
+    category: String(dbBlog.category || 'Blog'),
+    readTime: `${Math.max(1, Math.ceil(wordCount / 200))} Min Read`,
+    author: String((dbBlog.author as { name?: string } | undefined)?.name || 'Gloitel'),
+    authorRole: 'Author',
+    authorImage: String(
+      (dbBlog.author as { image?: string } | undefined)?.image || fallbackAuthorImage,
+    ),
+    date: dbBlog.publishDate
+      ? new Date(String(dbBlog.publishDate)).toLocaleDateString('en-US', {
+          month: 'short',
+          day: '2-digit',
+          year: 'numeric',
+        })
+      : '',
+    image: String(dbBlog.banner || dbBlog.thumbnail || fallbackImage),
+    intro: String(dbBlog.excerpt || dbBlog.Description || ''),
+  };
+
+  const relatedDocs = await collection
+    .find({ slug: { $ne: slug }, status: 'published' })
+    .sort({ publishDate: -1 })
+    .limit(3)
+    .toArray();
+
+  const relatedArticles: RelatedArticle[] = relatedDocs.map(doc => ({
+    slug: String(doc.slug),
+    title: String(doc.title),
+    category: String(doc.category || 'Blog'),
+    image: String(doc.thumbnail || fallbackImage),
+    date: doc.publishDate
+      ? new Date(String(doc.publishDate)).toLocaleDateString('en-US', {
+          month: 'short',
+          day: '2-digit',
+          year: 'numeric',
+        })
+      : '',
+    readTime: `${Math.max(
+      1,
+      Math.ceil(
+        String(doc.content || '')
+          .trim()
+          .split(/\s+/)
+          .filter(Boolean).length / 200,
+      ),
+    )} Min Read`,
+    href: `/resources/blog/${String(doc.slug)}`,
+  }));
 
   return (
     <main className='min-h-screen bg-black px-5 pt-28 pb-24 text-white sm:px-8 lg:px-12'>
@@ -107,9 +121,9 @@ export default async function BlogDetailsPage({ params }: { params: Promise<{ sl
         <div className='mt-6 flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-6'>
           <div className='flex items-center gap-3'>
             <div className='relative h-9 w-9 shrink-0 overflow-hidden rounded-full border border-white/10 bg-white/5'>
-              {blog?.authorImage ? (
+              {blog.authorImage ? (
                 <Image
-                  src={blog?.authorImage}
+                  src={blog.authorImage}
                   alt={blog.author}
                   fill
                   unoptimized
@@ -145,53 +159,9 @@ export default async function BlogDetailsPage({ params }: { params: Promise<{ sl
         <p className='mt-5 max-w-4xl text-sm leading-6 text-gray-400'>{blog.intro}</p>
 
         {/* Body */}
-        {dbBlog ? (
-          <div className='mt-10 max-w-4xl'>
-            <BlogContentMarkdown content={String(dbBlog.content || '')} />
-          </div>
-        ) : (
-          <div className='prose prose-invert prose-headings:font-medium prose-headings:text-white prose-p:text-sm prose-p:leading-6 prose-p:text-gray-400 prose-li:text-sm prose-li:text-gray-400 mt-10 max-w-4xl'>
-            {blog.sections.map((section, index) => (
-              <div key={index}>
-                {section.heading && (
-                  <h2 className='mt-7 max-w-4xl text-xl leading-tight font-medium sm:text-2xl'>
-                    {section.heading}
-                  </h2>
-                )}
-                <p className='mt-5 max-w-4xl text-sm leading-6 text-gray-400'>{section.body}</p>
-                {section.list && (
-                  <ul className='list-disc space-y-2 pl-5 marker:text-blue-400'>
-                    {section.list.map((item, itemIndex) => (
-                      <li key={itemIndex} className='pl-1'>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-                {section?.image && (
-                  <div className='not-prose relative my-6 aspect-2/1 w-full max-w-xl overflow-hidden rounded-xl border border-white/10'>
-                    <Image
-                      src={section?.image}
-                      alt={section.heading}
-                      fill
-                      unoptimized
-                      className='object-cover'
-                    />
-                  </div>
-                )}
-              </div>
-            ))}
-
-            {blog.keyTakeaway && (
-              <>
-                <h2 className='mt-7 max-w-4xl text-xl leading-tight font-medium sm:text-2xl'>
-                  Key Takeaway
-                </h2>
-                <p className='mt-5 max-w-4xl text-sm leading-6 text-gray-400'>{blog.keyTakeaway}</p>
-              </>
-            )}
-          </div>
-        )}
+        <div className='mt-10 max-w-4xl'>
+          <BlogContentMarkdown content={String(dbBlog.content || '')} />
+        </div>
 
         {/* Related articles */}
         {relatedArticles.length > 0 && (

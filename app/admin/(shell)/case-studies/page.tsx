@@ -1,6 +1,7 @@
 'use client';
 
 import { useAdminSearch } from '@/components/admin/AdminSearchContext';
+import PageLoader from '@/components/PageLoader';
 import CaseStudyTable from '@/components/admin/CaseStudyTable';
 import type { BlogPost } from '@/components/admin/BlogTable';
 import { BookOpen, CheckCircle2, Edit2, Plus } from 'lucide-react';
@@ -159,9 +160,7 @@ export default function CaseStudiesPage() {
         </div>
       )}
       {loading ? (
-        <p role='status' className='text-sm text-[#969696]'>
-          Loading case studies...
-        </p>
+        <PageLoader />
       ) : (
         <CaseStudyTable
           posts={filteredCaseStudies}

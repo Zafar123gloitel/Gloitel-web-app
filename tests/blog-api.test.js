@@ -25,8 +25,22 @@ function load(file, overrides = {}) {
   return module.exports;
 }
 
-const helpers = load('lib/blogs.ts');
-const valid = { title: 'First blog', slug: 'first-blog', content: 'Hello', excerpt: 'Summary' };
+const cloudinaryMock = {
+  CloudinaryService: {
+    uploadMedia: async () => ({
+      secure_url: 'https://res.cloudinary.com/test/image/upload/blog-thumbnail.png',
+    }),
+  },
+};
+const helpers = load('lib/blogs.ts', { '@/lib/cloudinary': cloudinaryMock });
+const valid = {
+  title: 'First blog',
+  slug: 'first-blog',
+  content: 'Hello',
+  excerpt: 'Summary',
+  thumbnail: 'data:image/png;base64,aGVsbG8=',
+  banner: 'data:image/jpeg;base64,aGVsbG8=',
+};
 
 test('editor payload, defaults and server-owned fields', () => {
   const blog = helpers.validateBlog({
@@ -136,6 +150,7 @@ test('create, read, update, duplicate slug, delete and error responses', async (
               { status: 401 },
             ),
     },
+    '@/lib/cloudinary': cloudinaryMock,
   };
   const root = load('app/api/blog/route.ts', deps);
   const item = load('app/api/blog/[id]/route.ts', deps);
@@ -156,6 +171,8 @@ test('create, read, update, duplicate slug, delete and error responses', async (
   const created = await root.POST(request(valid));
   assert.equal(created.status, 201);
   const { data } = await created.json();
+  assert.equal(data.thumbnail, 'https://res.cloudinary.com/test/image/upload/blog-thumbnail.png');
+  assert.equal(data.banner, 'https://res.cloudinary.com/test/image/upload/blog-thumbnail.png');
   const context = { params: Promise.resolve({ id: data.id }) };
   assert.equal((await root.POST(request(valid))).status, 409);
   const publicDraftList = await (await root.GET(new Request('http://localhost/api/blog'))).json();

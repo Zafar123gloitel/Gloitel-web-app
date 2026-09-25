@@ -13,6 +13,7 @@ type BlogFields = Partial<
     | 'excerpt'
     | 'content'
     | 'thumbnail'
+    | 'banner'
     | 'imageAlt'
     | 'category'
     | 'status'
@@ -89,6 +90,7 @@ export function validateBlog(body: unknown, partial = false): BlogFields {
     excerpt: 10000,
     content: 1000000,
     thumbnail: 7000000,
+    banner: 7000000,
     imageAlt: 500,
     category: 100,
     status: 20,
@@ -154,6 +156,7 @@ export function validateBlog(body: unknown, partial = false): BlogFields {
     result.publishDate = date.toISOString();
   }
   if ('thumbnail' in result) image(String(result.thumbnail), 'thumbnail');
+  if ('banner' in result) image(String(result.banner), 'banner');
   if (!partial && result.status !== 'draft' && (!result.content || !result.excerpt)) {
     throw new BlogInputError('Content and excerpt are required to publish or schedule a blog');
   }
@@ -165,6 +168,13 @@ export function validateBlog(body: unknown, partial = false): BlogFields {
 export function blogId(id: string) {
   if (!/^[a-f\d]{24}$/i.test(id)) throw new BlogInputError('Invalid blog ID');
   return new ObjectId(id);
+}
+
+export async function uploadBlogImage(value: string, field: 'thumbnail' | 'banner') {
+  if (!value.startsWith('data:image/')) return value;
+  const { CloudinaryService } = await import('@/lib/cloudinary');
+  const result = await CloudinaryService.uploadMedia(value, `Gloitel/Blog/${field}`, 'image');
+  return result.secure_url;
 }
 
 export function serializeBlog({ _id, ...blog }: WithId<BlogDocument>) {

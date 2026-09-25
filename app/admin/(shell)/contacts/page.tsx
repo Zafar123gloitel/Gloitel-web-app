@@ -1,6 +1,7 @@
 'use client';
 
 import { useAdminSearch } from '@/components/admin/AdminSearchContext';
+import PageLoader from '@/components/PageLoader';
 import { ArrowLeft, ChevronLeft, ChevronRight, Inbox, Mail, RefreshCw } from 'lucide-react';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
@@ -116,9 +117,7 @@ export default function ContactsPage() {
           </button>
         </div>
       ) : loading && contacts.length === 0 ? (
-        <div className='flex min-h-64 items-center justify-center rounded-xl border border-white/10 bg-[#0f0f0f]'>
-          <RefreshCw size={22} className='animate-spin text-[#5b8def]' />
-        </div>
+        <PageLoader className='rounded-xl border border-white/10 bg-[#0f0f0f]' />
       ) : visibleContacts.length === 0 ? (
         <div className='flex flex-col items-center justify-center rounded-xl border border-dashed border-white/10 bg-[#111111] py-16 text-center'>
           <Inbox size={22} className='mb-3 text-[#969696]' />

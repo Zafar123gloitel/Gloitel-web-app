@@ -12,6 +12,7 @@ export type CaseStudyFields = Partial<{
   excerpt: string;
   content: string;
   thumbnail: string;
+  banner: string;
   category: string;
   industry: string;
   service: string;
@@ -58,6 +59,7 @@ export function validateCaseStudy(body: unknown, partial = false): CaseStudyFiel
     excerpt: 10000,
     content: 1000000,
     thumbnail: 7000000,
+    banner: 7000000,
     category: 100,
     industry: 100,
     service: 100,
@@ -108,19 +110,21 @@ export function validateCaseStudy(body: unknown, partial = false): CaseStudyFiel
       throw new CaseStudyInputError('liveWebsiteLink must be an HTTP(S) URL');
     }
   }
-  if (result.thumbnail) {
-    if (/^data:image\/(png|jpeg|webp);base64,[A-Za-z0-9+/]+={0,2}$/.test(result.thumbnail)) {
-      if (Buffer.from(result.thumbnail.split(',')[1], 'base64').length > 5 * 1024 * 1024)
-        throw new CaseStudyInputError('thumbnail must be at most 5 MB');
-    } else {
-      try {
-        const url = new URL(result.thumbnail);
-        if (!['http:', 'https:'].includes(url.protocol)) throw new Error('Unsupported protocol');
-      } catch {
-        throw new CaseStudyInputError(
-          'thumbnail must be an HTTP(S) URL or PNG, JPEG or WEBP data URL',
-        );
-      }
+  for (const field of ['thumbnail', 'banner'] as const) {
+    const value = result[field];
+    if (!value) continue;
+    if (/^data:image\/(png|jpeg|webp);base64,[A-Za-z0-9+/]+={0,2}$/.test(value)) {
+      if (Buffer.from(value.split(',')[1], 'base64').length > 5 * 1024 * 1024)
+        throw new CaseStudyInputError(`${field} must be at most 5 MB`);
+      continue;
+    }
+    try {
+      const url = new URL(value);
+      if (!['http:', 'https:'].includes(url.protocol)) throw new Error('Unsupported protocol');
+    } catch {
+      throw new CaseStudyInputError(
+        `${field} must be an HTTP(S) URL or PNG, JPEG or WEBP data URL`,
+      );
     }
   }
   if (
@@ -139,6 +143,17 @@ export function validateCaseStudy(body: unknown, partial = false): CaseStudyFiel
 export function caseStudyId(id: string) {
   if (!/^[a-f\d]{24}$/i.test(id)) throw new CaseStudyInputError('Invalid case study ID');
   return new ObjectId(id);
+}
+
+export async function uploadCaseStudyImage(value: string, field: 'thumbnail' | 'banner') {
+  if (!value.startsWith('data:image/')) return value;
+  const { CloudinaryService } = await import('@/lib/cloudinary');
+  const result = await CloudinaryService.uploadMedia(
+    value,
+    `Gloitel/Case Studies/${field}`,
+    'image',
+  );
+  return result.secure_url;
 }
 
 export function serializeCaseStudy({ _id, ...study }: WithId<CaseStudyDocument>) {

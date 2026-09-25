@@ -3,6 +3,7 @@ import {
   caseStudyError,
   getCaseStudies,
   serializeCaseStudy,
+  uploadCaseStudyImage,
   validateCaseStudy,
   type CaseStudyDocument,
 } from '@/lib/caseStudies';
@@ -15,6 +16,8 @@ export async function POST(request: Request) {
   if (unauthorized) return unauthorized;
   try {
     const fields = validateCaseStudy(await request.json());
+    for (const field of ['thumbnail', 'banner'] as const)
+      if (fields[field]) fields[field] = await uploadCaseStudyImage(fields[field], field);
     const now = new Date().toISOString();
     const study = { ...fields, createdAt: now, updatedAt: now };
     const { insertedId } = await (await getCaseStudies()).insertOne(study);

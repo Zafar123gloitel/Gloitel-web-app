@@ -10,6 +10,7 @@ export interface BlogPreviewData {
   excerpt?: string;
   content?: string;
   thumbnail?: string;
+  banner?: string;
   category?: string;
   industry?: string;
   service?: string;
@@ -51,11 +52,8 @@ export default function BlogPreview({
   contentLabel = 'Article',
 }: BlogPreviewProps) {
   if (!isOpen) return null;
-
   const wordCount = data.content?.trim() ? data.content.trim().split(/\s+/).length : 0;
-
   const readMins = Math.max(1, Math.ceil(wordCount / 200));
-
   return (
     <div className='custom-scrollbar fixed inset-0 z-50 h-screen overflow-y-auto bg-black/80 px-4 py-4 backdrop-blur-sm'>
       <div className='mx-auto flex h-full min-h-0 max-w-4xl flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#101010] shadow-2xl'>
@@ -82,9 +80,9 @@ export default function BlogPreview({
         {/* Article */}
         <article className='custom-scrollbar min-h-0 flex-1 overflow-y-auto px-6 py-8 sm:px-12 sm:py-12'>
           {/* Thumbnail */}
-          {data.thumbnail && (
+          {(data.thumbnail || data.banner) && (
             <img
-              src={data.thumbnail}
+              src={data.banner || data.thumbnail}
               alt=''
               className='mb-8 aspect-1200/630 w-full rounded-xl object-cover'
             />
