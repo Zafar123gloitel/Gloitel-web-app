@@ -1,12 +1,12 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
-import { ArrowRightIcon, SearchIcon } from '@/components/SvgIcon';
+import { SearchIcon } from '@/components/SvgIcon';
 import PageLoader from '@/components/PageLoader';
 import { useEffect, useMemo, useState } from 'react';
 import Execution_Plan from '@/uiComponents/Execution_Plan';
 import { resourcesCTAData } from '../data';
+import { ProjectCard } from '@/components/AutoScroll';
 
 type CaseStudyCard = {
   id: string;
@@ -180,7 +180,7 @@ export default function CaseStudiesPage() {
       </section>
 
       {/* Grid */}
-      <section className='relative mx-auto max-w-6xl px-5 pb-20 sm:px-8 lg:px-12'>
+      <section className='relative mx-auto max-w-[1600px] px-5 pb-20 sm:px-8 lg:px-12'>
         {error && (
           <div role='alert' className='mb-6 text-sm text-red-400'>
             {error}{' '}
@@ -192,36 +192,7 @@ export default function CaseStudiesPage() {
         {loading && <PageLoader className='mb-6 min-h-64' />}
         <div className='grid gap-6 md:grid-cols-2 xl:grid-cols-3'>
           {!loading && filteredCaseStudies.length > 0 ? (
-            filteredCaseStudies.map(item => (
-              <Link
-                key={item.id}
-                href={item.href}
-                className='group overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur-sm transition hover:border-white/20'
-              >
-                <div className='relative aspect-[16/10] overflow-hidden'>
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    unoptimized
-                    className='object-cover transition duration-500 group-hover:scale-105'
-                  />
-                </div>
-
-                <div className='space-y-3 p-5'>
-                  <span className='inline-block rounded-full border border-white/15 bg-white/[0.04] px-3 py-1 text-[11px] font-medium text-gray-300'>
-                    {item.category}
-                  </span>
-
-                  <h2 className='text-lg leading-6 font-medium text-white'>{item.title}</h2>
-                  <p className='text-sm leading-6 text-gray-400'>{item.description}</p>
-
-                  <span className='flex items-center gap-1 pt-2 text-sm font-medium text-[#5b8def]'>
-                    Read Case Study <ArrowRightIcon />
-                  </span>
-                </div>
-              </Link>
-            ))
+            filteredCaseStudies.map(item => <ProjectCard key={item.id} feature={item} />)
           ) : !loading && !error ? (
             <div className='col-span-full rounded-2xl border border-dashed border-white/10 bg-white/[0.02] px-6 py-12 text-center text-gray-400'>
               No case studies found for this search.

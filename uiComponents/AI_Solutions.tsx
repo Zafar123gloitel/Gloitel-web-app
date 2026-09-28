@@ -105,7 +105,7 @@ const AI_SolutionsContent = ({
 
         <div className='bg-surface-2 px-auto mt-14 hidden overflow-hidden rounded-3xl border-white/10 py-12 lg:block'>
           <div
-            className='flex p-5 transition-transform duration-1000 ease-out sm:p-0'
+            className='flex p-5 transition-transform duration-[4000ms] ease-out sm:p-0'
             style={{ transform: `translateX(-${activeTabIndex * 100}%)` }}
           >
             {tabs && tabs.length > 0 ? (

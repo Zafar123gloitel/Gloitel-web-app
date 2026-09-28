@@ -623,7 +623,7 @@ const Navbar = () => {
 
           {/* 🔹 Right Section — Button */}
           <div className='hidden items-center lg:flex'>
-            <GlowButton buttonText='Get In Touch' Buttonlink='/contact' />
+            <GlowButton buttonText='Get In Touch' buttonLink='/contact' />
           </div>
         </div>
 

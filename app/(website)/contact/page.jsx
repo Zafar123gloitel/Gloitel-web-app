@@ -27,7 +27,7 @@ const ContactPage = () => {
               description='Whether you have a question, need assistance,
  or want to start a new project, our team is here to help.'
             />
-            <GlowButton buttonText='Fill The Form Out' buttonlink={'#form'} />
+            <GlowButton buttonText='Fill The Form Out' buttonLink={'#form'} />
           </div>
           <div ref={formRef} className='w-full'>
             <ContactForm />

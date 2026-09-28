@@ -42,41 +42,9 @@ body {
   color: var(--description-color) !important;
 }
 
-/* Button primitives */
-/* .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.6rem 1rem;
-  border-radius: 0.5rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 150ms ease, color 150ms ease, box-shadow 150ms ease;
-} */
-
-/* .btn-primary {
-  background-color: var(--btn-primary);
-  color: var(--btn-secondary);
-  border: 1px solid transparent;
+p {
+  color: white;
 }
-
-.btn-primary:hover {
-  filter: brightness(0.95);
-}
-
-.btn-secondary {
-  background-color: transparent;
-  color: var(--btn-secondary);
-  border: 1px solid var(--btn-secondary);
-}
-
-.btn-ghost {
-  background-color: var(--btn-3);
-  color: var(--title-color);
-  border: 1px solid transparent;
-} */
-
 .bg-surface-1 {
   background-color: var(--surface-1);
 }

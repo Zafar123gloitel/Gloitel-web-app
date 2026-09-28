@@ -743,8 +743,8 @@ import IconCard from './card-showcase/IconCard';
 
 // FOR HOME PAGE
 export const HomeAboutContent = ({
-  Buttonlink,
-  ButtonText,
+  link,
+  Text,
   HomeAboutBadge,
   homeAboutHeading,
   HomeAboutSubHeading,
@@ -791,7 +791,7 @@ export const HomeAboutContent = ({
       )}
       {/* Buttons & Badge */}
       <div className='mt-6 flex flex-col-reverse items-start gap-4 sm:mt-8 sm:flex-row-reverse sm:items-center md:flex-row'>
-        <GlowButton buttonText={ButtonText} buttonlink={Buttonlink} />
+        <GlowButton buttonText={Text} buttonLink={link} />
         <VerticalDivider />
         <div className='ml-0 gap-1 sm:ml-0 md:ml-5'>
           <div className='flex flex-row gap-1'>
@@ -910,7 +910,7 @@ export const AboutAboutContent = ({
 
       {/* Buttons & Badge */}
       <div className='mt-6 flex flex-col items-start gap-4 sm:mt-8 sm:flex-row sm:items-center'>
-        <GlowButton buttonText={ButtonText} buttonlink={Buttonlink} />
+        <GlowButton buttonText={ButtonText} buttonLink={Buttonlink} />
         <VerticalDivider />
         <div className='ml-5 gap-1'>
           <div className='flex flex-row gap-1'>

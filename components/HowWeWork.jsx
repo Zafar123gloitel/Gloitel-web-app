@@ -7,7 +7,6 @@ import { Blend, Crosshair, Rocket } from 'lucide-react';
 import Image from 'next/image';
 import StrategyBadge from '@/components/StrategyBadge';
 import { ImageCard2 } from '@/uiComponents/ImageCard';
-
 const stages = [
   {
     id: globalThis.crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2),
@@ -18,6 +17,7 @@ const stages = [
     points: ['Comprehensive Consultation', 'Project Roadmap'],
     icon: <Rocket />,
   },
+
   {
     id: globalThis.crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2),
     title: 'Execution',
@@ -40,10 +40,10 @@ const stages = [
   },
 ];
 
-const AnimatedCard = ({ children }) => {
+const AnimatedCard = ({ children, className = '' }) => {
   const ref = useRef(null);
   const controls = useAnimation();
-  const isInView = useInView(ref, { margin: '-100px' }); // no `once: true`
+  const isInView = useInView(ref, { margin: '-100px' });
 
   useEffect(() => {
     if (isInView) {
@@ -54,7 +54,6 @@ const AnimatedCard = ({ children }) => {
         transition: { duration: 0.6, ease: 'easeOut' },
       });
     } else {
-      // Reset animation when leaving viewport
       controls.start({
         opacity: 0,
         y: 50,
@@ -69,7 +68,7 @@ const AnimatedCard = ({ children }) => {
       ref={ref}
       initial={{ opacity: 0, y: 50, scale: 0.95 }}
       animate={controls}
-      className='w-full'
+      className={`w-full ${className}`}
     >
       {children}
     </motion.div>
@@ -89,62 +88,72 @@ const HowWeWork = () => {
             SectionSubHead='to AI-Powered Launch'
             SectionDescription='We make it easy to bring your ideas to life, guiding you from concept to a fully launched product.'
           />
-
-          <div className='mt-2 grid gap-4 sm:mt-4 sm:gap-6'>
-            {stages.map(item => (
-              <AnimatedCard key={item.id}>
-                <div className='relative overflow-hidden rounded-2xl border border-white/10 bg-black/40 p-5 shadow-lg backdrop-blur-md sm:p-10'>
-                  <div className='pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-900/40 via-indigo-800/20 to-transparent opacity-50'></div>
-                  <div className='relative z-10 flex items-center justify-between'>
-                    <div className='text-title flex items-center justify-center rounded-lg bg-white/5 px-3 py-3 shadow-[0_0_25px_rgba(59,130,246,0.3)]'>
-                      {item.icon}
-                    </div>
-                    <span className='rounded-xl bg-blue-600/20 px-4 py-2 text-xs text-gray-300 shadow-[0_0_25px_rgba(59,130,246,0.3)] sm:text-sm'>
-                      {item.stage}
-                    </span>
-                  </div>
-                  <h3 className='text-title relative z-10 mt-3 text-lg font-semibold sm:mt-4 sm:text-xl'>
-                    {item.title}
-                  </h3>
-                  <div className='relative z-10 my-2 h-px w-full bg-gradient-to-r from-white/10 to-transparent sm:my-3'></div>
-                  <p className='text-md sm:text-md relative z-10 leading-relaxed text-gray-400 md:text-base'>
-                    {item.description}
-                  </p>
-                  <div className='relative z-10 mt-3 flex flex-wrap gap-2 sm:mt-4 sm:gap-3'>
-                    {item.points.map((point, idx) => (
-                      <span
-                        key={idx}
-                        className='rounded-md bg-white/10 px-3 py-2 text-xs text-gray-300 sm:text-sm'
-                      >
-                        {point}
-                      </span>
-                    ))}
-                  </div>
-                  {/* Conditionally render button only for the third card */}
-                  {item.ButtonText && item.ButtonTextLink && (
-                    <div className='mt-4 flex justify-start'>
-                      <GlowButton buttonText={item.ButtonText} buttonLink={item.ButtonTextLink} />
-                    </div>
-                  )}
-                  {item.ButtonText && item.ButtonTextLink && (
-                    <div className='absolute -right-10 -bottom-10 opacity-70'>
-                      <Image
-                        src='https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762926076/Gloitel/utils/star_fzn7cv.svg'
-                        alt='design'
-                        width={180}
-                        height={180}
-                        unoptimized
-                        loading='lazy'
-                      />
-                    </div>
-                  )}
-                </div>
-              </AnimatedCard>
-            ))}
-          </div>
         </div>
         {/* RIGHT */}
-        <ImageCard2 HowWeWorkImg='https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762927938/Gloitel/howwework_gzjhr8.webp' />
+        <div className='lg:sticky lg:top-20 lg:self-start'>
+          <ImageCard2 HowWeWorkImg='https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762927938/Gloitel/howwework_gzjhr8.webp' />
+        </div>
+      </div>
+      <div className='mt-2 grid grid-cols-1 gap-4 pr-2 sm:mt-4 sm:gap-6 lg:grid-cols-2'>
+        {stages.map((item, index) => (
+          <AnimatedCard
+            className={
+              index === 0 ? 'order-1' : index === 1 ? 'order-2 lg:order-3' : 'order-3 lg:order-2'
+            }
+            key={item.id}
+          >
+            <div
+              className={`relative overflow-hidden rounded-2xl border border-white/10 bg-black/40 p-5 shadow-lg backdrop-blur-md sm:p-10 ${
+                [0, 1].includes(index) ? '-mt-0 lg:-mt-72' : ''
+              }`}
+            >
+              <div className='pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-900/40 via-indigo-800/20 to-transparent opacity-50'></div>
+              <div className='relative z-10 flex items-center justify-between'>
+                <div className='text-title flex items-center justify-center rounded-lg bg-white/5 px-3 py-3 shadow-[0_0_25px_rgba(59,130,246,0.3)]'>
+                  {item.icon}
+                </div>
+                <span className='rounded-xl bg-blue-600/20 px-4 py-2 text-xs text-gray-300 shadow-[0_0_25px_rgba(59,130,246,0.3)] sm:text-sm'>
+                  {item.stage}
+                </span>
+              </div>
+              <h3 className='text-title relative z-10 mt-3 text-lg font-semibold sm:mt-4 sm:text-xl'>
+                {item.title}
+              </h3>
+              <div className='relative z-10 my-2 h-px w-full bg-gradient-to-r from-white/10 to-transparent sm:my-3'></div>
+              <p className='text-md sm:text-md relative z-10 leading-relaxed text-gray-400 md:text-base'>
+                {item.description}
+              </p>
+              <div className='relative z-10 mt-3 flex flex-wrap gap-2 sm:mt-4 sm:gap-3'>
+                {item.points.map((point, idx) => (
+                  <span
+                    key={idx}
+                    className='rounded-md bg-white/10 px-3 py-2 text-xs text-gray-300 sm:text-sm'
+                  >
+                    {point}
+                  </span>
+                ))}
+              </div>
+              {/* Conditionally render button only for the third card */}
+              {item.ButtonText && item.ButtonTextLink && (
+                <div className='mt-4 flex justify-start'>
+                  <GlowButton buttonText={item.ButtonText} buttonLink={item.ButtonTextLink} />
+                </div>
+              )}
+              {item.ButtonText && item.ButtonTextLink && (
+                <div className='absolute -right-10 -bottom-10 opacity-70'>
+                  <Image
+                    src='https://res.cloudinary.com/dsqu6pi0d/image/upload/v1762926076/Gloitel/utils/star_fzn7cv.svg'
+                    alt='design'
+                    width={180}
+                    height={180}
+                    unoptimized
+                    loading='lazy'
+                  />
+                </div>
+              )}
+            </div>
+          </AnimatedCard>
+        ))}
       </div>
     </section>
   );

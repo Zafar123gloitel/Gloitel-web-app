@@ -47,7 +47,7 @@ export const aiStrategySectionHead = [
     description:
       'Real client challenges, implementation strategies, measurable outcomes, and engineering learnings.',
     text: 'Explore Case Study',
-    href: '/resources/case-studies/healthcare-ai-transformation',
+    href: '/resources/case-studies',
   },
 ];
 export const BlogeForSectionHead2 = {

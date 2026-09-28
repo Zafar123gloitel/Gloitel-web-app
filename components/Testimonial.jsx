@@ -107,7 +107,7 @@ const Testimonial = () => {
               <FeatureScroll />
             </div>
           </div>
-          <GlowButton buttonText='View About Gloitel' buttonlink='/about' />
+          <GlowButton buttonText='View About Gloitel' buttonLink='/about' />
         </div>
 
         {/* GRID */}

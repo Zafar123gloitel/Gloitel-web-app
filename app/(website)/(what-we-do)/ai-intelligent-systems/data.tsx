@@ -13,7 +13,7 @@ export const aiIntelligentSystemsHeroData = {
   description:
     'Most AI initiatives stall between experimentation and execution. We position ourselves at that gap - diagnosing where AI will create measurable value before committing to build.',
   image:
-    'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787040168/Gloitel/Parent%20pages/ML_Predictive_Analytics_txf2cy.png',
+    'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1787051703/Gloitel/Parent%20pages/AI_Intelligent_Systems_lsfd7i.png',
   imageAlt: 'AI and intelligent systems',
   video: 'https://res.cloudinary.com/dsqu6pi0d/video/upload/v1762846419/Gloitel/bg_cij8h5.mp4',
   primaryButton: {
@@ -22,7 +22,7 @@ export const aiIntelligentSystemsHeroData = {
   },
   secondaryButton: {
     text: 'View AI Case Studies',
-    href: '/contact',
+    href: '/resources/case-studies',
     icon: <HeroArrowRightIcon />,
   },
 };

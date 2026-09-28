@@ -124,8 +124,8 @@ const HomePage = () => {
                 { title: 'AI-Powered Solutions' },
                 { title: 'Custom IT Services' },
               ]}
-              ButtonText='View About Gloitel'
-              Buttonlink='/about'
+              Text='View About Gloitel'
+              link='/about'
               HomeAboutTexts='Trusted by 50+ agencies for excellence.'
             />
           </div>
@@ -167,7 +167,7 @@ const HomePage = () => {
                   {text.title}
                 </span>
               ))}
-              <WhiteButton buttonText='Contact Now' buttonlink='/contact' />
+              <WhiteButton buttonText='Contact Now' buttonLink='/contact' />
             </div>
           </div>
           {/* Services */}
@@ -204,7 +204,7 @@ const HomePage = () => {
             />
             <GlowButton
               buttonText='View Portfolio'
-              buttonlink='/creation'
+              buttonLink='/creation'
               className='mt-6 sm:mt-8'
             />
           </div>
