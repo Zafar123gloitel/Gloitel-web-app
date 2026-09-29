@@ -21,7 +21,7 @@ const LaunchYourSite = () => {
             SectionDescription='We leverage industry-leading platforms and tools to deliver cutting-edge AI, cloud, and data-driven solutions.'
           />
 
-          <GlowButton buttonText='View About Gloitel' buttonlink='/about' />
+          <GlowButton buttonText='View About Gloitel' buttonLink='/about' />
         </div>
 
         {/* AutoScroll */}

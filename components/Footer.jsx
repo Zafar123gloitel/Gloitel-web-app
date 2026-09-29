@@ -2,12 +2,10 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import { CardDivider, CardIcon, GlowButton } from '@/components';
+import { CardDivider, CardIcon } from '@/components';
 import { links, megaMenus } from './NavData';
 import { useState, useEffect, useRef } from 'react';
-import { Input } from '@/uiComponents/input';
 import { EmailIcon, LocationIcon, PhoneIcon } from './SvgIcon';
-import { toast } from 'react-hot-toast';
 
 const contact = {
   email: 'gloitel-it@gloitel.in',
@@ -66,74 +64,74 @@ export default function Footer() {
           />
         </svg>
       ),
-      link: 'https://www.linkedin.com/company/gloitel-consulting-private-limited/posts/?feedView=all',
+      link: 'https://www.linkedin.com/company/gloitel',
     },
-    {
-      icon: (
-        <svg
-          xmlns='http://www.w3.org/2000/svg'
-          width='36'
-          height='36'
-          viewBox='0 0 36 36'
-          fill='none'
-        >
-          <path
-            d='M11.4259 2.92969H23.7308C28.4184 2.92969 32.227 6.73834 32.227 11.4259V23.7308C32.227 25.9841 31.3319 28.1452 29.7385 29.7385C28.1452 31.3319 25.9841 32.227 23.7308 32.227H11.4259C6.73834 32.227 2.92969 28.4184 2.92969 23.7308V11.4259C2.92969 9.17257 3.82482 7.01153 5.41817 5.41817C7.01153 3.82482 9.17257 2.92969 11.4259 2.92969ZM11.1329 5.85942C9.73431 5.85942 8.39297 6.41502 7.404 7.404C6.41502 8.39297 5.85942 9.73431 5.85942 11.1329V24.0238C5.85942 26.9388 8.21785 29.2973 11.1329 29.2973H24.0238C25.4224 29.2973 26.7637 28.7417 27.7527 27.7527C28.7417 26.7637 29.2973 25.4224 29.2973 24.0238V11.1329C29.2973 8.21785 26.9388 5.85942 24.0238 5.85942H11.1329ZM25.2689 8.05672C25.7545 8.05672 26.2203 8.24964 26.5637 8.59303C26.9071 8.93643 27.1 9.40217 27.1 9.8878C27.1 10.3734 26.9071 10.8392 26.5637 11.1826C26.2203 11.526 25.7545 11.7189 25.2689 11.7189C24.7833 11.7189 24.3175 11.526 23.9741 11.1826C23.6307 10.8392 23.4378 10.3734 23.4378 9.8878C23.4378 9.40217 23.6307 8.93643 23.9741 8.59303C24.3175 8.24964 24.7833 8.05672 25.2689 8.05672ZM17.5784 10.254C19.5209 10.254 21.3839 11.0257 22.7574 12.3993C24.131 13.7728 24.9027 15.6358 24.9027 17.5784C24.9027 19.5209 24.131 21.3839 22.7574 22.7574C21.3839 24.131 19.5209 24.9027 17.5784 24.9027C15.6358 24.9027 13.7728 24.131 12.3993 22.7574C11.0257 21.3839 10.254 19.5209 10.254 17.5784C10.254 15.6358 11.0257 13.7728 12.3993 12.3993C13.7728 11.0257 15.6358 10.254 17.5784 10.254ZM17.5784 13.1838C16.4128 13.1838 15.295 13.6468 14.4709 14.4709C13.6468 15.295 13.1838 16.4128 13.1838 17.5784C13.1838 18.7439 13.6468 19.8617 14.4709 20.6858C15.295 21.5099 16.4128 21.9729 17.5784 21.9729C18.7439 21.9729 19.8617 21.5099 20.6858 20.6858C21.5099 19.8617 21.9729 18.7439 21.9729 17.5784C21.9729 16.4128 21.5099 15.295 20.6858 14.4709C19.8617 13.6468 18.7439 13.1838 17.5784 13.1838Z'
-            fill='white'
-          />
-        </svg>
-      ),
-      link: 'https://www.linkedin.com/company/gloitel-consulting-private-limited/posts/?feedView=all',
-    },
-    {
-      icon: (
-        <svg
-          xmlns='http://www.w3.org/2000/svg'
-          width='30'
-          height='30'
-          viewBox='0 0 30 30'
-          fill='none'
-        >
-          <g clipPath='url(#clip0_1316_68944)'>
-            <g mask='url(#mask0_1316_68944)'>
-              <path
-                d='M23.625 1.40625H28.2257L18.1757 12.922L30 28.5948H20.7429L13.4871 19.0912L5.19429 28.5948H0.589286L11.3379 16.2734L0 1.40839H9.49286L16.0414 10.0934L23.625 1.40625ZM22.0071 25.8348H24.5571L8.1 4.02268H5.36571L22.0071 25.8348Z'
-                fill='white'
-              />
-            </g>
-          </g>
-          <defs>
-            <clipPath id='clip0_1316_68944'>
-              <rect width='30' height='30' rx='4.88289' fill='white' />
-            </clipPath>
-          </defs>
-        </svg>
-      ),
-      link: 'https://www.linkedin.com/company/gloitel-consulting-private-limited/posts/?feedView=all',
-    },
-    {
-      icon: (
-        <svg
-          xmlns='http://www.w3.org/2000/svg'
-          width='36'
-          height='36'
-          viewBox='0 0 36 36'
-          fill='none'
-        >
-          <path
-            d='M25.5 3H21C19.0109 3 17.1032 3.79018 15.6967 5.1967C14.2902 6.60322 13.5 8.51088 13.5 10.5V15H9V21H13.5V33H19.5V21H24L25.5 15H19.5V10.5C19.5 10.1022 19.658 9.72064 19.9393 9.43934C20.2206 9.15804 20.6022 9 21 9H25.5V3Z'
-            stroke='white'
-            strokeWidth='2.25'
-            strokeLinecap='round'
-            strokeLinejoin='round'
-          />
-        </svg>
-      ),
-      link: 'https://www.linkedin.com/company/gloitel-consulting-private-limited/posts/?feedView=all',
-    },
+    // {
+    //   icon: (
+    //     <svg
+    //       xmlns='http://www.w3.org/2000/svg'
+    //       width='36'
+    //       height='36'
+    //       viewBox='0 0 36 36'
+    //       fill='none'
+    //     >
+    //       <path
+    //         d='M11.4259 2.92969H23.7308C28.4184 2.92969 32.227 6.73834 32.227 11.4259V23.7308C32.227 25.9841 31.3319 28.1452 29.7385 29.7385C28.1452 31.3319 25.9841 32.227 23.7308 32.227H11.4259C6.73834 32.227 2.92969 28.4184 2.92969 23.7308V11.4259C2.92969 9.17257 3.82482 7.01153 5.41817 5.41817C7.01153 3.82482 9.17257 2.92969 11.4259 2.92969ZM11.1329 5.85942C9.73431 5.85942 8.39297 6.41502 7.404 7.404C6.41502 8.39297 5.85942 9.73431 5.85942 11.1329V24.0238C5.85942 26.9388 8.21785 29.2973 11.1329 29.2973H24.0238C25.4224 29.2973 26.7637 28.7417 27.7527 27.7527C28.7417 26.7637 29.2973 25.4224 29.2973 24.0238V11.1329C29.2973 8.21785 26.9388 5.85942 24.0238 5.85942H11.1329ZM25.2689 8.05672C25.7545 8.05672 26.2203 8.24964 26.5637 8.59303C26.9071 8.93643 27.1 9.40217 27.1 9.8878C27.1 10.3734 26.9071 10.8392 26.5637 11.1826C26.2203 11.526 25.7545 11.7189 25.2689 11.7189C24.7833 11.7189 24.3175 11.526 23.9741 11.1826C23.6307 10.8392 23.4378 10.3734 23.4378 9.8878C23.4378 9.40217 23.6307 8.93643 23.9741 8.59303C24.3175 8.24964 24.7833 8.05672 25.2689 8.05672ZM17.5784 10.254C19.5209 10.254 21.3839 11.0257 22.7574 12.3993C24.131 13.7728 24.9027 15.6358 24.9027 17.5784C24.9027 19.5209 24.131 21.3839 22.7574 22.7574C21.3839 24.131 19.5209 24.9027 17.5784 24.9027C15.6358 24.9027 13.7728 24.131 12.3993 22.7574C11.0257 21.3839 10.254 19.5209 10.254 17.5784C10.254 15.6358 11.0257 13.7728 12.3993 12.3993C13.7728 11.0257 15.6358 10.254 17.5784 10.254ZM17.5784 13.1838C16.4128 13.1838 15.295 13.6468 14.4709 14.4709C13.6468 15.295 13.1838 16.4128 13.1838 17.5784C13.1838 18.7439 13.6468 19.8617 14.4709 20.6858C15.295 21.5099 16.4128 21.9729 17.5784 21.9729C18.7439 21.9729 19.8617 21.5099 20.6858 20.6858C21.5099 19.8617 21.9729 18.7439 21.9729 17.5784C21.9729 16.4128 21.5099 15.295 20.6858 14.4709C19.8617 13.6468 18.7439 13.1838 17.5784 13.1838Z'
+    //         fill='white'
+    //       />
+    //     </svg>
+    //   ),
+    //   link: 'https://www.linkedin.com/company/gloitel-consulting-private-limited/posts/?feedView=all',
+    // },
+    // {
+    //   icon: (
+    //     <svg
+    //       xmlns='http://www.w3.org/2000/svg'
+    //       width='30'
+    //       height='30'
+    //       viewBox='0 0 30 30'
+    //       fill='none'
+    //     >
+    //       <g clipPath='url(#clip0_1316_68944)'>
+    //         <g mask='url(#mask0_1316_68944)'>
+    //           <path
+    //             d='M23.625 1.40625H28.2257L18.1757 12.922L30 28.5948H20.7429L13.4871 19.0912L5.19429 28.5948H0.589286L11.3379 16.2734L0 1.40839H9.49286L16.0414 10.0934L23.625 1.40625ZM22.0071 25.8348H24.5571L8.1 4.02268H5.36571L22.0071 25.8348Z'
+    //             fill='white'
+    //           />
+    //         </g>
+    //       </g>
+    //       <defs>
+    //         <clipPath id='clip0_1316_68944'>
+    //           <rect width='30' height='30' rx='4.88289' fill='white' />
+    //         </clipPath>
+    //       </defs>
+    //     </svg>
+    //   ),
+    //   link: 'https://www.linkedin.com/company/gloitel-consulting-private-limited/posts/?feedView=all',
+    // },
+    // {
+    //   icon: (
+    //     <svg
+    //       xmlns='http://www.w3.org/2000/svg'
+    //       width='36'
+    //       height='36'
+    //       viewBox='0 0 36 36'
+    //       fill='none'
+    //     >
+    //       <path
+    //         d='M25.5 3H21C19.0109 3 17.1032 3.79018 15.6967 5.1967C14.2902 6.60322 13.5 8.51088 13.5 10.5V15H9V21H13.5V33H19.5V21H24L25.5 15H19.5V10.5C19.5 10.1022 19.658 9.72064 19.9393 9.43934C20.2206 9.15804 20.6022 9 21 9H25.5V3Z'
+    //         stroke='white'
+    //         strokeWidth='2.25'
+    //         strokeLinecap='round'
+    //         strokeLinejoin='round'
+    //       />
+    //     </svg>
+    //   ),
+    //   link: 'https://www.linkedin.com/company/gloitel-consulting-private-limited/posts/?feedView=all',
+    // },
   ];
 
-  const [email, setEmail] = useState('');
+  // const [email, setEmail] = useState('');
 
   return (
     <footer className='bg-gradient-to-r from-black via-gray-900 to-black px-6 py-10 text-gray-300 sm:px-12 md:px-20 lg:px-40'>
@@ -276,11 +274,11 @@ export default function Footer() {
         {/* Newsletter */}
         <div className='min-w-0'>
           <h2 className='text-title text-sm font-semibold tracking-wide'>Newsletter</h2>
-          <p className='mt-6 text-sm leading-relaxed text-white'>
+          {/* <p className='mt-6 text-sm leading-relaxed text-white'>
             Subscribe to receive the latest insights, technology updates, industry trends, and
             company news.
-          </p>
-          <form
+          </p> */}
+          {/* <form
             className='mt-5 flex flex-col gap-3 2xl:flex-row'
             onSubmit={event => {
               event.preventDefault();
@@ -306,7 +304,7 @@ export default function Footer() {
               className='h-11 shrink-0 rounded-full px-6 text-sm font-medium'
               buttonText='Subscribe'
             />
-          </form>
+          </form> */}
           <p className='mt-4 text-xs leading-relaxed text-white/80'>
             Receive curated technology insights and important updates while we ensure your inbox
             stays free from unnecessary spam.

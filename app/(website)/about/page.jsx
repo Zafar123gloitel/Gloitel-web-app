@@ -633,7 +633,7 @@ const AboutPage = () => {
           />
           <GlowButton
             buttonText='View About Gloitel '
-            buttonlink='/about'
+            buttonLink='/about'
             className='mt-6 sm:mt-8'
           />
         </div>
