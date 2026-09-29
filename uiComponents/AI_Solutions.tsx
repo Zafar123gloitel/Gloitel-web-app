@@ -1,7 +1,7 @@
 'use client';
 
 import { Suspense, useState, useEffect } from 'react';
-import { useRouter, useSearchParams, usePathname } from 'next/navigation';
+import { useSearchParams, usePathname } from 'next/navigation';
 import StrategyBadge from '@/components/StrategyBadge';
 import IconCard from '@/components/card-showcase/IconCard';
 import PageLoader from '@/components/PageLoader';
@@ -27,21 +27,23 @@ const AI_SolutionsContent = ({
   title,
   description,
   tabs = [],
-  technologies,
   icontype: _icontype = false,
+  technologies,
 }: AI_SolutionsProps) => {
-  const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
   const getInitialIndex = () => {
     const tabParam = searchParams.get(QUERY_KEY);
+
     if (tabParam !== null) {
       const parsedIndex = Number.parseInt(tabParam, 10);
+
       if (!Number.isNaN(parsedIndex) && parsedIndex >= 0 && parsedIndex < tabs.length) {
         return parsedIndex;
       }
     }
+
     return 0;
   };
 
@@ -49,8 +51,10 @@ const AI_SolutionsContent = ({
 
   useEffect(() => {
     const tabParam = searchParams.get(QUERY_KEY);
+
     if (tabParam !== null) {
       const parsedIndex = Number.parseInt(tabParam, 10);
+
       if (!Number.isNaN(parsedIndex) && parsedIndex >= 0 && parsedIndex < tabs.length) {
         setActiveTabIndex(parsedIndex);
       }
@@ -58,13 +62,16 @@ const AI_SolutionsContent = ({
   }, [searchParams, tabs.length]);
 
   const activeTab = tabs[activeTabIndex];
+
   const hasMoreThanFiveTabs = tabs.length > 5;
 
   const handleTabClick = (index: number) => {
     setActiveTabIndex(index);
-    const params = new URLSearchParams(searchParams.toString());
+
+    const params = new URLSearchParams(window.location.search);
     params.set(QUERY_KEY, index.toString());
-    router.push(`${pathname}?${params.toString()}`, { scroll: false });
+
+    window.history.replaceState(null, '', `${pathname}?${params.toString()}`);
   };
 
   return (
