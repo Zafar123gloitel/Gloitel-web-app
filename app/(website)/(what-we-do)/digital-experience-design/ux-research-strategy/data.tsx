@@ -33,7 +33,7 @@ export const uxResearchHeroData = {
   },
   secondaryButton: {
     text: 'View Research Case Studies',
-    href: '/about',
+    href: '/resources/case-studies',
     icon: <HeroArrowRightIcon />,
   },
 };

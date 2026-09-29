@@ -1,12 +1,15 @@
 'use client';
 
+import { useApiList } from '@/hooks/useApi';
+import { apiRequest } from '@/lib/api';
+
 import { useAdminSearch } from '@/components/admin/AdminSearchContext';
 import PageLoader from '@/components/PageLoader';
 import CaseStudyTable from '@/components/admin/CaseStudyTable';
 import type { BlogPost } from '@/components/admin/BlogTable';
 import { BookOpen, CheckCircle2, Edit2, Plus } from 'lucide-react';
 import Link from 'next/link';
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 
 function StatCard({
   icon,
@@ -33,53 +36,19 @@ function StatCard({
 }
 
 export default function CaseStudiesPage() {
-  const [caseStudies, setCaseStudies] = useState<BlogPost[]>([]);
+  const {
+    data: caseStudies,
+    loading,
+    error: loadError,
+    refetch,
+  } = useApiList<BlogPost>('/api/case-studies?scope=all');
   const { search } = useAdminSearch();
-  const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
-  const [retry, setRetry] = useState(0);
-
-  useEffect(() => {
-    const controller = new AbortController();
-    setLoading(true);
-    setError('');
-    async function load() {
-      try {
-        const studies: BlogPost[] = [];
-        let page = 1;
-        let totalPages = 1;
-        do {
-          const response = await fetch(`/api/case-studies?scope=all&page=${page}&limit=100`, {
-            cache: 'no-store',
-            signal: controller.signal,
-          });
-          const result = await response.json().catch(() => null);
-          if (!response.ok || !result?.success || !Array.isArray(result.data))
-            throw new Error(result?.message || 'Could not load case studies.');
-          studies.push(...result.data);
-          totalPages = result.pagination.totalPages;
-          page++;
-        } while (page <= totalPages);
-        if (!controller.signal.aborted) setCaseStudies(studies);
-      } catch (error) {
-        if (!controller.signal.aborted)
-          setError(error instanceof Error ? error.message : 'Could not load case studies.');
-      } finally {
-        if (!controller.signal.aborted) setLoading(false);
-      }
-    }
-    void load();
-    return () => controller.abort();
-  }, [retry]);
 
   async function handleDelete(id: string) {
     setError('');
     try {
-      const response = await fetch(`/api/case-studies/${id}`, { method: 'DELETE' });
-      const result = await response.json().catch(() => null);
-      if (!response.ok || !result?.success)
-        throw new Error(result?.message || 'Could not delete the case study.');
-      setCaseStudies(current => current.filter(study => study.id !== id));
+      await apiRequest(`/api/case-studies/${id}`, { method: 'DELETE' });
     } catch (error) {
       setError(error instanceof Error ? error.message : 'Could not delete the case study.');
     }
@@ -151,10 +120,16 @@ export default function CaseStudiesPage() {
         />
       </div>
 
-      {error && (
+      {(error || loadError) && (
         <div role='alert' className='space-y-2 text-sm text-red-400'>
-          <p>{error}</p>
-          <button onClick={() => setRetry(value => value + 1)} className='text-[#5b8def]'>
+          <p>{error || loadError}</p>
+          <button
+            onClick={() => {
+              setError('');
+              void refetch();
+            }}
+            className='text-[#5b8def]'
+          >
             Reload case studies
           </button>
         </div>

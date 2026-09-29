@@ -246,6 +246,6 @@ export const resourcesCTAData = {
   buttonLink: '/resources/blog',
   secondaryButton: {
     text: 'Explore Case Studies',
-    link: '/contact',
+    link: '/resources/case-studies',
   },
 };

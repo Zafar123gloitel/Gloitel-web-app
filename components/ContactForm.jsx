@@ -1,5 +1,7 @@
 'use client';
 
+import { apiRequest } from '@/lib/api';
+
 import { useState } from 'react';
 import { HorizontalDivider } from './SectionDivider';
 import Link from 'next/link';
@@ -33,15 +35,11 @@ const ContactForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      const response = await fetch('/api/contact', {
+      await apiRequest('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
-      const result = await response.json();
-      if (!response.ok || !result.success) {
-        throw new Error(result.message || 'Failed to submit form');
-      }
       toast.success('Message sent successfully!');
       router.push('/thank-you');
     } catch (error) {

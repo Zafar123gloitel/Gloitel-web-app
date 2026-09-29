@@ -10,7 +10,7 @@ export default async function CareerDetailPage({ params }: { params: Promise<{ s
   const { slug } = await params;
   if (!/^[a-f\d]{24}$/i.test(slug)) notFound();
   const job = await (await getJobs()).findOne({ _id: jobId(slug), status: 'active' });
-  if (!job) notFound();
+  // if (!job) notFound();
 
   return (
     <main className='relative mt-20 overflow-hidden px-4 py-10 sm:px-6 lg:px-8'>

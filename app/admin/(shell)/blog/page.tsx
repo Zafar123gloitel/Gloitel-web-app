@@ -1,11 +1,14 @@
 'use client';
 
+import { useApiList } from '@/hooks/useApi';
+import { apiRequest } from '@/lib/api';
+
 import BlogTable, { type BlogPost } from '@/components/admin/BlogTable';
 import PageLoader from '@/components/PageLoader';
 import { useAdminSearch } from '@/components/admin/AdminSearchContext';
 import { BookOpen, Edit2, CheckCircle2, Plus } from 'lucide-react';
 import Link from 'next/link';
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 
 function StatCard({
   icon,
@@ -37,57 +40,19 @@ function StatCard({
 }
 
 export default function BlogPage() {
-  const [posts, setPosts] = useState<BlogPost[]>([]);
+  const {
+    data: posts,
+    loading,
+    error: loadError,
+    refetch,
+  } = useApiList<BlogPost>('/api/blog?scope=all');
   const { search } = useAdminSearch();
-  const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
-  const [retry, setRetry] = useState(0);
-
-  useEffect(() => {
-    const controller = new AbortController();
-    setLoading(true);
-    setError('');
-    async function load() {
-      try {
-        const posts: BlogPost[] = [];
-        let page = 1;
-        let totalPages = 1;
-        do {
-          const response = await fetch(`/api/blog?scope=all&page=${page}&limit=100`, {
-            cache: 'no-store',
-            signal: controller.signal,
-          });
-          const result = await response.json().catch(() => null);
-          if (!response.ok || !result?.success || !Array.isArray(result.data)) {
-            throw new Error(result?.message || 'Could not load articles. Please try again.');
-          }
-          posts.push(...result.data);
-          totalPages = result.pagination.totalPages;
-          page++;
-        } while (page <= totalPages);
-        if (!controller.signal.aborted) setPosts(posts);
-      } catch (error) {
-        if (!controller.signal.aborted)
-          setError(error instanceof Error ? error.message : 'Could not load articles.');
-      } finally {
-        if (!controller.signal.aborted) setLoading(false);
-      }
-    }
-    void load();
-    return () => controller.abort();
-  }, [retry]);
 
   async function handleDelete(id: string) {
     setError('');
     try {
-      const response = await fetch(`/api/blog/${id}`, {
-        method: 'DELETE',
-      });
-      const result = await response.json().catch(() => null);
-      if (!response.ok || !result?.success) {
-        throw new Error(result?.message || 'Could not delete the article.');
-      }
-      setPosts(current => current.filter(post => post.id !== id));
+      await apiRequest(`/api/blog/${id}`, { method: 'DELETE' });
     } catch (error) {
       setError(error instanceof Error ? error.message : 'Could not delete the article.');
     }
@@ -160,10 +125,16 @@ export default function BlogPage() {
       </div>
 
       {/* Table */}
-      {error && (
+      {(error || loadError) && (
         <div role='alert' className='space-y-2 text-sm text-red-400'>
-          <p>{error}</p>
-          <button onClick={() => setRetry(value => value + 1)} className='text-[#5b8def]'>
+          <p>{error || loadError}</p>
+          <button
+            onClick={() => {
+              setError('');
+              void refetch();
+            }}
+            className='text-[#5b8def]'
+          >
             Reload articles
           </button>
         </div>

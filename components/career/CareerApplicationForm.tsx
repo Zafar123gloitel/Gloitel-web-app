@@ -1,5 +1,7 @@
 'use client';
 
+import { apiRequest } from '@/lib/api';
+
 import { ArrowRightIcon } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useRef, useState, type ChangeEvent, type DragEvent, type FormEvent } from 'react';
@@ -157,17 +159,10 @@ export default function CareerApplicationForm({
       payload.append('resume', resume);
       if (jobId) payload.append('jobId', jobId);
 
-      const response = await fetch('/api/career/apply', {
+      await apiRequest('/api/career/apply', {
         method: 'POST',
         body: payload,
       });
-
-      const result = (await response.json()) as { message?: string };
-
-      if (!response.ok) {
-        throw new Error(result.message || 'Submission failed');
-      }
-
       setSubmitSuccess(true);
       setFormData(initialState);
       setResume(null);
@@ -316,12 +311,11 @@ export default function CareerApplicationForm({
         {/* Message */}
         <label className='block'>
           <span className='mb-2 block text-sm font-medium text-white/80'>Message</span>
-          <textarea
+          <input
             name='message'
             value={formData.message}
             onChange={handleChange}
             placeholder='Tell us briefly about yourself'
-            rows={4}
             className='w-full resize-none rounded-xl border border-white/10 bg-[#0b1020] px-4 py-3 text-sm text-white transition outline-none placeholder:text-white/35 focus:border-blue-500/60 focus:ring-2 focus:ring-blue-500/20'
           />
         </label>

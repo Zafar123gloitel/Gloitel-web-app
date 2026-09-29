@@ -1,5 +1,8 @@
 'use client';
 
+import { useApiList } from '@/hooks/useApi';
+import { apiRequest } from '@/lib/api';
+
 import CareerTable, { type JobListing } from '@/components/admin/CareerTable';
 import PageLoader from '@/components/PageLoader';
 import { useAdminSearch } from '@/components/admin/AdminSearchContext';
@@ -8,42 +11,19 @@ import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
 
 export default function CareerPage() {
-  const [jobs, setJobs] = useState<JobListing[]>([]);
+  const {
+    data: jobs,
+    loading,
+    error: loadError,
+    refetch: loadJobs,
+  } = useApiList<JobListing>('/api/jobs?scope=all');
   const [statusFilter, setStatusFilter] = useState<'all' | 'active' | 'inactive'>('all');
-  const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [savedJobs, setSavedJobs] = useState<JobListing[]>([]);
   const [importing, setImporting] = useState(false);
   const { search } = useAdminSearch();
 
-  async function loadJobs() {
-    setLoading(true);
-    setError('');
-    try {
-      const allJobs: JobListing[] = [];
-      let page = 1;
-      let totalPages = 1;
-      do {
-        const response = await fetch(`/api/jobs?scope=all&page=${page}&limit=100`, {
-          cache: 'no-store',
-        });
-        const result = await response.json();
-        if (!response.ok || !result?.success)
-          throw new Error(result?.message || 'Failed to load jobs');
-        allJobs.push(...(result.data ?? []));
-        totalPages = result.pagination?.totalPages ?? 1;
-        page += 1;
-      } while (page <= totalPages);
-      setJobs(allJobs);
-    } catch (requestError) {
-      setError(requestError instanceof Error ? requestError.message : 'Failed to load jobs');
-    } finally {
-      setLoading(false);
-    }
-  }
-
   useEffect(() => {
-    void loadJobs();
     try {
       const stored = JSON.parse(localStorage.getItem('admin_jobs') ?? '[]');
       if (Array.isArray(stored)) setSavedJobs(stored);
@@ -58,14 +38,11 @@ export default function CareerPage() {
     try {
       const remaining = [...savedJobs];
       for (const job of savedJobs) {
-        const response = await fetch('/api/jobs', {
+        await apiRequest('/api/jobs', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ ...job, status: job.status === 'active' ? 'active' : 'inactive' }),
         });
-        const result = await response.json();
-        if (!response.ok || !result?.success)
-          throw new Error(result?.message || 'Could not import job');
         remaining.shift();
         localStorage.setItem('admin_jobs', JSON.stringify(remaining));
         setSavedJobs([...remaining]);
@@ -83,11 +60,7 @@ export default function CareerPage() {
   async function handleDelete(id: string) {
     if (!window.confirm('Delete this job listing?')) return;
     try {
-      const response = await fetch(`/api/jobs/${id}`, { method: 'DELETE' });
-      const result = await response.json();
-      if (!response.ok || !result?.success)
-        throw new Error(result?.message || 'Could not delete job');
-      setJobs(current => current.filter(job => job.id !== id));
+      await apiRequest(`/api/jobs/${id}`, { method: 'DELETE' });
     } catch (requestError) {
       setError(requestError instanceof Error ? requestError.message : 'Could not delete job');
     }
@@ -95,15 +68,11 @@ export default function CareerPage() {
 
   async function handleToggleStatus(job: JobListing) {
     try {
-      const response = await fetch(`/api/jobs/${job.id}`, {
+      await apiRequest(`/api/jobs/${job.id}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ status: job.status === 'active' ? 'inactive' : 'active' }),
       });
-      const result = await response.json();
-      if (!response.ok || !result?.success)
-        throw new Error(result?.message || 'Could not update job');
-      setJobs(current => current.map(item => (item.id === job.id ? result.data : item)));
     } catch (requestError) {
       setError(requestError instanceof Error ? requestError.message : 'Could not update job');
     }
@@ -211,9 +180,9 @@ export default function CareerPage() {
           Refresh
         </button>
       </div>
-      {error && (
+      {(error || loadError) && (
         <p className='rounded-lg border border-red-500/20 bg-red-500/10 p-3 text-sm text-red-400'>
-          {error}
+          {error || loadError}
         </p>
       )}
       {loading ? (

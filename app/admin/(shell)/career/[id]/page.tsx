@@ -1,5 +1,8 @@
 'use client';
 
+import { useApi } from '@/hooks/useApi';
+import { apiRequest } from '@/lib/api';
+
 import type { JobListing } from '@/components/admin/CareerTable';
 
 import { ArrowLeft, Save } from 'lucide-react';
@@ -31,27 +34,18 @@ export default function NewCareerPage() {
 
   const [error, setError] = useState('');
 
+  const { data: job, error: loadError } = useApi<JobListing>(id ? `/api/jobs/${id}` : null);
   useEffect(() => {
-    if (!id) return;
-    fetch(`/api/jobs/${id}`, { cache: 'no-store' })
-      .then(async response => {
-        const result = await response.json();
-        if (!response.ok || !result?.success)
-          throw new Error(result?.message || 'Could not load job');
-        const job: JobListing = result.data;
-        setForm({
-          title: job.title,
-          department: job.department,
-          location: job.location,
-          type: job.type,
-          status: job.status,
-          description: job.description,
-        });
-      })
-      .catch(requestError =>
-        setError(requestError instanceof Error ? requestError.message : 'Could not load job'),
-      );
-  }, [id]);
+    if (job)
+      setForm({
+        title: job.title,
+        department: job.department,
+        location: job.location,
+        type: job.type,
+        status: job.status,
+        description: job.description,
+      });
+  }, [job]);
 
   // --------------------------------------------------
   // Input change
@@ -79,14 +73,11 @@ export default function NewCareerPage() {
 
     setError('');
     try {
-      const response = await fetch(id ? `/api/jobs/${id}` : '/api/jobs', {
+      await apiRequest(id ? `/api/jobs/${id}` : '/api/jobs', {
         method: id ? 'PUT' : 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
       });
-      const result = await response.json();
-      if (!response.ok || !result?.success)
-        throw new Error(result?.message || 'Could not save job');
       router.push('/admin/career');
     } catch (requestError) {
       setError(requestError instanceof Error ? requestError.message : 'Could not save job');
@@ -121,9 +112,9 @@ export default function NewCareerPage() {
         </p>
       </div>
 
-      {error && (
+      {(error || loadError) && (
         <p className='rounded-lg border border-red-500/20 bg-red-500/10 p-3 text-sm text-red-400'>
-          {error}
+          {error || loadError}
         </p>
       )}
 

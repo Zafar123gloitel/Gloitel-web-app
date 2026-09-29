@@ -1,5 +1,7 @@
 'use client';
 
+import { useApi } from '@/hooks/useApi';
+
 import JobApplicationsTable, { type JobApplication } from '@/components/admin/JobApplicationsTable';
 import StatsCard from '@/components/admin/StatsCard';
 import { ArrowRight, BookOpen, Briefcase, Clock, Mail, Users } from 'lucide-react';
@@ -8,10 +10,13 @@ import { useEffect, useState } from 'react';
 
 export default function DashboardPage() {
   const [blogCount, setBlogCount] = useState(0);
-  const [careerCount, setCareerCount] = useState(0);
-  const [applicationsCount, setApplicationsCount] = useState(0);
-  const [contactsCount, setContactsCount] = useState(0);
-  const [recentApplications, setRecentApplications] = useState<JobApplication[]>([]);
+  const applications = useApi<JobApplication[]>('/api/career/apply?page=1&limit=5');
+  const contacts = useApi<unknown[]>('/api/contact?page=1&limit=1');
+  const jobs = useApi<unknown[]>('/api/jobs?scope=all&page=1&limit=1');
+  const careerCount = jobs.pagination?.total ?? 0;
+  const applicationsCount = applications.pagination?.total ?? 0;
+  const contactsCount = contacts.pagination?.total ?? 0;
+  const recentApplications = applications.data ?? [];
 
   useEffect(() => {
     try {
@@ -20,51 +25,6 @@ export default function DashboardPage() {
     } catch {
       // ignore
     }
-
-    async function loadRecentApplications() {
-      try {
-        const response = await fetch('/api/career/apply?page=1&limit=5', {
-          cache: 'no-store',
-        });
-        const result = await response.json();
-
-        if (!response.ok || !result?.success) {
-          return;
-        }
-
-        setApplicationsCount(result.pagination?.total ?? 0);
-        setRecentApplications(result.data ?? []);
-      } catch {
-        setApplicationsCount(0);
-        setRecentApplications([]);
-      }
-    }
-
-    async function loadContactsCount() {
-      try {
-        const response = await fetch('/api/contact?page=1&limit=1', { cache: 'no-store' });
-        const result = await response.json();
-        if (response.ok && result?.success) {
-          setContactsCount(result.pagination?.total ?? 0);
-        }
-      } catch {
-        setContactsCount(0);
-      }
-    }
-
-    async function loadJobsCount() {
-      try {
-        const response = await fetch('/api/jobs?scope=all&page=1&limit=1', { cache: 'no-store' });
-        const result = await response.json();
-        if (response.ok && result?.success) setCareerCount(result.pagination?.total ?? 0);
-      } catch {
-        setCareerCount(0);
-      }
-    }
-
-    void loadJobsCount();
-    void loadRecentApplications();
-    void loadContactsCount();
   }, []);
 
   const quickActions = [

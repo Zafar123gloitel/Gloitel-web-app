@@ -1,26 +1,20 @@
 'use client';
 
+import { useApi } from '@/hooks/useApi';
+
 import { useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import PageLoader from '@/components/PageLoader';
 
 export default function AuthGuard({ children }: { children: React.ReactNode }) {
   const router = useRouter();
-  const [checked, setChecked] = useState(false);
-  const [authed, setAuthed] = useState(false);
-
+  const { data, loading, error } = useApi<{ user?: { role?: string } }>('/api/auth/verify');
+  const authed = !error && data?.user?.role === 'admin';
   useEffect(() => {
-    fetch('/api/auth/verify', { cache: 'no-store' })
-      .then(async response => {
-        const result = await response.json();
-        if (response.ok && result.data?.user?.role === 'admin') setAuthed(true);
-        else router.replace('/admin/login');
-      })
-      .catch(() => router.replace('/admin/login'))
-      .finally(() => setChecked(true));
-  }, [router]);
+    if (!loading && !authed) router.replace('/admin/login');
+  }, [loading, authed, router]);
 
-  if (!checked) {
+  if (loading) {
     return <PageLoader className='h-screen bg-[#0a0a0a]' />;
   }
 

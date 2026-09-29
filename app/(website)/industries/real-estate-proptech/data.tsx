@@ -43,7 +43,7 @@ export const realEstateHeroData = {
   },
   secondaryButton: {
     text: 'Real Estate Case Studies',
-    href: '/about',
+    href: '/resources/case-studies',
     icon: <HeroArrowRightIcon />,
   },
 };

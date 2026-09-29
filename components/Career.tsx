@@ -117,9 +117,8 @@ export const AiExecutionServices = ({ jobs }: { jobs: PublicJob[] }) => {
                 description={job.description}
                 list={[job.department, job.type.replace('-', ' '), job.location]}
                 buttonText='Apply Now'
-                buttonLink='/career/apply-now'
-                viewText='View Details'
-                viewLink={`/career/${job.id}`}
+                buttonLink={`/career/${job.id}`}
+                enableAnimation={false}
               />
             </div>
           ))}

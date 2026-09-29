@@ -1,10 +1,12 @@
 'use client';
 
+import { useApi } from '@/hooks/useApi';
+
 import { useAdminSearch } from '@/components/admin/AdminSearchContext';
 import JobApplicationsTable, { type JobApplication } from '@/components/admin/JobApplicationsTable';
 import PageLoader from '@/components/PageLoader';
 import { ChevronLeft, ChevronRight, RefreshCw } from 'lucide-react';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 
 type Pagination = {
   page: number;
@@ -21,46 +23,21 @@ const initialPagination: Pagination = {
 };
 
 export default function JobApplicationsPage() {
-  const [applications, setApplications] = useState<JobApplication[]>([]);
-  const [pagination, setPagination] = useState(initialPagination);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState('');
+  const [page, setPage] = useState(1);
+  const {
+    data,
+    pagination: pageInfo,
+    loading: isLoading,
+    error,
+    refetch,
+  } = useApi<JobApplication[]>(`/api/career/apply?page=${page}&limit=20`);
+  const applications = useMemo(() => data ?? [], [data]);
+  const pagination = pageInfo ?? { ...initialPagination, page };
   const { search } = useAdminSearch();
-
-  /** Fetches one application page and keeps the table synchronized with the API. */
-  const loadApplications = useCallback(async (page: number) => {
-    setIsLoading(true);
-    setError('');
-
-    try {
-      const response = await fetch(`/api/career/apply?page=${page}&limit=20`, {
-        cache: 'no-store',
-      });
-      const result = (await response.json()) as {
-        success: boolean;
-        message?: string;
-        data?: JobApplication[];
-        pagination?: Pagination;
-      };
-
-      if (!response.ok || !result.success) {
-        throw new Error(result.message || 'Failed to load job applications');
-      }
-
-      setApplications(result.data ?? []);
-      setPagination(result.pagination ?? initialPagination);
-    } catch (requestError) {
-      setError(
-        requestError instanceof Error ? requestError.message : 'Failed to load job applications',
-      );
-    } finally {
-      setIsLoading(false);
-    }
-  }, []);
-
-  useEffect(() => {
-    void loadApplications(1);
-  }, [loadApplications]);
+  function loadApplications(nextPage: number) {
+    if (nextPage === page) void refetch();
+    else setPage(nextPage);
+  }
 
   const filteredApplications = useMemo(() => {
     const query = search.trim().toLowerCase();

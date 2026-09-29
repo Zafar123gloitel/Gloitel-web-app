@@ -25,7 +25,7 @@ export const iotHeroData = {
   },
   secondaryButton: {
     text: 'IoT Case Studies',
-    href: '/about',
+    href: '/resources/case-studies',
     icon: <ArrowRightIcon />,
   },
 };

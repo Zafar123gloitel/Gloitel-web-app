@@ -55,14 +55,14 @@ interface PurposeCardProps {
   title: string;
   description: string;
   className?: string;
-  // Details
+
+  enableAnimation?: boolean;
+
   list?: string[];
 
-  // Apply button
   buttonText?: string;
   buttonLink?: string;
 
-  // View details
   viewText?: string;
   viewLink?: string;
 }
@@ -74,6 +74,7 @@ const PurposeCard = ({
   title,
   description,
   className,
+  enableAnimation = true,
   list,
   viewText,
   viewLink,
@@ -242,14 +243,18 @@ const PurposeCard = ({
   return (
     <div
       ref={cardRef}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
+      onMouseMove={enableAnimation ? handleMouseMove : undefined}
+      onMouseLeave={enableAnimation ? handleMouseLeave : undefined}
       className='group/card relative h-full'
-      style={{
-        transform: `rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) scale3d(1.02, 1.02, 1.02)`,
-        transformStyle: 'preserve-3d',
-        transition: 'transform 150ms ease-out',
-      }}
+      style={
+        enableAnimation
+          ? {
+              transform: `rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) scale3d(1.02, 1.02, 1.02)`,
+              transformStyle: 'preserve-3d',
+              transition: 'transform 150ms ease-out',
+            }
+          : undefined
+      }
     >
       {/* Ambient glow behind the card */}
       <div className='pointer-events-none absolute -inset-1 rounded-2xl bg-blue-600/20 opacity-0 blur-xl transition-opacity duration-500 group-hover/card:opacity-100' />

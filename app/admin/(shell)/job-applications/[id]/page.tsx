@@ -1,5 +1,7 @@
 'use client';
 
+import { useApi } from '@/hooks/useApi';
+
 import type { JobApplication } from '@/components/admin/JobApplicationsTable';
 import PageLoader from '@/components/PageLoader';
 
@@ -43,31 +45,17 @@ function formatSize(bytes?: number) {
 }
 
 export default function JobApplicationDetailPage({ params }: { params: Promise<{ id: string }> }) {
-  const [application, setApplication] = useState<JobApplication | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState('');
   const [id, setId] = useState('');
 
   useEffect(() => {
     params.then(p => setId(p.id));
   }, [params]);
 
-  useEffect(() => {
-    if (!id) return;
-    setIsLoading(true);
-    setError('');
-
-    fetch(`/api/career/apply/${id}`, { cache: 'no-store' })
-      .then(async res => {
-        const result = await res.json();
-        if (!res.ok || !result.success) throw new Error(result.message || 'Failed to load');
-        setApplication(result.data as JobApplication);
-      })
-      .catch((err: unknown) => {
-        setError(err instanceof Error ? err.message : 'Failed to load application');
-      })
-      .finally(() => setIsLoading(false));
-  }, [id]);
+  const {
+    data: application,
+    loading: isLoading,
+    error,
+  } = useApi<JobApplication>(id ? `/api/career/apply/${id}` : null);
 
   const iconClass = 'mt-0.5 shrink-0 text-[#5b8def]';
   const labelClass = 'text-xs font-medium text-[#969696]';
