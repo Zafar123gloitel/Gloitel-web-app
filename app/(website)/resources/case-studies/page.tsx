@@ -1,84 +1,19 @@
 'use client';
 
+import { useCaseStudies } from '@/hooks/useCaseStudies';
+
 import Link from 'next/link';
 import { SearchIcon } from '@/components/SvgIcon';
 import PageLoader from '@/components/PageLoader';
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import Execution_Plan from '@/uiComponents/Execution_Plan';
 import { resourcesCTAData } from '../data';
 import { ProjectCard } from '@/components/AutoScroll';
 
-type CaseStudyCard = {
-  id: string;
-  category: string;
-  title: string;
-  description: string;
-  image: string;
-  href: string;
-};
-
-const fallbackImage =
-  'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788869099/Gloitel/Resource%20F/Case_Studies_aueuxl.png';
-
 export default function CaseStudiesPage() {
-  const [caseStudies, setCaseStudies] = useState<CaseStudyCard[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('');
-  const [retry, setRetry] = useState(0);
+  const { caseStudies, loading, error, refetch } = useCaseStudies();
   const [query, setQuery] = useState('');
   const [activeFilter, setActiveFilter] = useState('All Projects');
-
-  useEffect(() => {
-    const controller = new AbortController();
-    setLoading(true);
-    setError('');
-    async function load() {
-      try {
-        const studies: CaseStudyCard[] = [];
-        let page = 1;
-        let totalPages = 1;
-        do {
-          const response = await fetch(`/api/case-studies?page=${page}&limit=100`, {
-            cache: 'no-store',
-            signal: controller.signal,
-          });
-          const result = await response.json().catch(() => null);
-          if (!response.ok || !result?.success || !Array.isArray(result.data))
-            throw new Error(result?.message || 'Could not load case studies.');
-          studies.push(
-            ...result.data.map(
-              (study: {
-                id: string;
-                slug: string;
-                category?: string;
-                title: string;
-                excerpt?: string;
-                Description?: string;
-                thumbnail?: string;
-              }) => ({
-                id: study.id,
-                category: study.category || '',
-                title: study.title,
-                description: study.excerpt || study.Description || '',
-                image: study.thumbnail || fallbackImage,
-                href: `/resources/case-studies/${study.slug}`,
-              }),
-            ),
-          );
-          totalPages = result.pagination.totalPages;
-          page++;
-        } while (page <= totalPages);
-        if (!controller.signal.aborted) setCaseStudies(studies);
-      } catch (error) {
-        if (!controller.signal.aborted)
-          setError(error instanceof Error ? error.message : 'Could not load case studies.');
-      } finally {
-        if (!controller.signal.aborted) setLoading(false);
-      }
-    }
-    void load();
-    return () => controller.abort();
-  }, [retry]);
 
   const filters = useMemo(
     () => ['All Projects', ...new Set(caseStudies.map(study => study.category).filter(Boolean))],
@@ -184,7 +119,7 @@ export default function CaseStudiesPage() {
         {error && (
           <div role='alert' className='mb-6 text-sm text-red-400'>
             {error}{' '}
-            <button onClick={() => setRetry(value => value + 1)} className='text-[#5b8def]'>
+            <button onClick={() => void refetch()} className='text-[#5b8def]'>
               Try again
             </button>
           </div>

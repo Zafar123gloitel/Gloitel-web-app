@@ -1,9 +1,11 @@
 'use client';
 
+import { useApi } from '@/hooks/useApi';
+
 import { useAdminSearch } from '@/components/admin/AdminSearchContext';
 import PageLoader from '@/components/PageLoader';
 import { ArrowLeft, ChevronLeft, ChevronRight, Inbox, Mail, RefreshCw } from 'lucide-react';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 
 type Contact = {
   id: string;
@@ -38,34 +40,22 @@ const longDate = (value: string) =>
     : '—';
 
 export default function ContactsPage() {
-  const [contacts, setContacts] = useState<Contact[]>([]);
-  const [pagination, setPagination] = useState(initialPagination);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('');
-  const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [page, setPage] = useState(1);
+  const {
+    data,
+    pagination: pageInfo,
+    loading: loading,
+    error,
+    refetch,
+  } = useApi<Contact[]>(`/api/contact?page=${page}&limit=20`);
+  const contacts = useMemo(() => data ?? [], [data]);
+  const pagination = pageInfo ?? { ...initialPagination, page };
   const { search } = useAdminSearch();
-
-  const loadContacts = useCallback(async (page: number) => {
-    setLoading(true);
-    setError('');
-    try {
-      const response = await fetch(`/api/contact?page=${page}&limit=20`, { cache: 'no-store' });
-      const result = await response.json();
-      if (!response.ok || !result?.success) {
-        throw new Error(result?.message || 'Failed to load contacts');
-      }
-      setContacts(result.data ?? []);
-      setPagination(result.pagination ?? initialPagination);
-    } catch (requestError) {
-      setError(requestError instanceof Error ? requestError.message : 'Failed to load contacts');
-    } finally {
-      setLoading(false);
-    }
-  }, []);
-
-  useEffect(() => {
-    void loadContacts(1);
-  }, [loadContacts]);
+  const [selectedId, setSelectedId] = useState<string | null>(null);
+  function loadContacts(nextPage: number) {
+    if (nextPage === page) void refetch();
+    else setPage(nextPage);
+  }
 
   const visibleContacts = useMemo(() => {
     const query = search.trim().toLowerCase();

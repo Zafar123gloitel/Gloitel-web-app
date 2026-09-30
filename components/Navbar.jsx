@@ -545,36 +545,66 @@ const Navbar = () => {
 
                               <div className={`grid ${menu.columns} gap-10 text-nowrap`}>
                                 <div className={`${menu.groupsSpan} grid gap-8`}>
-                                  {menu.groups.map(section => (
-                                    <div key={section.title}>
-                                      {section.href ? (
-                                        <Link
-                                          href={section.href}
-                                          className='text-title mb-5 block font-semibold transition-colors hover:text-blue-400'
+                                  {menu.groups.map(section => {
+                                    // whatWeDo ka UI same rakhna hai, baaki menus me 2 items per column
+                                    const isCompact = link.megaMenu !== 'whatWeDo';
+                                    const chunkSize = isCompact ? 2 : 5;
+                                    const chunkCount = Math.ceil(
+                                      section.items.length / (isCompact ? 2 : 4),
+                                    );
+
+                                    return (
+                                      <div key={section.title}>
+                                        {section.href ? (
+                                          <Link
+                                            href={section.href}
+                                            className='text-title mb-5 block font-semibold transition-colors hover:text-blue-400'
+                                          >
+                                            {section.title}
+                                          </Link>
+                                        ) : (
+                                          <h4 className='text-title mb-5 font-semibold'>
+                                            {section.title}
+                                          </h4>
+                                        )}
+
+                                        <div
+                                          className={`grid grid-flow-col ${isCompact ? 'gap-x-14' : 'gap-8'}`}
                                         >
-                                          {section.title}
-                                        </Link>
-                                      ) : (
-                                        <h4 className='text-title mb-5 font-semibold'>
-                                          {section.title}
-                                        </h4>
-                                      )}
-                                      <div className='grid grid-flow-col gap-8'>
-                                        {Array.from(
-                                          {
-                                            length: Math.ceil(section.items.length / 4),
-                                          },
-                                          (_, chunkIndex) => (
+                                          {Array.from({ length: chunkCount }, (_, chunkIndex) => (
                                             <ul key={chunkIndex} className='space-y-3'>
                                               {section.items
-                                                .slice(chunkIndex * 5, chunkIndex * 5 + 5)
+                                                .slice(
+                                                  chunkIndex * chunkSize,
+                                                  chunkIndex * chunkSize + chunkSize,
+                                                )
                                                 .map((item, index) => (
-                                                  <li key={index}>
+                                                  <li
+                                                    className={`group group relative z-20 flex items-center gap-1 transition ${
+                                                      link.href ? ' cursor-pointer' : ''
+                                                    } ${
+                                                      isMegaMenuActive(link.megaMenu)
+                                                        ? 'text-title'
+                                                        : 'hover:text-title text-white'
+                                                    }`}
+                                                    key={index}
+                                                  >
+                                                    <svg
+                                                      className={`h-4 w-4 -rotate-90 transition-transform duration-300 group-hover:-translate-y-1 group-hover:scale-105`}
+                                                      fill='none'
+                                                      stroke='currentColor'
+                                                      viewBox='0 0 24 24'
+                                                    >
+                                                      <path
+                                                        strokeLinecap='round'
+                                                        strokeLinejoin='round'
+                                                        strokeWidth={2}
+                                                        d='M19 9l-7 7-7-7'
+                                                      />
+                                                    </svg>
                                                     <Link
                                                       href={item.href}
-                                                      className={`flex items-center gap-2 text-sm ${getLinkClasses(
-                                                        item.href,
-                                                      )}`}
+                                                      className={`flex items-center gap-2 text-sm ${getLinkClasses(item.href)}`}
                                                       onClick={() => setOpenMegaMenu(null)}
                                                     >
                                                       {item.label}
@@ -582,11 +612,11 @@ const Navbar = () => {
                                                   </li>
                                                 ))}
                                             </ul>
-                                          ),
-                                        )}
+                                          ))}
+                                        </div>
                                       </div>
-                                    </div>
-                                  ))}
+                                    );
+                                  })}
                                 </div>
 
                                 <div className='-mt-6 flex items-center justify-center'>

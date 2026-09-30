@@ -32,7 +32,7 @@ export const healthcareHeroData = {
   },
   secondaryButton: {
     text: 'Healthcare Case Studies',
-    href: '/about',
+    href: '/resources/case-studies',
     icon: <HeroArrowRightIcon />,
   },
 };

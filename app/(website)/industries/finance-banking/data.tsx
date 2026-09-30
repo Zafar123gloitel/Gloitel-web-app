@@ -52,7 +52,7 @@ export const financeHeroData = {
   },
   secondaryButton: {
     text: 'Finance Case Studies',
-    href: '/about',
+    href: '/resources/case-studies',
     icon: <HeroArrowRightIcon />,
   },
 };

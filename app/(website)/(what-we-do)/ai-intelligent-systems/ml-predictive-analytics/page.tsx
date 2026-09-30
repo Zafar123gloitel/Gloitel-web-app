@@ -42,7 +42,7 @@ const page = () => {
             text: 'Discuss Your Prediction Challenge',
           }}
           secondaryButton={{
-            href: '/contact',
+            href: '/resources/case-studies',
             text: 'Explore ML Case Studies',
             icon: <ArrowRightIcon size={20} />,
           }}

@@ -1,5 +1,7 @@
 'use client';
 
+import { apiRequest } from '@/lib/api';
+
 import type { BlogPost } from '@/components/admin/BlogTable';
 import BlogPreview from './BlogPreview';
 import {
@@ -371,17 +373,11 @@ export default function BlogEditor({
       };
 
       const endpoint = isCaseStudy ? '/api/case-studies' : '/api/blog';
-      const response = await fetch(mode === 'edit' ? `${endpoint}/${initialData?.id}` : endpoint, {
+      await apiRequest(mode === 'edit' ? `${endpoint}/${initialData?.id}` : endpoint, {
         method: mode === 'edit' ? 'PUT' : 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(post),
       });
-      const result = await response.json().catch(() => null);
-      if (!response.ok || !result?.success) {
-        throw new Error(
-          result?.message || `Could not save the ${contentLabel.toLowerCase()}. Please try again.`,
-        );
-      }
       router.push(basePath);
     } catch (error) {
       setSaveError(error instanceof Error ? error.message : 'Could not save. Please try again.');

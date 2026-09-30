@@ -24,7 +24,7 @@ export const edtechHeroData = {
   },
   secondaryButton: {
     text: 'EdTech Case Studies',
-    href: '/about',
+    href: '/resources/case-studies',
     icon: <HeroArrowRightIcon />,
   },
 };

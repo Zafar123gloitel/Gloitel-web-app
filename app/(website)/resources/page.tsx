@@ -7,6 +7,7 @@ import {
   resourceCaseStudiesData,
   resourcesCTAData,
   resourcesHeroData,
+  whoThisIsForSectionHead2,
 } from './data';
 
 import GlowPanel from 'components/GlowPanel';
@@ -21,8 +22,39 @@ import Execution_Plan from 'uiComponents/Execution_Plan';
 import Image from 'next/image';
 import { ArrowRightIcon } from '@/components/SvgIcon';
 import Link from 'next/link';
+import { ProjectCard } from '@/components/AutoScroll';
+import PageLoader from '@/components/PageLoader';
+import { useCaseStudies } from '@/hooks/useCaseStudies';
+import { useRef } from 'react';
+import { TestimonialButton } from '@/components/atoms/button/Button';
 
-const page = () => {
+const ResourcesPage = () => {
+  const { caseStudies: filteredCaseStudies, loading, error, refetch } = useCaseStudies();
+  const caseStudiesRef = useRef<HTMLDivElement>(null);
+
+  const scrollCaseStudies = (direction: 'left' | 'right') => {
+    if (!caseStudiesRef.current) return;
+
+    const container = caseStudiesRef.current;
+
+    const firstCard = container.firstElementChild as HTMLElement | null;
+
+    if (!firstCard) return;
+
+    const cardWidth = firstCard.getBoundingClientRect().width;
+
+    const gap = 20; // gap-5 = 20px
+
+    const scrollAmount = cardWidth + gap;
+
+    container.scrollTo({
+      left:
+        direction === 'right'
+          ? container.scrollLeft + scrollAmount
+          : container.scrollLeft - scrollAmount,
+      behavior: 'smooth',
+    });
+  };
   return (
     <div>
       <div className='flex min-h-screen flex-col items-center justify-center py-2'>
@@ -101,7 +133,7 @@ const page = () => {
         </section>
       </div>
 
-      {/* <div className='relative z-10 mx-auto mt-20 mb-10 flex min-h-[60vh] flex-col items-center justify-center'>
+      <div className='relative z-10 mx-auto mt-20 mb-10 flex min-h-[60vh] flex-col items-center justify-center'>
         <BgSquare2 />
         <div className='-mt-10 flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
           <span>
@@ -113,45 +145,60 @@ const page = () => {
             SectionDescription={whoThisIsForSectionHead2.description}
           />
         </div>
+        <div className='relative w-full max-w-full min-w-0'>
+          {error && (
+            <p role='alert'>
+              {error}{' '}
+              <button type='button' onClick={() => void refetch()}>
+                Try again
+              </button>
+            </p>
+          )}
 
-        <div className='mt-12 grid w-2/3 grid-cols-1 gap-4 sm:w-full sm:grid-cols-1 sm:gap-6 md:grid-cols-2 lg:px-10 xl:w-[90%]'>
-          {stages.map(item => (
-            <Link
-              key={item.id}
-              href={`/portfolio/${item.id}`}
-              className='group relative cursor-pointer overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-r from-gray-950/90 to-black/80 p-2 shadow-lg sm:rounded-3xl sm:p-3'
-            >
-              <span className='cursor-hover block'>
-                <Image
-                  width={1920}
-                  height={1080}
-                  src={item.image}
-                  alt={item.name}
-                  className='h-60 w-full rounded-xl object-cover transition-transform duration-500 ease-in-out group-hover:scale-105 sm:h-72 sm:rounded-2xl md:h-80 lg:h-96'
-                  loading='lazy'
-                />
+          {loading && <PageLoader className='mb-6 min-h-64' />}
 
-                <div className='absolute inset-x-0 bottom-0 m-3 flex items-center justify-between rounded-lg bg-gradient-to-r from-blue-950 to-black p-2 sm:m-5 sm:rounded-xl sm:p-4'>
-                  <div>
-                    <h3 className='sm:text-md text-title mb-0.5 text-sm font-semibold sm:mb-1'>
-                      {item.name}
-                    </h3>
-                  </div>
-                  <p className='rounded-md bg-gradient-to-r from-blue-950/60 to-black/80 px-2 py-0.5 text-xs text-gray-300 sm:px-3 sm:py-1 sm:text-sm'>
-                    {item.date}
-                  </p>
+          {!loading && filteredCaseStudies.length > 0 ? (
+            <>
+              {/* Navigation Buttons */}
+              <div className='min-w-0'>
+                <div className='mb-6 flex justify-end gap-4'>
+                  <TestimonialButton
+                    className='h-12 min-w-12 border border-white/30 bg-white/10 text-white'
+                    ariaLabel='Previous case studies'
+                    onClick={() => scrollCaseStudies('left')}
+                  />
+                  <TestimonialButton
+                    className='h-12 min-w-12 border border-white/30 bg-white/10 text-white'
+                    direction='right'
+                    ariaLabel='Next case studies'
+                    onClick={() => scrollCaseStudies('right')}
+                  />
                 </div>
+              </div>
 
-                <div className='absolute top-0 right-0 m-2 transition-all duration-500 ease-out group-hover:translate-y-0 group-hover:opacity-100 sm:m-4'>
-                  <div className='text-title rounded-md bg-[radial-gradient(circle_at_center,_rgba(0,0,80,0.9),_rgba(0,0,0,1))] px-2 py-1 text-xs font-medium shadow-lg sm:rounded-lg sm:px-4 sm:py-2 sm:text-sm'>
-                    {item.tag}
+              {/* Cards Container */}
+              <div
+                ref={caseStudiesRef}
+                className='custom-scrollbar flex h-[70vh] w-full max-w-full min-w-0 gap-5 overflow-x-auto'
+                style={{
+                  scrollbarWidth: 'none',
+                  msOverflowStyle: 'none',
+                }}
+              >
+                {filteredCaseStudies.map(item => (
+                  <div key={item.id} className='shrink-0'>
+                    <ProjectCard feature={item} />
                   </div>
-                </div>
-              </span>
-            </Link>
-          ))}
+                ))}
+              </div>
+            </>
+          ) : !loading && !error ? (
+            <div className='col-span-full rounded-2xl border border-dashed border-white/10 bg-white/[0.02] px-6 py-12 text-center text-gray-400'>
+              No case studies found for this search.
+            </div>
+          ) : null}
         </div>
-      </div> */}
+      </div>
 
       <Execution_Plan
         badgeText={resourcesCTAData.badgeText}
@@ -166,4 +213,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default ResourcesPage;

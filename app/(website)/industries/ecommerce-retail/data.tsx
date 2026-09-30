@@ -24,7 +24,7 @@ export const ecommerceHeroData = {
   },
   secondaryButton: {
     text: 'E-Commerce Case Studies',
-    href: '/about',
+    href: '/resources/case-studies',
     icon: <HeroArrowRightIcon />,
   },
 };

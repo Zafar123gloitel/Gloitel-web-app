@@ -1,6 +1,8 @@
 'use client';
 
-import React, { useEffect, useMemo, useState } from 'react';
+import { useApiList } from '@/hooks/useApi';
+
+import React, { useMemo, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRightIcon, SearchIcon } from '@/components/SvgIcon';
@@ -66,38 +68,11 @@ function toArticle(blog: ApiBlog): Article {
 const PAGE_SIZE_OPTIONS = [4, 6, 8];
 
 export default function ContentPage() {
-  const [articles, setArticles] = useState<Article[]>([]);
+  const { data: blogs, loading, error, refetch } = useApiList<ApiBlog>('/api/blog');
+  const articles = useMemo(() => blogs.map(toArticle), [blogs]);
   const [query, setQuery] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(PAGE_SIZE_OPTIONS[0]);
-
-  useEffect(() => {
-    const controller = new AbortController();
-    async function loadArticles() {
-      try {
-        const blogs: ApiBlog[] = [];
-        let page = 1;
-        let totalPages = 1;
-        do {
-          const response = await fetch(`/api/blog?page=${page}&limit=100`, {
-            cache: 'no-store',
-            signal: controller.signal,
-          });
-          const result = await response.json();
-          if (!response.ok || !result?.success || !Array.isArray(result.data))
-            throw new Error('Could not load blogs');
-          blogs.push(...result.data);
-          totalPages = result.pagination?.totalPages ?? 1;
-          page += 1;
-        } while (page <= totalPages);
-        if (!controller.signal.aborted) setArticles(blogs.map(toArticle));
-      } catch {
-        if (!controller.signal.aborted) setArticles([]);
-      }
-    }
-    void loadArticles();
-    return () => controller.abort();
-  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
@@ -199,6 +174,12 @@ export default function ContentPage() {
         <div className='mt-16 grid gap-12 lg:grid-cols-[1fr_280px]'>
           <section>
             <h2 className='mb-6 text-lg font-medium'>Latest Publications</h2>
+            {loading && <p role='status'>Loading articles...</p>}
+            {error && (
+              <p role='alert'>
+                {error} <button onClick={() => void refetch()}>Try again</button>
+              </p>
+            )}
             <div className='space-y-1'>
               {paginatedArticles.map(article => (
                 <Link
@@ -251,7 +232,7 @@ export default function ContentPage() {
                 </Link>
               ))}
 
-              {paginatedArticles.length === 0 && (
+              {!loading && !error && paginatedArticles.length === 0 && (
                 <p className='py-10 text-center text-sm text-gray-500'>
                   No articles match your search.
                 </p>
