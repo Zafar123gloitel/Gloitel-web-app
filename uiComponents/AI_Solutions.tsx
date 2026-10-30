@@ -1,0 +1,181 @@
+'use client';
+
+import { Suspense, useState, useEffect } from 'react';
+import { useSearchParams, usePathname } from 'next/navigation';
+import StrategyBadge from '@/components/StrategyBadge';
+import IconCard from '@/components/card-showcase/IconCard';
+import PageLoader from '@/components/PageLoader';
+
+interface Technology {
+  name: string;
+  logo: string;
+}
+
+interface AI_SolutionsProps {
+  badge: string;
+  title: string;
+  description: string;
+  tabs?: string[];
+  icontype?: boolean;
+  technologies: Record<string, Technology[]> | Technology[];
+}
+
+const QUERY_KEY = 'tab';
+
+const AI_SolutionsContent = ({
+  badge,
+  title,
+  description,
+  tabs = [],
+  icontype: _icontype = false,
+  technologies,
+}: AI_SolutionsProps) => {
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  const getInitialIndex = () => {
+    const tabParam = searchParams.get(QUERY_KEY);
+
+    if (tabParam !== null) {
+      const parsedIndex = Number.parseInt(tabParam, 10);
+
+      if (!Number.isNaN(parsedIndex) && parsedIndex >= 0 && parsedIndex < tabs.length) {
+        return parsedIndex;
+      }
+    }
+
+    return 0;
+  };
+
+  const [activeTabIndex, setActiveTabIndex] = useState(getInitialIndex);
+
+  useEffect(() => {
+    const tabParam = searchParams.get(QUERY_KEY);
+
+    if (tabParam !== null) {
+      const parsedIndex = Number.parseInt(tabParam, 10);
+
+      if (!Number.isNaN(parsedIndex) && parsedIndex >= 0 && parsedIndex < tabs.length) {
+        setActiveTabIndex(parsedIndex);
+      }
+    }
+  }, [searchParams, tabs.length]);
+
+  const activeTab = tabs[activeTabIndex];
+
+  const hasMoreThanFiveTabs = tabs.length > 5;
+
+  const handleTabClick = (index: number) => {
+    setActiveTabIndex(index);
+
+    const params = new URLSearchParams(window.location.search);
+    params.set(QUERY_KEY, index.toString());
+
+    window.history.replaceState(null, '', `${pathname}?${params.toString()}`);
+  };
+
+  return (
+    <section className='bg-surface-1 py-24'>
+      <div className='max-w-8xl mx-auto px-6'>
+        <div className='text-center'>
+          <StrategyBadge text={badge} />
+
+          <h2 className='text-title mt-8 text-5xl font-medium'>{title}</h2>
+
+          <p className='mx-auto mt-6 max-w-3xl text-lg leading-8 text-white'>{description}</p>
+        </div>
+
+        <div className='mt-14 flex justify-center'>
+          <div
+            className={`flex [scrollbar-width:none] gap-4 pb-4 [&::-webkit-scrollbar]:hidden ${
+              hasMoreThanFiveTabs
+                ? 'custom-scrollbar mx-auto w-[90%] max-w-6xl overflow-x-auto'
+                : 'custom-scrollbar mx-auto w-[90%] max-w-6xl overflow-x-auto lg:w-auto lg:max-w-none lg:justify-center lg:overflow-visible'
+            }`}
+          >
+            {tabs?.map((tab, index) => (
+              <button
+                key={tab}
+                type='button'
+                onClick={() => handleTabClick(index)}
+                className={`shrink-0 rounded-lg border px-5 py-2.5 text-sm whitespace-nowrap transition-all duration-300 ${
+                  activeTabIndex === index
+                    ? 'text-title border-blue-500 bg-blue-600 shadow-[0_0_20px_rgba(37,99,235,.35)]'
+                    : 'border-white/15 bg-transparent text-white hover:border-blue-500'
+                }`}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className='bg-surface-2 px-auto mt-14 hidden overflow-hidden rounded-3xl border-white/10 py-12 lg:block'>
+          <div
+            className='flex p-5 transition-transform duration-[4000ms] ease-out sm:p-0'
+            style={{ transform: `translateX(-${activeTabIndex * 100}%)` }}
+          >
+            {tabs && tabs.length > 0 ? (
+              tabs.map(tab => (
+                <div key={tab} className='w-full shrink-0'>
+                  <div className='flex flex-wrap items-center justify-center gap-5'>
+                    {technologies[tab]?.map((item, index) => (
+                      <IconCard
+                        key={index}
+                        name={item.name}
+                        designation={item.designation}
+                        icontype={false}
+                        logo={item.logo}
+                      />
+                    ))}
+                  </div>
+                </div>
+              ))
+            ) : (
+              <div className='min-w-full shrink-0'>
+                <div className='flex flex-wrap items-center justify-center gap-5'>
+                  {Array.isArray(technologies) &&
+                    technologies?.map((item, index) => (
+                      <IconCard key={index} name={item.name} icontype={false} logo={item.logo} />
+                    ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {activeTab && activeTab.length > 0 ? (
+          <div className='bg-surface-2 mt-14 rounded-3xl border-white/10 p-4 lg:hidden'>
+            <div
+              key={activeTab}
+              className='animate-fadeIn grid grid-cols-2 justify-items-center gap-4 sm:grid-cols-3'
+            >
+              {technologies[activeTab]?.map((item, index) => (
+                <IconCard key={index} name={item.name} icontype={false} logo={item.logo} />
+              ))}
+            </div>
+          </div>
+        ) : (
+          <div className='bg-surface-2 mt-14 rounded-3xl border-white/10 p-4 lg:hidden'>
+            <div className='animate-fadeIn grid grid-cols-2 justify-items-center gap-4 sm:grid-cols-3'>
+              {Array.isArray(technologies) &&
+                technologies?.map((item, index) => (
+                  <IconCard key={index} name={item.name} icontype={false} logo={item.logo} />
+                ))}
+            </div>
+          </div>
+        )}
+      </div>
+    </section>
+  );
+};
+
+const AI_Solutions = (props: AI_SolutionsProps) => {
+  return (
+    <Suspense fallback={<PageLoader className='bg-surface-1 py-24' />}>
+      <AI_SolutionsContent {...props} />
+    </Suspense>
+  );
+};
+
+export default AI_Solutions;

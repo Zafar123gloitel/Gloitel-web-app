@@ -1,0 +1,203 @@
+import Image from 'next/image';
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
+import { getBlogs } from '@/lib/blogs';
+import BlogContentMarkdown from '@/components/BlogContentMarkdown';
+
+export const dynamic = 'force-dynamic';
+
+const fallbackImage =
+  'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788869098/Gloitel/Resource%20F/Blogs_Articles_h7tdgp.png';
+const fallbackAuthorImage =
+  'https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788869255/Gloitel/Profile%20G/ChatGPT_Image_Jun_9_2026_07_06_16_PM_iabgqm.png';
+
+type RelatedArticle = {
+  slug: string;
+  title: string;
+  category: string;
+  image: string;
+  date: string;
+  readTime: string;
+  href: string;
+};
+
+export default async function BlogDetailsPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const collection = await getBlogs();
+  const dbBlog = await collection.findOne({ slug, status: 'published' });
+
+  if (!dbBlog) {
+    notFound();
+  }
+
+  const wordCount = String(dbBlog.content || '')
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean).length;
+
+  const blog = {
+    slug: String(dbBlog.slug),
+    title: String(dbBlog.title),
+    category: String(dbBlog.category || 'Blog'),
+    readTime: `${Math.max(1, Math.ceil(wordCount / 200))} Min Read`,
+    author: String((dbBlog.author as { name?: string } | undefined)?.name || 'Gloitel'),
+    authorRole: 'Author',
+    authorImage: String(
+      (dbBlog.author as { image?: string } | undefined)?.image || fallbackAuthorImage,
+    ),
+    date: dbBlog.publishDate
+      ? new Date(String(dbBlog.publishDate)).toLocaleDateString('en-US', {
+          month: 'short',
+          day: '2-digit',
+          year: 'numeric',
+        })
+      : '',
+    image: String(dbBlog.banner || dbBlog.thumbnail || fallbackImage),
+    intro: String(dbBlog.excerpt || dbBlog.Description || ''),
+  };
+
+  const relatedDocs = await collection
+    .find({ slug: { $ne: slug }, status: 'published' })
+    .sort({ publishDate: -1 })
+    .limit(3)
+    .toArray();
+
+  const relatedArticles: RelatedArticle[] = relatedDocs.map(doc => ({
+    slug: String(doc.slug),
+    title: String(doc.title),
+    category: String(doc.category || 'Blog'),
+    image: String(doc.thumbnail || fallbackImage),
+    date: doc.publishDate
+      ? new Date(String(doc.publishDate)).toLocaleDateString('en-US', {
+          month: 'short',
+          day: '2-digit',
+          year: 'numeric',
+        })
+      : '',
+    readTime: `${Math.max(
+      1,
+      Math.ceil(
+        String(doc.content || '')
+          .trim()
+          .split(/\s+/)
+          .filter(Boolean).length / 200,
+      ),
+    )} Min Read`,
+    href: `/resources/blog/${String(doc.slug)}`,
+  }));
+
+  return (
+    <main className='min-h-screen bg-black px-5 pt-28 pb-24 text-white sm:px-8 lg:px-12'>
+      <article className='mx-auto max-w-6xl'>
+        {/* Breadcrumb */}
+        <nav aria-label='Breadcrumb' className='mb-4 flex items-center gap-2 text-xs text-gray-500'>
+          <Link href='/resources' className='shrink-0 transition hover:text-white'>
+            Resources
+          </Link>
+          <span className='shrink-0 text-white/30'>›</span>
+          <Link href='/resources/blog' className='shrink-0 transition hover:text-white'>
+            Articles
+          </Link>
+          <span className='shrink-0 text-white/30'>›</span>
+          <span aria-current='page' className='truncate text-white/70'>
+            {blog.title}
+          </span>
+        </nav>
+
+        {/* Hero image */}
+        <div className='relative aspect-[20/9] overflow-hidden rounded-2xl border border-white/10 shadow-lg shadow-black/40'>
+          <Image
+            src={blog.image}
+            alt={blog.title}
+            fill
+            priority
+            unoptimized
+            className='object-cover'
+          />
+          <div className='absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent' />
+        </div>
+
+        {/* Author · Category · Date row */}
+        <div className='mt-6 flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-6'>
+          <div className='flex items-center gap-3'>
+            <div className='relative h-9 w-9 shrink-0 overflow-hidden rounded-full border border-white/10 bg-white/5'>
+              {blog.authorImage ? (
+                <Image
+                  src={blog.authorImage}
+                  alt={blog.author}
+                  fill
+                  unoptimized
+                  className='object-cover'
+                />
+              ) : (
+                <div className='flex h-full w-full items-center justify-center text-[10px] font-medium text-white'>
+                  {blog.author
+                    .split(' ')
+                    .map(n => n[0])
+                    .join('')
+                    .slice(0, 2)}
+                </div>
+              )}
+            </div>
+            <div className='min-w-0'>
+              <p className='truncate text-sm font-medium text-white'>{blog.author}</p>
+              <p className='truncate text-xs text-gray-500'>{blog.authorRole}</p>
+            </div>
+          </div>
+
+          <p className='text-[10px] text-blue-400 uppercase'>
+            {blog.category} &nbsp;·&nbsp; {blog.readTime}
+          </p>
+
+          <span className='text-xs text-gray-500'>{blog.date}</span>
+        </div>
+
+        {/* Title + intro */}
+        <h1 className='mt-7 max-w-4xl text-2xl leading-tight font-medium sm:text-3xl'>
+          {blog.title}
+        </h1>
+        <p className='mt-5 max-w-4xl text-sm leading-6 text-gray-400'>{blog.intro}</p>
+
+        {/* Body */}
+        <div className='mt-10 max-w-4xl'>
+          <BlogContentMarkdown content={String(dbBlog.content || '')} />
+        </div>
+
+        {/* Related articles */}
+        {relatedArticles.length > 0 && (
+          <section className='mt-16 border-t border-white/10 pt-10'>
+            <div className='grid gap-6 sm:grid-cols-3'>
+              {relatedArticles.map(article => (
+                <Link
+                  key={article.slug}
+                  href={article.href}
+                  className='group block overflow-hidden rounded-xl border border-white/10 bg-white/[0.03] transition hover:border-white/20'
+                >
+                  <div className='relative aspect-[16/9] overflow-hidden'>
+                    <Image
+                      src={article.image}
+                      alt={article.title}
+                      fill
+                      unoptimized
+                      className='object-cover transition duration-500 group-hover:scale-105'
+                    />
+                  </div>
+                  <div className='p-4'>
+                    <div className='flex items-center justify-between'>
+                      <p className='text-[10px] text-blue-400 uppercase'>{article.category}</p>
+                      <p className='text-[10px] text-gray-500'>{article.date}</p>
+                    </div>
+                    <h3 className='mt-2 text-sm leading-5 font-medium text-white'>
+                      {article.title}
+                    </h3>
+                    <p className='mt-2 text-[10px] text-gray-500'>{article.readTime}</p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
+      </article>
+    </main>
+  );
+}

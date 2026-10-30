@@ -2,48 +2,63 @@
   "name": "gloitel",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "dev": "next dev",
+    "admin:create": "bash scripts/create-admin.sh",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint",
     "prepare": "husky",
+    "lint": "eslint",
     "lint:fix": "eslint . --fix",
-    "format": "prettier --write \"./**/*.{js,jsx,ts,tsx,mjs,cjs,css,scss,sass,md,html,json}\"",
-    "format-check": "prettier --check \"./**/*.{js,jsx,ts,tsx,mjs,cjs,css,scss,sass,md,html,json}\"",
+    "format": "prettier --write .",
+    "format-check": "prettier --check .",
     "lint-staged": "lint-staged --concurrent false",
-    "pretty-quick": "pnpx pretty-quick --staged"
+    "pretty-quick": "pnpx pretty-quick --staged",
+    "case-studies:seed": "node scripts/seed-case-studies.js"
   },
   "dependencies": {
     "@studio-freight/lenis": "^1.0.42",
-    "form-data": "^4.0.5",
-    "framer-motion": "^12.23.24",
+    "cloudinary": "^2.11.0",
+    "framer-motion": "^12.42.2",
     "lucide-react": "^0.547.0",
-    "mailgun.js": "^13.0.0",
+    "mongodb": "^7.6.0",
     "motion": "^12.23.24",
     "next": "15.5.9",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-fast-marquee": "^1.6.5",
     "react-hot-toast": "^2.6.0",
+    "react-markdown": "^10.1.0",
     "react-scroll-parallax": "^3.5.0",
+    "rehype-raw": "^7.0.0",
+    "remark-gfm": "^4.0.1",
     "swiper": "^12.0.2"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
   },
   "devDependencies": {
+    "@eslint/compat": "^2.1.0",
     "@eslint/eslintrc": "^3",
+    "@eslint/js": "^10.0.1",
     "@tailwindcss/postcss": "^4",
-    "@types/form-data": "^2.2.1",
     "@types/node": "24.6.1",
     "@types/react": "19.1.16",
+    "@typescript-eslint/parser": "^8.67.0",
     "eslint": "^9",
     "eslint-config-next": "15.5.4",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.6",
+    "eslint-plugin-react": "^7.37.5",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.6",
-    "prettier": "3.6.2",
+    "prettier": "3.9.6",
+    "prettier-plugin-tailwindcss": "^0.8.1",
     "tailwindcss": "^4",
-    "typescript": "5.9.3"
+    "typescript": "5.9.3",
+    "typescript-eslint": "^8.67.0"
   }
 }
