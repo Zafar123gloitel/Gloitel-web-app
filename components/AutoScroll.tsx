@@ -38,7 +38,7 @@ export function ProjectCard({ feature }) {
 
   return (
     <div
-      className='flex justify-center px-3 sm:px-5 lg:justify-start'
+      className='flex justify-center px-3 py-3 sm:px-5 lg:justify-start'
       style={{ perspective: '1200px' }}
     >
       {/* Card */}

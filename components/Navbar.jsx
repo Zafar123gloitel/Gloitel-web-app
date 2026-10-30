@@ -545,31 +545,31 @@ const Navbar = () => {
 
                               <div className={`grid ${menu.columns} gap-10 text-nowrap`}>
                                 <div className={`${menu.groupsSpan} grid gap-8`}>
-                                  {menu.groups.map(section => {
+                                  {menu.groups.map((section, index) => {
                                     // whatWeDo ka UI same rakhna hai, baaki menus me 2 items per column
                                     const isCompact = link.megaMenu !== 'whatWeDo';
                                     const chunkSize = isCompact ? 2 : 5;
                                     const chunkCount = Math.ceil(
-                                      section.items.length / (isCompact ? 2 : 4),
+                                      section?.items?.length / (isCompact ? 2 : 4),
                                     );
 
                                     return (
-                                      <div key={section.title}>
-                                        {section.href ? (
+                                      <div key={index}>
+                                        {section?.href ? (
                                           <Link
-                                            href={section.href}
+                                            href={section?.href}
                                             className='text-title mb-5 block font-semibold transition-colors hover:text-blue-400'
                                           >
-                                            {section.title}
+                                            {section?.title}
                                           </Link>
                                         ) : (
                                           <h4 className='text-title mb-5 font-semibold'>
-                                            {section.title}
+                                            {section?.title}
                                           </h4>
                                         )}
 
                                         <div
-                                          className={`grid grid-flow-col ${isCompact ? 'gap-x-14' : 'gap-8'}`}
+                                          className={`grid grid-flow-col ${isCompact ? 'gap-x-14' : 'gap-8'} ${section.title ? '' : 'mt-11'}`}
                                         >
                                           {Array.from({ length: chunkCount }, (_, chunkIndex) => (
                                             <ul key={chunkIndex} className='space-y-3'>
@@ -581,9 +581,9 @@ const Navbar = () => {
                                                 .map((item, index) => (
                                                   <li
                                                     className={`group group relative z-20 flex items-center gap-1 transition ${
-                                                      link.href ? ' cursor-pointer' : ''
+                                                      link?.href ? ' cursor-pointer' : ''
                                                     } ${
-                                                      isMegaMenuActive(link.megaMenu)
+                                                      isMegaMenuActive(link?.megaMenu)
                                                         ? 'text-title'
                                                         : 'hover:text-title text-white'
                                                     }`}
@@ -603,11 +603,11 @@ const Navbar = () => {
                                                       />
                                                     </svg>
                                                     <Link
-                                                      href={item.href}
-                                                      className={`flex items-center gap-2 text-sm ${getLinkClasses(item.href)}`}
+                                                      href={item?.href}
+                                                      className={`flex items-center gap-2 text-sm ${getLinkClasses(item?.href)}`}
                                                       onClick={() => setOpenMegaMenu(null)}
                                                     >
-                                                      {item.label}
+                                                      {item?.label}
                                                     </Link>
                                                   </li>
                                                 ))}
@@ -743,8 +743,8 @@ const Navbar = () => {
                 >
                   <div className='overflow-hidden'>
                     <div className='grid grid-cols-1 gap-4 border-t border-white/10 px-4 py-3 sm:grid-cols-2 sm:place-items-center'>
-                      {megaMenus[link.megaMenu]?.groups.map(section => (
-                        <div key={section.title} className='pb-2'>
+                      {megaMenus[link.megaMenu]?.groups.map((section, i) => (
+                        <div key={i} className='pb-2'>
                           {section.href ? (
                             <Link
                               href={section.href}

@@ -59,15 +59,15 @@ on the areas that matter most for sustainable scale.'
           </div>
         </div>
 
-        <div className='mx-auto -mt-20 sm:w-[80%]'>
-          <div className='grid grid-cols-1 gap-4 p-5 xl:grid-cols-2'>
+        <div className='mx-auto -mt-20 sm:w-[90%]'>
+          <div className='grid grid-cols-1 gap-10 p-5 xl:grid-cols-2'>
             {scalingSolutions.map(item => (
               <PurposeCard
                 key={item.id}
                 icon={item.icon}
                 title={item.title}
                 description={item.description}
-                className=''
+                className='h-36'
               />
             ))}
           </div>

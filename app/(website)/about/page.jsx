@@ -435,6 +435,7 @@ const AboutPage = () => {
                 <img
                   src='https://img.youtube.com/vi/AMzVBmvh1Z0/maxresdefault.jpg'
                   alt='Video Thumbnail'
+                  loading='lazy'
                   className='absolute top-0 left-0 h-full w-full rounded-2xl object-cover'
                 />
                 <div className='absolute inset-0 flex items-center justify-center'>
@@ -589,6 +590,7 @@ const AboutPage = () => {
                 <img
                   src={item?.image}
                   alt={item?.name}
+                  loading='lazy'
                   className='h-60 w-full rounded-2xl border-2 border-gray-500/10 object-cover sm:h-72 lg:h-[400px]'
                 />
                 <div className='absolute inset-x-0 bottom-0 m-3 flex items-center justify-between rounded-xl border-2 border-gray-500/30 bg-gradient-to-r from-gray-900/90 to-black/80 p-3 backdrop-blur-md sm:m-5 sm:p-4'>

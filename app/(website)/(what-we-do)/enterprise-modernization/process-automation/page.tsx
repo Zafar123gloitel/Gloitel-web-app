@@ -47,7 +47,7 @@ const page = () => {
         </div>
 
         <div className='mx-auto -mt-10 sm:w-[80%]'>
-          <div className='grid grid-cols-1 gap-4 p-5 xl:grid-cols-2'>
+          <div className='grid grid-cols-1 gap-8 p-5 xl:grid-cols-2'>
             {processCategoriesData.map(item => (
               <PurposeCard
                 key={item.id}

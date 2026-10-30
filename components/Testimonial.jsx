@@ -5,7 +5,6 @@ import { MiddleSectionHeads } from './SectionHeads';
 import Link from 'next/link';
 import { Instagram, Linkedin, Rocket, Spline, WandSparkles } from 'lucide-react';
 import Image from 'next/image';
-import GlowPanel from './GlowPanel';
 import StrategyBadge from '@/components/StrategyBadge';
 
 const createId = () => globalThis.crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2);
@@ -174,7 +173,7 @@ const Testimonial = () => {
           ))}
         </div>
       </div>
-      <GlowPanel />
+      {/* <GlowPanel /> */}
     </section>
   );
 };

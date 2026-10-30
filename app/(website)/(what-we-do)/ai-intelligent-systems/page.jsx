@@ -177,7 +177,7 @@ const page = () => {
           technologies={aiTechStackLandingData.technologies}
         />
       </section>
-      <section className='overflow-hidden py-20 lg:py-20'>
+      {/* <section className='overflow-hidden py-20 lg:py-20'>
         <div className='relative z-10 mx-auto flex min-h-[60vh] flex-col items-center justify-center'>
           <BgSquare2 />
           <div className='-mt-44 flex w-full flex-col gap-6.5 text-center sm:w-1/2 lg:w-1/2'>
@@ -192,7 +192,7 @@ const page = () => {
             />
           </div>
         </div>
-      </section>
+      </section> */}
       <section>
         <Execution_Plan
           badgeText={aiIntelligentSystemsCTAData.badgeText}

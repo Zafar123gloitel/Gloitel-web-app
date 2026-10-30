@@ -5,7 +5,6 @@ import {
   ClipboardIcon,
   CloseIcon,
   DiamondStackIcon,
-  DownloadIcon,
   FileIcon,
   LayersIcon,
   LightbulbGearIcon,
@@ -38,11 +37,11 @@ export const heroSectionData = {
     href: '/contact',
   },
 
-  secondaryButton: {
-    text: 'Download a Sample Roadmap',
-    href: '/about',
-    icon: <DownloadIcon size={20} />,
-  },
+  // secondaryButton: {
+  //   text: 'Download a Sample Roadmap',
+  //   href: '/images/What-we-do/sample-ai-roadmap.pdf',
+  //   icon: <DownloadIcon size={20} />,
+  // },
 };
 
 export const problems = [
