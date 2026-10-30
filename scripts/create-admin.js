@@ -12,8 +12,8 @@ const password = process.env.ADMIN_PASSWORD ?? '';
 if (!name || name.length > 100) throw new Error('Name must be 1 to 100 characters');
 if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || email.length > 254)
   throw new Error('Enter a valid email address');
-if (password.length < 12 || password.length > 128) {
-  throw new Error('Password must be 12 to 128 characters');
+if (password.length < 6 || password.length > 12) {
+  throw new Error('Password must be 6 to 12 characters');
 }
 if (!process.env.MONGODB_URI) throw new Error('MONGODB_URI is not configured');
 

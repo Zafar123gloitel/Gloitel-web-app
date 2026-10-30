@@ -9,7 +9,6 @@ import { HorizontalDivider } from '@/components/SectionDivider';
 import { LeftSectionHead2, MiddleSectionHeads } from '@/components/SectionHeads';
 import { WhiteButton } from '@/components';
 import { BgSquare3 } from '@/components/BgSquare';
-import GlowPanel from '@/components/GlowPanel';
 // import HowWeWork from '@/components/HowWeWork';
 import { GlowButton } from '@/components/Button';
 import ServiceCard from '@/components/serviceCard';
@@ -218,7 +217,7 @@ const HomePage = () => {
             <PortfolioCard scrollProgress={scrollYProgress} />
           </div>
         </div>
-        <GlowPanel />
+        {/* <GlowPanel /> */}
       </section>
       <LaunchYourSite />
       <HorizontalDivider />

@@ -70,7 +70,7 @@ export default function BlogContentMarkdown({ content }: { content: string }) {
           hr: () => <hr className='my-8 border-white/10' />,
           // Match the image rendering used by the admin blog preview.
           img: ({ src, alt }) => (
-            <img src={src} alt={alt || ''} className='my-6 w-full rounded-xl' />
+            <img src={src} alt={alt || ''} loading='lazy' className='my-6 w-full rounded-xl' />
           ),
         }}
       >

@@ -84,6 +84,7 @@ export default function BlogPreview({
             <img
               src={data.banner || data.thumbnail}
               alt=''
+              loading='lazy'
               className='mb-8 aspect-1200/630 w-full rounded-xl object-cover'
             />
           )}
@@ -134,6 +135,7 @@ export default function BlogPreview({
                 <img
                   src={data.authorImage}
                   alt=''
+                  loading='lazy'
                   className='h-10 w-10 rounded-full object-cover'
                 />
               )}
@@ -256,7 +258,12 @@ export default function BlogPreview({
 
                 /* Images */
                 img: ({ src, alt }) => (
-                  <img src={src} alt={alt || ''} className='my-6 w-full rounded-xl' />
+                  <img
+                    src={src}
+                    alt={alt || ''}
+                    loading='lazy'
+                    className='my-6 w-full rounded-xl'
+                  />
                 ),
               }}
             >

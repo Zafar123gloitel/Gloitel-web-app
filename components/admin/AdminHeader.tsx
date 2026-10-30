@@ -4,11 +4,17 @@ import { Search } from 'lucide-react';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useEffect } from 'react';
+import { useApi } from '@/hooks/useApi';
 import { useAdminSearch } from './AdminSearchContext';
 
 export default function AdminHeader() {
   const pathname = usePathname();
   const { search, setSearch } = useAdminSearch();
+  const { data: session } = useApi<{
+    user?: { name?: string; role?: string };
+  }>('/api/auth/verify');
+  const adminName = session?.user?.name ?? 'Admin';
+  const adminRole = session?.user?.role;
   const isCareerPage = pathname.startsWith('/admin/career');
   const isApplicationsPage = pathname.startsWith('/admin/job-applications');
   const isCaseStudiesPage = pathname.startsWith('/admin/case-studies');
@@ -44,10 +50,10 @@ export default function AdminHeader() {
         {/* Profile Image */}
         <div className='flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-full bg-[#1447e6]'>
           <Image
-            src='https://res.cloudinary.com/dsqu6pi0d/image/upload/v1788869254/Gloitel/Profile%20G/ChatGPT_Image_Jun_10_2026_03_20_20_PM_jxpzth.png'
+            src='https://placehold.co/800x520/png?text=Admin'
             width={40}
             height={40}
-            alt='Durgesh Sahu'
+            alt={adminName}
             className='h-full w-full object-cover'
             unoptimized
             loading='lazy'
@@ -56,9 +62,11 @@ export default function AdminHeader() {
 
         {/* Name + Role */}
         <div className='flex flex-col'>
-          <span className='text-sm font-semibold text-white'>Durgesh Sahu</span>
+          <span className='text-sm font-semibold text-white'>{adminName}</span>
 
-          <span className='text-xs text-[#969696]'>Admin</span>
+          <span className='text-xs text-[#969696]'>
+            {adminRole ? adminRole.charAt(0).toUpperCase() + adminRole.slice(1) : 'Admin'}
+          </span>
         </div>
       </div>
     </header>

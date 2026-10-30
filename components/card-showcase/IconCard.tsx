@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+'use client';
 import Image from 'next/image';
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useState } from 'react';
 
 interface IconCardProps {
   name: string;
@@ -23,7 +24,8 @@ const IconCard = ({
 }: IconCardProps) => {
   const iconNode = Icon || icon;
   const sizePx = size * 4; // Tailwind: 1 unit = 0.25rem = 4px
-
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [hasError, setHasError] = useState(false);
   return (
     <div
       className={[
@@ -75,24 +77,60 @@ const IconCard = ({
             )}
           </div>
         ) : (
+          // <div
+          //   style={{ height: sizePx, width: sizePx }}
+          //   className='flex items-center justify-center overflow-hidden rounded-full transition-all duration-700 group-hover:scale-110'
+          // >
+          //   {typeof logo === 'string' && logo.trim().length > 0 ? (
+          //     <Image
+          //       height={sizePx}
+          //       width={sizePx}
+          //       src={logo}
+          //       alt={name}
+          //       className='h-full w-full bg-white object-contain'
+          //       loading='lazy'
+          //     />
+          //   ) : (
+          //     <div
+          //       style={{ height: sizePx, width: sizePx }}
+          //       className='rounded-full bg-slate-200'
+          //     />
+          //   )}
+          // </div>
+
           <div
             style={{ height: sizePx, width: sizePx }}
-            className='flex items-center justify-center overflow-hidden rounded-full transition-all duration-700 group-hover:scale-110'
+            className='relative flex items-center justify-center overflow-hidden rounded-full bg-gradient-to-br from-blue-50 via-slate-100 to-blue-100 transition-all duration-700 group-hover:scale-110'
           >
-            {typeof logo === 'string' && logo.trim().length > 0 ? (
-              <Image
-                height={sizePx}
-                width={sizePx}
-                src={logo}
-                alt={name}
-                className='h-full w-full bg-white object-contain'
-                loading='lazy'
-              />
+            {typeof logo === 'string' && logo.trim().length > 0 && !hasError ? (
+              <>
+                {/* Skeleton loader */}
+                {!isLoaded && (
+                  <div className='absolute inset-0 animate-pulse rounded-full bg-gradient-to-br from-slate-100 via-blue-100 to-slate-200'>
+                    <div className='absolute inset-[20%] rounded-full bg-white/70 blur-md' />
+                  </div>
+                )}
+
+                {/* Actual image */}
+                <Image
+                  height={sizePx}
+                  width={sizePx}
+                  src={logo}
+                  alt={name}
+                  loading='lazy'
+                  onLoad={() => setIsLoaded(true)}
+                  onError={() => setHasError(true)}
+                  className={`relative z-10 h-full w-full bg-white object-contain transition-all duration-500 ${
+                    isLoaded ? 'scale-100 opacity-100' : 'scale-90 opacity-0'
+                  }`}
+                />
+              </>
             ) : (
-              <div
-                style={{ height: sizePx, width: sizePx }}
-                className='rounded-full bg-slate-200'
-              />
+              <div className='flex h-full w-full items-center justify-center rounded-full bg-gradient-to-br from-blue-50 to-slate-200'>
+                <span className='text-xl font-bold text-blue-800'>
+                  {name?.charAt(0)?.toUpperCase() || '?'}
+                </span>
+              </div>
             )}
           </div>
         )}

@@ -7,7 +7,6 @@ import Image from 'next/image';
 import { FAQPage } from '@/components/Faq';
 import JoinUsNow from '@/components/JoinUsNow';
 import Link from 'next/link';
-import GlowPanel from '@/components/GlowPanel';
 
 const createId = (): string =>
   globalThis.crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2);
@@ -162,7 +161,7 @@ const CreationPage = () => {
             ))}
           </div>
         </div>
-        <GlowPanel />
+        {/* <GlowPanel /> */}
       </section>
       <FAQPage />
       <JoinUsNow />

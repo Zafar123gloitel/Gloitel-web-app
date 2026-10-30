@@ -92,8 +92,8 @@ export const megaMenus = {
         ],
       },
       {
-        title: 'Enterprise Modernization',
-        href: '/enterprise-modernization',
+        // title: 'Enterprise Modernization',
+        // href: '/enterprise-modernization',
         items: [
           {
             label: 'App Modernization',
@@ -165,10 +165,10 @@ export const megaMenus = {
             href: '/industries/real-estate-proptech',
           },
           { label: 'EdTech', href: '/industries/edtech' },
-          {
-            label: 'Digital Marketing',
-            href: '/industries/digital-marketing',
-          },
+          // {
+          //   label: 'Digital Marketing',
+          //   href: '/industries/digital-marketing',
+          // },
         ],
       },
     ],

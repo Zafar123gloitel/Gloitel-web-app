@@ -19,12 +19,12 @@ interface HeroSectionProps {
   image?: string;
   imageAlt?: string;
   video?: string;
-  primaryButton: {
+  primaryButton?: {
     text?: string;
     href?: string;
     icon?: ReactNode;
   };
-  secondaryButton: {
+  secondaryButton?: {
     text?: string;
     href?: string;
     icon?: ReactNode;
@@ -71,21 +71,25 @@ const HeroSection = ({
               </p>
 
               <div className='mt-8 flex flex-col gap-3 sm:flex-row'>
-                <Link
-                  href={primaryButton.href || '#'}
-                  className='inline-flex items-center justify-center gap-2 rounded-md bg-white px-5 py-3 text-sm text-black transition hover:bg-blue-100'
-                >
-                  {primaryButton.text}
-                  {primaryButton.icon}
-                </Link>
+                {primaryButton && (
+                  <Link
+                    href={primaryButton.href || '#'}
+                    className='inline-flex items-center justify-center gap-2 rounded-md bg-white px-5 py-3 text-sm text-black transition hover:bg-blue-100'
+                  >
+                    {primaryButton.text}
+                    {primaryButton.icon}
+                  </Link>
+                )}
 
-                <Link
-                  href={secondaryButton.href || '#'}
-                  className='text-title inline-flex items-center justify-center gap-2 rounded-md border border-white/10 bg-white/10 px-5 py-3 text-sm transition hover:border-white/20 hover:bg-white/15'
-                >
-                  {secondaryButton.text}
-                  {secondaryButton.icon}
-                </Link>
+                {secondaryButton && (
+                  <Link
+                    href={secondaryButton.href || '#'}
+                    className='text-title inline-flex items-center justify-center gap-2 rounded-md border border-white/10 bg-white/10 px-5 py-3 text-sm transition hover:border-white/20 hover:bg-white/15'
+                  >
+                    {secondaryButton.text}
+                    {secondaryButton.icon}
+                  </Link>
+                )}
               </div>
             </div>
 
